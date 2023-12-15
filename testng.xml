@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  
+	  	<test name="Chrome test">
+		<parameter name="browser" value="chrome" />
+		<classes>
+		<!--	<class name="Runners.LoginPageRunner"></class>
+			<class name="Runners.Users_Creation_Runner"></class> -->
+			<class name="Runners.AssessmentSubmissionRunner"></class>
+		</classes>
+	</test>
+</suite> <!-- Suite -->
