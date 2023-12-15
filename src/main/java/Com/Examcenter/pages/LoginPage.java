@@ -2,6 +2,8 @@ package Com.Examcenter.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 import Com.Examcenter.Utils.ActionType;
 
 public class LoginPage extends ActionType{
@@ -14,7 +16,7 @@ public class LoginPage extends ActionType{
 	private	By Login=By.xpath("//button[@value='login']");
 	private	By forgotPassword=By.xpath("//a[text()='Forgot password']");
 	private	By rememeberchkbox=By.xpath("//input[@type='checkbox']");
-	private By Logo=By.xpath("//span[text()='FocalPoint']");
+	private By header=By.xpath("//h2[@class='page-title section-header m-0']");
 	
 	public LoginPage(WebDriver driver)
 	{
@@ -41,10 +43,25 @@ public class LoginPage extends ActionType{
 		enterPassword(password);
 		loginbtn();
 	}
-	public void Logo()
+	public void header()
 	{
-		StaticWait(3);
-		driver.findElement(Logo).getText();
+		StaticWait(2);
+		waitForElement(header);
+		WebElement Header=driver.findElement(header);
+		String text=Header.getText();
+		
+		if(text.equals("Manage Exam Center"))
+		{
+			System.out.println("Controller login is working Successfully..!!");
+		}
+		else if(text.equals("Enrollments")) 
+		{
+			System.out.println("Proctor login is working Successfully..!!");
+		}
+		else if(text.equals("Examinations"))
+		{
+			System.out.println("Examtaker login is working Successfully..!!");
+		}
 	}
 	public void allFieldsDispayed() {
 		isElementPresent(loginToAppText, "Login to app text");
