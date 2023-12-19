@@ -42,15 +42,12 @@ public class LoginStepdefinintions extends ActionType{
 		String username=testdata.get(rownumber).get("username");
 		String password=testdata.get(rownumber).get("password");
 		login.User_login(username, password);
-		StaticWait(4);
 	}
 
 	@And("User is on homepage")
 	public void user_is_on_homepage() throws Exception {
+		StaticWait(2);
 		login.header();
-		StaticWait(4);
 		
-
-		//getDriver().close();
 	}
 }

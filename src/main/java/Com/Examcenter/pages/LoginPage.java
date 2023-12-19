@@ -1,14 +1,20 @@
 package Com.Examcenter.pages;
 
+import java.util.Properties;
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import Com.Examcenter.Utils.ActionType;
 
+
 public class LoginPage extends ActionType{
 
 	private WebDriver driver;
+	static Properties props = new Properties();
+	static Logger log;
 	
 	private	By loginToAppText = By.xpath("//div[@class='text-center m-b-md']/h3");
 	private	By username=By.xpath("//input[@id='Username']");
@@ -42,6 +48,7 @@ public class LoginPage extends ActionType{
 		enterUsername(username);
 		enterPassword(password);
 		loginbtn();
+		StaticWait(4);
 	}
 	public void header()
 	{
