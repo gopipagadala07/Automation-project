@@ -14,7 +14,6 @@ public class LoginPage extends ActionType{
 
 	private WebDriver driver;
 	static Properties props = new Properties();
-	static Logger log;
 	
 	private	By loginToAppText = By.xpath("//div[@class='text-center m-b-md']/h3");
 	private	By username=By.xpath("//input[@id='Username']");
@@ -52,7 +51,7 @@ public class LoginPage extends ActionType{
 	}
 	public void header()
 	{
-		StaticWait(2);
+		StaticWait(4);
 		waitForElement(header);
 		WebElement Header=driver.findElement(header);
 		String text=Header.getText();

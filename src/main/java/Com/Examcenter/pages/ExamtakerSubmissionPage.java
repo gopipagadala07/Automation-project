@@ -17,7 +17,7 @@ public class ExamtakerSubmissionPage extends ActionType{
 	By validatebtn=By.xpath("//button[@aria-label='Validate']");
 	By begintest=By.xpath("//button[@aria-label='Begin Test']");
 //	By Answer=By.xpath("//li[contains(@id,'B')]");
-	By Answer=By.xpath("//li[@id='choice2']");
+	By Answer=By.xpath("//div[@class='qti_item']/div[2]/ul/li[2]");
 	By nextbtn=By.xpath("//button[@aria-label='Next']");
 	By finish=By.xpath("(//button[text()='Finish'])[3]");
 	By Submit=By.xpath("//button[text()='Submit']");
@@ -73,7 +73,9 @@ public class ExamtakerSubmissionPage extends ActionType{
 		for(int i=1;i<=8;i++)
 		{
 			waitForElement(Answer);
-			driver.findElement(Answer).click();
+			WebElement e=driver.findElement(Answer);
+			JavascriptExecutor j=(JavascriptExecutor) driver;
+			j.executeScript("arguments[0].click()",e);
 			StaticWait(1);
 			driver.findElement(nextbtn).click();
 		}

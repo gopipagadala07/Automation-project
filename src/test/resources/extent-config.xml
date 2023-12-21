@@ -5,7 +5,7 @@
 
 		<!-- standard, dark -->
 
-		<theme>standard</theme>
+		<theme>dark</theme>
 		<!-- document encoding -->
 
 		<!-- defaults to UTF-8 -->
@@ -30,9 +30,10 @@
 		<!-- location of charts in the test view -->
 
 		<!-- top, bottom -->
-
 		<testViewChartLocation>bottom</testViewChartLocation>
-
+		
+		<!-- timestamp format -->
+		<timeStampFormat>MMM dd, yyyy HH:mm:ss</timeStampFormat>
 
 		<!-- custom javascript -->
 		<scripts>

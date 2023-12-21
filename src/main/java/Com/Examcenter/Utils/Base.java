@@ -1,9 +1,11 @@
 package Com.Examcenter.Utils;
 
+import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
@@ -37,21 +39,25 @@ public class Base {
 	 */
 	public WebDriver init_driver(String browser) {
 
-		if (browser.equals("chrome")) {
+		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			tlDriver.set(new ChromeDriver());
-		} else if (browser.equals("firefox")) {
+		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());
-		} else if (browser.equals("internetExplorer")) {
+		} else if (browser.equalsIgnoreCase("internetExplorer")) {
 			WebDriverManager.iedriver().setup();
 			tlDriver.set(new InternetExplorerDriver());
+		} else if (browser.equalsIgnoreCase("Edge")) {
+			WebDriverManager.edgedriver().setup();
+			tlDriver.set(new EdgeDriver());
 		} else {
 			Logs.warn("Please pass the correct browser value: " + browser);
 		}
 
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().window().maximize();
+		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		return tlDriver.get();
 
 	}

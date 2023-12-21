@@ -37,7 +37,7 @@ public class LoginStepdefinintions extends ActionType{
 		waitForPageLoad();
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/ProdCredentials.xlsx", getSheetEnv());
+			testdata=reader.getData("/Excel/StageCredentials.xlsx", getSheetEnv());
 		}
 		String username=testdata.get(rownumber).get("username");
 		String password=testdata.get(rownumber).get("password");
@@ -46,7 +46,6 @@ public class LoginStepdefinintions extends ActionType{
 
 	@And("User is on homepage")
 	public void user_is_on_homepage() throws Exception {
-		StaticWait(2);
 		login.header();
 		
 	}
