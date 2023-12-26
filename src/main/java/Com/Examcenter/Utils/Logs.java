@@ -23,6 +23,7 @@ public class Logs {
 	static public synchronized void error(String details) {
 		init();
 		log.error(UtilityMethods.getConsoleFormatedText(details));
+		
 	}
 	
 	static public synchronized void warn(String details) {

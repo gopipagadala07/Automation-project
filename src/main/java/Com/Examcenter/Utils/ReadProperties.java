@@ -9,6 +9,7 @@ public class ReadProperties {
 
 	public static String projectLocation = "src/test/resources";
 	public static Properties prop = null;
+	
 	FileInputStream ip;
 	
 	/**
@@ -22,7 +23,6 @@ public class ReadProperties {
 			try {
 				ip = new FileInputStream(projectLocation + "/config/Data.properties");
 				prop.load(ip);
-	
 				String env = prop.getProperty("env");
 				Logs.info("Enviornment is : " + env.toUpperCase());
 				if (prop != null && env != null) {
@@ -35,10 +35,12 @@ public class ReadProperties {
 				e.printStackTrace();
 			} catch (IOException e) {
 				e.printStackTrace();
+				
 			}
 		}
 
 		return prop;
+		
 
 	}
 

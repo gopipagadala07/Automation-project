@@ -28,6 +28,7 @@ import com.google.common.base.Function;
  *
  */
 public class ActionType extends Base {
+	
 
 	public WebDriverWait wait;
 
@@ -128,6 +129,7 @@ public class ActionType extends Base {
 			generatePassReport(passText);
 		} else {
 			generateFailReport(failText);
+			
 		}
 	}
 

@@ -91,6 +91,11 @@
 			<version>2.5.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>ExamCenter</groupId>
+			<artifactId>SapphirusSystems</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 </project>

@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import Com.Examcenter.Utils.ActionType;
 import Com.Examcenter.Utils.Base;
@@ -32,8 +30,8 @@ public class LoginStepdefinintions extends ActionType{
 		login.allFieldsDispayed();
 	}
 
-	@Then("User enters the credentials from the given excel sheet at {int}")
-	public void user_enters_the_credentials_from_the_given_excel_sheet_at(Integer rownumber) throws InvalidFormatException, IOException {
+	@Then("User enters the credentials from the excel sheet at {int}")
+	public void user_enters_the_credentials_from_the_excel_sheet_at(Integer rownumber) throws InvalidFormatException, IOException {
 		waitForPageLoad();
 		if(testdata == null)
 		{
@@ -42,6 +40,7 @@ public class LoginStepdefinintions extends ActionType{
 		String username=testdata.get(rownumber).get("username");
 		String password=testdata.get(rownumber).get("password");
 		login.User_login(username, password);
+		
 	}
 
 	@And("User is on homepage")

@@ -28,6 +28,7 @@ public class ExamtakerSubmissionPage extends ActionType{
 	public ExamtakerSubmissionPage(WebDriver driver)
 	{
 		this.driver=driver;
+		
 	}
 	
 	public void examinationbtn()

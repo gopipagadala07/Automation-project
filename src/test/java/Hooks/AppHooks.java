@@ -10,7 +10,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
-public class Hooks extends Base {
+public class AppHooks extends Base {
 
 	private Base driverFactory;
 	private WebDriver driver;
@@ -20,7 +20,6 @@ public class Hooks extends Base {
 		initProperties();
 
 	}
-
 	@Before(order = 1)
 	public void launchBrowser() {
 		String browserName = prop.getProperty("browser");
@@ -36,6 +35,7 @@ public class Hooks extends Base {
 		Logs.info("-----------------Start of Scenario-----------------");
 
 	}
+	
 
 	@After(order = 0)
 	public void afterScenarioFinish() {

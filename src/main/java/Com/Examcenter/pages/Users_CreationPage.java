@@ -48,6 +48,7 @@ public class Users_CreationPage extends ActionType{
     	StaticWait(1);
     	waitForElement(Userstab);
     	driver.findElement(Userstab).click();
+    	
     }
     public void Controllerbtn()
     {
