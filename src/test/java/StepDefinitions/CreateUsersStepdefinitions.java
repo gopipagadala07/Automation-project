@@ -19,33 +19,10 @@ import io.cucumber.java.en.When;
 public class CreateUsersStepdefinitions extends ActionType{
 
 	private LoginPage login=new LoginPage(Base.getDriver());
-	Users_CreationPage Users=new Users_CreationPage(Base.getDriver());
+	private Users_CreationPage Users=new Users_CreationPage(Base.getDriver());
 	static ExcelReader reader=new ExcelReader();
 	static List<Map<String,String>> testdata=null;
-
-	@Given("User launch the application with valid URL")
-	public void user_launch_the_application() {
-		getURL(getProperty("url"));
-	}
-
-	@Then("User enters the Controller credentials from the given excel sheet at {int}")
-	public void user_enters_the_credentials_from_the_given_excel_sheet_at(Integer rownumber) throws InvalidFormatException, IOException {
-		waitForPageLoad();
-		testdata=null;
-		if(testdata == null)
-		{
-			testdata=reader.getData("/Excel/StageCredentials.xlsx", getSheetEnv());
-		}
-		String username=testdata.get(rownumber).get("username");
-		String password=testdata.get(rownumber).get("password");
-		login.User_login(username, password);
-		
-	}
-
-	@And("User Enters into homepage")
-	public void user_is_on_homepage() throws Exception {
-		waitForPageLoad();
-	}
+	
 	@And("User clicks on Administration tab")
 	public void user_clicks_on_administration_tab() {
 
@@ -68,7 +45,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/StageUsers.xlsx", getSheetEnv());
+			testdata=reader.getData("/Excel/UsersCreationDetails.xlsx", getSheetEnv());
 		}
 		String Emailtxt=testdata.get(rownumber1).get("Email");
 		String Firstnametxt=testdata.get(rownumber1).get("FirstName");
@@ -89,7 +66,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/StageUsers.xlsx", getSheetEnv());
+			testdata=reader.getData("/Excel/UsersCreationDetails.xlsx", getSheetEnv());
 		}
 		String Firstnametxt=testdata.get(rownumber2).get("FirstName");
 		String Lastnametxt=testdata.get(rownumber2).get("LastName");
@@ -126,6 +103,8 @@ public class CreateUsersStepdefinitions extends ActionType{
 	@Given("User is on Proctor tab")
 	public void user_is_on_proctor_tab() {
 		StaticWait(3);
+		Users.provisioning();
+		StaticWait(1);
 		Users.Proctorbtn();
 	}
 
@@ -140,7 +119,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/StageUsers.xlsx", getSheetEnv());
+			testdata=reader.getData("/Excel/UsersCreationDetails.xlsx", getSheetEnv());
 		}
 		String Emailtxt=testdata.get(rownumber2).get("Email");
 		String Firstnametxt=testdata.get(rownumber2).get("FirstName");
@@ -159,11 +138,10 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/StageUsers.xlsx", getSheetEnv());
+			testdata=reader.getData("/Excel/UsersCreationDetails.xlsx", getSheetEnv());
 		}
 		String Firstnametxt=testdata.get(rownumber3).get("FirstName");
 		String Lastnametxt=testdata.get(rownumber3).get("LastName");
-		//System.out.println(Firstnametxt);
 		Users.searchtxt(Firstnametxt, Lastnametxt);
 	}
 
@@ -194,6 +172,8 @@ public class CreateUsersStepdefinitions extends ActionType{
 	@Given("User is on Examtaker tab")
 	public void user_is_on_Examtaker_tab() {
 		StaticWait(3);
+		Users.provisioning();
+		StaticWait(1);
 		Users.Examtakersbtn();
 	}
 
@@ -208,7 +188,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/StageUsers.xlsx", getSheetEnv());
+			testdata=reader.getData("/Excel/UsersCreationDetails.xlsx", getSheetEnv());
 		}
 		String Emailtxt=testdata.get(rownumber4).get("Email");
 		String Firstnametxt=testdata.get(rownumber4).get("FirstName");
@@ -229,7 +209,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/StageUsers.xlsx", getSheetEnv());
+			testdata=reader.getData("/Excel/UsersCreationDetails.xlsx", getSheetEnv());
 		}
 		String Firstnametxt=testdata.get(rownumber3).get("FirstName");
 		String Lastnametxt=testdata.get(rownumber3).get("LastName");

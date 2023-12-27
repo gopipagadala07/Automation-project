@@ -17,27 +17,10 @@ import io.cucumber.java.en.Then;
 
 public class AssessmentSubmission extends ActionType{
 
-	ExamtakerSubmissionPage Sub=new ExamtakerSubmissionPage(Base.getDriver());
-	LoginPage login=new LoginPage(Base.getDriver());
-	ExcelReader reader=new ExcelReader();
-	List<Map<String, String>> testdata=null;
-	
-	@Given("Launch the URL for Examtaker")
-	public void launch_the_url_for_examtaker() {
-	    getURL(getProperty("url"));
-	}
-
-	@And("Login with Examtaker credentials from excel sheet {int}")
-	public void login_with_examtaker_credentials_from_excel_sheet(Integer int1) throws InvalidFormatException, IOException {
-	    if(testdata==null)
-	    {
-	    	testdata=reader.getData("/Excel/ProdCredentials.xlsx", getSheetEnv());
-	        String username=testdata.get(int1).get("username");
-	        String password=testdata.get(int1).get("password");
-	        login.User_login(username, password);	
-	        
-	    }
-	}
+	private ExamtakerSubmissionPage Sub=new ExamtakerSubmissionPage(Base.getDriver());
+	private LoginPage login=new LoginPage(Base.getDriver());
+	static ExcelReader reader=new ExcelReader();
+	static List<Map<String, String>> testdata=null;
 
 	@Then("Search for particular exam and Click on it {int}")
 	public void search_for_particular_exam_and_click_on_it(Integer rownumber) throws InvalidFormatException, IOException {
@@ -45,7 +28,7 @@ public class AssessmentSubmission extends ActionType{
 		testdata=null;
 		if(testdata==null)
 		{
-			testdata=reader.getData("/Excel/ProdCredentials.xlsx", getSheetEnv());
+			testdata=reader.getData("/Excel/Credentials.xlsx", getSheetEnv());
 		}
 		String examname=testdata.get(rownumber).get("ExamName");
 		String schedulename=testdata.get(rownumber).get("ScheduleName");
@@ -62,7 +45,7 @@ public class AssessmentSubmission extends ActionType{
 		testdata=null;
 		if(testdata==null)
 		{
-			testdata=reader.getData("/Excel/ProdCredentials.xlsx", getSheetEnv());
+			testdata=reader.getData("/Excel/Credentials.xlsx", getSheetEnv());
 		}
 		String token=testdata.get(rownumber).get("Token");
 	    Sub.tokentxt(token);

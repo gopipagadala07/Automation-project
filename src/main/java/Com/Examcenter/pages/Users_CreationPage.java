@@ -13,9 +13,10 @@ public class Users_CreationPage extends ActionType{
 
 	private WebDriver driver;
 	
-	By Adminstrationbtn=By.xpath("//span[text()='Exam Administration']");
-	By Userstab=By.xpath("//div[text()='USERS']");
-	By Controllerbtn=By.xpath("//div[text()='CONTROLLERS']");
+	By Adminstrationbtn=By.xpath("//mat-icon[text()=' settings ']");
+	By provisioning=By.xpath("//a[text()='Provisioning']");
+	//By Userstab=By.xpath("//div[text()='USERS']");
+	By Controllerbtn=By.xpath("//a[text()='Controllers']");
 	By Proctorbtn=By.xpath("//div[text()='PROCTORS']");
 	By Exatakerbtn=By.xpath("//div[text()='EXAM TAKERS']");
 	By Addnewbtn=By.xpath("//span[text()=' Add New ']");
@@ -35,7 +36,7 @@ public class Users_CreationPage extends ActionType{
     By yes=By.xpath("//button[text()='Reset']");
     By editsavebtn=By.xpath("//span[text()=' Save ']");
     By proctorLoc=By.xpath("//fp-textbox[@controlname='localStateID']/../div");
-    By proctor=By.xpath("//h2[text()='Add/Edit Proctor']");
+    By proctor=By.xpath("//h2[text()='Add/Edit1 Proctor']");
     
     public Users_CreationPage(WebDriver driver)
     {
@@ -46,9 +47,14 @@ public class Users_CreationPage extends ActionType{
     {
     	driver.findElement(Adminstrationbtn).click();
     	StaticWait(1);
-    	waitForElement(Userstab);
-    	driver.findElement(Userstab).click();
+    	//waitForElement(Userstab);
+    	//driver.findElement(Userstab).click();
     	
+    }
+    public void provisioning()
+    {
+    	waitForElement(provisioning);
+    	driver.findElement(provisioning).click();
     }
     public void Controllerbtn()
     {

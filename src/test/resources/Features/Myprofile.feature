@@ -1,7 +1,10 @@
 Feature: Checking the My profile Page Functionality
 
   Scenario Outline: Checking the My profile Page Functionality
-    Given User Logged into the Application with Credentials <Login>
+    Given User launch the application
+    And User able to see all Fields
+    Then User enters the credentials from the excel sheet at <Login>
+    And User is on homepage
     And User clicks on Myprofile Logo
     Then User edit the Details <UserDetails>
     And User Upload the profile Picture with <UserDetails>

@@ -35,7 +35,7 @@ public class LoginStepdefinintions extends ActionType{
 		waitForPageLoad();
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/StageCredentials.xlsx", getSheetEnv());
+			testdata=reader.getData("/Excel/Credentials.xlsx", getSheetEnv());
 		}
 		String username=testdata.get(rownumber).get("username");
 		String password=testdata.get(rownumber).get("password");

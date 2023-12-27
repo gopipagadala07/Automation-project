@@ -1,5 +1,7 @@
 package Com.Examcenter.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -16,8 +18,9 @@ public class ExamtakerSubmissionPage extends ActionType{
 	By tokentxt=By.xpath("//input[@type='password']");
 	By validatebtn=By.xpath("//button[@aria-label='Validate']");
 	By begintest=By.xpath("//button[@aria-label='Begin Test']");
+	By Qcount=By.xpath("//div[@id='navigationSideMenu']/ul/li/p/button");
 //	By Answer=By.xpath("//li[contains(@id,'B')]");
-	By Answer=By.xpath("//div[@class='qti_item']/div[2]/ul/li[2]");
+	By Answer=By.xpath("//div[@class='qti_item']/div/ul/li[1]");
 	By nextbtn=By.xpath("//button[@aria-label='Next']");
 	By finish=By.xpath("(//button[text()='Finish'])[3]");
 	By Submit=By.xpath("//button[text()='Submit']");
@@ -71,7 +74,9 @@ public class ExamtakerSubmissionPage extends ActionType{
 	}
 	public void Answers()
 	{
-		for(int i=1;i<=8;i++)
+		List<WebElement> Count = driver.findElements(Qcount);
+		System.out.println(Count.size());
+		for(int i=1;i<=Count.size();i++)
 		{
 			waitForElement(Answer);
 			WebElement e=driver.findElement(Answer);

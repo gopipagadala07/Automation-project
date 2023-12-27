@@ -23,19 +23,6 @@ public class MyProfileStepDefinitions extends ActionType{
 	static ExcelReader reader=new ExcelReader();
 	static List<Map<String,String>> testdata=null;
 
-	@Given("User Logged into the Application with Credentials {int}")
-	public void user_logged_into_the_application_with_credentials(Integer logindetails) throws InvalidFormatException, IOException {
-		getURL(getProperty("url"));
-		waitForPageLoad();
-		if(testdata == null)
-		{
-			testdata=reader.getData("/Excel/StageCredentials.xlsx", getSheetEnv());
-		}
-		String username=testdata.get(logindetails).get("username");
-		String password=testdata.get(logindetails).get("password");
-		login.User_login(username, password);
-	}
-
 	
 	@And("User clicks on Myprofile Logo")
 	public void user_clicks_on_myprofile_logo() {

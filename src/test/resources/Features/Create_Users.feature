@@ -1,9 +1,10 @@
 Feature: Checking the Create Users Functionality
 
   Scenario Outline: Checking the Creation of controller User
-    Given User launch the application with valid URL
-    Then User enters the Controller credentials from the given excel sheet at <rownumber>
-    And User Enters into homepage
+    Given User launch the application
+    And User able to see all Fields
+    Then User enters the credentials from the excel sheet at <rownumber>
+    And User is on homepage
     And User clicks on Administration tab
     Then User clicks on Controller tab
     And User clicks on Add new button on Controller tab
@@ -20,9 +21,10 @@ Feature: Checking the Create Users Functionality
       |         0 |  |          0 |
 
   Scenario Outline: Checking the Creation of Proctor User
-    Given User launch the application with valid URL
-    Then User enters the Controller credentials from the given excel sheet at <rownumber>
-    And User Enters into homepage
+    Given User launch the application
+    And User able to see all Fields
+    Then User enters the credentials from the excel sheet at <rownumber>
+    And User is on homepage
     And User clicks on Administration tab
     Then User is on Proctor tab
     And User clicks on Add new button on Proctor tab
@@ -38,9 +40,10 @@ Feature: Checking the Create Users Functionality
       |         0 |  |          1 |
 
   Scenario Outline: Checking the Creation of Examtaker User
-    Given User launch the application with valid URL
-    Then User enters the Controller credentials from the given excel sheet at <rownumber>
-    And User Enters into homepage
+    Given User launch the application
+    And User able to see all Fields
+    Then User enters the credentials from the excel sheet at <rownumber>
+    And User is on homepage
     And User clicks on Administration tab
     Given User is on Examtaker tab
     And User clicks on Add new button on Examtaker tab
