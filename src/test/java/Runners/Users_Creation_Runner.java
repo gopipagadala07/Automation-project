@@ -7,7 +7,7 @@ import org.testng.annotations.Parameters;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features = "src/test/resources/Features/Create_Controller_User.feature",
+@CucumberOptions(features = "src/test/resources/Features/Create_Users.feature",
                  glue = {"StepDefinitions","Hooks"},
                  plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
                  monochrome = true,
@@ -17,16 +17,16 @@ public class Users_Creation_Runner extends AbstractTestNGCucumberTests{
 
 	String testcaseName;
 	
-	@Parameters("browser")
+	//@Parameters("browser")
 	@BeforeClass
-	public void beforeclass(String browser)
+	public void beforeclass(/*String browser*/)
 	{
 		testcaseName = this.getClass().getSimpleName();
-		System.out.println("*******************"+testcaseName+"testcase started ");
+		System.out.println("*******"+testcaseName+" - Testcase started ********");
 	}
     @AfterClass(alwaysRun = true)
 	public void Afterclass()
 	{
-		System.out.println("*******************"+testcaseName+"testcase Ended");
+		System.out.println("********"+testcaseName+" - Testcase Ended ********");
 	}
 }

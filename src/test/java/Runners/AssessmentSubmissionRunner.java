@@ -6,9 +6,11 @@ import org.testng.annotations.Parameters;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-@CucumberOptions(features = "src\\test\\resources\\Features\\ExamtakerSubmission.feature",
+@CucumberOptions(features = "src\\test\\resources\\Features\\AssessmentSubmission.feature",
                  glue = {"StepDefinitions","Hooks"},
-                 plugin= {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
+                 plugin= {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+                 monochrome = true,
+                 dryRun = false	)
 
 public class AssessmentSubmissionRunner extends AbstractTestNGCucumberTests{
 

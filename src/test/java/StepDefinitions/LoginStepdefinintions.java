@@ -27,6 +27,7 @@ public class LoginStepdefinintions extends ActionType{
 
 	@And("User able to see all Fields")
 	public void user_able_to_see_all_fields() {
+		StaticWait(2);
 		login.allFieldsDispayed();
 	}
 

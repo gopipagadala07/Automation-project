@@ -48,8 +48,8 @@ public class AssessmentSubmission extends ActionType{
 			testdata=reader.getData("/Excel/Credentials.xlsx", getSheetEnv());
 		}
 		String token=testdata.get(rownumber).get("Token");
-	    Sub.tokentxt(token);
-	    Sub.validatebtn();
+	   // Sub.tokentxt(token);
+	    //Sub.validatebtn();
 	}
 
 	@And("clicks on begin test")

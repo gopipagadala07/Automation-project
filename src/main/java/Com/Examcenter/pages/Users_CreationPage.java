@@ -28,7 +28,7 @@ public class Users_CreationPage extends ActionType{
     By year=By.xpath("//button[@aria-label='Choose month and year']");
     By isAdminChkBox=By.xpath("//span[text()='Is Admin ']");
     By savebtn=By.xpath("//span[text()=' Save ']");
-    By searchtxt=By.xpath("//input[@type='search']");
+    By searchtxt=By.xpath("//input[@data-placeholder='search here']");
     By Editbtn=By.xpath("//mat-icon[text()='edit']");
     By createloginbtn=By.xpath("//span[text()=' Create New Login ']");
     By resetbtn=By.xpath("//span[text()=' Reset Password ']");
@@ -36,7 +36,7 @@ public class Users_CreationPage extends ActionType{
     By yes=By.xpath("//button[text()='Reset']");
     By editsavebtn=By.xpath("//span[text()=' Save ']");
     By proctorLoc=By.xpath("//fp-textbox[@controlname='localStateID']/../div");
-    By proctor=By.xpath("//h2[text()='Add/Edit1 Proctor']");
+    By proctor=By.xpath("//h2[text()='Add/Edit Proctor']");
     
     public Users_CreationPage(WebDriver driver)
     {
@@ -128,17 +128,21 @@ public class Users_CreationPage extends ActionType{
     }
     public void searchtxt(String Firstnametext,String Lastnametext) 
     {   
+    	StaticWait(2);
+    	WebElement e = driver.findElement(searchtxt);
+    	e.click();
     	StaticWait(1);
-    	driver.findElement(searchtxt).sendKeys(Lastnametext+" "+Firstnametext);  	
+    	e.sendKeys(Lastnametext+" "+Firstnametext);
+    	e.sendKeys(Keys.ENTER);
     }
     public void Editbtn()
     {
-    	StaticWait(1);
+    	StaticWait(5);
     	driver.findElement(Editbtn).click();
     }
     public void createloginbtn()
     {
-    	StaticWait(1);
+    	StaticWait(2);
     	waitForElement(createloginbtn);
     	driver.findElement(createloginbtn).click();
     }
@@ -160,7 +164,9 @@ public class Users_CreationPage extends ActionType{
     public void editsavebtn()
     {
     	waitForElement(editsavebtn);
+    	 StaticWait(2);
     	driver.findElement(editsavebtn).click();
+    	 StaticWait(2);
     }
     
     public void proctor()

@@ -76,13 +76,12 @@ public class CreateUsersStepdefinitions extends ActionType{
 
 	@Then("User clicks on Edit button on Controller tab")
 	public void user_clicks_on_edit_button() {
-		StaticWait(2);
+		waitForPageLoad();
 		Users.Editbtn();
 	}
 
 	@And("^user clicks on Create new Login button on Add/edit controller pop up$")
 	public void user_clicks_create_new_login_button() {
-		StaticWait(1);
 		Users.createloginbtn();
 	}
 
@@ -96,13 +95,12 @@ public class CreateUsersStepdefinitions extends ActionType{
 
 	@Then("^User clicks on Editsave button on Add/edit controller pop up$")
 	public void user_clicks_on_editsave_button() {
-		StaticWait(1);
 		Users.editsavebtn();
 	}
 	
 	@Given("User is on Proctor tab")
 	public void user_is_on_proctor_tab() {
-		StaticWait(3);
+		StaticWait(1);
 		Users.provisioning();
 		StaticWait(1);
 		Users.Proctorbtn();
@@ -152,7 +150,6 @@ public class CreateUsersStepdefinitions extends ActionType{
 
 	@And("^user clicks on Create new Login button on Add/edit proctor pop up$")
 	public void user_clicks_on_create_new_login_button_on_add_edit_proctor_pop_up() {
-		StaticWait(2);
 		Users.createloginbtn();
 	}
 
@@ -225,7 +222,6 @@ public class CreateUsersStepdefinitions extends ActionType{
 
 	@And("^user clicks on Create new Login button on Add/edit Examtaker pop up$")
 	public void user_clicks_on_create_new_login_button_on_add_edit_Examtaker_pop_up() {
-		StaticWait(2);
 		Users.createloginbtn();
 	}
 
@@ -240,6 +236,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 	@Then("^User clicks on Editsave button on Add/edit Examtaker pop up$")
 	public void user_clicks_on_editsave_button_on_add_edit_Examtaker_pop_up() {
 	    Users.editsavebtn();
+	   
 	}
 	
 }

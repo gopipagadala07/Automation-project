@@ -6,9 +6,9 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<!--	<class name="Runners.LoginPageRunner"></class>
-			<class name="Runners.Users_Creation_Runner"></class>
-			<class name="Runners.AssessmentSubmissionRunner"></class>-->
-			<class name="Runners.MyProfileRunner"></class>
+			<class name="Runners.Users_Creation_Runner"></class>-->
+			<class name="Runners.AssessmentSubmissionRunner"></class>
+			<!--<class name="Runners.MyProfileRunner"></class>-->
 		</classes>
 	</test>
 </suite> <!--

@@ -20,7 +20,7 @@ public class ExamtakerSubmissionPage extends ActionType{
 	By begintest=By.xpath("//button[@aria-label='Begin Test']");
 	By Qcount=By.xpath("//div[@id='navigationSideMenu']/ul/li/p/button");
 //	By Answer=By.xpath("//li[contains(@id,'B')]");
-	By Answer=By.xpath("//div[@class='qti_item']/div/ul/li[1]");
+	By Answer=By.xpath("//li[@class='qti_readaloud blackColorScheme normalFontSize'][2]");
 	By nextbtn=By.xpath("//button[@aria-label='Next']");
 	By finish=By.xpath("(//button[text()='Finish'])[3]");
 	By Submit=By.xpath("//button[text()='Submit']");
@@ -31,7 +31,6 @@ public class ExamtakerSubmissionPage extends ActionType{
 	public ExamtakerSubmissionPage(WebDriver driver)
 	{
 		this.driver=driver;
-		
 	}
 	
 	public void examinationbtn()
@@ -75,7 +74,7 @@ public class ExamtakerSubmissionPage extends ActionType{
 	public void Answers()
 	{
 		List<WebElement> Count = driver.findElements(Qcount);
-		System.out.println(Count.size());
+		//System.out.println(Count.size());
 		for(int i=1;i<=Count.size();i++)
 		{
 			waitForElement(Answer);

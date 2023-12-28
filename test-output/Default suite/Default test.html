@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Dec 27 12:16:31 IST 2023</td>
+<td>Started on:</td><td>Thu Dec 28 15:47:33 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>6 seconds (6206 ms)</td>
+<tr><td>Total time:</td><td>9 seconds (9787 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,20 +77,30 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='Runners.AssessmentSubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.AssessmentSubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the Examcenter Examtaker Assessment Submission Functionality", "Checking the Examtaker Assessment Submission"</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Sheet.getPhysicalNumberOfRows()&quot; because &quot;sheet&quot; is null
-	at Com.Examcenter.Utils.ExcelReader.readSheet(ExcelReader.java:51)
-	at Com.Examcenter.Utils.ExcelReader.getData(ExcelReader.java:24)
-	at StepDefinitions.AssessmentSubmission.login_with_examtaker_credentials_from_excel_sheet(AssessmentSubmission.java:34)
-	at ✽.Login with Examtaker credentials from excel sheet 2(file:///E:/Automation%20EC/Examcenter_AutomationFramework/src/test/resources/Features/ExamtakerSubmission.feature:5)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1413473944", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1413473944'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.ss.usermodel.Sheet.getPhysicalNumberOfRows()&quot; because &quot;sheet&quot; is null
-	at Com.Examcenter.Utils.ExcelReader.readSheet(ExcelReader.java:51)
-	at Com.Examcenter.Utils.ExcelReader.getData(ExcelReader.java:24)
-	at StepDefinitions.AssessmentSubmission.login_with_examtaker_credentials_from_excel_sheet(AssessmentSubmission.java:34)
-	at ✽.Login with Examtaker credentials from excel sheet 2(file:///E:/Automation%20EC/Examcenter_AutomationFramework/src/test/resources/Features/ExamtakerSubmission.feature:5)
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at Com.Examcenter.Utils.ActionType.generateFailReport(ActionType.java:108)
+	at Com.Examcenter.Utils.ActionType.isElementPresent(ActionType.java:274)
+	at Com.Examcenter.pages.LoginPage.allFieldsDispayed(LoginPage.java:68)
+	at StepDefinitions.LoginStepdefinintions.user_able_to_see_all_fields(LoginStepdefinintions.java:31)
+	at ✽.User able to see all Fields(file:///E:/Automation%20EC/Examcenter_AutomationFramework/src/test/resources/Features/AssessmentSubmission.feature:5)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1377992370", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1377992370'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at Com.Examcenter.Utils.ActionType.generateFailReport(ActionType.java:108)
+	at Com.Examcenter.Utils.ActionType.isElementPresent(ActionType.java:274)
+	at Com.Examcenter.pages.LoginPage.allFieldsDispayed(LoginPage.java:68)
+	at StepDefinitions.LoginStepdefinintions.user_able_to_see_all_fields(LoginStepdefinintions.java:31)
+	at ✽.User able to see all Fields(file:///E:/Automation%20EC/Examcenter_AutomationFramework/src/test/resources/Features/AssessmentSubmission.feature:5)
 </pre></div></td>
-<td>3</td>
-<td>Runners.AssessmentSubmissionRunner@55de24cc</td></tr>
+<td>7</td>
+<td>Runners.AssessmentSubmissionRunner@333d4a8c</td></tr>
 </table><p>
 </body>
 </html>
