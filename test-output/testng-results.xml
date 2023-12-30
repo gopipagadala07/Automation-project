@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-12-30T15:53:29 IST" name="Default suite" finished-at="2023-12-30T15:55:05 IST" duration-ms="95581">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Fp_Ec.runner.Location_Runner@4b013c76]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2023-12-30T15:53:29 IST" name="Default test" finished-at="2023-12-30T15:55:05 IST" duration-ms="95581">
+      <class name="com.Fp_Ec.runner.Location_Runner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.Fp_Ec.runner.Location_Runner@4b013c76]" started-at="2023-12-30T15:53:29 IST" name="setUpClass" finished-at="2023-12-30T15:53:30 IST" duration-ms="832" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f430ea8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.Fp_Ec.runner.Location_Runner@4b013c76]" started-at="2023-12-30T15:53:30 IST" name="beforeclass" finished-at="2023-12-30T15:53:30 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Fp_Ec.runner.Location_Runner@4b013c76]" started-at="2023-12-30T15:53:30 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-30T15:54:59 IST" duration-ms="88944" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Exam_Center AddEdit Location scenario"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Exam_Center Location feature"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="testDownClass()[pri:0, instance:com.Fp_Ec.runner.Location_Runner@4b013c76]" started-at="2023-12-30T15:54:59 IST" name="testDownClass" finished-at="2023-12-30T15:54:59 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDownClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.Fp_Ec.runner.Location_Runner@4b013c76]" started-at="2023-12-30T15:54:59 IST" name="tearDownClass" finished-at="2023-12-30T15:55:05 IST" duration-ms="5760" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.Fp_Ec.runner.Location_Runner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

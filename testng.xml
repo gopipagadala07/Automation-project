@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	  	<test name="Chrome test">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<!--<class name="com.Fp_Ec.runner.EcLoginpage_Runner"></class> -->
+			<!--<class name="com.Fp_Ec.runner.Examinations_Schedule_runner"></class> -->
+			<class name="com.Fp_Ec.runner.Location_Runner"></class>
+		</classes>
+	</test>
+</suite> <!-- Suite -->
