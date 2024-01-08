@@ -48,8 +48,8 @@ public class AssessmentSubmission extends ActionType{
 			testdata=reader.getData("/Excel/Credentials.xlsx", getSheetEnv());
 		}
 		String token=testdata.get(rownumber).get("Token");
-	   // Sub.tokentxt(token);
-	    //Sub.validatebtn();
+	    Sub.tokentxt(token);
+	    Sub.validatebtn();
 	}
 
 	@And("clicks on begin test")
@@ -58,12 +58,18 @@ public class AssessmentSubmission extends ActionType{
 	}
 
 	@Then("Select all Answers")
-	public void select_all_answers() {
-	    
+	public void select_all_answers(/*int Answer*/) throws InvalidFormatException, IOException {
+//		testdata=null;
+//		if(testdata==null)
+//		{
+//			testdata=reader.getData("/Excel/Credentials.xlsx", getSheetEnv());
+//		}
+//		String EtAnswer=testdata.get(Answer).get("Extended Type");
+//		String BlankAnswer=testdata.get(Answer).get("Blank Answer");
 		Sub.Answers();
 	}
 
-	@And("submit the Exam")
+    @And("submit the Exam")
 	public void submit_the_exam() {
 	    
 	Sub.Finish();
@@ -73,11 +79,10 @@ public class AssessmentSubmission extends ActionType{
 	public void Then_capture_the_status_band()
 	{
 		Sub.statusband();
-		StaticWait(2);
 	}
 	@Then("Logout from the Application")
 	public void Logout_from_the_Application()
 	{
-		Sub.logout();
+		//Sub.logout();
 	}
 }

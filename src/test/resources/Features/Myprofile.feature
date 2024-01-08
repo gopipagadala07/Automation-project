@@ -1,7 +1,7 @@
 Feature: Checking the My profile Page Functionality
 
   Scenario Outline: Checking the My profile Page Functionality
-    Given User launch the application
+    Given User launch the application with Valid URL
     And User able to see all Fields
     Then User enters the credentials from the excel sheet at <Login>
     And User is on homepage

@@ -138,6 +138,7 @@ public class Users_CreationPage extends ActionType{
     public void Editbtn()
     {
     	StaticWait(5);
+    	waitForElement(Editbtn);
     	driver.findElement(Editbtn).click();
     }
     public void createloginbtn()

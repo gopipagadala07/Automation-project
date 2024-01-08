@@ -6,12 +6,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+
 import Com.Examcenter.Utils.ActionType;
 
 public class ExamtakerSubmissionPage extends ActionType{
 
 	private WebDriver driver;
-	
+
 	By examinationbtn=By.xpath("//span[text()='Examinations']");
 	By searchheretxt=By.xpath("//input[@type='search']");
 	By launchbtn=By.xpath("//span[text()=' Launch ']");
@@ -19,8 +22,10 @@ public class ExamtakerSubmissionPage extends ActionType{
 	By validatebtn=By.xpath("//button[@aria-label='Validate']");
 	By begintest=By.xpath("//button[@aria-label='Begin Test']");
 	By Qcount=By.xpath("//div[@id='navigationSideMenu']/ul/li/p/button");
-//	By Answer=By.xpath("//li[contains(@id,'B')]");
-	By Answer=By.xpath("//li[@class='qti_readaloud blackColorScheme normalFontSize'][2]");
+	By mcqAnswer=By.xpath("//li[@class='qti_readaloud blackColorScheme normalFontSize'][2]");
+	By frame=By.xpath("//iframe[@frameborder='0']");
+	By ExtendedTypeAnswer=By.xpath("//body[@contenteditable='true']");
+	By blankAnswer=By.xpath("//input[@id='txtEditorInteraction']");
 	By nextbtn=By.xpath("//button[@aria-label='Next']");
 	By finish=By.xpath("(//button[text()='Finish'])[3]");
 	By Submit=By.xpath("//button[text()='Submit']");
@@ -32,7 +37,7 @@ public class ExamtakerSubmissionPage extends ActionType{
 	{
 		this.driver=driver;
 	}
-	
+
 	public void examinationbtn()
 	{
 		waitForElement(examinationbtn);
@@ -46,7 +51,7 @@ public class ExamtakerSubmissionPage extends ActionType{
 		WebElement element=driver.findElement(By.xpath("//b[text()='"+Examname+" - "+ScheduleName+"']"));
 		JavascriptExecutor j=(JavascriptExecutor) driver;
 		j.executeScript("arguments[0].click()",element);
-		
+
 	}
 	public void launchbtn()
 	{
@@ -77,14 +82,15 @@ public class ExamtakerSubmissionPage extends ActionType{
 		//System.out.println(Count.size());
 		for(int i=1;i<=Count.size();i++)
 		{
-			waitForElement(Answer);
-			WebElement e=driver.findElement(Answer);
+			waitForElement(mcqAnswer);
+			WebElement e=driver.findElement(mcqAnswer);
 			JavascriptExecutor j=(JavascriptExecutor) driver;
 			j.executeScript("arguments[0].click()",e);
 			StaticWait(1);
 			driver.findElement(nextbtn).click();
 		}
 	}
+
 	public void Finish()
 	{
 		driver.findElement(finish).click();
@@ -102,6 +108,7 @@ public class ExamtakerSubmissionPage extends ActionType{
 	{
 		String band=driver.findElement(statusband).getText();
 		System.out.println(band);
+		StaticWait(2);
 	}
 	public void logout()
 	{

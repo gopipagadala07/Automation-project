@@ -65,6 +65,7 @@ public class LoginPage extends ActionType{
 		}
 	}
 	public void allFieldsDispayed() {
+		waitForPageLoad();
 		isElementPresent(loginToAppText, "Login to app text");
 		isElementPresent(forgotPassword, "Forgot password");
 		isElementPresent(rememeberchkbox, "Remember my login");

@@ -20,7 +20,7 @@ public class LoginStepdefinintions extends ActionType{
 	static ExcelReader reader=new ExcelReader();
 	static List<Map<String,String>> testdata=null;
 
-	@Given("User launch the application")
+	@Given("User launch the application with Valid URL")
 	public void user_launch_the_application() {
 		getURL(getProperty("url"));
 	}
@@ -34,6 +34,7 @@ public class LoginStepdefinintions extends ActionType{
 	@Then("User enters the credentials from the excel sheet at {int}")
 	public void user_enters_the_credentials_from_the_excel_sheet_at(Integer rownumber) throws InvalidFormatException, IOException {
 		waitForPageLoad();
+		testdata=null;
 		if(testdata == null)
 		{
 			testdata=reader.getData("/Excel/Credentials.xlsx", getSheetEnv());
