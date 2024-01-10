@@ -1,9 +1,10 @@
 Feature: Examcenter complete Examinations and Schedule feature
 
   Scenario Outline: Controller Creating Examinations in Examcenter
-    Given User launch the application with url
-    When User enters the valid credential from the given excelsheet at <RowNumber>
-    And User able to see the homepage
+    Given User launch the application
+    And User able to see all Fields in login page
+    When User enters the valid credential from the given excel sheet at <RowNumber>
+    Then User able to see the Home page
     Then User click on ExamAdministration tab
     And User click on AddExam button under Examination tab
     Then User enters the Examname and Description from the given excelsheet at <RowNumber1>
@@ -18,9 +19,10 @@ Feature: Examcenter complete Examinations and Schedule feature
       |         0 |          0 |
 
   Scenario Outline: Creating Schedule for an Examinations
-    Given User launch the application with url
-    When User enters the valid credential from the given excelsheet at <RowNumber>
-    And User able to see the homepage
+    Given User launch the application
+    And User able to see all Fields in login page
+    When User enters the valid credential from the given excel sheet at <RowNumber>
+    Then User able to see the Home page
     Then User click on ExamAdministration tab
     And User Search the Examination in Search here field <RowNumber1>
     Then User click on Add New schedule button
@@ -41,11 +43,12 @@ Feature: Examcenter complete Examinations and Schedule feature
       |         0 |          0 |
 
   Scenario Outline: Enroll the Examination and schedule to the Examtaker
-    Given User launch the application with url
-    When User enters the valid credential from the given excelsheet at <RowNumber>
-    And User able to see the homepage
-    Then User click on ExamAdministration tab
-    Then Click on Users tab in homepage
+    Given User launch the application
+    And User able to see all Fields in login page
+    When User enters the valid credential from the given excel sheet at <RowNumber>
+    Then User able to see the Home page
+    Then User click on Administration tab
+    Then Click on Provisioning tab
     And User Search the Examtaker in Search here field <RowNumber1>
     Then User click on the searched Examtaker <RowNumber1>
     Then User click on Enroll to an Exam button

@@ -10,12 +10,13 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 	@CucumberOptions(
-			features= {"src/test/resources/Ec_features/CreateExaminations.feature"},
+			features= {"src/test/resources/Ec_features/CreateExaminations_Schedule.feature"},
 			glue =  {"StepDefinitions", "AppHooks"},
 			plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 			monochrome = true,
 			dryRun = false
 			)
+	
 	
 	public class Examinations_Schedule_runner extends AbstractTestNGCucumberTests{
 	String testcasename;

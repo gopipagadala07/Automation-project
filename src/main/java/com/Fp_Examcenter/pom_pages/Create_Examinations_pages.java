@@ -13,6 +13,7 @@ public class Create_Examinations_pages extends ActionType {
 	private WebDriver driver;
 
 	//Create Examination
+	//private By ChangepwdClose= By.xpath("//mat-icon[text()='close']");
 	private By ExamAdministrationtab= By.xpath("//span[text()='Exam Administration']");
 	private By AddExambutton= By.xpath("//span[text()=' Add New Exam ']");
 	private By Nametextfield= By.xpath("//input[@type='text']");
@@ -53,7 +54,9 @@ public class Create_Examinations_pages extends ActionType {
 	private By ScheduleSave=By.xpath("//span[text()=' Save ']");
 
 	//Enroll Exam to the Exam taker
-	private By Userstab=By.xpath("//div[text()='USERS']");
+	 private By Adminstrationbtn=By.xpath("//mat-icon[text()=' settings ']");
+	 private By provisioning=By.xpath("//a[text()='Provisioning']");
+	//private By Userstab=By.xpath("//div[text()='USERS']"); 
 	private By SearchExamtaker= By.xpath("//input[@type='search']");
 	private By EnrollToAnExambutton=By.xpath("//button[@title='Enroll to an Exam']");
 	private By clickonExaminationdropdown=By.xpath("//h2[text()='Enrollment']/../following-sibling::mat-dialog-content/div/mat-form-field[1]");
@@ -128,8 +131,8 @@ public class Create_Examinations_pages extends ActionType {
 		driver.findElement(ShuffleChoicestoggle).click();
 		driver.findElement(ShowAnswerstoggle).click();
 		driver.findElement(ShowTestAnalysistoggle).click();
-		driver.findElement(Tablettoggle).click();
-		driver.findElement(Desktoptoggle).click();	
+		//driver.findElement(Tablettoggle).click();
+		//driver.findElement(Desktoptoggle).click();	
 	}
 	public void click_on_datepicker() {
 		driver.findElement(datepickerforEndsonfield).click();
@@ -169,9 +172,20 @@ public class Create_Examinations_pages extends ActionType {
 	}
 
 	//Enroll Exam to the Examtaker
-	public void click_on_Users_tab() {
-		driver.findElement(Userstab).click();
-	}
+	public void Adminstarationbtn()
+    {
+    	driver.findElement(Adminstrationbtn).click();
+    	StaticWait(2);
+    }
+    public void provisioning()
+    {
+    	waitForElement(provisioning);
+    	driver.findElement(provisioning).click();
+    }
+//	public void click_on_Users_tab() {
+//		waitForElement(Userstab);
+//    	driver.findElement(Userstab).click();
+//	}
 	
 	public void Examtaker_search(String Examtakername) {
 		WebElement ES= driver.findElement(SearchExamtaker);
@@ -209,41 +223,7 @@ public class Create_Examinations_pages extends ActionType {
 	}
 	public void enrollment_save() {
 		driver.findElement(EnrollmentSave).click();
-		driver.quit();
+		//driver.quit();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	//	public  void Examinationstab(String examnametxtfield, String examdescription, String editexamnametxtfield, String TestName, String ScheduleName, String Yeartext, String Monthtext, String Datetext, String onlineInstructions, String printforminstruction, String scheduledescription) {
-	//		Exam_Administration();
-	//		Add_Exam();
-	//		Exam_name_field(examnametxtfield);
-	//		Exam_Description(examdescription);
-	//		Save_button();
-	//		Exam_Search_here(examnametxtfield);
-	//		Edit_Examinations();
-	//		Edit_Examname(editexamnametxtfield);
-	//		Edit_Save_button();
-	//		Add_new_Schedule();
-	//		Search_Test_button();
-	//		Search_test_name(TestName);
-	//		icons_Action();
-	//		Enter_Schedule_name(ScheduleName);
-	//		Dropdowns();
-	//		All_toggles();
-	//		click_on_datepicker();
-	//		Date_picker(Yeartext,Monthtext,Datetext);
-	//		Ck_editor_texts(onlineInstructions, printforminstruction, scheduledescription);
-	//		schedulesave();
-	//		published_Examlive_toggle(ScheduleName);
-	//	}
 
 }

@@ -10,13 +10,13 @@ import com.Fp_Examcenter.Utils.ActionType;
 
 public class Location_pom extends ActionType {
 	private WebDriver driver;
-	//private By Administrationtab= By.xpath("//span[text()='Administration']");
-	private By ChangepwdClose= By.xpath("//mat-icon[text()='close']");
-	private By ExamAdministration= By.xpath("//span[text()='Exam Administration']");
-	private By Locationtab= By.xpath("//div[text()='LOCATIONS']");
+	
+	//private By ChangepwdClose= By.xpath("//mat-icon[text()='close']");
+	private By Administrationbtn= By.xpath("//span[text()='Administration']");
+	private By Locationtab= By.xpath("//a[text()='Locations']");
 	private By AddNewbutton=By.xpath("//span[text()=' Add New ']");
 	private By LocationNamefield= By.xpath("(//input[@type='text'])[1]");
-	private By Addressfield=By.xpath("(//input[@type='text'])[2]/../span/label/mat-label");
+	private By Addressfield=By.xpath("(//input[@type='text'])[2]");
 	private By LocationSave= By.xpath("//span[text()=' Save ']");
 	
 	//private By LocationEditIcon= By.xpath("//td[text()=' Focalpoint 01']/following-sibling::td/button/span/mat-icon");
@@ -26,19 +26,22 @@ public class Location_pom extends ActionType {
 	public Location_pom(WebDriver driver) {
 		this.driver=driver;
 	}
-	public void Change_password_closeIcon() {
-		StaticWait(4);
-		driver.findElement(ChangepwdClose).click();
-	}
-
-	public void Exam_Administration() {
-		StaticWait(4);
-		driver.findElement(ExamAdministration).click();
-	}
+	
+//	public void Change_password_closeIcon() {
+//		StaticWait(4);
+//		driver.findElement(ChangepwdClose).click();
+//	}
+	public void Adminstarationbtn()
+    {
+    	driver.findElement(Administrationbtn).click();
+    	StaticWait(2);	
+    }
 	
 	public void Location_tab() {
-		StaticWait(4);
-		driver.findElement(Locationtab).click();
+		Actions a=new Actions(driver);
+		WebElement L=driver.findElement(Locationtab);
+		a.moveToElement(L).click().build().perform();
+		
 	}
 	public void Addnew_location() {
 		driver.findElement(AddNewbutton).click();

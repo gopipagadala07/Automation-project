@@ -19,47 +19,17 @@ import io.cucumber.java.en.When;
 
 public class CreateExaminations_Stepdefinations extends ActionType {
 	
-	private EC_Loginpage EClogin=new EC_Loginpage(Base.getDriver());
+	//private EC_Loginpage EClogin=new EC_Loginpage(Base.getDriver());
 	private Create_Examinations_pages CreateExams=new Create_Examinations_pages(Base.getDriver());
 
 	static ExcelReader reader=new ExcelReader();
 	static List<Map<String,String>> testData=null;
-
-	@Given("^User launch the application with url$")
-	public void user_launch_the_application_with_url() {
-		getURL(getProperty("url"));
-	}
-
-	@When("User enters the valid credential from the given excelsheet at {int}")
-	public void user_enters_the_valid_credential_from_the_given_excelsheet_at(Integer rowNumber) throws InvalidFormatException, IOException {
-		waitForPageLoad();
-		testData=null;
-		if(testData == null) {
-			testData = 
-					reader.getData("/Excelfiles/StageData.xlsx", getSheetEnv());
-
-			//System.out.println(testData);
-		}
-
-		String username = testData.get(rowNumber).get("username");
-		String password = testData.get(rowNumber).get("password");
-		//System.out.println(username+"---"+password);
-		EClogin.login(username, password);
-	}
-
-
-	@And("^User able to see the homepage$")
-	public void user_able_to_see_the_homepage() {
-		waitForPageLoad();
-
-	}
 
 	@Then("^User click on ExamAdministration tab$")
 	public void user_click_on_exam_administration_tab() 
 	{
 		StaticWait(3);
 		CreateExams.Exam_Administration();
-
 	}
 
 	@And("^User click on AddExam button under Examination tab$")
@@ -248,10 +218,16 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 	}
 	
 	//Enroll to an Exam
-	@Then("^Click on Users tab in homepage$")
-	public void click_on_users_tab_in_homepage() {
-	CreateExams.click_on_Users_tab();
+	@Then("User click on Administration tab")
+	public void user_click_on_administration_tab() {
+	   CreateExams.Adminstarationbtn();
 	}
+
+	@Then("Click on Provisioning tab")
+	public void click_on_provisioning_tab() {
+	  CreateExams.provisioning();
+	}
+
 
 	@And("User Search the Examtaker in Search here field {int}")
 	public void user_search_the_examtaker_in_search_here_field(Integer col9) throws InvalidFormatException, IOException {
@@ -288,8 +264,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 
 	@And("^User click on the Examinations dropdown$")
 	public void user_click_on_the_examinations_dropdown() {
-		CreateExams.click_on_exam_dropdown();
-	  
+		CreateExams.click_on_exam_dropdown();  
 	}
 
 	@Then("Select one Examinations name from excel {int}")

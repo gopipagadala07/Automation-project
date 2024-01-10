@@ -27,9 +27,10 @@ public class Loginpage_Stepdefinition extends ActionType {
 		getURL(getProperty("url"));
 	}
 	
-	@And("^User able to see pleaselogintoapp text$")
-	public void user_able_to_see_pleaselogtoapp_text() {
-		EClogin.pleaselogintoapp();
+	@And("User able to see all Fields in login page")
+	public void user_able_to_see_all_fields_in_login_page() {
+		StaticWait(2);
+	    EClogin.allFieldsDispayed();
 	}
 
 	@When("User enters the valid credential from the given excel sheet at {int}")
@@ -38,8 +39,7 @@ public class Loginpage_Stepdefinition extends ActionType {
 		if(testData == null) {
 			
 			testData = 
-					reader.getData("/Excelfiles/ProdData.xlsx", getSheetEnv());
-			
+					reader.getData("/Excelfiles/LoginCredentials.xlsx", getSheetEnv());	
 			System.out.println(testData);
 		}
 		

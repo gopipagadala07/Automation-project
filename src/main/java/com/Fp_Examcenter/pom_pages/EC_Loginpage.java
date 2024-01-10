@@ -23,7 +23,6 @@ public EC_Loginpage(WebDriver driver) {
 	}
 
 	public void pleaselogintoapp() {
-	
 	}
 	
 	public void enterUsername(String un) {
@@ -31,49 +30,25 @@ public EC_Loginpage(WebDriver driver) {
 		generateInfoReport("Username : " + un);
 	}
 
-//	public void enterUsername(String un, String user) {
-//		driver.findElement(Enterusername).sendKeys(un);
-//		generateInfoReport(user + " enters username as: " + un);
-//	}
-
 	public void enterPassword(String pwd) {
 		driver.findElement(EnterPassword).sendKeys(pwd);
-		generateInfoReport("Password : " + pwd);
-		
+		generateInfoReport("Password : " + pwd);		
 	}
-//	public void enterPassword(String pwd, String user) {
-//		driver.findElement(EnterPassword).sendKeys(pwd);
-//		generateInfoReport(user + " enters password as: " + pwd);
-//	}
 	
 	public void clickOnLogin() {
 		driver.findElement(Loginbutton).click();
 	}
-//	public void clickOnLogin(String user) {
-//		driver.findElement(Loginbutton).click();
-//		generateInfoReport(user + " click on login in button.");
-//	}
-	
-//	public void user_login(String un, String pwd, String user) {
-//		enterUsername(un, user);
-//		enterPassword(pwd, user);
-//		clickOnLogin(user);
-//	//	return new HomePage(driver);
-//	}
-//	
-	public  void login(String un, String pwd) {
+
+	public void login(String un, String pwd) {
 		enterUsername(un);
 		enterPassword(pwd);
 		clickOnLogin();
-	//	return new HomePage(driver);
 	}
-//	public String getPageTitle() {
-//		return driver.getTitle();
-//	}
-//	public void allFieldsDispayed() {
-//		isElementPresent(pleaselogintoapp, "Please Login to app");
-//		isElementPresent(Forgotpassword, "Forgot password link");
-//		isElementPresent(Remembermylogincheckbox, "Checkbox");
-//		isElementPresent(focalpointlogo, "Focalpoint logo");
-//	}
+
+	public void allFieldsDispayed() {
+		isElementPresent(pleaselogintoapp, "Please Login to app");
+		isElementPresent(Forgotpassword, "Forgot password link");
+		isElementPresent(Remembermylogincheckbox, "Checkbox");
+		isElementPresent(focalpointlogo, "Focalpoint logo");
+	}
 }
