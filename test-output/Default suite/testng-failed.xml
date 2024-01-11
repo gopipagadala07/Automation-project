@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Focalpoint_EC.runner.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
+      <class name="com.Focalpoint_EC.runner.Enrolled_ExamTaker_in_a_TimeSlotRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="beforeclass"/>
           <include name="tearDownClass"/>
+          <include name="beforeclass"/>
           <include name="runScenario" invocation-numbers="0"/>
           <include name="testDownClass"/>
         </methods>
-      </class> <!-- com.Focalpoint_EC.runner.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
+      </class> <!-- com.Focalpoint_EC.runner.Enrolled_ExamTaker_in_a_TimeSlotRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

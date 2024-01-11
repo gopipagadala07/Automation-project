@@ -22,9 +22,9 @@ import io.cucumber.testng.CucumberOptions;
 public class Login_pageRunner extends AbstractTestNGCucumberTests {
 	String testcasename;  // 
 	
-	@Parameters("browser")
+	//@Parameters("browser")
 	@BeforeClass
-	public void beforeclass(String browser) {
+	public void beforeclass(/*String browser*/) {
 
 		testcasename = this.getClass().getSimpleName();
 		System.out.println("***************** " + testcasename + " Test Starting *****************");

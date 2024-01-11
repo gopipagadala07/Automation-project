@@ -47,7 +47,7 @@ public class ApplicationHooks extends Base {
 
 	@After(order = 1)
 	public void quitBrowser() {
-		//driver.quit();
+		driver.quit();
 	}
 
 	@After(order = 2)

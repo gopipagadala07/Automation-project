@@ -1,6 +1,7 @@
 package com.Exam_Center.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -14,7 +15,9 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 
 	private By Enrollment = By.xpath("//span[text()='Enrollments']");
 	private By ExaminationLookup =By.xpath("//span[text()=' Print Exam Takers ']/../../../div[1]/mat-form-field/div/div/div/mat-select/div");
-	private By LocationLookup = By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]/mat-form-field");
+	private By ExaminationLookupText= By.xpath("//span[text()=' Print Exam Takers ']/../../../div[1]/mat-form-field/div/div/div/mat-select/div/div/span/span");
+	private By LocationLookup = By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]");
+	private By LocationLookupText=By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]/mat-form-field/div/div/div/mat-select/div/div/span/span");
 	private By TimeSlotTab = By.xpath("//*[text()='TIME SLOTS']");
 	private By AddNewButton = By.xpath("//span[contains(text(),'Add New ')]");
 	private By ExamTakerCount = By.xpath("//input[@data-placeholder='Exam Taker count allowed']");
@@ -25,53 +28,108 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	private By ClickOnMin = By.xpath("(//div[@class='timepicker-dial']/div/div/ngx-mat-timepicker-dial-control/input)[2]");
 	private By EndTime = By.xpath("//input[@name='end_time']");
 	private By OkButton = By.xpath("//span[contains(text(),'OK')] ");
-	private By SaveButton = By.xpath("//mat-icon[text()='save']");
-	
+	private By SaveButton = By.xpath("//mat-icon[text()='save']");	
 	private By TimeSlot_Lookup = By.xpath("(//div[text()='TIME SLOTS']/../../.././../../following-sibling::div/mat-tab-body/div/app-ec-enrollees/div[2]/mat-card/mat-card-content/div/div/mat-form-field/div/div/div/mat-select/div)[1]");
 	private By AddExamtaker = By.xpath("//mat-icon[text()='add']");
 	private By Notapprove = By.xpath("//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle/following-sibling::small");
 	private By approve = By.xpath("//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle");
 	private By Live = By.xpath("(//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle)[1]");
+	private By Header = By.xpath("//h2[@class='page-title section-header m-0']");
+	//private By H_enrollment = By.xpath("//h2[text()='Enrollments']");
+	private By Unassigned_Toggle1 = By.xpath("(//input[@type='search'])[1]/../../../../../../following-sibling::div/mat-slide-toggle/label/span/span/span[@class='mat-slide-toggle-thumb']");
 	
 
 
-
+	
 	public Create_TimeSlot_and_enroll_Examatker_Page(WebDriver driver)
 	{
 		this.driver = driver;
 	}
 	public void click_On_Enrollment_Tab()
 	{
+		
 		waitForElement(Enrollment);
-		driver.findElement(Enrollment).click();
+//		WebElement he1 = driver.findElement(H_enrollment);
+//		if(he1.isDisplayed())
+//		{			
+//		}
+//		else
+//		{
+			driver.findElement(Enrollment).click();
+//		}
 	}
-	public void click_On_Examination_Lookup() 
-	{
-		waitForElement(ExaminationLookup);
-		StaticWait(2);
-		WebElement e1=driver.findElement(ExaminationLookup);
-		e1.click();
-	}
+//	public void click_On_Examination_Lookup() 
+//	{
+//		waitForElement(ExaminationLookup);
+//		StaticWait(2);
+//		WebElement e1=driver.findElement(ExaminationLookup);
+//		Actions a=new Actions(driver);
+//		a.moveToElement(e1).perform();
+//		StaticWait(2);
+//		e1.click();
+//	}
 	public void select_the_Examination(String examination, String schedule) 
 	{
-		WebElement ele1=driver.findElement(By.xpath("//span[text()=' "+examination+" - "+schedule+" ']"));
-		ele1.click();
+		String ExamiantionName1=driver.findElement(ExaminationLookupText).getText();
+		String ExamiantionName2=(examination+" - "+schedule);
+		if (ExamiantionName1.equalsIgnoreCase(ExamiantionName2))
+		{			
+		}
+		else
+		{
+			WebElement e2 =driver.findElement(ExaminationLookup);
+			StaticWait(2);
+			e2.click();
+			WebElement ele1=driver.findElement(By.xpath("//span[text()=' "+examination+" - "+schedule+" ']"));
+			JavascriptExecutor j=(JavascriptExecutor) driver;	
+			j.executeScript("arguments[0].scrollIntoView();",ele1);
+			StaticWait(2);
+			ele1.click();
+		}
 		
 	}
-	public void click_On_Location_Lookup() 
-	{
-		waitForElement(LocationLookup);
-		driver.findElement(LocationLookup).click();;
-
-	}
+//	public void click_On_Location_Lookup() 
+//	{
+////		waitForElement(LocationLookup);
+////		WebElement e2 =driver.findElement(LocationLookup);
+////		Actions a=new Actions(driver);
+////		a.moveToElement(e2).perform();
+////		StaticWait(2);
+////		e2.click();
+////		
+//	}
 	public void select_the_Location(String Location) 
 	{
-		WebElement ele2=driver.findElement(By.xpath("//span[contains(text(),'"+Location+"')]"));
-		ele2.click();
+		String Locationname = driver.findElement(LocationLookupText).getText();
+		if (Locationname.equalsIgnoreCase(Location))
+		{
+			//driver.findElement(TimeSlotTab).click();
+		}
+		else
+		{
+			WebElement e2 =driver.findElement(LocationLookup);
+			e2.click();
+			StaticWait(2);
+			WebElement ele2=driver.findElement(By.xpath("//span[contains(text(),'"+Location+"')]"));
+			Actions a = new Actions(driver);
+			a.moveToElement(ele2).click().build().perform();
+			StaticWait(2);
+			
+		}
+//		StaticWait(2);
+//		WebElement ele2=driver.findElement(By.xpath("//span[contains(text(),'"+Location+"')]"));
+//		JavascriptExecutor j=(JavascriptExecutor) driver;	
+//		j.executeScript("arguments[0].scrollIntoView();",ele2);
+//		StaticWait(2);
+//		ele2.click();
 	}
 	public void click_on_TimeslotTab() 
 	{
-		driver.findElement(TimeSlotTab).click();
+		StaticWait(1);
+		driver.findElement(Header).click();
+		StaticWait(1);
+		driver.findElement(TimeSlotTab).click();;
+	
 	}
 	public void Add_New_TimeSlot() 
 	{
@@ -144,7 +202,9 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void clickon_SaveButton() 
 	{
+		StaticWait(1);
 		driver.findElement(SaveButton).click();
+		StaticWait(1);
 	}
 	public void click_on_Time_slot_Lookup()
 	{
@@ -154,10 +214,6 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void select_the_TimeSlot(String Sh,String Smin, String Eh, String Emin)
 	{
-//		WebElement amam = driver.findElement(By.xpath("//span[text()='"+Sh+":"+Smin+"AM']/following-sibling::span[text()='"+Eh+":"+Emin+"AM']"));
-//		WebElement pmam = driver.findElement(By.xpath("//span[text()='"+Sh+":"+Smin+"PM']/following-sibling::span[text()='"+Eh+":"+Emin+"AM']"));
-//		WebElement ampm = driver.findElement(By.xpath("//span[text()='"+Sh+":"+Smin+"AM']/following-sibling::span[text()='"+Eh+":"+Emin+"PM']"));
-//		WebElement pmpm = driver.findElement(By.xpath("//span[text()='"+Sh+":"+Smin+"PM']/following-sibling::span[text()='"+Eh+":"+Emin+"PM']"));
 		
 		int ish = Integer.parseInt(Sh);
 		int ieh = Integer.parseInt(Eh);
@@ -198,7 +254,12 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void search_Examtaker_under_enrollment(String ExamTaker_Ln,String ExamTaker_Fn)
 	{
-		driver.findElement(By.xpath("(//input[@type='search'])[1]")).sendKeys(ExamTaker_Ln+" "+ExamTaker_Fn);
+		StaticWait(2);
+		driver.findElement(Unassigned_Toggle1).click();
+		driver.findElement(By.xpath("(//input[@type='search'])[1]")).sendKeys(ExamTaker_Ln+" ");
+		StaticWait(1);
+		driver.findElement(By.xpath("(//input[@type='search'])[1]")).sendKeys(ExamTaker_Fn);
+		StaticWait(1);
 	}
 	public void addExamtaker()
 	{
@@ -206,7 +267,11 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void search_Examtaker_in_a_Timeslot(String ExamTaker_Ln,String ExamTaker_Fn)
 	{
-		driver.findElement(By.xpath("(//input[@type='search'])[2]")).sendKeys(ExamTaker_Ln+" "+ExamTaker_Fn);
+		StaticWait(2);
+		driver.findElement(By.xpath("(//input[@type='search'])[2]")).sendKeys(ExamTaker_Ln+" ");
+		StaticWait(1);
+		driver.findElement(By.xpath("(//input[@type='search'])[2]")).sendKeys(ExamTaker_Fn);
+		StaticWait(1);
 	}
 	public void approve_and_Live_the_Examtaker()
 	{
@@ -216,6 +281,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 		{
 			driver.findElement(approve).click();
 			waitForElement(Live);
+			StaticWait(2);
 			driver.findElement(Live).click();
 		}		
 	}

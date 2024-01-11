@@ -5,42 +5,20 @@ import java.util.List;
 import java.util.Map;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import com.Exam_Center.pages.Create_TimeSlot_and_enroll_Examatker_Page;
-import com.Exam_Center.pages.Login_page;
 import com.FP_Examcenter.util.ActionType;
 import com.FP_Examcenter.util.Base;
 import com.FP_Examcenter.util.ExcelReader;
+
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination extends ActionType
 {
-	private Login_page loginpage = new Login_page(Base.getDriver());
 	private Create_TimeSlot_and_enroll_Examatker_Page createt_ts_and_enroll_examatker = new Create_TimeSlot_and_enroll_Examatker_Page(Base.getDriver());
 	static ExcelReader reader = new ExcelReader();
 	static List<Map<String,String>> testData = null;
 
-//	@Given("User launch the application with valid URL")
-//	public void user_launch_the_application_with_valid_url() 
-//	{
-//		getURL(getProperty("url"));
-//	}
-//
-//	@And("User enters the credentials from the given admin excel sheet at {int}")
-//	public void user_enters_the_credentials_from_the_given_admin_excel_sheet_at_row_number_i_complete_action(Integer RowNumber) throws InvalidFormatException, IOException 
-//	{
-//		testData = null;
-//		waitForPageLoad();
-//		if(testData == null)
-//		{
-//			testData = reader.getData("/ExcelFiles/LoginCredentials.xlsx", getSheetEnv());
-//			//				System.out.println(testData);
-//			String username = testData.get(RowNumber).get("username");
-//			String password = testData.get(RowNumber).get("password");
-//			loginpage.user_login(username, password);
-//		}
-//	}
 
 	@Then("User click on Enrollment")
 	public void user_click_on_enrollment() 
@@ -48,21 +26,19 @@ public class Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination extends Act
 		waitForPageLoad();
 		createt_ts_and_enroll_examatker.click_On_Enrollment_Tab();
 	}
-
-	@When("User click on the Examination Lookup")
-	public void user_click_on_the_examination()   
-	{
-		waitForPageLoad();
-		createt_ts_and_enroll_examatker.click_On_Examination_Lookup();
-	}
-	@Then("User Select the Examination {int}")
+//	@When("User click on the Examination Lookup")
+//	public void user_click_on_the_examination()   
+//	{
+//		waitForPageLoad();
+//		createt_ts_and_enroll_examatker.click_On_Examination_Lookup();
+//	}
+	@When("User Select the Examination {int}")
 	public void user_select_the_examination(Integer erownumber) throws InvalidFormatException, IOException 
 	{
 		testData = null;
 		if(testData == null)
 		{
 			testData = reader.getData("/ExcelFiles/Examtaker_Details.xlsx", getSheetEnv());
-			System.out.println(testData+"1");
 			String Examination = testData.get(erownumber).get("Examination");
 			String Schedule = testData.get(erownumber).get("Schedule");
 			createt_ts_and_enroll_examatker.select_the_Examination(Examination, Schedule);
@@ -72,11 +48,11 @@ public class Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination extends Act
 			System.out.println("testData is null");
 		}
 	}
-	@When("User click on the Location Lookup")
-	public void user_click_on_the_location_lookup() 
-	{
-		createt_ts_and_enroll_examatker.click_On_Location_Lookup();
-	}
+//	@When("User click on the Location Lookup")
+//	public void user_click_on_the_location_lookup() 
+//	{
+//		createt_ts_and_enroll_examatker.click_On_Location_Lookup();
+//	}
 
 	@Then("User Select the Location {int}")
 	public void user_select_the_location(Integer lrownumber) throws InvalidFormatException, IOException 
@@ -85,7 +61,6 @@ public class Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination extends Act
 		if(testData == null)
 		{
 			testData = reader.getData("/ExcelFiles/Examtaker_Details.xlsx", getSheetEnv());
-			System.out.println(testData+"1");
 			String Location = testData.get(lrownumber).get("Location");
 			createt_ts_and_enroll_examatker.select_the_Location(Location);
 		}
@@ -94,7 +69,7 @@ public class Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination extends Act
 			System.out.println("testData is null");
 		}
 	}
-	@Then("User click on TimeSlot Tab")
+	@And("User click on TimeSlot Tab")
 	public void user_click_on_time_slot_tab() 
 	{
 		createt_ts_and_enroll_examatker.click_on_TimeslotTab();

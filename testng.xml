@@ -5,10 +5,8 @@
 	  <parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.Focalpoint_EC.runner.Login_pageRunner"></class>
-			<class name="com.Focalpoint_EC.runner.Create_Time_Slot_Runner"></class>
-			<class name="com.Focalpoint_EC.runner.Enroll_Examataker_at_procter_side_Runner"></class>
-		    <class name="com.Focalpoint_EC.runner.Procter_CommentRunner.java"></class>
-		    <class name="com.Focalpoint_EC.runner.Remove_ExamTaker_from_TimeslotRunner.java"></class>
+			<class name="com.Focalpoint_EC.runner.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"></class>
+			<class name="com.Focalpoint_EC.runner.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>
 		</classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
