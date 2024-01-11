@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
+
 import Com.Examcenter.Utils.ActionType;
 
 public class ExamtakerSubmissionPage extends ActionType{
@@ -22,7 +24,7 @@ public class ExamtakerSubmissionPage extends ActionType{
 	By validatebtn=By.xpath("//button[@aria-label='Validate']");
 	By begintest=By.xpath("//button[@aria-label='Begin Test']");
 	By Qcount=By.xpath("//div[@id='navigationSideMenu']/ul/li/p/button");
-	By mcqAnswer=By.xpath("//li[@class='qti_readaloud blackColorScheme normalFontSize'][2]");
+	By mcqAnswer=By.xpath("//li[@class='qti_readaloud blackColorScheme normalFontSize'][1]");
 	By frame=By.xpath("//iframe[@frameborder='0']");
 	By ExtendedTypeAnswer=By.xpath("//body[@contenteditable='true']");
 	By blankAnswer=By.xpath("//input[@id='txtEditorInteraction']");
@@ -97,7 +99,7 @@ public class ExamtakerSubmissionPage extends ActionType{
 		waitForElement(Submit);
 		StaticWait(1);
 		driver.findElement(Submit).click();
-		StaticWait(1);
+		StaticWait(2);
 	}
 	public void close()
 	{
@@ -107,7 +109,7 @@ public class ExamtakerSubmissionPage extends ActionType{
 	public void statusband()
 	{
 		String band=driver.findElement(statusband).getText();
-		System.out.println(band);
+		ExtentCucumberAdapter.addTestStepLog(band);
 		StaticWait(2);
 	}
 	public void logout()

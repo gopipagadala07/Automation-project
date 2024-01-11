@@ -20,7 +20,7 @@ public class MyProfilePage extends ActionType{
 	By upload=By.xpath("//mat-icon[text()='backup']");
 	By file=By.xpath("//h3[text()='Please Select a picture to upload']/../div/input");
 	By minimize=By.xpath("//span[@class='fa fa-search-minus']");
-	By saveimg=By.xpath("//span[text()=' Save Image ']");
+	By saveimg=By.xpath("//span[text()=' Save Profile Picture ']");
 	By changepwd=By.xpath("//mat-icon[text()='edit']");
 	By oldpwd=By.xpath("(//input[@type='text'])[5]");
 	By Newpwd=By.xpath("(//input[@type='password'])[1]");
@@ -57,11 +57,15 @@ public class MyProfilePage extends ActionType{
 		waitForElement(profile);
 		driver.findElement(profile).sendKeys(Keys.CONTROL,"a",Keys.CLEAR);
 		StaticWait(1);
-		WebElement d=driver.findElement(profile);
-		if(d.isDisplayed())
-		{
-			d.sendKeys(Description);
-		}
+//		WebElement d=driver.findElement(profile);
+//		if(d.isDisplayed())
+//		{
+//			d.sendKeys(Description);
+//		}
+//		else
+//		{
+//			System.out.println("No Profile Description");
+//		}
 		
 	}
 	public void uploadProfile(String path)
@@ -72,14 +76,17 @@ public class MyProfilePage extends ActionType{
 		driver.findElement(file).sendKeys(path);
 		StaticWait(1);
 	    driver.findElement(minimize).click();
-	    driver.findElement(saveimg).click();
+		WebElement e1=driver.findElement(saveimg);
+		JavascriptExecutor j=(JavascriptExecutor) driver;
+		j.executeScript("arguments[0].scrollIntoView()",e1);
+		e1.click();
 	
 	}
 	public void changepwd(String OldPwd,String NewPwd,String CnfmPwd)
 	{
 		driver.findElement(changepwd).click();
 		waitForElement(oldpwd);
-		StaticWait(1);
+		StaticWait(2);
 		driver.findElement(oldpwd).sendKeys(OldPwd);
 		driver.findElement(Newpwd).sendKeys(NewPwd);
 		driver.findElement(reenterpwd).sendKeys(CnfmPwd);
@@ -89,7 +96,8 @@ public class MyProfilePage extends ActionType{
 	}
 	public void profileSave()
 	{
-		StaticWait(2);
+		StaticWait(1);
 		driver.findElement(profilesave).click();
+		StaticWait(1);
 	}
 }

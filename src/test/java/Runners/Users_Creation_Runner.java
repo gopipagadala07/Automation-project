@@ -17,9 +17,9 @@ public class Users_Creation_Runner extends AbstractTestNGCucumberTests{
 
 	String testcaseName;
 	
-	//@Parameters("browser")
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeclass(/*String browser*/)
+	public void beforeclass(String browser)
 	{
 		testcaseName = this.getClass().getSimpleName();
 		System.out.println("*******"+testcaseName+" - Testcase started ********");

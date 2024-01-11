@@ -39,10 +39,10 @@ public class MyProfileStepDefinitions extends ActionType{
 		}
 		String email=testdata.get(editDetails).get("Email");
 		String  ZoomId=testdata.get(editDetails).get("Zoom ID");
-		String desc=testdata.get(editDetails).get("Description");
+		//String desc=testdata.get(editDetails).get("Description");
 		profile.edtEmail(email);
 		profile.zoomid(ZoomId);
-		profile.profiledesc(desc);
+		//profile.profiledesc(desc);
 	}
 
 	@And("User Upload the profile Picture with {int}")

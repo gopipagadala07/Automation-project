@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Runners.AssessmentSubmissionRunner">
+      <class name="Runners.MyProfileRunner">
         <methods>
-          <include name="setUpClass"/>
           <include name="afterClass"/>
-          <include name="beforeClass"/>
+          <include name="setUpClass"/>
+          <include name="beforeclass"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario" invocation-numbers="0 1 2"/>
         </methods>
-      </class> <!-- Runners.AssessmentSubmissionRunner -->
+      </class> <!-- Runners.MyProfileRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

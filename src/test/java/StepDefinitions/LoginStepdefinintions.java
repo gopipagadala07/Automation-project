@@ -39,9 +39,11 @@ public class LoginStepdefinintions extends ActionType{
 		{
 			testdata=reader.getData("/Excel/Credentials.xlsx", getSheetEnv());
 		}
-		String username=testdata.get(rownumber).get("username");
+		String FtName=testdata.get(rownumber).get("FirstName");
+		String LtName=testdata.get(rownumber).get("LastName");
+		String Tid=testdata.get(rownumber).get("Tenant ID");
 		String password=testdata.get(rownumber).get("password");
-		login.User_login(username, password);
+		login.User_login(FtName,LtName,Tid, password);
 		
 	}
 

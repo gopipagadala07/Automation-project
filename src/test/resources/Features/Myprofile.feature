@@ -14,3 +14,5 @@ Feature: Checking the My profile Page Functionality
     Examples: 
       | Login | UserDetails |
       |     0 |           0 |
+      |     1 |           0 |
+      |     2 |           0 |
