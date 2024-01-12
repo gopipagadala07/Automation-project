@@ -16,7 +16,6 @@ import io.cucumber.testng.CucumberOptions;
 		dryRun = false
 		)
 
-
 public class Location_Runner extends AbstractTestNGCucumberTests {
 	String testcasename;
 	

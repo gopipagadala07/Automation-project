@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Chrome test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Dec 30 15:08:45 IST 2023</td>
+<td>Started on:</td><td>Fri Jan 12 10:16:52 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>35 seconds (35353 ms)</td>
+<tr><td>Total time:</td><td>53 seconds (53702 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,66 +67,23 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='com.Fp_Ec.runner.EcLoginpage_Runner.runScenario()'><b>runScenario</b><br>Test class: com.Fp_Ec.runner.EcLoginpage_Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "FocalPoint Exam_Center login test with valid credentials scenario", "FocalPoint Exam_Center Login functionality"</td>
+<td></td>
+<td>19</td>
+<td>com.Fp_Ec.runner.EcLoginpage_Runner@7bba5817</td></tr>
+<tr>
 <td title='com.Fp_Ec.runner.Location_Runner.runScenario()'><b>runScenario</b><br>Test class: com.Fp_Ec.runner.Location_Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Exam_Center AddEdit Location scenario", "Exam_Center Location feature"</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input _ngcontent-ntr-c83=&quot;&quot; matinput=&quot;&quot; class=&quot;mat-input-element mat-form-field-autofill-control ng-tns-c81-12 ng-pristine ng-invalid cdk-text-field-autofill-monitored ng-touched&quot; type=&quot;text&quot; required=&quot;&quot; id=&quot;mat-input-4&quot; aria-required=&quot;true&quot; aria-describedby=&quot;mat-error-0&quot;&gt; is not clickable at point (635, 221). Other element would receive the click: &lt;input _ngcontent-ntr-c83=&quot;&quot; matinput=&quot;&quot; class=&quot;mat-input-element mat-form-field-autofill-control ng-tns-c81-19 ng-untouched ng-pristine ng-valid cdk-text-field-autofill-monitored&quot; type=&quot;text&quot; required=&quot;&quot; id=&quot;mat-input-10&quot; aria-invalid=&quot;false&quot; aria-required=&quot;true&quot;&gt;
-  (Session info: chrome=120.0.6099.130)
-Build info: version: &apos;4.15.0&apos;, revision: &apos;1d14b5521b&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b14d22d54d7724ddc79ddd343ebe7961, clickElement {id=46F0CFF68CC310CA4C7D00CD5B474C98_element_54}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57036}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57036/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (b14d22d54d7724ddc79ddd343ebe7961)] -&gt; xpath: (//input[@type=&apos;text&apos;])[1]]
-Session ID: b14d22d54d7724ddc79ddd343ebe7961
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at com.Fp_Examcenter.pom_pages.Location_pom.Edit_Location_name(Location_pom.java:68)
-	at StepDefinitions.Location_Stepdefinition.user_edited_the_location_name(Location_Stepdefinition.java:125)
-	at ✽.User edited the Location name 0(file:///E:/Examcenter_workspace/Automation_Cucumber_EC/src/test/resources/Ec_features/Location.feature:14)
-... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1331644236", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1331644236'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input _ngcontent-ntr-c83=&quot;&quot; matinput=&quot;&quot; class=&quot;mat-input-element mat-form-field-autofill-control ng-tns-c81-12 ng-pristine ng-invalid cdk-text-field-autofill-monitored ng-touched&quot; type=&quot;text&quot; required=&quot;&quot; id=&quot;mat-input-4&quot; aria-required=&quot;true&quot; aria-describedby=&quot;mat-error-0&quot;&gt; is not clickable at point (635, 221). Other element would receive the click: &lt;input _ngcontent-ntr-c83=&quot;&quot; matinput=&quot;&quot; class=&quot;mat-input-element mat-form-field-autofill-control ng-tns-c81-19 ng-untouched ng-pristine ng-valid cdk-text-field-autofill-monitored&quot; type=&quot;text&quot; required=&quot;&quot; id=&quot;mat-input-10&quot; aria-invalid=&quot;false&quot; aria-required=&quot;true&quot;&gt;
-  (Session info: chrome=120.0.6099.130)
-Build info: version: &apos;4.15.0&apos;, revision: &apos;1d14b5521b&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b14d22d54d7724ddc79ddd343ebe7961, clickElement {id=46F0CFF68CC310CA4C7D00CD5B474C98_element_54}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57036}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57036/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (b14d22d54d7724ddc79ddd343ebe7961)] -&gt; xpath: (//input[@type=&apos;text&apos;])[1]]
-Session ID: b14d22d54d7724ddc79ddd343ebe7961
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at com.Fp_Examcenter.pom_pages.Location_pom.Edit_Location_name(Location_pom.java:68)
-	at StepDefinitions.Location_Stepdefinition.user_edited_the_location_name(Location_Stepdefinition.java:125)
-	at ✽.User edited the Location name 0(file:///E:/Examcenter_workspace/Automation_Cucumber_EC/src/test/resources/Ec_features/Location.feature:14)
-</pre></div></td>
-<td>33</td>
-<td>com.Fp_Ec.runner.Location_Runner@33065d67</td></tr>
+<td></td>
+<td>28</td>
+<td>com.Fp_Ec.runner.Location_Runner@4a83a74a</td></tr>
 </table><p>
 </body>
 </html>

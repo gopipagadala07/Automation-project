@@ -19,7 +19,6 @@ public class ApplicationHooks extends Base {
 	@Before(order = 0)
 	public void getProperty() {
 		initProperties();
-
 	}
 
 	@Before(order = 1)
@@ -29,13 +28,11 @@ public class ApplicationHooks extends Base {
 		driverFactory = new Base();
 		driver = driverFactory.init_driver(browserName);
 		driver.manage().deleteAllCookies();
-
 	}
 
 	@Before(order = 2)
 	public void beforeScenarioStart() {
 		Logs.info("-----------------Start of Scenario-----------------");
-
 	}
 
 	@After(order = 0)
@@ -55,7 +52,6 @@ public class ApplicationHooks extends Base {
 			String screenshotName = scenario.getName().replaceAll(" ", "_");
 			byte[] sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 			scenario.attach(sourcePath, "image/png", screenshotName);
-
 		}
 	}
 

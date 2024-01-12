@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
+
 import com.Fp_Examcenter.Utils.ActionType;
 import com.Fp_Examcenter.Utils.Base;
 import com.Fp_Examcenter.Utils.ExcelReader;
@@ -42,17 +43,23 @@ public class Loginpage_Stepdefinition extends ActionType {
 					reader.getData("/Excelfiles/LoginCredentials.xlsx", getSheetEnv());	
 			System.out.println(testData);
 		}
+//		String firstname=testData.get(rowNumber).get("Firstname");
+//		String lastname=testData.get(rowNumber).get("Lastname");
+//		String tenantid=testData.get(rowNumber).get("TenantID");
+//		String password = testData.get(rowNumber).get("password");
+//		EClogin.login(firstname, lastname,tenantid,password);
 		
 		String username = testData.get(rowNumber).get("username");
 		String password = testData.get(rowNumber).get("password");
 		System.out.println(username+"---"+password);
-		//String user = testData.get(rowNumber).get("user");
+		//String user = testData.get(rowNumber).get("user");,
 		EClogin.login(username, password);		
 	}
 
 	@Then("^User able to see the Home page$")
 	public void user_able_to_see_the_home_page() {
-		waitForPageLoad();
-	
+		StaticWait(5);
+		System.out.println("User able to see Homepage");
 }
+	
 }

@@ -1,4 +1,4 @@
-Feature: Examcenter complete Examinations and Schedule feature
+Feature: Examcenter Creation of Examinations Schedules and Examtaker Enrollments feature
 
   Scenario Outline: Controller Creating Examinations in Examcenter
     Given User launch the application

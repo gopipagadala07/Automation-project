@@ -26,7 +26,6 @@ String testcasename;
 	@BeforeClass
 	public void beforeclass(/*String browser*/) {
 		
-
 		testcasename = this.getClass().getSimpleName();
 		System.out.println("***************** " + testcasename + " Test Starting *****************");
 
