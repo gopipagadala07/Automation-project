@@ -1,0 +1,31 @@
+2024-01-09 12:13:29,005 INFO  [rootLogger] Enviornment is : STAGE
+2024-01-09 12:13:29,008 INFO  [rootLogger] Browser value is: CHROME
+2024-01-09 12:13:30,615 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-09 12:13:30,616 INFO  [rootLogger] Loading URL ... https://ade-stage.backpack.education/
+2024-01-09 12:13:40,043 INFO  [rootLogger] Passed: Login to app text is present in the page as expected
+		Locator: By.xpath: //div[@class='text-center m-b-md']/h3
+2024-01-09 12:13:40,125 INFO  [rootLogger] Passed: Forgot password is present in the page as expected
+		Locator: By.xpath: //a[text()='Forgot password']
+2024-01-09 12:13:40,201 INFO  [rootLogger] Passed: Remember my login is present in the page as expected
+		Locator: By.xpath: //input[@type='checkbox']
+2024-01-09 12:14:22,431 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-01-09 12:14:22,439 INFO  [rootLogger] Browser value is: CHROME
+2024-01-09 12:14:23,446 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-09 12:14:23,446 INFO  [rootLogger] Loading URL ... https://ade-stage.backpack.education/
+2024-01-09 12:14:32,139 INFO  [rootLogger] Passed: Login to app text is present in the page as expected
+		Locator: By.xpath: //div[@class='text-center m-b-md']/h3
+2024-01-09 12:14:32,202 INFO  [rootLogger] Passed: Forgot password is present in the page as expected
+		Locator: By.xpath: //a[text()='Forgot password']
+2024-01-09 12:14:32,257 INFO  [rootLogger] Passed: Remember my login is present in the page as expected
+		Locator: By.xpath: //input[@type='checkbox']
+2024-01-09 12:15:17,547 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-01-09 12:15:17,558 INFO  [rootLogger] Browser value is: CHROME
+2024-01-09 12:15:18,574 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-09 12:15:18,574 INFO  [rootLogger] Loading URL ... https://ade-stage.backpack.education/
+2024-01-09 12:15:28,355 INFO  [rootLogger] Passed: Login to app text is present in the page as expected
+		Locator: By.xpath: //div[@class='text-center m-b-md']/h3
+2024-01-09 12:15:28,430 INFO  [rootLogger] Passed: Forgot password is present in the page as expected
+		Locator: By.xpath: //a[text()='Forgot password']
+2024-01-09 12:15:28,498 INFO  [rootLogger] Passed: Remember my login is present in the page as expected
+		Locator: By.xpath: //input[@type='checkbox']
+2024-01-09 12:16:12,222 INFO  [rootLogger] -----------------End of Scenario-----------------

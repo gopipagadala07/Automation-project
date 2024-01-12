@@ -4,6 +4,7 @@
   <test thread-count="5" name="Chrome test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
+<<<<<<< HEAD
       <class name="com.Fp_Ec.runner.EcLoginpage_Runner">
         <methods>
           <include name="setUpClass"/>
@@ -13,6 +14,26 @@
           <include name="testDownClass"/>
         </methods>
       </class> <!-- com.Fp_Ec.runner.EcLoginpage_Runner -->
+=======
+      <class name="Runners.Users_Creation_Runner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="beforeclass"/>
+          <include name="Afterclass"/>
+          <include name="runScenario" invocation-numbers="0 1 2"/>
+        </methods>
+      </class> <!-- Runners.Users_Creation_Runner -->
+      <class name="Runners.LoginPageRunner">
+        <methods>
+          <include name="beforeclass"/>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="1 2"/>
+          <include name="testDownClass"/>
+        </methods>
+      </class> <!-- Runners.LoginPageRunner -->
+>>>>>>> refs/remotes/origin/Sub_Branch
     </classes>
   </test> <!-- Chrome test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
