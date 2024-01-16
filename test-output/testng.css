@@ -9,6 +9,17 @@
 }
 
 =======
+<<<<<<< HEAD
+.invocation-failed,  .test-failed  { background-color: #DD0000; }
+.invocation-percent, .test-percent { background-color: #006600; }
+.invocation-passed,  .test-passed  { background-color: #00AA00; }
+.invocation-skipped, .test-skipped { background-color: #CCCC00; }
+
+.main-page {
+  font-size: x-large;
+}
+
+=======
 .invocation-failed,  .test-failed  { background-color: #DD0000; }
 .invocation-percent, .test-percent { background-color: #006600; }
 .invocation-passed,  .test-passed  { background-color: #00AA00; }
@@ -19,3 +30,4 @@
 }
 
 >>>>>>> refs/remotes/origin/Sub_Branch
+>>>>>>> refs/remotes/origin/main
