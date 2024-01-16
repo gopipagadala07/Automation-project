@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <extentreports>
 	<configuration>
@@ -50,4 +51,91 @@
       ]]>
 		</styles>
 	</configuration>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+	<configuration>
+		<!-- report theme -->
+<<<<<<< HEAD
+		<!-- standard, dark -->
+		<theme>standard</theme>
+		
+		<!-- document encoding -->
+		<!-- defaults to UTF-8 -->
+		<encoding>UTF-8</encoding>
+		
+		<!-- protocol for script and stylesheets -->
+		
+		<!-- offline report -->
+		<timelineEnabled>true</timelineEnabled>
+
+		<!-- offline report -->
+		<enableOfflineMode>false</enableOfflineMode>
+
+		<!-- defaults to https -->
+		<protocol>http</protocol>
+		
+		<!-- title of the document -->
+		<documentTitle>Focalpointk12 Examcenter</documentTitle>
+		
+		<!-- report name - displayed at top-nav -->
+		<reportName>Automation Report</reportName>
+		
+		<!-- location of charts in the test view -->
+
+		<!-- top, bottom -->
+		<testViewChartLocation>bottom</testViewChartLocation>
+		
+=======
+
+		<!-- standard, dark -->
+
+		<theme>standard</theme>
+		<!-- document encoding -->
+
+		<!-- defaults to UTF-8 -->
+
+		<encoding>UTF-8</encoding>
+		<!-- protocol for script and stylesheets -->
+
+		<!-- offline report -->
+		<timelineEnabled>true</timelineEnabled>
+
+		<!-- offline report -->
+		<enableOfflineMode>false</enableOfflineMode>
+
+		<!-- defaults to https -->
+
+		<protocol>http</protocol>
+		<!-- title of the document -->
+		<documentTitle>Examcenter</documentTitle>
+		<!-- report name - displayed at top-nav -->
+
+		<reportName>Automation Report</reportName>
+		<!-- location of charts in the test view -->
+
+		<!-- top, bottom -->
+		<testViewChartLocation>bottom</testViewChartLocation>
+		
+		<!-- timestamp format -->
+		<timeStampFormat>MMM dd, yyyy HH:mm:ss</timeStampFormat>
+
+>>>>>>> refs/remotes/origin/Sub_Branch
+		<!-- custom javascript -->
+		<scripts>
+            <![CDATA[
+        $(document).ready(function() {
+
+        });
+      ]]>
+		</scripts>
+
+		<!-- custom styles -->
+		<styles>
+            <![CDATA[
+
+      ]]>
+		</styles>
+	</configuration>
+>>>>>>> refs/remotes/origin/main
 </extentreports>

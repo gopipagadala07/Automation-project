@@ -1,0 +1,15 @@
+2024-01-11 18:20:57,194 INFO  [rootLogger] Enviornment is : PROD
+2024-01-11 18:20:57,198 INFO  [rootLogger] Browser value is: CHROME
+2024-01-11 18:20:58,893 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-11 18:20:58,894 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
+2024-01-11 18:21:07,809 INFO  [rootLogger] Passed: Please Login to app is present in the page as expected
+		Locator: By.xpath: //div[@class='text-center m-b-md']
+2024-01-11 18:21:07,850 INFO  [rootLogger] Passed: Forgot password link is present in the page as expected
+		Locator: By.linkText: Forgot password
+2024-01-11 18:21:07,880 INFO  [rootLogger] Passed: Checkbox is present in the page as expected
+		Locator: By.xpath: //input[@type='checkbox']
+2024-01-11 18:21:07,911 INFO  [rootLogger] Passed: Focalpoint logo is present in the page as expected
+		Locator: By.xpath: //img[@alt='FocalpointK12 inc.']
+2024-01-11 18:21:08,624 INFO  [rootLogger] Info: Username : prod22.controller.5
+2024-01-11 18:21:08,692 INFO  [rootLogger] Info: Password : @Abcd1234
+2024-01-11 18:21:14,947 INFO  [rootLogger] -----------------End of Scenario-----------------

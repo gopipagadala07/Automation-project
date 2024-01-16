@@ -3,6 +3,7 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.Focalpoint_EC.runner.Enrolled_ExamTaker_in_a_TimeSlotRunner">
         <methods>
           <include name="setUpClass"/>
@@ -12,6 +13,29 @@
           <include name="testDownClass"/>
         </methods>
       </class> <!-- com.Focalpoint_EC.runner.Enrolled_ExamTaker_in_a_TimeSlotRunner -->
+=======
+<<<<<<< HEAD
+      <class name="com.Fp_Ec.runner.EcLoginpage_Runner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="beforeclass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="testDownClass"/>
+        </methods>
+      </class> <!-- com.Fp_Ec.runner.EcLoginpage_Runner -->
+=======
+      <class name="Runners.MyProfileRunner">
+        <methods>
+          <include name="afterClass"/>
+          <include name="setUpClass"/>
+          <include name="beforeclass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0 1 2"/>
+        </methods>
+      </class> <!-- Runners.MyProfileRunner -->
+>>>>>>> refs/remotes/origin/Sub_Branch
+>>>>>>> refs/remotes/origin/main
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

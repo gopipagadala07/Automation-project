@@ -1,15 +1,16 @@
-package appHooks;
+package AppHooks;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import com.Exam_Center.util.Base;
-import com.Exam_Center.util.Logs;
+
 //import com.focalpointk12.factory.DriverFactory;
+import com.Fp_Examcenter.Utils.Base;
+import com.Fp_Examcenter.Utils.Logs;
+
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-
 public class ApplicationHooks extends Base {
 
 	private Base driverFactory;
@@ -18,7 +19,6 @@ public class ApplicationHooks extends Base {
 	@Before(order = 0)
 	public void getProperty() {
 		initProperties();
-
 	}
 
 	@Before(order = 1)
@@ -28,13 +28,11 @@ public class ApplicationHooks extends Base {
 		driverFactory = new Base();
 		driver = driverFactory.init_driver(browserName);
 		driver.manage().deleteAllCookies();
-
 	}
 
 	@Before(order = 2)
 	public void beforeScenarioStart() {
 		Logs.info("-----------------Start of Scenario-----------------");
-
 	}
 
 	@After(order = 0)
