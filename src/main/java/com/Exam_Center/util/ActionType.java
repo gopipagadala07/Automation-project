@@ -1,11 +1,12 @@
-package com.FP_Examcenter.util;
-
-import static com.FP_Examcenter.util.UtilityMethods.getException;
+package com.Exam_Center.util;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
+import static com.Exam_Center.util.UtilityMethods.getException;
+
 import java.time.Duration;
 
 import org.apache.commons.lang3.RandomStringUtils;
@@ -23,7 +24,7 @@ import com.google.common.base.Function;
 /**
  * This class has common utility methods
  * 
- * @author anamika.p
+ *
  *
  */
 public class ActionType extends Base {

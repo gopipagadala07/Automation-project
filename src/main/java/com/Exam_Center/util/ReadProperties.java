@@ -1,4 +1,4 @@
-package com.FP_Examcenter.util;
+package com.Exam_Center.util;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

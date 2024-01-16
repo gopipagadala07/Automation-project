@@ -2,8 +2,8 @@ package stepDefinations;
 
 
 import com.Exam_Center.pages.Enrolled_ExamTaker_in_the_Timeslot_Page;
-import com.FP_Examcenter.util.ActionType;
-import com.FP_Examcenter.util.Base;
+import com.Exam_Center.util.ActionType;
+import com.Exam_Center.util.Base;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

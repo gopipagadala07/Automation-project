@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.FP_Examcenter.util.ActionType;
+import com.Exam_Center.util.ActionType;
 
 public class Login_page extends ActionType
 {

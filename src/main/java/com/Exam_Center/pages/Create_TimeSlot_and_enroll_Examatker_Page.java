@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import com.FP_Examcenter.util.ActionType;
+import com.Exam_Center.util.ActionType;
 
 public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 {

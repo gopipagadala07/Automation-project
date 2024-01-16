@@ -1,4 +1,4 @@
-package com.FP_Examcenter.util;
+package com.Exam_Center.util;
 
 import java.util.Properties;
 
@@ -13,7 +13,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 /**
  * This class is to initialize the webdriver and read the properties file
  * 
- * @author anamika.p
+ * 
  *
  */
 public class Base {

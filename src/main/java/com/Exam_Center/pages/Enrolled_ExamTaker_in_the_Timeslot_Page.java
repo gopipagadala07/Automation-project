@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import com.FP_Examcenter.util.ActionType;
+import com.Exam_Center.util.ActionType;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType

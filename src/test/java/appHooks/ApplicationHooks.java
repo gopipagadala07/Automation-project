@@ -3,12 +3,9 @@ package appHooks;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-
-import com.FP_Examcenter.util.Base;
-import com.FP_Examcenter.util.Logs;
-
+import com.Exam_Center.util.Base;
+import com.Exam_Center.util.Logs;
 //import com.focalpointk12.factory.DriverFactory;
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -47,7 +44,7 @@ public class ApplicationHooks extends Base {
 
 	@After(order = 1)
 	public void quitBrowser() {
-		driver.quit();
+		//driver.quit();
 	}
 
 	@After(order = 2)
@@ -57,7 +54,6 @@ public class ApplicationHooks extends Base {
 			String screenshotName = scenario.getName().replaceAll(" ", "_");
 			byte[] sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 			scenario.attach(sourcePath, "image/png", screenshotName);
-
 		}
 	}
 
