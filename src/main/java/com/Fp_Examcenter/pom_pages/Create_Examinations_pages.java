@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.Fp_Examcenter.Utils.ActionType;
-
 public class Create_Examinations_pages extends ActionType {
 
 	private WebDriver driver;

@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-<<<<<<< HEAD
+
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -112,15 +112,10 @@
 			<artifactId>poi</artifactId>
 			<version>5.2.3</version>
 		</dependency>
-	</dependencies>
-=======
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>Sapphirus</groupId>
-	<artifactId>Cucumber_Automation_EC</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	
 
-	<dependencies>
+
+
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -214,12 +209,7 @@
 			<version>2.12.0</version>
 		</dependency>
 
-		<dependency>
-			<groupId>ExamCenter</groupId>
-			<artifactId>SapphirusSystems</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+	
 	</dependencies>
 
->>>>>>> refs/remotes/origin/Sub_Branch
 </project>
