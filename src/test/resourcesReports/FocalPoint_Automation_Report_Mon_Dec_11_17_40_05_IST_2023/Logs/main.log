@@ -1,0 +1,25 @@
+2023-12-11 17:40:05,558 INFO  [rootLogger] Enviornment is : STAGE
+2023-12-11 17:40:05,565 INFO  [rootLogger] Browser value is: CHROME
+2023-12-11 17:40:07,313 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2023-12-11 17:40:07,317 INFO  [rootLogger] Loading URL ... https://ade-stage.backpack.education/
+2023-12-11 17:40:15,042 INFO  [rootLogger] Info: Username : pc.controller1.5
+2023-12-11 17:40:15,118 INFO  [rootLogger] Info: Password : @Abcd1234
+2023-12-11 17:40:16,784 INFO  [rootLogger] -----------------End of Scenario-----------------
+2023-12-11 17:40:16,800 INFO  [rootLogger] Browser value is: CHROME
+2023-12-11 17:40:17,659 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2023-12-11 17:40:17,660 INFO  [rootLogger] Loading URL ... https://ade-stage.backpack.education/
+2023-12-11 17:40:28,525 INFO  [rootLogger] Info: Username : dec4th.proctor.5
+2023-12-11 17:40:28,605 INFO  [rootLogger] Info: Password : @Abcd1234#
+2023-12-11 17:40:29,829 INFO  [rootLogger] -----------------End of Scenario-----------------
+2023-12-11 17:40:29,842 INFO  [rootLogger] Browser value is: CHROME
+2023-12-11 17:40:30,706 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2023-12-11 17:40:30,707 INFO  [rootLogger] Loading URL ... https://ade-stage.backpack.education/
+2023-12-11 17:40:42,779 INFO  [rootLogger] Info: Username : dec4th.examtaker.5
+2023-12-11 17:40:42,876 INFO  [rootLogger] Info: Password : @Abcd1234
+2023-12-11 17:40:44,128 INFO  [rootLogger] -----------------End of Scenario-----------------
+2023-12-11 17:40:47,584 INFO  [rootLogger] Browser value is: CHROME
+2023-12-11 17:40:48,750 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2023-12-11 17:40:48,752 INFO  [rootLogger] Loading URL ... https://ade-stage.backpack.education/
+2023-12-11 17:40:58,206 INFO  [rootLogger] Info: Username : pc.controller1.5
+2023-12-11 17:40:58,282 INFO  [rootLogger] Info: Password : @Abcd1234
+2023-12-11 17:41:24,021 INFO  [rootLogger] -----------------End of Scenario-----------------
