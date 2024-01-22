@@ -5,14 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-
-import Com.Examcenter.Utils.ActionType;
-import Com.Examcenter.Utils.Base;
-import Com.Examcenter.Utils.ExcelReader;
-import Com.Examcenter.pages.ExamtakerSubmissionPage;
-import Com.Examcenter.pages.LoginPage;
+import com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.Base;
+import com.Examcenter.Utils.ExcelReader;
+import com.Examcenter.pages.ExamtakerSubmissionPage;
+import com.Examcenter.pages.LoginPage;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class AssessmentSubmission extends ActionType{
@@ -28,7 +26,7 @@ public class AssessmentSubmission extends ActionType{
 		testdata=null;
 		if(testdata==null)
 		{
-			testdata=reader.getData("/Excel/Credentials.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/LoginCredentials.xlsx", getSheetEnv());
 		}
 		String examname=testdata.get(rownumber).get("ExamName");
 		String schedulename=testdata.get(rownumber).get("ScheduleName");
@@ -45,7 +43,7 @@ public class AssessmentSubmission extends ActionType{
 		testdata=null;
 		if(testdata==null)
 		{
-			testdata=reader.getData("/Excel/Credentials.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/LoginCredentials.xlsx", getSheetEnv());
 		}
 		String token=testdata.get(rownumber).get("Token");
 	    //Sub.tokentxt(token);
@@ -62,7 +60,7 @@ public class AssessmentSubmission extends ActionType{
 //		testdata=null;
 //		if(testdata==null)
 //		{
-//			testdata=reader.getData("/Excel/Credentials.xlsx", getSheetEnv());
+//			testdata=reader.getData("/ExcelFiles/Credentials.xlsx", getSheetEnv());
 //		}
 //		String EtAnswer=testdata.get(Answer).get("Extended Type");
 //		String BlankAnswer=testdata.get(Answer).get("Blank Answer");

@@ -6,10 +6,10 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import Com.Examcenter.Utils.ActionType;
-import Com.Examcenter.Utils.Base;
-import Com.Examcenter.Utils.ExcelReader;
-import Com.Examcenter.pages.LoginPage;
+import com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.Base;
+import com.Examcenter.Utils.ExcelReader;
+import com.Examcenter.pages.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -37,7 +37,7 @@ public class LoginStepdefinintions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/Credentials.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/LoginCredentials.xlsx", getSheetEnv());
 		}
 		String FtName=testdata.get(rownumber).get("FirstName");
 		String LtName=testdata.get(rownumber).get("LastName");

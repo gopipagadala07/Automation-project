@@ -4,8 +4,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import Com.Examcenter.Utils.Base;
-import Com.Examcenter.Utils.Logs;
+import com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.Base;
+import com.Examcenter.Utils.Logs;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -14,7 +15,7 @@ public class AppHooks extends Base {
 
 	private Base driverFactory;
 	private WebDriver driver;
-
+    ActionType a=new ActionType();
 	@Before(order = 0)
 	public void getProperty() {
 		initProperties();
@@ -44,7 +45,8 @@ public class AppHooks extends Base {
 
 	@After(order = 1)
 	public void quitBrowser() {
-		//driver.quit();
+		a.StaticWait(2);
+		driver.quit();
 	}
 
 	@After(order = 2)

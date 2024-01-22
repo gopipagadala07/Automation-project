@@ -1,4 +1,4 @@
-package Com.Examcenter.Utils;
+package com.Examcenter.Utils;
 
 import java.io.File;
 import java.io.IOException;

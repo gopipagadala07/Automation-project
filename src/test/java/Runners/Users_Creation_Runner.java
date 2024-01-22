@@ -15,18 +15,18 @@ import io.cucumber.testng.CucumberOptions;
                  
 public class Users_Creation_Runner extends AbstractTestNGCucumberTests{
 
-	String testcaseName;
+	String TestcaseName;
 	
 	@Parameters("browser")
 	@BeforeClass
-	public void beforeclass(String browser)
+	public void beforeclass(/*String browser*/)
 	{
-		testcaseName = this.getClass().getSimpleName();
-		System.out.println("*******"+testcaseName+" - Testcase started ********");
+		TestcaseName = this.getClass().getSimpleName();
+		System.out.println("***************** " + TestcaseName + " Test Starting *****************");
 	}
     @AfterClass(alwaysRun = true)
 	public void Afterclass()
 	{
-		System.out.println("********"+testcaseName+" - Testcase Ended ********");
+		System.out.println("***************** " + TestcaseName + " Test end *****************");
 	}
 }
