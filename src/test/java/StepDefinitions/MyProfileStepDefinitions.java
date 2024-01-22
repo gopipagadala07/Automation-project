@@ -7,13 +7,12 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import Com.Examcenter.Utils.ActionType;
-import Com.Examcenter.Utils.Base;
-import Com.Examcenter.Utils.ExcelReader;
-import Com.Examcenter.pages.LoginPage;
-import Com.Examcenter.pages.MyProfilePage;
+import com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.Base;
+import com.Examcenter.Utils.ExcelReader;
+import com.Examcenter.pages.LoginPage;
+import com.Examcenter.pages.MyProfilePage;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class MyProfileStepDefinitions extends ActionType{
@@ -35,7 +34,7 @@ public class MyProfileStepDefinitions extends ActionType{
 		waitForPageLoad();
 		if(testdata==null)
 		{
-			testdata=reader.getData("\\Excel\\ProfileDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("\\ExcelFiles\\ProfileDetails.xlsx", getSheetEnv());
 		}
 		String email=testdata.get(editDetails).get("Email");
 		String  ZoomId=testdata.get(editDetails).get("Zoom ID");
@@ -51,7 +50,7 @@ public class MyProfileStepDefinitions extends ActionType{
 		waitForPageLoad();
 		if(testdata==null)
 		{
-			testdata=reader.getData("\\Excel\\ProfileDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("\\ExcelFiles\\ProfileDetails.xlsx", getSheetEnv());
 		}
 		String path=testdata.get(filepath).get("Path");
 		profile.uploadProfile(path);
@@ -63,7 +62,7 @@ public class MyProfileStepDefinitions extends ActionType{
 		waitForPageLoad();
 		if(testdata==null)
 		{
-			testdata=reader.getData("\\Excel\\ProfileDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("\\ExcelFiles\\ProfileDetails.xlsx", getSheetEnv());
 		}
 		String oldpwd=testdata.get(PwdDetails).get("OldPwd");
 		String newpwd=testdata.get(PwdDetails).get("NewPwd");

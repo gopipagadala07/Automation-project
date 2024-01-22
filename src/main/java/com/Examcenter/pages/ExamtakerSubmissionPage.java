@@ -1,4 +1,4 @@
-package Com.Examcenter.pages;
+package com.Examcenter.pages;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
-import Com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.ActionType;
 
 public class ExamtakerSubmissionPage extends ActionType{
 

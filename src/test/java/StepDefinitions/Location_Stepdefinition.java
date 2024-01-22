@@ -6,11 +6,10 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import com.Fp_Examcenter.Utils.ActionType;
-import com.Fp_Examcenter.Utils.Base;
-import com.Fp_Examcenter.Utils.ExcelReader;
-import com.Fp_Examcenter.pom_pages.EC_Loginpage;
-import com.Fp_Examcenter.pom_pages.Location_pom;
+import com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.Base;
+import com.Examcenter.Utils.ExcelReader;
+import com.Examcenter.pages.Location_pom;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -18,7 +17,6 @@ import io.cucumber.java.en.Then;
 
 public class Location_Stepdefinition extends ActionType {
 	
-	private EC_Loginpage EClogin=new EC_Loginpage(Base.getDriver());
 	private Location_pom Location=new Location_pom(Base.getDriver());
 
 	static ExcelReader reader=new ExcelReader();
@@ -51,7 +49,7 @@ public class Location_Stepdefinition extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 		}
 		String locationnametxtfield = testData.get(int0).get("LocationName");
 		
@@ -65,7 +63,7 @@ public class Location_Stepdefinition extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 		}
 	
 		String Addresstext = testData.get(int1).get("AddressField");
@@ -76,7 +74,6 @@ public class Location_Stepdefinition extends ActionType {
 	@Then("User click on Locationsave button")
 	public void user_click_on_locationsave_button() {
 		 Location.Location_Save();
-		   System.out.println("Location Saved Successfully");
 	}
 
 	@And("User click on Location Edit button with reference Location name {int}")
@@ -85,7 +82,7 @@ public class Location_Stepdefinition extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 		}
 		String Locationname = testData.get(int2).get("LocationName");
 		Location.Location_Edit_Icon(Locationname);
@@ -97,7 +94,7 @@ public class Location_Stepdefinition extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 		}
 		String editlocation = testData.get(int3).get("EditLocationName");
 		Location.Edit_Location_name(editlocation);   

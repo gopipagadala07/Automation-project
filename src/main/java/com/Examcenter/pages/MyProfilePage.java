@@ -1,4 +1,4 @@
-package Com.Examcenter.pages;
+package com.Examcenter.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -7,7 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import Com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.ActionType;
 
 public class MyProfilePage extends ActionType{
 

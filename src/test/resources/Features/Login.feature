@@ -10,4 +10,4 @@ Feature: Checking the Examcenter Login Functionality
       | rownumber |
       |         0 |
       |         1 |
-      #|         2 |
+      |         2 |

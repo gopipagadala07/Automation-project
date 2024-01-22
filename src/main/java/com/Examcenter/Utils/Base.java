@@ -1,4 +1,4 @@
-package Com.Examcenter.Utils;
+package com.Examcenter.Utils;
 
 import java.time.Duration;
 import java.util.Properties;
@@ -8,9 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-
-import Com.Examcenter.Utils.Logs;
-import Com.Examcenter.Utils.ReadProperties;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 

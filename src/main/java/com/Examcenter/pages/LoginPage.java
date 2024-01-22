@@ -1,4 +1,4 @@
-package Com.Examcenter.pages;
+package com.Examcenter.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import Com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.ActionType;
 
 
 public class LoginPage extends ActionType{
@@ -60,7 +60,8 @@ public class LoginPage extends ActionType{
 		if(cng.isDisplayed())
 		{
 			cls.click();
-			StaticWait(3);
+			StaticWait(5);
+			waitForPageLoad();
 		}
 		else
 		{
@@ -70,7 +71,7 @@ public class LoginPage extends ActionType{
 
 		int n=Header.size();
 
-		if(n==8)
+		if(n==9)
 		{
 			System.out.println("Controller login is working Successfully..!!");
 		}
@@ -82,7 +83,7 @@ public class LoginPage extends ActionType{
 		{
 			System.out.println("Examtaker login is working Successfully..!!");
 		}
-
+     waitForPageLoad();
 	}
 	public void allFieldsDispayed() {
 		waitForPageLoad();

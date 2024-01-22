@@ -6,11 +6,11 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import Com.Examcenter.Utils.ActionType;
-import Com.Examcenter.Utils.Base;
-import Com.Examcenter.Utils.ExcelReader;
-import Com.Examcenter.pages.Users_CreationPage;
-import Com.Examcenter.pages.LoginPage;
+import com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.Base;
+import com.Examcenter.Utils.ExcelReader;
+import com.Examcenter.pages.Users_CreationPage;
+import com.Examcenter.pages.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -45,7 +45,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/UsersCreationDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());
 		}
 		String Emailtxt=testdata.get(rownumber1).get("Email");
 		String Firstnametxt=testdata.get(rownumber1).get("FirstName");
@@ -66,7 +66,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/UsersCreationDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());
 		}
 		String Firstnametxt=testdata.get(rownumber2).get("FirstName");
 		String Lastnametxt=testdata.get(rownumber2).get("LastName");
@@ -117,7 +117,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/UsersCreationDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());
 		}
 		String Emailtxt=testdata.get(rownumber2).get("Email");
 		String Firstnametxt=testdata.get(rownumber2).get("FirstName");
@@ -136,7 +136,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/UsersCreationDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());
 		}
 		String Firstnametxt=testdata.get(rownumber3).get("FirstName");
 		String Lastnametxt=testdata.get(rownumber3).get("LastName");
@@ -185,7 +185,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/UsersCreationDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());
 		}
 		String Emailtxt=testdata.get(rownumber4).get("Email");
 		String Firstnametxt=testdata.get(rownumber4).get("FirstName");
@@ -206,7 +206,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/Excel/UsersCreationDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());
 		}
 		String Firstnametxt=testdata.get(rownumber3).get("FirstName");
 		String Lastnametxt=testdata.get(rownumber3).get("LastName");

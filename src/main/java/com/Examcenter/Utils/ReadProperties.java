@@ -1,4 +1,4 @@
-package Com.Examcenter.Utils;
+package com.Examcenter.Utils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
