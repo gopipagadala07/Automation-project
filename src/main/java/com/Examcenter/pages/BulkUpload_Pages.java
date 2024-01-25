@@ -87,7 +87,7 @@ public class BulkUpload_Pages extends ActionType{
 		r.keyRelease(KeyEvent.VK_ENTER);
 		String s="Successfully import the valid users.";
 		waitForPageLoad();
-		StaticWait(10);
+		StaticWait(15);
 		//waitTillElementInVisible(toster, null);
 	}
 
@@ -114,19 +114,5 @@ public class BulkUpload_Pages extends ActionType{
 		FileOutputStream fo=new FileOutputStream(Path);
 		wb.write(fo);
 		wb.close();
-	}
-	public void Proctor_Creation()
-	{
-		String randomnumber = randomNumberGenerator();
-		String FN="Proctor"+randomnumber;
-		String LN="Automation"+randomnumber;
-		String Email="proctorautomation"+randomnumber+"@gmail.com";
-	}
-	public void Examtaker_Creation()
-	{
-		String randomnumber = randomNumberGenerator();
-		String FN="Examtaker"+randomnumber;
-		String LN="Automation"+randomnumber;
-		String Email="examtakerautomation"+randomnumber+"@gmail.com";
 	}
 }

@@ -3,19 +3,7 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test" verbose="2">
     <classes>
-      <class name="Runners.Users_Creation_Runner"/>
+      <class name="Runners.BulkUploadRunner"/>
     </classes>
   </test> <!-- Default test -->
-  <test parallel="none" name="Default test(failed)">
-    <classes>
-      <class name="Runners.Users_Creation_Runner">
-        <methods>
-          <include name="Afterclass"/>
-          <include name="runScenario"/>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- Runners.Users_Creation_Runner -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
