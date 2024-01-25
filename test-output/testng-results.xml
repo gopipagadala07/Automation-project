@@ -1,373 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="11" passed="11" failed="0" skipped="0">
+<testng-results total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-22T11:10:37Z" name="Suite" finished-at="2024-01-22T11:18:36Z" duration-ms="479366">
+  <suite started-at="2024-01-25T06:04:20Z" name="Suite" finished-at="2024-01-25T06:06:45Z" duration-ms="145901">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.AssessmentSubmissionRunner@ab7395e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7331196b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@3f9342d4]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Examinations_Schedule_runner@58be6e8]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Location_Runner@45312be2]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Users_Creation_Runner@7fb95505]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.BulkUploadRunner@76f4b65]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-01-22T11:10:37Z" name="Test" finished-at="2024-01-22T11:18:36Z" duration-ms="479366">
-      <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@3f9342d4]" started-at="2024-01-22T16:46:56Z" name="setUpClass" finished-at="2024-01-22T16:46:56Z" duration-ms="18" status="PASS">
+    <test started-at="2024-01-25T06:04:20Z" name="Test" finished-at="2024-01-25T06:06:45Z" duration-ms="145901">
+      <class name="Runners.BulkUploadRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.BulkUploadRunner@76f4b65]" started-at="2024-01-25T11:34:20Z" name="setUpClass" finished-at="2024-01-25T11:34:21Z" duration-ms="963" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@425436b4]]>
+                <![CDATA[org.testng.TestRunner@2db75e32]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeclass(java.lang.String)[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@3f9342d4]" started-at="2024-01-22T16:46:56Z" name="beforeclass" finished-at="2024-01-22T16:46:56Z" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@3f9342d4]" started-at="2024-01-22T16:46:56Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-22T16:47:43Z" duration-ms="47107" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Provide the Procter Comment to a ExamTaker"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["FocalPointk12 Exam_Center Procter Comment, Reset the Examination"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="testDownClass()[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@3f9342d4]" started-at="2024-01-22T16:47:43Z" name="testDownClass" finished-at="2024-01-22T16:47:43Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDownClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@3f9342d4]" started-at="2024-01-22T16:47:43Z" name="tearDownClass" finished-at="2024-01-22T16:47:44Z" duration-ms="1597" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner -->
-      <class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7331196b]" started-at="2024-01-22T16:45:46Z" name="setUpClass" finished-at="2024-01-22T16:45:46Z" duration-ms="22" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@425436b4]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeclass(java.lang.String)[pri:0, instance:Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7331196b]" started-at="2024-01-22T16:45:46Z" name="beforeclass" finished-at="2024-01-22T16:45:46Z" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7331196b]" started-at="2024-01-22T16:45:46Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-22T16:46:16Z" duration-ms="29547" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Create a Time_Slot for the Examination"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7331196b]" started-at="2024-01-22T16:46:16Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-22T16:46:54Z" duration-ms="38365" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Add the Examataker in a Particular TimeSlot"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="testDownClass()[pri:0, instance:Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7331196b]" started-at="2024-01-22T16:46:54Z" name="testDownClass" finished-at="2024-01-22T16:46:54Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDownClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7331196b]" started-at="2024-01-22T16:46:54Z" name="tearDownClass" finished-at="2024-01-22T16:46:56Z" duration-ms="1689" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
-      <class name="Runners.Users_Creation_Runner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.Users_Creation_Runner@7fb95505]" started-at="2024-01-22T16:41:13Z" name="setUpClass" finished-at="2024-01-22T16:41:13Z" duration-ms="23" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@425436b4]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:Runners.Users_Creation_Runner@7fb95505]" started-at="2024-01-22T16:41:13Z" name="beforeclass" finished-at="2024-01-22T16:41:13Z" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Users_Creation_Runner@7fb95505]" started-at="2024-01-22T16:41:13Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-22T16:41:58Z" duration-ms="44773" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Checking the Creation of controller User"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Checking the Create Users Functionality"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Users_Creation_Runner@7fb95505]" started-at="2024-01-22T16:41:58Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-22T16:42:48Z" duration-ms="50064" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Checking the Creation of Proctor User"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Checking the Create Users Functionality"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Users_Creation_Runner@7fb95505]" started-at="2024-01-22T16:42:48Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-22T16:43:41Z" duration-ms="53476" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Checking the Creation of Examtaker User"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Checking the Create Users Functionality"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="Afterclass()[pri:0, instance:Runners.Users_Creation_Runner@7fb95505]" started-at="2024-01-22T16:43:41Z" name="Afterclass" finished-at="2024-01-22T16:43:41Z" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Afterclass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.Users_Creation_Runner@7fb95505]" started-at="2024-01-22T16:43:41Z" name="tearDownClass" finished-at="2024-01-22T16:43:44Z" duration-ms="2161" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- Runners.Users_Creation_Runner -->
-      <class name="Runners.Examinations_Schedule_runner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.Examinations_Schedule_runner@58be6e8]" started-at="2024-01-22T16:43:44Z" name="setUpClass" finished-at="2024-01-22T16:43:44Z" duration-ms="22" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@425436b4]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:Runners.Examinations_Schedule_runner@58be6e8]" started-at="2024-01-22T16:43:44Z" name="beforeclass" finished-at="2024-01-22T16:43:44Z" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Examinations_Schedule_runner@58be6e8]" started-at="2024-01-22T16:43:44Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-22T16:44:12Z" duration-ms="28033" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Controller Creating Examinations in Examcenter"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Examcenter Creation of Examinations Schedules and Examtaker Enrollments feature"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Examinations_Schedule_runner@58be6e8]" started-at="2024-01-22T16:44:12Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-22T16:45:06Z" duration-ms="54354" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Creating Schedule for an Examinations"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Examcenter Creation of Examinations Schedules and Examtaker Enrollments feature"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Examinations_Schedule_runner@58be6e8]" started-at="2024-01-22T16:45:06Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-22T16:45:44Z" duration-ms="38344" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Enroll the Examination and schedule to the Examtaker"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Examcenter Creation of Examinations Schedules and Examtaker Enrollments feature"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="testDownClass()[pri:0, instance:Runners.Examinations_Schedule_runner@58be6e8]" started-at="2024-01-22T16:45:44Z" name="testDownClass" finished-at="2024-01-22T16:45:44Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDownClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.Examinations_Schedule_runner@58be6e8]" started-at="2024-01-22T16:45:44Z" name="tearDownClass" finished-at="2024-01-22T16:45:46Z" duration-ms="1728" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- Runners.Examinations_Schedule_runner -->
-      <class name="Runners.Location_Runner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.Location_Runner@45312be2]" started-at="2024-01-22T16:40:37Z" name="setUpClass" finished-at="2024-01-22T16:40:38Z" duration-ms="673" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@425436b4]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeclass(java.lang.String)[pri:0, instance:Runners.Location_Runner@45312be2]" started-at="2024-01-22T16:40:38Z" name="beforeclass" finished-at="2024-01-22T16:40:38Z" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Location_Runner@45312be2]" started-at="2024-01-22T16:40:38Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-22T16:41:10Z" duration-ms="32626" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Exam_Center AddEdit Location scenario"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Exam_Center Location feature"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.Location_Runner@45312be2]" started-at="2024-01-22T16:41:10Z" name="tearDownClass" finished-at="2024-01-22T16:41:13Z" duration-ms="2751" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-        <test-method is-config="true" signature="testDownClass()[pri:0, instance:Runners.Location_Runner@45312be2]" started-at="2024-01-22T16:41:10Z" name="testDownClass" finished-at="2024-01-22T16:41:10Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDownClass -->
-      </class> <!-- Runners.Location_Runner -->
-      <class name="Runners.AssessmentSubmissionRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.AssessmentSubmissionRunner@ab7395e]" started-at="2024-01-22T16:47:44Z" name="setUpClass" finished-at="2024-01-22T16:47:44Z" duration-ms="18" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@425436b4]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass(java.lang.String)[pri:0, instance:Runners.AssessmentSubmissionRunner@ab7395e]" started-at="2024-01-22T16:47:44Z" name="beforeClass" finished-at="2024-01-22T16:47:44Z" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Runners.BulkUploadRunner@76f4b65]" started-at="2024-01-25T11:34:21Z" name="beforeClass" finished-at="2024-01-25T11:34:21Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.AssessmentSubmissionRunner@ab7395e]" started-at="2024-01-22T16:47:44Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-22T16:48:35Z" duration-ms="50517" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.BulkUploadRunner@76f4b65]" started-at="2024-01-25T11:34:21Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T11:35:08Z" duration-ms="47964" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Checking the Examcenter Examtaker Assessment Submission Functionality"]]>
+                <![CDATA["Testing the Controller Bulk Upload Functionality"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Checking the Examtaker Assessment Submission"]]>
+                <![CDATA["Checking the bulk upload functionality for All Users"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:Runners.AssessmentSubmissionRunner@ab7395e]" started-at="2024-01-22T16:48:35Z" name="afterClass" finished-at="2024-01-22T16:48:35Z" duration-ms="0" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.BulkUploadRunner@76f4b65]" started-at="2024-01-25T11:35:08Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T11:35:54Z" duration-ms="45789" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Testing the proctor Bulk Upload Functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Checking the bulk upload functionality for All Users"]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.AssessmentSubmissionRunner@ab7395e]" started-at="2024-01-22T16:48:35Z" name="tearDownClass" finished-at="2024-01-22T16:48:36Z" duration-ms="1423" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.BulkUploadRunner@76f4b65]" started-at="2024-01-25T11:35:54Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T11:36:41Z" duration-ms="47059" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Testing the Controller Bulk Upload Functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Checking the bulk upload functionality for All Users"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.BulkUploadRunner@76f4b65]" started-at="2024-01-25T11:36:41Z" name="tearDownClass" finished-at="2024-01-25T11:36:45Z" duration-ms="4105" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- Runners.AssessmentSubmissionRunner -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:Runners.BulkUploadRunner@76f4b65]" started-at="2024-01-25T11:36:41Z" name="afterClass" finished-at="2024-01-25T11:36:41Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- Runners.BulkUploadRunner -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

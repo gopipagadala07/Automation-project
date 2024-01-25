@@ -162,10 +162,10 @@ public class Create_Examinations_pages extends ActionType {
 		driver.findElement(ScheduleDescription).sendKeys(scheduledescription);
 	}
 	public void schedulesave() {
-		StaticWait(2);
+		StaticWait(1);
 		driver.findElement(ScheduleSave).click();
 		waitForPageLoad();
-		StaticWait(2);
+		StaticWait(3);
 	}
 
 	//published and examlive toggles
@@ -179,6 +179,7 @@ public class Create_Examinations_pages extends ActionType {
 		WebElement Examlivetoggle=driver.findElement(By.xpath("//div[text()='"+ScheduleName+"']/../div/div/div[1]/mat-slide-toggle/label/span[1]/input"));
 		a.moveToElement(Examlivetoggle).build().perform();
 		j.executeScript("arguments[0].click()",Examlivetoggle);	
+		StaticWait(1);
 	}
 
 	//Enroll Exam to the Examtaker
@@ -241,7 +242,7 @@ public class Create_Examinations_pages extends ActionType {
 		Slookup.click();
 	}
 	public void enrollment_save() {
-		waitForPageLoaded(2);
+		waitForPageLoaded(1);
 		StaticWait(1);
 		driver.findElement(EnrollmentSave).click();
 		StaticWait(1);
