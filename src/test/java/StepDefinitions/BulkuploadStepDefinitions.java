@@ -1,10 +1,14 @@
 package StepDefinitions;
 
+import java.io.File;
+import java.net.URI;
+import java.net.URL;
 import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.LocalFileDetector;
 
 import com.Examcenter.Utils.ActionType;
 import com.Examcenter.Utils.Base;
@@ -19,8 +23,8 @@ public class BulkuploadStepDefinitions extends ActionType{
 	BulkUpload_Pages Bulk=new BulkUpload_Pages(Base.getDriver());
 	ExcelReader reader=new ExcelReader();
 	List<Map<String, String>> TestData=null;
-	
-	
+
+
 	@And("Create the Bulk controller users Excel Sheet")
 	public void Create_Controller_Sheet() throws Exception
 
@@ -32,7 +36,7 @@ public class BulkuploadStepDefinitions extends ActionType{
 			String LastName="Automation"+randomnumber;
 			String Email="controllerautomation"+randomnumber+"@gmail.com";
 			String ID=randomnumber;
-            //System.out.println(randomnumber);
+			//System.out.println(randomnumber);
 			String path="./src/test/resources/Files/ControllerTemplate .xlsx";
 			Bulk.Excel_Creation(path, "Bulk Upload", 0, FirstName,i+1);
 			Bulk.Excel_Creation(path, "Bulk Upload", 1, LastName,i+1);
@@ -42,8 +46,10 @@ public class BulkuploadStepDefinitions extends ActionType{
 	}
 	@Then("Click on controller Bulk Upload Icon and Upload the File")
 	public void click_on_controller_bulk_upload_icon() throws Exception {
-		//StaticWait(5);
-       Bulk.bulkUpload("E:\\FocalPoint\\FPK12-AUTOMATION-TEST-2.0\\src\\test\\resources\\Files\\ControllerTemplate .xlsx");
+
+		String path =(System.getProperty("user.dir")+"\\src\\test\\resources\\Files\\ControllerTemplate .xlsx");
+		System.out.println(path);
+		Bulk.bulkUpload(path);
 	}
 	@And("Create the Bulk Proctor users Excel Sheet")
 	public void Create_Proctor_Sheet() throws Exception
@@ -57,7 +63,7 @@ public class BulkuploadStepDefinitions extends ActionType{
 			String Email="proctorautomation"+randomnumber+"@gmail.com";
 			String ID=randomnumber;
 			String path="./src/test/resources/Files/Proctor Template.xlsx";
-            //System.out.println(randomnumber);
+			//System.out.println(randomnumber);
 			Bulk.Excel_Creation(path, "Bulk Upload", 0, FirstName,i+1);
 			Bulk.Excel_Creation(path, "Bulk Upload", 1, LastName,i+1);
 			Bulk.Excel_Creation(path, "Bulk Upload", 2, Email,i+1);
@@ -67,7 +73,8 @@ public class BulkuploadStepDefinitions extends ActionType{
 	@Then("Click on Proctor Bulk Upload Icon and Upload the File")
 	public void click_on_Proctor_bulk_upload_icon() throws Exception {
 		//StaticWait(5);
-       Bulk.bulkUpload("E:\\FocalPoint\\FPK12-AUTOMATION-TEST-2.0\\src\\test\\resources\\Files\\Proctor Template.xlsx");
+		String path =(System.getProperty("user.dir")+"\\src\\test\\resources\\Files\\Proctor Template.xlsx");
+		Bulk.bulkUpload(path);
 	}
 	@And("Create the Bulk Examtaker users Excel Sheet")
 	public void Create_Examtaker_Sheet() throws Exception
@@ -81,7 +88,7 @@ public class BulkuploadStepDefinitions extends ActionType{
 			String Email="examtakerautomation"+randomnumber+"@gmail.com";
 			String ID=randomnumber;
 			String path="./src/test/resources/Files/Exam Takers Template.xlsx";
-            //System.out.println(randomnumber);
+			//System.out.println(randomnumber);
 			Bulk.Excel_Creation(path, "Bulk Upload", 0, FirstName,i+1);
 			Bulk.Excel_Creation(path, "Bulk Upload", 1, LastName,i+1);
 			Bulk.Excel_Creation(path, "Bulk Upload", 2, Email,i+1);
@@ -91,7 +98,8 @@ public class BulkuploadStepDefinitions extends ActionType{
 	@Then("Click on Examtaker Bulk Upload Icon and Upload the File")
 	public void click_on_Examtaker_bulk_upload_icon() throws Exception {
 		//StaticWait(5);
-       Bulk.bulkUpload("E:\\FocalPoint\\FPK12-AUTOMATION-TEST-2.0\\src\\test\\resources\\Files\\Exam Takers Template.xlsx");
+		String path =(System.getProperty("user.dir")+"\\src\\test\\resources\\Files\\Exam Takers Template.xlsx");
+		Bulk.bulkUpload(path);
 	}
 
 }
