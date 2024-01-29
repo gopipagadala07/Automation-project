@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,6 +20,9 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.LocalFileDetector;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.RemoteWebElement;
 
 import com.Examcenter.Utils.ActionType;
 import com.Examcenter.Utils.Base;
@@ -85,9 +89,10 @@ public class BulkUpload_Pages extends ActionType{
 
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
+
 		String s="Successfully import the valid users.";
 		waitForPageLoad();
-		StaticWait(15);
+		StaticWait(17);
 		//waitTillElementInVisible(toster, null);
 	}
 
@@ -108,7 +113,7 @@ public class BulkUpload_Pages extends ActionType{
 		//		}
 		//		for(int j=1;j<=99;j++)
 		//		{
-		        sh.getRow(rowno).createCell(cellno).setCellValue(value);
+		sh.getRow(rowno).createCell(cellno).setCellValue(value);
 		//		}
 
 		FileOutputStream fo=new FileOutputStream(Path);
