@@ -92,7 +92,7 @@ public class BulkUpload_Pages extends ActionType{
 
 		String s="Successfully import the valid users.";
 		waitForPageLoad();
-		StaticWait(15);
+		StaticWait(17);
 		//waitTillElementInVisible(toster, null);
 	}
 
