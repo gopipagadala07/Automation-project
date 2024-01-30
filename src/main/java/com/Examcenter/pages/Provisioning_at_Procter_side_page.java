@@ -34,7 +34,7 @@ private WebDriver driver;
     By reset=By.xpath("//span[text()=' Reset ']");
     By yes=By.xpath("//button[text()='Reset']");
     By editsavebtn=By.xpath("//span[text()=' Save ']");
-    By proctorLoc=By.xpath("//fp-textbox[@controlname='localStateID']/../div");
+    By EC_Loc=By.xpath("//fp-textbox[@controlname='localStateID']/../div");
    // By proctor=By.xpath("//h2[text()='Add/Edit Proctor']");
     
     public Provisioning_at_Procter_side_page(WebDriver driver)
@@ -68,9 +68,9 @@ private WebDriver driver;
     	waitForElement(Examtakerbtn);
     	driver.findElement(Examtakerbtn).click();
     }
-    public void PLoc(String Location)
+    public void E_Loc(String Location)
     {
-    	driver.findElement(proctorLoc).click();
+    	driver.findElement(EC_Loc).click();
     	WebElement e=driver.findElement(By.xpath("//span[text()='"+Location+"']"));
         StaticWait(1);
         JavascriptExecutor j=(JavascriptExecutor)getDriver();
@@ -193,7 +193,7 @@ private WebDriver driver;
     	Firstnametxt(Firstnametext);
     	Lastnametxt(Lastnametext);
     	IDtxt(IDtext);
-    	//PLoc(Location);
+    	E_Loc(Location);
     	DOBtxt(Yeartext, Monthtext, Datetext);
     	
     }
