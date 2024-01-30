@@ -22,7 +22,6 @@ private WebDriver driver;
     By IDtxt=By.xpath("(//input[@type='text'])[4]");
     By DOBtxt=By.xpath("//button[@aria-label='Open calendar']");
     By year=By.xpath("//button[@aria-label='Choose month and year']");
-   // By isAdminChkBox=By.xpath("//span[text()='Is Admin ']");
     By savebtn=By.xpath("//span[text()=' Save ']");
     By searchtxt=By.xpath("//input[@data-placeholder='search here']");
     By Editbtn=By.xpath("//mat-icon[text()='edit']");
@@ -31,9 +30,7 @@ private WebDriver driver;
     By reset=By.xpath("//span[text()=' Reset ']");
     By yes=By.xpath("//button[text()='Reset']");
     By editsavebtn=By.xpath("//span[text()=' Save ']");
-    By EC_Loc=By.xpath("//fp-textbox[@controlname='localStateID']/../div");
-   // By proctor=By.xpath("//h2[text()='Add/Edit Proctor']");
-    
+    By EC_Loc=By.xpath("//fp-textbox[@controlname='localStateID']/../div");    
     public Provisioning_at_Procter_side_page(WebDriver driver)
     {
     	this.driver=driver;
