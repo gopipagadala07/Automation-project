@@ -14,9 +14,6 @@ private WebDriver driver;
 	
 	By Adminstrationbtn=By.xpath("//mat-icon[text()=' settings ']");
 	By provisioning=By.xpath("//a[text()='Provisioning']");
-	//By Userstab=By.xpath("//div[text()='USERS']");
-	//By Controllerbtn=By.xpath("//a[text()='Controllers']");
-	//By Proctorbtn=By.xpath("//div[text()='PROCTORS']");
 	By Examtakerbtn=By.xpath("//div[text()='EXAM TAKERS']");
 	By Addnewbtn=By.xpath("//span[text()=' Add New ']");
 	By Emailtxt=By.xpath("(//input[@type='text'])[1]");
@@ -53,16 +50,7 @@ private WebDriver driver;
     	waitForElement(provisioning);
     	driver.findElement(provisioning).click();
     }
-//    public void Controllerbtn()
-//    {
-//    	waitForElement(Controllerbtn);
-//    	driver.findElement(Controllerbtn).click();
-//    }
-//    public void Proctorbtn()
-//    {
-//    	waitForElement(Proctorbtn);
-//    	driver.findElement(Proctorbtn).click();
-//    }
+
     public void Examtakersbtn()
     {
     	waitForElement(Examtakerbtn);
@@ -116,10 +104,7 @@ private WebDriver driver;
     	StaticWait(1);
     	driver.findElement(IDtxt).sendKeys(IDtext);
     }
-//    public void isAdminChkBox()
-//    {
-//    	driver.findElement(isAdminChkBox).click();;
-//    }
+
     public void savebtn()
     {
     	driver.findElement(savebtn).click();
@@ -168,26 +153,7 @@ private WebDriver driver;
     	 StaticWait(2);
     }
     
-//    public void proctor()
-//    {
-//    	WebElement e1=driver.findElement(proctor);
-//    	 Actions a=new Actions(driver);
-// 	    a.moveToElement(e1).click().build().perform();
-//    }
-//    public void Create_Controller_User(String Emailtext,String Firstnametext,String Lastnametext,String IDtext ) {
-//    	Emailtxt(Emailtext);
-//    	Firstnametxt(Firstnametext);
-//    	Lastnametxt(Lastnametext);
-//    	IDtxt(IDtext);
-//    	isAdminChkBox();
-//    }
-//    public void Create_proctor_User(String Emailtext,String Firstnametext,String Lastnametext,String IDtext, String Location ) {
-//    	Emailtxt(Emailtext);
-//    	Firstnametxt(Firstnametext);
-//    	Lastnametxt(Lastnametext);
-//    	IDtxt(IDtext);
-//    	PLoc(Location);
-//    }
+
     public void Create_Exataker_User(String Emailtext,String Firstnametext,String Lastnametext,String IDtext, String Location, String Yeartext, String Monthtext, String Datetext ) {
     	Emailtxt(Emailtext);
     	Firstnametxt(Firstnametext);
