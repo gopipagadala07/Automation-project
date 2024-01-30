@@ -1,0 +1,10 @@
+2024-01-25 16:11:37,584 INFO  [rootLogger] Enviornment is : STAGE
+2024-01-25 16:11:37,588 INFO  [rootLogger] Browser value is: CHROME
+2024-01-25 16:11:39,448 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-25 16:19:45,241 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-01-25 16:19:45,280 INFO  [rootLogger] Browser value is: CHROME
+2024-01-25 16:19:46,272 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-25 16:26:21,418 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-01-25 16:26:21,484 INFO  [rootLogger] Browser value is: CHROME
+2024-01-25 16:26:22,642 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-25 16:33:35,128 INFO  [rootLogger] -----------------End of Scenario-----------------

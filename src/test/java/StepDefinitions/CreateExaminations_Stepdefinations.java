@@ -5,17 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-
-import com.Fp_Examcenter.Utils.ActionType;
-import com.Fp_Examcenter.Utils.Base;
-import com.Fp_Examcenter.Utils.ExcelReader;
-import com.Fp_Examcenter.pom_pages.Create_Examinations_pages;
-import com.Fp_Examcenter.pom_pages.EC_Loginpage;
-
+import com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.Base;
+import com.Examcenter.Utils.ExcelReader;
+import com.Examcenter.pages.Create_Examinations_pages;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 
 public class CreateExaminations_Stepdefinations extends ActionType {
 	
@@ -28,7 +23,8 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 	@Then("^User click on ExamAdministration tab$")
 	public void user_click_on_exam_administration_tab() 
 	{
-		StaticWait(3);
+		waitForPageLoad();
+		StaticWait(1);
 		CreateExams.Exam_Administration();
 	}
 
@@ -43,7 +39,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 			//System.out.println(testData);
 		}
 		String examnametxtfield = testData.get(rownumber1).get("ExamName");
@@ -56,6 +52,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 	@Then("^User click on save button$")
 	public void user_click_on_save_button() {
 		CreateExams.Save_button();
+		StaticWait(1);
 		System.out.println("Exam Saved Successfully");
 	}
 
@@ -65,7 +62,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 			//System.out.println(testData);
 
 		}
@@ -86,7 +83,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 			//	System.out.println(testData);
 
 		}
@@ -117,7 +114,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 
 		}
 
@@ -137,7 +134,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 
 		}
 
@@ -168,7 +165,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 
 		}
 		String Yeartext = testData.get(rownumber6).get("Year");
@@ -185,7 +182,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 
 		}
 
@@ -209,7 +206,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 
 		}
 
@@ -235,24 +232,25 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/LoginCredentials.xlsx", getSheetEnv());	
 
 		}
-		String Examtakername = testData.get(col9).get("ExamtakerFullname");
-		CreateExams.Examtaker_search(Examtakername);   
+		String Firstnametxt=testData.get(col9).get("FirstName");
+		String Lastnametxt=testData.get(col9).get("LastName");
+		CreateExams.Examtaker_search(Lastnametxt,Firstnametxt);   
 		
 	}
 	@Then("User click on the searched Examtaker {int}")
 	public void user_click_on_the_searched_examtaker(Integer col10) throws InvalidFormatException, IOException {
-		waitForPageLoad();
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
-			System.out.println("testdata");
+					reader.getData("/ExcelFiles/LoginCredentials.xlsx", getSheetEnv());	
+
 		}
-		String Examtakername = testData.get(col10).get("ExamtakerFullname");	  
-		CreateExams.click_on_searched_examtaker(Examtakername);
+		String Firstnametxt=testData.get(col10).get("FirstName");
+		String Lastnametxt=testData.get(col10).get("LastName");	  
+		CreateExams.click_on_searched_examtaker(Lastnametxt,Firstnametxt);
 	}
 
 	@Then("^User click on Enroll to an Exam button$")
@@ -273,7 +271,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 		}
 		String Examname = testData.get(col11).get("ExamName");	  
 		CreateExams.select_examinations_lookup(Examname);
@@ -292,7 +290,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/Excelfiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
 		}
 		String schedulename = testData.get(col12).get("ScheduleName");	  
 		CreateExams.select_schedule_lookup(schedulename);

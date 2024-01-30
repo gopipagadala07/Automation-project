@@ -1,4 +1,4 @@
-package Com.Examcenter.pages;
+package com.Examcenter.pages;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import Com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.ActionType;
 
 public class Users_CreationPage extends ActionType{
 
@@ -20,7 +20,7 @@ public class Users_CreationPage extends ActionType{
 	//By Userstab=By.xpath("//div[text()='USERS']");
 	By Controllerbtn=By.xpath("//a[text()='Controllers']");
 	By Proctorbtn=By.xpath("//div[text()='PROCTORS']");
-	By Exatakerbtn=By.xpath("//div[text()='EXAM TAKERS']");
+	By Examtakerbtn=By.xpath("//div[text()='EXAM TAKERS']");
 	By Addnewbtn=By.xpath("//span[text()=' Add New ']");
 	By Emailtxt=By.xpath("(//input[@type='text'])[1]");
 	By Firstnametxt=By.xpath("(//input[@type='text'])[2]");
@@ -48,6 +48,8 @@ public class Users_CreationPage extends ActionType{
 
 	public void Adminstarationbtn()
 	{
+		waitForElement(Adminstrationbtn);
+		waitForPageLoad();
 		StaticWait(2);
 		driver.findElement(Adminstrationbtn).click();
 		StaticWait(1);
@@ -72,8 +74,8 @@ public class Users_CreationPage extends ActionType{
 	}
 	public void Examtakersbtn()
 	{
-		waitForElement(Exatakerbtn);
-		driver.findElement(Exatakerbtn).click();
+		waitForElement(Examtakerbtn);
+		driver.findElement(Examtakerbtn).click();
 	}
 	public void PLoc(String Location)
 	{
@@ -131,6 +133,7 @@ public class Users_CreationPage extends ActionType{
 	}
 	public void searchtxt(String Firstnametext,String Lastnametext) 
 	{   
+		waitForElement(searchtxt);
 		WebElement e = driver.findElement(searchtxt);
 		JavascriptExecutor j=(JavascriptExecutor)getDriver();
 		j.executeScript("arguments[0].click()", e);
@@ -138,10 +141,14 @@ public class Users_CreationPage extends ActionType{
 		e.sendKeys(Lastnametext+" ");
 		StaticWait(2);
 		e.sendKeys(Firstnametext);
+		StaticWait(2);
+		WebElement EN=driver.findElement(By.xpath("//span[text()='"+Lastnametext+" "+Firstnametext+"']"));
+		Actions a=new Actions(driver);
+		a.moveToElement(EN).click().build().perform();
 	}
 	public void Editbtn()
 	{
-		StaticWait(3);
+		StaticWait(1);
 		waitForElement(Editbtn);
 		driver.findElement(Editbtn).click();
 	}

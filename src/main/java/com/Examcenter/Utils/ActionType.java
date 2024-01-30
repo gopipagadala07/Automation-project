@@ -1,7 +1,7 @@
-package Com.Examcenter.Utils;
+package com.Examcenter.Utils;
 
 
-import static Com.Examcenter.Utils.UtilityMethods.getException;
+import static com.Examcenter.Utils.UtilityMethods.getException;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
@@ -79,9 +79,8 @@ public class ActionType extends Base {
 	}
 
 	public void waitForPageLoad() {
-//		getDriver().manage().timeouts().pageLoadTimeout(Integer.parseInt(getProperty("pageLoadTimeOut")),
-//				TimeUnit.SECONDS);
-		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		getDriver().manage().timeouts().pageLoadTimeout(Integer.parseInt(getProperty("pageLoadTimeOut")),
+				TimeUnit.SECONDS);
 		
 	}
 
