@@ -43,27 +43,31 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
 
 	// This belongs to ISuiteListener and will execute before the Suite start
 
-	public void onStart(ISuite isuitestart) {
+	public void afterInvocation(IInvokedMethod arg1, ITestResult arg2) {
 
-		Reporter.log("About to begin executing Suite " + isuitestart.getName(), true);
+		String textMsg = "Completed executing following method : " + returnMethodName(arg1.getTestMethod());
+
+		Reporter.log(textMsg, true);
 
 	}
 
 	// This belongs to ISuiteListener and will execute, once the Suite is finished
 
-	public void onFinish(ISuite isuiteend) {
+	public void beforeInvocation(IInvokedMethod methodname, ITestResult itestresults) {
 
-		Reporter.log("About to end executing Suite " + isuiteend.getName(), true);
-		
+		String textMsg = "About to begin executing following method : " + returnMethodName(methodname.getTestMethod());
+
+		Reporter.log(textMsg, true);
 
 	}
 
 	// This belongs to ITestListener and will execute before starting of Test
 	// set/batch
 
-	public void onStart(ITestContext iteststart) {
+	public void onFinish(ISuite isuiteend) {
 
-		Reporter.log("About to begin executing Test " + iteststart.getName(), true);
+		Reporter.log("About to end executing Suite " + isuiteend.getName(), true);
+		
 
 	}
 
@@ -78,15 +82,31 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
 
 	// This belongs to ITestListener and will execute only when the test is pass
 
-	public void onTestSuccess(ITestResult itestpass) {
+	public void onStart(ISuite isuitestart) {
 
-		// This is calling the printTestResults method
-
-		printTestResults(itestpass);
+		Reporter.log("About to begin executing Suite " + isuitestart.getName(), true);
 
 	}
 
 	// This belongs to ITestListener and will execute only on the event of fail test
+
+	public void onStart(ITestContext iteststart) {
+
+		Reporter.log("About to begin executing Test " + iteststart.getName(), true);
+
+	}
+
+	// This belongs to ITestListener and will execute before the main test start
+	// (@Test)
+
+	public void onTestFailedButWithinSuccessPercentage(ITestResult successpercentage) {
+		
+		System.out.println(successpercentage);
+
+	}
+
+	// This belongs to ITestListener and will execute only if any of the main
+	// test(@Test) get skipped
 
 	public void onTestFailure(ITestResult itestfail) {
 
@@ -96,17 +116,7 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
 
 	}
 
-	// This belongs to ITestListener and will execute before the main test start
-	// (@Test)
-
-	public void onTestStart(ITestResult mainiteststart) {
-
-		System.out.println("The execution of the main test starts now");
-
-	}
-
-	// This belongs to ITestListener and will execute only if any of the main
-	// test(@Test) get skipped
+	// This is just a piece of shit, ignore this
 
 	public void onTestSkipped(ITestResult mainitestskiped) {
 
@@ -114,17 +124,29 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
 
 	}
 
-	// This is just a piece of shit, ignore this
-
-	public void onTestFailedButWithinSuccessPercentage(ITestResult successpercentage) {
-		
-		System.out.println(successpercentage);
-
-	}
-
 	// This is the method which will be executed in case of test pass or fail
 
 	// This will provide the information on the test
+
+	public void onTestStart(ITestResult mainiteststart) {
+
+		System.out.println("The execution of the main test starts now");
+
+	}
+
+	// This belongs to IInvokedMethodListener and will execute before every method
+	// including @Before @After @Test
+
+	public void onTestSuccess(ITestResult itestpass) {
+
+		// This is calling the printTestResults method
+
+		printTestResults(itestpass);
+
+	}
+
+	// This belongs to IInvokedMethodListener and will execute after every method
+	// including @Before @After @Test
 
 	private void printTestResults(ITestResult result) {
 
@@ -167,28 +189,6 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
 		}
 
 		Reporter.log("Test Status: " + status, true);
-
-	}
-
-	// This belongs to IInvokedMethodListener and will execute before every method
-	// including @Before @After @Test
-
-	public void beforeInvocation(IInvokedMethod methodname, ITestResult itestresults) {
-
-		String textMsg = "About to begin executing following method : " + returnMethodName(methodname.getTestMethod());
-
-		Reporter.log(textMsg, true);
-
-	}
-
-	// This belongs to IInvokedMethodListener and will execute after every method
-	// including @Before @After @Test
-
-	public void afterInvocation(IInvokedMethod arg1, ITestResult arg2) {
-
-		String textMsg = "Completed executing following method : " + returnMethodName(arg1.getTestMethod());
-
-		Reporter.log(textMsg, true);
 
 	}
 

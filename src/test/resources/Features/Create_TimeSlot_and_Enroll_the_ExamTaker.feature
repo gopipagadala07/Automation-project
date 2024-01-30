@@ -43,4 +43,4 @@ Feature: FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Take
 
     Examples: 
       | rownumber | ExamTaker_details_rownumber | Timeslot_rownumber |
-      |         1 |                           0 |                  0 |
+      |         1 |                           2 |                  0 |

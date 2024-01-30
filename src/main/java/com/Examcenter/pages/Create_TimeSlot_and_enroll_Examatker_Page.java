@@ -10,31 +10,31 @@ import com.Examcenter.Utils.ActionType;
 
 public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 {
+	private By AddExamtaker = By.xpath("//mat-icon[text()='add']");
+
+
+	private By AddNewButton = By.xpath("//span[contains(text(),'Add New ')]");
+	private By approve = By.xpath("//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle");
+	private By ChooseMonthandYear = By.xpath("//button[@aria-label='Choose month and year']");
+	private By ClickOnHr = By.xpath("(//div[@class='timepicker-dial']/div/div/ngx-mat-timepicker-dial-control/input)[1]");
+	private By ClickOnMin = By.xpath("(//div[@class='timepicker-dial']/div/div/ngx-mat-timepicker-dial-control/input)[2]");
 	private WebDriver driver;
-
-
+	private By EndTime = By.xpath("//input[@name='end_time']");
 	private By Enrollment = By.xpath("//span[text()='Enrollments']");
 	private By ExaminationLookup =By.xpath("//span[text()=' Print Exam Takers ']/../../../div[1]/mat-form-field/div/div/div/mat-select/div");
 	private By ExaminationLookupText= By.xpath("//span[text()=' Print Exam Takers ']/../../../div[1]/mat-form-field/div/div/div/mat-select/div/div/span/span");
+	private By ExamTakerCount = By.xpath("//input[@data-placeholder='Exam Taker count allowed']");
+	private By Header = By.xpath("//h2[@class='page-title section-header m-0']");
+	private By Live = By.xpath("(//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle)[1]");
 	private By LocationLookup = By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]");
 	private By LocationLookupText=By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]/mat-form-field/div/div/div/mat-select/div/div/span/span");
-	private By TimeSlotTab = By.xpath("//*[text()='TIME SLOTS']");
-	private By AddNewButton = By.xpath("//span[contains(text(),'Add New ')]");
-	private By ExamTakerCount = By.xpath("//input[@data-placeholder='Exam Taker count allowed']");
-	private By OpenCalender = By.xpath("//button[@aria-label='Open calendar']");
-	private By ChooseMonthandYear = By.xpath("//button[@aria-label='Choose month and year']");
-	private By StartTime = By.xpath("//input[@name='start_time']");
-	private By ClickOnHr = By.xpath("(//div[@class='timepicker-dial']/div/div/ngx-mat-timepicker-dial-control/input)[1]");
-	private By ClickOnMin = By.xpath("(//div[@class='timepicker-dial']/div/div/ngx-mat-timepicker-dial-control/input)[2]");
-	private By EndTime = By.xpath("//input[@name='end_time']");
+	private By Notapprove = By.xpath("//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle/following-sibling::small");	
 	private By OkButton = By.xpath("//span[contains(text(),'OK')] ");
-	private By SaveButton = By.xpath("//mat-icon[text()='save']");	
+	private By OpenCalender = By.xpath("//button[@aria-label='Open calendar']");
+	private By SaveButton = By.xpath("//mat-icon[text()='save']");
+	private By StartTime = By.xpath("//input[@name='start_time']");
 	private By TimeSlot_Lookup = By.xpath("(//div[text()='TIME SLOTS']/../../.././../../following-sibling::div/mat-tab-body/div/app-ec-enrollees/div[2]/mat-card/mat-card-content/div/div/mat-form-field/div/div/div/mat-select/div)[1]");
-	private By AddExamtaker = By.xpath("//mat-icon[text()='add']");
-	private By Notapprove = By.xpath("//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle/following-sibling::small");
-	private By approve = By.xpath("//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle");
-	private By Live = By.xpath("(//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle)[1]");
-	private By Header = By.xpath("//h2[@class='page-title section-header m-0']");
+	private By TimeSlotTab = By.xpath("//*[text()='TIME SLOTS']");
 	//private By H_enrollment = By.xpath("//h2[text()='Enrollments']");
 	private By Unassigned_Toggle1 = By.xpath("(//input[@type='search'])[1]/../../../../../../following-sibling::div/mat-slide-toggle/label/span/span/span[@class='mat-slide-toggle-thumb']");
 	
@@ -44,6 +44,32 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	public Create_TimeSlot_and_enroll_Examatker_Page(WebDriver driver)
 	{
 		this.driver = driver;
+	}
+	public void Add_New_TimeSlot() 
+	{
+		driver.findElement(AddNewButton).click();
+	}
+public void addExamtaker()
+	{
+		driver.findElement(AddExamtaker).click();
+	}
+public void approve_and_Live_the_Examtaker()
+	{
+		waitForElement(Notapprove);
+		String s = driver.findElement(Notapprove).getText();
+		if(s.equalsIgnoreCase("Not Approved"))
+		{
+			driver.findElement(approve).click();
+			waitForElement(Live);
+			StaticWait(2);
+			driver.findElement(Live).click();
+		}		
+	}
+	public void click_on_ChooseMonthandYear() 
+	{
+		StaticWait(1);
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(ChooseMonthandYear)).click().perform();
 	}
 	public void click_On_Enrollment_Tab()
 	{
@@ -58,7 +84,101 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			driver.findElement(Enrollment).click();
 //		}
 	}
-//	public void click_On_Examination_Lookup() 
+	public void click_on_Time_slot_Lookup()
+	{
+		waitForElement(TimeSlot_Lookup);
+		StaticWait(2);
+		driver.findElement(TimeSlot_Lookup).click();
+	}
+	public void click_on_TimeslotTab() 
+	{
+		StaticWait(1);
+		driver.findElement(Header).click();
+		StaticWait(1);
+		driver.findElement(TimeSlotTab).click();;
+	
+	}
+	public void clickon_EndTime() 
+	{
+		driver.findElement(EndTime).click();
+	}
+	public void clickon_SaveButton() 
+	{
+		StaticWait(1);
+		driver.findElement(SaveButton).click();
+		StaticWait(1);
+	}
+	public void clickon_StartTime() 
+	{
+		driver.findElement(StartTime).click();
+	}
+	public void clickOnHr() 
+	{
+		driver.findElement(ClickOnHr).click();
+	}
+	public void clickOnMin() 
+	{
+		driver.findElement(ClickOnMin).click();
+	}
+	public void ExamTaker_Count(String examtakercount)
+	{
+		StaticWait(1);
+		driver.findElement(ExamTakerCount).sendKeys(examtakercount);
+	}
+	public void okButton() 
+	{
+		driver.findElement(OkButton).click();
+	}
+	public void open_the_Calender() 
+	{
+		waitForElement(OpenCalender);
+		driver.findElement(OpenCalender).click();
+	}
+	public void search_Examtaker_in_a_Timeslot(String ExamTaker_Ln,String ExamTaker_Fn)
+	{
+		StaticWait(2);
+		driver.findElement(By.xpath("(//input[@type='search'])[2]")).sendKeys(ExamTaker_Ln+" ");
+		StaticWait(1);
+		driver.findElement(By.xpath("(//input[@type='search'])[2]")).sendKeys(ExamTaker_Fn);
+		StaticWait(1);
+	}
+	public void search_Examtaker_under_enrollment(String ExamTaker_Ln,String ExamTaker_Fn)
+	{
+		StaticWait(2);
+		driver.findElement(Unassigned_Toggle1).click();
+		driver.findElement(By.xpath("(//input[@type='search'])[1]")).sendKeys(ExamTaker_Ln+" ");
+		StaticWait(1);
+		driver.findElement(By.xpath("(//input[@type='search'])[1]")).sendKeys(ExamTaker_Fn);
+		StaticWait(1);
+	}
+	public void select_date(String date) 
+	{
+		driver.findElement(By.xpath("//div[text()=' "+date+" ']")).click();
+	}
+	public void select_End_TimeinHr(String EndTimeinHr) 
+	{
+		driver.findElement(By.xpath("//span[text()="+EndTimeinHr+"]")).click();
+	}
+	public void select_EndTimeinMin(String EndTimeinMin) 
+	{
+		Actions act =  new Actions(driver);
+		act.moveToElement(driver.findElement(By.xpath("//button[@style='transform: rotateZ(-"+EndTimeinMin+"deg);']"))).click().perform();
+	}
+	public void select_Month(String month) 
+	{
+		driver.findElement(By.xpath("//div[text()=' "+month+" ']")).click();
+	}
+	public void select_StartTimeinHr(String StartTimeinHr) 
+	{
+		driver.findElement(By.xpath("//span[text()="+StartTimeinHr+"]")).click();
+	}
+	public void select_StartTimeinMin(String StartTimeinMin) 
+	
+	{
+		Actions act =  new Actions(driver);
+		act.moveToElement(driver.findElement(By.xpath("//div[@style='transform: rotateZ("+StartTimeinMin+"deg);']"))).click().perform();
+	}
+	//	public void click_On_Examination_Lookup() 
 //	{
 //		waitForElement(ExaminationLookup);
 //		StaticWait(2);
@@ -88,7 +208,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 		}
 		
 	}
-//	public void click_On_Location_Lookup() 
+	//	public void click_On_Location_Lookup() 
 //	{
 ////		waitForElement(LocationLookup);
 ////		WebElement e2 =driver.findElement(LocationLookup);
@@ -122,95 +242,6 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 //		j.executeScript("arguments[0].scrollIntoView();",ele2);
 //		StaticWait(2);
 //		ele2.click();
-	}
-	public void click_on_TimeslotTab() 
-	{
-		StaticWait(1);
-		driver.findElement(Header).click();
-		StaticWait(1);
-		driver.findElement(TimeSlotTab).click();;
-	
-	}
-	public void Add_New_TimeSlot() 
-	{
-		driver.findElement(AddNewButton).click();
-	}
-	public void ExamTaker_Count(String examtakercount)
-	{
-		driver.findElement(ExamTakerCount).sendKeys(examtakercount);
-	}
-	public void open_the_Calender() 
-	{
-		waitForElement(OpenCalender);
-		driver.findElement(OpenCalender).click();
-	}
-	public void click_on_ChooseMonthandYear() 
-	{
-		Actions act = new Actions(driver);
-		act.moveToElement(driver.findElement(ChooseMonthandYear)).click().perform();
-	}
-	public void select_year(String year) 
-	{
-		driver.findElement(By.xpath("//button[@aria-label='"+year+"']")).click();
-	}
-	public void select_Month(String month) 
-	{
-		driver.findElement(By.xpath("//div[text()=' "+month+" ']")).click();
-	}
-	public void select_date(String date) 
-	{
-		driver.findElement(By.xpath("//div[text()=' "+date+" ']")).click();
-	}
-	public void clickon_StartTime() 
-	{
-		driver.findElement(StartTime).click();
-	}
-	public void clickOnHr() 
-	{
-		driver.findElement(ClickOnHr).click();
-	}
-	public void select_StartTimeinHr(String StartTimeinHr) 
-	{
-		driver.findElement(By.xpath("//span[text()="+StartTimeinHr+"]")).click();
-	}
-	public void clickOnMin() 
-	{
-		driver.findElement(ClickOnMin).click();
-	}
-	public void select_StartTimeinMin(String StartTimeinMin) 
-	
-	{
-		Actions act =  new Actions(driver);
-		act.moveToElement(driver.findElement(By.xpath("//div[@style='transform: rotateZ("+StartTimeinMin+"deg);']"))).click().perform();
-	}
-	public void okButton() 
-	{
-		driver.findElement(OkButton).click();
-	}
-	public void clickon_EndTime() 
-	{
-		driver.findElement(EndTime).click();
-	}
-	public void select_End_TimeinHr(String EndTimeinHr) 
-	{
-		driver.findElement(By.xpath("//span[text()="+EndTimeinHr+"]")).click();
-	}
-	public void select_EndTimeinMin(String EndTimeinMin) 
-	{
-		Actions act =  new Actions(driver);
-		act.moveToElement(driver.findElement(By.xpath("//button[@style='transform: rotateZ(-"+EndTimeinMin+"deg);']"))).click().perform();
-	}
-	public void clickon_SaveButton() 
-	{
-		StaticWait(1);
-		driver.findElement(SaveButton).click();
-		StaticWait(1);
-	}
-	public void click_on_Time_slot_Lookup()
-	{
-		waitForElement(TimeSlot_Lookup);
-		StaticWait(2);
-		driver.findElement(TimeSlot_Lookup).click();
 	}
 	public void select_the_TimeSlot(String Sh,String Smin, String Eh, String Emin)
 	{
@@ -252,38 +283,10 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			t.click();
 		}	
 	}
-	public void search_Examtaker_under_enrollment(String ExamTaker_Ln,String ExamTaker_Fn)
+	public void select_year(String year) 
 	{
-		StaticWait(2);
-		driver.findElement(Unassigned_Toggle1).click();
-		driver.findElement(By.xpath("(//input[@type='search'])[1]")).sendKeys(ExamTaker_Ln+" ");
 		StaticWait(1);
-		driver.findElement(By.xpath("(//input[@type='search'])[1]")).sendKeys(ExamTaker_Fn);
-		StaticWait(1);
-	}
-	public void addExamtaker()
-	{
-		driver.findElement(AddExamtaker).click();
-	}
-	public void search_Examtaker_in_a_Timeslot(String ExamTaker_Ln,String ExamTaker_Fn)
-	{
-		StaticWait(2);
-		driver.findElement(By.xpath("(//input[@type='search'])[2]")).sendKeys(ExamTaker_Ln+" ");
-		StaticWait(1);
-		driver.findElement(By.xpath("(//input[@type='search'])[2]")).sendKeys(ExamTaker_Fn);
-		StaticWait(1);
-	}
-	public void approve_and_Live_the_Examtaker()
-	{
-		waitForElement(Notapprove);
-		String s = driver.findElement(Notapprove).getText();
-		if(s.equalsIgnoreCase("Not Approved"))
-		{
-			driver.findElement(approve).click();
-			waitForElement(Live);
-			StaticWait(2);
-			driver.findElement(Live).click();
-		}		
+		driver.findElement(By.xpath("//button[@aria-label='"+year+"']")).click();
 	}
 
 }

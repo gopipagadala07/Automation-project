@@ -32,14 +32,14 @@ public class Create_Time_Slot_and_Enroll_the_ExamTakerRunner extends AbstractTes
 
 	}
 
+	@DataProvider
+	public Object[][] getexcel()  {
+		return this.scenarios();
+	}
+
 	@AfterClass(alwaysRun = true)
 	public void testDownClass() throws IOException {
 		System.out.println("***************** " + testcasename + " Test end *****************");
 
-	}
-
-	@DataProvider
-	public Object[][] getexcel()  {
-		return this.scenarios();
 	}
 }

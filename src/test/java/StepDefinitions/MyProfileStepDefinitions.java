@@ -17,12 +17,31 @@ import io.cucumber.java.en.Then;
 
 public class MyProfileStepDefinitions extends ActionType{
 
-	private LoginPage login=new LoginPage(Base.getDriver()); 
-	private MyProfilePage profile=new MyProfilePage(Base.getDriver());
-	static ExcelReader reader=new ExcelReader();
+	static ExcelReader reader=new ExcelReader(); 
 	static List<Map<String,String>> testdata=null;
+	private LoginPage login=new LoginPage(Base.getDriver());
+	private MyProfilePage profile=new MyProfilePage(Base.getDriver());
 
 	
+	@Then("Save the User Profile")
+	public void save_the_user_profile() {
+		profile.profileSave();
+	}
+
+	@Then("User change the Password with Credentials {int}")
+	public void user_change_the_password_with_credentials(Integer PwdDetails) throws InvalidFormatException, IOException {
+		testdata=null;
+		waitForPageLoad();
+		if(testdata==null)
+		{
+			testdata=reader.getData("\\ExcelFiles\\ProfileDetails.xlsx", getSheetEnv());
+		}
+		String oldpwd=testdata.get(PwdDetails).get("OldPwd");
+		String newpwd=testdata.get(PwdDetails).get("NewPwd");
+		String conformpwd=testdata.get(PwdDetails).get("ConformPwd");
+		profile.changepwd(oldpwd, newpwd, conformpwd);
+	}
+
 	@And("User clicks on Myprofile Logo")
 	public void user_clicks_on_myprofile_logo() {
 		profile.logo();
@@ -54,24 +73,5 @@ public class MyProfileStepDefinitions extends ActionType{
 		}
 		String path=testdata.get(filepath).get("Path");
 		profile.uploadProfile(path);
-	}
-
-	@Then("User change the Password with Credentials {int}")
-	public void user_change_the_password_with_credentials(Integer PwdDetails) throws InvalidFormatException, IOException {
-		testdata=null;
-		waitForPageLoad();
-		if(testdata==null)
-		{
-			testdata=reader.getData("\\ExcelFiles\\ProfileDetails.xlsx", getSheetEnv());
-		}
-		String oldpwd=testdata.get(PwdDetails).get("OldPwd");
-		String newpwd=testdata.get(PwdDetails).get("NewPwd");
-		String conformpwd=testdata.get(PwdDetails).get("ConformPwd");
-		profile.changepwd(oldpwd, newpwd, conformpwd);
-	}
-
-	@Then("Save the User Profile")
-	public void save_the_user_profile() {
-		profile.profileSave();
 	}
 }

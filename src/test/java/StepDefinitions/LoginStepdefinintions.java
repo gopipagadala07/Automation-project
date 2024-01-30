@@ -16,14 +16,9 @@ import io.cucumber.java.en.Then;
 
 public class LoginStepdefinintions extends ActionType{
 
-	private LoginPage login=new LoginPage(Base.getDriver());   
-	static ExcelReader reader=new ExcelReader();
+	static ExcelReader reader=new ExcelReader();   
 	static List<Map<String,String>> testdata=null;
-
-	@Given("User launch the application with Valid URL")
-	public void user_launch_the_application() {
-		getURL(getProperty("url"));
-	}
+	private LoginPage login=new LoginPage(Base.getDriver());
 
 	@And("User able to see all Fields")
 	public void user_able_to_see_all_fields() {
@@ -51,5 +46,10 @@ public class LoginStepdefinintions extends ActionType{
 	public void user_is_on_homepage() throws Exception {
 		login.header();
 		
+	}
+
+	@Given("User launch the application with Valid URL")
+	public void user_launch_the_application() {
+		getURL(getProperty("url"));
 	}
 }

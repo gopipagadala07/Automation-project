@@ -31,23 +31,109 @@ import com.google.common.base.Function;
 public class ActionType extends Base {
 	
 
+	/**
+	 * Return env
+	 * 
+	 * @return
+	 */
+	public static String getSheetEnv() {
+
+		return env.replace(".", "").toUpperCase();
+
+	}
+
 	public WebDriverWait wait;
 
 	/**
-	 * Access application url
-	 * 
-	 * @param url
+	 * This method used to wait until the required element located in DOM.
 	 */
-	public void getURL(String url) {
-
+	public boolean fluentWait(final By by) {
+		generateInfoReport("	Waiting for element ... " + by.toString());
 		try {
-			Logs.info("Loading URL ... " + url);
-			getDriver().get(url);
-			waitForPageLoad();
+			Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver()).withTimeout(Duration.ofMinutes(2))
+					.pollingEvery(Duration.ofSeconds(10)).ignoring(NoSuchElementException.class);
+			Function<WebDriver, Boolean> function = new Function<WebDriver, Boolean>() {
+				public Boolean apply(WebDriver driver) {
+					WebElement element = driver.findElement(by);
+					return element.isDisplayed();
+				}
+			};
+			wait.until(function);
+			return getDriver().findElement(by).isDisplayed();
 		} catch (Exception e) {
-			System.out.println("Failed to load url :" + url + "<br><br>" + getException(e));
+			generateInfoReport("Element not located ... " + by.toString());
+			return false;
 		}
+	}
 
+	public void generateFailReport(boolean condition, String text) {
+		Assert.assertTrue(false);
+		Logs.error("Failed: " + text);
+	}
+
+	public void generateFailReport(String text) {
+		Assert.assertTrue(false);
+		Logs.error("Failed: " + text);
+	}
+
+	public void generateInfoReport(String text) {
+		Logs.info("Info: " + text);
+	}
+
+	/**
+	 * Logs generating methods
+	 * 
+	 * @param text
+	 */
+	public void generatePassReport(boolean condition, String text) {
+		Assert.assertTrue(true);
+		Logs.info("Passed: " + text);
+	}
+
+	public void generatePassReport(String text) {
+		Assert.assertTrue(true);
+		Logs.info("Passed: " + text);
+	}
+
+	private void generateReport(boolean status, String text) {
+		if (status) {
+			generatePassReport(text);
+		} else {
+			generateFailReport(text);
+		}
+	}
+
+	/**
+	 * Generates pass or fail report based on status flag
+	 * 
+	 * @param status
+	 * @param passText
+	 * @param failText
+	 */
+	public void generateReport(boolean status, String passText, String failText) {
+		if (status) {
+			generatePassReport(passText);
+		} else {
+			generateFailReport(failText);
+			
+		}
+	}
+
+	public void generateWarnReport(String text) {
+		Logs.warn("Warning: " + text);
+	}
+
+	/**
+	 * It return attribute value if object exists otherwise return exception message
+	 * 
+	 * @param string
+	 */
+	public String getAttributeValue(By locator, String attributeName) {
+		try {
+			return getDriver().findElement(locator).getAttribute(attributeName);
+		} catch (Exception e) {
+			return e.getMessage();
+		}
 	}
 
 	/**
@@ -70,110 +156,44 @@ public class ActionType extends Base {
 	}
 
 	/**
-	 * Wait for the given time to load the page
-	 * 
-	 * @param seconds
-	 */
-	public void waitForPageLoaded(int seconds) {
-		waitForPageLoad();
-	}
-
-	public void waitForPageLoad() {
-		getDriver().manage().timeouts().pageLoadTimeout(Integer.parseInt(getProperty("pageLoadTimeOut")),
-				TimeUnit.SECONDS);
-		
-	}
-
-	/**
-	 * Logs generating methods
-	 * 
-	 * @param text
-	 */
-	public void generatePassReport(boolean condition, String text) {
-		Assert.assertTrue(true);
-		Logs.info("Passed: " + text);
-	}
-
-	public void generatePassReport(String text) {
-		Assert.assertTrue(true);
-		Logs.info("Passed: " + text);
-	}
-
-	public void generateFailReport(boolean condition, String text) {
-		Assert.assertTrue(false);
-		Logs.error("Failed: " + text);
-	}
-
-	public void generateFailReport(String text) {
-		Assert.assertTrue(false);
-		Logs.error("Failed: " + text);
-	}
-
-	public void generateInfoReport(String text) {
-		Logs.info("Info: " + text);
-	}
-
-	public void generateWarnReport(String text) {
-		Logs.warn("Warning: " + text);
-	}
-
-	/**
-	 * Generates pass or fail report based on status flag
-	 * 
-	 * @param status
-	 * @param passText
-	 * @param failText
-	 */
-	public void generateReport(boolean status, String passText, String failText) {
-		if (status) {
-			generatePassReport(passText);
-		} else {
-			generateFailReport(failText);
-			
-		}
-	}
-
-	/**
-	 * Thread.sleep
-	 * 
-	 * @param i :no of seconds like 10 for 10 seconds
-	 */
-	public void StaticWait(int i) {
-		try {
-			Thread.sleep(i * 1000);
-		} catch (Exception e) {
-		}
-	}
-
-	/**
-	 * It return attribute value if object exists otherwise return exception message
-	 * 
-	 * @param string
-	 */
-	public String getAttributeValue(By locator, String attributeName) {
-		try {
-			return getDriver().findElement(locator).getAttribute(attributeName);
-		} catch (Exception e) {
-			return e.getMessage();
-		}
-	}
-
-	/**
-	 * If element is not visible it returns true, otherwise false and generate
-	 * report
+	 * Returns text on element if exists, otherwise returns empty string
 	 * 
 	 * @param by
-	 * @param seconds
+	 * @param locator
 	 * @return
 	 */
-	public boolean waitTillElementInVisible(By by, Duration seconds) {
+	public String getText(By by, String locator) {
+
+		return getText(by, locator, true);
+	}
+
+	private String getText(By by, String locator, boolean scrollRequired) {
 		try {
-			generateInfoReport("Waiting for element to be disappeared :" + by);
-			return new WebDriverWait(getDriver(), seconds).until(ExpectedConditions.invisibilityOfElementLocated(by));
+			waitForElement(by);
+			String text = getDriver().findElement(by).getText().trim();
+			generateInfoReport("Text on " + locator + ":" + text);
+			return text;
 		} catch (Exception e) {
-			generateInfoReport("Element is appeared :" + by);
-			return true;
+			generateInfoReport("Text on " + locator + " :");
+			return "";
 		}
+	}
+
+	/**
+	 * Access application url
+	 * 
+	 * @param url
+	 */
+	public void getURL(String url) {
+
+		try {
+			Logs.info("Loading URL ... " + url);
+			getDriver().get(url);
+			waitForPageLoad();
+		} catch (Exception e) {
+			System.out.println("Failed to load url :" + url + "<br><br>" + getException(e));
+		}
+
 	}
 
 	/**
@@ -186,42 +206,72 @@ public class ActionType extends Base {
 	}
 
 	/**
-	 * Validate page title if expected page title is same as actual page title
+	 * returns true when element is checked on screen Generates report
 	 * 
-	 * @param expectedPageTitle
-	 * @param pageName
-	 * @return true or false
+	 * @param by
+	 * @param locatorName
+	 * @return
+	 * @throws Throwable
 	 */
-	public boolean isTitleMatched(String expectedPageTitle, String pageName) {
-
+	public boolean isElementChecked(By by, String locatorName) {
 		try {
-			String text = getWindowTitle();
-			generateReport(text.equals(expectedPageTitle.trim()), "Page Title verification for " + pageName
-					+ "<br>Actual:" + text + "<br>Expected:" + expectedPageTitle);
-			return text.equals(expectedPageTitle.trim());
+			fluentWait(by);
+			String isChecked = getDriver().findElement(by).getAttribute("checked");
+			if (isChecked.equalsIgnoreCase("checked")) {
+				generatePassReport(locatorName + " is checked");
+				return true;
+			} else {
+				generateFailReport(locatorName + " not checked");
+				return false;
+			}
 		} catch (Exception e) {
 			return false;
+		}
+
+	}
+
+	/**
+	 * returns true when element is disabled on screen Generates report
+	 * 
+	 * @param by
+	 * @param locatorName
+	 * @return
+	 * @throws Throwable
+	 */
+	public void isElementDisabled(By by, String locatorName) {
+		boolean flag = false;
+		try {
+			fluentWait(by);
+			flag = getDriver().findElement(by).isEnabled();
+			if (flag) {
+				generatePassReport(locatorName + " is Disabled");
+			} else {
+				generateFailReport(locatorName + " is Enabled");
+			}
+		} catch (Exception e) {
+			generateFailReport(locatorName + " is Enabled");
 		}
 	}
 
 	/**
-	 * Validate page title if expected page title contains some string of actual
-	 * page title
+	 * returns true when element is enabled on screen Generates report
 	 * 
-	 * @param expectedPageTitle
-	 * @param pageName
-	 * @return true or false
+	 * @param by
+	 * @param locatorName
+	 * @return
+	 * @throws Throwable
 	 */
-	public boolean isTitlecontains(String expectedPageTitle, String pageName) {
-
+	public boolean isElementEnable(By by, String locatorName) {
+		boolean flag = false;
 		try {
-			String text = getWindowTitle();
-			generateReport(text.contains(expectedPageTitle), "Page Title verification for " + pageName + "<br>Actual:"
-					+ text + "<br>Expected:" + expectedPageTitle);
-			return text.contains(expectedPageTitle);
+			fluentWait(by);
+			flag = getDriver().findElement(by).isEnabled();
+			generateReport(flag, "Verifing the element is enabled or not :" + locatorName + "<br>Locator :" + by
+					+ "<br>Expected:" + locatorName + " should be enabled<br>Actual: " + flag);
 		} catch (Exception e) {
-			return false;
+			return flag;
 		}
+		return flag;
 	}
 
 	/**
@@ -279,54 +329,98 @@ public class ActionType extends Base {
 	}
 
 	/**
-	 * It will wait till the object is located within the given time
+	 * returns true when element is selected on screen Generates report
 	 * 
-	 * @param by      :example By.xpath("//")
-	 * @param seconds : example 5
-	 * @return true or false
+	 * @param by
+	 * @param locatorName
+	 * @return
+	 * @throws Throwable
 	 */
-	public boolean waitForElement(By by, int seconds) {
-		return waitForElement(by, seconds);
+	public boolean isElementSelected(By by, String locatorName) {
+		boolean flag = false;
+		try {
+			fluentWait(by);
+			flag = getDriver().findElement(by).isSelected();
+			generateReport(flag, "Verifing the element is selected or not :" + locatorName + "<br>Locator :" + by
+					+ "<br>Expected:" + locatorName + " should be selected<br>Actual: " + flag);
+		} catch (Exception e) {
+			return flag;
+		}
+		return flag;
 	}
 
 	/**
+	 * Validate page title if expected page title contains some string of actual
+	 * page title
 	 * 
-	 * @param by
-	 * @param scrollRequired
-	 * @return
+	 * @param expectedPageTitle
+	 * @param pageName
+	 * @return true or false
 	 */
-	public boolean waitForElement(By by) {
+	public boolean isTitlecontains(String expectedPageTitle, String pageName) {
+
 		try {
-			WebDriverWait wait = new WebDriverWait(getDriver(),
-					Duration.ofSeconds(10));
-			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-			return element.isDisplayed();
+			String text = getWindowTitle();
+			generateReport(text.contains(expectedPageTitle), "Page Title verification for " + pageName + "<br>Actual:"
+					+ text + "<br>Expected:" + expectedPageTitle);
+			return text.contains(expectedPageTitle);
 		} catch (Exception e) {
 			return false;
 		}
 	}
 
 	/**
-	 * Returns text on element if exists, otherwise returns empty string
+	 * Validate page title if expected page title is same as actual page title
 	 * 
-	 * @param by
-	 * @param locator
-	 * @return
+	 * @param expectedPageTitle
+	 * @param pageName
+	 * @return true or false
 	 */
-	public String getText(By by, String locator) {
+	public boolean isTitleMatched(String expectedPageTitle, String pageName) {
 
-		return getText(by, locator, true);
+		try {
+			String text = getWindowTitle();
+			generateReport(text.equals(expectedPageTitle.trim()), "Page Title verification for " + pageName
+					+ "<br>Actual:" + text + "<br>Expected:" + expectedPageTitle);
+			return text.equals(expectedPageTitle.trim());
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
-	private String getText(By by, String locator, boolean scrollRequired) {
+	/**
+	 * return unique email id for new user registration
+	 * @return 
+	 */
+	public String randomEmailIdGenerator(String number) {
+		String randomNumber = randomNumberGenerator();
+//		String generatedString = RandomStringUtils.randomNumeric(5);
+		String randomEmailId = "automation" + randomNumber + "@sapphirus.com";
+		generateInfoReport("Email Id: " + randomEmailId);
+		return randomEmailId;
+		
+	}
+
+	/**
+	 * return unique email id for registration
+	 * @return 
+	 */
+	public String randomNumberGenerator() {
+		
+		String randomNumber = RandomStringUtils.randomNumeric(5);
+		return randomNumber;
+		
+	}
+
+	/**
+	 * Thread.sleep
+	 * 
+	 * @param i :no of seconds like 10 for 10 seconds
+	 */
+	public void StaticWait(int i) {
 		try {
-			waitForElement(by);
-			String text = getDriver().findElement(by).getText().trim();
-			generateInfoReport("Text on " + locator + ":" + text);
-			return text;
+			Thread.sleep(i * 1000);
 		} catch (Exception e) {
-			generateInfoReport("Text on " + locator + " :");
-			return "";
 		}
 	}
 
@@ -366,157 +460,63 @@ public class ActionType extends Base {
 	}
 
 	/**
-	 * This method used to wait until the required element located in DOM.
+	 * 
+	 * @param by
+	 * @param scrollRequired
+	 * @return
 	 */
-	public boolean fluentWait(final By by) {
-		generateInfoReport("	Waiting for element ... " + by.toString());
+	public boolean waitForElement(By by) {
 		try {
-			Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver()).withTimeout(Duration.ofMinutes(2))
-					.pollingEvery(Duration.ofSeconds(10)).ignoring(NoSuchElementException.class);
-			Function<WebDriver, Boolean> function = new Function<WebDriver, Boolean>() {
-				public Boolean apply(WebDriver driver) {
-					WebElement element = driver.findElement(by);
-					return element.isDisplayed();
-				}
-			};
-			wait.until(function);
-			return getDriver().findElement(by).isDisplayed();
+			WebDriverWait wait = new WebDriverWait(getDriver(),
+					Duration.ofSeconds(10));
+			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+			return element.isDisplayed();
 		} catch (Exception e) {
-			generateInfoReport("Element not located ... " + by.toString());
 			return false;
 		}
 	}
 
 	/**
-	 * returns true when element is enabled on screen Generates report
+	 * It will wait till the object is located within the given time
 	 * 
-	 * @param by
-	 * @param locatorName
-	 * @return
-	 * @throws Throwable
+	 * @param by      :example By.xpath("//")
+	 * @param seconds : example 5
+	 * @return true or false
 	 */
-	public boolean isElementEnable(By by, String locatorName) {
-		boolean flag = false;
-		try {
-			fluentWait(by);
-			flag = getDriver().findElement(by).isEnabled();
-			generateReport(flag, "Verifing the element is enabled or not :" + locatorName + "<br>Locator :" + by
-					+ "<br>Expected:" + locatorName + " should be enabled<br>Actual: " + flag);
-		} catch (Exception e) {
-			return flag;
-		}
-		return flag;
+	public boolean waitForElement(By by, int seconds) {
+		return waitForElement(by, seconds);
 	}
 
-	/**
-	 * returns true when element is disabled on screen Generates report
-	 * 
-	 * @param by
-	 * @param locatorName
-	 * @return
-	 * @throws Throwable
-	 */
-	public void isElementDisabled(By by, String locatorName) {
-		boolean flag = false;
-		try {
-			fluentWait(by);
-			flag = getDriver().findElement(by).isEnabled();
-			if (flag) {
-				generatePassReport(locatorName + " is Disabled");
-			} else {
-				generateFailReport(locatorName + " is Enabled");
-			}
-		} catch (Exception e) {
-			generateFailReport(locatorName + " is Enabled");
-		}
-	}
-
-	/**
-	 * returns true when element is selected on screen Generates report
-	 * 
-	 * @param by
-	 * @param locatorName
-	 * @return
-	 * @throws Throwable
-	 */
-	public boolean isElementSelected(By by, String locatorName) {
-		boolean flag = false;
-		try {
-			fluentWait(by);
-			flag = getDriver().findElement(by).isSelected();
-			generateReport(flag, "Verifing the element is selected or not :" + locatorName + "<br>Locator :" + by
-					+ "<br>Expected:" + locatorName + " should be selected<br>Actual: " + flag);
-		} catch (Exception e) {
-			return flag;
-		}
-		return flag;
-	}
-
-	private void generateReport(boolean status, String text) {
-		if (status) {
-			generatePassReport(text);
-		} else {
-			generateFailReport(text);
-		}
-	}
-
-	/**
-	 * returns true when element is checked on screen Generates report
-	 * 
-	 * @param by
-	 * @param locatorName
-	 * @return
-	 * @throws Throwable
-	 */
-	public boolean isElementChecked(By by, String locatorName) {
-		try {
-			fluentWait(by);
-			String isChecked = getDriver().findElement(by).getAttribute("checked");
-			if (isChecked.equalsIgnoreCase("checked")) {
-				generatePassReport(locatorName + " is checked");
-				return true;
-			} else {
-				generateFailReport(locatorName + " not checked");
-				return false;
-			}
-		} catch (Exception e) {
-			return false;
-		}
-
-	}
-
-	/**
-	 * Return env
-	 * 
-	 * @return
-	 */
-	public static String getSheetEnv() {
-
-		return env.replace(".", "").toUpperCase();
-
-	}
-	
-	/**
-	 * return unique email id for registration
-	 * @return 
-	 */
-	public String randomNumberGenerator() {
-		
-		String randomNumber = RandomStringUtils.randomNumeric(5);
-		return randomNumber;
+	public void waitForPageLoad() {
+		getDriver().manage().timeouts().pageLoadTimeout(Integer.parseInt(getProperty("pageLoadTimeOut")),
+				TimeUnit.SECONDS);
 		
 	}
 	
 	/**
-	 * return unique email id for new user registration
-	 * @return 
+	 * Wait for the given time to load the page
+	 * 
+	 * @param seconds
 	 */
-	public String randomEmailIdGenerator(String number) {
-		String randomNumber = randomNumberGenerator();
-//		String generatedString = RandomStringUtils.randomNumeric(5);
-		String randomEmailId = "automation" + randomNumber + "@sapphirus.com";
-		generateInfoReport("Email Id: " + randomEmailId);
-		return randomEmailId;
-		
+	public void waitForPageLoaded(int seconds) {
+		waitForPageLoad();
+	}
+	
+	/**
+	 * If element is not visible it returns true, otherwise false and generate
+	 * report
+	 * 
+	 * @param by
+	 * @param seconds
+	 * @return
+	 */
+	public boolean waitTillElementInVisible(By by, Duration seconds) {
+		try {
+			generateInfoReport("Waiting for element to be disappeared :" + by);
+			return new WebDriverWait(getDriver(), seconds).until(ExpectedConditions.invisibilityOfElementLocated(by));
+		} catch (Exception e) {
+			generateInfoReport("Element is appeared :" + by);
+			return true;
+		}
 	}
 }
