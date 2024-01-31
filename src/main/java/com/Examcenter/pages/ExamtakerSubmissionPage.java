@@ -15,69 +15,31 @@ import com.Examcenter.Utils.ActionType;
 
 public class ExamtakerSubmissionPage extends ActionType{
 
-	private WebDriver driver;
+	By begintest=By.xpath("//button[@aria-label='Begin Test']");
 
+	By blankAnswer=By.xpath("//input[@id='txtEditorInteraction']");
+	By close=By.xpath("//mat-icon[text()='close']");
+	private WebDriver driver;
 	By examinationbtn=By.xpath("//span[text()='Examinations']");
-	By searchheretxt=By.xpath("//input[@type='search']");
+	By ExtendedTypeAnswer=By.xpath("//body[@contenteditable='true']");
+	By finish=By.xpath("(//button[text()='Finish'])[3]");
+	By frame=By.xpath("//iframe[@frameborder='0']");
 	By launchbtn=By.xpath("//span[text()=' Launch ']");
+	By logout=By.xpath("//span[text()='logout']");
+	By mcqAnswer=By.xpath("//li[@class='qti_readaloud blackColorScheme normalFontSize'][1]");
+	By nextbtn=By.xpath("//button[@aria-label='Next']");
+	By Qcount=By.xpath("//div[@id='navigationSideMenu']/ul/li/p/button");
+	By returnbtn=By.xpath("//button[@value='login']");
+	By searchheretxt=By.xpath("//input[@type='search']");
+	By statusband=By.xpath("//b[text()='Performance']/../span/span");
+	By Submit=By.xpath("//button[text()='Submit']");
 	By tokentxt=By.xpath("//input[@type='password']");
 	By validatebtn=By.xpath("//button[@aria-label='Validate']");
-	By begintest=By.xpath("//button[@aria-label='Begin Test']");
-	By Qcount=By.xpath("//div[@id='navigationSideMenu']/ul/li/p/button");
-	By mcqAnswer=By.xpath("//li[@class='qti_readaloud blackColorScheme normalFontSize'][1]");
-	By frame=By.xpath("//iframe[@frameborder='0']");
-	By ExtendedTypeAnswer=By.xpath("//body[@contenteditable='true']");
-	By blankAnswer=By.xpath("//input[@id='txtEditorInteraction']");
-	By nextbtn=By.xpath("//button[@aria-label='Next']");
-	By finish=By.xpath("(//button[text()='Finish'])[3]");
-	By Submit=By.xpath("//button[text()='Submit']");
-	By close=By.xpath("//mat-icon[text()='close']");
-	By statusband=By.xpath("//b[text()='Performance']/../span/span");
-	By logout=By.xpath("//span[text()='logout']");
-	By returnbtn=By.xpath("//button[@value='login']");
 	public ExamtakerSubmissionPage(WebDriver driver)
 	{
 		this.driver=driver;
 	}
 
-	public void examinationbtn()
-	{
-		waitForElement(examinationbtn);
-		driver.findElement(examinationbtn).click();
-	}
-	public void searchheretxt(String Examname, String ScheduleName)
-	{
-		waitForElement(searchheretxt);
-		driver.findElement(searchheretxt).sendKeys(Examname+" - "+ScheduleName);
-		StaticWait(2);
-		WebElement element=driver.findElement(By.xpath("//b[text()='"+Examname+" - "+ScheduleName+"']"));
-		JavascriptExecutor j=(JavascriptExecutor) driver;
-		j.executeScript("arguments[0].click()",element);
-
-	}
-	public void launchbtn()
-	{
-		waitForElement(launchbtn);
-		WebElement e1=driver.findElement(launchbtn);
-		JavascriptExecutor j=(JavascriptExecutor) driver;
-		j.executeScript("arguments[0].click()",e1);
-		driver.switchTo().frame(0);
-	}
-	public void tokentxt(String Token)
-	{
-		waitForElement(tokentxt);
-		driver.findElement(tokentxt).sendKeys(Token);
-	}
-	public void validatebtn()
-	{
-		waitForElement(validatebtn);
-		driver.findElement(validatebtn).click();
-	}
-	public void begintest()
-	{
-		waitForElement(begintest);
-		driver.findElement(begintest).click();		
-	}
 	public void Answers()
 	{
 		List<WebElement> Count = driver.findElements(Qcount);
@@ -92,7 +54,21 @@ public class ExamtakerSubmissionPage extends ActionType{
 			driver.findElement(nextbtn).click();
 		}
 	}
-
+	public void begintest()
+	{
+		waitForElement(begintest);
+		driver.findElement(begintest).click();		
+	}
+	public void close()
+	{
+		driver.switchTo().defaultContent();
+		driver.findElement(close).click();
+	}
+	public void examinationbtn()
+	{
+		waitForElement(examinationbtn);
+		driver.findElement(examinationbtn).click();
+	}
 	public void Finish()
 	{
 		driver.findElement(finish).click();
@@ -101,10 +77,29 @@ public class ExamtakerSubmissionPage extends ActionType{
 		driver.findElement(Submit).click();
 		StaticWait(2);
 	}
-	public void close()
+	public void launchbtn()
 	{
-		driver.switchTo().defaultContent();
-		driver.findElement(close).click();
+		waitForElement(launchbtn);
+		WebElement e1=driver.findElement(launchbtn);
+		JavascriptExecutor j=(JavascriptExecutor) driver;
+		j.executeScript("arguments[0].click()",e1);
+		driver.switchTo().frame(0);
+	}
+	public void logout()
+	{
+		driver.findElement(logout).click();
+		driver.findElement(returnbtn).click();
+	}
+
+	public void searchheretxt(String Examname, String ScheduleName)
+	{
+		waitForElement(searchheretxt);
+		driver.findElement(searchheretxt).sendKeys(Examname+" - "+ScheduleName);
+		StaticWait(2);
+		WebElement element=driver.findElement(By.xpath("//b[text()='"+Examname+" - "+ScheduleName+"']"));
+		JavascriptExecutor j=(JavascriptExecutor) driver;
+		j.executeScript("arguments[0].click()",element);
+
 	}
 	public void statusband()
 	{
@@ -112,9 +107,14 @@ public class ExamtakerSubmissionPage extends ActionType{
 		ExtentCucumberAdapter.addTestStepLog(band);
 		StaticWait(2);
 	}
-	public void logout()
+	public void tokentxt(String Token)
 	{
-		driver.findElement(logout).click();
-		driver.findElement(returnbtn).click();
+		waitForElement(tokentxt);
+		driver.findElement(tokentxt).sendKeys(Token);
+	}
+	public void validatebtn()
+	{
+		waitForElement(validatebtn);
+		driver.findElement(validatebtn).click();
 	}
 }

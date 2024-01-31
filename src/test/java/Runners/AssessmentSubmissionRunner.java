@@ -15,17 +15,17 @@ import io.cucumber.testng.CucumberOptions;
 public class AssessmentSubmissionRunner extends AbstractTestNGCucumberTests{
 
 	String TestcaseName;
+	@AfterClass
+	public void afterClass()
+	{
+		System.out.println("***************** " + TestcaseName + " Test end *****************");
+	}
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browser)
 	{
 		TestcaseName=this.getClass().getSimpleName();
 		System.out.println("***************** " + TestcaseName + " Test Starting *****************");
-	}
-	@AfterClass
-	public void afterClass()
-	{
-		System.out.println("***************** " + TestcaseName + " Test end *****************");
 	}
 
 }

@@ -30,7 +30,7 @@
 
 		<!-- top, bottom -->
 		<testViewChartLocation>bottom</testViewChartLocation>
-		
+
 		<!-- timestamp format -->
 		<timeStampFormat>MMM dd, yyyy HH:mm:ss</timeStampFormat>
 

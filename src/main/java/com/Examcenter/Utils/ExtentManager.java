@@ -10,9 +10,9 @@ import java.util.Date;
 
 public class ExtentManager {
 
-	public static String reportLocation;
-	final public static String filePath = getReportLocation() + "/SummaryReport.html";
 	public static String emailReports = "";
+	final public static String filePath = getReportLocation() + "/SummaryReport.html";
+	public static String reportLocation;
 
 	public static String getReportLocation() {
 

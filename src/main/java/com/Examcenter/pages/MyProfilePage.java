@@ -11,32 +11,39 @@ import com.Examcenter.Utils.ActionType;
 
 public class MyProfilePage extends ActionType{
 
-	private WebDriver driver;
+	By changepwd=By.xpath("//mat-icon[text()='edit']");
 	
-	By profilelogo=By.xpath("//a[@mattooltip='My Profile']");
+	private WebDriver driver;
 	By Editemail=By.xpath("(//input[@type='text'])[1]");
-	By profile=By.xpath("//div[@role='textbox']");
-	By zoomid=By.xpath("(//input[@type='text'])[4]");
-	By upload=By.xpath("//mat-icon[text()='backup']");
 	By file=By.xpath("//h3[text()='Please Select a picture to upload']/../div/input");
 	By minimize=By.xpath("//span[@class='fa fa-search-minus']");
-	By saveimg=By.xpath("//span[text()=' Save Profile Picture ']");
-	By changepwd=By.xpath("//mat-icon[text()='edit']");
-	By oldpwd=By.xpath("(//input[@type='text'])[5]");
 	By Newpwd=By.xpath("(//input[@type='password'])[1]");
+	By oldpwd=By.xpath("(//input[@type='text'])[5]");
+	By profile=By.xpath("//div[@role='textbox']");
+	By profilelogo=By.xpath("//a[@mattooltip='My Profile']");
+	By profilesave=By.xpath("//mat-icon[text()='save']");
 	By reenterpwd=By.xpath("(//input[@type='password'])[2]");
 	By savebtn=By.xpath("//span[text()=' Save ']");
-	By profilesave=By.xpath("//mat-icon[text()='save']");
+	By saveimg=By.xpath("//span[text()=' Save Profile Picture ']");
+	By upload=By.xpath("//mat-icon[text()='backup']");
+	By zoomid=By.xpath("(//input[@type='text'])[4]");
 	
 	public MyProfilePage(WebDriver driver)
 	{
 		this.driver=driver;
 	}
 	
-	public void logo()
+	public void changepwd(String OldPwd,String NewPwd,String CnfmPwd)
 	{
-		waitForElement(profilelogo);
-		driver.findElement(profilelogo).click();
+		driver.findElement(changepwd).click();
+		waitForElement(oldpwd);
+		StaticWait(2);
+		driver.findElement(oldpwd).sendKeys(OldPwd);
+		driver.findElement(Newpwd).sendKeys(NewPwd);
+		driver.findElement(reenterpwd).sendKeys(CnfmPwd);
+		waitForElement(savebtn);
+		StaticWait(1);
+		driver.findElement(savebtn).click();
 	}
 	public void edtEmail(String Email)
 	{
@@ -46,11 +53,10 @@ public class MyProfilePage extends ActionType{
 		StaticWait(1);
 		driver.findElement(Editemail).sendKeys(Email);
 	}
-	public void zoomid(String ID) {
-		waitForElement(zoomid);
-		driver.findElement(zoomid).sendKeys(Keys.CONTROL,"a",Keys.CLEAR);
-		StaticWait(1);
-	    driver.findElement(zoomid).sendKeys(ID);;
+	public void logo()
+	{
+		waitForElement(profilelogo);
+		driver.findElement(profilelogo).click();
 	}
 	public void profiledesc(String Description)
 	{
@@ -68,6 +74,12 @@ public class MyProfilePage extends ActionType{
 //		}
 		
 	}
+	public void profileSave()
+	{
+		StaticWait(1);
+		driver.findElement(profilesave).click();
+		StaticWait(1);
+	}
 	public void uploadProfile(String path)
 	{
 		driver.findElement(upload).click();
@@ -82,22 +94,10 @@ public class MyProfilePage extends ActionType{
 		e1.click();
 	
 	}
-	public void changepwd(String OldPwd,String NewPwd,String CnfmPwd)
-	{
-		driver.findElement(changepwd).click();
-		waitForElement(oldpwd);
-		StaticWait(2);
-		driver.findElement(oldpwd).sendKeys(OldPwd);
-		driver.findElement(Newpwd).sendKeys(NewPwd);
-		driver.findElement(reenterpwd).sendKeys(CnfmPwd);
-		waitForElement(savebtn);
+	public void zoomid(String ID) {
+		waitForElement(zoomid);
+		driver.findElement(zoomid).sendKeys(Keys.CONTROL,"a",Keys.CLEAR);
 		StaticWait(1);
-		driver.findElement(savebtn).click();
-	}
-	public void profileSave()
-	{
-		StaticWait(1);
-		driver.findElement(profilesave).click();
-		StaticWait(1);
+	    driver.findElement(zoomid).sendKeys(ID);;
 	}
 }

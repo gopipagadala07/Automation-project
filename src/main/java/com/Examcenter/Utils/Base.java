@@ -19,15 +19,24 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class Base {
 
-	public WebDriver driver;
+	public static String env;
 
-	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
+	public static Properties prop;
 
 	public static ReadProperties readProp;
-	public static Properties prop;
-	public static String env;
+	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
+	/**
+	 * this is used to get the driver with ThreadLocal
+	 * 
+	 * @return
+	 */
+	public static synchronized WebDriver getDriver() {
+		return tlDriver.get();
+	}
 	
 	
+
+	public WebDriver driver;
 
 	/**
 	 * This method is used to initialize the thradlocal driver on the basis of given
@@ -69,15 +78,6 @@ public class Base {
 		ReadProperties readProp = new ReadProperties();
 		prop = readProp.loadConfig();
 		env = prop.getProperty("env");
-	}
-
-	/**
-	 * this is used to get the driver with ThreadLocal
-	 * 
-	 * @return
-	 */
-	public static synchronized WebDriver getDriver() {
-		return tlDriver.get();
 	}
 
 }

@@ -5,6 +5,11 @@ import java.io.StringWriter;
 
 public class UtilityMethods {
 
+	public static String getConsoleFormatedText(String text){
+		
+		return text.replace("<br>", "\n\t\t").replace("<b>", "").replace("</b>", "").replace("<pre>", "").replace("</pre>", "").replace("</br>", "\n\t");
+	}
+
 	public static String getException(Exception e) {
 		try {
 			
@@ -20,11 +25,6 @@ public class UtilityMethods {
 			return "<br>";
 			
 		}
-	}
-
-	public static String getConsoleFormatedText(String text){
-		
-		return text.replace("<br>", "\n\t\t").replace("<b>", "").replace("</b>", "").replace("<pre>", "").replace("</pre>", "").replace("</br>", "\n\t");
 	}
 
 }

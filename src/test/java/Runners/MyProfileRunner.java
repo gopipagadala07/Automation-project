@@ -16,17 +16,17 @@ dryRun = false)
 public class MyProfileRunner extends AbstractTestNGCucumberTests{
 	String testcaseName;
 	
+	@AfterClass(alwaysRun = true)
+	public void afterClass()
+	{
+		testcaseName=this.getClass().getSimpleName();
+		System.out.println("**********"+testcaseName+" - Test Ending *********");
+	}
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeclass(String browser)
 	{
 		testcaseName=this.getClass().getSimpleName();
 		System.out.println("**********"+testcaseName+" - Test Starting *********");
-	}
-	@AfterClass(alwaysRun = true)
-	public void afterClass()
-	{
-		testcaseName=this.getClass().getSimpleName();
-		System.out.println("**********"+testcaseName+" - Test Ending *********");
 	}
 }
