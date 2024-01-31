@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
+
+	<name>Cucumber_Automation_Exam_Center</name>
+
+=======
 	<name>FocalPoint_ExamCenter</name>
+>>>>>>> branch 'main' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 	<comment></comment>
 	<projects>
 	</projects>
