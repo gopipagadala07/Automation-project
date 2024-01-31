@@ -55,9 +55,10 @@ public class Users_CreationPage extends ActionType{
 	public void Adminstarationbtn()
 	{
 		waitForElement(Adminstrationbtn);
-		waitForPageLoad();
-		StaticWait(2);
-		driver.findElement(Adminstrationbtn).click();
+		StaticWait(3);
+		WebElement e1=driver.findElement(Adminstrationbtn);
+		Actions a=new Actions(driver);
+		a.moveToElement(e1).click().build().perform();
 		StaticWait(1);
 		//waitForElement(Userstab);
 		//driver.findElement(Userstab).click();

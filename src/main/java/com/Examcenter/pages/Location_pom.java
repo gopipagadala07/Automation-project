@@ -34,6 +34,7 @@ public void Addnew_location() {
 	}
 	
 	public void Address_field(String Addresstext) {
+		StaticWait(1);
 		driver.findElement(Addressfield).sendKeys(Addresstext);
 	}
 	//	public void Change_password_closeIcon() {
@@ -81,7 +82,7 @@ public void Addnew_location() {
 		ExtentCucumberAdapter.addTestStepLog("Location Saved Successfully");
 	}
 	public void Location_tab() {
-		StaticWait(3);
+		StaticWait(1);
 		Actions a=new Actions(driver);
 		WebElement L=driver.findElement(Locationtab);
 		a.moveToElement(L).click().build().perform();

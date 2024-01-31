@@ -51,17 +51,11 @@ public class LoginPage extends ActionType{
 		List<WebElement> Header=driver.findElements(menu);
 		WebElement cng=driver.findElement(changepwd);
 		WebElement cls=driver.findElement(close);
-		
-		if(cng.isDisplayed())
-		{
-			cls.click();
-			StaticWait(5);
-			waitForPageLoad();
-		}
-		else
-		{
-			
-		}
+
+		cls.click();
+		StaticWait(5);
+		waitForPageLoad();
+
 		waitForElement(menu);
 
 		int n=Header.size();
@@ -78,7 +72,7 @@ public class LoginPage extends ActionType{
 		{
 			System.out.println("Examtaker login is working Successfully..!!");
 		}
-     waitForPageLoad();
+		waitForPageLoad();
 	}
 	public void loginbtn()
 	{

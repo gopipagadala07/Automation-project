@@ -225,7 +225,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 
 	@Given("User is on Examtaker tab")
 	public void user_is_on_Examtaker_tab() {
-		StaticWait(3);
+		StaticWait(1);
 		Users.provisioning();
 		StaticWait(1);
 		Users.Examtakersbtn();

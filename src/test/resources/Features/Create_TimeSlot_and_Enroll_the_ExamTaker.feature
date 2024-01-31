@@ -33,8 +33,8 @@ Feature: FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Take
     Then User enters the credentials from the excel sheet at <rownumber>
     And User is on homepage
     Then User click on Enrollment
-    When User Select the Examination <ExamTaker_details_rownumber>
-    Then User Select the Location <ExamTaker_details_rownumber>
+    When User Select the Examination <Exam_details_rownumber>
+    Then User Select the Location <Exam_details_rownumber>
     When User select the particular Timeslot <Timeslot_rownumber>
     Then User search the particular ExamTaker <ExamTaker_details_rownumber>
     When User add the Examtaker in the Timeslot
@@ -42,5 +42,5 @@ Feature: FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Take
     When User approve and Live the Examtaker for the Examination
 
     Examples: 
-      | rownumber | ExamTaker_details_rownumber | Timeslot_rownumber |
-      |         1 |                           2 |                  0 |
+      | rownumber | ExamTaker_details_rownumber | Timeslot_rownumber | Exam_details_rownumber |
+      |         1 |                           2 |                  0 |                      0 |

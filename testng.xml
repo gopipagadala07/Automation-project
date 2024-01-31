@@ -5,54 +5,11 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="Runners.Location_Runner"></class>
-		</classes>
-	</test> <!--
-	Test -->
-
-	<test name="Test2">
-		<parameter name="browser" value="chrome" />
-		<classes>
 			<class name="Runners.Users_Creation_Runner"></class>
-		</classes>
-	</test> <!--
-	Test -->
-
-	<test name="Test3">
-		<parameter name="browser" value="chrome" />
-		<classes>
 			<class name="Runners.Examinations_Schedule_runner"></class>
-		</classes>
-	</test> <!--
-	Test -->
-
-	<test name="Test4">
-		<parameter name="browser" value="chrome" />
-		<classes>
-			<class
-				name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"></class>
-		</classes>
-	</test> <!--
-	Test -->
-
-	<test name="Test5">
-		<parameter name="browser" value="chrome" />
-		<classes>
+			<class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"></class>
 			<class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>
-		</classes>
-	</test> <!--
-	Test -->
-
-	<test name="Test6">
-		<parameter name="browser" value="chrome" />
-		<classes>
 			<class name="Runners.AssessmentSubmissionRunner"></class>
-		</classes>
-	</test> <!--
-	Test -->
-
-	<test name="Test7">
-		<parameter name="browser" value="chrome" />
-		<classes>
 			<class name="Runners.BulkUploadRunner"></class>
 			<!-- <class name="Runners.LoginPageRunner"></class>-->
 		</classes>
