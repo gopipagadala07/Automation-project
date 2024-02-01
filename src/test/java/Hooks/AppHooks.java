@@ -46,13 +46,14 @@ public class AppHooks extends Base {
 	@After(order = 1)
 	public void quitBrowser() {
 		a.StaticWait(2);
-//		driver.quit();
+		driver.quit();
 	}
 
 	@After(order = 2)
 	public void tearDown(Scenario scenario) {
 		if (scenario.isFailed()) {
 			// take screenshot:
+           a.StaticWait(1);
 			String screenshotName = scenario.getName().replaceAll(" ", "_");
 			byte[] sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 			scenario.attach(sourcePath, "image/png", screenshotName);
