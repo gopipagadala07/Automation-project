@@ -246,7 +246,7 @@ public class Create_Examinations_pages extends ActionType {
 		StaticWait(1);
 		driver.findElement(EnrollmentSave).click();
 		StaticWait(1);
-		//driver.quit();
+
 	}
 
 }
