@@ -13,14 +13,26 @@ import io.cucumber.java.Scenario;
 
 public class AppHooks extends Base {
 
-	private Base driverFactory;
+	ActionType a=new ActionType();
 	private WebDriver driver;
-    ActionType a=new ActionType();
+    private Base driverFactory;
+	@After(order = 0)
+	public void afterScenarioFinish() {
+		Logs.info("-----------------End of Scenario-----------------");
+	}
+	@Before(order = 2)
+	public void beforeScenarioStart() {
+		Logs.info("-----------------Start of Scenario-----------------");
+
+	}
+
 	@Before(order = 0)
 	public void getProperty() {
 		initProperties();
 
 	}
+	
+
 	@Before(order = 1)
 	public void launchBrowser() {
 		String browserName = prop.getProperty("browser");
@@ -31,28 +43,17 @@ public class AppHooks extends Base {
 
 	}
 
-	@Before(order = 2)
-	public void beforeScenarioStart() {
-		Logs.info("-----------------Start of Scenario-----------------");
-
-	}
-	
-
-	@After(order = 0)
-	public void afterScenarioFinish() {
-		Logs.info("-----------------End of Scenario-----------------");
-	}
-
 	@After(order = 1)
 	public void quitBrowser() {
 		a.StaticWait(2);
-//		driver.quit();
+		driver.quit();
 	}
 
 	@After(order = 2)
 	public void tearDown(Scenario scenario) {
 		if (scenario.isFailed()) {
 			// take screenshot:
+           a.StaticWait(1);
 			String screenshotName = scenario.getName().replaceAll(" ", "_");
 			byte[] sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 			scenario.attach(sourcePath, "image/png", screenshotName);

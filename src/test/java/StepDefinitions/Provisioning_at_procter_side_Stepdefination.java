@@ -26,9 +26,6 @@ public class Provisioning_at_procter_side_Stepdefination extends ActionType{
 
 		Users.Adminstarationbtn();
 	}
-
-
-	
 	@Then("Proctor is clicks on Examtaker tab")
 	public void user_is_on_Examtaker_tab() {
 		StaticWait(3);

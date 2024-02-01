@@ -29,13 +29,13 @@ import com.Examcenter.Utils.Base;
 
 public class BulkUpload_Pages extends ActionType{
 
-	private WebDriver driver;
 	By Adminstrationbtn=By.xpath("//mat-icon[text()=' settings ']");
-	By provisioning=By.xpath("//a[text()='Provisioning']");
-	By Controllerbtn=By.xpath("//a[text()='Controllers']");
-	By Proctorbtn=By.xpath("//div[text()='PROCTORS']");
-	By Examtakerbtn=By.xpath("//div[text()='EXAM TAKERS']");
 	By bulkUpload=By.xpath("//span[text()=' Bulk Upload ']");
+	By Controllerbtn=By.xpath("//a[text()='Controllers']");
+	private WebDriver driver;
+	By Examtakerbtn=By.xpath("//div[text()='EXAM TAKERS']");
+	By Proctorbtn=By.xpath("//div[text()='PROCTORS']");
+	By provisioning=By.xpath("//a[text()='Provisioning']");
 	By template=By.xpath("//mat-icon[text()='cloud_download']");
 	By toster=By.xpath("//button[@aria-label='Close']");
 
@@ -53,27 +53,6 @@ public class BulkUpload_Pages extends ActionType{
 		driver.findElement(Adminstrationbtn).click();
 		StaticWait(1);
 	}
-	public void provisioning()
-	{
-		waitForElement(provisioning);
-		driver.findElement(provisioning).click();
-	}
-	public void Controllerbtn()
-	{
-		waitForElement(Controllerbtn);
-		driver.findElement(Controllerbtn).click();
-	}
-	public void Proctorbtn()
-	{
-		waitForElement(Proctorbtn);
-		driver.findElement(Proctorbtn).click();
-	}
-	public void Examtakersbtn()
-	{
-		waitForElement(Examtakerbtn);
-		driver.findElement(Examtakerbtn).click();
-	}
-
 	public void bulkUpload(String Path) throws Exception
 	{
 		WebElement e = driver.findElement(bulkUpload);
@@ -95,10 +74,15 @@ public class BulkUpload_Pages extends ActionType{
 		StaticWait(17);
 		//waitTillElementInVisible(toster, null);
 	}
-
-	public void template()
+	public void Controllerbtn()
 	{
-		driver.findElement(template).click();
+		waitForElement(Controllerbtn);
+		driver.findElement(Controllerbtn).click();
+	}
+	public void Examtakersbtn()
+	{
+		waitForElement(Examtakerbtn);
+		driver.findElement(Examtakerbtn).click();
 	}
 	public void Excel_Creation(String Path, String sheet, int cellno, String value, int rowno) throws EncryptedDocumentException, IOException
 	{
@@ -119,5 +103,21 @@ public class BulkUpload_Pages extends ActionType{
 		FileOutputStream fo=new FileOutputStream(Path);
 		wb.write(fo);
 		wb.close();
+	}
+
+	public void Proctorbtn()
+	{
+		waitForElement(Proctorbtn);
+		driver.findElement(Proctorbtn).click();
+	}
+
+	public void provisioning()
+	{
+		waitForElement(provisioning);
+		driver.findElement(provisioning).click();
+	}
+	public void template()
+	{
+		driver.findElement(template).click();
 	}
 }

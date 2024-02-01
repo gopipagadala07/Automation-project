@@ -4,9 +4,9 @@ Feature: Checking the Examtaker Assessment Submission
     Given User launch the application with Valid URL
     And User able to see all Fields
     Then User enters the credentials from the excel sheet at <rownumber>
-    Then Search for particular exam and Click on it <rownumber>
+    Then Search for particular exam and Click on it <rownumber1>
     And Clicks on Launch button
-    Then Enter the valid Invigilatory Token <rownumber>
+    Then Enter the valid Invigilatory Token <rownumber1>
     And clicks on begin test
     Then Select all Answers
     And submit the Exam
@@ -14,5 +14,5 @@ Feature: Checking the Examtaker Assessment Submission
     Then Logout from the Application
 
     Examples: 
-      | rownumber |
-      |         2 |
+      | rownumber | rownumber1 |
+      |         2 |          0 |

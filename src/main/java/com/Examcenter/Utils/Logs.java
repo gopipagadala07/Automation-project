@@ -11,31 +11,26 @@ import org.apache.log4j.PropertyConfigurator;
 
 
 public class Logs {
-	static Properties props = new Properties();
 	static Logger log;
+	static Properties props = new Properties();
 
-	static public synchronized void info(String details) {
-		init();
-		log.info(UtilityMethods.getConsoleFormatedText(details));
-	}
-	
-	
 	static public synchronized void error(String details) {
 		init();
 		log.error(UtilityMethods.getConsoleFormatedText(details));
 		
 	}
 	
-	static public synchronized void warn(String details) {
-		init();
-		log.warn(UtilityMethods.getConsoleFormatedText(details));
-	}
 	
 	static public synchronized void fatal(String details) {
 		init();
 		log.fatal(UtilityMethods.getConsoleFormatedText(details));
 	}
-
+	
+	static public synchronized void info(String details) {
+		init();
+		log.info(UtilityMethods.getConsoleFormatedText(details));
+	}
+	
 	private static void init() {
 		if (log == null) {
 			try {
@@ -64,6 +59,11 @@ public class Logs {
 			}
 
 		}
+	}
+
+	static public synchronized void warn(String details) {
+		init();
+		log.warn(UtilityMethods.getConsoleFormatedText(details));
 	}
 
 }

@@ -29,15 +29,15 @@ public class Enrolled_ExamTaker_in_a_TimeSlotRunner extends AbstractTestNGCucumb
 
 	}
 	
+	@DataProvider
+	public Object[][] getexcel()  {
+		return this.scenarios();
+	}
+	
 	@AfterClass(alwaysRun = true)
 	public void testDownClass() throws IOException {
 		System.out.println("***************** " + testcasename + " Test end *****************");
 
-	}
-	
-	@DataProvider
-	public Object[][] getexcel()  {
-		return this.scenarios();
 	}
 
 
