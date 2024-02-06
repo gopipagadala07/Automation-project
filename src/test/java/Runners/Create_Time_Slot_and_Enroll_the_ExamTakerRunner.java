@@ -25,7 +25,7 @@ public class Create_Time_Slot_and_Enroll_the_ExamTakerRunner extends AbstractTes
 
 	@Parameters("browser")
 	@BeforeClass
-	public void beforeclass(String browser) {
+	public void beforeclass(/*String browser*/) {
 
 		testcasename = this.getClass().getSimpleName();
 		System.out.println("***************** " + testcasename + " Test Starting *****************");
