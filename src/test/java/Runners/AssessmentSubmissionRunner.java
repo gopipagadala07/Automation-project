@@ -22,7 +22,7 @@ public class AssessmentSubmissionRunner extends AbstractTestNGCucumberTests{
 	}
 	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass(String browser)
+	public void beforeClass(/*String browser*/)
 	{
 		TestcaseName=this.getClass().getSimpleName();
 		System.out.println("***************** " + TestcaseName + " Test Starting *****************");
