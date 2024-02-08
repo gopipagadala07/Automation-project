@@ -59,13 +59,17 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 		String s = driver.findElement(Notapprove).getText();
 		if(s.equalsIgnoreCase("Not Approved"))
 		{
+			waitForElement(approve);
+			StaticWait(1);
 			WebElement e=driver.findElement(approve);			
-			Actions a=new Actions(driver);
-			a.moveToElement(e).click().build().perform();
+//			Actions a=new Actions(driver);
+//			a.moveToElement(e).click().build().perform();
+			e.click();
 			waitForElement(Live);
 			StaticWait(2);
 			WebElement e1=driver.findElement(Live);
-			a.moveToElement(e1).click().build().perform();
+			e1.click();
+//			a.moveToElement(e1).click().build().perform();
 		}		
 	}
 	public void click_on_ChooseMonthandYear() 

@@ -86,7 +86,7 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	{
 		StaticWait(1);
 		driver.findElement(Comment).click();
-		StaticWait(1);
+		StaticWait(2);
 		driver.findElement(Comment_Textbox).sendKeys(Procter_comment);
 		driver.findElement(Save_button).click();
 	}
