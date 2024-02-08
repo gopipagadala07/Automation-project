@@ -67,7 +67,9 @@ public class Users_CreationPage extends ActionType{
 	public void Controllerbtn()
 	{
 		waitForElement(Controllerbtn);
-		driver.findElement(Controllerbtn).click();
+		WebElement e=driver.findElement(Controllerbtn);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click()", e);
 	}
 	public void Create_Controller_User(String Emailtext,String Firstnametext,String Lastnametext,String IDtext ) {
 		Emailtxt(Emailtext);
@@ -120,7 +122,9 @@ public class Users_CreationPage extends ActionType{
 	{
 		waitForElement(editsavebtn);
 		StaticWait(1);
-		driver.findElement(editsavebtn).click();
+		WebElement e=driver.findElement(editsavebtn);
+		Actions a=new Actions(driver);
+		a.moveToElement(e).click().build().perform();
 		StaticWait(2);
 	}
 	public void Emailtxt(String Emailtext)
@@ -171,8 +175,9 @@ public class Users_CreationPage extends ActionType{
 	}
 	public void provisioning()
 	{
-		waitForElement(provisioning);
-		driver.findElement(provisioning).click();
+		WebElement e = driver.findElement(provisioning);
+		JavascriptExecutor j=(JavascriptExecutor)getDriver();
+		j.executeScript("arguments[0].click()", e);
 	}
 	public void reset()
 	{

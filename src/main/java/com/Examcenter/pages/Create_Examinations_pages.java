@@ -164,9 +164,10 @@ public class Create_Examinations_pages extends ActionType {
 	}
 	public void Exam_Administration() {
 		waitForElement(ExamAdministrationtab);
-		waitForPageLoad();
-		StaticWait(3);
-		driver.findElement(ExamAdministrationtab).click();
+		WebElement e=driver.findElement(ExamAdministrationtab);
+		Actions a=new Actions(driver);
+		a.moveToElement(e).click().build().perform();
+		
 	}
 	public void Exam_Description(String examdescription) {
 		driver.findElement(ExamDescription).sendKeys(examdescription);
