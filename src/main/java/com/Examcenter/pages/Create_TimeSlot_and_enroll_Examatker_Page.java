@@ -37,10 +37,10 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	private By TimeSlotTab = By.xpath("//*[text()='TIME SLOTS']");
 	//private By H_enrollment = By.xpath("//h2[text()='Enrollments']");
 	private By Unassigned_Toggle1 = By.xpath("(//input[@type='search'])[1]/../../../../../../following-sibling::div/mat-slide-toggle/label/span/span/span[@class='mat-slide-toggle-thumb']");
-	
 
 
-	
+
+
 	public Create_TimeSlot_and_enroll_Examatker_Page(WebDriver driver)
 	{
 		this.driver = driver;
@@ -49,20 +49,23 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	{
 		driver.findElement(AddNewButton).click();
 	}
-public void addExamtaker()
+	public void addExamtaker()
 	{
 		driver.findElement(AddExamtaker).click();
 	}
-public void approve_and_Live_the_Examtaker()
+	public void approve_and_Live_the_Examtaker()
 	{
 		waitForElement(Notapprove);
 		String s = driver.findElement(Notapprove).getText();
 		if(s.equalsIgnoreCase("Not Approved"))
 		{
-			driver.findElement(approve).click();
+			WebElement e=driver.findElement(approve);			
+			Actions a=new Actions(driver);
+			a.moveToElement(e).click().build().perform();
 			waitForElement(Live);
 			StaticWait(2);
-			driver.findElement(Live).click();
+			WebElement e1=driver.findElement(Live);
+			a.moveToElement(e1).click().build().perform();
 		}		
 	}
 	public void click_on_ChooseMonthandYear() 
@@ -73,16 +76,19 @@ public void approve_and_Live_the_Examtaker()
 	}
 	public void click_On_Enrollment_Tab()
 	{
-		
+
 		waitForElement(Enrollment);
-//		WebElement he1 = driver.findElement(H_enrollment);
-//		if(he1.isDisplayed())
-//		{			
-//		}
-//		else
-//		{
-			driver.findElement(Enrollment).click();
-//		}
+		//		WebElement he1 = driver.findElement(H_enrollment);
+		//		if(he1.isDisplayed())
+		//		{			
+		//		}
+		//		else
+		//		{
+		Actions act = new Actions(driver);
+		WebElement e=driver.findElement(Enrollment);
+		act.moveToElement(e).click().build().perform();
+		StaticWait(2);
+		//		}
 	}
 	public void click_on_Time_slot_Lookup()
 	{
@@ -96,7 +102,7 @@ public void approve_and_Live_the_Examtaker()
 		driver.findElement(Header).click();
 		StaticWait(1);
 		driver.findElement(TimeSlotTab).click();;
-	
+
 	}
 	public void clickon_EndTime() 
 	{
@@ -140,7 +146,7 @@ public void approve_and_Live_the_Examtaker()
 		driver.findElement(By.xpath("(//input[@type='search'])[2]")).sendKeys(ExamTaker_Ln+" ");
 		StaticWait(1);
 		driver.findElement(By.xpath("(//input[@type='search'])[2]")).sendKeys(ExamTaker_Fn);
-		StaticWait(1);
+		StaticWait(2);
 	}
 	public void search_Examtaker_under_enrollment(String ExamTaker_Ln,String ExamTaker_Fn)
 	{
@@ -173,21 +179,21 @@ public void approve_and_Live_the_Examtaker()
 		driver.findElement(By.xpath("//span[text()="+StartTimeinHr+"]")).click();
 	}
 	public void select_StartTimeinMin(String StartTimeinMin) 
-	
+
 	{
 		Actions act =  new Actions(driver);
 		act.moveToElement(driver.findElement(By.xpath("//div[@style='transform: rotateZ("+StartTimeinMin+"deg);']"))).click().perform();
 	}
 	//	public void click_On_Examination_Lookup() 
-//	{
-//		waitForElement(ExaminationLookup);
-//		StaticWait(2);
-//		WebElement e1=driver.findElement(ExaminationLookup);
-//		Actions a=new Actions(driver);
-//		a.moveToElement(e1).perform();
-//		StaticWait(2);
-//		e1.click();
-//	}
+	//	{
+	//		waitForElement(ExaminationLookup);
+	//		StaticWait(2);
+	//		WebElement e1=driver.findElement(ExaminationLookup);
+	//		Actions a=new Actions(driver);
+	//		a.moveToElement(e1).perform();
+	//		StaticWait(2);
+	//		e1.click();
+	//	}
 	public void select_the_Examination(String examination, String schedule) 
 	{
 		String ExamiantionName1=driver.findElement(ExaminationLookupText).getText();
@@ -206,18 +212,18 @@ public void approve_and_Live_the_Examtaker()
 			StaticWait(2);
 			ele1.click();
 		}
-		
+
 	}
 	//	public void click_On_Location_Lookup() 
-//	{
-////		waitForElement(LocationLookup);
-////		WebElement e2 =driver.findElement(LocationLookup);
-////		Actions a=new Actions(driver);
-////		a.moveToElement(e2).perform();
-////		StaticWait(2);
-////		e2.click();
-////		
-//	}
+	//	{
+	////		waitForElement(LocationLookup);
+	////		WebElement e2 =driver.findElement(LocationLookup);
+	////		Actions a=new Actions(driver);
+	////		a.moveToElement(e2).perform();
+	////		StaticWait(2);
+	////		e2.click();
+	////		
+	//	}
 	public void select_the_Location(String Location) 
 	{
 		String Locationname = driver.findElement(LocationLookupText).getText();
@@ -234,18 +240,18 @@ public void approve_and_Live_the_Examtaker()
 			Actions a = new Actions(driver);
 			a.moveToElement(ele2).click().build().perform();
 			StaticWait(2);
-			
+
 		}
-//		StaticWait(2);
-//		WebElement ele2=driver.findElement(By.xpath("//span[contains(text(),'"+Location+"')]"));
-//		JavascriptExecutor j=(JavascriptExecutor) driver;	
-//		j.executeScript("arguments[0].scrollIntoView();",ele2);
-//		StaticWait(2);
-//		ele2.click();
+		//		StaticWait(2);
+		//		WebElement ele2=driver.findElement(By.xpath("//span[contains(text(),'"+Location+"')]"));
+		//		JavascriptExecutor j=(JavascriptExecutor) driver;	
+		//		j.executeScript("arguments[0].scrollIntoView();",ele2);
+		//		StaticWait(2);
+		//		ele2.click();
 	}
 	public void select_the_TimeSlot(String Sh,String Smin, String Eh, String Emin)
 	{
-		
+
 		int ish = Integer.parseInt(Sh);
 		int ieh = Integer.parseInt(Eh);
 		if(ish<=12 & ieh<=12)
@@ -253,7 +259,7 @@ public void approve_and_Live_the_Examtaker()
 			String Sh1=String.valueOf(ish);
 			String Eh1=String.valueOf(ieh);
 			WebElement t= driver.findElement(By.xpath("//span[text()='"+Sh1+":"+Smin+"AM']/following-sibling::span[text()='"+Eh1+":"+Emin+"AM']"));
-		//	StaticWait(1);
+			//	StaticWait(1);
 			t.click();
 		}
 		if(ish>=12 & ieh<=12)
@@ -264,7 +270,7 @@ public void approve_and_Live_the_Examtaker()
 			//StaticWait(1);
 			t.click();
 		}
-		
+
 		if(ish<12 & ieh>=12)
 		{
 			String Sh1=String.valueOf(ish);
@@ -273,7 +279,7 @@ public void approve_and_Live_the_Examtaker()
 			//StaticWait(1);
 			t.click();
 		}
-		
+
 		if(ish>=12 & ieh>=12)
 		{
 			String Sh1=String.valueOf(ish-12);
