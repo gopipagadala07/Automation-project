@@ -105,7 +105,7 @@ public class Create_Examinations_pages extends ActionType {
 		driver.findElement(Choosemonthandyear).click();
 	}
 	public void click_on_exam_dropdown() {
-		StaticWait(1);
+		StaticWait(2);
 		driver.findElement(clickonExaminationdropdown).click();
 	}
 	public void click_on_Schedule_dropdown() {
@@ -244,12 +244,14 @@ public class Create_Examinations_pages extends ActionType {
 		driver.findElement(SearchTestName).sendKeys(TestName);
 	}
 	public void select_examinations_lookup(String examname) {
+		StaticWait(1);
 		WebElement Elookup=driver.findElement(By.xpath("//span[text()=' "+examname+" ']"));
 //		JavascriptExecutor j=(JavascriptExecutor) driver;
 //		j.executeScript("arguments[0].click()",Elookup);	
 		Elookup.click();
 	}
 	public void select_schedule_lookup(String schedulename) {
+		StaticWait(1);
 		WebElement Slookup=driver.findElement(By.xpath("//span[text()=' "+schedulename+" ']"));
 		Slookup.click();
 	}

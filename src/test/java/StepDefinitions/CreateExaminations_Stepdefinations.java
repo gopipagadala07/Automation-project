@@ -126,7 +126,6 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 
 	@And("^User click on Enrollment Save button$")
 	public void user_click_on_enrollment_save_button() {
-		StaticWait(2);
 		CreateExams.enrollment_save();
 		System.out.println("Exam Enrolled Successfully");
 		
