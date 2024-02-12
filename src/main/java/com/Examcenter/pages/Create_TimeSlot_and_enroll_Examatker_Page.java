@@ -25,7 +25,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	private By ExaminationLookupText= By.xpath("//span[text()=' Print Exam Takers ']/../../../div[1]/mat-form-field/div/div/div/mat-select/div/div/span/span");
 	private By ExamTakerCount = By.xpath("//input[@data-placeholder='Exam Taker count allowed']");
 	private By Header = By.xpath("//h2[@class='page-title section-header m-0']");
-	private By Live = By.xpath("(//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle)[1]");
+	private By Live = By.xpath("//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div[1]/mat-slide-toggle/label");
 	private By LocationLookup = By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]");
 	private By LocationLookupText=By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]/mat-form-field/div/div/div/mat-select/div/div/span/span");
 	private By Notapprove = By.xpath("//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle/following-sibling::small");	
@@ -62,14 +62,16 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			waitForElement(approve);
 			StaticWait(1);
 			WebElement e=driver.findElement(approve);			
-//			Actions a=new Actions(driver);
-//			a.moveToElement(e).click().build().perform();
-			e.click();
+			Actions a=new Actions(driver);
+			a.moveToElement(e).build().perform();
+			StaticWait(1);
+			a.click(e).build().perform();
+			//e.click();
 			waitForElement(Live);
 			StaticWait(2);
 			WebElement e1=driver.findElement(Live);
-			e1.click();
-//			a.moveToElement(e1).click().build().perform();
+//			e1.click();
+			a.moveToElement(e1).click(e1).build().perform();
 		}		
 	}
 	public void click_on_ChooseMonthandYear() 

@@ -9,11 +9,11 @@ Feature: Examcenter Creation of Examinations Schedules and Examtaker Enrollments
     And User click on AddExam button under Examination tab
     Then User enters the Examname and Description from the given excelsheet at <RowNumber1>
     Then User click on save button
+
     #And User Search the Examination in Search here field <RowNumber1>
     #Then User click on Searched Examination Edit button
     #Then User edited the examination name <RowNumber1>
     #Then User click on edit Save button
-
     Examples: 
       | RowNumber | RowNumber1 |
       |         0 |          0 |
