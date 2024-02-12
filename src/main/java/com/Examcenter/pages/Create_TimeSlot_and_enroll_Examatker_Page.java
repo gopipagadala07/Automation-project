@@ -14,7 +14,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 
 
 	private By AddNewButton = By.xpath("//span[contains(text(),'Add New ')]");
-	private By approve = By.xpath("//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle");
+	private By approve = By.xpath("//div[@class='matFabIcons']/button[1]/../preceding-sibling::div[1]/div/mat-slide-toggle");
 	private By ChooseMonthandYear = By.xpath("//button[@aria-label='Choose month and year']");
 	private By ClickOnHr = By.xpath("(//div[@class='timepicker-dial']/div/div/ngx-mat-timepicker-dial-control/input)[1]");
 	private By ClickOnMin = By.xpath("(//div[@class='timepicker-dial']/div/div/ngx-mat-timepicker-dial-control/input)[2]");
@@ -25,7 +25,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	private By ExaminationLookupText= By.xpath("//span[text()=' Print Exam Takers ']/../../../div[1]/mat-form-field/div/div/div/mat-select/div/div/span/span");
 	private By ExamTakerCount = By.xpath("//input[@data-placeholder='Exam Taker count allowed']");
 	private By Header = By.xpath("//h2[@class='page-title section-header m-0']");
-	private By Live = By.xpath("//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div[1]/mat-slide-toggle/label");
+	private By Live = By.xpath("//div[@class='matFabIcons']/button[1]/../preceding-sibling::div[1]/div[1]/mat-slide-toggle");
 	private By LocationLookup = By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]");
 	private By LocationLookupText=By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]/mat-form-field/div/div/div/mat-select/div/div/span/span");
 	private By Notapprove = By.xpath("//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle/following-sibling::small");	
