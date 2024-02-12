@@ -16,7 +16,7 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	private By Add = By.xpath("//mat-icon[text()='add']");
 	
 	private By close_bttn = By.xpath("//button[@aria-label='close dialog']");
-	private By Comment = By.xpath("//mat-icon[text()='comment']");
+	private By Comment = By.xpath("//div[@class='matFabIcons']/button[1]");
 	private By Comment_Textbox = By.xpath("//div[@role='textbox']");
 	private WebDriver driver;
 	private By ET_Entry_details_button= By.xpath("//mat-icon[text()='computer']");
@@ -87,7 +87,9 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 		StaticWait(1);
 		driver.findElement(Comment).click();
 		StaticWait(2);
-		driver.findElement(Comment_Textbox).sendKeys(Procter_comment);
+		WebElement e=driver.findElement(Comment_Textbox);
+		StaticWait(1);
+		e.sendKeys(Procter_comment);
 		driver.findElement(Save_button).click();
 	}
 	public void remove_the_examtaker()
