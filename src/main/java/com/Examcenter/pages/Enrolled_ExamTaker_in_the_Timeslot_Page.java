@@ -84,8 +84,10 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	}
 	public void p_comment(String Procter_comment)
 	{
-		StaticWait(1);
-		driver.findElement(Comment).click();
+		StaticWait(1);	
+		WebElement ele=driver.findElement(Comment);
+		Actions act = new Actions(driver);
+		act.moveToElement(ele).click().build().perform();
 		StaticWait(2);
 		WebElement e=driver.findElement(Comment_Textbox);
 		StaticWait(1);

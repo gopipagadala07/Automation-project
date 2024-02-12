@@ -68,7 +68,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			a.click(e).build().perform();
 			//e.click();
 			waitForElement(Live);
-			StaticWait(2);
+			StaticWait(4);
 			WebElement e1=driver.findElement(Live);
 //			e1.click();
 			a.moveToElement(e1).click(e1).build().perform();
