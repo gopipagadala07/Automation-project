@@ -12,13 +12,14 @@ import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 {
+	private WebDriver driver;
 	//private By Unassigned_Toggle = By.xpath("(//input[@type='search'])[1]/../../../../../../following-sibling::div/mat-slide-toggle/label/span/span");
 	private By Add = By.xpath("//mat-icon[text()='add']");
 	
 	private By close_bttn = By.xpath("//button[@aria-label='close dialog']");
 	private By Comment = By.xpath("//div[@class='matFabIcons']/button[1]");
 	private By Comment_Textbox = By.xpath("//fp-ckeditor[@editorid='descriptionField']/div/div/div[2]");
-	private WebDriver driver;
+
 	private By ET_Entry_details_button= By.xpath("//mat-icon[text()='computer']");
 	private By List_cells= By.xpath("//table[@id='tblEntryDetails']/tbody/tr[1]/td");
 	private By List_rows = By.xpath("//table[@id='tblEntryDetails']/tbody/tr");
