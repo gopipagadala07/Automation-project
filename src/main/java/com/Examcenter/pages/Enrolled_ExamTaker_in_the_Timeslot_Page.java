@@ -3,27 +3,30 @@ package com.Examcenter.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.Base;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 {
+	private WebDriver driver;
 	//private By Unassigned_Toggle = By.xpath("(//input[@type='search'])[1]/../../../../../../following-sibling::div/mat-slide-toggle/label/span/span");
 	private By Add = By.xpath("//mat-icon[text()='add']");
 	
 	private By close_bttn = By.xpath("//button[@aria-label='close dialog']");
-	private By Comment = By.xpath("//mat-icon[text()='comment']");
-	private By Comment_Textbox = By.xpath("//div[@role='textbox']");
-	private WebDriver driver;
+	private By Comment = By.xpath("//div[@class='matFabIcons']/button[1]");
+	private By Comment_Textbox = By.xpath("//p[@data-placeholder='Type here']/..");
+
 	private By ET_Entry_details_button= By.xpath("//mat-icon[text()='computer']");
 	private By List_cells= By.xpath("//table[@id='tblEntryDetails']/tbody/tr[1]/td");
 	private By List_rows = By.xpath("//table[@id='tblEntryDetails']/tbody/tr");
 	private By remove_button = By.xpath("//mat-icon[text()='remove']");
-	private By Reset_buttton = By.xpath("//mat-icon[text()='settings_backup_restore']");
+	private By Reset_buttton = By.xpath("//div[@class='matFabIcons']/button[2]");
 	private By Save_button = By.xpath("//span[text()=' Save ']");
 	private By Token_no = By.xpath("(//input[@type='search'])[2]/../../../../../../../following-sibling::div/mat-list/div/mat-list-item/span/div/div/div/small/small");
 	private By Yes_buttton = By.xpath("//button[text()='Yes, Please Reset!']");
@@ -84,10 +87,16 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	}
 	public void p_comment(String Procter_comment)
 	{
-		StaticWait(1);
-		driver.findElement(Comment).click();
-		StaticWait(1);
-		driver.findElement(Comment_Textbox).sendKeys(Procter_comment);
+		StaticWait(1);	
+		WebElement ele=driver.findElement(Comment);
+		Actions act = new Actions(Base.getDriver());
+		act.moveToElement(ele).click().build().perform();
+		StaticWait(4);
+		WebElement e=driver.findElement(Comment_Textbox);
+		JavascriptExecutor j=(JavascriptExecutor)Base.getDriver();
+		j.executeScript("arguments[0].click()", e);
+		StaticWait(2);
+		e.sendKeys(Procter_comment);
 		driver.findElement(Save_button).click();
 	}
 	public void remove_the_examtaker()
@@ -96,11 +105,12 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	}
 	public void Reset_the_Examination()
 	{
-		
 		String Token_number1= driver.findElement(Token_no).getText();
 		//System.out.println("The Previous Token Number: "+Token_number);
 		ExtentCucumberAdapter.addTestStepLog("The Previous Token Number: "+Token_number1);		
-		driver.findElement(Reset_buttton).click();
+		WebElement ele=driver.findElement(Reset_buttton);
+		Actions act = new Actions(Base.getDriver());
+		act.moveToElement(ele).click().build().perform();
 		driver.findElement(Yes_buttton).click();
 		StaticWait(2);
 		String Token_number2= driver.findElement(Token_no).getText();

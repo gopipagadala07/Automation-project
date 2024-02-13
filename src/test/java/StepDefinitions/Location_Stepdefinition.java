@@ -35,7 +35,7 @@ public class Location_Stepdefinition extends ActionType {
 	@Then("User click on Administration tab in homepage")
 	public void user_click_on_administration_tab_in_homepage() {
 	   Location.Adminstarationbtn();
-	   StaticWait(2);
+	   StaticWait(1);
 	}
 
 	@Then("User click on editlocation Save button")

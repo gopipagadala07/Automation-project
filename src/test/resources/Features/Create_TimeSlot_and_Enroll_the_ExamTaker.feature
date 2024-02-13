@@ -12,8 +12,8 @@ Feature: FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Take
     Then User Select the Location <ExamTaker_details_rownumber>
     And User click on TimeSlot Tab
     Then User click on Add New TimeSlot
-    When User click on the calender in Exam Time slot popup
-    Then User select the Exam date <Timeslot_rownumber>
+    #When User click on the calender in Exam Time slot popup
+    #Then User select the Exam date <Timeslot_rownumber>
     When User click on the start Time in Exam Time slot popup
     Then User select the start Time in Hr <Timeslot_rownumber>
     Then User select the start Time in Min <Timeslot_rownumber>

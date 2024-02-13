@@ -74,6 +74,7 @@ public void Addnew_location() {
 	}
 	
 	public void Location_Name_field(String locationnametxtfield) {
+		StaticWait(1);
 		driver.findElement(LocationNamefield).sendKeys(locationnametxtfield);
 	}
 	public void Location_Save() {
