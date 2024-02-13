@@ -25,7 +25,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	private By ExaminationLookupText= By.xpath("//span[text()=' Print Exam Takers ']/../../../div[1]/mat-form-field/div/div/div/mat-select/div/div/span/span");
 	private By ExamTakerCount = By.xpath("//input[@data-placeholder='Exam Taker count allowed']");
 	private By Header = By.xpath("//h2[@class='page-title section-header m-0']");
-	private By Live = By.xpath("//div[@class='matFabIcons']/button[1]/../preceding-sibling::div[1]/div[1]/mat-slide-toggle");
+	private By Live = By.xpath("//div[@fxlayoutalign='end center']/mat-slide-toggle/label/span/input");
 	private By LocationLookup = By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]");
 	private By LocationLookupText=By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]/mat-form-field/div/div/div/mat-select/div/div/span/span");
 	private By Notapprove = By.xpath("//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle/following-sibling::small");	
