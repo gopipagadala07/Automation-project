@@ -17,7 +17,7 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	
 	private By close_bttn = By.xpath("//button[@aria-label='close dialog']");
 	private By Comment = By.xpath("//div[@class='matFabIcons']/button[1]");
-	private By Comment_Textbox = By.xpath("//p[@class='ck-placeholder']");
+	private By Comment_Textbox = By.xpath("//fp-ckeditor[@editorid='descriptionField']/div/div/div[2]");
 	private WebDriver driver;
 	private By ET_Entry_details_button= By.xpath("//mat-icon[text()='computer']");
 	private By List_cells= By.xpath("//table[@id='tblEntryDetails']/tbody/tr[1]/td");
@@ -90,8 +90,9 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 		act.moveToElement(ele).click().build().perform();
 		StaticWait(2);
 		WebElement e=driver.findElement(Comment_Textbox);
-		act.moveToElement(e).click().build().perform();
-		StaticWait(1);
+		act.moveToElement(e).build().perform();
+		act.click(e).build().perform();
+		StaticWait(2);
 		e.sendKeys(Procter_comment);
 		driver.findElement(Save_button).click();
 	}
