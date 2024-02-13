@@ -3,6 +3,7 @@ package com.Examcenter.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,13 +13,14 @@ import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 {
+	private WebDriver driver;
 	//private By Unassigned_Toggle = By.xpath("(//input[@type='search'])[1]/../../../../../../following-sibling::div/mat-slide-toggle/label/span/span");
 	private By Add = By.xpath("//mat-icon[text()='add']");
 	
 	private By close_bttn = By.xpath("//button[@aria-label='close dialog']");
 	private By Comment = By.xpath("//div[@class='matFabIcons']/button[1]");
-	private By Comment_Textbox = By.xpath("//p[@class='ck-placeholder']");
-	private WebDriver driver;
+	private By Comment_Textbox = By.xpath("//p[@data-placeholder='Type here']/..");
+
 	private By ET_Entry_details_button= By.xpath("//mat-icon[text()='computer']");
 	private By List_cells= By.xpath("//table[@id='tblEntryDetails']/tbody/tr[1]/td");
 	private By List_rows = By.xpath("//table[@id='tblEntryDetails']/tbody/tr");
@@ -88,10 +90,11 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 		WebElement ele=driver.findElement(Comment);
 		Actions act = new Actions(driver);
 		act.moveToElement(ele).click().build().perform();
-		StaticWait(2);
+		StaticWait(4);
 		WebElement e=driver.findElement(Comment_Textbox);
-		act.moveToElement(e).click().build().perform();
-		StaticWait(1);
+		JavascriptExecutor j=(JavascriptExecutor)driver;
+		j.executeScript("arguments[0].click()", e);
+		StaticWait(2);
 		e.sendKeys(Procter_comment);
 		driver.findElement(Save_button).click();
 	}
