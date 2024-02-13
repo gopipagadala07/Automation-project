@@ -25,7 +25,7 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	private By List_cells= By.xpath("//table[@id='tblEntryDetails']/tbody/tr[1]/td");
 	private By List_rows = By.xpath("//table[@id='tblEntryDetails']/tbody/tr");
 	private By remove_button = By.xpath("//mat-icon[text()='remove']");
-	private By Reset_buttton = By.xpath("//mat-icon[text()='settings_backup_restore']");
+	private By Reset_buttton = By.xpath("//div[@class='matFabIcons']/button[2]");
 	private By Save_button = By.xpath("//span[text()=' Save ']");
 	private By Token_no = By.xpath("(//input[@type='search'])[2]/../../../../../../../following-sibling::div/mat-list/div/mat-list-item/span/div/div/div/small/small");
 	private By Yes_buttton = By.xpath("//button[text()='Yes, Please Reset!']");
