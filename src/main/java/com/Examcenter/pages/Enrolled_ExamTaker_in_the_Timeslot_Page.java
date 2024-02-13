@@ -3,6 +3,7 @@ package com.Examcenter.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,7 +19,7 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	
 	private By close_bttn = By.xpath("//button[@aria-label='close dialog']");
 	private By Comment = By.xpath("//div[@class='matFabIcons']/button[1]");
-	private By Comment_Textbox = By.xpath("//div[@aria-label='Editor editing area: main']");
+	private By Comment_Textbox = By.xpath("//span[text()=' Save ']/../../../mat-dialog-content/div/fp-ckeditor/div/div/div[2]/div");
 
 	private By ET_Entry_details_button= By.xpath("//mat-icon[text()='computer']");
 	private By List_cells= By.xpath("//table[@id='tblEntryDetails']/tbody/tr[1]/td");
@@ -91,8 +92,8 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 		act.moveToElement(ele).click().build().perform();
 		StaticWait(2);
 		WebElement e=driver.findElement(Comment_Textbox);
-		act.moveToElement(e).build().perform();
-		act.click(e).build().perform();
+		JavascriptExecutor j=(JavascriptExecutor)driver;
+		j.executeScript("arguments[0].click()", e);
 		StaticWait(2);
 		e.sendKeys(Procter_comment);
 		driver.findElement(Save_button).click();
