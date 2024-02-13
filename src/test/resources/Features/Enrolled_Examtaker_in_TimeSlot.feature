@@ -13,7 +13,7 @@ Feature: FocalPointk12 Exam_Center Procter Comment, Reset the Examination
     Then User search the particular ExamTaker <Examtaker_details_rownumber>
     When Examtaker not added in the Timeslot then add the Examtaker in the Timeslot
     Then User search the added ExamTaker in the TimeSlot <Examtaker_details_rownumber>
-    #Then User provide the comment to the Examtaker <Examinations_details_rownumber>
+    Then User provide the comment to the Examtaker <Examinations_details_rownumber>
     When User reset the Examinataion for the ExamTaker
 
     #Then User click on ExamTaker Entry Details

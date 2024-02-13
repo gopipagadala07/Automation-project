@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.Base;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
@@ -88,11 +89,11 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	{
 		StaticWait(1);	
 		WebElement ele=driver.findElement(Comment);
-		Actions act = new Actions(driver);
+		Actions act = new Actions(Base.getDriver());
 		act.moveToElement(ele).click().build().perform();
 		StaticWait(4);
 		WebElement e=driver.findElement(Comment_Textbox);
-		JavascriptExecutor j=(JavascriptExecutor)driver;
+		JavascriptExecutor j=(JavascriptExecutor)Base.getDriver();
 		j.executeScript("arguments[0].click()", e);
 		StaticWait(2);
 		e.sendKeys(Procter_comment);
@@ -104,11 +105,12 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	}
 	public void Reset_the_Examination()
 	{
-		
 		String Token_number1= driver.findElement(Token_no).getText();
 		//System.out.println("The Previous Token Number: "+Token_number);
 		ExtentCucumberAdapter.addTestStepLog("The Previous Token Number: "+Token_number1);		
-		driver.findElement(Reset_buttton).click();
+		WebElement ele=driver.findElement(Reset_buttton);
+		Actions act = new Actions(Base.getDriver());
+		act.moveToElement(ele).click().build().perform();
 		driver.findElement(Yes_buttton).click();
 		StaticWait(2);
 		String Token_number2= driver.findElement(Token_no).getText();
