@@ -151,13 +151,6 @@ public class Create_Examinations_pages extends ActionType {
 		StaticWait(1);
 		driver.findElement(EnrollToAnExambutton).click();
 	}
-	public void enrollment_save() {
-		//waitForPageLoaded(1);
-		StaticWait(1);
-		driver.findElement(EnrollmentSave).click();
-		StaticWait(1);
-		//driver.quit();
-	}
 	public void Enter_Schedule_name(String ScheduleName) {
 		StaticWait(1);
 		driver.findElement(EnterSchedulename).sendKeys(ScheduleName);
@@ -252,7 +245,6 @@ public class Create_Examinations_pages extends ActionType {
 		WebElement Slookup=driver.findElement(By.xpath("//span[text()=' "+schedulename+" ']"));
 		Slookup.click();
 	}
-<<<<<<< HEAD
 	public void enrollment_save() {
 		waitForPageLoaded(1);
 		StaticWait(1);
@@ -260,7 +252,4 @@ public class Create_Examinations_pages extends ActionType {
 		StaticWait(1);
 
 	}
-=======
->>>>>>> branch 'main' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-
 }
