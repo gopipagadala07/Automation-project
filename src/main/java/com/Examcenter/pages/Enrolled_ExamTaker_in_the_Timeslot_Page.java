@@ -109,6 +109,7 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 		//System.out.println("The Previous Token Number: "+Token_number);
 		ExtentCucumberAdapter.addTestStepLog("The Previous Token Number: "+Token_number1);		
 		WebElement ele=driver.findElement(Reset_buttton);
+		StaticWait(2);
 		Actions act = new Actions(Base.getDriver());
 		act.moveToElement(ele).click().build().perform();
 		driver.findElement(Yes_buttton).click();

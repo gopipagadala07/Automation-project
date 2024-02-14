@@ -57,7 +57,9 @@ public class ExamtakerSubmissionPage extends ActionType{
 	public void begintest()
 	{
 		waitForElement(begintest);
-		driver.findElement(begintest).click();		
+		WebElement e=driver.findElement(begintest);	
+		JavascriptExecutor j=(JavascriptExecutor) driver;
+		j.executeScript("arguments[0].click()",e);
 	}
 	public void close()
 	{
