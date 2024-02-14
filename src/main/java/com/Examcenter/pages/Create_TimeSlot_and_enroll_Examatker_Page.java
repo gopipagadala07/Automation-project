@@ -7,12 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.Base;
 
 public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 {
 	private By AddExamtaker = By.xpath("//mat-icon[text()='add']");
-
-
 	private By AddNewButton = By.xpath("//span[contains(text(),'Add New ')]");
 	private By approve = By.xpath("//div[@class='matFabIcons']/button[1]/../preceding-sibling::div[1]/div/mat-slide-toggle");
 	private By ChooseMonthandYear = By.xpath("//button[@aria-label='Choose month and year']");
@@ -39,8 +38,6 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	private By Unassigned_Toggle1 = By.xpath("(//input[@type='search'])[1]/../../../../../../following-sibling::div/mat-slide-toggle/label/span/span/span[@class='mat-slide-toggle-thumb']");
 
 
-
-
 	public Create_TimeSlot_and_enroll_Examatker_Page(WebDriver driver)
 	{
 		this.driver = driver;
@@ -62,7 +59,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			waitForElement(approve);
 			StaticWait(1);
 			WebElement e=driver.findElement(approve);			
-			Actions a=new Actions(driver);
+			Actions a=new Actions(Base.getDriver());
 			a.moveToElement(e).build().perform();
 			StaticWait(1);
 			a.click(e).build().perform();
@@ -71,7 +68,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			StaticWait(5);
 			WebElement e1=driver.findElement(Live);
 //			e1.click();
-			JavascriptExecutor j=(JavascriptExecutor) driver;
+			JavascriptExecutor j=(JavascriptExecutor) Base.getDriver();
 			j.executeScript("arguments[0].click()", e1);
 //			a.moveToElement(e1).click(e1).build().perform();
 		}		
