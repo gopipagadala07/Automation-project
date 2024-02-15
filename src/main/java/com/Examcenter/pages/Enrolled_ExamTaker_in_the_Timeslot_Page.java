@@ -3,6 +3,7 @@ package com.Examcenter.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -87,6 +88,8 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	}
 	public void p_comment(String Procter_comment)
 	{
+		Dimension d=new Dimension(1920,1080);
+		driver.manage().window().setSize(d);
 		StaticWait(1);	
 		WebElement ele=driver.findElement(Comment);
 		Actions act = new Actions(Base.getDriver());

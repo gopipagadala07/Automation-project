@@ -1,6 +1,7 @@
 package com.Examcenter.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -56,6 +57,9 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 		String s = driver.findElement(Notapprove).getText();
 		if(s.equalsIgnoreCase("Not Approved"))
 		{
+			Dimension d=new Dimension(1920,1080);
+			driver.manage().window().setSize(d);
+			StaticWait(1);	
 			waitForElement(approve);
 			StaticWait(1);
 			WebElement e=driver.findElement(approve);			
@@ -133,7 +137,9 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void ExamTaker_Count(String examtakercount)
 	{
-		StaticWait(1);
+		Dimension d=new Dimension(1920,1080);
+		driver.manage().window().setSize(d);
+		StaticWait(2);
 		driver.findElement(ExamTakerCount).sendKeys(examtakercount);
 	}
 	public void okButton() 

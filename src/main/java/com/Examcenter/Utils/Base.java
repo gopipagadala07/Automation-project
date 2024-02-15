@@ -52,9 +52,9 @@ public class Base {
 			//WebDriverManager.chromedriver().setup();
 			ChromeOptions options=new ChromeOptions();
 			options.addArguments("--headless");
+			//options.addArguments("--window-size=1920,1080");
 			driver=new ChromeDriver(options);
-			options.addArguments("--window-size=1920,1080");
-			tlDriver.set(new ChromeDriver(options));
+			tlDriver.set(new ChromeDriver());
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());
