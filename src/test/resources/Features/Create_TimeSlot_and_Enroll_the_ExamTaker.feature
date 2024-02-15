@@ -40,6 +40,8 @@ Feature: FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Take
     When User add the Examtaker in the Timeslot
     Then User search the added ExamTaker in the TimeSlot <ExamTaker_details_rownumber>
     When User approve and Live the Examtaker for the Examination
+    Then User provide the comment to the Examtaker <Timeslot_rownumber>
+    When User reset the Examinataion for the ExamTaker
 
     Examples: 
       | rownumber | ExamTaker_details_rownumber | Timeslot_rownumber | Exam_details_rownumber |
