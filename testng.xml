@@ -6,8 +6,8 @@
 		<classes>
 			<!--<class name="Runners.Location_Runner"></class>
 			<class name="Runners.Users_Creation_Runner"></class>
-			<class name="Runners.Examinations_Schedule_runner"></class>-->
-			<class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"></class>	
+			<class name="Runners.Examinations_Schedule_runner"></class>
+			<class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"></class>	-->
 			<class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>		
 			<class name="Runners.AssessmentSubmissionRunner"></class>
 			<class name="Runners.BulkUploadRunner"></class>
