@@ -51,11 +51,11 @@ public class Base {
 
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-//			ChromeOptions options=new ChromeOptions();
-//			options.addArguments("--headless");
+			ChromeOptions options=new ChromeOptions();
+			options.addArguments("--headless");
 //			//options.addArguments("--window-size=1920,1080");
 //			driver=new ChromeDriver(options);
-			tlDriver.set(new ChromeDriver());
+			tlDriver.set(new ChromeDriver(options));
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());
