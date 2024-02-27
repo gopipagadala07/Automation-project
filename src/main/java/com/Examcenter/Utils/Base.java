@@ -51,11 +51,12 @@ public class Base {
 
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Sapphirus\\.cache\\selenium\\chromedriver\\win64\\122.0.6261.69\\chromedriver.exe");
 			ChromeOptions options=new ChromeOptions();
-//			options.addArguments("--headless");
+//     		options.addArguments("--headless");
 //			//options.addArguments("--window-size=1920,1080");
 			options.addArguments("--remote-allow-origins=*");
-			driver=new ChromeDriver(options);
+			//driver=new ChromeDriver(options);
 			tlDriver.set(new ChromeDriver(options));
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
