@@ -54,7 +54,7 @@ public class Base {
 			ChromeOptions options=new ChromeOptions();
 //     		options.addArguments("--headless");
 //			//options.addArguments("--window-size=1920,1080");
-		    options.addArguments("--remote-allow-origins=*");
+			options.addArguments("--remote-allow-origins=*");
 			tlDriver.set(new ChromeDriver(options));
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();

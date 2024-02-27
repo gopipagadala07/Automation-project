@@ -48,7 +48,9 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 		driver.findElement(AddNewButton).click();
 	}
 	public void addExamtaker()
-	{
+	{	
+		waitForElement(AddExamtaker);
+		StaticWait(2);
 		driver.findElement(AddExamtaker).click();
 	}
 	public void approve_and_Live_the_Examtaker()
