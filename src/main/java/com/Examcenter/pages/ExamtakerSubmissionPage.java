@@ -105,6 +105,7 @@ public class ExamtakerSubmissionPage extends ActionType{
 	}
 	public void statusband()
 	{
+		StaticWait(2);
 		String band=driver.findElement(statusband).getText();
 		ExtentCucumberAdapter.addTestStepLog(band);
 		StaticWait(2);
