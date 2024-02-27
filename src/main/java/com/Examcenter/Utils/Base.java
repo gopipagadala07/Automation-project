@@ -51,12 +51,10 @@ public class Base {
 
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-//			System.setProperty("webdriver.chrome.driver", "E:\\Automation EC\\chromedriver.exe");
 			ChromeOptions options=new ChromeOptions();
 //     		options.addArguments("--headless");
 //			//options.addArguments("--window-size=1920,1080");
 			options.addArguments("--remote-allow-origins=*");
-			//driver=new ChromeDriver(options);
 			tlDriver.set(new ChromeDriver(options));
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
