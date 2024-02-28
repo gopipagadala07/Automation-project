@@ -135,6 +135,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void clickOnMin() 
 	{
+		StaticWait(1);
 		driver.findElement(ClickOnMin).click();
 	}
 	public void ExamTaker_Count(String examtakercount)
