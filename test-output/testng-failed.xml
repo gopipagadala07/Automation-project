@@ -5,10 +5,14 @@
   <test name="Test1">
     <parameter name="browser" value="chrome"/>
     <classes>
+      <class name="Runners.Location_Runner"/>
+      <class name="Runners.Users_Creation_Runner"/>
+      <class name="Runners.Examinations_Schedule_runner"/>
       <class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"/>
       <class name="Runners.AssessmentSubmissionRunner"/>
       <class name="Runners.BulkUploadRunner"/>
       <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
+      <class name="Runners.EnrolleRunner"/>
     </classes>
   </test> <!-- Test1 -->
 </suite> <!-- Failed suite [Suite] -->
