@@ -72,7 +72,7 @@ public class ProctorEnrollePage extends ActionType{
 	{
 		//String screenshotName = scenario.getName().replaceAll(" ", "_");
 		File sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		File dest=new File("./test-output/Reports/TestAnalytics.png");
+		File dest=new File("./test-output/Reports/Screenshots/TestAnalytics.png");
 		FileUtils.copyFile(sourcePath, dest);
 		//ExtentCucumberAdapter.addTestStepScreenCaptureFromPath("/test-output/Reports/TestAnalytics.png");
 	}
