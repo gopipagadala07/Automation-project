@@ -280,7 +280,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			String Sh1=String.valueOf(ish);
 			String Eh1=String.valueOf(ieh);
 			WebElement t= driver.findElement(By.xpath("//span[text()='"+Sh1+":"+Smin+"AM']/following-sibling::span[text()='"+Eh1+":"+Emin+"AM']"));
-			//	StaticWait(1);
+				StaticWait(1);
 			t.click();
 		}
 		if(ish>=12 & ieh<=12)
@@ -288,7 +288,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			String Sh1=String.valueOf(ish-12);
 			String Eh1=String.valueOf(ieh);
 			WebElement t= driver.findElement(By.xpath("//span[text()='"+Sh1+":"+Smin+"PM']/following-sibling::span[text()='"+Eh1+":"+Emin+"AM']"));			
-			//StaticWait(1);
+			StaticWait(1);
 			t.click();
 		}
 
@@ -297,7 +297,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			String Sh1=String.valueOf(ish);
 			String Eh1=String.valueOf(ieh-12);
 			WebElement t= driver.findElement(By.xpath("//span[text()='"+Sh1+":"+Smin+"AM']/following-sibling::span[text()='"+Eh1+":"+Emin+"PM']"));	
-			//StaticWait(1);
+			StaticWait(1);
 			t.click();
 		}
 
@@ -306,7 +306,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			String Sh1=String.valueOf(ish-12);
 			String Eh1=String.valueOf(ieh-12);
 			WebElement t= driver.findElement(By.xpath("//span[text()='"+Sh1+":"+Smin+"PM']/following-sibling::span[text()='"+Eh1+":"+Emin+"PM']"));
-			//StaticWait(1);
+			StaticWait(1);
 			t.click();
 		}	
 	}
