@@ -127,10 +127,12 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void clickon_StartTime() 
 	{
+		StaticWait(1);
 		driver.findElement(StartTime).click();
 	}
 	public void clickOnHr() 
 	{
+		StaticWait(1);
 		driver.findElement(ClickOnHr).click();
 	}
 	public void clickOnMin() 
@@ -177,10 +179,12 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void select_End_TimeinHr(String EndTimeinHr) 
 	{
+		StaticWait(1);
 		driver.findElement(By.xpath("//span[text()="+EndTimeinHr+"]")).click();
 	}
 	public void select_EndTimeinMin(String EndTimeinMin) 
 	{
+		StaticWait(1);
 		Actions act =  new Actions(driver);
 		act.moveToElement(driver.findElement(By.xpath("//button[@style='transform: rotateZ(-"+EndTimeinMin+"deg);']"))).click().perform();
 	}
@@ -190,11 +194,13 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void select_StartTimeinHr(String StartTimeinHr) 
 	{
+		StaticWait(1);
 		driver.findElement(By.xpath("//span[text()="+StartTimeinHr+"]")).click();
 	}
 	public void select_StartTimeinMin(String StartTimeinMin) 
 
 	{
+		StaticWait(1);
 		Actions act =  new Actions(driver);
 		act.moveToElement(driver.findElement(By.xpath("//div[@style='transform: rotateZ("+StartTimeinMin+"deg);']"))).click().perform();
 	}
