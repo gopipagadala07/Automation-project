@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -59,7 +60,10 @@ public class ProctorEnrollePage extends ActionType{
 	{
 		StaticWait(2);
 		WebElement e=driver.findElement(By.xpath("//span[text()=' "+ExamName+"-"+ScheduleName+" ']/../../td[7]/span/span/button"));
-	    e.click();
+		Dimension d=new Dimension(1920,1080);
+		driver.manage().window().setSize(d);
+		StaticWait(1);	
+		e.click();
 	    driver.switchTo().frame(0);	    
 	}
 	public void printExamtakerName()
