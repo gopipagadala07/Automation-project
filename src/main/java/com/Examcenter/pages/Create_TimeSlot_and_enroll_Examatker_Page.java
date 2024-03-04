@@ -117,6 +117,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void clickon_EndTime() 
 	{
+		StaticWait(1);
 		driver.findElement(EndTime).click();
 	}
 	public void clickon_SaveButton() 
@@ -137,7 +138,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void clickOnMin() 
 	{
-		StaticWait(1);
+		StaticWait(2);
 		driver.findElement(ClickOnMin).click();
 	}
 	public void ExamTaker_Count(String examtakercount)
