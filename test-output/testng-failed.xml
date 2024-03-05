@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="none" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="browser" value="chrome"/>
-  <test name="Test1">
-    <parameter name="browser" value="chrome"/>
+<suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test" verbose="2">
     <classes>
-      <class name="Runners.AssessmentSubmissionRunner"/>
-      <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
-      <class name="Runners.EnrolleRunner"/>
-      <class name="Runners.BulkUploadRunner"/>
+      <class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"/>
     </classes>
-  </test> <!-- Test1 -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test -->
+  <test parallel="none" name="Default test(failed)">
+    <classes>
+      <class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
+        <methods>
+          <include name="testDownClass"/>
+          <include name="runScenario" invocation-numbers="1"/>
+          <include name="tearDownClass"/>
+          <include name="beforeclass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
