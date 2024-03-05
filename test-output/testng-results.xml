@@ -2,30 +2,30 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-05T05:34:03Z" name="Default suite" finished-at="2024-03-05T05:35:01Z" duration-ms="58522">
+  <suite started-at="2024-03-05T07:48:28Z" name="Default suite" finished-at="2024-03-05T07:49:27Z" duration-ms="59137">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7a1234bf]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-03-05T05:34:03Z" name="Default test" finished-at="2024-03-05T05:35:01Z" duration-ms="58522">
+    <test started-at="2024-03-05T07:48:28Z" name="Default test" finished-at="2024-03-05T07:49:27Z" duration-ms="59137">
       <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7a1234bf]" started-at="2024-03-05T11:04:03Z" name="setUpClass" finished-at="2024-03-05T11:04:04Z" duration-ms="692" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7a1234bf]" started-at="2024-03-05T13:18:28Z" name="setUpClass" finished-at="2024-03-05T13:18:28Z" duration-ms="625" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3006bfb]]>
+                <![CDATA[org.testng.TestRunner@341ccfd1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7a1234bf]" started-at="2024-03-05T11:04:04Z" name="beforeclass" finished-at="2024-03-05T11:04:04Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7a1234bf]" started-at="2024-03-05T13:18:28Z" name="beforeclass" finished-at="2024-03-05T13:18:28Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeclass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7a1234bf]" started-at="2024-03-05T11:04:04Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-05T11:05:00Z" duration-ms="55990" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7a1234bf]" started-at="2024-03-05T13:18:28Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-05T13:19:25Z" duration-ms="56866" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -41,14 +41,14 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="testDownClass()[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7a1234bf]" started-at="2024-03-05T11:05:00Z" name="testDownClass" finished-at="2024-03-05T11:05:00Z" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDownClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7a1234bf]" started-at="2024-03-05T11:05:00Z" name="tearDownClass" finished-at="2024-03-05T11:05:01Z" duration-ms="1826" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7a1234bf]" started-at="2024-03-05T13:19:25Z" name="tearDownClass" finished-at="2024-03-05T13:19:27Z" duration-ms="1635" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
+        <test-method is-config="true" signature="testDownClass()[pri:0, instance:Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7a1234bf]" started-at="2024-03-05T13:19:25Z" name="testDownClass" finished-at="2024-03-05T13:19:25Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDownClass -->
       </class> <!-- Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

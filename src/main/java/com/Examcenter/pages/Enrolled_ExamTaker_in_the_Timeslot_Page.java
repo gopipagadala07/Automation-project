@@ -46,6 +46,9 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 		StaticWait(1);
 		if(driver.findElement(Add).isEnabled())
 		{
+			Dimension d=new Dimension(1920,1080);
+			driver.manage().window().setSize(d);
+			StaticWait(1);	
 			driver.findElement(Add).click();
 			StaticWait(2);
 		}	
@@ -94,7 +97,9 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 		WebElement ele=driver.findElement(Comment);
 		Actions act = new Actions(Base.getDriver());
 		act.moveToElement(ele).click().build().perform();
-		StaticWait(4);
+		StaticWait(2);
+		driver.manage().window().setSize(d);
+		StaticWait(1);	
 		WebElement e=driver.findElement(Comment_Textbox);
 		JavascriptExecutor j=(JavascriptExecutor)Base.getDriver();
 		j.executeScript("arguments[0].click()", e);
