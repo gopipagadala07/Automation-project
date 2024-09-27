@@ -42,12 +42,12 @@ public class Create_Examinations_pages extends ActionType {
 	private By InvigilatorTokentoggle=By.xpath("(//span[@class='mat-slide-toggle-bar'])[6]");
 	private By Nametextfield= By.xpath("//input[@type='text']");
 	//Ckeditors
-	private By OnlineTestingInstructions=By.xpath("(//div[@class='ck-restricted-editing_mode_standard ck-blurred ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline'])[1]");
-	private By PrintFormInstructions=By.xpath("(//div[@class='ck-restricted-editing_mode_standard ck-blurred ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline'])[2]");
+	private By OnlineTestingInstructions=By.xpath("(//div[@role='textbox'])[1]");
+	private By PrintFormInstructions=By.xpath("(//div[@role='textbox'])[3]");
 	private By provisioning=By.xpath("//a[text()='Provisioning']");
 	private By Savebutton= By.xpath("//span[text()=' Save ']");
-	private By ScheduleDescription=By.xpath("//div[@class='ck-restricted-editing_mode_standard ck-blurred ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline']");
-	private By ScheduleSave=By.xpath("//span[text()=' Save ']");
+	private By ScheduleDescription=By.xpath("(//div[@role='textbox'])[2]");
+	private By ScheduleSave=By.xpath("//span[text()='Save ']");
 	//private By Userstab=By.xpath("//div[text()='USERS']"); 
 	private By SearchExamtaker= By.xpath("//input[@type='search']");
 	private By SearchTestName=By.xpath("//input[@form='pageIndex']");
@@ -68,7 +68,7 @@ public class Create_Examinations_pages extends ActionType {
 	}
 
 	public void Add_Exam() {
-		StaticWait(1);
+		StaticWait(2);
 		driver.findElement(AddExambutton).click();
 	}
 	//Creating a new Schedule
@@ -96,9 +96,15 @@ public class Create_Examinations_pages extends ActionType {
 		//driver.findElement(Desktoptoggle).click();	
 	}
 	public void Ck_editor_texts(String onlineInstructions, String printforminstruction, String scheduledescription) {
+		
 		driver.findElement(OnlineTestingInstructions).sendKeys(onlineInstructions);
-		driver.findElement(PrintFormInstructions).sendKeys(printforminstruction);
 		driver.findElement(ScheduleDescription).sendKeys(scheduledescription);
+		StaticWait(1);
+		WebElement e=driver.findElement(PrintFormInstructions);
+		JavascriptExecutor j=(JavascriptExecutor)getDriver();
+		j.executeScript("arguments[0].scrollIntoView()", e);
+		e.sendKeys(printforminstruction);
+		StaticWait(1);
 	}
 	public void click_on_datepicker() {
 		driver.findElement(datepickerforEndsonfield).click();
@@ -163,6 +169,7 @@ public class Create_Examinations_pages extends ActionType {
 		driver.findElement(EnterSchedulename).sendKeys(ScheduleName);
 	}
 	public void Exam_Administration() {
+		StaticWait(1);
 		waitForElement(ExamAdministrationtab);
 		WebElement e=driver.findElement(ExamAdministrationtab);
 		Actions a=new Actions(driver);
@@ -178,7 +185,7 @@ public class Create_Examinations_pages extends ActionType {
 	}
 
 	public void Exam_Search_here(String searchexamnamefield,String ExamName ) {
-		StaticWait(2);			
+		StaticWait(3);			
 		driver.findElement(ExaminationSearchhere).sendKeys(searchexamnamefield);
 		StaticWait(1);
 		WebElement e=driver.findElement(By.xpath("//span[text()='"+ExamName+"']"));

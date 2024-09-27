@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,6 +24,7 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
       <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
@@ -49,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Sapphirus\AppData\Local\Temp\testng-eclipse-1496581206\testng-customsuite.xml</span>
+                    <span>C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse-318128360\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +104,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Provide the Procter Comment to a ExamTaker&quot;, &quot;FocalPointk12 Exam_Center Procter Comment, Reset the ...)">runScenario("Provide the Procter Comment to a ExamTaker", "FocalPointk12 Exam_Center Procter Comment, Reset the ...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Runners.Location_Runner" class="method navigator-link" hash-for-method="runScenario(&quot;Exam_Center AddEdit Location scenario&quot;, &quot;Exam_Center Location feature&quot;)">runScenario("Exam_Center AddEdit Location scenario", "Exam_Center Location feature")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -120,15 +122,15 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner</span>
+              <span class="class-name">Runners.Location_Runner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Provide the Procter Comment to a ExamTaker&quot;, &quot;FocalPointk12 Exam_Center Procter Comment, Reset the ...)">
-                  </a> <!-- runScenario("Provide the Procter Comment to a ExamTaker", "FocalPointk12 Exam_Center Procter Comment, Reset the ...) -->
+                  <a name="runScenario(&quot;Exam_Center AddEdit Location scenario&quot;, &quot;Exam_Center Location feature&quot;)">
+                  </a> <!-- runScenario("Exam_Center AddEdit Location scenario", "Exam_Center Location feature") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Provide the Procter Comment to a ExamTaker", "FocalPointk12 Exam_Center Procter Comment, Reset the Examination")</span>
+                  <span class="parameters">("Exam_Center AddEdit Location scenario", "Exam_Center Location feature")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -138,16 +140,16 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Sapphirus\AppData\Local\Temp\testng-eclipse-1496581206\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse-318128360\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite parallel=&quot;none&quot; name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner&quot;/&gt;
+      &lt;class name=&quot;Runners.Location_Runner&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -198,13 +200,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
-data.setCell(0, 2, 'Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner')
-data.setCell(0, 3, 56866);
+data.setCell(0, 2, 'Runners.Location_Runner')
+data.setCell(0, 3, 38404);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 56 seconds</span>
+              <span class="suite-total-time">Total running time: 38 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -230,30 +232,31 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Runners.Location_Runner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@341ccfd1)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@75c589f2)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeclass</span>
-                <span class="method-start">625 ms</span>
+                <span class="method-start">976 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">runScenario("Provide the Procter Comment to a ExamTaker", "FocalPointk12 Exam_Center Procter Comment, Reset the ...)</span>
-                <span class="method-start">629 ms</span>
+                <span class="method-name">runScenario("Exam_Center AddEdit Location scenario", "Exam_Center Location feature")</span>
+                <span class="method-start">988 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">testDownClass</span>
-                <span class="method-start">57496 ms</span>
+                <span class="method-start">39398 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">57496 ms</span>
+                <span class="method-start">39398 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

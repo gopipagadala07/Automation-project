@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="none" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="browser" value="chrome"/>
-  <test name="Test1">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test1(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="Runners.AssessmentSubmissionRunner"/>
-      <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
-      <class name="Runners.EnrolleRunner"/>
-      <class name="Runners.BulkUploadRunner"/>
+      <class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0 1"/>
+          <include name="tearDownClass"/>
+          <include name="beforeclass"/>
+          <include name="testDownClass"/>
+        </methods>
+      </class> <!-- Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
+      <class name="Runners.Location_Runner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="beforeclass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="testDownClass"/>
+        </methods>
+      </class> <!-- Runners.Location_Runner -->
     </classes>
-  </test> <!-- Test1 -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

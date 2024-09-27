@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>Focalpoint_EC</groupId>
 	<artifactId>FocalPoint_ExamCenter</artifactId>
@@ -92,6 +92,20 @@
 			<artifactId>extent-pdf-report</artifactId>
 			<version>2.12.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+	<!--	<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>3.0.1</version>
+		</dependency>-->
+		<!--
+		https://mvnrepository.com/artifact/org.apache.pdfbox/fontbox -->
+		<!--<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>fontbox</artifactId>
+			<version>3.0.1</version>
+		</dependency>-->
+
 
 		<!--
 		https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->

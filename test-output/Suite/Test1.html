@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test1</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>6/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Mar 04 13:13:16 IST 2024</td>
+<td>Started on:</td><td>Mon Sep 23 10:25:45 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>391 seconds (391027 ms)</td>
+<tr><td>Total time:</td><td>199 seconds (199524 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,93 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Runners.BulkUploadRunner.tearDownClass()'><b>tearDownClass</b><br>Test class: Runners.BulkUploadRunner</td>
+<td><div><pre>java.lang.NoSuchFieldError: Class org.apache.pdfbox.pdmodel.font.PDType1Font does not have member field &apos;org.apache.pdfbox.pdmodel.font.PDType1Font HELVETICA&apos;
+	at org.vandeseer.easytable.structure.Table.&lt;clinit&gt;(Table.java:19)
+	at tech.grasshopper.pdf.section.dashboard.Dashboard.createSection(Dashboard.java:33)
+	at tech.grasshopper.pdf.PDFCucumberReport.createDashboardSection(PDFCucumberReport.java:147)
+	at tech.grasshopper.pdf.PDFCucumberReport.createReport(PDFCucumberReport.java:103)
+	at tech.grasshopper.pdf.extent.ExtentPDFCucumberReporter.flush(ExtentPDFCucumberReporter.java:95)
+	at tech.grasshopper.pdf.extent.ExtentPDFCucumberReporter$1.onNext(ExtentPDFCucumberReporter.java:69)
+	at tech.grasshopper.pdf.extent.ExtentPDFCucumberReporter$1.onNext(ExtentPDFCucumberReporter.java:62)
+	at io.reactivex.rxjava3.subjects.PublishSubject$PublishDisposable.onNext(PublishSubject.java:310)
+	at io.reactivex.rxjava3.subjects.PublishSubject.onNext(PublishSubject.java:226)
+	at com.aventstack.extentreports.ReactiveSubject.onFlush(ReactiveSubject.java:83)
+	at com.aventstack.extentreports.AbstractProcessor.onFlush(AbstractProcessor.java:96)
+	at com.aventstack.extentreports.ExtentReports.flush(ExtentReports.java:279)
+	at com.aventstack.extentreports.service.ExtentService.flush(ExtentService.java:47)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter.finishReport(ExtentCucumberAdapter.java:301)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:137)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:134)
+	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
+	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
+	at io.cucumber.core.runtime.SynchronizedEventBus.send(SynchronizedEventBus.java:47)
+	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:118)
+	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:105)
+	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace308998656", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace308998656'><pre>java.lang.NoSuchFieldError: Class org.apache.pdfbox.pdmodel.font.PDType1Font does not have member field &apos;org.apache.pdfbox.pdmodel.font.PDType1Font HELVETICA&apos;
+	at org.vandeseer.easytable.structure.Table.&lt;clinit&gt;(Table.java:19)
+	at tech.grasshopper.pdf.section.dashboard.Dashboard.createSection(Dashboard.java:33)
+	at tech.grasshopper.pdf.PDFCucumberReport.createDashboardSection(PDFCucumberReport.java:147)
+	at tech.grasshopper.pdf.PDFCucumberReport.createReport(PDFCucumberReport.java:103)
+	at tech.grasshopper.pdf.extent.ExtentPDFCucumberReporter.flush(ExtentPDFCucumberReporter.java:95)
+	at tech.grasshopper.pdf.extent.ExtentPDFCucumberReporter$1.onNext(ExtentPDFCucumberReporter.java:69)
+	at tech.grasshopper.pdf.extent.ExtentPDFCucumberReporter$1.onNext(ExtentPDFCucumberReporter.java:62)
+	at io.reactivex.rxjava3.subjects.PublishSubject$PublishDisposable.onNext(PublishSubject.java:310)
+	at io.reactivex.rxjava3.subjects.PublishSubject.onNext(PublishSubject.java:226)
+	at com.aventstack.extentreports.ReactiveSubject.onFlush(ReactiveSubject.java:83)
+	at com.aventstack.extentreports.AbstractProcessor.onFlush(AbstractProcessor.java:96)
+	at com.aventstack.extentreports.ExtentReports.flush(ExtentReports.java:279)
+	at com.aventstack.extentreports.service.ExtentService.flush(ExtentService.java:47)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter.finishReport(ExtentCucumberAdapter.java:301)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:137)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:134)
+	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
+	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
+	at io.cucumber.core.runtime.SynchronizedEventBus.send(SynchronizedEventBus.java:47)
+	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:118)
+	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:105)
+	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:217)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:130)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>Runners.BulkUploadRunner@5b38c1ec</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,35 +162,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runners.AssessmentSubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.AssessmentSubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the Examcenter Examtaker Assessment Submission Functionality", "Checking the Examtaker Assessment Submission"</td>
-<td></td>
-<td>63</td>
-<td>Runners.AssessmentSubmissionRunner@3ad2e17</td></tr>
-<tr>
-<td title='Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Provide the Procter Comment to a ExamTaker", "FocalPointk12 Exam_Center Procter Comment, Reset the Examination"</td>
-<td></td>
-<td>55</td>
-<td>Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@8c3619e</td></tr>
-<tr>
-<td title='Runners.EnrolleRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.EnrolleRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Testing the Test Analytics popup at proctor Enrolle side", "Checking the Test Analytics under Enroller tab at Proctor side"</td>
-<td></td>
-<td>43</td>
-<td>Runners.EnrolleRunner@4331d187</td></tr>
-<tr>
-<td title='Runners.BulkUploadRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.BulkUploadRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Testing the Controller Bulk Upload Functionality", "Checking the bulk upload functionality for All Users"</td>
-<td></td>
-<td>76</td>
-<td>Runners.BulkUploadRunner@6f63b475</td></tr>
-<tr>
 <td title='Runners.BulkUploadRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.BulkUploadRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Testing the proctor Bulk Upload Functionality", "Checking the bulk upload functionality for All Users"</td>
 <td></td>
-<td>73</td>
-<td>Runners.BulkUploadRunner@6f63b475</td></tr>
+<td>63</td>
+<td>Runners.BulkUploadRunner@5b38c1ec</td></tr>
 <tr>
 <td title='Runners.BulkUploadRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.BulkUploadRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Testing the Examtaker Bulk Upload Functionality", "Checking the bulk upload functionality for All Users"</td>
 <td></td>
-<td>71</td>
-<td>Runners.BulkUploadRunner@6f63b475</td></tr>
+<td>58</td>
+<td>Runners.BulkUploadRunner@5b38c1ec</td></tr>
+<tr>
+<td title='Runners.BulkUploadRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.BulkUploadRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Testing the Controller Bulk Upload Functionality", "Checking the bulk upload functionality for All Users"</td>
+<td></td>
+<td>75</td>
+<td>Runners.BulkUploadRunner@5b38c1ec</td></tr>
 </table><p>
 </body>
 </html>
