@@ -43,9 +43,10 @@ public void Addnew_location() {
 //		StaticWait(4);
 //	}
 	public void Adminstarationbtn()
-    {
+	{
+		waitForPageLoad();
+		StaticWait(4);
 		waitForElement(Administrationbtn);
-        waitForPageLoad();
 		StaticWait(2);
 		Actions a=new Actions(driver);
 		WebElement L=driver.findElement(Administrationbtn);

@@ -35,7 +35,6 @@
 		<timeStampFormat>MMM dd, yyyy HH:mm:ss</timeStampFormat>
 
 		<!-- custom javascript -->
-<<<<<<< HEAD
 		<scripts>
             <![CDATA[
         $(document).ready(function() {
@@ -49,21 +48,7 @@
             <![CDATA[
 
       ]]>
-=======
-		<scripts>
-            <![CDATA[
-        $(document).ready(function() {
 
-        });
-      ]]>
-		</scripts>
-
-		<!-- custom styles -->
-		<styles>
-            <![CDATA[
-
-      ]]>
->>>>>>> branch 'main' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 		</styles>
 	</configuration>
 </extentreports>

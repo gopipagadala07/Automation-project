@@ -11,8 +11,10 @@ import java.time.Duration;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -487,7 +489,17 @@ public class ActionType extends Base {
 		return waitForElement(by, seconds);
 	}
 
-	public void waitForPageLoad() {
+		public void waitForPageLoad() {
+
+//			ExpectedCondition<Boolean> cond = new ExpectedCondition<Boolean>() {
+//			    @Override
+//			    public Boolean apply(WebDriver input) {
+//			        JavascriptExecutor js = (JavascriptExecutor) driver; 
+//			        return js.executeScript("return document.readyState;").equals("complete");
+//			            }
+//			        };
+//			         
+//			    new WebDriverWait(driver, Duration.ofSeconds(10)).until(cond);
 		getDriver().manage().timeouts().pageLoadTimeout(Integer.parseInt(getProperty("pageLoadTimeOut")),
 				TimeUnit.SECONDS);
 		

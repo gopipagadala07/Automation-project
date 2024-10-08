@@ -8,13 +8,10 @@
 			<class name="Runners.Users_Creation_Runner"></class>
 			<class name="Runners.Examinations_Schedule_runner"></class>
 			<class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"></class>
-<<<<<<< HEAD
 			<class name="Runners.AssessmentSubmissionRunner"></class>
 			<class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>
-=======
 			<class name="Runners.AssessmentSubmissionRunner"></class>			
-			<!--<class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>-->
->>>>>>> branch 'main' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+			<class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>
 			<class name="Runners.EnrolleRunner"></class>
 			<class name="Runners.BulkUploadRunner"></class>
 			<!--<class name="Runners.LoginPageRunner"></class>-->
