@@ -23,7 +23,6 @@ public class Enrolled_ExamTaker_in_a_TimeSlotRunner extends AbstractTestNGCucumb
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeclass(/*String browser*/) {
-
 		testcasename = this.getClass().getSimpleName();
 		System.out.println("***************** " + testcasename + " Test Starting *****************");
 

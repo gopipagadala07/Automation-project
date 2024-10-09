@@ -1,6 +1,7 @@
 package com.Examcenter.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -47,7 +48,9 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 		driver.findElement(AddNewButton).click();
 	}
 	public void addExamtaker()
-	{
+	{	
+		waitForElement(AddExamtaker);
+		StaticWait(2);
 		driver.findElement(AddExamtaker).click();
 	}
 	public void approve_and_Live_the_Examtaker()
@@ -56,6 +59,9 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 		String s = driver.findElement(Notapprove).getText();
 		if(s.equalsIgnoreCase("Not Approved"))
 		{
+			Dimension d=new Dimension(1920,1080);
+			driver.manage().window().setSize(d);
+			StaticWait(1);	
 			waitForElement(approve);
 			StaticWait(1);
 			WebElement e=driver.findElement(approve);			
@@ -111,6 +117,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void clickon_EndTime() 
 	{
+		StaticWait(1);
 		driver.findElement(EndTime).click();
 	}
 	public void clickon_SaveButton() 
@@ -121,19 +128,24 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void clickon_StartTime() 
 	{
+		StaticWait(1);
 		driver.findElement(StartTime).click();
 	}
 	public void clickOnHr() 
 	{
+		StaticWait(1);
 		driver.findElement(ClickOnHr).click();
 	}
 	public void clickOnMin() 
 	{
+		StaticWait(2);
 		driver.findElement(ClickOnMin).click();
 	}
 	public void ExamTaker_Count(String examtakercount)
 	{
-		StaticWait(1);
+		Dimension d=new Dimension(1920,1080);
+		driver.manage().window().setSize(d);
+		StaticWait(2);
 		driver.findElement(ExamTakerCount).sendKeys(examtakercount);
 	}
 	public void okButton() 
@@ -168,10 +180,12 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void select_End_TimeinHr(String EndTimeinHr) 
 	{
+		StaticWait(1);
 		driver.findElement(By.xpath("//span[text()="+EndTimeinHr+"]")).click();
 	}
 	public void select_EndTimeinMin(String EndTimeinMin) 
 	{
+		StaticWait(1);
 		Actions act =  new Actions(driver);
 		act.moveToElement(driver.findElement(By.xpath("//button[@style='transform: rotateZ(-"+EndTimeinMin+"deg);']"))).click().perform();
 	}
@@ -181,11 +195,13 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	}
 	public void select_StartTimeinHr(String StartTimeinHr) 
 	{
+		StaticWait(1);
 		driver.findElement(By.xpath("//span[text()="+StartTimeinHr+"]")).click();
 	}
 	public void select_StartTimeinMin(String StartTimeinMin) 
 
 	{
+		StaticWait(1);
 		Actions act =  new Actions(driver);
 		act.moveToElement(driver.findElement(By.xpath("//div[@style='transform: rotateZ("+StartTimeinMin+"deg);']"))).click().perform();
 	}
@@ -264,7 +280,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			String Sh1=String.valueOf(ish);
 			String Eh1=String.valueOf(ieh);
 			WebElement t= driver.findElement(By.xpath("//span[text()='"+Sh1+":"+Smin+"AM']/following-sibling::span[text()='"+Eh1+":"+Emin+"AM']"));
-			//	StaticWait(1);
+				StaticWait(1);
 			t.click();
 		}
 		if(ish>=12 & ieh<=12)
@@ -272,7 +288,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			String Sh1=String.valueOf(ish-12);
 			String Eh1=String.valueOf(ieh);
 			WebElement t= driver.findElement(By.xpath("//span[text()='"+Sh1+":"+Smin+"PM']/following-sibling::span[text()='"+Eh1+":"+Emin+"AM']"));			
-			//StaticWait(1);
+			StaticWait(1);
 			t.click();
 		}
 
@@ -281,7 +297,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			String Sh1=String.valueOf(ish);
 			String Eh1=String.valueOf(ieh-12);
 			WebElement t= driver.findElement(By.xpath("//span[text()='"+Sh1+":"+Smin+"AM']/following-sibling::span[text()='"+Eh1+":"+Emin+"PM']"));	
-			//StaticWait(1);
+			StaticWait(1);
 			t.click();
 		}
 
@@ -290,7 +306,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 			String Sh1=String.valueOf(ish-12);
 			String Eh1=String.valueOf(ieh-12);
 			WebElement t= driver.findElement(By.xpath("//span[text()='"+Sh1+":"+Smin+"PM']/following-sibling::span[text()='"+Eh1+":"+Emin+"PM']"));
-			//StaticWait(1);
+			StaticWait(1);
 			t.click();
 		}	
 	}

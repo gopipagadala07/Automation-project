@@ -5,7 +5,9 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
@@ -49,6 +51,10 @@ public class Base {
 
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
+			ChromeOptions options=new ChromeOptions();
+//     		options.addArguments("--headless");
+//			//options.addArguments("--window-size=1920,1080");
+			options.addArguments("--remote-allow-origins=*");
 			tlDriver.set(new ChromeDriver());
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
@@ -58,7 +64,9 @@ public class Base {
 			tlDriver.set(new InternetExplorerDriver());
 		} else if (browser.equalsIgnoreCase("Edge")) {
 			WebDriverManager.edgedriver().setup();
-			tlDriver.set(new EdgeDriver());
+			EdgeOptions options=new EdgeOptions();
+			options.addArguments("--headless");
+			tlDriver.set(new EdgeDriver(options));
 		} else {
 			Logs.warn("Please pass the correct browser value: " + browser);
 		}

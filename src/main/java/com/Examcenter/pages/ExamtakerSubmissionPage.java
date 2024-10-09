@@ -1,22 +1,21 @@
 package com.Examcenter.pages;
-
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
-import org.openqa.selenium.support.FindBy;
 
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 import com.Examcenter.Utils.ActionType;
+import com.Examcenter.Utils.Base;
 
 public class ExamtakerSubmissionPage extends ActionType{
 
 	By begintest=By.xpath("//button[@aria-label='Begin Test']");
-
 	By blankAnswer=By.xpath("//input[@id='txtEditorInteraction']");
 	By close=By.xpath("//mat-icon[text()='close']");
 	private WebDriver driver;
@@ -57,7 +56,9 @@ public class ExamtakerSubmissionPage extends ActionType{
 	public void begintest()
 	{
 		waitForElement(begintest);
-		driver.findElement(begintest).click();		
+		WebElement e=driver.findElement(begintest);	
+		JavascriptExecutor j=(JavascriptExecutor) driver;
+		j.executeScript("arguments[0].click()",e);
 	}
 	public void close()
 	{
@@ -80,15 +81,17 @@ public class ExamtakerSubmissionPage extends ActionType{
 	public void launchbtn()
 	{
 		waitForElement(launchbtn);
+		StaticWait(2);
 		WebElement e1=driver.findElement(launchbtn);
-		JavascriptExecutor j=(JavascriptExecutor) driver;
+		JavascriptExecutor j=(JavascriptExecutor)driver;
 		j.executeScript("arguments[0].click()",e1);
 		driver.switchTo().frame(0);
 	}
 	public void logout()
 	{
 		driver.findElement(logout).click();
-		driver.findElement(returnbtn).click();
+		WebElement e=driver.findElement(returnbtn);
+		e.click();
 	}
 
 	public void searchheretxt(String Examname, String ScheduleName)
@@ -103,6 +106,7 @@ public class ExamtakerSubmissionPage extends ActionType{
 	}
 	public void statusband()
 	{
+		StaticWait(2);
 		String band=driver.findElement(statusband).getText();
 		ExtentCucumberAdapter.addTestStepLog(band);
 		StaticWait(2);
