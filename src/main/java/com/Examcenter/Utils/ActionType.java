@@ -531,4 +531,5 @@ public class ActionType extends Base {
 			return true;
 		}
 	}
+
 }

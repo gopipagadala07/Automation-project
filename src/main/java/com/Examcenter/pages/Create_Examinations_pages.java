@@ -47,7 +47,7 @@ public class Create_Examinations_pages extends ActionType {
 	private By provisioning=By.xpath("//a[text()='Provisioning']");
 	private By Savebutton= By.xpath("//span[text()=' Save ']");
 	private By ScheduleDescription=By.xpath("(//div[@role='textbox'])[2]");
-	private By ScheduleSave=By.xpath("//span[text()='Save ']");
+	private By ScheduleSave=By.xpath("//span[contains(text(),'Save')]");
 	//private By Userstab=By.xpath("//div[text()='USERS']"); 
 	private By SearchExamtaker= By.xpath("//input[@type='search']");
 	private By SearchTestName=By.xpath("//input[@form='pageIndex']");
@@ -169,7 +169,8 @@ public class Create_Examinations_pages extends ActionType {
 		driver.findElement(EnterSchedulename).sendKeys(ScheduleName);
 	}
 	public void Exam_Administration() {
-		StaticWait(1);
+		waitForPageLoad();
+		StaticWait(3);
 		waitForElement(ExamAdministrationtab);
 		WebElement e=driver.findElement(ExamAdministrationtab);
 		Actions a=new Actions(driver);
@@ -248,17 +249,20 @@ public class Create_Examinations_pages extends ActionType {
 	}
 	public void Search_test_name(String TestName) {
 		driver.findElement(SearchTestName).sendKeys(TestName);
+		System.out.println(TestName);
 	}
 	public void select_examinations_lookup(String examname) {
 		StaticWait(1);
 		WebElement Elookup=driver.findElement(By.xpath("//span[text()=' "+examname+" ']"));
-//		JavascriptExecutor j=(JavascriptExecutor) driver;
-//		j.executeScript("arguments[0].click()",Elookup);	
-		Elookup.click();
+		JavascriptExecutor j=(JavascriptExecutor) driver;
+		StaticWait(1);
+		j.executeScript("arguments[0].click()",Elookup);	
+//		Elookup.click();
 	}
 	public void select_schedule_lookup(String schedulename) {
 		StaticWait(1);
 		WebElement Slookup=driver.findElement(By.xpath("//span[text()=' "+schedulename+" ']"));
+		StaticWait(1);
 		Slookup.click();
 	}
 

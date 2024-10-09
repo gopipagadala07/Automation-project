@@ -23,7 +23,6 @@
       <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner">
         <methods>
           <include name="testDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
           <include name="beforeclass"/>
           <include name="setUpClass"/>
@@ -33,7 +32,6 @@
         <methods>
           <include name="afterClass"/>
           <include name="beforeClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>
@@ -50,7 +48,6 @@
       <class name="Runners.Location_Runner">
         <methods>
           <include name="beforeclass"/>
-          <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
           <include name="testDownClass"/>
           <include name="setUpClass"/>
@@ -67,7 +64,6 @@
       <class name="Runners.Users_Creation_Runner">
         <methods>
           <include name="Afterclass"/>
-          <include name="runScenario" invocation-numbers="1 2"/>
           <include name="tearDownClass"/>
           <include name="beforeclass"/>
           <include name="setUpClass"/>
@@ -76,7 +72,6 @@
       <class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
         <methods>
           <include name="testDownClass"/>
-          <include name="runScenario" invocation-numbers="0 1"/>
           <include name="tearDownClass"/>
           <include name="beforeclass"/>
           <include name="setUpClass"/>
@@ -84,7 +79,6 @@
       </class> <!-- Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
       <class name="Runners.Examinations_Schedule_runner">
         <methods>
-          <include name="runScenario" invocation-numbers="0 1 2"/>
           <include name="tearDownClass"/>
           <include name="beforeclass"/>
           <include name="testDownClass"/>

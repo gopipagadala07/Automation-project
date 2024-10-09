@@ -1,5 +1,7 @@
 package com.Examcenter.pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -45,11 +47,10 @@ public void Addnew_location() {
 	public void Adminstarationbtn()
 	{
 		waitForPageLoad();
-		StaticWait(4);
+		WebElement L=driver.findElement(Administrationbtn);
 		waitForElement(Administrationbtn);
 		StaticWait(2);
 		Actions a=new Actions(driver);
-		WebElement L=driver.findElement(Administrationbtn);
 		a.moveToElement(L).click().build().perform();	
     }
 	public void Edit_Location_name(String Editlocationname) {
@@ -71,7 +72,6 @@ public void Addnew_location() {
 		a.moveToElement(Edit).build().perform();
 		JavascriptExecutor j=(JavascriptExecutor) driver;
 		j.executeScript("arguments[0].click()",Edit);
-		
 	}
 	
 	public void Location_Name_field(String locationnametxtfield) {
