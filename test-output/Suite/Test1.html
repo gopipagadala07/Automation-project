@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test1</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>6/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>14/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Mar 04 13:13:16 IST 2024</td>
+<td>Started on:</td><td>Wed Oct 09 15:34:42 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>391 seconds (391027 ms)</td>
+<tr><td>Total time:</td><td>953 seconds (953763 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,69 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Runners.AssessmentSubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.AssessmentSubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the Examcenter Examtaker Assessment Submission Functionality", "Checking the Examtaker Assessment Submission"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@value=&apos;login&apos;]&quot;}
+  (Session info: chrome=129.0.6668.90)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5651e1ebe52fc9333729e4b49257da3a, findElement {using=xpath, value=//button[@value=&apos;login&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.91 (b00bc8b76d60..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63880}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63880/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5651e1ebe52fc9333729e4b49257da3a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at com.Examcenter.pages.ExamtakerSubmissionPage.logout(ExamtakerSubmissionPage.java:94)
+	at StepDefinitions.AssessmentSubmission.Logout_from_the_Application(AssessmentSubmission.java:48)
+	at ✽.Logout from the Application(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-ExamCenter/src/test/resources/Features/AssessmentSubmission.feature:14)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1505653082", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1505653082'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@value=&apos;login&apos;]&quot;}
+  (Session info: chrome=129.0.6668.90)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5651e1ebe52fc9333729e4b49257da3a, findElement {using=xpath, value=//button[@value=&apos;login&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.91 (b00bc8b76d60..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63880}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63880/devtoo..., se:cdpVersion: 129.0.6668.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5651e1ebe52fc9333729e4b49257da3a
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at com.Examcenter.pages.ExamtakerSubmissionPage.logout(ExamtakerSubmissionPage.java:94)
+	at StepDefinitions.AssessmentSubmission.Logout_from_the_Application(AssessmentSubmission.java:48)
+	at ✽.Logout from the Application(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-ExamCenter/src/test/resources/Features/AssessmentSubmission.feature:14)
+</pre></div></td>
+<td>77</td>
+<td>Runners.AssessmentSubmissionRunner@4ce1d6d0</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,35 +138,75 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runners.AssessmentSubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.AssessmentSubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the Examcenter Examtaker Assessment Submission Functionality", "Checking the Examtaker Assessment Submission"</td>
+<td title='Runners.Location_Runner.runScenario()'><b>runScenario</b><br>Test class: Runners.Location_Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Exam_Center AddEdit Location scenario", "Exam_Center Location feature"</td>
 <td></td>
-<td>63</td>
-<td>Runners.AssessmentSubmissionRunner@3ad2e17</td></tr>
+<td>54</td>
+<td>Runners.Location_Runner@53de625d</td></tr>
+<tr>
+<td title='Runners.Users_Creation_Runner.runScenario()'><b>runScenario</b><br>Test class: Runners.Users_Creation_Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the Creation of controller User", "Checking the Create Users Functionality"</td>
+<td></td>
+<td>68</td>
+<td>Runners.Users_Creation_Runner@535779e4</td></tr>
+<tr>
+<td title='Runners.Users_Creation_Runner.runScenario()'><b>runScenario</b><br>Test class: Runners.Users_Creation_Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the Creation of Proctor User", "Checking the Create Users Functionality"</td>
+<td></td>
+<td>58</td>
+<td>Runners.Users_Creation_Runner@535779e4</td></tr>
+<tr>
+<td title='Runners.Users_Creation_Runner.runScenario()'><b>runScenario</b><br>Test class: Runners.Users_Creation_Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the Creation of Examtaker User", "Checking the Create Users Functionality"</td>
+<td></td>
+<td>68</td>
+<td>Runners.Users_Creation_Runner@535779e4</td></tr>
+<tr>
+<td title='Runners.Examinations_Schedule_runner.runScenario()'><b>runScenario</b><br>Test class: Runners.Examinations_Schedule_runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Controller Creating Examinations in Examcenter", "Examcenter Creation of Examinations Schedules and Examtaker Enrollments feature"</td>
+<td></td>
+<td>52</td>
+<td>Runners.Examinations_Schedule_runner@53fd0d10</td></tr>
+<tr>
+<td title='Runners.Examinations_Schedule_runner.runScenario()'><b>runScenario</b><br>Test class: Runners.Examinations_Schedule_runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating Schedule for an Examinations", "Examcenter Creation of Examinations Schedules and Examtaker Enrollments feature"</td>
+<td></td>
+<td>64</td>
+<td>Runners.Examinations_Schedule_runner@53fd0d10</td></tr>
+<tr>
+<td title='Runners.Examinations_Schedule_runner.runScenario()'><b>runScenario</b><br>Test class: Runners.Examinations_Schedule_runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Enroll the Examination and schedule to the Examtaker", "Examcenter Creation of Examinations Schedules and Examtaker Enrollments feature"</td>
+<td></td>
+<td>57</td>
+<td>Runners.Examinations_Schedule_runner@53fd0d10</td></tr>
+<tr>
+<td title='Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create a Time_Slot for the Examination", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot"</td>
+<td></td>
+<td>54</td>
+<td>Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@6c0d9d86</td></tr>
+<tr>
+<td title='Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add the Examataker in a Particular TimeSlot", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot"</td>
+<td></td>
+<td>57</td>
+<td>Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@6c0d9d86</td></tr>
 <tr>
 <td title='Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Provide the Procter Comment to a ExamTaker", "FocalPointk12 Exam_Center Procter Comment, Reset the Examination"</td>
 <td></td>
-<td>55</td>
-<td>Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@8c3619e</td></tr>
+<td>61</td>
+<td>Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner@24111ef1</td></tr>
 <tr>
 <td title='Runners.EnrolleRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.EnrolleRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Testing the Test Analytics popup at proctor Enrolle side", "Checking the Test Analytics under Enroller tab at Proctor side"</td>
 <td></td>
-<td>43</td>
-<td>Runners.EnrolleRunner@4331d187</td></tr>
+<td>66</td>
+<td>Runners.EnrolleRunner@1f3f02ee</td></tr>
 <tr>
 <td title='Runners.BulkUploadRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.BulkUploadRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Testing the Controller Bulk Upload Functionality", "Checking the bulk upload functionality for All Users"</td>
 <td></td>
-<td>76</td>
-<td>Runners.BulkUploadRunner@6f63b475</td></tr>
+<td>59</td>
+<td>Runners.BulkUploadRunner@1fde5d22</td></tr>
 <tr>
 <td title='Runners.BulkUploadRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.BulkUploadRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Testing the proctor Bulk Upload Functionality", "Checking the bulk upload functionality for All Users"</td>
 <td></td>
-<td>73</td>
-<td>Runners.BulkUploadRunner@6f63b475</td></tr>
+<td>62</td>
+<td>Runners.BulkUploadRunner@1fde5d22</td></tr>
 <tr>
 <td title='Runners.BulkUploadRunner.runScenario()'><b>runScenario</b><br>Test class: Runners.BulkUploadRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Testing the Examtaker Bulk Upload Functionality", "Checking the bulk upload functionality for All Users"</td>
 <td></td>
-<td>71</td>
-<td>Runners.BulkUploadRunner@6f63b475</td></tr>
+<td>67</td>
+<td>Runners.BulkUploadRunner@1fde5d22</td></tr>
 </table><p>
 </body>
 </html>

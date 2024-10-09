@@ -57,7 +57,7 @@ public class BulkUpload_Pages extends ActionType{
 	{
 		WebElement e = driver.findElement(bulkUpload);
 		e.click();
-		StaticWait(1);
+		StaticWait(2);
 		StringSelection ss=new StringSelection(Path);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		Robot r=new Robot();

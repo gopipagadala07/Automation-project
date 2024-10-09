@@ -90,7 +90,8 @@ public class ExamtakerSubmissionPage extends ActionType{
 	public void logout()
 	{
 		driver.findElement(logout).click();
-		driver.findElement(returnbtn).click();
+		WebElement e=driver.findElement(returnbtn);
+		e.click();
 	}
 
 	public void searchheretxt(String Examname, String ScheduleName)
