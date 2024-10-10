@@ -101,7 +101,7 @@ public class Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination extends Act
 		testData = null;
 		if(testData == null)
 		{
-			testData = reader.getData("/ExcelFiles/LoginCredentials.xlsx", getSheetEnv());
+			testData = reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());
 			String FName = testData.get(rownumber).get("FirstName");
 			String LName = testData.get(rownumber).get("LastName");
 			createt_ts_and_enroll_examatker.search_Examtaker_in_a_Timeslot(LName, FName);
@@ -118,7 +118,7 @@ public class Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination extends Act
 		testData = null;
 		if(testData == null)
 		{
-			testData = reader.getData("/ExcelFiles/LoginCredentials.xlsx", getSheetEnv());
+			testData = reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());
 			String FName = testData.get(rownumber).get("FirstName");
 			String LName = testData.get(rownumber).get("LastName");
 			createt_ts_and_enroll_examatker.search_Examtaker_under_enrollment(LName, FName);
@@ -222,8 +222,8 @@ public class Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination extends Act
 		testData = null;
 		if(testData == null)
 		{
-			testData = reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());
-			String Location = testData.get(lrownumber).get("LocationName");
+			testData = reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());
+			String Location = testData.get(lrownumber).get("Location");
 			createt_ts_and_enroll_examatker.select_the_Location(Location);
 		}
 		else

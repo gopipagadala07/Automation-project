@@ -18,7 +18,7 @@ Feature: Checking the Create Users Functionality
 
     Examples: 
       | rownumber |  | RowNumber1 |
-      |         0 |  |          0 |
+      |         0 |  |          1 |
 
   Scenario Outline: Checking the Creation of Proctor User
     Given User launch the application with Valid URL
@@ -37,7 +37,7 @@ Feature: Checking the Create Users Functionality
 
     Examples: 
       | rownumber |  | RowNumber2 |
-      |         0 |  |          1 |
+      |         0 |  |          2 |
 
   Scenario Outline: Checking the Creation of Examtaker User
     Given User launch the application with Valid URL
@@ -56,4 +56,4 @@ Feature: Checking the Create Users Functionality
 
     Examples: 
       | rownumber |  | RowNumber3 |
-      |         0 |  |          2 |
+      |         0 |  |          3 |

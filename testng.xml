@@ -10,7 +10,7 @@
 			<class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"></class>
 			<class name="Runners.AssessmentSubmissionRunner"></class>
 			<class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>
-			<class name="Runners.AssessmentSubmissionRunner"></class>			
+			<class name="Runners.AssessmentSubmissionRunner"></class>		
 			<class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>
 			<class name="Runners.EnrolleRunner"></class>
 			<class name="Runners.BulkUploadRunner"></class>

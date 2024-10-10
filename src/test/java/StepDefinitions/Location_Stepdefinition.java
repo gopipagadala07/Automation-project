@@ -49,9 +49,9 @@ public class Location_Stepdefinition extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());	
 		}
-		String Locationname = testData.get(int2).get("LocationName");
+		String Locationname = testData.get(int2).get("Location");
 		Location.Location_Edit_Icon(Locationname);
 	}
 	
@@ -71,7 +71,7 @@ public class Location_Stepdefinition extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());	
 		}
 		String editlocation = testData.get(int3).get("EditLocationName");
 		Location.Edit_Location_name(editlocation);   
@@ -83,7 +83,7 @@ public class Location_Stepdefinition extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());	
 		}
 	
 		String Addresstext = testData.get(int1).get("AddressField");
@@ -97,9 +97,9 @@ public class Location_Stepdefinition extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/ExcelFiles/Examinations.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());	
 		}
-		String locationnametxtfield = testData.get(int0).get("LocationName");
+		String locationnametxtfield = testData.get(int0).get("Location");
 		
 		Location.Location_Name_field(locationnametxtfield);
 		

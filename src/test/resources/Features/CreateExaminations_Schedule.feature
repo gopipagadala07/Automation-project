@@ -60,4 +60,4 @@ Feature: Examcenter Creation of Examinations Schedules and Examtaker Enrollments
 
     Examples: 
       | rownumber | RowNumber1 | RowNumber2 |
-      |         0 |          2 |          0 |
+      |         0 |          3 |          0 |

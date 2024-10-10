@@ -14,4 +14,4 @@ Feature: Checking the Test Analytics under Enroller tab at Proctor side
 
     Examples: 
       | rownumber | Examination | ExamTakerName |
-      |         1 |           0 |             2 |
+      |         2 |           0 |             3 |

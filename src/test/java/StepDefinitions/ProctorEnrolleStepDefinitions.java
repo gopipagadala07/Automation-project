@@ -56,7 +56,7 @@ public class ProctorEnrolleStepDefinitions extends ActionType{
 		testdata=null;
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/LoginCredentials.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());
 		}
 		String LastName=testdata.get(rownumber).get("LastName");
 		String FirstName=testdata.get(rownumber).get("FirstName");

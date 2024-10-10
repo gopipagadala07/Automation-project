@@ -5,14 +5,6 @@
   <test name="Test1">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="Runners.Location_Runner"/>
-      <class name="Runners.Users_Creation_Runner"/>
-      <class name="Runners.Examinations_Schedule_runner"/>
-      <class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"/>
-      <class name="Runners.AssessmentSubmissionRunner"/>
-      <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
-      <class name="Runners.AssessmentSubmissionRunner"/>
-      <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
       <class name="Runners.EnrolleRunner"/>
       <class name="Runners.BulkUploadRunner"/>
     </classes>
@@ -20,14 +12,6 @@
   <test parallel="none" name="Test1(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner">
-        <methods>
-          <include name="testDownClass"/>
-          <include name="tearDownClass"/>
-          <include name="beforeclass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner -->
       <class name="Runners.EnrolleRunner">
         <methods>
           <include name="afterClass"/>
@@ -36,55 +20,15 @@
           <include name="setUpClass"/>
         </methods>
       </class> <!-- Runners.EnrolleRunner -->
-      <class name="Runners.AssessmentSubmissionRunner">
-        <methods>
-          <include name="afterClass"/>
-          <include name="beforeClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- Runners.AssessmentSubmissionRunner -->
-      <class name="Runners.Location_Runner">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownClass"/>
-          <include name="testDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- Runners.Location_Runner -->
       <class name="Runners.BulkUploadRunner">
         <methods>
+          <include name="runScenario" invocation-numbers="0"/>
           <include name="beforeClass"/>
           <include name="tearDownClass"/>
           <include name="afterClass"/>
           <include name="setUpClass"/>
         </methods>
       </class> <!-- Runners.BulkUploadRunner -->
-      <class name="Runners.Users_Creation_Runner">
-        <methods>
-          <include name="Afterclass"/>
-          <include name="tearDownClass"/>
-          <include name="beforeclass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- Runners.Users_Creation_Runner -->
-      <class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
-        <methods>
-          <include name="testDownClass"/>
-          <include name="tearDownClass"/>
-          <include name="beforeclass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
-      <class name="Runners.Examinations_Schedule_runner">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="beforeclass"/>
-          <include name="testDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- Runners.Examinations_Schedule_runner -->
     </classes>
   </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->
