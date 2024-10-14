@@ -1,4 +1,4 @@
-package com.Examcenter.Utils;
+package com.Assessments.Utils;
 
 import org.testng.IInvokedMethod;
 
