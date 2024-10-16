@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import com.Examcenter.Utils.ActionType;
+import com.Utils.ActionType;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class Location_pom extends ActionType {

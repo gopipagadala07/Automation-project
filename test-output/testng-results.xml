@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="4" passed="3" failed="1" skipped="0">
+<testng-results total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-10T07:11:36Z" name="Suite" finished-at="2024-10-10T07:15:46Z" duration-ms="249483">
+  <suite started-at="2024-10-15T04:48:52Z" name="Default suite" finished-at="2024-10-15T04:52:19Z" duration-ms="207064">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.BulkUploadRunner@2e1ef60]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.EnrolleRunner@48e92c5c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.BulkUploadRunner@4f9a2c08]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-10-10T07:11:36Z" name="Test1" finished-at="2024-10-10T07:15:46Z" duration-ms="249483">
-      <class name="Runners.BulkUploadRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.BulkUploadRunner@2e1ef60]" started-at="2024-10-10T12:42:33Z" name="setUpClass" finished-at="2024-10-10T12:42:33Z" duration-ms="24" status="PASS">
+    <test started-at="2024-10-15T04:48:52Z" name="Default test" finished-at="2024-10-15T04:52:19Z" duration-ms="207064">
+      <class name="ExamCenterRunners.BulkUploadRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.BulkUploadRunner@4f9a2c08]" started-at="2024-10-15T10:18:52Z" name="setUpClass" finished-at="2024-10-15T10:18:53Z" duration-ms="813" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5980e29f]]>
+                <![CDATA[org.testng.TestRunner@574413bd]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Runners.BulkUploadRunner@2e1ef60]" started-at="2024-10-10T12:42:33Z" name="beforeClass" finished-at="2024-10-10T12:42:33Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:ExamCenterRunners.BulkUploadRunner@4f9a2c08]" started-at="2024-10-15T10:18:53Z" name="beforeClass" finished-at="2024-10-15T10:18:53Z" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.BulkUploadRunner@2e1ef60]" started-at="2024-10-10T12:42:33Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-10T12:43:05Z" duration-ms="31561" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.BulkUploadRunner@4f9a2c08]" started-at="2024-10-15T10:18:53Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-15T10:19:53Z" duration-ms="59630" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -39,24 +38,10 @@
               </value>
             </param>
           </params>
-          <exception class="org.apache.poi.EmptyFileException">
-            <message>
-              <![CDATA[The supplied file was empty (zero bytes long)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.apache.poi.EmptyFileException: The supplied file was empty (zero bytes long)
-	at org.apache.poi.ss.usermodel.WorkbookFactory.create(WorkbookFactory.java:218)
-	at org.apache.poi.ss.usermodel.WorkbookFactory.create(WorkbookFactory.java:185)
-	at com.Examcenter.pages.BulkUpload_Pages.Excel_Creation(BulkUpload_Pages.java:91)
-	at StepDefinitions.BulkuploadStepDefinitions.Create_Controller_Sheet(BulkuploadStepDefinitions.java:60)
-	at ✽.Create the Bulk controller users Excel Sheet(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-ExamCenter/src/test/resources/Features/BulkUpload.feature:10)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.apache.poi.EmptyFileException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.BulkUploadRunner@2e1ef60]" started-at="2024-10-10T12:43:05Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-10T12:44:12Z" duration-ms="66699" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.BulkUploadRunner@4f9a2c08]" started-at="2024-10-15T10:19:53Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-15T10:20:51Z" duration-ms="58796" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -72,7 +57,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.BulkUploadRunner@2e1ef60]" started-at="2024-10-10T12:44:12Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-10T12:45:43Z" duration-ms="91343" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.BulkUploadRunner@4f9a2c08]" started-at="2024-10-15T10:20:51Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-15T10:22:09Z" duration-ms="77757" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -88,56 +73,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.BulkUploadRunner@2e1ef60]" started-at="2024-10-10T12:45:43Z" name="tearDownClass" finished-at="2024-10-10T12:45:46Z" duration-ms="3031" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:Runners.BulkUploadRunner@2e1ef60]" started-at="2024-10-10T12:45:43Z" name="afterClass" finished-at="2024-10-10T12:45:43Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:ExamCenterRunners.BulkUploadRunner@4f9a2c08]" started-at="2024-10-15T10:22:09Z" name="afterClass" finished-at="2024-10-15T10:22:09Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- Runners.BulkUploadRunner -->
-      <class name="Runners.EnrolleRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.EnrolleRunner@48e92c5c]" started-at="2024-10-10T12:41:36Z" name="setUpClass" finished-at="2024-10-10T12:41:38Z" duration-ms="1066" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5980e29f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Runners.EnrolleRunner@48e92c5c]" started-at="2024-10-10T12:41:38Z" name="beforeClass" finished-at="2024-10-10T12:41:38Z" duration-ms="3" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.EnrolleRunner@48e92c5c]" started-at="2024-10-10T12:41:38Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-10T12:42:30Z" duration-ms="52223" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Testing the Test Analytics popup at proctor Enrolle side"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Checking the Test Analytics under Enroller tab at Proctor side"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.EnrolleRunner@48e92c5c]" started-at="2024-10-10T12:42:30Z" name="tearDownClass" finished-at="2024-10-10T12:42:33Z" duration-ms="3517" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.BulkUploadRunner@4f9a2c08]" started-at="2024-10-15T10:22:09Z" name="tearDownClass" finished-at="2024-10-15T10:22:19Z" duration-ms="10047" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:Runners.EnrolleRunner@48e92c5c]" started-at="2024-10-10T12:42:30Z" name="afterClass" finished-at="2024-10-10T12:42:30Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- Runners.EnrolleRunner -->
-    </test> <!-- Test1 -->
-  </suite> <!-- Suite -->
+      </class> <!-- ExamCenterRunners.BulkUploadRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

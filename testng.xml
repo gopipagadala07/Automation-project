@@ -4,17 +4,17 @@
 	<test name="Test1">
 		<parameter name="browser" value="chrome" />
 		<classes>
-		    <class name="Runners.Location_Runner"></class>
-			<class name="Runners.Users_Creation_Runner"></class>
-			<class name="Runners.Examinations_Schedule_runner"></class>
-			<class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"></class>
-			<class name="Runners.AssessmentSubmissionRunner"></class>
-			<class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>
-			<class name="Runners.AssessmentSubmissionRunner"></class>		
-			<class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>
-			<class name="Runners.EnrolleRunner"></class>
-			<class name="Runners.BulkUploadRunner"></class>
-			<!--<class name="Runners.LoginPageRunner"></class>-->
+		    <class name="ExamCenterRunners.Location_Runner"></class>
+			<class name="ExamCenterRunners.Users_Creation_Runner"></class>
+			<class name="ExamCenterRunners.Examinations_Schedule_runner"></class>
+			<class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"></class>
+			<class name="ExamCenterRunners.AssessmentSubmissionRunner"></class>
+			<class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>
+			<class name="ExamCenterRunners.AssessmentSubmissionRunner"></class>		
+			<class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>
+			<class name="ExamCenterRunners.EnrolleRunner"></class>
+			<class name="ExamCenterRunners.BulkUploadRunner"></class>
+			<!--<class name="ExamCenterRunners.LoginPageRunner"></class>-->
 		</classes>
 	</test> <!--Test -->
 </suite> <!--Suite -->
