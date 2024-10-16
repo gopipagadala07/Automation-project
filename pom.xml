@@ -146,6 +146,11 @@
 			<artifactId>jcommander</artifactId>
 			<version>1.48</version>
 		</dependency>
+		<dependency>
+			<groupId>FPK12-AutomationProject</groupId>
+			<artifactId>FPK12-AutomationProject</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

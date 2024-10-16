@@ -8,10 +8,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.Utils.ActionType;
+import com.Utils.Base;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
-
-import com.Examcenter.Utils.ActionType;
-import com.Examcenter.Utils.Base;
 
 public class ExamtakerSubmissionPage extends ActionType{
 

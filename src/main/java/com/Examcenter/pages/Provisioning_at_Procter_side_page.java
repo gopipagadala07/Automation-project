@@ -6,7 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.Examcenter.Utils.ActionType;
+import com.Utils.ActionType;
 
 public class Provisioning_at_Procter_side_page extends ActionType
 {

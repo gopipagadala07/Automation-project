@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import com.Examcenter.Utils.ActionType;
+import com.Utils.ActionType;
 public class Create_Examinations_pages extends ActionType {
 
 	private By AddExambutton= By.xpath("//span[text()=' Add New Exam ']");
