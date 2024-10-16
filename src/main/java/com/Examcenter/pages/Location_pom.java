@@ -66,7 +66,7 @@ public void Addnew_location() {
 		
 	}
 	public void Location_Edit_Icon(String locationnametxtfield) {
-		StaticWait(2);
+		StaticWait(1);
 		WebElement Edit=driver.findElement(By.xpath("//td[text()=' "+locationnametxtfield+"']/../td[2]/button/span/mat-icon"));
 		Actions a=new Actions(driver);
 		a.moveToElement(Edit).build().perform();

@@ -1,0 +1,16 @@
+2024-10-12 18:58:06,784 INFO  [rootLogger] Enviornment is : LMSPROD
+2024-10-12 18:58:06,792 INFO  [rootLogger] Browser value is: CHROME
+2024-10-12 18:58:11,288 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-12 18:58:11,308 INFO  [rootLogger] Loading URL ... http://lms2-dr.backpack.education
+2024-10-12 18:58:45,501 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-10-12 18:58:50,611 INFO  [rootLogger] Browser value is: CHROME
+2024-10-12 18:58:51,465 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-12 18:58:51,466 INFO  [rootLogger] Loading URL ... http://lms2-dr.backpack.education
+2024-10-12 18:59:45,280 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-10-12 18:59:45,338 INFO  [rootLogger] Browser value is: CHROME
+2024-10-12 18:59:46,455 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-12 18:59:46,457 INFO  [rootLogger] Loading URL ... http://lms2-dr.backpack.education
+2024-10-12 18:59:52,461 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-10-12 18:59:52,483 INFO  [rootLogger] Browser value is: CHROME
+2024-10-12 18:59:53,374 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-12 18:59:53,375 INFO  [rootLogger] Loading URL ... http://lms2-dr.backpack.education

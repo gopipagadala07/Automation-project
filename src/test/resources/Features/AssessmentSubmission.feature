@@ -15,4 +15,4 @@ Feature: Checking the Examtaker Assessment Submission
 
     Examples: 
       | rownumber | rownumber1 |
-      |         2 |          0 |
+      |         3 |          0 |

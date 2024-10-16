@@ -175,7 +175,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/ExcelFiles/LoginCredentials.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());	
 
 		}
 		String Firstnametxt=testData.get(col10).get("FirstName");
@@ -274,7 +274,7 @@ public class CreateExaminations_Stepdefinations extends ActionType {
 		testData=null;
 		if(testData == null) {
 			testData = 
-					reader.getData("/ExcelFiles/LoginCredentials.xlsx", getSheetEnv());	
+					reader.getData("/ExcelFiles/UsersCreationDetails.xlsx", getSheetEnv());	
 
 		}
 		String Firstnametxt=testData.get(col9).get("FirstName");

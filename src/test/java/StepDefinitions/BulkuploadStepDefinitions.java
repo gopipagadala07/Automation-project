@@ -27,20 +27,20 @@ public class BulkuploadStepDefinitions extends ActionType{
 
 	@Then("Click on controller Bulk Upload Icon and Upload the File")
 	public void click_on_controller_bulk_upload_icon() throws Exception {
-
+		StaticWait(2);
 		String path =(System.getProperty("user.dir")+"\\src\\test\\resources\\Files\\ControllerTemplate .xlsx");
 		System.out.println(path);
 		Bulk.bulkUpload(path);
 	}
 	@Then("Click on Examtaker Bulk Upload Icon and Upload the File")
 	public void click_on_Examtaker_bulk_upload_icon() throws Exception {
-		//StaticWait(5);
+		StaticWait(2);
 		String path =(System.getProperty("user.dir")+"\\src\\test\\resources\\Files\\Exam Takers Template.xlsx");
 		Bulk.bulkUpload(path);
 	}
 	@Then("Click on Proctor Bulk Upload Icon and Upload the File")
 	public void click_on_Proctor_bulk_upload_icon() throws Exception {
-		//StaticWait(5);
+		StaticWait(2);
 		String path =(System.getProperty("user.dir")+"\\src\\test\\resources\\Files\\Proctor Template.xlsx");
 		Bulk.bulkUpload(path);
 	}

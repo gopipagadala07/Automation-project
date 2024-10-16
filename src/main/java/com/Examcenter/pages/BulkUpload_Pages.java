@@ -55,6 +55,7 @@ public class BulkUpload_Pages extends ActionType{
 	}
 	public void bulkUpload(String Path) throws Exception
 	{
+		StaticWait(2);
 		WebElement e = driver.findElement(bulkUpload);
 		e.click();
 		StaticWait(2);
@@ -76,11 +77,13 @@ public class BulkUpload_Pages extends ActionType{
 	}
 	public void Controllerbtn()
 	{
+		StaticWait(2);
 		waitForElement(Controllerbtn);
 		driver.findElement(Controllerbtn).click();
 	}
 	public void Examtakersbtn()
 	{
+		StaticWait(2);
 		waitForElement(Examtakerbtn);
 		driver.findElement(Examtakerbtn).click();
 	}
@@ -107,12 +110,14 @@ public class BulkUpload_Pages extends ActionType{
 
 	public void Proctorbtn()
 	{
+		StaticWait(2);
 		waitForElement(Proctorbtn);
 		driver.findElement(Proctorbtn).click();
 	}
 
 	public void provisioning()
 	{
+		StaticWait(2);
 		waitForElement(provisioning);
 		driver.findElement(provisioning).click();
 	}
