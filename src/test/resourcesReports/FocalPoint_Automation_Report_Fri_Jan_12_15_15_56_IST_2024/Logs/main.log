@@ -1,0 +1,50 @@
+2024-01-12 15:15:56,690 INFO  [rootLogger] Enviornment is : PROD
+2024-01-12 15:15:56,696 INFO  [rootLogger] Browser value is: CHROME
+2024-01-12 15:16:00,174 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-12 15:16:00,195 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
+2024-01-12 15:16:14,474 INFO  [rootLogger] Passed: Login to app text is present in the page as expected
+		Locator: By.xpath: //div[@class='text-center m-b-md']/h3
+2024-01-12 15:16:14,554 INFO  [rootLogger] Passed: Forgot password is present in the page as expected
+		Locator: By.xpath: //a[text()='Forgot password']
+2024-01-12 15:16:14,631 INFO  [rootLogger] Passed: Remember my login is present in the page as expected
+		Locator: By.xpath: //input[@type='checkbox']
+2024-01-12 15:17:15,366 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-01-12 15:17:15,426 INFO  [rootLogger] Browser value is: CHROME
+2024-01-12 15:17:16,406 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-12 15:17:16,408 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
+2024-01-12 15:17:29,791 INFO  [rootLogger] Passed: Login to app text is present in the page as expected
+		Locator: By.xpath: //div[@class='text-center m-b-md']/h3
+2024-01-12 15:17:29,859 INFO  [rootLogger] Passed: Forgot password is present in the page as expected
+		Locator: By.xpath: //a[text()='Forgot password']
+2024-01-12 15:17:29,917 INFO  [rootLogger] Passed: Remember my login is present in the page as expected
+		Locator: By.xpath: //input[@type='checkbox']
+2024-01-12 15:17:44,291 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-01-12 15:17:44,334 INFO  [rootLogger] Browser value is: CHROME
+2024-01-12 15:17:45,442 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-12 15:17:45,444 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
+2024-01-12 15:18:20,098 INFO  [rootLogger] Passed: Login to app text is present in the page as expected
+		Locator: By.xpath: //div[@class='text-center m-b-md']/h3
+2024-01-12 15:18:20,163 INFO  [rootLogger] Passed: Forgot password is present in the page as expected
+		Locator: By.xpath: //a[text()='Forgot password']
+2024-01-12 15:18:20,226 INFO  [rootLogger] Passed: Remember my login is present in the page as expected
+		Locator: By.xpath: //input[@type='checkbox']
+2024-01-12 15:19:09,251 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-01-12 15:19:21,459 INFO  [rootLogger] Browser value is: CHROME
+2024-01-12 15:19:22,459 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-12 15:19:22,461 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
+2024-01-12 15:19:34,472 INFO  [rootLogger] Passed: Login to app text is present in the page as expected
+		Locator: By.xpath: //div[@class='text-center m-b-md']/h3
+2024-01-12 15:19:34,540 INFO  [rootLogger] Passed: Forgot password is present in the page as expected
+		Locator: By.xpath: //a[text()='Forgot password']
+2024-01-12 15:19:34,599 INFO  [rootLogger] Passed: Remember my login is present in the page as expected
+		Locator: By.xpath: //input[@type='checkbox']
+2024-01-12 15:19:47,031 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-01-12 15:19:47,063 INFO  [rootLogger] Browser value is: CHROME
+2024-01-12 15:19:48,148 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-12 15:19:48,150 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
+2024-01-12 15:19:58,550 INFO  [rootLogger] Passed: Login to app text is present in the page as expected
+		Locator: By.xpath: //div[@class='text-center m-b-md']/h3
+2024-01-12 15:19:58,609 INFO  [rootLogger] Passed: Forgot password is present in the page as expected
+		Locator: By.xpath: //a[text()='Forgot password']
+2024-01-12 15:19:58,669 INFO  [rootLogger] Passed: Remember my login is present in the page as expected
+		Locator: By.xpath: //input[@type='checkbox']
