@@ -104,9 +104,13 @@ public class SISProvisioningPage extends ActionType{
 		wait.elementToBeClickable(Schooltab);
 		Schooltab.click();
 	}
-	public void AddnewSchool()
+	public void Classroomtab()
 	{
-		AddnewSchoolbtn.click();
+		Classroomtab.click();
+	}
+	public void Sectiontab()
+	{
+		Sectiontab.click();
 	}
 	public void SchoolDropDownSearch()
 	{
@@ -131,6 +135,22 @@ public class SISProvisioningPage extends ActionType{
 	    SchoolName="FPK12School"+randomNumberGenerator();
 	    System.out.println(SchoolName);
 		Name.sendKeys(SchoolName);				
+		Description.sendKeys(generateRandomString());
+	}
+	public void ClassroomDetails()
+	{
+		wait.elementToBeClickable(Name);
+		ClassroomName="FPK12Classroom"+randomNumberGenerator();
+		Name.sendKeys(ClassroomName);
+		System.out.println(ClassroomName);
+		Description.sendKeys(generateRandomString());
+	}
+	public void SectionDetails()
+	{
+		wait.elementToBeClickable(Name);
+		SectionName="FPK12Section"+randomNumberGenerator();
+		Name.sendKeys(SectionName);
+		System.out.println(SectionName);
 		Description.sendKeys(generateRandomString());
 	}
 	public void TimezoneValue(String TimeZoneValue)
@@ -165,37 +185,18 @@ public class SISProvisioningPage extends ActionType{
 		cp.searchField(String.valueOf(SLastName));
 		System.out.println(SLastName);
 	}
-	public void Classroomtab()
+	public void AddnewSchool()
 	{
-		Classroomtab.click();
+		AddnewSchoolbtn.click();
 	}
 	public void AddNewClassroom()
 	{
 		AddnewClassroombtn.click();
 	}
-	public void ClassroomDetails()
-	{
-		wait.elementToBeClickable(Name);
-		ClassroomName="FPK12Classroom"+randomNumberGenerator();
-		Name.sendKeys(ClassroomName);
-		System.out.println(ClassroomName);
-		Description.sendKeys(generateRandomString());
-	}
-	public void Sectiontab()
-	{
-		Sectiontab.click();
-	}
+
 	public void AddNewSection()
 	{
 		AddnewSectionbtn.click();
-	}
-	public void SectionDetails()
-	{
-		wait.elementToBeClickable(Name);
-		SectionName="FPK12Section"+randomNumberGenerator();
-		Name.sendKeys(SectionName);
-		System.out.println(SectionName);
-		Description.sendKeys(generateRandomString());
 	}
 	public void DistrictUserTab()
 	{
@@ -207,14 +208,14 @@ public class SISProvisioningPage extends ActionType{
 		wait.elementToBeClickable(Teachertab);
 		Teachertab.click();
 	}
-	public void SettingsAdd()
-	{
-		Settingsadd.click();
-	}
 	public void StudentTab()
 	{
 		wait.elementToBeClickable(Studenttab);
 		Studenttab.click();
+	}
+	public void SettingsAdd()
+	{
+		Settingsadd.click();
 	}
 	public void AddNewDistrictUser()
 	{
@@ -305,6 +306,9 @@ public class SISProvisioningPage extends ActionType{
 	public void insertData() throws Exception
 	{
 		cp.InsertdataIntoExcel("./src/test/resources/ExcelFiles/LoginDetails.xlsx", getSheetEnv(), SchoolName, ClassroomName, SectionName);
+	}
+	public void insertUsersData() throws Exception
+	{
 		cp.InsertmultipledataIntoExcel("./src/test/resources/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
 	}
 }

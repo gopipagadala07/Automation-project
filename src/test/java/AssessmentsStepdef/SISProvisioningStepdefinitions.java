@@ -233,9 +233,14 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	    provisioning.SettingsAdd();
 	}
 	
-	@Then("Store the users data in Excel")
-	public void store_the_users_data_in_excel() throws Exception {
+	@Then("Store the data in Excel")
+	public void store_the_data_in_excel() throws Exception {
 		provisioning.insertData();
 		System.out.println("Data inserted Sucessfully");
+	}
+	@Then("Store the users data in Excel")
+	public void store_the_users_data_in_excel() throws Exception {
+		provisioning.insertUsersData();
+		System.out.println("Users Data inserted Sucessfully");
 	}
 }

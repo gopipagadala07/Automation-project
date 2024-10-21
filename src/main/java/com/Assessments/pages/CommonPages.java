@@ -75,13 +75,13 @@ public class CommonPages extends ActionType{
 	}
 	public void searchField(String Value)
 	{
+		StaticWait(1);
 		wait.visibilityOf(Searchhere);
 		Searchhere.sendKeys(Value);
 		StaticWait(2);
 	}
 	public void InsertdataIntoExcel(String Path, String Sheet, String Schoolname, String ClassroomName, String SectionName) throws Exception
 	{
-
 		FileInputStream f=new FileInputStream(Path);
 		Workbook wb = WorkbookFactory.create(f);
 		CellStyle cs=wb.createCellStyle();
@@ -91,13 +91,12 @@ public class CommonPages extends ActionType{
 		cs.setBorderRight(BorderStyle.THIN);
 		Sheet sh=wb.getSheet(Sheet);
 		String[] data = {Schoolname, ClassroomName, SectionName};
-		Row row = sh.createRow(5); 
+		Row row = sh.getRow(1); 
 		for (int colNum = 0; colNum < data.length; colNum++) {
 			Cell cell = row.createCell(colNum);	                      
 			cell.setCellValue(data[colNum]);  
 			cell.setCellStyle(cs); 
 		}
-
 		FileOutputStream fileOut = new FileOutputStream(Path);
 		wb.write(fileOut);
 
