@@ -1,13 +1,16 @@
 package Assessment_Stepdefination;
 
-import com.Assessment.pages.Quiz_createpage;
+
+import com.Assessments.pages.Quiz_createpage;
+import com.Utils.ActionType;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Quiz_creationStepDefination extends com.Assessments.Utils.ActionType
+public class Quiz_creationStepDefination extends ActionType
 {
-	private Quiz_createpage Quiz_Create = new Quiz_createpage(com.Assessments.Utils.Base.getDriver());
+	private Quiz_createpage Quiz_Create = new Quiz_createpage(com.Utils.Base.getDriver());
 
 	@Given("User is On Login Page1")
 	public void user_is_on_login_page1() {

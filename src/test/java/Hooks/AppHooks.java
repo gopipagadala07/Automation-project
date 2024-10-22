@@ -4,9 +4,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import com.Assessments.Utils.ActionType;
-import com.Assessments.Utils.Base;
-import com.Assessments.Utils.Logs;
+import com.Utils.ActionType;
+import com.Utils.Base;
+import com.Utils.Logs;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;

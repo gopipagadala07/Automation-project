@@ -1,7 +1,11 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>Assessment_Center_Automation</name>
+=======
+	<name>FPK12-AssessmentCenter</name>
+>>>>>>> branch 'FPK12-AssessmentCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 	<comment></comment>
 	<projects>
 	</projects>

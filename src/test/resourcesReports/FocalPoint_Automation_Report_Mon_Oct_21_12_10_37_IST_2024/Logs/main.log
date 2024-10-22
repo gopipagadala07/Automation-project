@@ -1,0 +1,11 @@
+2024-10-21 12:10:37,085 INFO  [rootLogger] Enviornment is : STAGE
+2024-10-21 12:10:37,092 INFO  [rootLogger] Browser value is: CHROME
+2024-10-21 12:10:39,160 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-21 12:10:39,161 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-10-21 12:11:26,650 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-10-21 12:11:26,700 INFO  [rootLogger] Browser value is: CHROME
+2024-10-21 12:11:28,210 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-21 12:11:28,211 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-10-21 12:11:50,062 INFO  [rootLogger] Info: Email Id: DistrictUserautomation2778@fpk12.com
+2024-10-21 12:12:09,888 INFO  [rootLogger] Info: Email Id: Tutorautomation4448@fpk12.com
+2024-10-21 12:12:27,578 INFO  [rootLogger] -----------------End of Scenario-----------------
