@@ -1,0 +1,22 @@
+2023-12-07 15:06:09,843 INFO  [rootLogger] Enviornment is : PROD
+2023-12-07 15:06:09,846 INFO  [rootLogger] Browser value is: CHROME
+2023-12-07 15:06:11,481 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2023-12-07 15:06:11,481 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
+2023-12-07 15:06:20,264 INFO  [rootLogger] Info: Controller enters username as: prod.controller02.5
+2023-12-07 15:06:20,349 INFO  [rootLogger] Info: Controller enters password as: @Abcd1234
+2023-12-07 15:06:22,382 INFO  [rootLogger] Info: Controller click on login in button.
+2023-12-07 15:06:22,389 INFO  [rootLogger] -----------------End of Scenario-----------------
+2023-12-07 15:06:22,393 INFO  [rootLogger] Browser value is: CHROME
+2023-12-07 15:06:23,271 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2023-12-07 15:06:23,271 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
+2023-12-07 15:06:32,814 INFO  [rootLogger] Info: Procter enters username as: prodautomation.procter.5
+2023-12-07 15:06:32,894 INFO  [rootLogger] Info: Procter enters password as: @Abcd1234
+2023-12-07 15:06:34,132 INFO  [rootLogger] Info: Procter click on login in button.
+2023-12-07 15:06:34,137 INFO  [rootLogger] -----------------End of Scenario-----------------
+2023-12-07 15:06:34,141 INFO  [rootLogger] Browser value is: CHROME
+2023-12-07 15:06:34,982 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2023-12-07 15:06:34,982 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
+2023-12-07 15:06:45,894 INFO  [rootLogger] Info: Examtaker enters username as: dec4th.examtaker.5
+2023-12-07 15:06:45,976 INFO  [rootLogger] Info: Examtaker enters password as: @Abcd1234
+2023-12-07 15:06:47,136 INFO  [rootLogger] Info: Examtaker click on login in button.
+2023-12-07 15:06:47,139 INFO  [rootLogger] -----------------End of Scenario-----------------
