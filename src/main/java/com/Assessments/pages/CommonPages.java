@@ -54,7 +54,7 @@ public class CommonPages extends ActionType{
 			for(WebElement option:options) {
 				String actual = option.getText().trim();
 				//	System.out.println(actual);
-				if(actual.equals(visibleText)) {
+				if(actual.contains(visibleText)) {
 					Actions a=new Actions(driver);
 					a.moveToElement(option);
 					option.click();

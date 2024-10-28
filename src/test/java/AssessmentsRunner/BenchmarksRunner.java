@@ -7,7 +7,7 @@ import org.testng.annotations.Parameters;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features = "src\\test\\resources\\AssessmentsFeatures\\Benchmarks.feature",
+@CucumberOptions(features = "src\\test\\resources\\Files\\Benchmarks_AC\\src\\test\\resources\\AssessmentsFeatures\\Benchmarks.feature",
 glue = {"AssessmentsStepdef","Hooks"},
 plugin= {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 monochrome = true,

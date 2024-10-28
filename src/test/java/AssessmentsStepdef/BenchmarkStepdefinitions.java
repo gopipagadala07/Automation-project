@@ -3,6 +3,7 @@ package AssessmentsStepdef;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import com.Utils.Base;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.Keys;
@@ -15,6 +16,7 @@ import com.Utils.Base;
 import com.Utils.ExcelReader;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -24,13 +26,17 @@ public class BenchmarkStepdefinitions extends ActionType{
 	ExcelReader reader=new ExcelReader();
 	CommonPages cp=new CommonPages(Base.getDriver());
 	static List<Map<String, String>> testdata=null;
+	
 
-	
-	
-	@When("the user clicks on the Districts tab and navigates to Benchmarks")
-	public void the_user_clicks_on_the_districts_tab_and_navigates_to_benchmarks() {
-	   bpages.DistAndBenchmarkTab();
+
+	@When("the user clicks on the Districts")
+	public void the_user_clicks_on_the_districts() {
+	   bpages.Disttab();
 	   
+	}
+	@When("user navigates to Benchmarks tab")
+	public void user_navigates_to_Benchmarks_tab() {
+		bpages.benchmarkstab();
 	}
 
 	@When("the user selects the Year from the dropdown at row {int}")
@@ -144,5 +150,62 @@ public class BenchmarkStepdefinitions extends ActionType{
 	    String secname = testdata.get(SectionName).get("Section Name");	   
 	    bpages.clickOnAdd(secname);
 	}
+	
+	/*
+	 * Test Administration
+	 */
+	
+	@Given("user clicks on Testadministration tab")
+	public void user_clicks_on_Testadministration_tab() {
+	    bpages.testAdminTab();
+	}
+
+	@Given("the user selects the course benchmark from the dropdown at row {int}")
+	public void the_user_selects_the_course_benchmark_from_the_dropdown_at_row_rownumber(Integer int1) throws InvalidFormatException, IOException {
+		 if (testdata == null) {
+		        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+		    }
+		    String CourseBmark = testdata.get(int1).get("Section Name");	   
+		    bpages.CourseBenchmarkDdown(CourseBmark); 
+	}
+
+	@Given("the user selects the school from the dropdown at row {int}")
+	public void the_user_selects_the_school_from_the_dropdown_at_row_rownumber(Integer int1) throws InvalidFormatException, IOException {
+		if (testdata == null) {
+	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+	    }
+	    String schoolDdown = testdata.get(int1).get("SchoolName");	   
+	    bpages.schoolDdown(schoolDdown); 
+	}
+
+	@Given("the user selects the teacher from the dropdown at row {int}")
+	public void the_user_selects_the_teacher_from_the_dropdown_at_row_rownumber(Integer int1) throws InvalidFormatException, IOException {
+		if (testdata == null) {
+	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+	    }
+	    String teacherDdown = testdata.get(int1).get("FirstName"+"LastName");	   
+	    bpages.teacherDdown(teacherDdown); 
+	}
+
+	@Given("the user selects the classroom from the dropdown at row {int}")
+	public void the_user_selects_the_classroom_from_the_dropdown_at_row_rownumber(Integer int1) throws InvalidFormatException, IOException {
+		if (testdata == null) {
+	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+	    }
+	    String classroomDdown = testdata.get(int1).get("Classroom Name");	   
+	    bpages.classroomDdown(classroomDdown); 
+	}
+	
+
+	@When("user clicks on toggle to activate benchmark")
+	public void user_clicks_on_toggle_to_activate_benchmark() {
+	   bpages.ActiveToggle();
+	}
+	@Then("user checks the status and Reset the Benchmark Activity")
+	public void user_checks_the_status_and_reset_the_benchmark_activity() {
+	   bpages.CheckingStatus();
+	}
+
+	
 	
 }
