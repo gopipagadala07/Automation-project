@@ -5,19 +5,16 @@ Feature: Verify the SIS Provisioning Creation Functionality
     And User able to see all Fields
     Then User enters the credentials from the excel sheet at <rownumber>
     And User Click on SIS provisining tab under Administration in Left menu
-    #School Creation
     Then User Navigate to School tab
     And User Click on the Add New School button
     When User Enter the Name and Description
     And User Select the Timezone from Dropdown <rownumber>
     Then User Saved the School and Search for the Created School in Search here Field
-    #Classroom Creation
     And User Navigate to Classroom tab
     Then User Select the Created School in School dropdown
     And User Click on the Add New Classroom button
     Then User Enter the Classroom Name and Description
     And User Saved the Classroom and Search for the Created Classroom in Search here Field
-    #Section Creation
     Then User Navigate to Sections tab
     And User Select the Active Year from year Dropdown <rownumber>
     Then User Click on the Add New Sections button
@@ -44,6 +41,7 @@ Feature: Verify the SIS Provisioning Creation Functionality
     And User Click on Settings option at User level Ellipses
     Then User Check the Is District Admin Checkbox
     And User Close the Settings Pop up
+    Then Store the users data in Excel
     #Teacher Creation
     When User Navigate to Teachers tab
     Then User Select the Created School in School dropdown
@@ -57,6 +55,7 @@ Feature: Verify the SIS Provisioning Creation Functionality
     Then User Navigate to Classrooms tab in settings Pop up
     And User Select the Values in the Year <rownumber>, Section, Classroom dropdown and Click on Add button
     And User Close the Settings Pop up
+    Then Store the users data in Excel
     #Student Creation
     Then User Navigate to Students tab
     When User Select the Created School in School dropdown

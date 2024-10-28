@@ -493,7 +493,16 @@ public class ActionType extends Base {
 		}
 
 	}
+	public void switchToFrame(WebElement Element) {
+		try {
+			getDriver().switchTo().frame(Element);
 
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
 	/**
 	 * Window index starts from 0
 	 * 
