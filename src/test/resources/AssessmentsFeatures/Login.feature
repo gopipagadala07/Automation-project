@@ -1,6 +1,6 @@
-Feature: Checking the Examcenter Login Functionality
+Feature: Checking the Login Functionality
 
-  Scenario Outline: Examcenter login test with valid credentials scenario
+  Scenario Outline: Login test with valid credentials scenario
     Given User launch the application with Valid URL
     And User able to see all Fields
     Then User enters the credentials from the excel sheet at <rownumber>
@@ -8,6 +8,6 @@ Feature: Checking the Examcenter Login Functionality
 
     Examples: 
       | rownumber |
-      |         0 |
+      |         1 |
       |         2 |
       |         3 |

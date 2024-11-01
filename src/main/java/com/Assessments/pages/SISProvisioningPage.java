@@ -33,11 +33,8 @@ public class SISProvisioningPage extends ActionType{
 	@FindBy(how=How.XPATH,using = "//a[contains(text(),'SIS Provisioning')]")private WebElement Provisioningtab;
 	@FindBy(how=How.XPATH,using = "//div[contains(text(),'Schools')]")private WebElement Schooltab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(),'Add New School')]")private WebElement AddnewSchoolbtn;
-	@FindBy(how=How.XPATH,using = "//input[@type='text']")private WebElement Name;
 	@FindBy(how=How.XPATH,using = "//div[@role='textbox']")private WebElement Description;
 	@FindBy(how = How.XPATH,using = "//fp-dropdown[@placeholder='TimeZone']")private WebElement TimeZoneDropdown;
-	
-	
 	
 	/*
 	 * Classroom Creation
@@ -131,25 +128,22 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void SchoolDetails()
 	{
-		wait.elementToBeClickable(Name);
 	    SchoolName="FPK12School"+randomNumberGenerator();
 	    System.out.println(SchoolName);
-		Name.sendKeys(SchoolName);				
+		cp.Name(SchoolName);				
 		Description.sendKeys(generateRandomString());
 	}
 	public void ClassroomDetails()
 	{
-		wait.elementToBeClickable(Name);
 		ClassroomName="FPK12Classroom"+randomNumberGenerator();
-		Name.sendKeys(ClassroomName);
+		cp.Name(ClassroomName);
 		System.out.println(ClassroomName);
 		Description.sendKeys(generateRandomString());
 	}
 	public void SectionDetails()
 	{
-		wait.elementToBeClickable(Name);
 		SectionName="FPK12Section"+randomNumberGenerator();
-		Name.sendKeys(SectionName);
+		cp.Name(SectionName);
 		System.out.println(SectionName);
 		Description.sendKeys(generateRandomString());
 	}
@@ -261,15 +255,19 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void EditScreen()
 	{
+		wait.elementToBeClickable(Ellipses);
 		Ellipses.click();
+		wait.elementToBeClickable(Editoption);
 		Editoption.click();
 	}
 	public void CreateNewLogin()
 	{
+		wait.elementToBeClickable(CreateNewLoginbtn);
 		CreateNewLoginbtn.click();
 	}
 	public void ResetPwd()
 	{
+		wait.elementToBeClickable(resetpwdbtn);
 		resetpwdbtn.click();
 		wait.elementToBeClickable(Confirmationresetbtn);
 		Confirmationresetbtn.click();
@@ -281,7 +279,9 @@ public class SISProvisioningPage extends ActionType{
 	public void Settings()
 	{
 		wait.elementToBeClickable(Ellipses);
+		StaticWait(1);
 		Ellipses.click();
+		wait.elementToBeClickable(Settingsoptions);
 		Settingsoptions.click();
 		StaticWait(1);
 	}
