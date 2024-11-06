@@ -1,28 +1,23 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-<<<<<<< HEAD
-	<name>Assessment_Center_Automation</name>
-=======
-	<name>FPK12-AssessmentCenter</name>
->>>>>>> branch 'FPK12-AssessmentCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-	<comment></comment>
-	<projects>
-	</projects>
-	<buildSpec>
-		<buildCommand>
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
-			<name>org.eclipse.m2e.core.maven2Builder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
-	<natures>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-		<nature>org.eclipse.m2e.core.maven2Nature</nature>
-	</natures>
+    <name>FPK12-AssessmentCenter</name>
+    <comment></comment>
+    <projects>
+    </projects>
+    <buildSpec>
+        <buildCommand>
+            <name>org.eclipse.jdt.core.javabuilder</name>
+            <arguments>
+            </arguments>
+        </buildCommand>
+        <buildCommand>
+            <name>org.eclipse.m2e.core.maven2Builder</name>
+            <arguments>
+            </arguments>
+        </buildCommand>
+    </buildSpec>
+    <natures>
+        <nature>org.eclipse.jdt.core.javanature</nature>
+        <nature>org.eclipse.m2e.core.maven2Nature</nature>
+    </natures>
 </projectDescription>
