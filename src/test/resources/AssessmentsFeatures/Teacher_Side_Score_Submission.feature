@@ -1,15 +1,26 @@
 Feature: Verify the Score Submission at Teacher side
 
-  Scenario: Validating the Quiz Submission Functionality at Student side
-    #Given User is On Login Page1
-    #And User Enters Valid Login Credentials
+  Scenario Outline: Validate the Score from Overall SpeedGrader
+    #Given User launch the application with Valid URL
+    #And User able to see all Fields
+    Then User enters the credentials from the excel sheet at <rownumber>
     When User Click on Overal Speed Grader
-    Then Go to Quiz Tab and Launch the Quiz
-    And clicks on begin test
-    Then Select and Enter all Answers
-    And submit the Exam
+    Then Select Dropdown in Speed Grader
+    And clicks on Score button
+    Then Enter the Score and FeedBack
+    And submit the Score
     Then capture the status band
     #Examples: 
-      #| name  | value | status  |
-      #| name1 |     5 | success |
-      #| name2 |     7 | Fail    |
+      #| rownumber | rownumber1 |
+      #|         0 |          2 |
+      #
+  #Scenario Outline: Validate the Score from Activity Progress screen
+    #Given User launch the application with Valid URL
+    #And User able to see all Fields
+    #Then User enters the credentials from the excel sheet at <rownumber>
+    #When Search for particular Assessment Center Community and Click on it
+    #Then Click on Quiz Tab and click on Progress
+    #And Click on Score on the Progress Screen
+    #Then Enter the Score and FeedBack
+    #And submit the Score
+    #Then capture the status band
