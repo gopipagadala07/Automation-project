@@ -13,8 +13,11 @@ import com.Utils.Wait;
 
 
 public class LoginPage extends ActionType{
+
 	private Wait wait;
 	private By close=By.xpath("//button[@type='button']");
+	private By changepwd=By.xpath("//h3[text()='Change Password']");
+	private By coun=By.xpath("//mat-toolbar[@id='appHeader']");
 	private WebDriver driver;
 	private	By forgotPassword=By.xpath("//a[text()='Forgot password']");
 	private By fp=By.xpath("//span[text()='FocalPoint']");
@@ -27,7 +30,8 @@ public class LoginPage extends ActionType{
 	public LoginPage(WebDriver driver)
 	{
 		this.driver=driver;
-		this.wait = new Wait(driver);
+
+		this.wait=new Wait(driver);
 	}
 
 	public void allFieldsDispayed() {
@@ -47,13 +51,14 @@ public class LoginPage extends ActionType{
 	}
 
 	public void header()
-	{
-		WebElement cls=driver.findElement(close);
-			wait.elementToBeClickable(cls);
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click();", cls);		
 
-	}
+    {
+        WebElement cls=driver.findElement(close);
+            wait.elementToBeClickable(cls);
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].click();", cls);     
+
+    }
 	public void loginbtn()
 	{
 		driver.findElement(Login).click();

@@ -79,12 +79,16 @@ public class CommonPages extends ActionType{
 	}
 	public void FPdropdown(WebElement element, String visibleText) {
 		try {
+			
 			wait.elementToBeClickable(element);
-			element.click();
+			Actions actions = new Actions(driver);
+			actions.moveToElement(element).click().build().perform();
+//			element.click();
+			System.out.println(visibleText +"---------------------------");
 			List<WebElement> options =element.findElements(By.xpath("following::div[@role='listbox']/mat-option"));
 			for(WebElement option:options) {
 				String actual = option.getText().trim();
-				//	System.out.println(actual);
+					System.out.println(actual);
 				if(actual.equals(visibleText)) {
 					Actions a=new Actions(driver);
 					a.moveToElement(option);

@@ -4,6 +4,7 @@ Feature: Verify the SIS Provisioning Creation Functionality
     Given User launch the application with Valid URL
     And User able to see all Fields
     Then User enters the credentials from the excel sheet at <rownumber>
+    And User is on homepage
     And User Click on SIS provisining tab under Administration in Left menu
     Then User Navigate to School tab
     And User Click on the Add New School button
