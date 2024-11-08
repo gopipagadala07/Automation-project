@@ -34,12 +34,12 @@ public class BenchmarkStepdefinitions extends ActionType{
 	   bpages.Disttab();
 	   
 	}
-	@When("user navigates to Benchmarks tab")
+	@And("user navigates to Benchmarks tab")
 	public void user_navigates_to_Benchmarks_tab() {
 		bpages.benchmarkstab();
 	}
 
-	@When("the user selects the Year from the dropdown at row {int}")
+	@And("the user selects the Year from the dropdown at row {int}")
 	public void the_user_selects_the_year_from_the_dropdown_at_row(Integer int1) throws Exception, IOException {
 	    if (testdata == null) {
 	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
@@ -49,7 +49,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	}
 
 
-	@When("the user selects the Grade from the dropdown at row {int}")
+	@And("the user selects the Grade from the dropdown at row {int}")
 	public void the_user_selects_the_grade_from_the_dropdown_at_row(Integer int1) throws Exception, IOException {
 	    
 	    if (testdata == null) {
@@ -60,7 +60,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	
 	}
 
-	@When("the user selects the Subject from the dropdown at row {int}")
+	@And("the user selects the Subject from the dropdown at row {int}")
 	public void the_user_selects_the_subject_from_the_dropdown_at_row(Integer int1) throws Exception, IOException {
 		
 		if (testdata == null) {
@@ -74,12 +74,12 @@ public class BenchmarkStepdefinitions extends ActionType{
 	    bpages.AddBenchmark();
 	}
 	
-	@Then("the user enters the benchmark name and description generated randomly")
+	@And("the user enters the benchmark name and description generated randomly")
 	public void the_user_enters_the_benchmark_name_and_description_generated_randomly() {
 	   bpages.BenchmarkName();
 	}
 
-	@Then("the user selects all the checkboxes")
+	@And("the user selects all the checkboxes")
 	public void the_user_selects_all_the_checkboxes() {
 	    bpages.checkboxes();
 	   
@@ -90,7 +90,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 		cp.Save();
 	}
 
-	@Then("the user clicks on the Find Test button")
+	@And("the user clicks on the Find Test button")
 	public void the_user_clicks_on_the_find_test_button() {
 	    bpages.findtest();
 	}
@@ -101,11 +101,11 @@ public class BenchmarkStepdefinitions extends ActionType{
 	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
 	    }
 	    String Tname = testdata.get(Testname).get("Testname");	   
-		cp.SearchTestname(Tname);
+		bpages.testSearch(Tname);
 	
 	}
 
-	@Then("the user clicks on the Add icon button")
+	@And("the user clicks on the Add icon button")
 	public void the_user_clicks_on_the_add_icon_button() {
 	    bpages.addicon();
 	}
@@ -116,23 +116,24 @@ public class BenchmarkStepdefinitions extends ActionType{
 		bpages.publishBtn();
 	}
 
-	@Then("a confirmation popup appears, and the user clicks on the Yes button")
+	@And("a confirmation popup appears, and the user clicks on the Yes button")
 	public void a_confirmation_popup_appears_and_the_user_clicks_on_the_yes_button() {
 	    bpages.yesbutton();
 	}
 
-	@Then("the user clicks on the created benchmark and navigates to the Sections tab")
+	@And("the user clicks on the created benchmark and navigates to the Sections tab")
 	public void the_user_clicks_on_the_created_benchmark_and_navigates_to_the_sections_tab() {
 	    bpages.clickOnNewBencmark();
 	    bpages.clickOnSectionTab();
 	}
 
 	@Then("the user clicks on the Search Here field and enters the section name from row {int}")
-	public void the_user_clicks_on_the_search_here_field_and_enters_the_section_name_from_row(Integer SectionName) throws Exception, IOException {
+	public void the_user_clicks_on_the_search_here_field_and_enters_the_section_name_from_row(int SectionName) throws Exception, IOException {
 		if (testdata == null) {
 	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
 	    }
-	    String secname = testdata.get(SectionName).get("Section Name");	   
+	    String secname = testdata.get(SectionName).get("Section Name");	
+	    StaticWait(1);
 	    cp.searchField(secname);
 	    cp.searchField(Keys.chord(Keys.CONTROL,"a"));
 	    cp.searchField(Keys.chord(Keys.CONTROL,"x"));
@@ -141,7 +142,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	
 	}
 
-	@Then("the user clicks on the Add button {int}")
+	@And("the user clicks on the Add button {int}")
 	public void the_user_clicks_on_the_add_button(int SectionName) throws Exception, IOException {
 		
 		if (testdata == null) {
@@ -155,12 +156,12 @@ public class BenchmarkStepdefinitions extends ActionType{
 	 * Test Administration
 	 */
 	
-	@Given("user clicks on Testadministration tab")
+	@When("user clicks on Testadministration tab")
 	public void user_clicks_on_Testadministration_tab() {
 	    bpages.testAdminTab();
 	}
 
-	@Given("the user selects the course benchmark from the dropdown at row {int}")
+	@And("the user selects the course benchmark from the dropdown at row {int}")
 	public void the_user_selects_the_course_benchmark_from_the_dropdown_at_row_rownumber(Integer int1) throws InvalidFormatException, IOException {
 		 if (testdata == null) {
 		        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
@@ -169,41 +170,47 @@ public class BenchmarkStepdefinitions extends ActionType{
 		    bpages.CourseBenchmarkDdown(CourseBmark); 
 	}
 
-	@Given("the user selects the school from the dropdown at row {int}")
-	public void the_user_selects_the_school_from_the_dropdown_at_row_rownumber(Integer int1) throws InvalidFormatException, IOException {
-		if (testdata == null) {
-	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
-	    }
-	    String schoolDdown = testdata.get(int1).get("SchoolName");	   
-	    bpages.schoolDdown(schoolDdown); 
+	@And("the user selects the school from the dropdown at row {int}")
+	public void the_user_selects_the_school_from_the_dropdown_at_row_rownumber(int int1) throws InvalidFormatException, IOException {
+//		if (testdata == null) {
+//	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+//	    }
+//	    String schoolDdown = testdata.get(int1).get("SchoolName");	   
+//	    bpages.schoolDdown(schoolDdown); 
+		StaticWait(1);
 	}
 
-	@Given("the user selects the teacher from the dropdown at row {int}")
+	@And("the user selects the teacher from the dropdown at row {int}")
 	public void the_user_selects_the_teacher_from_the_dropdown_at_row_rownumber(Integer int1) throws InvalidFormatException, IOException {
-		if (testdata == null) {
-	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
-	    }
-	    String teacherDdown = testdata.get(int1).get("FirstName"+"LastName");	   
-	    bpages.teacherDdown(teacherDdown); 
+//		if (testdata == null) {
+//	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+//	    }
+//	    String Lastname = testdata.get(int1).get("LastName");	
+//	    String firstname = testdata.get(int1).get("FirstName");	
+//	    bpages.teacherDdown(Lastname,firstname); 
+		StaticWait(1);
 	}
 
-	@Given("the user selects the classroom from the dropdown at row {int}")
+	@And("the user selects the classroom from the dropdown at row {int}")
 	public void the_user_selects_the_classroom_from_the_dropdown_at_row_rownumber(Integer int1) throws InvalidFormatException, IOException {
-		if (testdata == null) {
-	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
-	    }
-	    String classroomDdown = testdata.get(int1).get("Classroom Name");	   
-	    bpages.classroomDdown(classroomDdown); 
+//		if (testdata == null) {
+//	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+//	    }
+//	    String classroomDdown = testdata.get(int1).get("Classroom Name");	   
+//	    bpages.classroomDdown(classroomDdown); 
+		StaticWait(1);
 	}
 	
 
 	@When("user clicks on toggle to activate benchmark")
 	public void user_clicks_on_toggle_to_activate_benchmark() {
-	   bpages.ActiveToggle();
+		StaticWait(1);
+		bpages.ActiveToggle();
 	}
 	@Then("user checks the status and Reset the Benchmark Activity")
 	public void user_checks_the_status_and_reset_the_benchmark_activity() {
 	   bpages.CheckingStatus();
+	   
 	}
 
 	

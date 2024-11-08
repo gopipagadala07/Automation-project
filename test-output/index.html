@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,7 +21,8 @@
      -->
   </head>
 
-  <body>    <div class="top-banner-root">
+  <body>
+    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
@@ -50,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\SureshRajaboina\AppData\Local\Temp\testng-eclipse--110241650\testng-customsuite.xml</span>
+                    <span>C:\Users\SureshRajaboina\AppData\Local\Temp\testng-eclipse-70958507\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +104,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="AssessmentsRunner.BenchmarksRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Creating Benchmarks and activating&quot;, &quot;Verify the Benchmarks functionality&quot;)">runScenario("Creating Benchmarks and activating", "Verify the Benchmarks functionality")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="AssessmentsRunner.AnnouncementsRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Creating Announcements&quot;, &quot;Verify the Announcements functionality&quot;)">runScenario("Creating Announcements", "Verify the Announcements functionality")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -121,24 +122,24 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">AssessmentsRunner.BenchmarksRunner</span>
+              <span class="class-name">AssessmentsRunner.AnnouncementsRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Creating Benchmarks and activating&quot;, &quot;Verify the Benchmarks functionality&quot;)">
-                  </a> <!-- runScenario("Creating Benchmarks and activating", "Verify the Benchmarks functionality") -->
+                  <a name="runScenario(&quot;Creating Announcements&quot;, &quot;Verify the Announcements functionality&quot;)">
+                  </a> <!-- runScenario("Creating Announcements", "Verify the Announcements functionality") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Creating Benchmarks and activating","Verify the Benchmarks functionality")</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;Username&apos;]&quot;}
+                  <span class="parameters">("Creating Announcements", "Verify the Announcements functionality")</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;mat-button-wrapper&quot;&gt;...&lt;/span&gt; is not clickable at point (1186, 351). Other element would receive the click: &lt;div class=&quot;mat-calendar-body-cell-content mat-focus-indicator&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=130.0.6723.70)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8744ee114caa068d43735119f25555e1, findElement {value=//input[@id=&apos;Username&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.70, chrome: {chromedriverVersion: 130.0.6723.69 (3ec172b971b9..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64497}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64497/devtoo..., se:cdpVersion: 130.0.6723.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8744ee114caa068d43735119f25555e1
+Command: [ef6b5c58e7920d282ecde20122055820, clickElement {id=f.CC247D708FD3C15230906FEA7E75C10F.d.34A0E21BAE542F2B793CE83D5D68F0F0.e.220}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.70, chrome: {chromedriverVersion: 130.0.6723.91 (53ac07678369..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56787}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56787/devtoo..., se:cdpVersion: 130.0.6723.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (ef6b5c58e7920d282ecde20122055820)] -&gt; xpath: //mat-icon[text()=&apos;save&apos;]/parent::span]
+Session ID: ef6b5c58e7920d282ecde20122055820
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -151,14 +152,17 @@ Session ID: 8744ee114caa068d43735119f25555e1
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.Assessments.pages.LoginPage.enterUsername(LoginPage.java:46)
-	at com.Assessments.pages.LoginPage.User_login(LoginPage.java:83)
-	at AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
-	at ✽.User enters the credentials from the excel sheet at 0(file:///C:/Users/SureshRajaboina/Downloads/FPK12-AUTOMATION-TEST-2.0/src/test/resources/Files/Benchmarks_AC/src/test/resources/AssessmentsFeatures/Benchmarks.feature:6)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.click(Unknown Source)
+	at com.Assessments.pages.AnnouncementsPages.ClickOnAddNewAnnouncement(AnnouncementsPages.java:185)
+	at AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_add_new_announcement_button(AnnouncementsStepdefinitions.java:71)
+	at ✽.user clicks on Add New Announcement button(file:///C:/Users/SureshRajaboina/OneDrive%20-%20FocalPointK12,%20Inc/Focalpoint%20Automation/Benchmarks_AC/src/test/resources/AssessmentsFeatures/Announcements.feature:10)
 
 </div> <!-- stack-trace -->
                   <em>
@@ -170,7 +174,7 @@ Session ID: 8744ee114caa068d43735119f25555e1
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\SureshRajaboina\AppData\Local\Temp\testng-eclipse--110241650\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\SureshRajaboina\AppData\Local\Temp\testng-eclipse-70958507\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -179,7 +183,7 @@ Session ID: 8744ee114caa068d43735119f25555e1
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;AssessmentsRunner.BenchmarksRunner&quot;/&gt;
+      &lt;class name=&quot;AssessmentsRunner.AnnouncementsRunner&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -230,13 +234,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
-data.setCell(0, 2, 'AssessmentsRunner.BenchmarksRunner')
-data.setCell(0, 3, 18355);
+data.setCell(0, 2, 'AssessmentsRunner.AnnouncementsRunner')
+data.setCell(0, 3, 46107);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 18 seconds</span>
+              <span class="suite-total-time">Total running time: 46 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -262,30 +266,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">AssessmentsRunner.BenchmarksRunner</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">AssessmentsRunner.AnnouncementsRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@47c96f2c)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@198c0f1c)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">1036 ms</span>
+                <span class="method-start">1264 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">runScenario("Creating Benchmarks and activating", "Verify the Benchmarks functionality")</span>
-                <span class="method-start">1047 ms</span>
+                <span class="method-name">runScenario("Creating Announcements", "Verify the Announcements functionality")</span>
+                <span class="method-start">1278 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">19414 ms</span>
+                <span class="method-start">47401 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">19414 ms</span>
+                <span class="method-start">47401 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

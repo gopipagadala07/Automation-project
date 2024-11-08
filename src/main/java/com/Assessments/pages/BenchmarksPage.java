@@ -4,6 +4,9 @@ import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
 
+import java.time.Duration;
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +17,9 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 
 public class BenchmarksPage extends ActionType {
 
@@ -52,22 +57,24 @@ public class BenchmarksPage extends ActionType {
 	@FindBy(how=How.XPATH,using="//a[text()=' Add ']")private WebElement clickonAddSectionbutton;
 	@FindBy(how=How.XPATH,using="//div[text()='DETAIL']")private WebElement ClickonDetailtab;
 
-/*
- * Test Administration
- */
+	/*
+	 * Test Administration
+	 */
 	@FindBy(how=How.XPATH,using="//a[contains(text(),'Test Administration')] ")private WebElement TestAdministrationTab;
 	@FindBy(how=How.XPATH,using="//mat-select[@formcontrolname='benchmark']/parent::div/parent::div/..")private WebElement CourseBenchmarkDropDown;
 	@FindBy(how=How.XPATH,using="//fp-dropdown[@controlname='school']")private WebElement SchoolDropdown;
 	@FindBy(how=How.XPATH,using="//fp-dropdown[@controlname='teacher']")private WebElement TeacherDropdown;
 	@FindBy(how=How.XPATH,using="//fp-dropdown[@controlname='classroomID']")private WebElement ClassroomdropDown;
 	@FindBy(how=How.XPATH,using="//span[contains(text(),' Activate all test status. ')] ")private WebElement ToggleActive;
-
+	@FindBy(how=How.XPATH,using="//span[contains(text(),' Deactivate all test status. ')] ")private WebElement ToggleInActive;
+	@FindBy(how=How.XPATH,using="//button[text()='Yes']")private WebElement ClickOnYEs;//click on yes to activate benchmark
 	@FindBy(how=How.XPATH,using="//mat-label[contains(text(),'Status')]/following::span[contains(text(),'Not Started')]")private WebElement NotStartedStatus;
 	@FindBy(how=How.XPATH,using="//mat-label[contains(text(),'Status')]/following::span[contains(text(),'In Progress')]")private WebElement InProgressStatus;
-    @FindBy(how=How.XPATH,using="//mat-label[contains(text(),'Status')]/following::span[contains(text(),'In Review')]")private WebElement InReviewStatus;
+	@FindBy(how=How.XPATH,using="//mat-label[contains(text(),'Status')]/following::span[contains(text(),'In Review')]")private WebElement InReviewStatus;
 	@FindBy(how=How.XPATH,using="//mat-label[contains(text(),'Status')]/following::span[contains(text(),'Completed')]")private WebElement CompletedStatus;
 	@FindBy(how=How.XPATH,using="//mat-icon[contains(text(),'settings_backup_restore')]/parent::span")private WebElement ResetButton;
-	
+	@FindBy(how=How.XPATH,using="//button[text()='Yes, Please reset!']")private WebElement YesPleaseReset;
+
 	@FindBy(how=How.XPATH,using="//li[text()='Benchmark Test Administration']")private WebElement BEnchmarkTD;// click on benchmark test administration
 
 	public WebElement NewBenchmarkName(String BenchMarkname) {
@@ -90,7 +97,7 @@ public class BenchmarksPage extends ActionType {
 	public void Disttab() {
 		wait.elementToBeClickable(DistrictBtn);
 		DistrictBtn.click();
-		
+
 	}
 	public void benchmarkstab() {
 		wait.elementToBeClickable(BenchmarksBtn);
@@ -100,18 +107,18 @@ public class BenchmarksPage extends ActionType {
 	public void gradedropdowns(String gradeddown) {
 		wait.elementToBeClickable(gradedropdown);		
 		cp.FPdropdown(gradedropdown, gradeddown);
-		
+
 	}
 
 	public void subdropdowns(String subddown) {
-		
+
 		wait.elementToBeClickable(subjectdropdown);
 		StaticWait(1);
 		cp.FPdropdown(subjectdropdown, subddown);
-//		Actions a2=new Actions(driver);
-//		a2.moveToElement(BEnchmarkTD);
-//		a2.click();
-//		a2.perform();
+		//		Actions a2=new Actions(driver);
+		//		a2.moveToElement(BEnchmarkTD);
+		//		a2.click();
+		//		a2.perform();
 	}
 	public void yeardropdowns(String yearddown) {
 		wait.elementToBeClickable(yeardropdown);
@@ -161,7 +168,7 @@ public class BenchmarksPage extends ActionType {
 	public void testSearch(String Testname) {
 		String testname="\"" + Testname + "\"";
 		System.out.println(testname);
-		cp.searchField(testname);
+		cp.SearchTestname(testname);
 		wait.elementToBeClickable(gobutton);
 		gobutton.click();
 	}
@@ -184,13 +191,31 @@ public class BenchmarksPage extends ActionType {
 		StaticWait(1);
 	}
 	public void clickOnSectionTab() {
-		wait.visibilityOf(sectionstab);
-		wait.elementToBeClickable(sectionstab);
-		StaticWait(2);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", sectionstab);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		int retries = 0;
+		int maxRetries = 3;
 
+		while (retries < maxRetries) {
+			try {
+				WebElement sectionTab = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'SECTIONS')]")));
+				Actions actions = new Actions(driver);
+				actions.moveToElement(sectionTab).click().perform();
+				return;
+
+			} catch (StaleElementReferenceException e) {
+				retries++;
+				try {
+					Thread.sleep(500);
+				} catch (InterruptedException ie) {
+					Thread.currentThread().interrupt();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				return;
+			}
+		}
 	}
+
 
 	public void clickOnAdd(String SectionName) {
 
@@ -205,57 +230,84 @@ public class BenchmarksPage extends ActionType {
 	 * Test Administration
 	 */
 
-public void testAdminTab() {
-	wait.elementToBeClickable(TestAdministrationTab);
-	TestAdministrationTab.click();
-}
+	public void testAdminTab() {
+		wait.elementToBeClickable(TestAdministrationTab);
+		TestAdministrationTab.click();
+	}
 	public void CourseBenchmarkDdown(String SectionName) {
 		wait.elementToBeClickable(CourseBenchmarkDropDown);	
-			 
-		cp.FPdropdown(CourseBenchmarkDropDown, SectionName+""+" - "+BenchmarksPage.BenchMarkname);
-		System.out.println(SectionName+""+" - "+BenchmarksPage.BenchMarkname);
-//		
-//		if(CourseBenchmarkDropDown.)
-//		
-		
+
+		cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
+		System.out.println(SectionName);
 	}
 
 
 	public void schoolDdown(String schooldrop) {
 		wait.elementToBeClickable(SchoolDropdown);
+		wait.visibilityOf(SchoolDropdown);	
 		cp.FPdropdown(SchoolDropdown, schooldrop);
+
 	}
 
-	public void teacherDdown(String teacherdrop) {
+	public void teacherDdown(String FirstName, String LastName) {
 		wait.elementToBeClickable(TeacherDropdown);
-		cp.FPdropdown(TeacherDropdown, teacherdrop);
+		cp.FPdropdown(TeacherDropdown, LastName +" "+FirstName);
+		String s=LastName +" "+FirstName;
+		System.out.println(s);
 	}
 
 	public void classroomDdown(String classroomdown) {
 		wait.elementToBeClickable(ClassroomdropDown);
+		wait.visibilityOf(ClassroomdropDown);
 		cp.FPdropdown(ClassroomdropDown, classroomdown);
 	}
 
 
 	public void ActiveToggle() {
-		wait.elementToBeClickable(ToggleActive);
-		ToggleActive.click();
-	}
-	public void CheckingStatus() {
-		wait.visibilityOf(NotStartedStatus);
-		wait.visibilityOf(InProgressStatus);
-		wait.visibilityOf(InReviewStatus);
-		wait.visibilityOf(CompletedStatus);
-		if (CompletedStatus.isDisplayed()) {
-		    StaticWait(1);
-		    wait.elementToBeClickable(ResetButton);
-		    ResetButton.click();
-		} else {
-		    System.out.println(NotStartedStatus.isDisplayed() ? "Not Started" :
-		                       InProgressStatus.isDisplayed() ? "In Progress" :
-		                       InReviewStatus.isDisplayed() ? "In Review" : "No active status");
+
+		try {
+			if (ToggleActive.isDisplayed())
+			{
+				wait.elementToBeClickable(ToggleActive);
+				Actions actions = new Actions(driver);
+				actions.moveToElement(ToggleActive).click().perform(); 
+				wait.elementToBeClickable(ClickOnYEs);
+				ClickOnYEs.click(); 
+			} 
+			else
+			{
+
+				StaticWait(1);
+				Actions actions = new Actions(driver);
+				actions.moveToElement(ToggleInActive).click().perform(); 
+				wait.elementToBeClickable(ClickOnYEs);
+				wait.visibilityOf(ClickOnYEs); 
+				ClickOnYEs.click(); 
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("Element is stale. Trying to re-fetch.");
+
 		}
 	}
+	public void CheckingStatus() {
+
+		if (NotStartedStatus.equals("Not Started"))  {
+			StaticWait(1);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+			wait.elementToBeClickable(ResetButton);
+			ResetButton.click();
+			wait.elementToBeClickable(YesPleaseReset);
+			YesPleaseReset.click();
+		} else {
+			System.out.println(NotStartedStatus.isDisplayed() ? "--------Not Started--------" :
+				InProgressStatus.isDisplayed() ? "In Progress" :
+					InReviewStatus.isDisplayed() ? "In Review" : "No active status");
+		}
+
+
+	}
+
 
 
 }

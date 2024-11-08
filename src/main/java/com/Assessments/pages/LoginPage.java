@@ -1,21 +1,21 @@
 package com.Assessments.pages;
+import java.awt.AWTException;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.Utils.ActionType;
+import com.Utils.Wait;
 
 
 public class LoginPage extends ActionType{
-
-	private By changepwd=By.xpath("//h3[text()='Change Password']");
-
-	private By close=By.xpath("//mat-icon[text()='close']");
-	private By coun=By.xpath("//mat-toolbar[@id='appHeader']");
+	private Wait wait;
+	private By close=By.xpath("//button[@type='button']");
 	private WebDriver driver;
 	private	By forgotPassword=By.xpath("//a[text()='Forgot password']");
 	private By fp=By.xpath("//span[text()='FocalPoint']");
@@ -25,9 +25,15 @@ public class LoginPage extends ActionType{
 	private	By password=By.xpath("//input[@id='Password']");
 	private	By rememeberchkbox=By.xpath("//input[@type='checkbox']");
 	private	By username=By.xpath("//input[@id='Username']");
+	
+	//private	By GotIt=By.xpath("//a[text()='Got it!']");
+	//private	By YesAllow=By.xpath("//button[text()='Yes, Allow']");
+	//private	By closeIcon=By.xpath("//mat-icon[text()='close']");////button[@type='button']
+	
 	public LoginPage(WebDriver driver)
 	{
 		this.driver=driver;
+		this.wait = new Wait(driver);
 	}
 
 	public void allFieldsDispayed() {
@@ -46,33 +52,15 @@ public class LoginPage extends ActionType{
 		driver.findElement(username).sendKeys(FT+"."+LT+"."+Tid);
 	}
 
-	public void header()
+	public void header() 
 	{
-		List<WebElement> Header=driver.findElements(menu);
-		WebElement cng=driver.findElement(changepwd);
+		
+	
 		WebElement cls=driver.findElement(close);
+			wait.elementToBeClickable(cls);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", cls);		
 
-		cls.click();
-		StaticWait(5);
-		waitForPageLoad();
-
-		waitForElement(menu);
-
-		int n=Header.size();
-
-		if(n==9)
-		{
-			System.out.println("Controller login is working Successfully..!!");
-		}
-		else if(n==4) 
-		{
-			System.out.println("Proctor login is working Successfully..!!");
-		}
-		else if(n==1)
-		{
-			System.out.println("Examtaker login is working Successfully..!!");
-		}
-		waitForPageLoad();
 	}
 	public void loginbtn()
 	{
