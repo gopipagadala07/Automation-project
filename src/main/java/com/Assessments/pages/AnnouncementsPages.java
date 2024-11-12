@@ -27,6 +27,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.StaleElementReferenceException;
 
 public class AnnouncementsPages extends ActionType {
@@ -64,20 +65,7 @@ public class AnnouncementsPages extends ActionType {
 	@FindBy(how=How.XPATH,using="//button[@aria-label='Previous page']")private WebElement PreviousPage;
 	@FindBy(how=How.XPATH,using="//button[@aria-label='First page']")private WebElement FirstPage;
 	@FindBy(how=How.XPATH,using="(//div[@role='tab'])[1]")private WebElement Hometab;
-
-	//@FindBy(how=How.XPATH,using="//span[text()='FPK12Classroom8789(FPK12Section9359)-1638 fpk12teacher']")private WebElement DummyClassroomName;
 	@FindBy(how=How.XPATH,using="//a[text()='Assessment Center']/following::li[2]")private WebElement course;//to scroll page upto course 
-	//@FindBy(how=How.XPATH,using="//a[text()='Powered by FocalPoint']")private WebElement scrollBottom;
-
-	//	public WebElement ClassRoomName(String classroomName,String sectionName,String lastname,String firstname) {
-	//		String output = "//*[contains(text(), '" + classroomName + "(" + sectionName + ")-" + lastname + " " + firstname.toLowerCase() + "')]";
-	//		return driver.findElement(By.xpath(output));
-	//	}
-
-
-
-
-
 
 	public WebElement getCommunityNameElement(String ClassroomName) {
 		String xpath = "//span[(text()='"+ClassroomName+"')]/parent::div/parent::mat-card-content/preceding-sibling::mat-card-header/child::div/mat-card-title/child::span";
@@ -92,20 +80,8 @@ public class AnnouncementsPages extends ActionType {
 		wait.elementToBeClickable(getCommunityNameElement(ClassroomName));
 		Actions a=new Actions(driver);
 		a.moveToElement(getCommunityNameElement(ClassroomName)).click().build().perform();
-		//      JavascriptExecutor js=(JavascriptExecutor) driver;
-		//      js.executeScript("arguments[0].click();", getCommunityNameElement(ClassroomName));
-
-
-
-		//wait.elementToBeClickable(Assessmentcourse);
-		//Assessmentcourse.click();
 		StaticWait(2);
-
 	}
-
-
-
-
 	public AnnouncementsPages(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -118,10 +94,6 @@ public class AnnouncementsPages extends ActionType {
 		wait.elementToBeClickable(AssessmentcenterTab);
 		AssessmentcenterTab.click();
 	}
-
-	
-
-
 	public void ClickOnAnnouncementTab() {
 		wait.elementToBeClickable(AnnouncementTab);
 		wait.visibilityOf(AnnouncementTab);
@@ -129,47 +101,55 @@ public class AnnouncementsPages extends ActionType {
 	}
 	public void ClickOnAddNewAnnouncement() {
 
-		//List<String> announcementNames = new ArrayList<>(); // Initialize the list
+		for (int i = 0; i < 2; i++) {
+			try {
 
-		for (int i = 0; i < 12; i++) { 
-			wait.visibilityOf(ADdNewAnnouncement);
-			wait.elementToBeClickable(ADdNewAnnouncement); 
-			ADdNewAnnouncement.click(); 
-			StaticWait(1);
-			ADdNewAnnouncement.click(); 
+				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
+				wait.until(ExpectedConditions.visibilityOf(ADdNewAnnouncement));
+				wait.until(ExpectedConditions.elementToBeClickable(ADdNewAnnouncement));
+				ADdNewAnnouncement.click();
+				StaticWait(1);
 
-			wait.elementToBeClickable(TitleField); 
-			wait.visibilityOf(TitleField);
-			TitleField.click();
+				wait.until(ExpectedConditions.visibilityOf(TitleField));
+				wait.until(ExpectedConditions.elementToBeClickable(TitleField));
+				TitleField.click();
 
-			announcementName = "Announcement" + randomNumberGenerator(); 
-			System.out.println(announcementName);
-			announcementNames.add(announcementName); 
+				announcementName = "Announcement" + randomNumberGenerator(); 
+				System.out.println("Announcement Name: " + announcementName);
+				announcementNames.add(announcementName);
 
-			Actions actions = new Actions(driver);
-			actions.moveToElement(TitleField).click().sendKeys(announcementName).perform();
+				Actions actions = new Actions(driver);
+				actions.moveToElement(TitleField).click().sendKeys(announcementName).perform();
 
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].scrollIntoView(true);", DescriptionField);
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true);", DescriptionField);
+				Actions actions1 = new Actions(driver);
+				actions1.moveToElement(DescriptionField).click().sendKeys(generateRandomString()).perform();
 
-			Actions actions1 = new Actions(driver);
-			actions1.moveToElement(DescriptionField).click().sendKeys(generateRandomString()).perform();
 
-			JavascriptExecutor js1 = (JavascriptExecutor) driver;
-			js1.executeScript("arguments[0].scrollIntoView(true);", course);
+				js.executeScript("arguments[0].scrollIntoView(true);", course);
 
-			wait.elementToBeClickable(EventDate);
-			wait.visibilityOf(EventDate);
-			cp.getRandomDate(EventDate);
 
-			wait.elementToBeClickable(PublishDate);
-			wait.visibilityOf(PublishDate);
-			cp.CurrentDate(PublishDate);
+				wait.until(ExpectedConditions.elementToBeClickable(EventDate));
+				wait.until(ExpectedConditions.visibilityOf(EventDate));
+				cp.getRandomDate(EventDate);
 
-			wait.elementToBeClickable(SaveButton);
-			SaveButton.click();
-			StaticWait(1);
-		}}
+
+				wait.until(ExpectedConditions.elementToBeClickable(PublishDate));
+				wait.until(ExpectedConditions.visibilityOf(PublishDate));
+				cp.CurrentDate(PublishDate);
+
+
+				wait.until(ExpectedConditions.elementToBeClickable(SaveButton));
+				SaveButton.click();
+				StaticWait(1);
+			} catch (ElementClickInterceptedException e) {
+				System.out.println("Element click intercepted, retrying...");
+				StaticWait(1);
+				i--; // Retry the same iteration
+			} catch (Exception e) {
+				System.out.println("Error while adding new announcement: " + e.getMessage());
+			}}}
 
 	public void AnnouncementsSearch() {
 
@@ -189,6 +169,7 @@ public class AnnouncementsPages extends ActionType {
 	public void PageNation() throws AWTException {
 
 		cp.scrollWithRobot();
+		cp.scrollWithRobot();
 		StaticWait(2);
 		cp.Screensize();
 		StaticWait(2);
@@ -205,15 +186,15 @@ public class AnnouncementsPages extends ActionType {
 		wait.elementToBeClickable(PreviousPage);
 		wait.visibilityOf(PreviousPage);
 		PreviousPage.click();
-		StaticWait(2);
-		//		cp.scrollWithRobot();
-		//
-		//		wait.elementToBeClickable(FirstPage);
-		//		wait.visibilityOf(FirstPage);
-		//		FirstPage.click();
-		//		StaticWait(2);
+		StaticWait(2);}
+	//		cp.scrollWithRobot();
+	//
+	//		wait.elementToBeClickable(FirstPage);
+	//		wait.visibilityOf(FirstPage);
+	//		FirstPage.click();
+	//		StaticWait(2);
 
-	}
+
 	public void ClickOnHomeTab() {
 		wait.elementToBeClickable(Hometab);
 		wait.visibilityOf(Hometab);
@@ -223,28 +204,32 @@ public class AnnouncementsPages extends ActionType {
 		wait.elementToBeClickable(ADdNewAnnouncement);
 		wait.visibilityOf(ADdNewAnnouncement);
 		ADdNewAnnouncement.click();
-		
+
 		wait.elementToBeClickable(SaveButton);
 		wait.visibilityOf(SaveButton);
 		SaveButton.click();
-		
-//		   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//	        wait.until(ExpectedConditions.alertIsPresent());
 
-	        Alert alert = driver.switchTo().alert();
-	        String popupMessage = alert.getText(); 
+//		try {
+//			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
+//			wait.until(ExpectedConditions.alertIsPresent());  
+//			Alert alert = driver.switchTo().alert(); 
+//			String popupMessage = alert.getText(); 
+//			System.out.println("-------------Popup Message:-------- " + popupMessage);
+//		} catch (NoAlertPresentException e) {
+//			System.out.println("No alert present: " + e.getMessage());
+//		}
 
-	        System.out.println("Popup Message: " + popupMessage);
+
 	}
 	/*
 	 * Student side verification
 	 */
 	public void ClickOnAnnouncementFromHomeTab() throws AWTException {
-		String an1=announcementNames.get(0);
+		String an1=announcementName;
 		System.out.println("------------------------------------------------------------------------------------" + an1);
 		WebElement announcementElement = driver.findElement(By.xpath("//a[contains(text(),'" + an1 + "')]"));
 
-		if (announcementElement != null && announcementElement.isDisplayed()) {
+		if (announcementElement.isDisplayed()) {
 			announcementElement.click();
 		} else {
 			wait.visibilityOf(announcementElement);
@@ -253,7 +238,6 @@ public class AnnouncementsPages extends ActionType {
 		}
 	}
 }
-
 
 
 

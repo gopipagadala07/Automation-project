@@ -2,64 +2,64 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-01T17:38:04 IST" name="Default suite" finished-at="2024-11-01T17:38:56 IST" duration-ms="51881">
+  <suite started-at="2024-11-08T15:19:17 IST" name="Default suite" finished-at="2024-11-08T15:20:16 IST" duration-ms="58922">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@3f191845]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.QuizSubmissionRunner@5f049ea1]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-11-01T17:38:04 IST" name="Default test" finished-at="2024-11-01T17:38:56 IST" duration-ms="51881">
-      <class name="AssessmentsRunner.AnnouncementsRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@3f191845]" started-at="2024-11-01T17:38:04 IST" name="setUpClass" finished-at="2024-11-01T17:38:05 IST" duration-ms="1264" status="PASS">
+    <test started-at="2024-11-08T15:19:17 IST" name="Default test" finished-at="2024-11-08T15:20:16 IST" duration-ms="58922">
+      <class name="AssessmentsRunner.QuizSubmissionRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.QuizSubmissionRunner@5f049ea1]" started-at="2024-11-08T15:19:18 IST" name="setUpClass" finished-at="2024-11-08T15:19:19 IST" duration-ms="1231" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@198c0f1c]]>
+                <![CDATA[org.testng.TestRunner@61e0f9b9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@3f191845]" started-at="2024-11-01T17:38:05 IST" name="beforeClass" finished-at="2024-11-01T17:38:05 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.QuizSubmissionRunner@5f049ea1]" started-at="2024-11-08T15:19:19 IST" name="beforeClass" finished-at="2024-11-08T15:19:19 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@3f191845]" started-at="2024-11-01T17:38:05 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-01T17:38:51 IST" duration-ms="46107" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.QuizSubmissionRunner@5f049ea1]" started-at="2024-11-08T15:19:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-08T15:20:12 IST" duration-ms="52962" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Creating Announcements"]]>
+                <![CDATA["Submitting Quiz"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Verify the Announcements functionality"]]>
+                <![CDATA["Performing Quiz at student side"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[element click intercepted: Element <span class="mat-button-wrapper">...</span> is not clickable at point (1186, 351). Other element would receive the click: <div class="mat-calendar-body-cell-content mat-focus-indicator">...</div>
-  (Session info: chrome=130.0.6723.70)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//iframe[@class='iframe-styling ng-star-inserted']"}
+  (Session info: chrome=130.0.6723.117)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ef6b5c58e7920d282ecde20122055820, clickElement {id=f.CC247D708FD3C15230906FEA7E75C10F.d.34A0E21BAE542F2B793CE83D5D68F0F0.e.220}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.70, chrome: {chromedriverVersion: 130.0.6723.91 (53ac07678369..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56787}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56787/devtoo..., se:cdpVersion: 130.0.6723.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (ef6b5c58e7920d282ecde20122055820)] -> xpath: //mat-icon[text()='save']/parent::span]
-Session ID: ef6b5c58e7920d282ecde20122055820]]>
+Command: [bf4c47edc55b5f633e162e562cc395fe, findElement {value=//iframe[@class='iframe-styling ng-star-inserted'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60983}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60983/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bf4c47edc55b5f633e162e562cc395fe]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="mat-button-wrapper">...</span> is not clickable at point (1186, 351). Other element would receive the click: <div class="mat-calendar-body-cell-content mat-focus-indicator">...</div>
-  (Session info: chrome=130.0.6723.70)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//iframe[@class='iframe-styling ng-star-inserted']"}
+  (Session info: chrome=130.0.6723.117)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ef6b5c58e7920d282ecde20122055820, clickElement {id=f.CC247D708FD3C15230906FEA7E75C10F.d.34A0E21BAE542F2B793CE83D5D68F0F0.e.220}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.70, chrome: {chromedriverVersion: 130.0.6723.91 (53ac07678369..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56787}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56787/devtoo..., se:cdpVersion: 130.0.6723.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (ef6b5c58e7920d282ecde20122055820)] -> xpath: //mat-icon[text()='save']/parent::span]
-Session ID: ef6b5c58e7920d282ecde20122055820
+Command: [bf4c47edc55b5f633e162e562cc395fe, findElement {value=//iframe[@class='iframe-styling ng-star-inserted'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60983}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60983/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bf4c47edc55b5f633e162e562cc395fe
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -72,32 +72,33 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at jdk.proxy2/jdk.proxy2.$Proxy29.click(Unknown Source)
-at com.Assessments.pages.AnnouncementsPages.ClickOnAddNewAnnouncement(AnnouncementsPages.java:185)
-at AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_add_new_announcement_button(AnnouncementsStepdefinitions.java:71)
-at ✽.user clicks on Add New Announcement button(file:///C:/Users/SureshRajaboina/OneDrive%20-%20FocalPointK12,%20Inc/Focalpoint%20Automation/Benchmarks_AC/src/test/resources/AssessmentsFeatures/Announcements.feature:10)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy29.getWrappedElement(Unknown Source)
+at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
+at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:1105)
+at com.Assessments.pages.QuizSubmissionPages.ClickOnLaunchAndCompleteTest(QuizSubmissionPages.java:96)
+at AssessmentsStepdef.QuizSubmissionStepdefinitions.user_clicks_on_launch_icon_and_complete_test(QuizSubmissionStepdefinitions.java:43)
+at ✽.user clicks on Launch icon and complete test(file:///C:/Users/SureshRajaboina/OneDrive%20-%20FocalPointK12,%20Inc/Focalpoint%20Automation/Benchmarks_AC/src/test/resources/AssessmentsFeatures/QuizSubmission.feature:11)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@3f191845]" started-at="2024-11-01T17:38:51 IST" name="tearDownClass" finished-at="2024-11-01T17:38:56 IST" duration-ms="4461" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@3f191845]" started-at="2024-11-01T17:38:51 IST" name="afterClass" finished-at="2024-11-01T17:38:51 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.QuizSubmissionRunner@5f049ea1]" started-at="2024-11-08T15:20:12 IST" name="afterClass" finished-at="2024-11-08T15:20:12 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- AssessmentsRunner.AnnouncementsRunner -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.QuizSubmissionRunner@5f049ea1]" started-at="2024-11-08T15:20:12 IST" name="tearDownClass" finished-at="2024-11-08T15:20:16 IST" duration-ms="4682" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- AssessmentsRunner.QuizSubmissionRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

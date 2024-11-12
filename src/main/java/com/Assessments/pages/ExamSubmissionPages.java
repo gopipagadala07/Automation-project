@@ -63,6 +63,14 @@ public class ExamSubmissionPages extends ActionType {
 	@FindBy(how=How.XPATH,using="//mat-icon[text()='close']/parent::span")private WebElement CloseIcon;
 	@FindBy(how=How.XPATH,using="//iframe[@class='iframe-styling ng-star-inserted']")private WebElement iFrame;
 
+	
+	//@FindBy(how=How.XPATH,using = "(//mat-tab-body/div/following::mat-tab-body)[2]/div/app-benchmark-delivery/div/div[2]/div/div/span/following::div[2]/child::button/span/child::mat-icon")
+	//private WebElement LaunchFromBenchmarktab;
+//	@FindBy(how=How.XPATH,using="//div/cdk-nested-tree-node/div/div/div/div/div/child::button/child::span/child::mat-icon")
+//	private WebElement LaunchfromAssessmentTab;
+	
+	@FindBy(how=How.XPATH,using="(//div[@role='tab'])[3]")private WebElement BenchmarksTab;
+	
 
 
 
@@ -72,27 +80,24 @@ public class ExamSubmissionPages extends ActionType {
 	//	@FindBy(how=How.XPATH,using="//extendedtextinteraction[@responseidentifier='RESPONSE']")private WebElement ExtendedTag;
 	//	
 
-
-
-
-	@FindBy(how = How.XPATH, using = "(//mat-tab-body/child::div)[3]/mat-list/mat-list-item/span/small/span/following::span[2]/mat-icon")
+	@FindBy(how = How.XPATH, using = "(//mat-tab-body/div/following::mat-tab-body)[2]/div/app-benchmark-delivery/div/div[2]/div/div/span/following::div[2]/child::button/span/child::mat-icon")
 	private List<WebElement> Examlist;
 
-	public ExamSubmissionPages(WebDriver driver) {
+	public ExamSubmissionPages(WebDriver driver) { 
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new Wait(driver);
 	}
 
-	public void ClickONExamTab() {
-		wait.elementToBeClickable(ExamTab);
-		wait.visibilityOf(ExamTab);
-		ExamTab.click();
+	public void ClickONbenchmarksTab() {
+		wait.elementToBeClickable(BenchmarksTab);
+		wait.visibilityOf(BenchmarksTab);
+		BenchmarksTab.click();
 	}
 
 	@SuppressWarnings("unused")
 	public void ClickOnLaunchAndCompleteExam() throws AWTException, InterruptedException {
-		System.out.println("Total Quizzes: " + Examlist.size());
+		System.out.println("Total Exams: " + Examlist.size());
 		//
 		Robot robot = new Robot();
 
@@ -167,7 +172,7 @@ public class ExamSubmissionPages extends ActionType {
 					WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
 					wait.until(ExpectedConditions.stalenessOf(NextQ));
 				} catch (Exception e) {
-					System.out.println("Done");
+					//System.out.println("Done");
 				}
 			}
 
