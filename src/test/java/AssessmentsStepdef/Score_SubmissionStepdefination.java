@@ -11,6 +11,7 @@ import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.ExcelReader;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -56,22 +57,37 @@ public class Score_SubmissionStepdefination extends ActionType
 		S_Submission.click_On_Score();
 	}
 
-	@Then("Enter the Score and FeedBack")
+	@Then("Enter the Score and FeedBack and submit the Score")
 	public void enter_the_score_and_feed_back() 
 	{
 		S_Submission.provide_the_Score();
 	}
 
-	@Then("submit the Score")
-	public void submit_the_score() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+
+
+	@And("Click on Quiz Tab and click on All")
+	public void click_on_quiz_tab_and_click_on_all() 
+	{
+		S_Submission.click_On_Quiz_Tab_and_All();
 	}
 
-	@Then("capture the status band")
-	public void capture_the_status_band() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@Then("Provide the Score at Activity Progress screen")
+	public void provide_the_score_at_activity_progress_screen() 
+	{
+	    S_Submission.Provide_the_for_each_Quiz_in_Activity_Progress_Screen();
 	}
+	@When("Users Click on Speed Grader tab in Left menu")
+	public void users_click_on_speed_grader_tab_in_left_menu() 
+	{
+		S_Submission.Navigate_Assessment_SpeedGrader_page();
+	}
+
+	@And("User click on the Exam")
+	public void user_click_on_the_exam() 
+	{
+		S_Submission.click_On_Exam();
+	}
+	
+
 
 }

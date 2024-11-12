@@ -1,231 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-08T16:25:29 IST" name="Suite" finished-at="2024-11-08T16:26:37 IST" duration-ms="68064">
+  <suite started-at="2024-11-11T15:05:33 IST" name="Suite" finished-at="2024-11-11T15:07:46 IST" duration-ms="133414">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.Benchmark_ScoringRunner@2f4948e4]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.Benchmark_TeacherRunner@217ed35e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.BenchmarksRunner@7dcf94f8]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@175c2241]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-11-08T16:25:29 IST" name="Test1" finished-at="2024-11-08T16:26:37 IST" duration-ms="68064">
-      <class name="AssessmentsRunner.BenchmarksRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.BenchmarksRunner@7dcf94f8]" started-at="2024-11-08T16:26:37 IST" name="setUpClass" finished-at="2024-11-08T16:26:37 IST" duration-ms="22" status="FAIL">
+    <test started-at="2024-11-11T15:05:33 IST" name="Test1" finished-at="2024-11-11T15:07:46 IST" duration-ms="133414">
+      <class name="AssessmentsRunner.SISprovisioningRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@175c2241]" started-at="2024-11-11T15:05:33 IST" name="setUpClass" finished-at="2024-11-11T15:05:34 IST" duration-ms="815" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@433d93e7]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[path must exist: D:\Automation EC\Assessment_Center_Automation\src\test\resources\Files\Benchmarks_AC\src\test\resources\AssessmentsFeatures\Benchmarks.feature]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: path must exist: D:\Automation EC\Assessment_Center_Automation\src\test\resources\Files\Benchmarks_AC\src\test\resources\AssessmentsFeatures\Benchmarks.feature
-at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:49)
-at io.cucumber.core.resource.PathScanner.findResourcesForUri(PathScanner.java:31)
-at io.cucumber.core.resource.ResourceScanner.findResourcesForUri(ResourceScanner.java:61)
-at io.cucumber.core.resource.ResourceScanner.scanForResourcesUri(ResourceScanner.java:134)
-at io.cucumber.core.runtime.FeaturePathFeatureSupplier.loadFeatures(FeaturePathFeatureSupplier.java:62)
-at io.cucumber.core.runtime.FeaturePathFeatureSupplier.get(FeaturePathFeatureSupplier.java:45)
-at io.cucumber.testng.TestNGCucumberRunner.<init>(TestNGCucumberRunner.java:122)
-at io.cucumber.testng.AbstractTestNGCucumberTests.setUpClass(AbstractTestNGCucumberTests.java:27)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.BenchmarksRunner@7dcf94f8]" started-at="2024-11-08T16:26:37 IST" name="beforeClass" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1731063397506" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.BenchmarksRunner@7dcf94f8]" started-at="2024-11-08T16:26:37 IST" name="tearDownClass" finished-at="2024-11-08T16:26:37 IST" duration-ms="4" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.BenchmarksRunner@7dcf94f8]" started-at="2024-11-08T16:26:37 IST" name="afterClass" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1731063397509" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- AssessmentsRunner.BenchmarksRunner -->
-      <class name="AssessmentsRunner.Benchmark_TeacherRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.Benchmark_TeacherRunner@217ed35e]" started-at="2024-11-08T16:26:14 IST" name="setUpClass" finished-at="2024-11-08T16:26:14 IST" duration-ms="32" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@433d93e7]]>
+                <![CDATA[org.testng.TestRunner@4f1aa2bc]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.Benchmark_TeacherRunner@217ed35e]" started-at="2024-11-08T16:26:14 IST" name="beforeClass" finished-at="2024-11-08T16:26:14 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@175c2241]" started-at="2024-11-11T15:05:34 IST" name="beforeClass" finished-at="2024-11-11T15:05:34 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.Benchmark_TeacherRunner@217ed35e]" started-at="2024-11-08T16:26:14 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-08T16:26:35 IST" duration-ms="21074" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@175c2241]" started-at="2024-11-11T15:05:34 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:06:18 IST" duration-ms="44437" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Activating and Deactivating toggles against Benchmark names"]]>
+                <![CDATA["Checking the School, Classroom, Section Creation Functionality With valid Data"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Verify the Benchmark Management process for Teacher"]]>
+                <![CDATA["Verify the SIS Provisioning Creation Functionality"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to find element with locator By.xpath: //input[@id='Username']
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
-Driver info: driver.version: RemoteWebDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //input[@id='Username']
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
-Driver info: driver.version: RemoteWebDriver
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at com.Assessments.pages.LoginPage.enterUsername(LoginPage.java:50)
-at com.Assessments.pages.LoginPage.User_login(LoginPage.java:68)
-at AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
-at ✽.User enters the credentials from the excel sheet at 2(file:///D:/Automation%20EC/Assessment_Center_Automation/src/test/resources/AssessmentsFeatures/Benchmark_Teacher.feature:6)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.Benchmark_TeacherRunner@217ed35e]" started-at="2024-11-08T16:26:35 IST" name="afterClass" finished-at="2024-11-08T16:26:35 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.Benchmark_TeacherRunner@217ed35e]" started-at="2024-11-08T16:26:35 IST" name="tearDownClass" finished-at="2024-11-08T16:26:37 IST" duration-ms="1701" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- AssessmentsRunner.Benchmark_TeacherRunner -->
-      <class name="AssessmentsRunner.Benchmark_ScoringRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.Benchmark_ScoringRunner@2f4948e4]" started-at="2024-11-08T16:25:29 IST" name="setUpClass" finished-at="2024-11-08T16:25:30 IST" duration-ms="802" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@175c2241]" started-at="2024-11-11T15:06:18 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T15:07:33 IST" duration-ms="74884" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@433d93e7]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.Benchmark_ScoringRunner@2f4948e4]" started-at="2024-11-08T16:25:30 IST" name="beforeClass" finished-at="2024-11-08T16:25:30 IST" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.Benchmark_ScoringRunner@2f4948e4]" started-at="2024-11-08T16:25:30 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-08T16:26:02 IST" duration-ms="32569" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Validating the Benchmark Scoring from Teacher Activity progress screen"]]>
+                <![CDATA["Verify the Users Creation Functionality with valid Data"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Verify the Benchmark Scoring from Teacher Activity progress"]]>
+                <![CDATA["Verify the SIS Provisioning Creation Functionality"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[@type='button']"}
-  (Session info: chrome=130.0.6723.70)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f5992b34ff1b2d8cdacf960c327ca714, findElement {value=//button[@type='button'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.70, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62747/devtoo..., se:cdpVersion: 130.0.6723.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f5992b34ff1b2d8cdacf960c327ca714]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@type='button']"}
-  (Session info: chrome=130.0.6723.70)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f5992b34ff1b2d8cdacf960c327ca714, findElement {value=//button[@type='button'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.70, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62747/devtoo..., se:cdpVersion: 130.0.6723.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f5992b34ff1b2d8cdacf960c327ca714
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at com.Assessments.pages.LoginPage.header(LoginPage.java:56)
-at AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage(LoginStepdefinintions.java:48)
-at ✽.User is on homepage(file:///D:/Automation%20EC/Assessment_Center_Automation/src/test/resources/AssessmentsFeatures/Benchmark_Scoring.feature:7)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.Benchmark_ScoringRunner@2f4948e4]" started-at="2024-11-08T16:26:02 IST" name="afterClass" finished-at="2024-11-08T16:26:02 IST" duration-ms="10" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@175c2241]" started-at="2024-11-11T15:07:33 IST" name="afterClass" finished-at="2024-11-11T15:07:33 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.Benchmark_ScoringRunner@2f4948e4]" started-at="2024-11-08T16:26:02 IST" name="tearDownClass" finished-at="2024-11-08T16:26:14 IST" duration-ms="11794" status="FAIL">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@175c2241]" started-at="2024-11-11T15:07:33 IST" name="tearDownClass" finished-at="2024-11-11T15:07:46 IST" duration-ms="13233" status="FAIL">
           <exception class="java.lang.RuntimeException">
             <message>
               <![CDATA[java.net.UnknownHostException: messages.cucumber.io]]>
@@ -315,7 +151,7 @@ at io.cucumber.core.plugin.UrlOutputStream.getResponseBody(UrlOutputStream.java:
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- AssessmentsRunner.Benchmark_ScoringRunner -->
+      </class> <!-- AssessmentsRunner.SISprovisioningRunner -->
     </test> <!-- Test1 -->
   </suite> <!-- Suite -->
 </testng-results>

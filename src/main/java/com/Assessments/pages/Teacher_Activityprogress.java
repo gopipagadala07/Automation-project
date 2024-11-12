@@ -115,8 +115,6 @@ public class Teacher_Activityprogress extends ActionType{
 			// Static wait to allow the page or modal to close properly
 			StaticWait(2);
 
-
-
 		}
 
 	}

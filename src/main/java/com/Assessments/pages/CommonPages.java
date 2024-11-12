@@ -1,9 +1,13 @@
 package com.Assessments.pages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -17,16 +21,21 @@ import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.*;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.asserts.SoftAssert;
 import com.Utils.ActionType;
 import com.Utils.Wait;
+
 
 public class CommonPages extends ActionType{
 	private Wait wait;
@@ -46,6 +55,16 @@ public class CommonPages extends ActionType{
 		String xpath="//div[contains(text(),' "+ValueSelection+" ' )]";
 		return driver.findElement(By.xpath(xpath));
 	}
+	
+	public void Screensize() {
+		Actions actions = new Actions(driver);
+        actions.keyDown(Keys.CONTROL) 
+               .sendKeys(Keys.SUBTRACT)
+               .keyUp(Keys.CONTROL)
+               .perform(); 
+		
+	}
+	
 	@FindBy(how=How.XPATH,using = "//fp-textbox[@placeholder='Name']/div/mat-form-field/div/div/div/input")
 	private WebElement Name;
 	
@@ -103,6 +122,8 @@ public class CommonPages extends ActionType{
 			e.printStackTrace();
 		}	
 	}
+
+
 	public void InsertdataIntoExcel(String Path, String Sheet, String Schoolname, String ClassroomName, String SectionName) throws Exception, IOException
 	{
 		FileInputStream f=new FileInputStream(Path);
@@ -165,20 +186,61 @@ public class CommonPages extends ActionType{
 	}
 	public void getRandomDate(WebElement element)
 	{
-		LocalDate currentDate = LocalDate.now();
-		Random random = new Random();
-		int randomYear = currentDate.getYear() + 1 + random.nextInt(5);
-		int randomMonth = 1 + random.nextInt(12); 
-		LocalDate randomFutureDate = LocalDate.of(randomYear, randomMonth, 1);
-		int randomDay = 1 + random.nextInt(randomFutureDate.lengthOfMonth());
-		element.click();
-		yearSelection.click();
-		DateValue(String.valueOf(randomYear)).click();
-		//MonthSelection.click();
-		DateValue(getMonthName(randomMonth)).click();
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click()", DateValue(String.valueOf(randomDay)));
-		//DateValue(String.valueOf(randomDay)).click();
+		try {
+			LocalDate currentDate = LocalDate.now();
+			Random random = new Random();
+			int randomYear = currentDate.getYear() + 1 + random.nextInt(5);
+			int randomMonth = 1 + random.nextInt(12); 
+			LocalDate randomFutureDate = LocalDate.of(randomYear, randomMonth, 1);
+			int randomDay = 1 + random.nextInt(randomFutureDate.lengthOfMonth());
+			element.click();
+			yearSelection.click();
+			DateValue(String.valueOf(randomYear)).click();
+			//MonthSelection.click();
+			DateValue(getMonthName(randomMonth)).click();
+			StaticWait(2);
+			JavascriptExecutor js=(JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click()", DateValue(String.valueOf(randomDay)));
+			//DateValue(String.valueOf(randomDay)).click();
 
+		} catch (ElementClickInterceptedException e) {
+			System.out.println("e");
+		}
+		
+	}
+	public void CurrentDate(WebElement element) {
+		
+		try {
+			LocalDate currentDate = LocalDate.now();
+	        int currentYear=currentDate.getYear();
+	        int CurrentMonth=currentDate.getMonthValue();
+	        int CurrentDate=currentDate.getDayOfMonth();
+	        element.click();
+			yearSelection.click();
+			DateValue(String.valueOf(currentYear)).click();
+			//MonthSelection.click();
+			DateValue(getMonthName(CurrentMonth)).click();
+			JavascriptExecutor js=(JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click()", DateValue(String.valueOf(CurrentDate)));
+//			
+//	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//	        String formattedDate = currentDate.format(formatter);
+//	        return formattedDate;
+	   
+		} catch (ElementClickInterceptedException e) {
+			System.out.println("e");
+		}
+	        
+	}
+	public void scrollWithRobot() throws AWTException {
+	    try {
+	        Robot robot = new Robot();
+	        for (int i = 0; i < 20; i++) { 
+	            robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+	            robot.keyRelease(KeyEvent.VK_PAGE_DOWN); 
+	        }
+	    } catch (ElementClickInterceptedException e) {
+	        e.printStackTrace();
+	    }
 	}
 }

@@ -4,14 +4,24 @@
   <test thread-count="5" name="Test1(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
+<<<<<<< HEAD
       <class name="AssessmentsRunner.Benchmark_ScoringRunner">
+=======
+      <class name="AssessmentsRunner.AnnouncementsRunner">
+>>>>>>> branch 'FPK12-Benchmarks-AC' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
         <methods>
           <include name="afterClass"/>
           <include name="setUpClass"/>
+          <include name="beforeClass"/>
           <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
+<<<<<<< HEAD
           <include name="beforeClass"/>
+=======
+          <include name="afterClass"/>
+>>>>>>> branch 'FPK12-Benchmarks-AC' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
         </methods>
+<<<<<<< HEAD
       </class> <!-- AssessmentsRunner.Benchmark_ScoringRunner -->
       <class name="AssessmentsRunner.Benchmark_TeacherRunner">
         <methods>
@@ -22,6 +32,9 @@
           <include name="beforeClass"/>
         </methods>
       </class> <!-- AssessmentsRunner.Benchmark_TeacherRunner -->
+=======
+      </class> <!-- AssessmentsRunner.AnnouncementsRunner -->
+>>>>>>> branch 'FPK12-Benchmarks-AC' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     </classes>
   </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

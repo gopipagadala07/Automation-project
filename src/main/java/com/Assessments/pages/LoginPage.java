@@ -1,4 +1,5 @@
 package com.Assessments.pages;
+import java.awt.AWTException;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -27,6 +28,11 @@ public class LoginPage extends ActionType{
 	private	By password=By.xpath("//input[@id='Password']");
 	private	By rememeberchkbox=By.xpath("//input[@type='checkbox']");
 	private	By username=By.xpath("//input[@id='Username']");
+	
+	//private	By GotIt=By.xpath("//a[text()='Got it!']");
+	//private	By YesAllow=By.xpath("//button[text()='Yes, Allow']");
+	//private	By closeIcon=By.xpath("//mat-icon[text()='close']");////button[@type='button']
+	
 	public LoginPage(WebDriver driver)
 	{
 		this.driver=driver;
@@ -50,13 +56,17 @@ public class LoginPage extends ActionType{
 		driver.findElement(username).sendKeys(FT+"."+LT+"."+Tid);
 	}
 
-	public void header()
 
-    {
-        WebElement cls=driver.findElement(close);
-            wait.elementToBeClickable(cls);
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].click();", cls);     
+	public void header() 
+	{
+		
+	
+		WebElement cls=driver.findElement(close);
+			wait.elementToBeClickable(cls);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", cls);		
+
+   
 
     }
 	public void loginbtn()

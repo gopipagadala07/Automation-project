@@ -257,7 +257,7 @@ public class SISProvisioningPage extends ActionType{
 	public void EditScreen()
 	{
 		wait.elementToBeClickable(Ellipses);
-
+		wait.visibilityOf(Ellipses);
 		Ellipses.click();
 		wait.elementToBeClickable(Editoption);
 		Editoption.click();
@@ -281,7 +281,7 @@ public class SISProvisioningPage extends ActionType{
 	public void Settings()
 	{
 		wait.elementToBeClickable(Ellipses);
-		StaticWait(1);
+		StaticWait(2);
 		Ellipses.click();
 		wait.elementToBeClickable(Settingsoptions);
 		Settingsoptions.click();

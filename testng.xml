@@ -4,10 +4,15 @@
   <test thread-count="5" name="Test1">
   <parameter name="browser" value="chrome" />
   <classes>
-		  <class name="AssessmentsRunner.Benchmark_ScoringRunner"/>
-			<class name="AssessmentsRunner.Benchmark_TeacherRunner"></class>
-			<class name="AssessmentsRunner.BenchmarksRunner"></class>
+		    <class name="AssessmentsRunner.SISprovisioningRunner"/>
+			<class name="AssessmentsRunner.BenchmarksRunner"/>
+			<class name="AssessmentsRunner.Benchmark_TeacherRunner"/>
+			<class name="AssessmentsRunner.AnnouncementsRunner"/>
+			<class name="AssessmentsRunner.Exam_SubmissionRunner"/>
+			<class name="AssessmentsRunner.Benchmark_ScoringRunner"/>
 
+            <!--<class name="AssessmentsRunner.Teacher_ActivityprogressRunner"/>-->			
 		</classes>
-  </test> <!-- Test -->
+  </test> <!-- Test -->	
 </suite> <!-- Suite -->
+
