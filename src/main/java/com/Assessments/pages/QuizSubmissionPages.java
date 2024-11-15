@@ -58,11 +58,6 @@ public class QuizSubmissionPages extends ActionType {
 	@FindBy(how=How.XPATH,using="//mat-icon[text()=' chevron_right ']")private WebElement SubTopic;
 	@FindBy(how=How.XPATH,using="//a[text()='Courses']")private WebElement ScrollTop;
 
-	//	@FindBy(how = How.XPATH, using = "//mat-icon[@mattooltip='Launch Activity']")
-	//	private List<WebElement> Quizzeslist;
-	//@FindBy(how=How.XPATH,using="//div/cdk-nested-tree-node/div/div/div/div/div/child::button/child::span/child::mat-icon")
-	//	private WebElement LaunchfromAssessmentTab;
-
 	public QuizSubmissionPages(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -102,7 +97,7 @@ public class QuizSubmissionPages extends ActionType {
 			} catch (StaleElementReferenceException e) {
 
 				System.out.println("stale Element reference Exception, retrying...");
-				j--; // retry the same iteration
+				j--;
 				continue;
 			} catch (Exception e) {
 				System.out.println("Error occurred while clicking quiz: " + e.getMessage());
