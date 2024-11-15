@@ -1,0 +1,12 @@
+2024-10-21 18:28:46,576 INFO  [rootLogger] Enviornment is : LMSPROD
+2024-10-21 18:28:46,584 INFO  [rootLogger] Browser value is: CHROME
+2024-10-21 18:28:50,913 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-21 18:28:50,914 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2024-10-21 18:29:36,949 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-10-21 18:29:37,037 INFO  [rootLogger] Browser value is: CHROME
+2024-10-21 18:29:39,069 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-21 18:29:39,076 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2024-10-21 18:30:08,715 INFO  [rootLogger] Info: Email Id: DistrictUserautomation6539@fpk12.com
+2024-10-21 18:30:20,839 INFO  [rootLogger] Info: Email Id: Tutorautomation5359@fpk12.com
+2024-10-21 18:30:33,938 INFO  [rootLogger] Info: Email Id: Studentautomation2242@fpk12.com
+2024-10-21 18:30:46,400 INFO  [rootLogger] -----------------End of Scenario-----------------

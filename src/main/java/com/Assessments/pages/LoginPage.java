@@ -2,6 +2,8 @@ package com.Assessments.pages;
 
 import java.time.Duration;
 import java.util.concurrent.TimeoutException;
+import java.awt.AWTException;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,8 +19,11 @@ import com.Utils.Wait;
 
 
 public class LoginPage extends ActionType{
+
 	private Wait wait;
 	private By close=By.xpath("//button[@type='button']");
+	private By changepwd=By.xpath("//h3[text()='Change Password']");
+	private By coun=By.xpath("//mat-toolbar[@id='appHeader']");
 	private WebDriver driver;
 	private	By forgotPassword=By.xpath("//a[text()='Forgot password']");
 	private By fp=By.xpath("//span[text()='FocalPoint']");
@@ -28,10 +33,16 @@ public class LoginPage extends ActionType{
 	private	By password=By.xpath("//input[@id='Password']");
 	private	By rememeberchkbox=By.xpath("//input[@type='checkbox']");
 	private	By username=By.xpath("//input[@id='Username']");
+	
+	//private	By GotIt=By.xpath("//a[text()='Got it!']");
+	//private	By YesAllow=By.xpath("//button[text()='Yes, Allow']");
+	//private	By closeIcon=By.xpath("//mat-icon[text()='close']");////button[@type='button']
+	
 	public LoginPage(WebDriver driver)
 	{
 		this.driver=driver;
-		this.wait = new Wait(driver);
+
+		this.wait=new Wait(driver);
 	}
 
 	public void allFieldsDispayed() {

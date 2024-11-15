@@ -7,6 +7,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
@@ -20,7 +21,7 @@ public class Wait extends Base{
 	public Wait(WebDriver driver) {
 		this.driver=driver;
 		actions = new Actions(driver);
-		wait1 = new FluentWait(driver).withTimeout(Duration.ofSeconds(20)).pollingEvery(Duration.ofSeconds(1))
+		wait1 = new FluentWait(driver).withTimeout(Duration.ofSeconds(30)).pollingEvery(Duration.ofSeconds(1))
 				.ignoring(NoSuchElementException.class).ignoring(ElementClickInterceptedException.class);
 		
 	}
@@ -55,6 +56,7 @@ public class Wait extends Base{
 //	visibilityOfAllElements()
 //	visibilityOfAllElementsLocatedBy()
 //	visibilityOfElementLocated()
+
 	
 
 }

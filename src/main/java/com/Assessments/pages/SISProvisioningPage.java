@@ -136,7 +136,8 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void ClassroomDetails()
 	{
-		ClassroomName="FPK12Classroom"+randomNumberGenerator();
+//		ClassroomName="FPK12Classroom"+randomNumberGenerator();
+		ClassroomName = "FPK12Classroom8989";
 		cp.Name(ClassroomName);
 		System.out.println(ClassroomName);
 		Description.sendKeys(generateRandomString());
@@ -257,6 +258,7 @@ public class SISProvisioningPage extends ActionType{
 	public void EditScreen()
 	{
 		wait.elementToBeClickable(Ellipses);
+		wait.visibilityOf(Ellipses);
 		Ellipses.click();
 		wait.elementToBeClickable(Editoption);
 		Editoption.click();
@@ -280,7 +282,7 @@ public class SISProvisioningPage extends ActionType{
 	public void Settings()
 	{
 		wait.elementToBeClickable(Ellipses);
-		StaticWait(1);
+		StaticWait(2);
 		Ellipses.click();
 		wait.elementToBeClickable(Settingsoptions);
 		Settingsoptions.click();
