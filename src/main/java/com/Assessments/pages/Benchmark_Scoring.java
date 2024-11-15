@@ -72,7 +72,6 @@ public class Benchmark_Scoring extends ActionType{
 		}
 	}
 
-
 	public WebElement getCommunityNameElement(String ClassroomName) {
 		String xpath = "//span[(text()='"+ClassroomName+"')]/parent::div/parent::mat-card-content/preceding-sibling::mat-card-header/child::div/mat-card-title/child::span";
 		return driver.findElement(By.xpath(xpath));
@@ -131,6 +130,7 @@ public class Benchmark_Scoring extends ActionType{
 		wait.elementToBeClickable(score);
 		score.sendKeys("3");
 
+
 		StaticWait(2);
 		wait.elementToBeClickable(submit);
 		submit.click();
@@ -141,7 +141,6 @@ public class Benchmark_Scoring extends ActionType{
 		wait.elementToBeClickable(CloseAfterSubmit);
 		CloseAfterSubmit.click();
 	}
-
 
 	public void bandstatus(){
 

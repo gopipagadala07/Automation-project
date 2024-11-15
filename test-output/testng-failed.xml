@@ -1,17 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
+=======
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="chrome"/>
+  <test name="Test1">
+    <parameter name="browser" value="chrome"/>
+>>>>>>> branch 'AssessmentCenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     <classes>
+<<<<<<< HEAD
       <class name="AssessmentsRunner.Benchmark_ScoringRunner">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      <class name="AssessmentsRunner.Provide_ScoreRunner">
+=======
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+      <class name="AssessmentsRunner.QuizSubmissionRunner">
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
         <methods>
           <include name="afterClass"/>
+<<<<<<< HEAD
           <include name="setUpClass"/>
+=======
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
           <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
           <include name="beforeClass"/>
         </methods>
+<<<<<<< HEAD
       </class> <!-- AssessmentsRunner.Benchmark_ScoringRunner -->
+=======
+<<<<<<< HEAD
+      </class> <!-- AssessmentsRunner.Provide_ScoreRunner -->
+=======
+      </class> <!-- AssessmentsRunner.QuizSubmissionRunner -->
+<<<<<<< HEAD
+=======
+      <class name="Runners.Location_Runner"/>
+      <class name="Runners.Users_Creation_Runner"/>
+      <class name="Runners.Examinations_Schedule_runner"/>
+      <class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"/>
+      <class name="Runners.AssessmentSubmissionRunner"/>
+      <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
+      <class name="Runners.AssessmentSubmissionRunner"/>
+      <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
+      <class name="Runners.EnrolleRunner"/>
+      <class name="Runners.BulkUploadRunner"/>
+>>>>>>> branch 'AssessmentCenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+=======
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     </classes>
+<<<<<<< HEAD
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
+=======
+  </test> <!-- Test1 -->
+  <test parallel="none" name="Test1(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner">
+        <methods>
+          <include name="testDownClass"/>
+          <include name="tearDownClass"/>
+          <include name="beforeclass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner -->
+      <class name="Runners.EnrolleRunner">
+        <methods>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- Runners.EnrolleRunner -->
+      <class name="Runners.AssessmentSubmissionRunner">
+        <methods>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- Runners.AssessmentSubmissionRunner -->
+      <class name="Runners.Location_Runner">
+        <methods>
+          <include name="beforeclass"/>
+          <include name="tearDownClass"/>
+          <include name="testDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- Runners.Location_Runner -->
+      <class name="Runners.BulkUploadRunner">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="tearDownClass"/>
+          <include name="afterClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- Runners.BulkUploadRunner -->
+      <class name="Runners.Users_Creation_Runner">
+        <methods>
+          <include name="Afterclass"/>
+          <include name="tearDownClass"/>
+          <include name="beforeclass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- Runners.Users_Creation_Runner -->
+      <class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
+        <methods>
+          <include name="testDownClass"/>
+          <include name="tearDownClass"/>
+          <include name="beforeclass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
+      <class name="Runners.Examinations_Schedule_runner">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="beforeclass"/>
+          <include name="testDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- Runners.Examinations_Schedule_runner -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [Suite] -->
+>>>>>>> branch 'AssessmentCenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0

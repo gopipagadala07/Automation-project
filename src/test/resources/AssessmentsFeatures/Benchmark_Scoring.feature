@@ -8,7 +8,7 @@ Feature: Verify the  Benchmark Scoring from Teacher Activity progress
     When Users Click on Assessment Centre tab in Left menu
     Then Users clicks on Assessment Centre Course <rownumber1><rownumber>
     When User clicks on Benchmarks Tab
-    Then User navigates to Student Activity Progress
+    Then User navigates to Studesnt Activity Progress
     And User navigate and give score to the Benchmark
     When User sumbit the Benchmark scoring and navigate back
     Then User capture the Band Status of the Student

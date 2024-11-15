@@ -47,7 +47,7 @@ public class AppHooks extends Base {
 	@After(order = 1)
 	public void quitBrowser() {
 		a.StaticWait(2);
-		driver.quit();
+//		driver.quit();
 	}
 
 	@After(order = 2)
