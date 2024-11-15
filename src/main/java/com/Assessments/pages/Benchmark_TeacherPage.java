@@ -43,7 +43,9 @@ public class Benchmark_TeacherPage extends ActionType{
 	@FindBy(how = How.XPATH,using = "//button[@mattooltip='Schedule']")private WebElement Schedule;
 
 	@FindBy(how=How.XPATH,using = "//span[text()='Progress']")private WebElement progress;
-	@FindBy(how=How.XPATH,using = "//b[normalize-space()='Test Status']")private WebElement teststatus;
+	//@FindBy(how=How.XPATH,using = "//b[normalize-space()='Test Status']")private WebElement teststatus;
+	//mat-slide-toggle[@id='mat-slide-toggle-9']/child::label/child::span/child::input
+	@FindBy(how=How.XPATH,using = "//label[@for='mat-slide-toggle-11-input']//span[@class='mat-slide-toggle-thumb']")private WebElement teststatus;
 	
 	@FindBy(how = How.XPATH,using = "//div[@class='table_body_item ng-star-inserted']/child::mat-slide-toggle/child::label/child::span/child::input")private WebElement studentstatus;
 	
@@ -151,7 +153,7 @@ public class Benchmark_TeacherPage extends ActionType{
 
 	public void enableMainToggle() {
 		if (!teststatus.isSelected()) {
-			teststatus.click();
+			
 		}
 	}
 
@@ -206,7 +208,7 @@ public class Benchmark_TeacherPage extends ActionType{
 
 	}
 
-	public void printCounts() {
+/*	public void printCounts() {
 
 		List<WebElement> Benchmarkcount=driver.findElements(By.xpath("//h3[contains(text(),'Benchmarks')]/parent::div/parent::div/following-sibling::div/child::mat-list/mat-list-item"));
 		//app-assessmentcenter-bechmarklist//mat-list  
@@ -220,8 +222,27 @@ public class Benchmark_TeacherPage extends ActionType{
 		// Print the counts
 		System.out.println("Benchmark Count: " + benchmarkCount);
 		System.out.println("Exam Count: " + examCount);
+	}*/
+
+	public int getListCount(By locator) {
+	    List<WebElement> elements = driver.findElements(locator);
+	    return elements.size();
 	}
 
+	public void printCounts() {
+	    By benchmarkLocator = By.xpath("//app-assessmentcenter-bechmarklist//mat-list");
+	//    By benchmarkLocator = By.xpath("//h3[contains(text(),'Benchmarks')]/parent::div/parent::div/following-sibling::div/child::mat-list/mat-list-item");
+
+	    By examLocator = By.xpath("//div[contains(text(),'EXAM')]/parent::div/parent::div/parent::div/parent::div/parent::mat-tab-header/following-sibling::div/mat-tab-body[2]/div/mat-list");
+
+	    
+	    int benchmarkCount = getListCount(benchmarkLocator);
+	    int examCount = getListCount(examLocator);
+	    
+	    // Print the counts
+	    System.out.println("Benchmark Count: " + benchmarkCount);
+	    System.out.println("Exam Count: " + examCount);
+	}
 
 	public void landpage()
 	{

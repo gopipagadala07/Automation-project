@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,7 +49,7 @@ public class Teacher_Activityprogress extends ActionType{
 	@FindBy(how = How.XPATH, using = "//cdk-nested-tree-node[@role='treeitem']/child::div/child::div[2]/cdk-nested-tree-node/child::div/child::small")
 	private List<WebElement> Quizzeslist;
 
-	private By close = By.xpath("//mat-icon[normalize-space()='close']");
+	private By close = By.xpath("//button[@aria-label='close dialog']/child::span/child::mat-icon");
 
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'EXAM')]")
 	private WebElement examtab;
@@ -130,42 +131,80 @@ public class Teacher_Activityprogress extends ActionType{
 	}
 
 	/*public void clickEachExamAndClose() {
-		System.out.println(Examslist.size());
+		System.out.println("Total Exams: " + Examslist.size());
 		for (WebElement exam : Examslist) {
-			JavascriptExecutor js=(JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click()", exam);
-			StaticWait(2);
-			WebElement closeButton1 = driver.findElement(close);
-			js.executeScript("arguments[0].click();", closeButton1);
-			StaticWait(2);
-	 */
+		    try {
+		        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+
+		        js.executeScript("arguments[0].click()", exam);
+		        StaticWait(5);
+
+
+		        WebElement closeButton = driver.findElement(close);
+		        js.executeScript("arguments[0].click();", closeButton);
+		        StaticWait(2);
+
+		    } catch (NoSuchElementException e) {
+
+
+		    }
+		}*/
+
+	/*public void clickEachExamAndClose() {
+		try {
+			Actions actions = new Actions(driver);
+
+
+			for (WebElement exam : Examslist) {
+
+				System.out.println("Total Exams: " + Examslist.size());
+
+
+				actions.moveToElement(exam).click().perform();
+				StaticWait(2);
+
+
+				WebElement closeButton = driver.findElement(close);
+				actions.moveToElement(closeButton).click().perform();
+				StaticWait(2);
+			}
+		} catch (StaleElementReferenceException e) {
+			System.out.println("Encountered a stale element exception. Retrying...");
+		}*/
+
 	public void clickEachExamAndClose() {
-		
-		int min=0;
-		int max=5;
-	
-	        
-	            try {
-	            	
-	        		Actions actions = new Actions(driver);
+		System.out.println("Total Exams: " + Examslist.size());
+		Actions actions = new Actions(driver);
+		int retries = 5;
 
-	        		for (WebElement exam : Examslist) {
-	        			System.out.println("Total Exams: " + Examslist.size());
-	        			while (min < max) {
+		for (int i = 0; i < Examslist.size(); i++) {
+			int attempts = retries;
 
-	        			actions.moveToElement(exam).click().perform();
-	        			StaticWait(2);
-	        			WebElement closeButton = driver.findElement(close);
-	        			actions.moveToElement(closeButton).click().perform();
-	        			StaticWait(2);
-	        		}
-	        		
-	                break; // Exit the loop if the action is successful
-	            }} catch (StaleElementReferenceException e) {
-	                min++;
-	               
-	                }
-		
-	
-	}
-}
+			while (attempts > 0) {
+				try {
+					WebElement exam = Examslist.get(i);
+					actions.moveToElement(exam).click().perform();
+					StaticWait(2);
+
+					WebElement closeButton = driver.findElement(close);
+					actions.moveToElement(closeButton).click().perform();
+					StaticWait(5);
+					break;
+				} catch (StaleElementReferenceException e) {
+					attempts--;
+					if (attempts == 0) {
+						System.out.println("Failed after retries due to StaleElementReferenceException for exam at index " + i);
+					} else {
+						System.out.println("Retrying due to StaleElementReferenceException for exam at index " + i + ". Attempts left: " + attempts);
+					}
+						                
+				}
+			}
+		}
+
+
+	}}
+
+
+

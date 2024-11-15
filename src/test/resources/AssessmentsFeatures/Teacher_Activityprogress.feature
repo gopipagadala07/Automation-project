@@ -1,6 +1,6 @@
 Feature: Verify the Activity progress from ToDo List at teacher
 
-Scenario Outline: Validating the Activity progress screen from AC Home tab
+  Scenario Outline: Validating the Activity progress screen from AC Home tab
     Given User launch the application with Valid URL
     And User able to see all Fields
     Then User enters the credentials from the excel sheet at <rownumber>
@@ -10,8 +10,6 @@ Scenario Outline: Validating the Activity progress screen from AC Home tab
     When User click on all Quizzes and navigate back
     Then User click on all benchmarks and navigate back
 
-  
-  
     Examples: 
       | rownumber | rownumber1 |
       |         2 |          0 |
