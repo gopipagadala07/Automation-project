@@ -11,6 +11,9 @@
   <reporter-output>
   </reporter-output>
 <<<<<<< HEAD
+  <suite started-at="2024-11-11T16:38:16 IST" name="Default suite" finished-at="2024-11-11T16:40:18 IST" duration-ms="121822">
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   <suite started-at="2024-11-12T17:09:32 IST" name="Default suite" finished-at="2024-11-12T17:10:29 IST" duration-ms="56951">
@@ -24,8 +27,12 @@
 =======
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     <groups>
       <group name="cucumber">
+<<<<<<< HEAD
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.Benchmark_ScoringRunner@7d900ecf]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -47,8 +54,14 @@
 =======
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
       </group> <!-- cucumber -->
     </groups>
+<<<<<<< HEAD
+    <test started-at="2024-11-11T16:38:16 IST" name="Default test" finished-at="2024-11-11T16:40:18 IST" duration-ms="121822">
+      <class name="AssessmentsRunner.Benchmark_ScoringRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.Benchmark_ScoringRunner@7d900ecf]" started-at="2024-11-11T16:38:16 IST" name="setUpClass" finished-at="2024-11-11T16:38:18 IST" duration-ms="1724" status="PASS">
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -69,9 +82,13 @@
 =======
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
+                <![CDATA[org.testng.TestRunner@309cf657]]>
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -86,12 +103,16 @@
 =======
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
+<<<<<<< HEAD
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.Benchmark_ScoringRunner@7d900ecf]" started-at="2024-11-11T16:38:18 IST" name="beforeClass" finished-at="2024-11-11T16:38:18 IST" duration-ms="4" status="PASS">
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -106,10 +127,14 @@
 =======
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
           <reporter-output>
           </reporter-output>
 <<<<<<< HEAD
         </test-method> <!-- beforeClass -->
+<<<<<<< HEAD
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.Benchmark_ScoringRunner@7d900ecf]" started-at="2024-11-11T16:38:18 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-11T16:40:15 IST" duration-ms="117358" status="PASS">
+=======
 <<<<<<< HEAD
         <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.Provide_ScoreRunner@1573f9fc]" started-at="2024-11-12T17:09:33 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-12T17:10:25 IST" duration-ms="52220" status="PASS">
 =======
@@ -122,18 +147,26 @@
 =======
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
+                <![CDATA["Validating the Benchmark Scoring from Teacher Activity progress screen"]]>
+=======
 <<<<<<< HEAD
                 <![CDATA["Validate the Score In Assessment SpeedGrader screen"]]>
 =======
                 <![CDATA["Submitting Quiz"]]>
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
+                <![CDATA["Verify the  Benchmark Scoring from Teacher Activity progress"]]>
+=======
 <<<<<<< HEAD
                 <![CDATA["Verify the Score Submission at Teacher side"]]>
 =======
@@ -259,12 +292,16 @@ at ✽.user clicks on Launch icon and complete test(file:///C:/Users/SureshRajab
             <param index="1">
               <value>
                 <![CDATA["Checking the bulk upload functionality for All Users"]]>
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
+<<<<<<< HEAD
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.Benchmark_ScoringRunner@7d900ecf]" started-at="2024-11-11T16:40:15 IST" name="tearDownClass" finished-at="2024-11-11T16:40:18 IST" duration-ms="2673" status="PASS">
+=======
         <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runners.BulkUploadRunner@1fde5d22]" started-at="2024-10-09T15:48:22Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-09T15:49:25Z" duration-ms="62730" status="PASS">
           <params>
             <param index="0">
@@ -302,9 +339,19 @@ at ✽.user clicks on Launch icon and complete test(file:///C:/Users/SureshRajab
           </reporter-output>
         </test-method> <!-- afterClass -->
         <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runners.BulkUploadRunner@1fde5d22]" started-at="2024-10-09T15:50:33Z" name="tearDownClass" finished-at="2024-10-09T15:50:36Z" duration-ms="2764" status="PASS">
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
+<<<<<<< HEAD
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.Benchmark_ScoringRunner@7d900ecf]" started-at="2024-11-11T16:40:15 IST" name="afterClass" finished-at="2024-11-11T16:40:15 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- AssessmentsRunner.Benchmark_ScoringRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+=======
       </class> <!-- Runners.BulkUploadRunner -->
       <class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
         <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@6c0d9d86]" started-at="2024-10-09T15:41:56Z" name="setUpClass" finished-at="2024-10-09T15:41:56Z" duration-ms="32" status="PASS">
@@ -677,4 +724,5 @@ Session ID: 5651e1ebe52fc9333729e4b49257da3a
     </test> <!-- Test1 -->
   </suite> <!-- Suite -->
 >>>>>>> branch 'AssessmentCenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 </testng-results>

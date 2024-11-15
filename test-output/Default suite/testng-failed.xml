@@ -9,6 +9,9 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
+      <class name="AssessmentsRunner.Benchmark_ScoringRunner">
+=======
       <class name="Runners.Location_Runner">
         <methods>
           <include name="setUpClass"/>
@@ -31,17 +34,25 @@
 =======
       <class name="AssessmentsRunner.QuizSubmissionRunner">
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
         <methods>
-          <include name="setUpClass"/>
           <include name="afterClass"/>
+<<<<<<< HEAD
+          <include name="setUpClass"/>
+=======
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
           <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
           <include name="beforeClass"/>
         </methods>
 <<<<<<< HEAD
+      </class> <!-- AssessmentsRunner.Benchmark_ScoringRunner -->
+=======
+<<<<<<< HEAD
       </class> <!-- AssessmentsRunner.Provide_ScoreRunner -->
 =======
       </class> <!-- AssessmentsRunner.QuizSubmissionRunner -->
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 >>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     </classes>
 <<<<<<< HEAD

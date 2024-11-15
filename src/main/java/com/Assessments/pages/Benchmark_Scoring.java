@@ -39,21 +39,16 @@ public class Benchmark_Scoring extends ActionType{
 
 	private By Learningtab = By.xpath("//span[contains(text(),'Learning')]");
 	private By AssessmentTab = By.xpath("//a[contains(text(),'Assessment Center')]");
-
 	@FindBy(how=How.XPATH,using = "//*[local-name()='svg' and @matTooltip='Benchmarks'] /*[name()='g']")private WebElement Benchmarktab;
-
 	@FindBy(how = How.XPATH,using = "//button[@mattooltip='Schedule']")private WebElement Schedule;
-
 	@FindBy(how=How.XPATH,using = "//span[text()='Progress']")private WebElement progress;
-
-	private By close = By.xpath("//mat-icon[normalize-space()='close']");
-
 	@FindBy(how=How.XPATH,using = "//div[@class='table_body_item']/*[text()='Score']")private WebElement scorebnd;
 	@FindBy(how=How.XPATH,using = "//div[@class='table_body_item']/child::label/child::small")private WebElement bandstatus;
 	@FindBy(how=How.XPATH,using = "//input[@type='number']")private WebElement score;
 	@FindBy(how=How.XPATH,using = "//iframe[@class='dashboard-report']")private WebElement iframe;
-	
-	
+	@FindBy(how=How.XPATH,using = "//span[normalize-space()='Submit Scoring']")private WebElement submit;
+	@FindBy(how=How.XPATH,using="//div[text() = 'Benchmark']/ancestor::mat-dialog-container/descendant::span/mat-icon[text()='close']")private WebElement CloseAfterSubmit;
+
 
 
 	public Benchmark_Scoring(WebDriver driver) {
@@ -128,15 +123,24 @@ public class Benchmark_Scoring extends ActionType{
 	}
 
 	public void Submitscore(){
-		
+
 		driver.switchTo().frame(0);
-		
+
 		StaticWait(5);
 		wait.elementToBeClickable(score);
 		score.sendKeys("3");
-		
-	}	
 
+
+		StaticWait(2);
+		wait.elementToBeClickable(submit);
+		submit.click();
+
+		StaticWait(2);
+		driver.switchTo().defaultContent();
+		StaticWait(2);
+		wait.elementToBeClickable(CloseAfterSubmit);
+		CloseAfterSubmit.click();
+	}
 
 	public void bandstatus(){
 
