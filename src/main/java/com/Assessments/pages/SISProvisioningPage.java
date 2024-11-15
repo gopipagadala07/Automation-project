@@ -72,6 +72,7 @@ public class SISProvisioningPage extends ActionType{
 	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Teacher')]")private WebElement AddnewTeacherbtn;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(),'Settings')]")private WebElement Settingsoptions;
 	@FindBy(how=How.XPATH,using = "//div[contains(text(),'Is District Admin ')]/mat-checkbox")private WebElement IsDistrcitAdminchkbox;
+	@FindBy(how=How.XPATH,using = "//div[contains(text(),'Is Scorer ')]/mat-checkbox")private WebElement Speedgraderchkbox;
 	@FindBy(how=How.XPATH,using = "//mat-icon[contains(text(),'close')]")private WebElement Closeicon;
 	@FindBy(how=How.XPATH,using = "//div[contains(text(),'Manage User')]/parent::div/following::div[1]/div")private WebElement SettingsClassroomtab;
 	@FindBy(how=How.XPATH,using = "//span[(text()=' Add ')]")private WebElement Settingsadd;
@@ -288,6 +289,8 @@ public class SISProvisioningPage extends ActionType{
 	public void Checkbox()
 	{
 		IsDistrcitAdminchkbox.click();
+		wait.elementToBeClickable(Speedgraderchkbox);
+		Speedgraderchkbox.click();
 	}
 	public void close()
 	{
