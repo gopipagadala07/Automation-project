@@ -1,40 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test1(failed)">
-    <parameter name="browser" value="chrome"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="AssessmentsRunner.Benchmark_ScoringRunner">
-=======
-      <class name="AssessmentsRunner.AnnouncementsRunner">
->>>>>>> branch 'FPK12-Benchmarks-AC' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+      <class name="AssessmentsRunner.Provide_ScoreRunner">
         <methods>
-          <include name="afterClass"/>
           <include name="setUpClass"/>
           <include name="beforeClass"/>
           <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
-<<<<<<< HEAD
-          <include name="beforeClass"/>
-=======
           <include name="afterClass"/>
->>>>>>> branch 'FPK12-Benchmarks-AC' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
         </methods>
-<<<<<<< HEAD
-      </class> <!-- AssessmentsRunner.Benchmark_ScoringRunner -->
-      <class name="AssessmentsRunner.Benchmark_TeacherRunner">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="afterClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- AssessmentsRunner.Benchmark_TeacherRunner -->
-=======
-      </class> <!-- AssessmentsRunner.AnnouncementsRunner -->
->>>>>>> branch 'FPK12-Benchmarks-AC' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+      </class> <!-- AssessmentsRunner.Provide_ScoreRunner -->
     </classes>
-  </test> <!-- Test1(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
