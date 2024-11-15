@@ -5,6 +5,7 @@
 	<groupId>AssessmentCenter_Benchmarks</groupId>
 	<artifactId>Benchmarks_AC</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<dependencies>
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -131,7 +132,8 @@
 			<artifactId>jcommander</artifactId>
 			<version>1.48</version>
 		</dependency>
-	</dependencies>
+		</dependencies>
+
 
 <build>
 <plugins>

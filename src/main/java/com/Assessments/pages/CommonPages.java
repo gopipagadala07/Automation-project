@@ -4,7 +4,6 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -13,7 +12,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -32,7 +30,6 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -40,7 +37,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
-
 import com.Utils.ActionType;
 import com.Utils.Wait;
 
@@ -57,6 +53,7 @@ public class CommonPages extends ActionType{
 	public WebElement MonthSelection;
 	@FindBy(how = How.XPATH,using="//input[@form='pageIndex']")
 	public WebElement searchforTest;
+
 	public WebElement DateValue(String ValueSelection)
 	{
 		String xpath="//div[contains(text(),' "+ValueSelection+" ' )]";
@@ -105,15 +102,20 @@ public class CommonPages extends ActionType{
 	}
 	public void FPdropdown(WebElement element, String visibleText) {
 		try {
+			
 			wait.elementToBeClickable(element);
-			element.click();
+			Actions actions = new Actions(driver);
+			actions.moveToElement(element).click().build().perform();
+//			element.click();
+			System.out.println(visibleText +"---------------------------");
 			List<WebElement> options =element.findElements(By.xpath("following::div[@role='listbox']/mat-option"));
 			for(WebElement option:options) {
 				String actual = option.getText().trim();
-				//	System.out.println(actual);
-				if(actual.contains(visibleText)) {
-					((JavascriptExecutor) driver).executeScript("arguments[0].click();", option);
-					//option.click();
+					System.out.println(actual);
+				if(actual.equals(visibleText)) {
+					Actions a=new Actions(driver);
+					a.moveToElement(option);
+					option.click();
 					//option.sendKeys(Keys.TAB);
 					break;
 				}		
@@ -124,6 +126,7 @@ public class CommonPages extends ActionType{
 			e.printStackTrace();
 		}	
 	}
+
 
 	public void InsertdataIntoExcel(String Path, String Sheet, String Schoolname, String ClassroomName, String SectionName) throws Exception, IOException
 	{
@@ -175,6 +178,7 @@ public class CommonPages extends ActionType{
 
 		FileOutputStream fileOut = new FileOutputStream(Path);
 		wb.write(fileOut);
+
 	}
 	private static String getMonthName(int month) {
 		String[] monthNames = {

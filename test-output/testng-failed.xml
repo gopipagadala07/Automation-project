@@ -12,7 +12,13 @@
 >>>>>>> branch 'AssessmentCenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     <classes>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      <class name="AssessmentsRunner.Provide_ScoreRunner">
+=======
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
       <class name="AssessmentsRunner.QuizSubmissionRunner">
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
         <methods>
           <include name="setUpClass"/>
           <include name="afterClass"/>
@@ -20,7 +26,11 @@
           <include name="tearDownClass"/>
           <include name="beforeClass"/>
         </methods>
+<<<<<<< HEAD
+      </class> <!-- AssessmentsRunner.Provide_ScoreRunner -->
+=======
       </class> <!-- AssessmentsRunner.QuizSubmissionRunner -->
+<<<<<<< HEAD
 =======
       <class name="Runners.Location_Runner"/>
       <class name="Runners.Users_Creation_Runner"/>
@@ -33,6 +43,9 @@
       <class name="Runners.EnrolleRunner"/>
       <class name="Runners.BulkUploadRunner"/>
 >>>>>>> branch 'AssessmentCenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+=======
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     </classes>
 <<<<<<< HEAD
   </test> <!-- Default test(failed) -->
