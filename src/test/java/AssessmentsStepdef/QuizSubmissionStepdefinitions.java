@@ -33,10 +33,10 @@ public class QuizSubmissionStepdefinitions extends ActionType{
 	static List<Map<String, String>> testdata=null;
 	
 
-//	@Given("user clicks on the Assessment tab")
-//	public void user_clicks_on_the_assessment_tab() {
-//	   spages.ClickOnAssessmentTab();
-//	}
+	@Given("user clicks on the Assessment tab")
+	public void user_clicks_on_the_assessment_tab() throws AWTException, InterruptedException {
+	   spages.ClickOnAssessmentTab();
+	}
 	
 	@Then("user clicks on Launch icon and complete test")
 	public void user_clicks_on_launch_icon_and_complete_test() throws AWTException, InterruptedException {

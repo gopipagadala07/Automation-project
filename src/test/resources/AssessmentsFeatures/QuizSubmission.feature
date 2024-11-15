@@ -7,7 +7,7 @@ Feature: Performing Quiz at student side
     And User is on homepage
     Then user clicks on Learning and assessment center
     Then user clicks on the classroom name <rownumber1> <rownumber2>
-    # And user clicks on the Assessment tab
+     And user clicks on the Assessment tab
     Then user clicks on Launch icon and complete test
 
     Examples: 

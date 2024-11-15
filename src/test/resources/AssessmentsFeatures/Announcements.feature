@@ -23,6 +23,7 @@ Feature: Verify the Announcements functionality
     #Given User launch the application with Valid URL
     #And User able to see all Fields
     #Then User enters the credentials from the excel sheet at <rownumber>
+    #And User is on homepage
     #Then user clicks on Learning and assessment center
     #Then user clicks on the classroom name <rownumber1> <rownumber2>
     #Then user clicks on the Announcement from home tab

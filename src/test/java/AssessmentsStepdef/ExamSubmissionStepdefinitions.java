@@ -33,13 +33,13 @@ public class ExamSubmissionStepdefinitions extends ActionType{
 	CommonPages cp=new CommonPages(Base.getDriver());
 	static List<Map<String, String>> testdata=null;
 
-	@Then("user clicks on Exam tab")
-	public void user_clicks_on_Exam_tab() {
+	@Then("user clicks on benchmarks tab")
+	public void user_clicks_on_benchmarks_tab() {
 
-		e.ClickONExamTab(); 
+		e.ClickONbenchmarksTab(); 
 	}
 	
-	@Then("User will launch and submit all Exams")
+	@And("User will launch and submit all Exams")
 	public void User_will_launch_and_submit_all_Exams() throws AWTException, InterruptedException {
 	   e.ClickOnLaunchAndCompleteExam(); 
 	}

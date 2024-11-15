@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -32,6 +34,8 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import com.Utils.ActionType;
 import com.Utils.Wait;
@@ -195,16 +199,23 @@ public class CommonPages extends ActionType{
 			int randomDay = 1 + random.nextInt(randomFutureDate.lengthOfMonth());
 			element.click();
 			yearSelection.click();
+			
 			DateValue(String.valueOf(randomYear)).click();
 			//MonthSelection.click();
+			
 			DateValue(getMonthName(randomMonth)).click();
-			StaticWait(2);
-			JavascriptExecutor js=(JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click()", DateValue(String.valueOf(randomDay)));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5)); 
+			wait.until(ExpectedConditions.elementToBeClickable(DateValue(String.valueOf(randomDay))));
+			wait.until(ExpectedConditions.visibilityOf(DateValue(String.valueOf(randomDay))));
+			JavascriptExecutor js1=(JavascriptExecutor) driver;
+			js1.executeScript("arguments[0].click()", DateValue(String.valueOf(randomDay)));
 			//DateValue(String.valueOf(randomDay)).click();
 
 		} catch (ElementClickInterceptedException e) {
-			System.out.println("e");
+			System.out.println(e.getMessage());
+		}
+		catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 		
 	}
@@ -217,16 +228,19 @@ public class CommonPages extends ActionType{
 	        int CurrentDate=currentDate.getDayOfMonth();
 	        element.click();
 			yearSelection.click();
+		
 			DateValue(String.valueOf(currentYear)).click();
 			//MonthSelection.click();
+			
 			DateValue(getMonthName(CurrentMonth)).click();
+			
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5)); 
+			wait.until(ExpectedConditions.elementToBeClickable(DateValue(String.valueOf(CurrentDate))));
+			wait.until(ExpectedConditions.visibilityOf(DateValue(String.valueOf(CurrentDate))));
+			
 			JavascriptExecutor js=(JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click()", DateValue(String.valueOf(CurrentDate)));
-//			
-//	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-//	        String formattedDate = currentDate.format(formatter);
-//	        return formattedDate;
-	   
+
 		} catch (ElementClickInterceptedException e) {
 			System.out.println("e");
 		}
@@ -241,6 +255,63 @@ public class CommonPages extends ActionType{
 	        }
 	    } catch (ElementClickInterceptedException e) {
 	        e.printStackTrace();
+	    }
+	}
+	
+	
+	public void scrollToElementWithRetry(WebElement element) {
+	    int retries = 10;
+	    while (retries > 0) {
+	        try {
+	            JavascriptExecutor js = (JavascriptExecutor) driver;
+	            js.executeScript("arguments[0].scrollIntoView(true);", element);
+	            break; // Exit the loop if the scroll is successful
+	        } catch (StaleElementReferenceException e) {
+	            System.out.println("Stale Element, retrying...");
+	            retries--;
+	            if (retries == 0) {
+	                System.out.println("Element is stale after retries, failing.");
+	            }
+	        }
+	    }
+	}
+
+	
+	
+	public void scrollToBottomAndClick(WebElement targetElement) {
+	    try {
+	        JavascriptExecutor js = (JavascriptExecutor) driver;
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	        int scrollCount = 0;
+	        int maxScrollCount = 5;
+	        boolean isScrollComplete = false;
+
+	        while (!isScrollComplete && scrollCount < maxScrollCount) {
+	         
+	            js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+	            StaticWait(2);
+
+	            try {
+	                wait.until(ExpectedConditions.elementToBeClickable(targetElement));
+	                js.executeScript("arguments[0].scrollIntoView(true);", targetElement);
+	                targetElement.click();
+	                isScrollComplete = true;
+	            } catch (StaleElementReferenceException e) {
+	               
+	                System.out.println("StaleElementReferenceException caught, retrying scroll...");
+	                scrollCount++;
+	            } catch (Exception e) {
+	                System.out.println("Exception while clicking the target element: " + e.getMessage());
+	                break;
+	            }
+	        }	       
+	        if (!isScrollComplete) {
+	            js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+	            StaticWait(2);
+	        }
+	    } catch (Exception e) {
+	        System.out.println("Error during scroll to bottom: " + e.getMessage());
 	    }
 	}
 }

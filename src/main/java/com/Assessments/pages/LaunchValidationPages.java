@@ -43,9 +43,15 @@ public class LaunchValidationPages extends ActionType {
 	@FindBy(how=How.XPATH,using="//mat-icon[text()='close']/parent::span")private WebElement CloseIcon;
 	@FindBy(how=How.XPATH,using="//iframe[@class='iframe-styling ng-star-inserted']")private WebElement iFrame;
 
+	@FindBy(how=How.XPATH,using="//div[contains(text(),'EXAM')]")private WebElement ExamTab;
+
+
 
 	@FindBy(how = How.XPATH, using = "//cdk-nested-tree-node[@role='treeitem']/child::div/child::div[2]/cdk-nested-tree-node/child::div/child::small/following::div/child::span/child::mat-icon")
 	private List<WebElement> Quizzeslist;
+
+	@FindBy(how = How.XPATH, using = "//small[@class='announce__list--icon']")
+	private List<WebElement> examsList;
 
 
 	public LaunchValidationPages(WebDriver driver) {
@@ -56,18 +62,36 @@ public class LaunchValidationPages extends ActionType {
 
 
 	public void clickEachQuizAndClose() {
-	    System.out.println("Total Quizzes: " + Quizzeslist.size());
+		System.out.println("Total Quizzes: " + Quizzeslist.size());
 
-	    for (int i = 0; i < Quizzeslist.size(); i++) {
-	        WebElement quiz = Quizzeslist.get(i);
-	        JavascriptExecutor js = (JavascriptExecutor) driver;
-	        js.executeScript("arguments[0].click()", quiz);
-	        StaticWait(2);
+		for (int i = 0; i < Quizzeslist.size(); i++) {
+			WebElement quiz = Quizzeslist.get(i);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click()", quiz);
+			StaticWait(2);
 
-	        JavascriptExecutor js1 = (JavascriptExecutor) driver;
-	        js1.executeScript("arguments[0].click()", CloseIcon);
-	        StaticWait(1); 
-	    }
+			if(BeginTest.isDisplayed()) {
+
+				JavascriptExecutor js1 = (JavascriptExecutor) driver;
+				js1.executeScript("arguments[0].click()", CloseIcon);
+				StaticWait(1); }
+		}
+	}
+	public void clickEachExamAndClose() {
+		System.out.println("Total exams: " + examsList.size());
+		ExamTab.click();
+		for (int i = 0; i < examsList.size(); i++) {
+			WebElement quiz = examsList.get(i);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click()", quiz);
+			StaticWait(2);
+
+		
+
+				JavascriptExecutor js1 = (JavascriptExecutor) driver;
+				js1.executeScript("arguments[0].click()", CloseIcon);
+				StaticWait(1); }
+		
 	}
 }
 

@@ -7,7 +7,7 @@ Feature: Performing Exam at student side
     And User is on homepage
     Then user clicks on Learning and assessment center
     Then user clicks on the classroom name <rownumber1> <rownumber2>
-    Then user clicks on Exam tab
+    Then user clicks on benchmarks tab
     And User will launch and submit all Exams
 
     Examples: 

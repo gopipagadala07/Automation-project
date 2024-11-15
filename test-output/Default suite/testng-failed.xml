@@ -3,15 +3,23 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="AssessmentsRunner.Provide_ScoreRunner">
+=======
+      <class name="AssessmentsRunner.QuizSubmissionRunner">
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
         <methods>
           <include name="setUpClass"/>
-          <include name="beforeClass"/>
+          <include name="afterClass"/>
           <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
-          <include name="afterClass"/>
+          <include name="beforeClass"/>
         </methods>
+<<<<<<< HEAD
       </class> <!-- AssessmentsRunner.Provide_ScoreRunner -->
+=======
+      </class> <!-- AssessmentsRunner.QuizSubmissionRunner -->
+>>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
