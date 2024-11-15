@@ -1,13 +1,18 @@
 package com.Assessments.pages;
+
+import java.time.Duration;
+import java.util.concurrent.TimeoutException;
 import java.awt.AWTException;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Wait;
@@ -56,19 +61,19 @@ public class LoginPage extends ActionType{
 		driver.findElement(username).sendKeys(FT+"."+LT+"."+Tid);
 	}
 
+	public void header() {
+		try {
+            WebElement idServerAllow = driver.findElement(By.xpath("//button[@value='yes']"));
+            if (idServerAllow.isDisplayed()) {
+                idServerAllow.click();
+            }
+        } catch (NoSuchElementException e) {
+          
+        }
+        WebElement cls = driver.findElement(By.xpath("//button[@type='button']"));
+        cls.click();
+	}
 
-	public void header() 
-	{
-		
-	
-		WebElement cls=driver.findElement(close);
-			wait.elementToBeClickable(cls);
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click();", cls);		
-
-   
-
-    }
 	public void loginbtn()
 	{
 		driver.findElement(Login).click();
