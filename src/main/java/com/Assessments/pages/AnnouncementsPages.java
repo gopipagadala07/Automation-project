@@ -36,12 +36,9 @@ public class AnnouncementsPages extends ActionType {
 
 	//private static final String[] AnnouncementName = null;
 	CommonPages cp=new CommonPages(Base.getDriver());
-	private String announcementName;
-	private	List<String> announcementNames = new ArrayList<>(); // Initialize the list
-	//	String classroomName;
-	//	String sectionName;
-	//	String lastname;
-	//	String firstname;
+	static String announcementName;
+	static	List<String> announcementNames = new ArrayList<>();
+	static String sectionName;
 	//String selectedAnnouncement;
 
 
@@ -101,7 +98,7 @@ public class AnnouncementsPages extends ActionType {
 	}
 	public void ClickOnAddNewAnnouncement() {
 
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 11; i++) {
 			try {
 
 				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));

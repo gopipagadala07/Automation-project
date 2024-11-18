@@ -107,12 +107,12 @@ public class CommonPages extends ActionType{
 			Actions actions = new Actions(driver);
 			actions.moveToElement(element).click().build().perform();
 //			element.click();
-			System.out.println(visibleText +"---------------------------");
+//			System.out.println(visibleText +"---------------------------");
 			List<WebElement> options =element.findElements(By.xpath("following::div[@role='listbox']/mat-option"));
 			for(WebElement option:options) {
 				String actual = option.getText().trim();
-					System.out.println(actual);
-				if(actual.equals(visibleText)) {
+//					System.out.println(actual);
+				if(actual.contains(visibleText)) {
 					Actions a=new Actions(driver);
 					a.moveToElement(option);
 					option.click();

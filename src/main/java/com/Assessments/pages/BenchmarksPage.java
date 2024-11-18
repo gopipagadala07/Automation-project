@@ -193,7 +193,7 @@ public class BenchmarksPage extends ActionType {
 	public void clickOnSectionTab() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		int retries = 0;
-		int maxRetries = 3;
+		int maxRetries = 1;
 
 		while (retries < maxRetries) {
 			try {
@@ -269,6 +269,7 @@ public class BenchmarksPage extends ActionType {
 			if (ToggleActive.isDisplayed())
 			{
 				wait.elementToBeClickable(ToggleActive);
+				wait.visibilityOf(ToggleActive);
 				Actions actions = new Actions(driver);
 				actions.moveToElement(ToggleActive).click().perform(); 
 				wait.elementToBeClickable(ClickOnYEs);

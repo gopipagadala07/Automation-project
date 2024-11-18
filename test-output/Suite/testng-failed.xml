@@ -1,45 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-<<<<<<< HEAD
-  <test thread-count="5" name="Test1(failed)">
-    <parameter name="browser" value="chrome"/>
-=======
   <test thread-count="5" name="Test(failed)">
->>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+    <parameter name="browser" value="chrome"/>
     <classes>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-      <class name="AssessmentsRunner.Benchmark_ScoringRunner">
-        <methods>
-          <include name="afterClass"/>
-          <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- AssessmentsRunner.Benchmark_ScoringRunner -->
-      <class name="AssessmentsRunner.Benchmark_TeacherRunner">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="afterClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- AssessmentsRunner.Benchmark_TeacherRunner -->
-=======
->>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-      <class name="AssessmentsRunner.BenchmarksRunner">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="1"/>
-          <include name="afterClass"/>
-          <include name="tearDownClass"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- AssessmentsRunner.BenchmarksRunner -->
       <class name="AssessmentsRunner.AnnouncementsRunner">
         <methods>
           <include name="setUpClass"/>
@@ -49,105 +13,33 @@
           <include name="afterClass"/>
         </methods>
       </class> <!-- AssessmentsRunner.AnnouncementsRunner -->
-<<<<<<< HEAD
-=======
-      <class name="Runners.Location_Runner"/>
-      <class name="Runners.Users_Creation_Runner"/>
-      <class name="Runners.Examinations_Schedule_runner"/>
-      <class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"/>
-      <class name="Runners.AssessmentSubmissionRunner"/>
-      <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
-      <class name="Runners.AssessmentSubmissionRunner"/>
-      <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
-      <class name="Runners.EnrolleRunner"/>
-      <class name="Runners.BulkUploadRunner"/>
->>>>>>> branch 'AssessmentCenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-=======
->>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
->>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-    </classes>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  </test> <!-- Test1(failed) -->
-=======
->>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-  </test> <!-- Test(failed) -->
-<<<<<<< HEAD
-=======
-  </test> <!-- Test1 -->
-  <test parallel="none" name="Test1(failed)">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner">
+      <class name="AssessmentsRunner.PerformingExamRunner">
         <methods>
-          <include name="testDownClass"/>
-          <include name="tearDownClass"/>
-          <include name="beforeclass"/>
           <include name="setUpClass"/>
-        </methods>
-      </class> <!-- Runners.Enrolled_ExamTaker_in_a_TimeSlotRunner -->
-      <class name="Runners.EnrolleRunner">
-        <methods>
-          <include name="afterClass"/>
-          <include name="beforeClass"/>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- Runners.EnrolleRunner -->
-      <class name="Runners.AssessmentSubmissionRunner">
-        <methods>
-          <include name="afterClass"/>
           <include name="beforeClass"/>
           <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
-          <include name="setUpClass"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- Runners.AssessmentSubmissionRunner -->
-      <class name="Runners.Location_Runner">
+      </class> <!-- AssessmentsRunner.PerformingExamRunner -->
+      <class name="AssessmentsRunner.BenchmarksRunner">
         <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownClass"/>
-          <include name="testDownClass"/>
           <include name="setUpClass"/>
-        </methods>
-      </class> <!-- Runners.Location_Runner -->
-      <class name="Runners.BulkUploadRunner">
-        <methods>
-          <include name="beforeClass"/>
           <include name="tearDownClass"/>
           <include name="afterClass"/>
-          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0 1"/>
+          <include name="beforeClass"/>
         </methods>
-      </class> <!-- Runners.BulkUploadRunner -->
-      <class name="Runners.Users_Creation_Runner">
+      </class> <!-- AssessmentsRunner.BenchmarksRunner -->
+      <class name="AssessmentsRunner.SISprovisioningRunner">
         <methods>
-          <include name="Afterclass"/>
-          <include name="tearDownClass"/>
-          <include name="beforeclass"/>
           <include name="setUpClass"/>
-        </methods>
-      </class> <!-- Runners.Users_Creation_Runner -->
-      <class name="Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
-        <methods>
-          <include name="testDownClass"/>
+          <include name="afterClass"/>
           <include name="tearDownClass"/>
-          <include name="beforeclass"/>
-          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="1"/>
+          <include name="beforeClass"/>
         </methods>
-      </class> <!-- Runners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
-      <class name="Runners.Examinations_Schedule_runner">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="beforeclass"/>
-          <include name="testDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- Runners.Examinations_Schedule_runner -->
+      </class> <!-- AssessmentsRunner.SISprovisioningRunner -->
     </classes>
-  </test> <!-- Test1(failed) -->
->>>>>>> branch 'AssessmentCenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-=======
->>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
->>>>>>> branch 'Assessmentcenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
