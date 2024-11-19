@@ -36,7 +36,7 @@
           <include name="setUpClass"/>
           <include name="afterClass"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="1"/>
+          <include name="runScenario" invocation-numbers="0 1"/>
           <include name="beforeClass"/>
         </methods>
       </class> <!-- AssessmentsRunner.SISprovisioningRunner -->

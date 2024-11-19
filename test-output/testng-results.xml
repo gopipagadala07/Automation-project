@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="1" failed="5" skipped="0">
+<testng-results ignored="0" total="6" passed="0" failed="6" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-18T17:01:47 IST" name="Suite" finished-at="2024-11-18T17:08:06 IST" duration-ms="379121">
+  <suite started-at="2024-11-19T10:40:06 IST" name="Suite" finished-at="2024-11-19T10:40:13 IST" duration-ms="7051">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@723ca036]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.BenchmarksRunner@304bb45b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.PerformingExamRunner@25be7b63]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@35841320]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@7ae0a9ec]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-11-18T17:01:47 IST" name="Test" finished-at="2024-11-18T17:08:06 IST" duration-ms="379121">
+    <test started-at="2024-11-19T10:40:06 IST" name="Test" finished-at="2024-11-19T10:40:13 IST" duration-ms="7051">
       <class name="AssessmentsRunner.AnnouncementsRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@723ca036]" started-at="2024-11-18T17:06:33 IST" name="setUpClass" finished-at="2024-11-18T17:06:33 IST" duration-ms="16" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@723ca036]" started-at="2024-11-19T10:40:12 IST" name="setUpClass" finished-at="2024-11-19T10:40:12 IST" duration-ms="18" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@24e0bdb]]>
+                <![CDATA[org.testng.TestRunner@12d2ddde]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@723ca036]" started-at="2024-11-18T17:06:33 IST" name="beforeClass" finished-at="2024-11-18T17:06:33 IST" duration-ms="15" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@723ca036]" started-at="2024-11-19T10:40:12 IST" name="beforeClass" finished-at="2024-11-19T10:40:12 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@723ca036]" started-at="2024-11-18T17:06:33 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-18T17:07:34 IST" duration-ms="60947" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@723ca036]" started-at="2024-11-19T10:40:12 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-19T10:40:12 IST" duration-ms="22" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -41,71 +41,16 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
+          <exception class="io.cucumber.core.runner.DuplicateStepDefinitionException">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //mat-icon[contains(text(),' school ')]' (tried for 30 second(s) with 1000 milliseconds interval)]]>
+              <![CDATA[Duplicate step definitions in AssessmentsStepdef.QuizCreationStepdefinitions.select_the_start_date_and_due_date_by_using_date_picker_icon() and AssessmentsStepdef.Quiz_creationStepDefination.select_the_start_date_and_due_date_by_using_date_picker_icon()]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //mat-icon[contains(text(),' school ')]' (tried for 30 second(s) with 1000 milliseconds interval)
-at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.Utils.Wait.elementToBeClickable(Wait.java:30)
-at com.Assessments.pages.AnnouncementsPages.ClickOnLearningaAndAssessmentCenter(AnnouncementsPages.java:88)
-at AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_learning_and_assessment_center(AnnouncementsStepdefinitions.java:37)
-at ✽.user clicks on Learning and assessment center(file:///C:/Users/SureshRajaboina/OneDrive%20-%20FocalPointK12,%20Inc/Focalpoint%20Automation/Benchmarks_AC/src/test/resources/AssessmentsFeatures/Announcements.feature:8)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//mat-icon[contains(text(),' school ')]"}
-  (Session info: chrome=131.0.6778.69)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ce3a9d3df4db0f8ad4e7624c9035a84f, findElement {value=//mat-icon[contains(text(),' school ')], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.69, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57064}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57064/devtoo..., se:cdpVersion: 131.0.6778.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ce3a9d3df4db0f8ad4e7624c9035a84f
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy28.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-at com.Utils.Wait.elementToBeClickable(Wait.java:30)
-at com.Assessments.pages.AnnouncementsPages.ClickOnLearningaAndAssessmentCenter(AnnouncementsPages.java:88)
-at AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_learning_and_assessment_center(AnnouncementsStepdefinitions.java:37)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
-at io.cucumber.java.Invoker.invoke(Invoker.java:24)
-at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
-at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
-at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
-at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
-at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
-at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
-at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
-at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+              <![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in AssessmentsStepdef.QuizCreationStepdefinitions.select_the_start_date_and_due_date_by_using_date_picker_icon() and AssessmentsStepdef.Quiz_creationStepDefination.select_the_start_date_and_due_date_by_using_date_picker_icon()
+at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
 at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
 at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
 at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
@@ -142,36 +87,36 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- io.cucumber.core.runner.DuplicateStepDefinitionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@723ca036]" started-at="2024-11-18T17:07:34 IST" name="tearDownClass" finished-at="2024-11-18T17:07:36 IST" duration-ms="1677" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@723ca036]" started-at="2024-11-18T17:07:34 IST" name="afterClass" finished-at="2024-11-18T17:07:34 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@723ca036]" started-at="2024-11-19T10:40:12 IST" name="afterClass" finished-at="2024-11-19T10:40:12 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@723ca036]" started-at="2024-11-19T10:40:12 IST" name="tearDownClass" finished-at="2024-11-19T10:40:13 IST" duration-ms="710" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
       </class> <!-- AssessmentsRunner.AnnouncementsRunner -->
       <class name="AssessmentsRunner.PerformingExamRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.PerformingExamRunner@25be7b63]" started-at="2024-11-18T17:07:36 IST" name="setUpClass" finished-at="2024-11-18T17:07:36 IST" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.PerformingExamRunner@25be7b63]" started-at="2024-11-19T10:40:13 IST" name="setUpClass" finished-at="2024-11-19T10:40:13 IST" duration-ms="16" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@24e0bdb]]>
+                <![CDATA[org.testng.TestRunner@12d2ddde]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.PerformingExamRunner@25be7b63]" started-at="2024-11-18T17:07:36 IST" name="beforeClass" finished-at="2024-11-18T17:07:36 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.PerformingExamRunner@25be7b63]" started-at="2024-11-19T10:40:13 IST" name="beforeClass" finished-at="2024-11-19T10:40:13 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.PerformingExamRunner@25be7b63]" started-at="2024-11-18T17:07:36 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-18T17:08:04 IST" duration-ms="28495" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.PerformingExamRunner@25be7b63]" started-at="2024-11-19T10:40:13 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-19T10:40:13 IST" duration-ms="20" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -184,78 +129,82 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="io.cucumber.core.runner.DuplicateStepDefinitionException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[@type='button']"}
-  (Session info: chrome=131.0.6778.69)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f8921080440758756b3c74db9e0bb3cb, findElement {value=//button[@type='button'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.69, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57104}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57104/devtoo..., se:cdpVersion: 131.0.6778.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f8921080440758756b3c74db9e0bb3cb]]>
+              <![CDATA[Duplicate step definitions in AssessmentsStepdef.QuizCreationStepdefinitions.select_the_start_date_and_due_date_by_using_date_picker_icon() and AssessmentsStepdef.Quiz_creationStepDefination.select_the_start_date_and_due_date_by_using_date_picker_icon()]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@type='button']"}
-  (Session info: chrome=131.0.6778.69)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f8921080440758756b3c74db9e0bb3cb, findElement {value=//button[@type='button'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.69, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57104}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57104/devtoo..., se:cdpVersion: 131.0.6778.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f8921080440758756b3c74db9e0bb3cb
-at jdk.internal.reflect.GeneratedConstructorAccessor54.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at com.Assessments.pages.LoginPage.header(LoginPage.java:64)
-at AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage(LoginStepdefinintions.java:48)
-at ✽.User is on homepage(file:///C:/Users/SureshRajaboina/OneDrive%20-%20FocalPointK12,%20Inc/Focalpoint%20Automation/Benchmarks_AC/src/test/resources/AssessmentsFeatures/PerformingExam.feature:7)
+              <![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in AssessmentsStepdef.QuizCreationStepdefinitions.select_the_start_date_and_due_date_by_using_date_picker_icon() and AssessmentsStepdef.Quiz_creationStepDefination.select_the_start_date_and_due_date_by_using_date_picker_icon()
+at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- io.cucumber.core.runner.DuplicateStepDefinitionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.PerformingExamRunner@25be7b63]" started-at="2024-11-18T17:08:04 IST" name="afterClass" finished-at="2024-11-18T17:08:04 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.PerformingExamRunner@25be7b63]" started-at="2024-11-19T10:40:13 IST" name="afterClass" finished-at="2024-11-19T10:40:13 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.PerformingExamRunner@25be7b63]" started-at="2024-11-18T17:08:04 IST" name="tearDownClass" finished-at="2024-11-18T17:08:06 IST" duration-ms="1662" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.PerformingExamRunner@25be7b63]" started-at="2024-11-19T10:40:13 IST" name="tearDownClass" finished-at="2024-11-19T10:40:13 IST" duration-ms="634" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- AssessmentsRunner.PerformingExamRunner -->
       <class name="AssessmentsRunner.BenchmarksRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.BenchmarksRunner@304bb45b]" started-at="2024-11-18T17:04:26 IST" name="setUpClass" finished-at="2024-11-18T17:04:26 IST" duration-ms="18" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.BenchmarksRunner@304bb45b]" started-at="2024-11-19T10:40:11 IST" name="setUpClass" finished-at="2024-11-19T10:40:11 IST" duration-ms="17" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@24e0bdb]]>
+                <![CDATA[org.testng.TestRunner@12d2ddde]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.BenchmarksRunner@304bb45b]" started-at="2024-11-18T17:04:26 IST" name="beforeClass" finished-at="2024-11-18T17:04:26 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.BenchmarksRunner@304bb45b]" started-at="2024-11-19T10:40:11 IST" name="beforeClass" finished-at="2024-11-19T10:40:11 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.BenchmarksRunner@304bb45b]" started-at="2024-11-18T17:04:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-18T17:05:28 IST" duration-ms="61817" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.BenchmarksRunner@304bb45b]" started-at="2024-11-19T10:40:11 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-19T10:40:11 IST" duration-ms="21" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -268,71 +217,16 @@ at ✽.User is on homepage(file:///C:/Users/SureshRajaboina/OneDrive%20-%20Focal
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
+          <exception class="io.cucumber.core.runner.DuplicateStepDefinitionException">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'District')]' (tried for 30 second(s) with 1000 milliseconds interval)]]>
+              <![CDATA[Duplicate step definitions in AssessmentsStepdef.QuizCreationStepdefinitions.select_the_start_date_and_due_date_by_using_date_picker_icon() and AssessmentsStepdef.Quiz_creationStepDefination.select_the_start_date_and_due_date_by_using_date_picker_icon()]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'District')]' (tried for 30 second(s) with 1000 milliseconds interval)
-at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.Utils.Wait.elementToBeClickable(Wait.java:30)
-at com.Assessments.pages.BenchmarksPage.Disttab(BenchmarksPage.java:98)
-at AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_districts(BenchmarkStepdefinitions.java:34)
-at ✽.the user clicks on the Districts(file:///C:/Users/SureshRajaboina/OneDrive%20-%20FocalPointK12,%20Inc/Focalpoint%20Automation/Benchmarks_AC/src/test/resources/AssessmentsFeatures/Benchmarks.feature:8)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'District')]"}
-  (Session info: chrome=131.0.6778.69)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [44f74354564aeeead3ebc46ce235aa6b, findElement {value=//span[contains(text(),'District')], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.69, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56980}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56980/devtoo..., se:cdpVersion: 131.0.6778.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 44f74354564aeeead3ebc46ce235aa6b
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy28.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-at com.Utils.Wait.elementToBeClickable(Wait.java:30)
-at com.Assessments.pages.BenchmarksPage.Disttab(BenchmarksPage.java:98)
-at AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_districts(BenchmarkStepdefinitions.java:34)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
-at io.cucumber.java.Invoker.invoke(Invoker.java:24)
-at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
-at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
-at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
-at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
-at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
-at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
-at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
-at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+              <![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in AssessmentsStepdef.QuizCreationStepdefinitions.select_the_start_date_and_due_date_by_using_date_picker_icon() and AssessmentsStepdef.Quiz_creationStepDefination.select_the_start_date_and_due_date_by_using_date_picker_icon()
+at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
 at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
 at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
 at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
@@ -369,11 +263,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- io.cucumber.core.runner.DuplicateStepDefinitionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.BenchmarksRunner@304bb45b]" started-at="2024-11-18T17:05:28 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-18T17:06:28 IST" duration-ms="60536" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.BenchmarksRunner@304bb45b]" started-at="2024-11-19T10:40:11 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-19T10:40:11 IST" duration-ms="24" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -386,71 +280,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
+          <exception class="io.cucumber.core.runner.DuplicateStepDefinitionException">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'District')]' (tried for 30 second(s) with 1000 milliseconds interval)]]>
+              <![CDATA[Duplicate step definitions in AssessmentsStepdef.QuizCreationStepdefinitions.select_the_start_date_and_due_date_by_using_date_picker_icon() and AssessmentsStepdef.Quiz_creationStepDefination.select_the_start_date_and_due_date_by_using_date_picker_icon()]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),'District')]' (tried for 30 second(s) with 1000 milliseconds interval)
-at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.Utils.Wait.elementToBeClickable(Wait.java:30)
-at com.Assessments.pages.BenchmarksPage.Disttab(BenchmarksPage.java:98)
-at AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_districts(BenchmarkStepdefinitions.java:34)
-at ✽.the user clicks on the Districts(file:///C:/Users/SureshRajaboina/OneDrive%20-%20FocalPointK12,%20Inc/Focalpoint%20Automation/Benchmarks_AC/src/test/resources/AssessmentsFeatures/Benchmarks.feature:35)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'District')]"}
-  (Session info: chrome=131.0.6778.69)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [474821118e1ee0e4d607c29b4943ca70, findElement {value=//span[contains(text(),'District')], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.69, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57023}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57023/devtoo..., se:cdpVersion: 131.0.6778.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 474821118e1ee0e4d607c29b4943ca70
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy28.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-at com.Utils.Wait.elementToBeClickable(Wait.java:30)
-at com.Assessments.pages.BenchmarksPage.Disttab(BenchmarksPage.java:98)
-at AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_districts(BenchmarkStepdefinitions.java:34)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
-at io.cucumber.java.Invoker.invoke(Invoker.java:24)
-at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
-at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
-at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
-at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
-at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
-at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
-at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
-at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+              <![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in AssessmentsStepdef.QuizCreationStepdefinitions.select_the_start_date_and_due_date_by_using_date_picker_icon() and AssessmentsStepdef.Quiz_creationStepDefination.select_the_start_date_and_due_date_by_using_date_picker_icon()
+at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
 at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
 at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
 at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
@@ -487,36 +326,36 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- io.cucumber.core.runner.DuplicateStepDefinitionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.BenchmarksRunner@304bb45b]" started-at="2024-11-18T17:06:28 IST" name="afterClass" finished-at="2024-11-18T17:06:28 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.BenchmarksRunner@304bb45b]" started-at="2024-11-19T10:40:11 IST" name="afterClass" finished-at="2024-11-19T10:40:11 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.BenchmarksRunner@304bb45b]" started-at="2024-11-18T17:06:28 IST" name="tearDownClass" finished-at="2024-11-18T17:06:33 IST" duration-ms="4988" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.BenchmarksRunner@304bb45b]" started-at="2024-11-19T10:40:11 IST" name="tearDownClass" finished-at="2024-11-19T10:40:12 IST" duration-ms="588" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- AssessmentsRunner.BenchmarksRunner -->
       <class name="AssessmentsRunner.SISprovisioningRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@35841320]" started-at="2024-11-18T17:01:47 IST" name="setUpClass" finished-at="2024-11-18T17:01:48 IST" duration-ms="1282" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@7ae0a9ec]" started-at="2024-11-19T10:40:06 IST" name="setUpClass" finished-at="2024-11-19T10:40:08 IST" duration-ms="1880" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@24e0bdb]]>
+                <![CDATA[org.testng.TestRunner@12d2ddde]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@35841320]" started-at="2024-11-18T17:01:48 IST" name="beforeClass" finished-at="2024-11-18T17:01:48 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@7ae0a9ec]" started-at="2024-11-19T10:40:08 IST" name="beforeClass" finished-at="2024-11-19T10:40:08 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@35841320]" started-at="2024-11-18T17:01:48 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-18T17:02:34 IST" duration-ms="46132" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@7ae0a9ec]" started-at="2024-11-19T10:40:08 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-19T10:40:08 IST" duration-ms="175" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -529,87 +368,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@35841320]" started-at="2024-11-18T17:02:34 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-18T17:04:21 IST" duration-ms="106482" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Verify the Users Creation Functionality with valid Data"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Verify the SIS Provisioning Creation Functionality"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.TimeoutException">
+          <exception class="io.cucumber.core.runner.DuplicateStepDefinitionException">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //mat-icon[contains(text(),'more_vert')]' (tried for 30 second(s) with 1000 milliseconds interval)]]>
+              <![CDATA[Duplicate step definitions in AssessmentsStepdef.QuizCreationStepdefinitions.select_the_start_date_and_due_date_by_using_date_picker_icon() and AssessmentsStepdef.Quiz_creationStepDefination.select_the_start_date_and_due_date_by_using_date_picker_icon()]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //mat-icon[contains(text(),'more_vert')]' (tried for 30 second(s) with 1000 milliseconds interval)
-at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.Utils.Wait.elementToBeClickable(Wait.java:30)
-at com.Assessments.pages.SISProvisioningPage.EditScreen(SISProvisioningPage.java:259)
-at AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_edit_option_for_logins_creations(SISProvisioningStepdefinitions.java:139)
-at ✽.user Click on Edit option for Logins Creations(file:///C:/Users/SureshRajaboina/OneDrive%20-%20FocalPointK12,%20Inc/Focalpoint%20Automation/Benchmarks_AC/src/test/resources/AssessmentsFeatures/SIS%20Provisioning.feature:66)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//mat-icon[contains(text(),'more_vert')]"}
-  (Session info: chrome=131.0.6778.69)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [95ff26dde46db856d857f7dbc2707040, findElement {value=//mat-icon[contains(text(),'more_vert')], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.69, chrome: {chromedriverVersion: 131.0.6778.69 (77e2244bbcda..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56931}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56931/devtoo..., se:cdpVersion: 131.0.6778.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 95ff26dde46db856d857f7dbc2707040
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy28.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-at com.Utils.Wait.elementToBeClickable(Wait.java:30)
-at com.Assessments.pages.SISProvisioningPage.EditScreen(SISProvisioningPage.java:259)
-at AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_edit_option_for_logins_creations(SISProvisioningStepdefinitions.java:139)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
-at io.cucumber.java.Invoker.invoke(Invoker.java:24)
-at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
-at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
-at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
-at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
-at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
-at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
-at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
-at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+              <![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in AssessmentsStepdef.QuizCreationStepdefinitions.select_the_start_date_and_due_date_by_using_date_picker_icon() and AssessmentsStepdef.Quiz_creationStepDefination.select_the_start_date_and_due_date_by_using_date_picker_icon()
+at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
 at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
 at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
 at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
@@ -646,18 +414,81 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- io.cucumber.core.runner.DuplicateStepDefinitionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@35841320]" started-at="2024-11-18T17:04:21 IST" name="tearDownClass" finished-at="2024-11-18T17:04:26 IST" duration-ms="4968" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@7ae0a9ec]" started-at="2024-11-19T10:40:08 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-11-19T10:40:08 IST" duration-ms="31" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify the Users Creation Functionality with valid Data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify the SIS Provisioning Creation Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.core.runner.DuplicateStepDefinitionException">
+            <message>
+              <![CDATA[Duplicate step definitions in AssessmentsStepdef.QuizCreationStepdefinitions.select_the_start_date_and_due_date_by_using_date_picker_icon() and AssessmentsStepdef.Quiz_creationStepDefination.select_the_start_date_and_due_date_by_using_date_picker_icon()]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in AssessmentsStepdef.QuizCreationStepdefinitions.select_the_start_date_and_due_date_by_using_date_picker_icon() and AssessmentsStepdef.Quiz_creationStepDefination.select_the_start_date_and_due_date_by_using_date_picker_icon()
+at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:278)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:272)
+at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)
+at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.core.runner.DuplicateStepDefinitionException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownClass -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@35841320]" started-at="2024-11-18T17:04:21 IST" name="afterClass" finished-at="2024-11-18T17:04:21 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@7ae0a9ec]" started-at="2024-11-19T10:40:08 IST" name="afterClass" finished-at="2024-11-19T10:40:08 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@7ae0a9ec]" started-at="2024-11-19T10:40:08 IST" name="tearDownClass" finished-at="2024-11-19T10:40:11 IST" duration-ms="2777" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
       </class> <!-- AssessmentsRunner.SISprovisioningRunner -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
