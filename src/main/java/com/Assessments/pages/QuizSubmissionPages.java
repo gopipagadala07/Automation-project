@@ -258,7 +258,6 @@ public class QuizSubmissionPages extends ActionType {
 		s.executeScript("arguments[0].scrollIntoView(true);", ScrollTop);
 		StaticWait(2);
 	}
-
 	public void ClickOnLaunchAndCompleteTest() throws AWTException, InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));  
 		List<WebElement> matIcon;

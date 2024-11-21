@@ -69,13 +69,10 @@ public class LaunchValidationPages extends ActionType {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click()", quiz);
 			StaticWait(2);
-
-			if(BeginTest.isDisplayed()) {
-
 				JavascriptExecutor js1 = (JavascriptExecutor) driver;
 				js1.executeScript("arguments[0].click()", CloseIcon);
 				StaticWait(1); }
-		}
+		
 	}
 	public void clickEachExamAndClose() {
 		System.out.println("Total exams: " + examsList.size());
@@ -86,14 +83,12 @@ public class LaunchValidationPages extends ActionType {
 			js.executeScript("arguments[0].click()", quiz);
 			StaticWait(2);
 
-		
-
 				JavascriptExecutor js1 = (JavascriptExecutor) driver;
 				js1.executeScript("arguments[0].click()", CloseIcon);
 				StaticWait(1); }
 		
 	}
-}
+	}
 
 
 

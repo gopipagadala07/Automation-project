@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test name="Test">
+		<parameter name="browser" value="chrome" />
+		<classes>
+
+			<class name="AssessmentsRunner.SISprovisioningRunner"></class>
+			<class name="AssessmentsRunner.BenchmarksRunner"></class>
+			<class name="AssessmentsRunner.QuizCreationRunner"></class>
+			<class name="AssessmentsRunner.Benchmark_TeacherRunner"></class>
+			<class name="AssessmentsRunner.AnnouncementsRunner"></class>
+
+			<class name="AssessmentsRunner.QuizSubmissionRunner"></class>
+			<class name="AssessmentsRunner.PerformingExamRunner"></class>
+			<class name="AssessmentsRunner.Provide_ScoreRunner"></class>
+			<class name="AssessmentsRunner.Benchmark_ScoringRunner"></class>
+			<class name="AssessmentsRunner.Teacher_ActivityprogressRunner"></class>
+
+			<!--<class name="AssessmentsRunner.LaunchValidationRunner"></class>-->
+
+
+		</classes>
+	</test> <!--
+	Test -->
+
+</suite> <!--
+Suite -->

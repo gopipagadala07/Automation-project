@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 import com.Assessments.pages.AnnouncementsPages;
 import com.Assessments.pages.BenchmarksPage;
 import com.Assessments.pages.CommonPages;
-import com.Assessments.pages.ExamSubmissionPages;
+import com.Assessments.pages.PerformingexamPages;
 import com.Assessments.pages.SISProvisioningPage;
 import com.Assessments.pages.QuizSubmissionPages;
 import com.Utils.ActionType;
@@ -28,7 +28,7 @@ import io.cucumber.java.en.When;
 public class ExamSubmissionStepdefinitions extends ActionType{
 	 
 
-	ExamSubmissionPages e=new ExamSubmissionPages(Base.getDriver());
+	PerformingexamPages e=new PerformingexamPages(Base.getDriver());
 	ExcelReader reader=new ExcelReader();
 	CommonPages cp=new CommonPages(Base.getDriver());
 	static List<Map<String, String>> testdata=null;

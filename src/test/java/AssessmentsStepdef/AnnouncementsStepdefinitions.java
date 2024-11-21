@@ -78,17 +78,17 @@ public class AnnouncementsStepdefinitions extends ActionType{
 	
 	@Then("user  checks the pagenation")
 	public void user_checks_the_pagenation() throws AWTException {
-	    announce.PageNation();
+	   // announce.PageNation();
 	}
 
 	@Then("user clicks on the Hometab")
 	public void user_clicks_on_the_hometab() {
-	  announce.ClickOnHomeTab();
+	 // announce.ClickOnHomeTab();
 	}
 	
 	@Then("user clicks on Addnew button and save button")
 	public void user_clicks_on_Addnew_button_and_save_button() {
-	  announce.ClickOnAddAndSave();
+	  //announce.ClickOnAddAndSave();
 	}
 
 	

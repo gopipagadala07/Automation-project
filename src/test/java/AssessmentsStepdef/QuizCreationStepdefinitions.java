@@ -51,12 +51,11 @@ public class QuizCreationStepdefinitions extends ActionType{
 
 	@Then("Create Child Objectives by Click on Root Goal Level Ellipses")
 	public void create_child_objective_by_click_on_root_goal_level_ellipses() throws Exception, Exception {
-
 		QP.ChildObjectivesCreation(); 
 	}
 
-	@And("Create the Quizzes by using Add new Quiz button{int}")
-	public void click_on_add_new_quiz_by_click_on_goal_level_ellipses(int row) throws InvalidFormatException, IOException {
+	@Then("Create the Quizzes by using Add new Quiz button{int}")
+	public void add_any_test_to_the_quiz(int row) throws Exception, IOException {
 		if(testdata==null)
 		{
 			testdata=reader.getData("/ExcelFiles/LoginDetails.xlsx",getSheetEnv());

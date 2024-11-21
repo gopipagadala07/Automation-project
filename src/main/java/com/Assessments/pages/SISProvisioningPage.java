@@ -1,11 +1,15 @@
 package com.Assessments.pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
@@ -255,14 +259,22 @@ public class SISProvisioningPage extends ActionType{
 		SLastName=randomNumberGenerator();
 		LastnameField.sendKeys(String.valueOf(SLastName));
 	}
-	public void EditScreen()
-	{
-		wait.elementToBeClickable(Ellipses);
-		wait.visibilityOf(Ellipses);
-		Ellipses.click();
-		wait.elementToBeClickable(Editoption);
-		Editoption.click();
+	public void EditScreen() {
+	    int attempts = 0;
+	    while (attempts++ < 5) {
+	        try {
+	        	WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+	            wait.until(ExpectedConditions.elementToBeClickable(Ellipses)).click();
+	            wait.until(ExpectedConditions.elementToBeClickable(Editoption)).click();
+	            return; 
+	        } catch (Exception e) {
+	            if (attempts < 5) try { Thread.sleep(500); } catch (InterruptedException ie) { Thread.currentThread().interrupt(); }
+	        }
+	    }
+	    throw new RuntimeException("Failed to perform EditScreen action after 5 attempts.");
 	}
+
+
 	public void CreateNewLogin()
 	{
 		wait.elementToBeClickable(CreateNewLoginbtn);
