@@ -204,11 +204,17 @@ public class CommonPages extends ActionType{
 			//MonthSelection.click();
 			
 			DateValue(getMonthName(randomMonth)).click();
+			StaticWait(2);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5)); 
 			wait.until(ExpectedConditions.elementToBeClickable(DateValue(String.valueOf(randomDay))));
 			wait.until(ExpectedConditions.visibilityOf(DateValue(String.valueOf(randomDay))));
-			JavascriptExecutor js1=(JavascriptExecutor) driver;
-			js1.executeScript("arguments[0].click()", DateValue(String.valueOf(randomDay)));
+			
+			WebElement dateElement = DateValue(String.valueOf(randomDay));
+			Actions actions = new Actions(driver);
+			actions.moveToElement(dateElement).click().perform();
+
+//			JavascriptExecutor js1=(JavascriptExecutor) driver;
+//			js1.executeScript("arguments[0].click()", DateValue(String.valueOf(randomDay)));
 			//DateValue(String.valueOf(randomDay)).click();
 
 		} catch (ElementClickInterceptedException e) {

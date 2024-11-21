@@ -179,6 +179,7 @@ public class PerformingexamPages extends ActionType {
 			wait.elementToBeClickable(Finish);
 			wait.visibilityOf(Finish);
 			Finish.click();
+			StaticWait(2);
 			wait.elementToBeClickable(Submit);
 			wait.visibilityOf(Submit);
 			Submit.click();

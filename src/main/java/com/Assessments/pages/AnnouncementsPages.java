@@ -143,7 +143,7 @@ public class AnnouncementsPages extends ActionType {
 			} catch (ElementClickInterceptedException e) {
 				System.out.println("Element click intercepted, retrying...");
 				StaticWait(1);
-				i--; // Retry the same iteration
+				i--; 
 			} catch (Exception e) {
 				System.out.println("Error while adding new announcement: " + e.getMessage());
 			}}}
@@ -172,6 +172,8 @@ public class AnnouncementsPages extends ActionType {
 		StaticWait(2);
 		wait.elementToBeClickable(nextpage);
 		wait.visibilityOf(nextpage);
+//		Dimension d=new Dimension(1920,1080);
+//		driver.manage().window().setSize(d);
 		nextpage.click();
 		StaticWait(2);
 

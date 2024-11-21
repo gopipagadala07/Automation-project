@@ -54,7 +54,7 @@ public class QuizCreationPages extends ActionType{
 	@FindBy(how = How.XPATH,using = "//iframe[@name='badgeFrame']")private WebElement BadgeFrame;
 	@FindBy(how = How.XPATH,using = "//i[@class='text']")private WebElement Itext;
 	//	@FindBy(how = How.XPATH,using = "(//button[@mattooltip='More Actions'])[2]/span/mat-icon")private WebElement childellipses;
-	//	@FindBy(how = How.XPATH,using = "//div[@class='course-unit selectedUnit']")private WebElement Allbtn;
+	@FindBy(how = How.XPATH,using = "//div[@class='course-unit selectedUnit']")private WebElement Allbtn;
 	@FindBy(how = How.XPATH,using = "//div[@class='leaning__course__tree_item']/div[2]/div[3]/button/span")private List<WebElement> Ellipsescount;
 
 	public WebElement getCommunityNameElement(String ClassroomName) {
@@ -107,145 +107,125 @@ public class QuizCreationPages extends ActionType{
 		a.moveToElement(AssessmentsTab).click().build().perform();
 	}
 
-	//	public void LoopChildObjective()
-	//	{		
-	//		for(int i=0;i<3;i++)
-	//		{
-	//			List<WebElement> ellipses=driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
-	//			int count=ellipses.size();
-	//			if(i>=count)
-	//			{
-	//				 System.out.println("Not enough ellipses available.");
-	//		            break;
-	//			}
-	//				System.out.println(ellipses.size());
-	//				StaticWait(2);
-	//				Allbtn.click();
-	//				StaticWait(2);
-	//				WebElement ellipse = driver.findElements(By.xpath("//mat-icon[text()='more_vert']")).get(i);
-	//				WebElement ele=driver.findElement(By.xpath("//h3[@class='assessment__title__all_tabs']"));
-	//				ele.click();
-	//				  try {
-	//			            Actions actions = new Actions(driver);
-	//			            actions.moveToElement(ellipse).click().perform();
-	//			        } catch (Exception e) {
-	//			            System.out.println("Actions click failed, attempting JavaScript click");
-	//			            JavascriptExecutor js = (JavascriptExecutor) driver;
-	//			            js.executeScript("arguments[0].click();", ellipse);
-	//			        }
-	//				  wait.visibilityOf(childObjectivebtn);
-	//			    childObjectivebtn.click();
-	//				String label = "ChildObjective" + randomNumberGenerator();
-	//				System.out.println(label);
-	//				cp.Name(label);
-	//				cp.Save();
-	//				int count1=ellipses.size();
-	//				System.out.println(count1);
-	//			}
-	//			
-	//		}
 
-	//	public void EllipsesClick(String TestName) {
-	//		StaticWait(2);
-	//		Allbtn.click();
-	//		StaticWait(2);
-	//		WebElement ele = driver.findElement(By.xpath("//h3[@class='assessment__title__all_tabs']"));
-	//		ele.click();
-	//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	//		JavascriptExecutor js = (JavascriptExecutor) driver;
-	//
-	//		for (int i = 0; i <=3; i++) {
-	//			List<WebElement> ellipsesList = driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
-	//			if (ellipsesList.isEmpty()) {
-	//				System.out.println("No ellipses found for iteration " + (i + 1));
-	//				return;
-	//			}
-	//
-	//			WebElement latestEllipsis = ellipsesList.get(ellipsesList.size() - 1);
-	//			try {
-	//				wait.until(ExpectedConditions.elementToBeClickable(latestEllipsis));
-	//				StaticWait(2);
-	////				WebElement e=driver.findElement(By.xpath("//mat-icon[contains(text(),' chevron_right ')]"));
-	////				if(e.isDisplayed())
-	////				{
-	////					e.click();
-	////					StaticWait(2);
-	////				}
-	//				js.executeScript("arguments[0].click();", latestEllipsis);
-	//				System.out.println("Clicked latest ellipsis for iteration: " + (i + 1));
-	//			} catch (Exception e) {
-	//				System.out.println("Failed to click the latest ellipsis in iteration " + (i + 1) + ": " + e.getMessage());
-	//				continue; 
-	//			}
-	//
-	//			StaticWait(1);
-	//			childObjectivebtn.click();
-	//			String childLabel = "ChildObjective" + randomNumberGenerator();
-	//			System.out.println("Generated label for iteration " + (i + 1) + ": " + childLabel);
-	//			cp.Name(childLabel);
-	//			StaticWait(1);
-	//			cp.Save();
-	//			StaticWait(2);
-	//		}
-	//	}
-
-	public void ChildObjectiveCreation() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		int maxRetries = 10;
-		int retries = 0;
-
-		while (retries < maxRetries) {
-			try {
-				WebElement ellipses = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-icon[text()='more_vert']")));
-				ellipses.click();
-				WebElement childObjectiveBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Child Objective')]")));
-				childObjectiveBtn.click();
-				String label = "ChildObjective" + randomNumberGenerator();
-				System.out.println(label);
-				StaticWait(1);
-				cp.Name(label);
-				cp.Save();
-				break;
-
-			} catch (StaleElementReferenceException e) {
-				System.out.println("Attempt " + (retries + 1) + " - StaleElementReferenceException encountered. Retrying...");
-				retries++;
-			}
-		}
-
-		if (retries == maxRetries) {
-			System.out.println("Failed to interact with elements in ChildObjectiveCreation after " + maxRetries + " attempts.");
-		}
-	}
-
-	public void AddnewQuiz() {
+	public void EllipsesClick() {
+		StaticWait(2);
+		Allbtn.click();
+		StaticWait(2);
+		WebElement ele = driver.findElement(By.xpath("//h3[@class='assessment__title__all_tabs']"));
+		ele.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		int maxRetries = 10;
-		int retries = 0;
 
-		while (retries < maxRetries) {
-			try {
-				WebElement allBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='course-unit selectedUnit']")));
-				allBtn.click();
-				StaticWait(1);
-				WebElement childEllipses = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[@mattooltip='More Actions'])[2]/span/mat-icon")));
-				StaticWait(1);
-				js.executeScript("arguments[0].click();", childEllipses);
-				WebElement addQuizBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Quiz')]")));
-				addQuizBtn.click();
-				break;
-			} catch (StaleElementReferenceException e) {
-				System.out.println("Attempt " + (retries + 1) + " - StaleElementReferenceException encountered. Retrying...");
-				retries++;
-				StaticWait(1);
+		for (int i = 0; i < 3; i++) {
+			List<WebElement> ellipsesList = driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
+			if (ellipsesList.isEmpty()) {
+				System.out.println("No ellipses found for iteration " + (i + 1));
+				return;
 			}
-		}
 
-		if (retries == maxRetries) {
-			System.out.println("Failed to interact with elements in AddnewQuiz after " + maxRetries + " attempts.");
+			WebElement latestEllipsis = ellipsesList.get(ellipsesList.size() - 1);
+			try {
+				wait.until(ExpectedConditions.elementToBeClickable(latestEllipsis));
+				StaticWait(2);
+				js.executeScript("arguments[0].click();", latestEllipsis);
+				System.out.println("Clicked latest ellipsis for iteration: " + (i + 1));
+			} catch (Exception e) {
+				System.out.println("Failed to click the latest ellipsis in iteration " + (i + 1) + ": " + e.getMessage());
+				continue; 
+			}
+
+			StaticWait(1);
+			childObjectivebtn.click();
+			String childLabel = "ChildObjective" + randomNumberGenerator();
+			System.out.println("Generated label for iteration " + (i + 1) + ": " + childLabel);
+			StaticWait(1);
+			cp.Name(childLabel);
+			StaticWait(1);
+			cp.Save();
+			StaticWait(2);
+
 		}
 	}
+
+
+
+	public void AddnewQuiz(String TestName) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    Actions actions = new Actions(driver);
+	    
+	    // Click on the 'all' button initially
+	    WebElement allBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='course-unit selectedUnit']")));
+	    allBtn.click();
+	    StaticWait(1);
+
+	    int targetIndex = 0; // The target index for clicking ellipses (0 for 1st, 2 for 3rd, 4 for 5th, etc.)
+
+	    // Use a for loop to iterate over a maximum of 10 retries
+	    for (int retries = 0; retries < 10; retries++) {
+	        // Fetch the current list of ellipses on the page
+	        List<WebElement> ellipsesList = driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
+	        int count = ellipsesList.size();
+	        System.out.println("Ellipses count: " + count);
+
+	        // Stop the loop if the ellipses count has reached 8
+	        if (count >= 8) {
+	            System.out.println("Ellipses count has reached 8. Stopping the loop.");
+	            break; // Exit the loop when there are 8 or more ellipses
+	        }
+
+	        // Ensure there are enough ellipses to continue the process
+	        if (count <= targetIndex) {
+	            System.out.println("Not enough ellipses available. Retrying...");
+	            StaticWait(1);
+	            continue; // Retry if the required ellipsis is not available
+	        }
+
+	        // Click the ellipsis based on the target index (0 -> 1st, 2 -> 3rd, 4 -> 5th, etc.)
+	        WebElement ellipsis = ellipsesList.get(targetIndex);
+	     
+	        js.executeScript("arguments[0].click();", ellipsis); // Fallback to JavaScript click
+	        StaticWait(1);
+
+	        // Proceed to the quiz creation process
+	        WebElement addQuizBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Quiz')]")));
+	        addQuizBtn.click();
+
+	        wait.until(ExpectedConditions.elementToBeClickable(Searchtestbtn));
+	        Searchtestbtn.click();
+	        String testname = "\"" + TestName + "\"";
+	        cp.SearchTestname(testname);
+
+	        wait.until(ExpectedConditions.elementToBeClickable(gobtn));
+	        gobtn.click();
+
+	        WebElement testAddBtn = wait.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
+	        testAddBtn.click();
+
+	        // Generate random quiz details and complete the creation process
+	        String QuizName = " Quiz" + randomNumberGenerator();
+	        cp.Name(QuizName);
+	        Descriptionbox.sendKeys(generateRandomString());
+	        Instructionbox.sendKeys(generateRandomString());
+	        cp.getRandomDate(Datepickericon);
+	        ShowAnswers.click();
+	        if (ShowTestResult.isEnabled()) {
+	            ShowTestResult.click();
+	        }
+
+	        wait.until(ExpectedConditions.elementToBeClickable(ShowtestSummary));
+	        OverrideInstructionstoggle.click();
+	        cp.Save();
+
+	        System.out.println("Quiz created successfully!");
+
+	        // Increase the target index by 2 to click the next ellipsis (1st -> 3rd -> 5th -> 7th -> etc.)
+	        targetIndex += 2;
+	        StaticWait(2); // Wait briefly before continuing to the next iteration
+	    }
+	}
+	
 
 	public void Searchtestbutton(String TestName)
 	{
@@ -303,4 +283,3 @@ public class QuizCreationPages extends ActionType{
 		driver.switchTo().defaultContent();
 	}
 }
-

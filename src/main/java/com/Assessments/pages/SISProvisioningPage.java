@@ -1,11 +1,15 @@
 package com.Assessments.pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
@@ -256,36 +260,20 @@ public class SISProvisioningPage extends ActionType{
 		LastnameField.sendKeys(String.valueOf(SLastName));
 	}
 	public void EditScreen() {
-	    int maxRetries = 5; 
 	    int attempts = 0;
-	    boolean isSuccess = false;
-	    
-	    while (attempts < maxRetries && !isSuccess) {
+	    while (attempts++ < 5) {
 	        try {
-	            wait.elementToBeClickable(Ellipses);
-	            wait.visibilityOf(Ellipses);
-	            Ellipses.click();
-
-	            wait.elementToBeClickable(Editoption);
-	            Editoption.click();
-	            
-	            isSuccess = true; 
+	        	WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+	            wait.until(ExpectedConditions.elementToBeClickable(Ellipses)).click();
+	            wait.until(ExpectedConditions.elementToBeClickable(Editoption)).click();
+	            return; 
 	        } catch (Exception e) {
-	            attempts++;
-	            if (attempts < maxRetries) {
-	                try {
-	                    Thread.sleep(1000); 
-	                } catch (InterruptedException ie) {
-	                    Thread.currentThread().interrupt();
-	                }
-	            }
+	            if (attempts < 5) try { Thread.sleep(500); } catch (InterruptedException ie) { Thread.currentThread().interrupt(); }
 	        }
 	    }
-
-	    if (!isSuccess) {
-	        throw new RuntimeException("Failed to perform EditScreen action after " + maxRetries + " attempts");
-	    }
+	    throw new RuntimeException("Failed to perform EditScreen action after 5 attempts.");
 	}
+
 
 	public void CreateNewLogin()
 	{

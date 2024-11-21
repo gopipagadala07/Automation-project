@@ -122,7 +122,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	}
 
 	@And("the user clicks on the created benchmark and navigates to the Sections tab")
-	public void the_user_clicks_on_the_created_benchmark_and_navigates_to_the_sections_tab() {
+	public void the_user_clicks_on_the_created_benchmark_and_navigates_to_the_sections_tab() throws InterruptedException {
 	    bpages.clickOnNewBencmark();
 	    bpages.clickOnSectionTab();
 	}
