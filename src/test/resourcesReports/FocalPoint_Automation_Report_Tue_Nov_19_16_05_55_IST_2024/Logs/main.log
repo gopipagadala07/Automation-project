@@ -1,0 +1,4 @@
+2024-11-19 16:05:55,284 INFO  [rootLogger] Enviornment is : STAGE
+2024-11-19 16:05:55,293 INFO  [rootLogger] Browser value is: CHROME
+2024-11-19 16:05:57,294 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-19 16:05:57,310 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/

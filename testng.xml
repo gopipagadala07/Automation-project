@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test1">
-  <parameter name="browser" value="chrome" />
-  <classes>
-		    <class name="AssessmentsRunner.SISprovisioningRunner"/>
-			<class name="AssessmentsRunner.BenchmarksRunner"/>
-			<class name="AssessmentsRunner.Benchmark_TeacherRunner"/>
-			<class name="AssessmentsRunner.AnnouncementsRunner"/>
-			<class name="AssessmentsRunner.Exam_SubmissionRunner"/>
-			<class name="AssessmentsRunner.Benchmark_ScoringRunner"/>
-
-            <!--<class name="AssessmentsRunner.Teacher_ActivityprogressRunner"/>-->			
-		</classes>
-  </test> <!-- Test -->	
+  <test thread-count="5" name="Test">
+  </test> <!-- Test -->
 </suite> <!-- Suite -->

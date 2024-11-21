@@ -36,12 +36,9 @@ public class AnnouncementsPages extends ActionType {
 
 	//private static final String[] AnnouncementName = null;
 	CommonPages cp=new CommonPages(Base.getDriver());
-	private String announcementName;
-	private	List<String> announcementNames = new ArrayList<>(); // Initialize the list
-	//	String classroomName;
-	//	String sectionName;
-	//	String lastname;
-	//	String firstname;
+	static String announcementName;
+	static	List<String> announcementNames = new ArrayList<>();
+	static String sectionName;
 	//String selectedAnnouncement;
 
 
@@ -101,7 +98,7 @@ public class AnnouncementsPages extends ActionType {
 	}
 	public void ClickOnAddNewAnnouncement() {
 
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 11; i++) {
 			try {
 
 				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -146,7 +143,7 @@ public class AnnouncementsPages extends ActionType {
 			} catch (ElementClickInterceptedException e) {
 				System.out.println("Element click intercepted, retrying...");
 				StaticWait(1);
-				i--; // Retry the same iteration
+				i--; 
 			} catch (Exception e) {
 				System.out.println("Error while adding new announcement: " + e.getMessage());
 			}}}
@@ -175,6 +172,8 @@ public class AnnouncementsPages extends ActionType {
 		StaticWait(2);
 		wait.elementToBeClickable(nextpage);
 		wait.visibilityOf(nextpage);
+//		Dimension d=new Dimension(1920,1080);
+//		driver.manage().window().setSize(d);
 		nextpage.click();
 		StaticWait(2);
 

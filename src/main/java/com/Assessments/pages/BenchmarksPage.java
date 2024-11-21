@@ -190,10 +190,10 @@ public class BenchmarksPage extends ActionType {
 		savebutton.click();
 		StaticWait(1);
 	}
-	public void clickOnSectionTab() {
+	public void clickOnSectionTab() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		int retries = 0;
-		int maxRetries = 3;
+		int maxRetries = 10;
 
 		while (retries < maxRetries) {
 			try {
@@ -206,7 +206,7 @@ public class BenchmarksPage extends ActionType {
 				retries++;
 				try {
 					Thread.sleep(500);
-				} catch (InterruptedException ie) {
+				} catch (StaleElementReferenceException ie) {
 					Thread.currentThread().interrupt();
 				}
 			} catch (Exception e) {
@@ -260,35 +260,59 @@ public class BenchmarksPage extends ActionType {
 		wait.elementToBeClickable(ClassroomdropDown);
 		wait.visibilityOf(ClassroomdropDown);
 		cp.FPdropdown(ClassroomdropDown, classroomdown);
+		StaticWait(3);
 	}
 
 
 	public void ActiveToggle() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));  // You can adjust the timeout as needed
+	    int maxRetries = 3;
+	    int retries = 0;
 
-		try {
-			if (ToggleActive.isDisplayed())
-			{
-				wait.elementToBeClickable(ToggleActive);
-				Actions actions = new Actions(driver);
-				actions.moveToElement(ToggleActive).click().perform(); 
-				wait.elementToBeClickable(ClickOnYEs);
-				ClickOnYEs.click(); 
-			} 
-			else
-			{
+	    while (retries < maxRetries) {
+	        try {
+	            // First check if ToggleActive is displayed
+	            if (ToggleActive.isDisplayed()) {
+	                wait.until(ExpectedConditions.elementToBeClickable(ToggleActive)); // Wait for the element to be clickable
+	                Actions actions = new Actions(driver);
+	                actions.moveToElement(ToggleActive).click().perform(); // Click on ToggleActive
 
-				StaticWait(1);
-				Actions actions = new Actions(driver);
-				actions.moveToElement(ToggleInActive).click().perform(); 
-				wait.elementToBeClickable(ClickOnYEs);
-				wait.visibilityOf(ClickOnYEs); 
-				ClickOnYEs.click(); 
-			}
-		} catch (NoSuchElementException e) {
-			System.out.println("Element is stale. Trying to re-fetch.");
+	                // Wait for the "Yes" button to be clickable
+	                wait.until(ExpectedConditions.elementToBeClickable(ClickOnYEs));
+	                ClickOnYEs.click();
+	                return; // Exit after performing the actions successfully
+	            } else {
+	                // If ToggleActive is not displayed, click on ToggleInActive
+	                StaticWait(1); // Optional wait time for UI to stabilize
+	                Actions actions = new Actions(driver);
+	                actions.moveToElement(ToggleInActive).click().perform(); 
 
-		}
+	                wait.until(ExpectedConditions.elementToBeClickable(ClickOnYEs));
+	                wait.until(ExpectedConditions.visibilityOf(ClickOnYEs));
+	                ClickOnYEs.click();
+	                return;
+	            }
+	        } catch (NoSuchElementException | StaleElementReferenceException e) {
+	     
+	            System.out.println("Element not found or stale. Retrying... Attempt " + (retries + 1));
+	            retries++;
+
+	          
+	            if (retries >= maxRetries) {
+	                System.out.println("Max retries reached. Unable to find the element.");
+	                throw new RuntimeException("Failed to toggle the element after " + maxRetries + " retries.");
+	            }
+
+	         
+	            StaticWait(1);
+	        } catch (Exception e) {
+	          
+	            System.out.println("Unexpected error: " + e.getMessage());
+	            break; 
+	        }
+	    }
 	}
+
 	public void CheckingStatus() {
 
 		if (NotStartedStatus.equals("Not Started"))  {
