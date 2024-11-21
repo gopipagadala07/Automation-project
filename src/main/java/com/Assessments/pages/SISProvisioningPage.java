@@ -297,12 +297,9 @@ public class SISProvisioningPage extends ActionType{
 	public void close()
 	{
 		wait.elementToBeClickable(Closeicon);		
-	//	StaticWait(4);
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", Closeicon);
-//		Actions a=new Actions(driver);
-//		a.moveToElement(Closeicon);
-//		Closeicon.click();
+
 	}
 	public void SettingClassroom()
 	{

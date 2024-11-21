@@ -4,9 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -35,7 +33,6 @@ public class QuizCreationPages extends ActionType{
 	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Add Child Objective')]")private WebElement childObjectivebtn;
 	@FindBy(how = How.XPATH,using = "//label[contains(text(),'Objective')]/parent::div/child::b")private WebElement objectiveLabel;
 	@FindBy(how = How.XPATH,using = "//input[@type='text']")private WebElement objectiveName;
-	//	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Add Quiz')]")private WebElement AddQuizbtn;
 	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Search Test')]")private WebElement Searchtestbtn;
 	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Go')]")private WebElement gobtn;
 	@FindBy(how = How.XPATH,using = "(//button[@aria-label='Open calendar'])[2]")private WebElement Datepickericon;
@@ -53,9 +50,11 @@ public class QuizCreationPages extends ActionType{
 	@FindBy(how = How.XPATH,using = "//mat-icon[text()='more_vert']")private WebElement ellipses;
 	@FindBy(how = How.XPATH,using = "//iframe[@name='badgeFrame']")private WebElement BadgeFrame;
 	@FindBy(how = How.XPATH,using = "//i[@class='text']")private WebElement Itext;
-	//	@FindBy(how = How.XPATH,using = "(//button[@mattooltip='More Actions'])[2]/span/mat-icon")private WebElement childellipses;
-	//	@FindBy(how = How.XPATH,using = "//div[@class='course-unit selectedUnit']")private WebElement Allbtn;
+	@FindBy(how = How.XPATH,using = "//div[@class='course-unit selectedUnit']")private WebElement Allbtn;
 	@FindBy(how = How.XPATH,using = "//div[@class='leaning__course__tree_item']/div[2]/div[3]/button/span")private List<WebElement> Ellipsescount;
+	@FindBy(how = How.XPATH,using = "//span[text()='Progress']")private WebElement progressbtn;
+	@FindBy(how = How.XPATH,using = "//b[contains(text(),'Due Date')]/parent::div/following-sibling::div/child::mat-slide-toggle/child::label")private WebElement Activatetoggle;
+	@FindBy(how = How.XPATH,using = "//mat-icon[text()='close']")private WebElement closeicon;
 
 	public WebElement getCommunityNameElement(String ClassroomName) {
 		String xpath = "//span[(text()='"+ClassroomName+"')]/parent::div/parent::mat-card-content/preceding-sibling::mat-card-header/child::div/mat-card-title/child::span";
@@ -69,7 +68,14 @@ public class QuizCreationPages extends ActionType{
 		String xpath = "//span[contains(text(),'"+Value+"')]/parent::span/parent::div/parent::div/following-sibling::div/child::div[3]/child::button";
 		return driver.findElement(By.xpath(xpath));
 	}
-
+	public WebElement publishToggle(String Value) {
+		String xpath = "//small[contains(text(),'"+Value+"')]/parent::span/parent::div/parent::div/following-sibling::div/child::div[4]/child::mat-slide-toggle/label";
+		return driver.findElement(By.xpath(xpath));
+	}
+	public WebElement QuizEllipses(String Value) {
+		String xpath = "//small[contains(text(),'"+Value+"')]/parent::span/parent::div/parent::div/following-sibling::div/child::div[5]/child::button/child::span[1]";
+		return driver.findElement(By.xpath(xpath));
+	}
 	public QuizCreationPages(WebDriver driver)
 	{
 		this.driver=driver;	
@@ -107,200 +113,119 @@ public class QuizCreationPages extends ActionType{
 		a.moveToElement(AssessmentsTab).click().build().perform();
 	}
 
-	//	public void LoopChildObjective()
-	//	{		
-	//		for(int i=0;i<3;i++)
-	//		{
-	//			List<WebElement> ellipses=driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
-	//			int count=ellipses.size();
-	//			if(i>=count)
-	//			{
-	//				 System.out.println("Not enough ellipses available.");
-	//		            break;
-	//			}
-	//				System.out.println(ellipses.size());
-	//				StaticWait(2);
-	//				Allbtn.click();
-	//				StaticWait(2);
-	//				WebElement ellipse = driver.findElements(By.xpath("//mat-icon[text()='more_vert']")).get(i);
-	//				WebElement ele=driver.findElement(By.xpath("//h3[@class='assessment__title__all_tabs']"));
-	//				ele.click();
-	//				  try {
-	//			            Actions actions = new Actions(driver);
-	//			            actions.moveToElement(ellipse).click().perform();
-	//			        } catch (Exception e) {
-	//			            System.out.println("Actions click failed, attempting JavaScript click");
-	//			            JavascriptExecutor js = (JavascriptExecutor) driver;
-	//			            js.executeScript("arguments[0].click();", ellipse);
-	//			        }
-	//				  wait.visibilityOf(childObjectivebtn);
-	//			    childObjectivebtn.click();
-	//				String label = "ChildObjective" + randomNumberGenerator();
-	//				System.out.println(label);
-	//				cp.Name(label);
-	//				cp.Save();
-	//				int count1=ellipses.size();
-	//				System.out.println(count1);
-	//			}
-	//			
-	//		}
 
-	//	public void EllipsesClick(String TestName) {
-	//		StaticWait(2);
-	//		Allbtn.click();
-	//		StaticWait(2);
-	//		WebElement ele = driver.findElement(By.xpath("//h3[@class='assessment__title__all_tabs']"));
-	//		ele.click();
-	//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	//		JavascriptExecutor js = (JavascriptExecutor) driver;
-	//
-	//		for (int i = 0; i <=3; i++) {
-	//			List<WebElement> ellipsesList = driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
-	//			if (ellipsesList.isEmpty()) {
-	//				System.out.println("No ellipses found for iteration " + (i + 1));
-	//				return;
-	//			}
-	//
-	//			WebElement latestEllipsis = ellipsesList.get(ellipsesList.size() - 1);
-	//			try {
-	//				wait.until(ExpectedConditions.elementToBeClickable(latestEllipsis));
-	//				StaticWait(2);
-	////				WebElement e=driver.findElement(By.xpath("//mat-icon[contains(text(),' chevron_right ')]"));
-	////				if(e.isDisplayed())
-	////				{
-	////					e.click();
-	////					StaticWait(2);
-	////				}
-	//				js.executeScript("arguments[0].click();", latestEllipsis);
-	//				System.out.println("Clicked latest ellipsis for iteration: " + (i + 1));
-	//			} catch (Exception e) {
-	//				System.out.println("Failed to click the latest ellipsis in iteration " + (i + 1) + ": " + e.getMessage());
-	//				continue; 
-	//			}
-	//
-	//			StaticWait(1);
-	//			childObjectivebtn.click();
-	//			String childLabel = "ChildObjective" + randomNumberGenerator();
-	//			System.out.println("Generated label for iteration " + (i + 1) + ": " + childLabel);
-	//			cp.Name(childLabel);
-	//			StaticWait(1);
-	//			cp.Save();
-	//			StaticWait(2);
-	//		}
-	//	}
-
-	public void ChildObjectiveCreation() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		int maxRetries = 10;
-		int retries = 0;
-
-		while (retries < maxRetries) {
-			try {
-				WebElement ellipses = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-icon[text()='more_vert']")));
-				ellipses.click();
-				WebElement childObjectiveBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Child Objective')]")));
-				childObjectiveBtn.click();
-				String label = "ChildObjective" + randomNumberGenerator();
-				System.out.println(label);
-				StaticWait(1);
-				cp.Name(label);
-				cp.Save();
-				break;
-
-			} catch (StaleElementReferenceException e) {
-				System.out.println("Attempt " + (retries + 1) + " - StaleElementReferenceException encountered. Retrying...");
-				retries++;
-			}
-		}
-
-		if (retries == maxRetries) {
-			System.out.println("Failed to interact with elements in ChildObjectiveCreation after " + maxRetries + " attempts.");
-		}
-	}
-
-	public void AddnewQuiz() {
+	public void ChildObjectivesCreation() {
+		StaticWait(2);
+		Allbtn.click();
+		StaticWait(2);
+		WebElement ele = driver.findElement(By.xpath("//h3[@class='assessment__title__all_tabs']"));
+		ele.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		int maxRetries = 10;
-		int retries = 0;
 
-		while (retries < maxRetries) {
-			try {
-				WebElement allBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='course-unit selectedUnit']")));
-				allBtn.click();
-				StaticWait(1);
-				WebElement childEllipses = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[@mattooltip='More Actions'])[2]/span/mat-icon")));
-				StaticWait(1);
-				js.executeScript("arguments[0].click();", childEllipses);
-				WebElement addQuizBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Quiz')]")));
-				addQuizBtn.click();
-				break;
-			} catch (StaleElementReferenceException e) {
-				System.out.println("Attempt " + (retries + 1) + " - StaleElementReferenceException encountered. Retrying...");
-				retries++;
-				StaticWait(1);
+		for (int i = 0; i < 3; i++) {
+			List<WebElement> ellipsesList = driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
+			if (ellipsesList.isEmpty()) {
+				System.out.println("No ellipses found for iteration " + (i + 1));
+				return;
 			}
-		}
 
-		if (retries == maxRetries) {
-			System.out.println("Failed to interact with elements in AddnewQuiz after " + maxRetries + " attempts.");
+			WebElement latestEllipsis = ellipsesList.get(ellipsesList.size() - 1);
+			try {
+				wait.until(ExpectedConditions.elementToBeClickable(latestEllipsis));
+				wait.until(ExpectedConditions.visibilityOf(latestEllipsis));
+				StaticWait(2);
+				js.executeScript("arguments[0].click();", latestEllipsis);
+			} catch (Exception e) {
+				System.out.println("Failed to click the latest ellipsis in iteration " + (i + 1) + ": " + e.getMessage());
+				continue; 
+			}
+
+			StaticWait(1);
+			childObjectivebtn.click();
+			String childLabel = "ChildObjective" + randomNumberGenerator();
+			StaticWait(1);
+			cp.Name(childLabel);
+			StaticWait(1);
+			cp.Save();
+			StaticWait(2);
 		}
 	}
 
-	public void Searchtestbutton(String TestName)
-	{
-		wait.elementToBeClickable(Searchtestbtn);
-		Searchtestbtn.click();
-		String testname="\"" + TestName + "\"";
-		cp.SearchTestname(testname);
-		wait.elementToBeClickable(gobtn);
-		gobtn.click();
-		wait.elementToBeClickable(TestAddbtn(TestName));
-		TestAddbtn(TestName).click();
-	}
-	public void QuizDetails()
-	{
-		String QuizName=" Quiz"+randomNumberGenerator();
-		cp.Name(QuizName);
-		Descriptionbox.sendKeys(generateRandomString());
-		Instructionbox.sendKeys(generateRandomString());
-	}
-	public void Dateselect()
-	{
-		cp.getRandomDate(Datepickericon);
-	}
-	public void toggles()
-	{
-		ShowAnswers.click();
-		if(ShowTestResult.isEnabled())
-		{
-			ShowTestResult.click();
-		}
-		wait.elementToBeClickable(ShowtestSummary);
-		//		ShowtestSummary.click();
-		//		wait.elementToBeClickable(ShowtestAnalytics);
-		//		ShowtestAnalytics.click();
-		OverrideInstructionstoggle.click();
-
-	}
-	public void Badgetab()
-	{
-		Badgetab.click();
-	}
-	public void BadgeAdding()
-	{
+	public void QuizzesCreation(String TestName) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Actions actions = new Actions(driver);
-		js.executeScript("arguments[0].click();", AddnewBadgebtn);
-		StaticWait(1);
-		driver.switchTo().frame(0);
-		WebElement badgeSelectionElement = wait.until(ExpectedConditions.visibilityOf(BadgeSelection));
-		js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
-		actions.moveToElement(badgeSelectionElement).click().perform();
-		WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(importBadge));
-		importBadgeBtn.click();
-		driver.switchTo().defaultContent();
+		int targetIndex = 0;
+
+		for (int i = 0; i < 8; i++) {
+			List<WebElement> ellipsesList = driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
+			int count = ellipsesList.size();
+			System.out.println("Ellipses count: " + count);
+
+			if (count >= 8) {
+				System.out.println("Ellipses count has reached 8. Stopping the loop.");
+				break;
+			}
+
+			if (count <= targetIndex) {
+				System.out.println("Not enough ellipses available. Retrying...");
+				StaticWait(1);
+				continue;
+			}
+			WebElement ellipsis = ellipsesList.get(targetIndex);
+			wait.until(ExpectedConditions.elementToBeClickable(ellipsis));
+			js.executeScript("arguments[0].click();", ellipsis);
+			StaticWait(2);
+			WebElement addQuizBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Quiz')]")));
+			addQuizBtn.click();
+			wait.until(ExpectedConditions.elementToBeClickable(Searchtestbtn));
+			Searchtestbtn.click();
+			String testname = "\"" + TestName + "\"";
+			cp.SearchTestname(testname);
+			wait.until(ExpectedConditions.elementToBeClickable(gobtn));
+			gobtn.click();
+			WebElement testAddBtn = wait.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
+			js.executeScript("arguments[0].click();", testAddBtn);
+			String QuizName = " Quiz" + randomNumberGenerator();
+			cp.Name(QuizName);
+			Descriptionbox.sendKeys(generateRandomString());
+			Instructionbox.sendKeys(generateRandomString());
+			cp.getRandomDate(Datepickericon);
+			ShowAnswers.click();
+			if (ShowTestResult.isEnabled()) {
+				ShowTestResult.click();
+			}
+
+			wait.until(ExpectedConditions.elementToBeClickable(ShowtestSummary));
+			OverrideInstructionstoggle.click();
+			Badgetab.click();
+			js.executeScript("arguments[0].click();", AddnewBadgebtn);
+			StaticWait(1);
+			driver.switchTo().frame(0);
+			WebElement badgeSelectionElement = wait.until(ExpectedConditions.visibilityOf(BadgeSelection));
+			js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
+			actions.moveToElement(badgeSelectionElement).click().perform();
+			WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(importBadge));
+			importBadgeBtn.click();
+			driver.switchTo().defaultContent();
+			cp.Save();
+			System.out.println("Quiz created successfully!");
+
+			StaticWait(1);
+			js.executeScript("arguments[0].click();", publishToggle(QuizName));
+			wait.until(ExpectedConditions.elementToBeClickable(QuizEllipses(QuizName)));
+			js.executeScript("arguments[0].click();", QuizEllipses(QuizName));
+			StaticWait(1);
+			progressbtn.click();
+			wait.until(ExpectedConditions.elementToBeClickable(Activatetoggle));
+			js.executeScript("arguments[0].click();", Activatetoggle);
+			StaticWait(1);
+			js.executeScript("arguments[0].click();", closeicon);
+			StaticWait(1);
+			targetIndex += 2;
+			StaticWait(1);
+		}
+
 	}
 }
-
