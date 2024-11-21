@@ -8,7 +8,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -22,7 +21,6 @@ import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -30,7 +28,6 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -84,7 +81,6 @@ public class CommonPages extends ActionType{
 		wait.visibilityOf(Savebtn);
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", Savebtn);
-		//Savebtn.click();
 	}
 	public void Name(String Value)
 	{
@@ -106,17 +102,15 @@ public class CommonPages extends ActionType{
 			wait.elementToBeClickable(element);
 			Actions actions = new Actions(driver);
 			actions.moveToElement(element).click().build().perform();
-//			element.click();
-//			System.out.println(visibleText +"---------------------------");
+			System.out.println(visibleText +"---------------------------");
 			List<WebElement> options =element.findElements(By.xpath("following::div[@role='listbox']/mat-option"));
 			for(WebElement option:options) {
 				String actual = option.getText().trim();
-//					System.out.println(actual);
-				if(actual.contains(visibleText)) {
+					//System.out.println(actual);
+				if(actual.equals(visibleText)) {
 					Actions a=new Actions(driver);
 					a.moveToElement(option);
 					option.click();
-					//option.sendKeys(Keys.TAB);
 					break;
 				}		
 			}
@@ -200,22 +194,14 @@ public class CommonPages extends ActionType{
 			element.click();
 			yearSelection.click();
 			
-			DateValue(String.valueOf(randomYear)).click();
-			//MonthSelection.click();
-			
+			DateValue(String.valueOf(randomYear)).click();			
 			DateValue(getMonthName(randomMonth)).click();
-			StaticWait(2);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5)); 
 			wait.until(ExpectedConditions.elementToBeClickable(DateValue(String.valueOf(randomDay))));
 			wait.until(ExpectedConditions.visibilityOf(DateValue(String.valueOf(randomDay))));
-			
-			WebElement dateElement = DateValue(String.valueOf(randomDay));
-			Actions actions = new Actions(driver);
-			actions.moveToElement(dateElement).click().perform();
-
-//			JavascriptExecutor js1=(JavascriptExecutor) driver;
-//			js1.executeScript("arguments[0].click()", DateValue(String.valueOf(randomDay)));
-			//DateValue(String.valueOf(randomDay)).click();
+			JavascriptExecutor js1=(JavascriptExecutor) driver;
+			StaticWait(2);
+			js1.executeScript("arguments[0].click()", DateValue(String.valueOf(randomDay)));
 
 		} catch (ElementClickInterceptedException e) {
 			System.out.println(e.getMessage());

@@ -20,16 +20,11 @@ import com.Utils.Wait;
 
 public class LoginPage extends ActionType{
 
-	private Wait wait;
-	private By close=By.xpath("//button[@type='button']");
-	private By changepwd=By.xpath("//h3[text()='Change Password']");
-	private By coun=By.xpath("//mat-toolbar[@id='appHeader']");
+
 	private WebDriver driver;
 	private	By forgotPassword=By.xpath("//a[text()='Forgot password']");
-	private By fp=By.xpath("//span[text()='FocalPoint']");
 	private	By Login=By.xpath("//button[@value='login']");
 	private	By loginToAppText = By.xpath("//div[@class='text-center m-b-md']/h3");
-	private By menu=By.xpath("//a[@routerlinkactive='selected']");
 	private	By password=By.xpath("//input[@id='Password']");
 	private	By rememeberchkbox=By.xpath("//input[@type='checkbox']");
 	private	By username=By.xpath("//input[@id='Username']");
@@ -41,8 +36,7 @@ public class LoginPage extends ActionType{
 	public LoginPage(WebDriver driver)
 	{
 		this.driver=driver;
-
-		this.wait=new Wait(driver);
+		
 	}
 
 	public void allFieldsDispayed() {
