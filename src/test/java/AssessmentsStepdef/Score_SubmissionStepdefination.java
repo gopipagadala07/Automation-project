@@ -48,7 +48,7 @@ public class Score_SubmissionStepdefination extends ActionType
 		StaticWait(1);
 		S_Submission.all_ActivitiesDropDown();
 		StaticWait(1);
-		S_Submission.All_MembersDropDown();
+		S_Submission.All_MembersDropDown(SLastName,SFirstname);
 	}
 
 	@Then("clicks on Score button")

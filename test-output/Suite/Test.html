@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>11/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Nov 19 16:13:30 IST 2024</td>
+<td>Started on:</td><td>Mon Nov 25 23:41:52 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>107 seconds (107284 ms)</td>
+<tr><td>Total time:</td><td>1054 seconds (1054610 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,78 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='AssessmentsRunner.Provide_ScoreRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.Provide_ScoreRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the Score from Overall SpeedGrader", "Verify the Score Submission at Teacher side"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-icon[contains(text(), &apos; score&apos;)]&quot;}
+  (Session info: chrome=131.0.6778.86)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a3fb2401d8bd7bcfa340ccbdedc1b924, findElement {value=//mat-icon[contains(text(), &apos; score&apos;)], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63617}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63617/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a3fb2401d8bd7bcfa340ccbdedc1b924
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+	at com.Assessments.pages.Score_SubmissionPage.click_On_Score(Score_SubmissionPage.java:101)
+	at AssessmentsStepdef.Score_SubmissionStepdefination.clicks_on_score_button(Score_SubmissionStepdefination.java:57)
+	at ✽.clicks on Score button(file:///C:/Users/SureshRajaboina/OneDrive%20-%20FocalPointK12,%20Inc/Focalpoint%20Automation/Benchmarks_AC/src/test/resources/AssessmentsFeatures/Provide_Score.feature:11)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1966362721", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1966362721'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-icon[contains(text(), &apos; score&apos;)]&quot;}
+  (Session info: chrome=131.0.6778.86)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a3fb2401d8bd7bcfa340ccbdedc1b924, findElement {value=//mat-icon[contains(text(), &apos; score&apos;)], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63617}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63617/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a3fb2401d8bd7bcfa340ccbdedc1b924
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+	at com.Assessments.pages.Score_SubmissionPage.click_On_Score(Score_SubmissionPage.java:101)
+	at AssessmentsStepdef.Score_SubmissionStepdefination.clicks_on_score_button(Score_SubmissionStepdefination.java:57)
+	at ✽.clicks on Score button(file:///C:/Users/SureshRajaboina/OneDrive%20-%20FocalPointK12,%20Inc/Focalpoint%20Automation/Benchmarks_AC/src/test/resources/AssessmentsFeatures/Provide_Score.feature:11)
+</pre></div></td>
+<td>52</td>
+<td>AssessmentsRunner.Provide_ScoreRunner@5a59ca5e</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,10 +148,60 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='AssessmentsRunner.BenchmarksRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.BenchmarksRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating Benchmarks and activating", "Verify the Benchmarks functionality"</td>
+<td></td>
+<td>64</td>
+<td>AssessmentsRunner.BenchmarksRunner@c430e6c</td></tr>
+<tr>
+<td title='AssessmentsRunner.Benchmark_TeacherRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.Benchmark_TeacherRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Activating and Deactivating toggles against Benchmark names", "Verify the Benchmark Management process for Teacher"</td>
+<td></td>
+<td>103</td>
+<td>AssessmentsRunner.Benchmark_TeacherRunner@536f2a7e</td></tr>
+<tr>
+<td title='AssessmentsRunner.QuizSubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.QuizSubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submitting Quiz", "Performing Quiz at student side"</td>
+<td></td>
+<td>170</td>
+<td>AssessmentsRunner.QuizSubmissionRunner@66982506</td></tr>
+<tr>
+<td title='AssessmentsRunner.QuizCreationRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.QuizCreationRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the Quiz Creation Functionality", "Validate the Quiz Creation for Teacher"</td>
+<td></td>
+<td>170</td>
+<td>AssessmentsRunner.QuizCreationRunner@312aa7c</td></tr>
+<tr>
+<td title='AssessmentsRunner.BenchmarksRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.BenchmarksRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Activating Benchmark Through Test Administration", "Verify the Benchmarks functionality"</td>
+<td></td>
+<td>54</td>
+<td>AssessmentsRunner.BenchmarksRunner@c430e6c</td></tr>
+<tr>
+<td title='AssessmentsRunner.SISprovisioningRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.SISprovisioningRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Functionality"</td>
+<td></td>
+<td>83</td>
+<td>AssessmentsRunner.SISprovisioningRunner@533bda92</td></tr>
+<tr>
 <td title='AssessmentsRunner.AnnouncementsRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.AnnouncementsRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating Announcements", "Verify the Announcements functionality"</td>
 <td></td>
-<td>102</td>
-<td>AssessmentsRunner.AnnouncementsRunner@305ffe9e</td></tr>
+<td>93</td>
+<td>AssessmentsRunner.AnnouncementsRunner@72bc6553</td></tr>
+<tr>
+<td title='AssessmentsRunner.PerformingExamRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.PerformingExamRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submitting Exam", "Performing Exam at student side"</td>
+<td></td>
+<td>73</td>
+<td>AssessmentsRunner.PerformingExamRunner@70cf32e3</td></tr>
+<tr>
+<td title='AssessmentsRunner.Provide_ScoreRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.Provide_ScoreRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the Score In Assessment SpeedGrader screen", "Verify the Score Submission at Teacher side"</td>
+<td></td>
+<td>44</td>
+<td>AssessmentsRunner.Provide_ScoreRunner@5a59ca5e</td></tr>
+<tr>
+<td title='AssessmentsRunner.Teacher_ActivityprogressRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.Teacher_ActivityprogressRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validating the Activity progress screen from AC Home tab", "Verify the Activity progress from ToDo List at teacher"</td>
+<td></td>
+<td>69</td>
+<td>AssessmentsRunner.Teacher_ActivityprogressRunner@4bdeaabb</td></tr>
+<tr>
+<td title='AssessmentsRunner.SISprovisioningRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.SISprovisioningRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the School, Classroom, Section Creation Functionality With valid Data", "Verify the SIS Provisioning Creation Functionality"</td>
+<td></td>
+<td>51</td>
+<td>AssessmentsRunner.SISprovisioningRunner@533bda92</td></tr>
 </table><p>
 </body>
 </html>

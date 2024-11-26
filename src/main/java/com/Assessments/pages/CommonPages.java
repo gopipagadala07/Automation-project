@@ -107,7 +107,7 @@ public class CommonPages extends ActionType{
 			for(WebElement option:options) {
 				String actual = option.getText().trim();
 					//System.out.println(actual);
-				if(actual.equals(visibleText)) {
+				if(actual.contains(visibleText)) {
 					Actions a=new Actions(driver);
 					a.moveToElement(option);
 					option.click();
@@ -200,7 +200,7 @@ public class CommonPages extends ActionType{
 			wait.until(ExpectedConditions.elementToBeClickable(DateValue(String.valueOf(randomDay))));
 			wait.until(ExpectedConditions.visibilityOf(DateValue(String.valueOf(randomDay))));
 			JavascriptExecutor js1=(JavascriptExecutor) driver;
-			StaticWait(2);
+			StaticWait(4);
 			js1.executeScript("arguments[0].click()", DateValue(String.valueOf(randomDay)));
 
 		} catch (ElementClickInterceptedException e) {

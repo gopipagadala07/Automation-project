@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">12 methods, 1 failed,   11 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="AssessmentsRunner.Provide_ScoreRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Validate the Score from Overall SpeedGrader&quot;, &quot;Verify the Score Submission at Teacher side&quot;)">runScenario("Validate the Score from Overall SpeedGrader", "Verify the Score Submission at Teacher side")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,7 +117,57 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="AssessmentsRunner.BenchmarksRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Creating Benchmarks and activating&quot;, &quot;Verify the Benchmarks functionality&quot;)">runScenario("Creating Benchmarks and activating", "Verify the Benchmarks functionality")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="AssessmentsRunner.Benchmark_TeacherRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Activating and Deactivating toggles against Benchmark names&quot;, &quot;Verify the Benchmark Management proc...)">runScenario("Activating and Deactivating toggles against Benchmark names", "Verify the Benchmark Management proc...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="AssessmentsRunner.QuizSubmissionRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Submitting Quiz&quot;, &quot;Performing Quiz at student side&quot;)">runScenario("Submitting Quiz", "Performing Quiz at student side")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="AssessmentsRunner.QuizCreationRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Checking the Quiz Creation Functionality&quot;, &quot;Validate the Quiz Creation for Teacher&quot;)">runScenario("Checking the Quiz Creation Functionality", "Validate the Quiz Creation for Teacher")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="AssessmentsRunner.BenchmarksRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Activating Benchmark Through Test Administration&quot;, &quot;Verify the Benchmarks functionality&quot;)">runScenario("Activating Benchmark Through Test Administration", "Verify the Benchmarks functionality")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="AssessmentsRunner.SISprovisioningRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Verify the Users Creation Functionality with valid Data&quot;, &quot;Verify the SIS Provisioning Creation Fun...)">runScenario("Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Fun...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="AssessmentsRunner.AnnouncementsRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Creating Announcements&quot;, &quot;Verify the Announcements functionality&quot;)">runScenario("Creating Announcements", "Verify the Announcements functionality")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="AssessmentsRunner.PerformingExamRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Submitting Exam&quot;, &quot;Performing Exam at student side&quot;)">runScenario("Submitting Exam", "Performing Exam at student side")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="AssessmentsRunner.Provide_ScoreRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Validate the Score In Assessment SpeedGrader screen&quot;, &quot;Verify the Score Submission at Teacher side&quot;)">runScenario("Validate the Score In Assessment SpeedGrader screen", "Verify the Score Submission at Teacher side")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="AssessmentsRunner.Teacher_ActivityprogressRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Validating the Activity progress screen from AC Home tab&quot;, &quot;Verify the Activity progress from ToDo ...)">runScenario("Validating the Activity progress screen from AC Home tab", "Verify the Activity progress from ToDo ...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="AssessmentsRunner.SISprovisioningRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Checking the School, Classroom, Section Creation Functionality With valid Data&quot;, &quot;Verify the SIS Pr...)">runScenario("Checking the School, Classroom, Section Creation Functionality With valid Data", "Verify the SIS Pr...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -118,6 +182,188 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">AssessmentsRunner.Provide_ScoreRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Validate the Score from Overall SpeedGrader&quot;, &quot;Verify the Score Submission at Teacher side&quot;)">
+                  </a> <!-- runScenario("Validate the Score from Overall SpeedGrader", "Verify the Score Submission at Teacher side") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Validate the Score from Overall SpeedGrader","Verify the Score Submission at Teacher side")</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-icon[contains(text(), &apos; score&apos;)]&quot;}
+  (Session info: chrome=131.0.6778.86)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a3fb2401d8bd7bcfa340ccbdedc1b924, findElement {value=//mat-icon[contains(text(), &apos; score&apos;)], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63617}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63617/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a3fb2401d8bd7bcfa340ccbdedc1b924
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+	at com.Assessments.pages.Score_SubmissionPage.click_On_Score(Score_SubmissionPage.java:101)
+	at AssessmentsStepdef.Score_SubmissionStepdefination.clicks_on_score_button(Score_SubmissionStepdefination.java:57)
+	at ✽.clicks on Score button(file:///C:/Users/SureshRajaboina/OneDrive%20-%20FocalPointK12,%20Inc/Focalpoint%20Automation/Benchmarks_AC/src/test/resources/AssessmentsFeatures/Provide_Score.feature:11)
+... Removed 5 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">AssessmentsRunner.QuizCreationRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Checking the Quiz Creation Functionality&quot;, &quot;Validate the Quiz Creation for Teacher&quot;)">
+                  </a> <!-- runScenario("Checking the Quiz Creation Functionality", "Validate the Quiz Creation for Teacher") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Checking the Quiz Creation Functionality","Validate the Quiz Creation for Teacher")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">AssessmentsRunner.Provide_ScoreRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Validate the Score In Assessment SpeedGrader screen&quot;, &quot;Verify the Score Submission at Teacher side&quot;)">
+                  </a> <!-- runScenario("Validate the Score In Assessment SpeedGrader screen", "Verify the Score Submission at Teacher side") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Validate the Score In Assessment SpeedGrader screen","Verify the Score Submission at Teacher side")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">AssessmentsRunner.Benchmark_TeacherRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Activating and Deactivating toggles against Benchmark names&quot;, &quot;Verify the Benchmark Management proc...)">
+                  </a> <!-- runScenario("Activating and Deactivating toggles against Benchmark names", "Verify the Benchmark Management proc...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Activating and Deactivating toggles against Benchmark names","Verify the Benchmark Management process for Teacher")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">AssessmentsRunner.BenchmarksRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Creating Benchmarks and activating&quot;, &quot;Verify the Benchmarks functionality&quot;)">
+                  </a> <!-- runScenario("Creating Benchmarks and activating", "Verify the Benchmarks functionality") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Creating Benchmarks and activating","Verify the Benchmarks functionality")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Activating Benchmark Through Test Administration&quot;, &quot;Verify the Benchmarks functionality&quot;)">
+                  </a> <!-- runScenario("Activating Benchmark Through Test Administration", "Verify the Benchmarks functionality") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Activating Benchmark Through Test Administration","Verify the Benchmarks functionality")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">AssessmentsRunner.Teacher_ActivityprogressRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Validating the Activity progress screen from AC Home tab&quot;, &quot;Verify the Activity progress from ToDo ...)">
+                  </a> <!-- runScenario("Validating the Activity progress screen from AC Home tab", "Verify the Activity progress from ToDo ...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Validating the Activity progress screen from AC Home tab","Verify the Activity progress from ToDo List at teacher")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">AssessmentsRunner.PerformingExamRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Submitting Exam&quot;, &quot;Performing Exam at student side&quot;)">
+                  </a> <!-- runScenario("Submitting Exam", "Performing Exam at student side") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Submitting Exam","Performing Exam at student side")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">AssessmentsRunner.QuizSubmissionRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Submitting Quiz&quot;, &quot;Performing Quiz at student side&quot;)">
+                  </a> <!-- runScenario("Submitting Quiz", "Performing Quiz at student side") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Submitting Quiz","Performing Quiz at student side")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -130,6 +376,34 @@
                   </a> <!-- runScenario("Creating Announcements", "Verify the Announcements functionality") -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("Creating Announcements","Verify the Announcements functionality")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">AssessmentsRunner.SISprovisioningRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify the Users Creation Functionality with valid Data&quot;, &quot;Verify the SIS Provisioning Creation Fun...)">
+                  </a> <!-- runScenario("Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Fun...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify the Users Creation Functionality with valid Data","Verify the SIS Provisioning Creation Functionality")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Checking the School, Classroom, Section Creation Functionality With valid Data&quot;, &quot;Verify the SIS Pr...)">
+                  </a> <!-- runScenario("Checking the School, Classroom, Section Creation Functionality With valid Data", "Verify the SIS Pr...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Checking the School, Classroom, Section Creation Functionality With valid Data","Verify the SIS Provisioning Creation Functionality")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -149,7 +423,15 @@
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;AssessmentsRunner.SISprovisioningRunner&quot;/&gt;
+      &lt;class name=&quot;AssessmentsRunner.BenchmarksRunner&quot;/&gt;
+      &lt;class name=&quot;AssessmentsRunner.QuizCreationRunner&quot;/&gt;
+      &lt;class name=&quot;AssessmentsRunner.Benchmark_TeacherRunner&quot;/&gt;
       &lt;class name=&quot;AssessmentsRunner.AnnouncementsRunner&quot;/&gt;
+      &lt;class name=&quot;AssessmentsRunner.QuizSubmissionRunner&quot;/&gt;
+      &lt;class name=&quot;AssessmentsRunner.PerformingExamRunner&quot;/&gt;
+      &lt;class name=&quot;AssessmentsRunner.Provide_ScoreRunner&quot;/&gt;
+      &lt;class name=&quot;AssessmentsRunner.Teacher_ActivityprogressRunner&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -163,7 +445,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Test (9 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -197,16 +479,60 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(12);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
-data.setCell(0, 2, 'AssessmentsRunner.AnnouncementsRunner')
-data.setCell(0, 3, 102279);
+data.setCell(0, 2, 'AssessmentsRunner.QuizCreationRunner')
+data.setCell(0, 3, 170668);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'runScenario')
+data.setCell(1, 2, 'AssessmentsRunner.QuizSubmissionRunner')
+data.setCell(1, 3, 170486);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'runScenario')
+data.setCell(2, 2, 'AssessmentsRunner.Benchmark_TeacherRunner')
+data.setCell(2, 3, 103370);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'runScenario')
+data.setCell(3, 2, 'AssessmentsRunner.AnnouncementsRunner')
+data.setCell(3, 3, 93730);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'runScenario')
+data.setCell(4, 2, 'AssessmentsRunner.SISprovisioningRunner')
+data.setCell(4, 3, 83028);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'runScenario')
+data.setCell(5, 2, 'AssessmentsRunner.PerformingExamRunner')
+data.setCell(5, 3, 73939);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'runScenario')
+data.setCell(6, 2, 'AssessmentsRunner.Teacher_ActivityprogressRunner')
+data.setCell(6, 3, 69172);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'runScenario')
+data.setCell(7, 2, 'AssessmentsRunner.BenchmarksRunner')
+data.setCell(7, 3, 64606);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'runScenario')
+data.setCell(8, 2, 'AssessmentsRunner.BenchmarksRunner')
+data.setCell(8, 3, 54741);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'runScenario')
+data.setCell(9, 2, 'AssessmentsRunner.Provide_ScoreRunner')
+data.setCell(9, 3, 52962);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'runScenario')
+data.setCell(10, 2, 'AssessmentsRunner.SISprovisioningRunner')
+data.setCell(10, 3, 51052);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'runScenario')
+data.setCell(11, 2, 'AssessmentsRunner.Provide_ScoreRunner')
+data.setCell(11, 3, 44840);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 17 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -232,26 +558,224 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">AssessmentsRunner.AnnouncementsRunner</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">AssessmentsRunner.SISprovisioningRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@4d529dbf)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@596c189f)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">1300 ms</span>
+                <span class="method-start">1285 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">runScenario("Creating Announcements", "Verify the Announcements functionality")</span>
-                <span class="method-start">1318 ms</span>
+                <span class="method-name">runScenario("Checking the School, Classroom, Section Creation Functionality With valid Data", "Verify the SIS Pr...)</span>
+                <span class="method-start">1306 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Fun...)</span>
+                <span class="method-start">52358 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">103605 ms</span>
+                <span class="method-start">135396 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">103606 ms</span>
+                <span class="method-start">135398 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">AssessmentsRunner.BenchmarksRunner</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass(org.testng.TestRunner@596c189f)</span>
+                <span class="method-start">141828 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Creating Benchmarks and activating", "Verify the Benchmarks functionality")</span>
+                <span class="method-start">141908 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">141908 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Activating Benchmark Through Test Administration", "Verify the Benchmarks functionality")</span>
+                <span class="method-start">206514 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">261255 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">261255 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">AssessmentsRunner.QuizCreationRunner</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass(org.testng.TestRunner@596c189f)</span>
+                <span class="method-start">263713 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">263744 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Checking the Quiz Creation Functionality", "Validate the Quiz Creation for Teacher")</span>
+                <span class="method-start">263744 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">434418 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">434418 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">AssessmentsRunner.Benchmark_TeacherRunner</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass(org.testng.TestRunner@596c189f)</span>
+                <span class="method-start">435826 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">435857 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Activating and Deactivating toggles against Benchmark names", "Verify the Benchmark Management proc...)</span>
+                <span class="method-start">435874 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">539244 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">539244 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">AssessmentsRunner.AnnouncementsRunner</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass(org.testng.TestRunner@596c189f)</span>
+                <span class="method-start">540824 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Creating Announcements", "Verify the Announcements functionality")</span>
+                <span class="method-start">540888 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">540888 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">634618 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">634618 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">AssessmentsRunner.QuizSubmissionRunner</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass(org.testng.TestRunner@596c189f)</span>
+                <span class="method-start">636262 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">636303 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Submitting Quiz", "Performing Quiz at student side")</span>
+                <span class="method-start">636303 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">806789 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">806794 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">AssessmentsRunner.PerformingExamRunner</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass(org.testng.TestRunner@596c189f)</span>
+                <span class="method-start">808357 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">808390 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Submitting Exam", "Performing Exam at student side")</span>
+                <span class="method-start">808399 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">882338 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">882338 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">AssessmentsRunner.Provide_ScoreRunner</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass(org.testng.TestRunner@596c189f)</span>
+                <span class="method-start">883807 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">883867 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Validate the Score from Overall SpeedGrader", "Verify the Score Submission at Teacher side")</span>
+                <span class="method-start">883870 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Validate the Score In Assessment SpeedGrader screen", "Verify the Score Submission at Teacher side")</span>
+                <span class="method-start">936832 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">981678 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">981678 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">AssessmentsRunner.Teacher_ActivityprogressRunner</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass(org.testng.TestRunner@596c189f)</span>
+                <span class="method-start">983556 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Validating the Activity progress screen from AC Home tab", "Verify the Activity progress from ToDo ...)</span>
+                <span class="method-start">983613 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">983613 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">1052785 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">1052789 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

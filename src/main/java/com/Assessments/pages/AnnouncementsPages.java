@@ -98,7 +98,7 @@ public class AnnouncementsPages extends ActionType {
 	}
 	public void ClickOnAddNewAnnouncement() {
 
-		for (int i = 0; i < 11; i++) {
+		for (int i = 0; i < 4; i++) {
 			try {
 
 				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -224,17 +224,24 @@ public class AnnouncementsPages extends ActionType {
 	 * Student side verification
 	 */
 	public void ClickOnAnnouncementFromHomeTab() throws AWTException {
-		String an1=announcementName;
-		System.out.println("------------------------------------------------------------------------------------" + an1);
+		//List<String> announcementNames = new ArrayList<>();
+		 String Aname=announcementNames.get(1);
+		String an1=Aname;
+		System.out.println("Announcement:" + an1);
 		WebElement announcementElement = driver.findElement(By.xpath("//a[contains(text(),'" + an1 + "')]"));
+		
+//		Actions a=new Actions(driver);
+//		a.moveToElement(announcementElement).click().perform(); 
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", announcementElement);
 
-		if (announcementElement.isDisplayed()) {
-			announcementElement.click();
-		} else {
-			wait.visibilityOf(announcementElement);
-			cp.scrollWithRobot();
-			announcementElement.click();
-		}
+//		if (announcementElement.isDisplayed()) {
+//			Actions a=new Actions(driver);
+//			a.moveToElement(announcementElement).click().perform();
+//		} else {
+//			JavascriptExecutor js = (JavascriptExecutor) driver;
+//			js.executeScript("arguments[0].click();", announcementElement);
+//		}
 	}
 }
 

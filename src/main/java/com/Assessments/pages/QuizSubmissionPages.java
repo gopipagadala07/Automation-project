@@ -94,7 +94,6 @@ public class QuizSubmissionPages extends ActionType {
 	                List<WebElement> questions = driver.findElements(By.xpath("//div[@id='navigationSideMenu']/ul/li/div/button"));
 	                int numberOfQuestions = questions.size();
 	               //System.out.println("Total number of questions: " + numberOfQuestions);
-
 	                for (int i = 0; i < numberOfQuestions; i++) {
 	                    int questionAttempts = 0;
 	                    int questionMaxAttempts = 5;
@@ -159,8 +158,4 @@ public class QuizSubmissionPages extends ActionType {
 	        }
 	    }
 	}
-
-
 }
-
-

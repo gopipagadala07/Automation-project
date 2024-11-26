@@ -49,7 +49,7 @@ public class Benchmark_Scoring extends ActionType{
 	@FindBy(how=How.XPATH,using = "//span[normalize-space()='Submit Scoring']")private WebElement submit;
 	@FindBy(how=How.XPATH,using="//div[text() = 'Benchmark']/ancestor::mat-dialog-container/descendant::span/mat-icon[text()='close']")private WebElement CloseAfterSubmit;
 
-
+	@FindBy(how=How.XPATH,using = "//h3[text()='Benchmarks']")private WebElement bclick;
 
 	public Benchmark_Scoring(WebDriver driver) {
 		this.driver=driver;
@@ -105,19 +105,26 @@ public class Benchmark_Scoring extends ActionType{
 
 	public void Activityprogress(){
 
-		StaticWait(2);
+		
 		wait.elementToBeClickable(Schedule);
+		wait.visibilityOf(Schedule);
+		//StaticWait(3);
+		Actions actions=new Actions(driver);
+		actions.moveToElement(bclick).click().perform();
 		Schedule.click();
 
-
-		StaticWait(2);
+		
 		wait.elementToBeClickable(progress);
+		wait.visibilityOf(progress);
+		StaticWait(2);
+		
 		progress.click();
 	}
 	public void Scoringscreen(){
 
 		StaticWait(2);
 		wait.elementToBeClickable(scorebnd);
+		wait.visibilityOf(scorebnd);
 		scorebnd.click();
 
 	}
@@ -126,8 +133,9 @@ public class Benchmark_Scoring extends ActionType{
 
 		driver.switchTo().frame(0);
 
-		StaticWait(5);
+		StaticWait(2);
 		wait.elementToBeClickable(score);
+		wait.visibilityOf(score);
 		score.sendKeys("3");
 
 
