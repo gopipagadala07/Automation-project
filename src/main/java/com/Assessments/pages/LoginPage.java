@@ -59,7 +59,10 @@ public class LoginPage extends ActionType{
 		try {
             WebElement idServerAllow = driver.findElement(By.xpath("//button[@value='yes']"));
             if (idServerAllow.isDisplayed()) {
-                idServerAllow.click();
+            	JavascriptExecutor js = (JavascriptExecutor) driver;
+            	js.executeScript("arguments[0].scrollIntoView(true);", idServerAllow);  
+            	js.executeScript("arguments[0].click();", idServerAllow);
+                //idServerAllow.click();
             }
         } catch (NoSuchElementException e) {
           

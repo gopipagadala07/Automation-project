@@ -183,6 +183,7 @@ public class PerformingexamPages extends ActionType {
 			wait.elementToBeClickable(Submit);
 			wait.visibilityOf(Submit);
 			Submit.click();
+			StaticWait(2);
 			driver.switchTo().defaultContent();
 			wait.elementToBeClickable(CloseAfterSubmit);
 			wait.visibilityOf(CloseAfterSubmit);

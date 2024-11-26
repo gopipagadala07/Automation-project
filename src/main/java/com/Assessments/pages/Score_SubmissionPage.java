@@ -1,6 +1,8 @@
 package com.Assessments.pages;
 
 import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -21,6 +23,9 @@ public class Score_SubmissionPage extends ActionType
 	static String ClassroomName;
 	public WebDriver driver;
 	private Wait wait;
+	static int SLastName;
+	static String SFirstName;
+	
 	/*
 	 * Score at Speed Grader Level
 	 */
@@ -55,8 +60,7 @@ public class Score_SubmissionPage extends ActionType
 	@FindBy(how = How.XPATH,using = "//a[contains(text(),'Speed Grader')]")private WebElement Speed_Grader_Tab;
 	@FindBy(how = How.XPATH,using = "//div[contains(text(),'Exams')]/../../../../../following-sibling::div/descendant::mat-list[1]/span[1]")private WebElement Exam;
 
-	
-	//*[contains(text(),' AutoBenchmark3007 ')]
+
 	public Score_SubmissionPage(WebDriver driver) 
 	{
 		this.driver=driver;
@@ -84,10 +88,13 @@ public class Score_SubmissionPage extends ActionType
 	{
 		cp.FPdropdown(All_ActivitiesDropDown, "Automation Test");
 	}
-	public void All_MembersDropDown()
+	public void All_MembersDropDown(String LastName,String FirstName)
 	{
-		cp.FPdropdown(All_MembersDropDown, "1848 fpk12student");
+		//cp.FPdropdown(All_MembersDropDown, "1848 fpk12student");
+		String StudentName = LastName + " " + FirstName;
+	    cp.FPdropdown(All_MembersDropDown, StudentName);
 	}
+	
 	public void click_On_Score()
 	{
 		Score.click();

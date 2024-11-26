@@ -61,8 +61,7 @@ public class Benchmark_TeacherStepdefinitions extends ActionType{
 	public void activate_the_toggle_and_compare_the_student_status() {
 		benchmarkTeacher.Activatetoggle();
 		benchmarkTeacher.CheckStdToggle();
-		benchmarkTeacher.enableMainToggle();
-
+		
 	}
 
 	@Then("capture the Benchmark band")
