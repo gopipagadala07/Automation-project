@@ -122,16 +122,12 @@ public class Score_SubmissionPage extends ActionType
 		
 	}
 	public void Provide_the_for_each_Quiz_in_Activity_Progress_Screen()
-
 	{
 		Score_SubmissionPage Score_S =new Score_SubmissionPage(Base.getDriver());
 		 for (int i = 0; i < Quiz_List.size(); i++) 
 		 {
-	           
-
 	            JavascriptExecutor js = (JavascriptExecutor) driver;
-	            
-	            
+
 	            try 
 	            {
 	            	 WebElement ellipse = Quiz_List.get(i);

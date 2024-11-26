@@ -48,6 +48,8 @@ import java.awt.AWTException;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeoutException;
+
 import com.Utils.Base;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -83,7 +85,7 @@ public class QuizSubmissionStepdefinitions extends ActionType{
 	}
 	
 	@Then("user clicks on Launch icon and complete test")
-	public void user_clicks_on_launch_icon_and_complete_test() throws AWTException, InterruptedException {
-	   spages.ClickOnLaunchAndCompleteTest(); 
+	public void user_clicks_on_launch_icon_and_complete_test() throws AWTException, InterruptedException, TimeoutException {
+	   spages.ClickOnLaunchAndCompleteQuiz(); 
 	}
 }

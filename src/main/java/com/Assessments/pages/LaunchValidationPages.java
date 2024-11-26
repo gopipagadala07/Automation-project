@@ -44,13 +44,14 @@ public class LaunchValidationPages extends ActionType {
 	@FindBy(how=How.XPATH,using="//iframe[@class='iframe-styling ng-star-inserted']")private WebElement iFrame;
 
 	@FindBy(how=How.XPATH,using="//div[contains(text(),'EXAM')]")private WebElement ExamTab;
+	@FindBy(how=How.XPATH,using="//b[text()='Achievement']/parent::div/child::label")private WebElement StatusBand;
 
 
 
-	@FindBy(how = How.XPATH, using = "//cdk-nested-tree-node[@role='treeitem']/child::div/child::div[2]/cdk-nested-tree-node/child::div/child::small/following::div/child::span/child::mat-icon")
+	@FindBy(how = How.XPATH, using = "//cdk-nested-tree-node[@role='treeitem']/child::div/child::div/cdk-nested-tree-node/child::div/child::div[2]/child::span[2]/child::mat-icon")
 	private List<WebElement> Quizzeslist;
 
-	@FindBy(how = How.XPATH, using = "//small[@class='announce__list--icon']")
+	@FindBy(how = How.XPATH, using = "//small[@class='announce__list--icon']/child::span[2]/child::mat-icon")
 	private List<WebElement> examsList;
 
 
@@ -59,8 +60,6 @@ public class LaunchValidationPages extends ActionType {
 		PageFactory.initElements(driver, this);
 		this.wait = new Wait(driver); 
 	}
-
-
 	public void clickEachQuizAndClose() {
 		System.out.println("Total Quizzes: " + Quizzeslist.size());
 
@@ -69,10 +68,12 @@ public class LaunchValidationPages extends ActionType {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click()", quiz);
 			StaticWait(2);
-				JavascriptExecutor js1 = (JavascriptExecutor) driver;
-				js1.executeScript("arguments[0].click()", CloseIcon);
-				StaticWait(1); }
-		
+			String s=StatusBand.getText();
+			System.out.println(s);
+			JavascriptExecutor js1 = (JavascriptExecutor) driver;
+			js1.executeScript("arguments[0].click()", CloseIcon);
+			StaticWait(1); 
+		}
 	}
 	public void clickEachExamAndClose() {
 		System.out.println("Total exams: " + examsList.size());
@@ -82,18 +83,12 @@ public class LaunchValidationPages extends ActionType {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click()", quiz);
 			StaticWait(2);
+			String s=StatusBand.getText();
+			System.out.println(s);
 
-				JavascriptExecutor js1 = (JavascriptExecutor) driver;
-				js1.executeScript("arguments[0].click()", CloseIcon);
-				StaticWait(1); }
-		
+			JavascriptExecutor js1 = (JavascriptExecutor) driver;
+			js1.executeScript("arguments[0].click()", CloseIcon);
+			StaticWait(1); }
+
 	}
-	}
-
-
-
-
-
-
-
-
+}

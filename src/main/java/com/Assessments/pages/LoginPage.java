@@ -36,7 +36,6 @@ public class LoginPage extends ActionType{
 	public LoginPage(WebDriver driver)
 	{
 		this.driver=driver;
-		
 	}
 
 	public void allFieldsDispayed() {
