@@ -171,6 +171,7 @@ public class BenchmarksPage extends ActionType {
 		cp.SearchTestname(testname);
 		wait.elementToBeClickable(gobutton);
 		gobutton.click();
+		StaticWait(2);
 	}
 	public void addicon() {
 
@@ -238,7 +239,7 @@ public class BenchmarksPage extends ActionType {
 		wait.elementToBeClickable(CourseBenchmarkDropDown);	
 
 		cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
-		System.out.println(SectionName);
+		System.out.println(SectionName + "---------------------------------------------------------------");
 	}
 
 
@@ -271,19 +272,17 @@ public class BenchmarksPage extends ActionType {
 
 	    while (retries < maxRetries) {
 	        try {
-	            // First check if ToggleActive is displayed
+	            
 	            if (ToggleActive.isDisplayed()) {
-	                wait.until(ExpectedConditions.elementToBeClickable(ToggleActive)); // Wait for the element to be clickable
+	                wait.until(ExpectedConditions.elementToBeClickable(ToggleActive)); 
 	                Actions actions = new Actions(driver);
-	                actions.moveToElement(ToggleActive).click().perform(); // Click on ToggleActive
+	                actions.moveToElement(ToggleActive).click().perform(); 
 
-	                // Wait for the "Yes" button to be clickable
 	                wait.until(ExpectedConditions.elementToBeClickable(ClickOnYEs));
 	                ClickOnYEs.click();
-	                return; // Exit after performing the actions successfully
+	                return; 
 	            } else {
-	                // If ToggleActive is not displayed, click on ToggleInActive
-	                StaticWait(1); // Optional wait time for UI to stabilize
+	                StaticWait(1); 
 	                Actions actions = new Actions(driver);
 	                actions.moveToElement(ToggleInActive).click().perform(); 
 

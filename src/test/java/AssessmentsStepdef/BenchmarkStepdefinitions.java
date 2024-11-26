@@ -100,7 +100,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 		if (testdata == null) {
 	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
 	    }
-	    String Tname = testdata.get(Testname).get("Testname");	   
+	    String Tname = testdata.get(Testname).get("TestName");	   
 		bpages.testSearch(Tname);
 	
 	}
@@ -162,12 +162,13 @@ public class BenchmarkStepdefinitions extends ActionType{
 	}
 
 	@And("the user selects the course benchmark from the dropdown at row {int}")
-	public void the_user_selects_the_course_benchmark_from_the_dropdown_at_row_rownumber(Integer int1) throws InvalidFormatException, IOException {
-		 if (testdata == null) {
-		        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
-		    }
-		    String CourseBmark = testdata.get(int1).get("Section Name");	   
-		    bpages.CourseBenchmarkDdown(CourseBmark); 
+	public void the_user_selects_the_course_benchmark_from_the_dropdown_at_row_rownumber(int SectionName1) throws Exception, IOException {
+		if (testdata == null) {
+	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+	    }
+	    String CourseBmark = testdata.get(SectionName1).get("Section Name");	   	   
+		    bpages.CourseBenchmarkDdown(CourseBmark);
+		    System.out.println(CourseBmark + "-----------------------------------------------------------------------------------------------------");
 	}
 
 	@And("the user selects the school from the dropdown at row {int}")

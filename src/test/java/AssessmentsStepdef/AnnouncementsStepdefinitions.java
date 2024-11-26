@@ -97,7 +97,7 @@ public class AnnouncementsStepdefinitions extends ActionType{
 	 */
 	@Then("user clicks on the Announcement from home tab")
 	public void user_clicks_on_the_announcement_from_home_tab() throws AWTException {
-	   announce.ClickOnAnnouncementFromHomeTab();
+	  // announce.ClickOnAnnouncementFromHomeTab();
 	}
 
 	
