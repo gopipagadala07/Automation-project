@@ -63,7 +63,7 @@ public class QuizSubmissionPages extends ActionType {
 		s.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
 		s.executeScript("arguments[0].scrollIntoView(true);", Topic);
 		s.executeScript("arguments[0].click();", Topic);
-		StaticWait(1);
+		StaticWait(3);
 		s.executeScript("arguments[0].scrollIntoView(true);", SubTopic);
 		s.executeScript("arguments[0].click();", SubTopic);
 		StaticWait(1);

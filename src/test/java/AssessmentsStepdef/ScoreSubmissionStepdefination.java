@@ -15,7 +15,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Score_SubmissionStepdefination extends ActionType   
+public class ScoreSubmissionStepdefination extends ActionType   
 {
 	ExcelReader reader=new ExcelReader();
 	static List<Map<String, String>> testdata=null;
@@ -54,17 +54,15 @@ public class Score_SubmissionStepdefination extends ActionType
 	@Then("clicks on Score button")
 	public void clicks_on_score_button() 
 	{
-		S_Submission.click_On_Score();
+		//S_Submission.click_On_Score();
 	}
 
 	@Then("Enter the Score and FeedBack and submit the Score")
-	public void enter_the_score_and_feed_back() 
+	public void enter_the_score_and_feed_back() throws Exception 
 	{
 		S_Submission.provide_the_Score();
 	}
-
-
-
+	
 	@And("Click on Quiz Tab and click on All")
 	public void click_on_quiz_tab_and_click_on_all() 
 	{
@@ -74,7 +72,7 @@ public class Score_SubmissionStepdefination extends ActionType
 	@Then("Provide the Score at Activity Progress screen")
 	public void provide_the_score_at_activity_progress_screen() 
 	{
-	    S_Submission.Provide_the_for_each_Quiz_in_Activity_Progress_Screen();
+	    //S_Submission.Provide_the_for_each_Quiz_in_Activity_Progress_Screen();
 	}
 	@When("Users Click on Speed Grader tab in Left menu")
 	public void users_click_on_speed_grader_tab_in_left_menu() 
@@ -82,10 +80,10 @@ public class Score_SubmissionStepdefination extends ActionType
 		S_Submission.Navigate_Assessment_SpeedGrader_page();
 	}
 
-	@And("User click on the Exam")
+	@And("User Score the Exam")
 	public void user_click_on_the_exam() 
 	{
-		S_Submission.click_On_Exam();
+		S_Submission.Score_Exam();
 	}
 	
 

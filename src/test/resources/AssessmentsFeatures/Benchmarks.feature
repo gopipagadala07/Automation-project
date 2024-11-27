@@ -4,7 +4,7 @@ Feature: Verify the Benchmarks functionality
     Given User launch the application with Valid URL
     And User able to see all Fields
     Then User enters the credentials from the excel sheet at <rownumber1>
-     And User is on homepage
+    And User is on homepage
     When the user clicks on the Districts
     And user navigates to Benchmarks tab
     And the user selects the Year from the dropdown at row <rownumber>
@@ -31,7 +31,7 @@ Feature: Verify the Benchmarks functionality
     Given User launch the application with Valid URL
     And User able to see all Fields
     Then User enters the credentials from the excel sheet at <rownumber2>
-     And User is on homepage
+    And User is on homepage
     When the user clicks on the Districts
     When user clicks on Testadministration tab
     And the user selects the Year from the dropdown at row <rownumber>

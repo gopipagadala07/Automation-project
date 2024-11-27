@@ -110,61 +110,12 @@ public class Benchmark_TeacherPage extends ActionType{
 		StaticWait(2);
 	}
 
-	public void benchmarktab()
-	{
-		StaticWait(2);
-		wait.elementToBeClickable(Benchmarktab);
-		Benchmarktab.click();
-
-		wait.elementToBeClickable(Schedule);
-		Schedule.click();
-	}
-
-	public void Activatetoggle()
-	{
-		wait.elementToBeClickable(progress);
-		progress.click();
-
-
-	}
-	public void CheckStdToggle() {
-		try {
-			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
-			wait.until(ExpectedConditions.elementToBeClickable(teststatus));
-			wait.until(ExpectedConditions.visibilityOf(teststatus));
-			if (teststatus.isEnabled()) {
-				System.out.println("Test Status was already enabled");
-			} else {
-				wait.until(ExpectedConditions.elementToBeClickable(teststatus));
-				wait.until(ExpectedConditions.visibilityOf(teststatus));
-				teststatus.click();
-			}
-		} catch (Exception e) {
-			System.out.println("An error occurred: " + e.getMessage());
-		}
-	}
-
-
-
-	public void bandstatus()
-
-	{
-
-		String statusText = bandstatus.getText();
-
-		System.out.println("Band Status: " + statusText);
-
-		wait.elementToBeClickable(closebtn);
-		closebtn.click();
-
-
-	}
-
-
+	
 	public void Grade()
 	{
 		StaticWait(2);
 		wait.elementToBeClickable(Gradetab);
+		wait.visibilityOf(Gradetab);
 		Gradetab.click();
 
 		StaticWait(2);
@@ -177,31 +128,20 @@ public class Benchmark_TeacherPage extends ActionType{
 	{
 		StaticWait(2);
 		wait.elementToBeClickable(bystandard);
-		bystandard.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", bystandard);
+		//bystandard.click();
 
 		StaticWait(2);
 		wait.elementToBeClickable(stdprint);
-		stdprint.click();
-		StaticWait(5);
-		hometab.click();
+		js.executeScript("arguments[0].click();", stdprint);
+		//stdprint.click();
+		StaticWait(3);
+		js.executeScript("arguments[0].click();", hometab);
+		//hometab.click();
 
 	}
 
-	/*	public void printCounts() {
-
-		List<WebElement> Benchmarkcount=driver.findElements(By.xpath("//h3[contains(text(),'Benchmarks')]/parent::div/parent::div/following-sibling::div/child::mat-list/mat-list-item"));
-		//app-assessmentcenter-bechmarklist//mat-list  
-		//List<WebElement> Benchmarkcount=driver.findElements(By.xpath("//app-assessmentcenter-bechmarklist//mat-list"));
-
-		List<WebElement> Homecount=driver.findElements(By.xpath("//div[contains(text(),'EXAM')]/parent::div/parent::div/parent::div/parent::div/parent::mat-tab-header/following-sibling::div/mat-tab-body[2]/div/mat-list"));
-
-		int benchmarkCount = Benchmarkcount.size();
-		int examCount = Homecount.size();
-
-		// Print the counts
-		System.out.println("Benchmark Count: " + benchmarkCount);
-		System.out.println("Exam Count: " + examCount);
-	}*/
 
 	public int getListCount(By locator) {
 		List<WebElement> elements = driver.findElements(locator);
@@ -210,7 +150,6 @@ public class Benchmark_TeacherPage extends ActionType{
 
 	public void printCounts() {
 		By benchmarkLocator = By.xpath("//app-assessmentcenter-bechmarklist//mat-list");
-		//    By benchmarkLocator = By.xpath("//h3[contains(text(),'Benchmarks')]/parent::div/parent::div/following-sibling::div/child::mat-list/mat-list-item");
 
 		By examLocator = By.xpath("//div[contains(text(),'EXAM')]/parent::div/parent::div/parent::div/parent::div/parent::mat-tab-header/following-sibling::div/mat-tab-body[2]/div/mat-list");
 
@@ -218,7 +157,7 @@ public class Benchmark_TeacherPage extends ActionType{
 		int benchmarkCount = getListCount(benchmarkLocator);
 		int examCount = getListCount(examLocator);
 
-		// Print the counts
+	
 		System.out.println("Benchmark Count: " + benchmarkCount);
 		System.out.println("Exam Count: " + examCount);
 	}
