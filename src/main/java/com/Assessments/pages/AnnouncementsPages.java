@@ -26,6 +26,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -64,11 +66,13 @@ public class AnnouncementsPages extends ActionType {
 	@FindBy(how=How.XPATH,using="(//div[@role='tab'])[1]")private WebElement Hometab;
 	@FindBy(how=How.XPATH,using="//a[text()='Assessment Center']/following::li[2]")private WebElement course;//to scroll page upto course 
 
+
+	
 	public WebElement getCommunityNameElement(String ClassroomName) {
 		String xpath = "//span[(text()='"+ClassroomName+"')]/parent::div/parent::mat-card-content/preceding-sibling::mat-card-header/child::div/mat-card-title/child::span";
 		return driver.findElement(By.xpath(xpath));
 	}
-
+	 
 	public void communityClick(String ClassroomName, String SectionName, String TLastName, String TFirstName)
 	{
 		cp.searchField(ClassroomName + "(" + SectionName + ")-"+ TLastName + " " + TFirstName);
@@ -79,11 +83,13 @@ public class AnnouncementsPages extends ActionType {
 		a.moveToElement(getCommunityNameElement(ClassroomName)).click().build().perform();
 		StaticWait(2);
 	}
+
 	public AnnouncementsPages(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new Wait(driver); 
 	}
+	 
 	public void ClickOnLearningaAndAssessmentCenter() {
 		wait.elementToBeClickable(LearningTab);
 		LearningTab.click();
@@ -91,11 +97,13 @@ public class AnnouncementsPages extends ActionType {
 		wait.elementToBeClickable(AssessmentcenterTab);
 		AssessmentcenterTab.click();
 	}
+	 
 	public void ClickOnAnnouncementTab() {
 		wait.elementToBeClickable(AnnouncementTab);
 		wait.visibilityOf(AnnouncementTab);
 		AnnouncementTab.click();
 	}
+	 
 	public void ClickOnAddNewAnnouncement() {
 
 		for (int i = 0; i < 4; i++) {
@@ -126,7 +134,7 @@ public class AnnouncementsPages extends ActionType {
 
 				js.executeScript("arguments[0].scrollIntoView(true);", course);
 
-
+				StaticWait(1);
 				wait.until(ExpectedConditions.elementToBeClickable(EventDate));
 				wait.until(ExpectedConditions.visibilityOf(EventDate));
 				cp.getRandomDate(EventDate);
@@ -147,7 +155,7 @@ public class AnnouncementsPages extends ActionType {
 			} catch (Exception e) {
 				System.out.println("Error while adding new announcement: " + e.getMessage());
 			}}}
-
+	 
 	public void AnnouncementsSearch() {
 
 		String an=announcementNames.get(0);
@@ -162,7 +170,7 @@ public class AnnouncementsPages extends ActionType {
 		StaticWait(2);
 	}
 
-
+	 
 	public void PageNation() throws AWTException {
 
 		cp.scrollWithRobot();
@@ -172,8 +180,8 @@ public class AnnouncementsPages extends ActionType {
 		StaticWait(2);
 		wait.elementToBeClickable(nextpage);
 		wait.visibilityOf(nextpage);
-//		Dimension d=new Dimension(1920,1080);
-//		driver.manage().window().setSize(d);
+		//		Dimension d=new Dimension(1920,1080);
+		//		driver.manage().window().setSize(d);
 		nextpage.click();
 		StaticWait(2);
 
@@ -193,12 +201,13 @@ public class AnnouncementsPages extends ActionType {
 	//		FirstPage.click();
 	//		StaticWait(2);
 
-
+	 
 	public void ClickOnHomeTab() {
 		wait.elementToBeClickable(Hometab);
 		wait.visibilityOf(Hometab);
 		Hometab.click();
 	}
+	 
 	public void ClickOnAddAndSave() {
 		wait.elementToBeClickable(ADdNewAnnouncement);
 		wait.visibilityOf(ADdNewAnnouncement);
@@ -208,40 +217,41 @@ public class AnnouncementsPages extends ActionType {
 		wait.visibilityOf(SaveButton);
 		SaveButton.click();
 
-//		try {
-//			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
-//			wait.until(ExpectedConditions.alertIsPresent());  
-//			Alert alert = driver.switchTo().alert(); 
-//			String popupMessage = alert.getText(); 
-//			System.out.println("-------------Popup Message:-------- " + popupMessage);
-//		} catch (NoAlertPresentException e) {
-//			System.out.println("No alert present: " + e.getMessage());
-//		}
+		//		try {
+		//			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
+		//			wait.until(ExpectedConditions.alertIsPresent());  
+		//			Alert alert = driver.switchTo().alert(); 
+		//			String popupMessage = alert.getText(); 
+		//			System.out.println("-------------Popup Message:-------- " + popupMessage);
+		//		} catch (NoAlertPresentException e) {
+		//			System.out.println("No alert present: " + e.getMessage());
+		//		}
 
 
 	}
 	/*
 	 * Student side verification
 	 */
+	 
 	public void ClickOnAnnouncementFromHomeTab() throws AWTException {
 		//List<String> announcementNames = new ArrayList<>();
-		 String Aname=announcementNames.get(1);
+		String Aname=announcementNames.get(1);
 		String an1=Aname;
 		System.out.println("Announcement:" + an1);
 		WebElement announcementElement = driver.findElement(By.xpath("//a[contains(text(),'" + an1 + "')]"));
-		
-//		Actions a=new Actions(driver);
-//		a.moveToElement(announcementElement).click().perform(); 
+
+		//		Actions a=new Actions(driver);
+		//		a.moveToElement(announcementElement).click().perform(); 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", announcementElement);
 
-//		if (announcementElement.isDisplayed()) {
-//			Actions a=new Actions(driver);
-//			a.moveToElement(announcementElement).click().perform();
-//		} else {
-//			JavascriptExecutor js = (JavascriptExecutor) driver;
-//			js.executeScript("arguments[0].click();", announcementElement);
-//		}
+		//		if (announcementElement.isDisplayed()) {
+		//			Actions a=new Actions(driver);
+		//			a.moveToElement(announcementElement).click().perform();
+		//		} else {
+		//			JavascriptExecutor js = (JavascriptExecutor) driver;
+		//			js.executeScript("arguments[0].click();", announcementElement);
+		//		}
 	}
 }
 

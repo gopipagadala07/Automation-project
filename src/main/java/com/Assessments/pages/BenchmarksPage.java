@@ -194,13 +194,15 @@ public class BenchmarksPage extends ActionType {
 	public void clickOnSectionTab() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		int retries = 0;
-		int maxRetries = 10;
+		int maxRetries = 15;
 
 		while (retries < maxRetries) {
 			try {
 				WebElement sectionTab = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'SECTIONS')]")));
-				Actions actions = new Actions(driver);
-				actions.moveToElement(sectionTab).click().perform();
+//				Actions actions = new Actions(driver);
+//				actions.moveToElement(sectionTab).click().perform();
+				JavascriptExecutor js=(JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", sectionTab);
 				return;
 
 			} catch (StaleElementReferenceException e) {

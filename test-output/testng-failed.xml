@@ -4,15 +4,15 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="AssessmentsRunner.Provide_ScoreRunner">
+      <class name="AssessmentsRunner.BenchmarksRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="beforeClass"/>
+          <include name="runScenario" invocation-numbers="0 1"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
           <include name="afterClass"/>
+          <include name="beforeClass"/>
         </methods>
-      </class> <!-- AssessmentsRunner.Provide_ScoreRunner -->
+      </class> <!-- AssessmentsRunner.BenchmarksRunner -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

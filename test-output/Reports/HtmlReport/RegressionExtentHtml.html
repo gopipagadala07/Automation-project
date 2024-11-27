@@ -1,0 +1,1451 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href='http://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title></title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+			
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+        <a href="#!" class="brand-logo black"><img src="http://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'></span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Nov 27, 2024 12:33:30 PM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Features</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='$100%'>
+                    <span class='strong'>10</span> features passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> features failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> skipped
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Scenarios</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='child-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
+                    <span class='strong'>13</span> scenarios passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> scenarios failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> others
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Steps</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='grandchild-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
+                    <span class='strong'>179</span> steps passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> steps failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify the SIS Provisioning Creation Functionality</span>
+						<span class='test-time'>Nov 27, 2024 12:33:32 PM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='2' status='pass'>
+
+	<span class='duration right label'>00 00 42.636</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Checking the School, Classroom, Section Creation Functionality With valid Data</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td></tr><tr><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='3' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Checking the School, Classroom, Section Creation Functionality With valid Data</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='7' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='8' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='9' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 0</h6>
+
+				</li>
+				<li test-id='10' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_sis_provisining_tab_under_administration_in_left_menu()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on SIS provisining tab under Administration in Left menu</h6>
+
+				</li>
+				<li test-id='11' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_school_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Navigate to School tab</h6>
+
+				</li>
+				<li test-id='12' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_the_add_new_school_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on the Add New School button</h6>
+
+				</li>
+				<li test-id='13' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_enter_the_name_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Enter the Name and Description</h6>
+
+				</li>
+				<li test-id='14' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_timezone_from_dropdown(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Select the Timezone from Dropdown 0</h6>
+
+				</li>
+				<li test-id='15' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_saved_the_school_and_search_for_the_created_school_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Saved the School and Search for the Created School in Search here Field</h6>
+
+				</li>
+				<li test-id='16' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_classroom_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Navigate to Classroom tab</h6>
+
+				</li>
+				<li test-id='17' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_created_school_in_school_dropdown()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Select the Created School in School dropdown</h6>
+
+				</li>
+				<li test-id='18' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_the_add_new_classroom_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on the Add New Classroom button</h6>
+
+				</li>
+				<li test-id='19' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_enter_the_classroom_name_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Enter the Classroom Name and Description</h6>
+
+				</li>
+				<li test-id='20' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_saved_the_classroom_and_search_for_the_created_classroom_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Saved the Classroom and Search for the Created Classroom in Search here Field</h6>
+
+				</li>
+				<li test-id='21' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_sections_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Navigate to Sections tab</h6>
+
+				</li>
+				<li test-id='22' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_active_year_from_year_dropdown(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Select the Active Year from year Dropdown 0</h6>
+
+				</li>
+				<li test-id='23' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_the_add_new_sections_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Click on the Add New Sections button</h6>
+
+				</li>
+				<li test-id='24' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_enter_the_section_name_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Enter the Section Name and Description</h6>
+
+				</li>
+				<li test-id='25' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_saved_the_section_and_search_for_the_created_section_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Saved the Section and Search for the Created Section in Search here Field</h6>
+
+				</li>
+				<li test-id='26' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.store_the_data_in_excel()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Store the data in Excel</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario outline node' test-id='30' status='pass'>
+
+	<span class='duration right label'>00 01 09.977</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Verify the Users Creation Functionality with valid Data</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td></tr><tr><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='31' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Verify the Users Creation Functionality with valid Data</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='35' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='36' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='37' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 0</h6>
+
+				</li>
+				<li test-id='38' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_sis_provisining_tab_under_administration_in_left_menu()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on SIS provisining tab under Administration in Left menu</h6>
+
+				</li>
+				<li test-id='39' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_district_user_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Navigate to District User tab</h6>
+
+				</li>
+				<li test-id='40' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_add_new_user_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Add New User button</h6>
+
+				</li>
+				<li test-id='41' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_enters_the_district_user_email_district_user_first_name_district_user_last_name_into_the_respective_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Enters the District user Email, District user First name, District user Last name into the Respective Fields</h6>
+
+				</li>
+				<li test-id='42' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_saved_the_district_user_and_search_for_the_user_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Saved the District User and Search for the User in search here Field</h6>
+
+				</li>
+				<li test-id='43' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_edit_option_for_logins_creations()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user Click on Edit option for Logins Creations</h6>
+
+				</li>
+				<li test-id='44' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.click_on_create_new_login_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Click on Create New login button</h6>
+
+				</li>
+				<li test-id='45' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_reset_the_password_and_save_the_user()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Reset the Password and save the user</h6>
+
+				</li>
+				<li test-id='46' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_settings_option_at_user_level_ellipses()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Settings option at User level Ellipses</h6>
+
+				</li>
+				<li test-id='47' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_check_the_is_district_admin_checkbox()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Check the Is District Admin Checkbox</h6>
+
+				</li>
+				<li test-id='48' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_close_the_settings_pop_up()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Close the Settings Pop up</h6>
+
+				</li>
+				<li test-id='49' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.store_the_users_data_in_excel()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Store the users data in Excel</h6>
+
+				</li>
+				<li test-id='50' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_teachers_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Navigate to Teachers tab</h6>
+
+				</li>
+				<li test-id='51' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_created_school_in_school_dropdown()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Select the Created School in School dropdown</h6>
+
+				</li>
+				<li test-id='52' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_add_new_teacher_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Add New Teacher button</h6>
+
+				</li>
+				<li test-id='53' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_enters_the_teacher_email_teacher_first_name_teacher_last_name_into_the_respective_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Enters the Teacher Email, Teacher First name, Teacher Last name into the Respective Fields</h6>
+
+				</li>
+				<li test-id='54' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_saved_the_teacher_and_search_for_the_user_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Saved the Teacher and Search for the User in search here Field</h6>
+
+				</li>
+				<li test-id='55' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_edit_option_for_logins_creations()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user Click on Edit option for Logins Creations</h6>
+
+				</li>
+				<li test-id='56' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.click_on_create_new_login_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Click on Create New login button</h6>
+
+				</li>
+				<li test-id='57' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_reset_the_password_and_save_the_user()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Reset the Password and save the user</h6>
+
+				</li>
+				<li test-id='58' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_settings_option_at_user_level_ellipses()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Settings option at User level Ellipses</h6>
+
+				</li>
+				<li test-id='59' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_classrooms_tab_in_settings_pop_up()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Navigate to Classrooms tab in settings Pop up</h6>
+
+				</li>
+				<li test-id='60' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_values_in_the_year_section_classroom_dropdown_and_click_on_add_button(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Select the Values in the Year 0, Section, Classroom dropdown and Click on Add button</h6>
+
+				</li>
+				<li test-id='61' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_close_the_settings_pop_up()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Close the Settings Pop up</h6>
+
+				</li>
+				<li test-id='62' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.store_the_users_data_in_excel()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Store the users data in Excel</h6>
+
+				</li>
+				<li test-id='63' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_students_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Navigate to Students tab</h6>
+
+				</li>
+				<li test-id='64' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_created_school_in_school_dropdown()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Select the Created School in School dropdown</h6>
+
+				</li>
+				<li test-id='65' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_add_new_student_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Add New Student button</h6>
+
+				</li>
+				<li test-id='66' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_enters_the_student_email_student_first_name_student_last_name_into_the_respective_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Enters the Student Email, Student First name, Student Last name into the Respective Fields</h6>
+
+				</li>
+				<li test-id='67' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_saved_the_student_and_search_for_the_user_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Saved the Student and Search for the User in search here Field</h6>
+
+				</li>
+				<li test-id='68' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_edit_option_for_logins_creations()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user Click on Edit option for Logins Creations</h6>
+
+				</li>
+				<li test-id='69' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.click_on_create_new_login_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Click on Create New login button</h6>
+
+				</li>
+				<li test-id='70' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_reset_the_password_and_save_the_user()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Reset the Password and save the user</h6>
+
+				</li>
+				<li test-id='71' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_settings_option_at_user_level_ellipses()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Settings option at User level Ellipses</h6>
+
+				</li>
+				<li test-id='72' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_value_from_classroom_dropdown_and_click_on_add_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Select the Value from Classroom dropdown and Click on Add button</h6>
+
+				</li>
+				<li test-id='73' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_close_the_settings_pop_up()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Close the Settings Pop up</h6>
+
+				</li>
+				<li test-id='74' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.store_the_users_data_in_excel()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Store the users data in Excel</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='78'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify the Benchmarks functionality</span>
+						<span class='test-time'>Nov 27, 2024 12:35:27 PM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='79' status='pass'>
+
+	<span class='duration right label'>00 00 54.185</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Creating Benchmarks and activating</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>0</td><td>1</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='80' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Creating Benchmarks and activating</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='84' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='85' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='86' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 1</h6>
+
+				</li>
+				<li test-id='87' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='88' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_districts()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks on the Districts</h6>
+
+				</li>
+				<li test-id='89' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.user_navigates_to_Benchmarks_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user navigates to Benchmarks tab</h6>
+
+				</li>
+				<li test-id='90' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_year_from_the_dropdown_at_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Year from the dropdown at row 0</h6>
+
+				</li>
+				<li test-id='91' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_grade_from_the_dropdown_at_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Grade from the dropdown at row 0</h6>
+
+				</li>
+				<li test-id='92' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_subject_from_the_dropdown_at_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Subject from the dropdown at row 0</h6>
+
+				</li>
+				<li test-id='93' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_add_new_benchmark_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Add New Benchmark button</h6>
+
+				</li>
+				<li test-id='94' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_enters_the_benchmark_name_and_description_generated_randomly()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user enters the benchmark name and description generated randomly</h6>
+
+				</li>
+				<li test-id='95' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_find_test_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Find Test button</h6>
+
+				</li>
+				<li test-id='96' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_search_here_field_and_enters_the_test_name_from_row(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Search Here field and enters the test name from row 0</h6>
+
+				</li>
+				<li test-id='97' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_add_icon_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Add icon button</h6>
+
+				</li>
+				<li test-id='98' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_all_the_checkboxes()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects all the checkboxes</h6>
+
+				</li>
+				<li test-id='99' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Save button</h6>
+
+				</li>
+				<li test-id='100' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_publish_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Publish button</h6>
+
+				</li>
+				<li test-id='101' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.a_confirmation_popup_appears_and_the_user_clicks_on_the_yes_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And a confirmation popup appears, and the user clicks on the Yes button</h6>
+
+				</li>
+				<li test-id='102' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_created_benchmark_and_navigates_to_the_sections_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the created benchmark and navigates to the Sections tab</h6>
+
+				</li>
+				<li test-id='103' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_search_here_field_and_enters_the_section_name_from_row(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Search Here field and enters the section name from row 0</h6>
+
+				</li>
+				<li test-id='104' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_add_button(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Add button 0</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario outline node' test-id='108' status='pass'>
+
+	<span class='duration right label'>00 00 50.647</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Activating Benchmark Through Test Administration</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>0</td><td>2</td><td>1</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='109' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Activating Benchmark Through Test Administration</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='113' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='114' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='115' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 1</h6>
+
+				</li>
+				<li test-id='116' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='117' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_districts()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks on the Districts</h6>
+
+				</li>
+				<li test-id='118' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.user_clicks_on_Testadministration_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user clicks on Testadministration tab</h6>
+
+				</li>
+				<li test-id='119' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_year_from_the_dropdown_at_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Year from the dropdown at row 0</h6>
+
+				</li>
+				<li test-id='120' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_grade_from_the_dropdown_at_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Grade from the dropdown at row 0</h6>
+
+				</li>
+				<li test-id='121' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_subject_from_the_dropdown_at_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Subject from the dropdown at row 0</h6>
+
+				</li>
+				<li test-id='122' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_course_benchmark_from_the_dropdown_at_row_rownumber(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the course benchmark from the dropdown at row 0</h6>
+
+				</li>
+				<li test-id='123' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_school_from_the_dropdown_at_row_rownumber(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the school from the dropdown at row 0</h6>
+
+				</li>
+				<li test-id='124' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_teacher_from_the_dropdown_at_row_rownumber(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the teacher from the dropdown at row 2</h6>
+
+				</li>
+				<li test-id='125' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_classroom_from_the_dropdown_at_row_rownumber(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the classroom from the dropdown at row 0</h6>
+
+				</li>
+				<li test-id='126' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.user_clicks_on_toggle_to_activate_benchmark()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user clicks on toggle to activate benchmark</h6>
+
+				</li>
+				<li test-id='127' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.user_checks_the_status_and_reset_the_benchmark_activity()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user checks the status and Reset the Benchmark Activity</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='131'>
+					<div class='test-heading'>
+						<span class='test-name'>Validate the Quiz Creation for Teacher</span>
+						<span class='test-time'>Nov 27, 2024 12:37:13 PM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='132' status='pass'>
+
+	<span class='duration right label'>00 02 21.348</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Checking the Quiz Creation Functionality</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>2</td><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='133' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Checking the Quiz Creation Functionality</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='137' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='138' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='139' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 2</h6>
+
+				</li>
+				<li test-id='140' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='141' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.QuizCreationStepdefinitions.user_click_on_assessment_center_tab_in_left_menu()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user click on Assessment Center tab in Left menu</h6>
+
+				</li>
+				<li test-id='142' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.QuizCreationStepdefinitions.search_for_the_particular_course_and_click_on_it(int,int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Search for the Particular Course and click on it 02</h6>
+
+				</li>
+				<li test-id='143' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.QuizCreationStepdefinitions.go_to_assessments_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Go to Assessments tab</h6>
+
+				</li>
+				<li test-id='144' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.QuizCreationStepdefinitions.create_child_objective_by_click_on_root_goal_level_ellipses()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Create Child Objectives by Click on Root Goal Level Ellipses</h6>
+
+				</li>
+				<li test-id='145' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.QuizCreationStepdefinitions.add_any_test_to_the_quiz(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Create the Quizzes by using Add new Quiz button0</h6>
+
+				</li>
+				<li test-id='146' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.QuizCreationStepdefinitions.compare_the_start_date_and_due_dates_in_activity_progress_screen_with_tree_dates()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Compare the Start Date and due Dates in Activity Progress Screen with Tree dates</h6>
+
+				</li>
+				<li test-id='147' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.QuizCreationStepdefinitions.validate_the_test_tokens_with_students_data()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Validate the Test tokens with Students data</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='151'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify the Benchmark Management process for Teacher</span>
+						<span class='test-time'>Nov 27, 2024 12:39:36 PM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='152' status='pass'>
+
+	<span class='duration right label'>00 01 17.195</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Activating and Deactivating toggles against Benchmark names</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>2</td><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='153' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Activating and Deactivating toggles against Benchmark names</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='157' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='158' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='159' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 2</h6>
+
+				</li>
+				<li test-id='160' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='161' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.Benchmark_TeacherStepdefinitions.user_click_on_assessment_centre_tab_under_learning_in_left_menu()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Assessment Centre tab under Learning in Left menu</h6>
+
+				</li>
+				<li test-id='162' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.Benchmark_TeacherStepdefinitions.user_click_on_the_assessment_centre_course(java.lang.Integer,int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on the Assessment Centre Course 02</h6>
+
+				</li>
+				<li test-id='163' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.Benchmark_TeacherStepdefinitions.user_navigate_to_benchmark_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User navigate to Benchmark tab</h6>
+
+				</li>
+				<li test-id='164' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.Benchmark_TeacherStepdefinitions.activate_the_toggle_and_compare_the_student_status()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And activate the toggle and compare the Student status</h6>
+
+				</li>
+				<li test-id='165' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.Benchmark_TeacherStepdefinitions.capture_the_benchmark_band()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then capture the Benchmark band</h6>
+
+				</li>
+				<li test-id='166' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.Benchmark_TeacherStepdefinitions.user_navigates_to_grade_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User navigates to Grade tab</h6>
+
+				</li>
+				<li test-id='167' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.Benchmark_TeacherStepdefinitions.user_select_the_grades_by_activity_and_print()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User select the Grades by activity and print</h6>
+
+				</li>
+				<li test-id='168' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.Benchmark_TeacherStepdefinitions.user_navigates_back_to_assessment_landing_page()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User navigates back to Assessment landing page</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='172'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify the Announcements functionality</span>
+						<span class='test-time'>Nov 27, 2024 12:40:54 PM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='173' status='pass'>
+
+	<span class='duration right label'>00 01 12.396</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Creating Announcements</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>2</td><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='174' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Creating Announcements</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='178' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='179' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='180' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 2</h6>
+
+				</li>
+				<li test-id='181' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='182' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_learning_and_assessment_center()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on Learning and assessment center</h6>
+
+				</li>
+				<li test-id='183' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_the_classroom_name(int,int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on the classroom name 0 2</h6>
+
+				</li>
+				<li test-id='184' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_announcements_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user clicks on Announcements Tab</h6>
+
+				</li>
+				<li test-id='185' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_add_new_announcement_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user clicks on Add New Announcement button</h6>
+
+				</li>
+				<li test-id='186' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_checks_announcements_search_functionality()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user checks Announcements search Functionality</h6>
+
+				</li>
+				<li test-id='187' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_checks_the_pagenation()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user  checks the pagenation</h6>
+
+				</li>
+				<li test-id='188' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_the_hometab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on the Hometab</h6>
+
+				</li>
+				<li test-id='189' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_announcements_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user clicks on Announcements Tab</h6>
+
+				</li>
+				<li test-id='190' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_Addnew_button_and_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on Addnew button and save button</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='194'>
+					<div class='test-heading'>
+						<span class='test-name'>Validating the Quiz Performing at student side</span>
+						<span class='test-time'>Nov 27, 2024 12:42:08 PM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='195' status='pass'>
+
+	<span class='duration right label'>00 02 41.599</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Checking the Quizzes Submission for Student</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>3</td><td>0</td><td>2</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='196' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Checking the Quizzes Submission for Student</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='200' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='201' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='202' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 3</h6>
+
+				</li>
+				<li test-id='203' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='204' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_learning_and_assessment_center()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on Learning and assessment center</h6>
+
+				</li>
+				<li test-id='205' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_the_classroom_name(int,int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on the classroom name 0 2</h6>
+
+				</li>
+				<li test-id='206' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.QuizSubmissionStepdefinitions.user_clicks_on_the_assessment_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user clicks on the Assessment tab</h6>
+
+				</li>
+				<li test-id='207' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.QuizSubmissionStepdefinitions.user_clicks_on_launch_icon_and_complete_test()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on Launch icon and complete test</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='211'>
+					<div class='test-heading'>
+						<span class='test-name'>Performing Exam at student side</span>
+						<span class='test-time'>Nov 27, 2024 12:44:51 PM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='212' status='pass'>
+
+	<span class='duration right label'>00 01 07.624</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Submitting Exam</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>3</td><td>0</td><td>2</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='213' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Submitting Exam</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='217' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='218' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='219' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 3</h6>
+
+				</li>
+				<li test-id='220' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='221' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_learning_and_assessment_center()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on Learning and assessment center</h6>
+
+				</li>
+				<li test-id='222' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_the_classroom_name(int,int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on the classroom name 0 2</h6>
+
+				</li>
+				<li test-id='223' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.ExamSubmissionStepdefinitions.user_clicks_on_benchmarks_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on benchmarks tab</h6>
+
+				</li>
+				<li test-id='224' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.ExamSubmissionStepdefinitions.User_will_launch_and_submit_all_Exams()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User will launch and submit all Exams</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='228'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify the Score Submission at Teacher side</span>
+						<span class='test-time'>Nov 27, 2024 12:46:00 PM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='229' status='pass'>
+
+	<span class='duration right label'>00 00 49.133</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Validate the Score from Overall SpeedGrader</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>2</td><td>0</td><td>3</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='230' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Validate the Score from Overall SpeedGrader</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='234' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='235' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='236' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 2</h6>
+
+				</li>
+				<li test-id='237' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='238' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.Benchmark_ScoringStepdefinitions.user_click_on_assessment_centre_tab_under_learning_in_left_menu()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When Users Click on Assessment Centre tab in Left menu</h6>
+
+				</li>
+				<li test-id='239' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.ScoreSubmissionStepdefination.user_click_on_overal_speed_grader()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Click on Overal Speed Grader</h6>
+
+				</li>
+				<li test-id='240' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.ScoreSubmissionStepdefination.select_dropdown_in_speed_grader(java.lang.Integer,int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Select Dropdown in Speed Grader 03</h6>
+
+				</li>
+				<li test-id='241' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.ScoreSubmissionStepdefination.clicks_on_score_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And clicks on Score button</h6>
+
+				</li>
+				<li test-id='242' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.ScoreSubmissionStepdefination.enter_the_score_and_feed_back()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Enter the Score and FeedBack and submit the Score</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario outline node' test-id='246' status='pass'>
+
+	<span class='duration right label'>00 00 40.906</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Validate the Score In Assessment SpeedGrader screen</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td></tr><tr><td>1</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='247' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Validate the Score In Assessment SpeedGrader screen</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='251' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='252' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='253' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 1</h6>
+
+				</li>
+				<li test-id='254' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='255' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.ScoreSubmissionStepdefination.users_click_on_speed_grader_tab_in_left_menu()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When Users Click on Speed Grader tab in Left menu</h6>
+
+				</li>
+				<li test-id='256' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.ScoreSubmissionStepdefination.user_click_on_the_exam()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User click on the Exam</h6>
+
+				</li>
+				<li test-id='257' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.ScoreSubmissionStepdefination.enter_the_score_and_feed_back()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Enter the Score and FeedBack and submit the Score</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='261'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify the Activity progress from ToDo List at teacher</span>
+						<span class='test-time'>Nov 27, 2024 12:47:32 PM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='262' status='pass'>
+
+	<span class='duration right label'>00 01 02.387</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Validating the Activity progress screen from AC Home tab</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>2</td><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='263' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Validating the Activity progress screen from AC Home tab</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='267' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='268' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='269' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 2</h6>
+
+				</li>
+				<li test-id='270' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='271' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.Teacher_ActivityprogressStepdefinitions.user_click_on_assessment_centre_tab_under_learning_in_left_menu()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When Users Click on Assessment Centre tab under Learning in Left menu</h6>
+
+				</li>
+				<li test-id='272' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.Teacher_ActivityprogressStepdefinitions.user_click_on_the_assessment_centre_course(java.lang.Integer,int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Users clicks on the Assessment Centre Course 02</h6>
+
+				</li>
+				<li test-id='273' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.Teacher_ActivityprogressStepdefinitions.user_click_on_all_quizzes_and_navigate_back()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User click on all Quizzes and navigate back</h6>
+
+				</li>
+				<li test-id='274' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.Teacher_ActivityprogressStepdefinitions.user_click_on_all_benchmarks_and_navigate_back()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on all benchmarks and navigate back</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='278'>
+					<div class='test-heading'>
+						<span class='test-name'>Validating the Quiz/Exams at student side</span>
+						<span class='test-time'>Nov 27, 2024 12:48:36 PM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='279' status='pass'>
+
+	<span class='duration right label'>00 01 01.671</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Creating Validating Launch Icon Through Home Tab</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>3</td><td>0</td><td>2</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='280' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Creating Validating Launch Icon Through Home Tab</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='284' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='285' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='286' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 3</h6>
+
+				</li>
+				<li test-id='287' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='288' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_learning_and_assessment_center()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on Learning and assessment center</h6>
+
+				</li>
+				<li test-id='289' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_the_classroom_name(int,int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on the classroom name 0 2</h6>
+
+				</li>
+				<li test-id='290' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LaunchValidationStepdefinitions.user_clicks_on_launch_icon_and_validates()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on Launch icon and validates</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>10</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>13</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>179</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Nov 27, 2024 12:33:30 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Nov 27, 2024 12:49:38 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>00 16 07.798</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>AppName</td>
+								<td>Assessment Center</td>
+							</tr>
+							<tr>
+								<td>user</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>build</td>
+								<td>1.1</td>
+							</tr>
+							<tr>
+								<td>os</td>
+								<td>Windows10</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 10,
+				passParent: 10,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				childCount: 13,
+				passChild: 13,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				grandChildCount: 179,
+				passGrandChild: 179,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+			};
+			</script>
+		
+		<script>
+			var timeline = {
+			        "Verify the SIS Provisioning Creation Functionality":112.7,"Verify the Benchmarks functionality":104.866,"Validate the Quiz Creation for Teacher":141.348,"Verify the Benchmark Management process for Teacher":77.195,"Verify the Announcements functionality":72.396,"Validating the Quiz Performing at student side":161.6,"Performing Exam at student side":67.624,"Verify the Score Submission at Teacher side":90.049,"Verify the Activity progress from ToDo List at teacher":62.387,"Validating the Quiz/Exams at student side":61.672
+			};
+		</script>
+		
+		  <script src='http://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/js/extent.js' type='text/javascript'></script>
+		
+		
+		<script type='text/javascript'>
+				
+		</script> 
+
+	</body>
+</html>

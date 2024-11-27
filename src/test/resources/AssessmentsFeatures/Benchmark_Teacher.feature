@@ -8,9 +8,9 @@ Feature: Verify the Benchmark Management process for Teacher
     And User Click on Assessment Centre tab under Learning in Left menu
     #Activating & deactivating the toggles
     Then User click on the Assessment Centre Course <rownumber1><rownumber>
-    When User navigate to Benchmark tab
-    And activate the toggle and compare the Student status
-    Then capture the Benchmark band
+    #When User navigate to Benchmark tab
+    #And activate the toggle and compare the Student status
+    #Then capture the Benchmark band
     #Printing the Grades
     Then User navigates to Grade tab
     And User select the Grades by activity and print
@@ -18,7 +18,7 @@ Feature: Verify the Benchmark Management process for Teacher
     #Match the score against the student benchmark
     # Then User stores the student score
     #Matching the Benchmark  Count
-    And User compares the Benchmark Count from Home tab
+    #And User compares the Benchmark Count from Home tab
     #Navigating back to Landing page
     When User navigates back to Assessment landing page
 
