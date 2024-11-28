@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/4/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>10/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Nov 27 13:31:14 IST 2024</td>
+<td>Started on:</td><td>Thu Nov 28 12:14:02 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>196 seconds (196882 ms)</td>
+<tr><td>Total time:</td><td>1027 seconds (1027187 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -68,7 +68,7 @@ function toggleAllBoxes() {
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,74 +76,171 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='AssessmentsRunner.BenchmarksRunner.tearDownClass()'><b>tearDownClass</b><br>Test class: AssessmentsRunner.BenchmarksRunner</td>
-<td><div><pre>java.lang.RuntimeException: java.net.UnknownHostException: messages.cucumber.io
-	at io.cucumber.core.plugin.MessageFormatter.writeMessage(MessageFormatter.java:32)
-	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
-	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
-	at io.cucumber.core.runtime.SynchronizedEventBus.send(SynchronizedEventBus.java:47)
-	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:125)
-	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:105)
-	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
-	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
+<td title='AssessmentsRunner.Benchmark_TeacherRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.Benchmark_TeacherRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Activating and Deactivating toggles against Benchmark names", "Verify the Benchmark Management process for Teacher"</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;g _ngcontent-rjr-c456=&quot;&quot; clip-path=&quot;url(#clip0_67_32)&quot;&gt;...&lt;/g&gt; is not clickable at point (685, 225). Other element would receive the click: &lt;svg _ngcontent-rjr-c456=&quot;&quot; width=&quot;19&quot; height=&quot;18&quot; matTooltip=&quot;Grades&quot; viewBox=&quot;0 0 19 18&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;mat-tooltip-trigger ng-star-inserted&quot; aria-describedby=&quot;cdk-describedby-message-136&quot; cdk-describedby-host=&quot;0&quot;&gt;...&lt;/svg&gt;
+  (Session info: chrome=131.0.6778.86)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f72f1afb0e6c080a1cb2248194bd4d8a, clickElement {id=f.9DF3AE9B68951F68721ECE602B89E165.d.B8D5B63E30C4F6C75D5C4A740C1A1503.e.121}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52368}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52368/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f72f1afb0e6c080a1cb2248194bd4d8a)] -&gt; xpath: //*[local-name()=&apos;svg&apos; and @matTooltip=&apos;Grades&apos;] /*[name()=&apos;g&apos;]]
+Session ID: f72f1afb0e6c080a1cb2248194bd4d8a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+	at com.Assessments.pages.Benchmark_TeacherPage.Grade(Benchmark_TeacherPage.java:116)
+	at AssessmentsStepdef.Benchmark_TeacherStepdefinitions.user_navigates_to_grade_tab(Benchmark_TeacherStepdefinitions.java:76)
+	at ✽.User navigates to Grade tab(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/Benchmark_Teacher.feature:15)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1184908904", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1184908904'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;g _ngcontent-rjr-c456=&quot;&quot; clip-path=&quot;url(#clip0_67_32)&quot;&gt;...&lt;/g&gt; is not clickable at point (685, 225). Other element would receive the click: &lt;svg _ngcontent-rjr-c456=&quot;&quot; width=&quot;19&quot; height=&quot;18&quot; matTooltip=&quot;Grades&quot; viewBox=&quot;0 0 19 18&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;mat-tooltip-trigger ng-star-inserted&quot; aria-describedby=&quot;cdk-describedby-message-136&quot; cdk-describedby-host=&quot;0&quot;&gt;...&lt;/svg&gt;
+  (Session info: chrome=131.0.6778.86)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f72f1afb0e6c080a1cb2248194bd4d8a, clickElement {id=f.9DF3AE9B68951F68721ECE602B89E165.d.B8D5B63E30C4F6C75D5C4A740C1A1503.e.121}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52368}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52368/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f72f1afb0e6c080a1cb2248194bd4d8a)] -&gt; xpath: //*[local-name()=&apos;svg&apos; and @matTooltip=&apos;Grades&apos;] /*[name()=&apos;g&apos;]]
+Session ID: f72f1afb0e6c080a1cb2248194bd4d8a
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+	at com.Assessments.pages.Benchmark_TeacherPage.Grade(Benchmark_TeacherPage.java:116)
+	at AssessmentsStepdef.Benchmark_TeacherStepdefinitions.user_navigates_to_grade_tab(Benchmark_TeacherStepdefinitions.java:76)
+	at ✽.User navigates to Grade tab(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/Benchmark_Teacher.feature:15)
+</pre></div></td>
+<td>45</td>
+<td>AssessmentsRunner.Benchmark_TeacherRunner@47caedad</td></tr>
+<tr>
+<td title='AssessmentsRunner.Teacher_ActivityprogressRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.Teacher_ActivityprogressRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validating the Activity progress screen from AC Home tab", "Verify the Activity progress from ToDo List at teacher"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;table_body_item&apos;]/child::label/child::small&quot;}
+  (Session info: chrome=131.0.6778.86)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a4e40cd4213be62c891089b41bb00a94, findElement {using=xpath, value=//div[@class=&apos;table_body_item&apos;]/child::label/child::small}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52272}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52272/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a4e40cd4213be62c891089b41bb00a94
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.getText(Unknown Source)
+	at com.Assessments.pages.Teacher_Activityprogress.clickEachExamAndClose(Teacher_Activityprogress.java:125)
+	at AssessmentsStepdef.Teacher_ActivityprogressStepdefinitions.user_click_on_all_benchmarks_and_navigate_back(Teacher_ActivityprogressStepdefinitions.java:54)
+	at ✽.User click on all benchmarks and navigate back(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/Teacher_Activityprogress.feature:11)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace178122129", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace178122129'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;table_body_item&apos;]/child::label/child::small&quot;}
+  (Session info: chrome=131.0.6778.86)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a4e40cd4213be62c891089b41bb00a94, findElement {using=xpath, value=//div[@class=&apos;table_body_item&apos;]/child::label/child::small}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52272}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52272/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a4e40cd4213be62c891089b41bb00a94
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.getText(Unknown Source)
+	at com.Assessments.pages.Teacher_Activityprogress.clickEachExamAndClose(Teacher_Activityprogress.java:125)
+	at AssessmentsStepdef.Teacher_ActivityprogressStepdefinitions.user_click_on_all_benchmarks_and_navigate_back(Teacher_ActivityprogressStepdefinitions.java:54)
+	at ✽.User click on all benchmarks and navigate back(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/Teacher_Activityprogress.feature:11)
+</pre></div></td>
+<td>73</td>
+<td>AssessmentsRunner.Teacher_ActivityprogressRunner@2657d4dd</td></tr>
+<tr>
+<td title='AssessmentsRunner.ScoreSubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.ScoreSubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the Score In Assessment SpeedGrader screen", "Verify the Score Submission at Teacher side"</td>
+<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;User click on the Exam&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@When(&quot;User click on the Exam&quot;)
+public void user_click_on_the_exam() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-Caused by: java.net.UnknownHostException: messages.cucumber.io
-	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:2071)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:2066)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:2065)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1635)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1615)
-	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
-	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
-	at io.cucumber.core.plugin.UrlOutputStream.getResponseBody(UrlOutputStream.java:125)
-	at io.cucumber.core.plugin.UrlOutputStream.sendRequest(UrlOutputStream.java:87)
-	at io.cucumber.core.plugin.UrlOutputStream.close(UrlOutputStream.java:65)
-	at java.base/sun.nio.cs.StreamEncoder.implClose(StreamEncoder.java:413)
-	at java.base/sun.nio.cs.StreamEncoder.lockedClose(StreamEncoder.java:231)
-	at java.base/sun.nio.cs.StreamEncoder.close(StreamEncoder.java:222)
-	at java.base/java.io.OutputStreamWriter.close(OutputStreamWriter.java:264)
-	at io.cucumber.core.plugin.MessageFormatter.writeMessage(MessageFormatter.java:29)
-	... 31 more
-Caused by: java.net.UnknownHostException: messages.cucumber.io
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:752)
-	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
-	at java.base/sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:181)
-	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183)
-	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
-	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
-	at java.base/sun.net.www.protocol.https.HttpsClient.&lt;init&gt;(HttpsClient.java:264)
-	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
-	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1288)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1129)
-	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1691)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1615)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getHeaderFields(HttpURLConnection.java:3274)
-	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getHeaderFields(HttpsURLConnectionImpl.java:252)
-	at io.cucumber.core.plugin.UrlOutputStream.getResponseBody(UrlOutputStream.java:124)
-	... 38 more
-... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace810695005", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace810695005'><pre>java.lang.RuntimeException: java.net.UnknownHostException: messages.cucumber.io
-	at io.cucumber.core.plugin.MessageFormatter.writeMessage(MessageFormatter.java:32)
-	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
-	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
-	at io.cucumber.core.runtime.SynchronizedEventBus.send(SynchronizedEventBus.java:47)
-	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:125)
-	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:105)
-	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
-	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1456606861", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1456606861'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;User click on the Exam&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@When(&quot;User click on the Exam&quot;)
+public void user_click_on_the_exam() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:222)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:131)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at org.testng.TestRunner.privateRun(TestRunner.java:829)
 	at org.testng.TestRunner.run(TestRunner.java:602)
@@ -160,54 +257,12 @@ Caused by: java.net.UnknownHostException: messages.cucumber.io
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.net.UnknownHostException: messages.cucumber.io
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:2071)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:2066)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:2065)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1635)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1615)
-	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
-	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
-	at io.cucumber.core.plugin.UrlOutputStream.getResponseBody(UrlOutputStream.java:125)
-	at io.cucumber.core.plugin.UrlOutputStream.sendRequest(UrlOutputStream.java:87)
-	at io.cucumber.core.plugin.UrlOutputStream.close(UrlOutputStream.java:65)
-	at java.base/sun.nio.cs.StreamEncoder.implClose(StreamEncoder.java:413)
-	at java.base/sun.nio.cs.StreamEncoder.lockedClose(StreamEncoder.java:231)
-	at java.base/sun.nio.cs.StreamEncoder.close(StreamEncoder.java:222)
-	at java.base/java.io.OutputStreamWriter.close(OutputStreamWriter.java:264)
-	at io.cucumber.core.plugin.MessageFormatter.writeMessage(MessageFormatter.java:29)
-	... 31 more
-Caused by: java.net.UnknownHostException: messages.cucumber.io
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:752)
-	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
-	at java.base/sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:181)
-	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183)
-	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
-	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
-	at java.base/sun.net.www.protocol.https.HttpsClient.&lt;init&gt;(HttpsClient.java:264)
-	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
-	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1288)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1129)
-	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1691)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1615)
-	at java.base/sun.net.www.protocol.http.HttpURLConnection.getHeaderFields(HttpURLConnection.java:3274)
-	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getHeaderFields(HttpsURLConnectionImpl.java:252)
-	at io.cucumber.core.plugin.UrlOutputStream.getResponseBody(UrlOutputStream.java:124)
-	... 38 more
 </pre></div></td>
-<td>0</td>
-<td>AssessmentsRunner.BenchmarksRunner@34bde49d</td></tr>
+<td>30</td>
+<td>AssessmentsRunner.ScoreSubmissionRunner@4f0f2942</td></tr>
 </table><p>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -215,192 +270,55 @@ Caused by: java.net.UnknownHostException: messages.cucumber.io
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='AssessmentsRunner.BenchmarksRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.BenchmarksRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Activating Benchmark Through Test Administration", "Verify the Benchmarks functionality"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;Username&apos;]&quot;}
-  (Session info: chrome=131.0.6778.86)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e109d8671cfa3c4e5b761d9c8968fa9a, findElement {using=xpath, value=//input[@id=&apos;Username&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65408}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65408/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e109d8671cfa3c4e5b761d9c8968fa9a
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.Assessments.pages.LoginPage.enterUsername(LoginPage.java:54)
-	at com.Assessments.pages.LoginPage.User_login(LoginPage.java:79)
-	at AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
-	at ✽.User enters the credentials from the excel sheet at 1(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/Benchmarks.feature:33)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1959734623", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1959734623'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;Username&apos;]&quot;}
-  (Session info: chrome=131.0.6778.86)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e109d8671cfa3c4e5b761d9c8968fa9a, findElement {using=xpath, value=//input[@id=&apos;Username&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65408}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65408/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e109d8671cfa3c4e5b761d9c8968fa9a
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.Assessments.pages.LoginPage.enterUsername(LoginPage.java:54)
-	at com.Assessments.pages.LoginPage.User_login(LoginPage.java:79)
-	at AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
-	at ✽.User enters the credentials from the excel sheet at 1(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/Benchmarks.feature:33)
-</pre></div></td>
-<td>31</td>
-<td>AssessmentsRunner.BenchmarksRunner@34bde49d</td></tr>
+<td title='AssessmentsRunner.BenchmarksRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.BenchmarksRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating Benchmarks and activating", "Verify the Benchmarks functionality"</td>
+<td></td>
+<td>52</td>
+<td>AssessmentsRunner.BenchmarksRunner@6f15d60e</td></tr>
 <tr>
-<td title='AssessmentsRunner.SISprovisioningRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.SISprovisioningRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Functionality"</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;mat-button-wrapper&quot;&gt;...&lt;/span&gt; is not clickable at point (1308, 262). Other element would receive the click: &lt;div class=&quot;cdk-overlay-backdrop cdk-overlay-transparent-backdrop cdk-overlay-backdrop-showing&quot;&gt;&lt;/div&gt;
-  (Session info: chrome=131.0.6778.86)
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1a8e31d144d4bb78aad3ae39e6facc5a, clickElement {id=f.2E509533B647B08562DFD458ECEF599E.d.97B16E6C28657E7253DDF1DAB11A9948.e.1009}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65251}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65251/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (1a8e31d144d4bb78aad3ae39e6facc5a)] -&gt; xpath: //span[(text()=&apos; Add &apos;)]]
-Session ID: 1a8e31d144d4bb78aad3ae39e6facc5a
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
-	at com.Assessments.pages.SISProvisioningPage.SettingsAdd(SISProvisioningPage.java:218)
-	at AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_value_from_classroom_dropdown_and_click_on_add_button(SISProvisioningStepdefinitions.java:233)
-	at ✽.User Select the Value from Classroom dropdown and Click on Add button(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/SIS%20Provisioning.feature:70)
-... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace71555810", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace71555810'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;mat-button-wrapper&quot;&gt;...&lt;/span&gt; is not clickable at point (1308, 262). Other element would receive the click: &lt;div class=&quot;cdk-overlay-backdrop cdk-overlay-transparent-backdrop cdk-overlay-backdrop-showing&quot;&gt;&lt;/div&gt;
-  (Session info: chrome=131.0.6778.86)
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1a8e31d144d4bb78aad3ae39e6facc5a, clickElement {id=f.2E509533B647B08562DFD458ECEF599E.d.97B16E6C28657E7253DDF1DAB11A9948.e.1009}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65251}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65251/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (1a8e31d144d4bb78aad3ae39e6facc5a)] -&gt; xpath: //span[(text()=&apos; Add &apos;)]]
-Session ID: 1a8e31d144d4bb78aad3ae39e6facc5a
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
-	at com.Assessments.pages.SISProvisioningPage.SettingsAdd(SISProvisioningPage.java:218)
-	at AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_value_from_classroom_dropdown_and_click_on_add_button(SISProvisioningStepdefinitions.java:233)
-	at ✽.User Select the Value from Classroom dropdown and Click on Add button(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/SIS%20Provisioning.feature:70)
-</pre></div></td>
-<td>69</td>
-<td>AssessmentsRunner.SISprovisioningRunner@aba625</td></tr>
+<td title='AssessmentsRunner.AnnouncementsRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.AnnouncementsRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating Announcements", "Verify the Announcements functionality"</td>
+<td></td>
+<td>81</td>
+<td>AssessmentsRunner.AnnouncementsRunner@29d80d2b</td></tr>
+<tr>
+<td title='AssessmentsRunner.QuizSubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.QuizSubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the Quizzes Submission for Student", "Validating the Quiz Performing at student side"</td>
+<td></td>
+<td>168</td>
+<td>AssessmentsRunner.QuizSubmissionRunner@58e1d9d</td></tr>
+<tr>
+<td title='AssessmentsRunner.BenchmarksRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.BenchmarksRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Activating Benchmark Through Test Administration", "Verify the Benchmarks functionality"</td>
+<td></td>
+<td>51</td>
+<td>AssessmentsRunner.BenchmarksRunner@6f15d60e</td></tr>
+<tr>
+<td title='AssessmentsRunner.QuizCreationRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.QuizCreationRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the Quiz Creation Functionality", "Validate the Quiz Creation for Teacher"</td>
+<td></td>
+<td>137</td>
+<td>AssessmentsRunner.QuizCreationRunner@1be2019a</td></tr>
 <tr>
 <td title='AssessmentsRunner.SISprovisioningRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.SISprovisioningRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the School, Classroom, Section Creation Functionality With valid Data", "Verify the SIS Provisioning Creation Functionality"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;Username&apos;]&quot;}
-  (Session info: chrome=131.0.6778.86)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e8af84da8c64cfccf172d6acbec17f9c, findElement {using=xpath, value=//input[@id=&apos;Username&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65207}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65207/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e8af84da8c64cfccf172d6acbec17f9c
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.Assessments.pages.LoginPage.enterUsername(LoginPage.java:54)
-	at com.Assessments.pages.LoginPage.User_login(LoginPage.java:79)
-	at AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
-	at ✽.User enters the credentials from the excel sheet at 0(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/SIS%20Provisioning.feature:6)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1263015120", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1263015120'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;Username&apos;]&quot;}
-  (Session info: chrome=131.0.6778.86)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e8af84da8c64cfccf172d6acbec17f9c, findElement {using=xpath, value=//input[@id=&apos;Username&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65207}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65207/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e8af84da8c64cfccf172d6acbec17f9c
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.Assessments.pages.LoginPage.enterUsername(LoginPage.java:54)
-	at com.Assessments.pages.LoginPage.User_login(LoginPage.java:79)
-	at AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
-	at ✽.User enters the credentials from the excel sheet at 0(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/SIS%20Provisioning.feature:6)
-</pre></div></td>
-<td>26</td>
-<td>AssessmentsRunner.SISprovisioningRunner@aba625</td></tr>
+<td></td>
+<td>45</td>
+<td>AssessmentsRunner.SISprovisioningRunner@782859e</td></tr>
 <tr>
-<td title='AssessmentsRunner.BenchmarksRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.BenchmarksRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating Benchmarks and activating", "Verify the Benchmarks functionality"</td>
-<td><div><pre>java.lang.NullPointerException: SectionName is null
-	at com.Assessments.pages.BenchmarksPage.clickonAddSectionbutton(BenchmarksPage.java:90)
-	at com.Assessments.pages.BenchmarksPage.clickOnAdd(BenchmarksPage.java:230)
-	at AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_add_button(BenchmarkStepdefinitions.java:152)
-	at ✽.the user clicks on the Add button 0(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/Benchmarks.feature:24)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1331108878", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1331108878'><pre>java.lang.NullPointerException: SectionName is null
-	at com.Assessments.pages.BenchmarksPage.clickonAddSectionbutton(BenchmarksPage.java:90)
-	at com.Assessments.pages.BenchmarksPage.clickOnAdd(BenchmarksPage.java:230)
-	at AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_add_button(BenchmarkStepdefinitions.java:152)
-	at ✽.the user clicks on the Add button 0(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/Benchmarks.feature:24)
-</pre></div></td>
-<td>65</td>
-<td>AssessmentsRunner.BenchmarksRunner@34bde49d</td></tr>
+<td title='AssessmentsRunner.SISprovisioningRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.SISprovisioningRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Functionality"</td>
+<td></td>
+<td>75</td>
+<td>AssessmentsRunner.SISprovisioningRunner@782859e</td></tr>
+<tr>
+<td title='AssessmentsRunner.PerformingExamRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.PerformingExamRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Submitting Exam", "Performing Exam at student side"</td>
+<td></td>
+<td>69</td>
+<td>AssessmentsRunner.PerformingExamRunner@446a1e84</td></tr>
+<tr>
+<td title='AssessmentsRunner.ScoreSubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.ScoreSubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the Score from Overall SpeedGrader", "Verify the Score Submission at Teacher side"</td>
+<td></td>
+<td>117</td>
+<td>AssessmentsRunner.ScoreSubmissionRunner@4f0f2942</td></tr>
+<tr>
+<td title='AssessmentsRunner.LaunchValidationRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.LaunchValidationRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating Validating Launch Icon Through Home Tab", "Validating the Quiz/Exams at student side"</td>
+<td></td>
+<td>61</td>
+<td>AssessmentsRunner.LaunchValidationRunner@5340477f</td></tr>
 </table><p>
 </body>
 </html>

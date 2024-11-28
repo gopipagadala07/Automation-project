@@ -410,7 +410,7 @@ public class ActionType extends Base {
 	 */
 	public int randomNumberGenerator() {
 		Random random = new Random();
-		int randomNumber=random.nextInt(10000);
+		int randomNumber=random.nextInt(100000);
 	        return randomNumber;
 		
 	}

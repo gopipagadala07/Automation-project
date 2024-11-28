@@ -11,8 +11,7 @@ glue = {"AssessmentsStepdef","Hooks"},
 plugin= {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 monochrome = true,
 dryRun = false)
-public class ScoreSubmissionRunner extends AbstractTestNGCucumberTests  {
-	
+public class ScoreSubmissionRunner extends AbstractTestNGCucumberTests  {	
 	
 	String TestcaseName;
 	//@Parameters("browser")

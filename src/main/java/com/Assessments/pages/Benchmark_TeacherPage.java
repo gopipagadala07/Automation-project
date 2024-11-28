@@ -1,6 +1,5 @@
 package com.Assessments.pages;
 
-import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -11,8 +10,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
@@ -51,7 +48,7 @@ public class Benchmark_TeacherPage extends ActionType{
 
 	@FindBy(how=How.XPATH,using = "//div[@class='table_body_item']/child::label/child::small")private WebElement bandstatus;
 	@FindBy(how=How.XPATH,using = "//mat-icon[contains(@class, 'mat-icon') and contains(text(), 'close')]")private WebElement closebtn;
-	@FindBy(how=How.XPATH,using = "//*[local-name()='svg' and @matTooltip='Grades'] /*[name()='g']/*[name()='path'][1]")private WebElement Gradetab;
+	@FindBy(how=How.XPATH,using = "//*[local-name()='svg' and @matTooltip='Grades'] /*[name()='g']")private WebElement Gradetab;
 	@FindBy(how=How.XPATH,using = "//mat-icon[@role='img' and contains(@class, 'mat-icon') and text()='print']")private WebElement print;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(),'By Standard')]")private WebElement bystandard;
 	@FindBy(how=How.XPATH,using = "//mat-icon[@role='img' and contains(@class, 'mat-icon') and text()='print']")private WebElement stdprint;
@@ -65,10 +62,10 @@ public class Benchmark_TeacherPage extends ActionType{
 	@FindBy(how=How.XPATH,using = "(//a[contains(text(),'Assessment Center')])[2]")private WebElement landpage;
 
 	@FindBy(how = How.XPATH, using = "//h3[contains(text(),'Benchmarks')]/parent::div/parent::div/following-sibling::div/child::mat-list/mat-list-item/span")
-	private List<WebElement> bmcount; // Using List to get all matches
+	private List<WebElement> bmcount;
 
-//	@FindBy(how = How.XPATH, using = "//div[@role='tab' and @id='mat-tab-label-0-0']")
-//	private WebElement hometab;
+	@FindBy(how = How.XPATH, using = "//div[@role='tab' and @id='mat-tab-label-0-0']")
+	private WebElement hometab;
 
 	@FindBy(how = How.XPATH,using="//input[contains(@type,'search')]")
 	public WebElement Searchhere;
@@ -93,6 +90,7 @@ public class Benchmark_TeacherPage extends ActionType{
 			AC.click();
 		}
 	}
+
 	public WebElement getCommunityNameElement(String ClassroomName) {
 		String xpath = "//span[(text()='"+ClassroomName+"')]/parent::div/parent::mat-card-content/preceding-sibling::mat-card-header/child::div/mat-card-title/child::span";
 		return driver.findElement(By.xpath(xpath));
@@ -109,75 +107,38 @@ public class Benchmark_TeacherPage extends ActionType{
 		StaticWait(2);
 	}
 
-	public void benchmarktab()
-	{
-		StaticWait(2);
-		wait.elementToBeClickable(Benchmarktab);
-		Benchmarktab.click();
-
-		wait.elementToBeClickable(Schedule);
-		Schedule.click();
-	}
-
-	public void Activatetoggle()
-	{
-		wait.elementToBeClickable(progress);
-		progress.click();
-
-
-	}
-	public void CheckStdToggle() {
-		try {
-			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
-			wait.until(ExpectedConditions.elementToBeClickable(teststatus));
-			wait.until(ExpectedConditions.visibilityOf(teststatus));
-			if (teststatus.isEnabled()) {
-				System.out.println("Test Status was already enabled");
-			} else {
-				wait.until(ExpectedConditions.elementToBeClickable(teststatus));
-				wait.until(ExpectedConditions.visibilityOf(teststatus));
-				teststatus.click();
-			}
-		} catch (Exception e) {
-			System.out.println("An error occurred: " + e.getMessage());
-		}
-	}
-
-	public void bandstatus()
-	{
-		String statusText = bandstatus.getText();
-
-		System.out.println("Band Status: " + statusText);
-
-		wait.elementToBeClickable(closebtn);
-		closebtn.click();
-		StaticWait(3);
-	}
-
+	
 	public void Grade()
 	{
-		
+		StaticWait(2);
 		wait.elementToBeClickable(Gradetab);
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-        Actions a=new Actions(driver);
-        a.moveToElement(Gradetab).click().build().perform();
+		wait.visibilityOf(Gradetab);
+		Gradetab.click();
+
 		StaticWait(2);
 		wait.elementToBeClickable(print);
 		print.click();
+
 	}
+
 	public void standard()
 	{
 		StaticWait(2);
 		wait.elementToBeClickable(bystandard);
-		bystandard.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", bystandard);
+		//bystandard.click();
 
 		StaticWait(2);
 		wait.elementToBeClickable(stdprint);
-		stdprint.click();
-		//StaticWait(5);
+		js.executeScript("arguments[0].click();", stdprint);
+		//stdprint.click();
+		StaticWait(3);
+		js.executeScript("arguments[0].click();", hometab);
 		//hometab.click();
 
 	}
+
 
 	public int getListCount(By locator) {
 		List<WebElement> elements = driver.findElements(locator);
@@ -193,6 +154,7 @@ public class Benchmark_TeacherPage extends ActionType{
 		int benchmarkCount = getListCount(benchmarkLocator);
 		int examCount = getListCount(examLocator);
 
+	
 		System.out.println("Benchmark Count: " + benchmarkCount);
 		System.out.println("Exam Count: " + examCount);
 	}

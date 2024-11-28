@@ -1,4 +1,4 @@
-Feature: Performing Quix/Exams at student side
+Feature: Validating the Quiz/Exams at student side
 
   Scenario Outline: Creating Validating Launch Icon Through Home Tab
     Given User launch the application with Valid URL

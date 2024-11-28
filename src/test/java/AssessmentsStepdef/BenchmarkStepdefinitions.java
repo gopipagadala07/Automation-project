@@ -133,12 +133,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
 	    }
 	    String secname = testdata.get(SectionName).get("Section Name");	
-	    StaticWait(1);
-	    cp.searchField(secname);
-	    cp.searchField(Keys.chord(Keys.CONTROL,"a"));
-	    cp.searchField(Keys.chord(Keys.CONTROL,"x"));
-	    StaticWait(1);
-	    cp.searchField(Keys.chord(Keys.CONTROL,"v"));
+	    bpages.SectionSearch(secname);
 	
 	}
 

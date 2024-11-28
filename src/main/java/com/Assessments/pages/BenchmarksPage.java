@@ -193,32 +193,39 @@ public class BenchmarksPage extends ActionType {
 	}
 	public void clickOnSectionTab() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		JavascriptExecutor js=(JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		int retries = 0;
-		int maxRetries = 10;
+		int maxRetries = 15;
+		boolean success = false;
 
-		while (retries < maxRetries) {
+		while (retries < maxRetries && !success) {
 			try {
 				WebElement sectionTab = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'SECTIONS')]")));
-//				Actions actions = new Actions(driver);
-//				actions.moveToElement(sectionTab).click().perform();
 				js.executeScript("arguments[0].click()", sectionTab);
-				return;
-
+				success = true;
 			} catch (StaleElementReferenceException e) {
 				retries++;
-				try {
-					Thread.sleep(500);
-				} catch (StaleElementReferenceException ie) {
-					Thread.currentThread().interrupt();
-				}
 			} catch (Exception e) {
 				e.printStackTrace();
 				return;
 			}
 		}
+		
+		if (!success) {
+			System.out.println("Failed to click the section tab after " + maxRetries + " attempts.");
+		}
 	}
 
+
+	public void SectionSearch(String SectionName)
+	{
+		  StaticWait(1);
+		cp.searchField(SectionName);
+	    cp.searchField(Keys.chord(Keys.CONTROL,"a"));
+	    cp.searchField(Keys.chord(Keys.CONTROL,"x"));
+	    StaticWait(1);
+	    cp.searchField(Keys.chord(Keys.CONTROL,"v"));
+	}
 
 	public void clickOnAdd(String SectionName) {
 

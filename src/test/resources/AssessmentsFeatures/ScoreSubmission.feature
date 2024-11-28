@@ -35,10 +35,8 @@ Feature: Verify the Score Submission at Teacher side
     Then User enters the credentials from the excel sheet at <rownumber>
     And User is on homepage
     When Users Click on Speed Grader tab in Left menu
-    And User click on the Exam
-    Then Enter the Score and FeedBack and submit the Score
+    And User Score the Exam
 
-    Need to Change i-frame webelement while provide score for the Exam
     Examples: 
       | rownumber |
       |         1 |

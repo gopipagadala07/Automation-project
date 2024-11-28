@@ -41,7 +41,7 @@ public class Teacher_Activityprogress extends ActionType{
 	private By AssessmentTab = By.xpath("//a[contains(text(),'Assessment Center')]");
 	@FindBy(how = How.XPATH, using = "//cdk-nested-tree-node[@role='treeitem']/child::div/child::div[2]/cdk-nested-tree-node/child::div/child::small")
 	private List<WebElement> Quizzeslist;
-	@FindBy(how=How.XPATH,using = "//div[@class='table_body_item']/child::label/child::small")private WebElement bandstatus;
+	@FindBy(how=How.XPATH,using = "//div[@class='table_body_item']/child::label")private WebElement bandstatus;
 	private By close = By.xpath("//button[@aria-label='close dialog']/child::span/child::mat-icon");
 
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'EXAM')]")
@@ -49,7 +49,7 @@ public class Teacher_Activityprogress extends ActionType{
 
 
 	@FindBy(how = How.XPATH, using = "//mat-tab-body[@role='tabpanel']/child::div/child::mat-list/child::mat-list-item/child::span/child::small")
-	private List<WebElement> Examslist;
+	private WebElement Examslist;
 
 
 	public Teacher_Activityprogress(WebDriver driver) {
@@ -110,36 +110,18 @@ public class Teacher_Activityprogress extends ActionType{
 	}
 
 	public void clickEachExamAndClose() {
-		System.out.println("Total Exams: " + Examslist.size());
 		Actions actions = new Actions(driver);
-		int retries = 5;
-
-		for (int i = 0; i < Examslist.size(); i++) {
-			int attempts = retries;
-
-			while (attempts > 0) {
 				try {
-					WebElement exam = Examslist.get(i);
-					actions.moveToElement(exam).click().perform();
+					actions.moveToElement(Examslist).click().perform();
 					StaticWait(2);
 					String Band=bandstatus.getText();
 					System.out.println(Band);
 					WebElement closeButton = driver.findElement(close);
 					actions.moveToElement(closeButton).click().perform();
-					break;
 				} catch (StaleElementReferenceException e) {
-					attempts--;
-					if (attempts == 0) {
-						System.out.println("Failed after retries due to StaleElementReferenceException for exam at index " + i);
-					} else {
-						System.out.println("Retrying due to StaleElementReferenceException for exam at index " + i + ". Attempts left: " + attempts);
-					}
-
+					
+	
 				}
-			}
+
 		}
-	}
 }
-
-
-

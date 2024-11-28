@@ -181,7 +181,6 @@ public class CommonPages extends ActionType{
 		};
 		return monthNames[month - 1];
 	}
-	
 	public void getRandomDate(WebElement element) {
 	    int maxRetries = 3; 
 	    int attempt = 0;
@@ -228,6 +227,7 @@ public class CommonPages extends ActionType{
 	        throw new RuntimeException("Failed to select a random date after " + maxRetries + " attempts.");
 	    }
 	}
+
 	public void CurrentDate(WebElement element) {
 		
 		try {
@@ -282,45 +282,6 @@ public class CommonPages extends ActionType{
 	                System.out.println("Element is stale after retries, failing.");
 	            }
 	        }
-	    }
-	}
-
-	
-	
-	public void scrollToBottomAndClick(WebElement targetElement) {
-	    try {
-	        JavascriptExecutor js = (JavascriptExecutor) driver;
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-	        int scrollCount = 0;
-	        int maxScrollCount = 5;
-	        boolean isScrollComplete = false;
-
-	        while (!isScrollComplete && scrollCount < maxScrollCount) {
-	         
-	            js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-	            StaticWait(2);
-
-	            try {
-	                wait.until(ExpectedConditions.elementToBeClickable(targetElement));
-	                js.executeScript("arguments[0].scrollIntoView(true);", targetElement);
-	                targetElement.click();
-	                isScrollComplete = true;
-	            } catch (StaleElementReferenceException e) {
-	               
-	                System.out.println("StaleElementReferenceException caught, retrying scroll...");
-	                scrollCount++;
-	            } catch (Exception e) {
-	                System.out.println("Exception while clicking the target element: " + e.getMessage());
-	                break;
-	            }
-	        }	       
-	        if (!isScrollComplete) {
-	            js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-	            StaticWait(2);
-	        }
-	    } catch (Exception e) {
-	        System.out.println("Error during scroll to bottom: " + e.getMessage());
 	    }
 	}
 }

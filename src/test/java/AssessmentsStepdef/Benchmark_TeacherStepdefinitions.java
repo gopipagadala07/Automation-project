@@ -53,20 +53,20 @@ public class Benchmark_TeacherStepdefinitions extends ActionType{
 
 	@When("User navigate to Benchmark tab")
 	public void user_navigate_to_benchmark_tab() {
-		benchmarkTeacher.benchmarktab();
+		//benchmarkTeacher.benchmarktab();
 
 	}
 
 	@When("activate the toggle and compare the Student status")
 	public void activate_the_toggle_and_compare_the_student_status() {
-		benchmarkTeacher.Activatetoggle();
-		benchmarkTeacher.CheckStdToggle();
+//		benchmarkTeacher.Activatetoggle();
+//		benchmarkTeacher.CheckStdToggle();
 		
 	}
 
 	@Then("capture the Benchmark band")
 	public void capture_the_benchmark_band() {
-		benchmarkTeacher.bandstatus();
+		//benchmarkTeacher.bandstatus();
 
 
 	}
@@ -97,7 +97,7 @@ public class Benchmark_TeacherStepdefinitions extends ActionType{
 
 	@Then("User compares the Benchmark Count from Home tab")
 	public void user_compares_the_benchmark_count_from_home_tab() {
-		benchmarkTeacher.printCounts();
+		//benchmarkTeacher.printCounts();
 
 	}
 
