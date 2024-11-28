@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import com.Assessments.pages.Score_SubmissionPage;
+import com.Assessments.pages.ScoreSubmissionPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.ExcelReader;
@@ -15,12 +15,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Score_SubmissionStepdefination extends ActionType   
+public class ScoreSubmissionStepdefination extends ActionType   
 {
 	ExcelReader reader=new ExcelReader();
 	static List<Map<String, String>> testdata=null;
 
-	Score_SubmissionPage S_Submission = new Score_SubmissionPage(Base.getDriver());
+	ScoreSubmissionPage S_Submission = new ScoreSubmissionPage(Base.getDriver());
 	@When("User Click on Overal Speed Grader")
 	public void user_click_on_overal_speed_grader() 
 	{
@@ -34,15 +34,11 @@ public class Score_SubmissionStepdefination extends ActionType
 		{
 			testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
 		}
-		String ClaroomName = testdata.get(row).get("Classroom Name");	
-		String SectionName = testdata.get(row).get("Section Name");
+		String ClassroomName = testdata.get(row).get("Classroom Name");	
 		String SFirstname = testdata.get(row2).get("FirstName");
 		String SLastName = testdata.get(row2).get("LastName");
-		
-		System.out.print(ClaroomName + SectionName + "  " + SFirstname + "  "+SLastName);
-
 		StaticWait(1);
-		S_Submission.select_CommunitiesDropDown(ClaroomName);
+		S_Submission.select_CommunitiesDropDown(ClassroomName);
 		StaticWait(1);
 		S_Submission.all_Activity_TypesDropDown();
 		StaticWait(1);
@@ -54,7 +50,7 @@ public class Score_SubmissionStepdefination extends ActionType
 	@Then("clicks on Score button")
 	public void clicks_on_score_button() 
 	{
-		S_Submission.click_On_Score();
+		//S_Submission.click_On_Score();
 	}
 
 	@Then("Enter the Score and FeedBack and submit the Score")

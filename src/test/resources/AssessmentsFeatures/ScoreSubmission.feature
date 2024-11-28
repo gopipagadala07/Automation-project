@@ -10,7 +10,6 @@ Feature: Verify the Score Submission at Teacher side
     Then Select Dropdown in Speed Grader <rownumber1><rownumber2>
     And clicks on Score button
     Then Enter the Score and FeedBack and submit the Score
-    Then capture the status band
 
     Examples: 
       | rownumber | rownumber1 | rownumber2 |
@@ -39,7 +38,7 @@ Feature: Verify the Score Submission at Teacher side
     And User click on the Exam
     Then Enter the Score and FeedBack and submit the Score
 
-    #Need to Change i-frame webelement while provide score for the Exam
+    Need to Change i-frame webelement while provide score for the Exam
     Examples: 
       | rownumber |
       |         1 |

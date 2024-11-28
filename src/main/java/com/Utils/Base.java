@@ -51,13 +51,13 @@ public class Base {
 	 * @return this will return tldriver.
 	 */
 	public WebDriver init_driver(String browser) {
-
+		String downloadDir = "./ReportCard";
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options=new ChromeOptions();
-     		options.addArguments("--headless");
-		options.addArguments("--window-size=1920,1080");
+     		//options.addArguments("--headless");
 			options.addArguments("--remote-allow-origins=*");
+			options.addArguments("--download.default_directory=" + downloadDir);
 			tlDriver.set(new ChromeDriver(options));
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();

@@ -140,8 +140,7 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void ClassroomDetails()
 	{
-//		ClassroomName="FPK12Classroom"+randomNumberGenerator();
-		ClassroomName = "FPK12Classroom8989";
+		ClassroomName="FPK12Classroom"+randomNumberGenerator();
 		cp.Name(ClassroomName);
 		System.out.println(ClassroomName);
 		Description.sendKeys(generateRandomString());
@@ -149,6 +148,7 @@ public class SISProvisioningPage extends ActionType{
 	public void SectionDetails()
 	{
 		SectionName="FPK12Section"+randomNumberGenerator();
+		UtlityVariablesPages.SectionName=SectionName;
 		cp.Name(SectionName);
 		System.out.println(SectionName);
 		Description.sendKeys(generateRandomString());

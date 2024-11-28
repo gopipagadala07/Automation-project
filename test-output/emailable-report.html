@@ -8,20 +8,30 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">11</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">1,054,610</td><td></td><td></td></tr>
+<tr><th colspan="8">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">82,604</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">AssessmentsRunner.Provide_ScoreRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1732559196096</td><td rowspan="1">52962</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">AssessmentsRunner.AnnouncementsRunner</td><td><a href="#m1">runScenario</a></td><td rowspan="1">1732558853114</td><td rowspan="1">93730</td></tr><tr class="passedodd"><td rowspan="1">AssessmentsRunner.Benchmark_TeacherRunner</td><td><a href="#m2">runScenario</a></td><td rowspan="1">1732558748100</td><td rowspan="1">103370</td></tr><tr class="passedeven"><td rowspan="2">AssessmentsRunner.BenchmarksRunner</td><td><a href="#m3">runScenario</a></td><td rowspan="2">1732558454134</td><td rowspan="2">64606</td></tr><tr class="passedeven"><td><a href="#m4">runScenario</a></td></tr><tr class="passedodd"><td rowspan="1">AssessmentsRunner.PerformingExamRunner</td><td><a href="#m5">runScenario</a></td><td rowspan="1">1732559120625</td><td rowspan="1">73939</td></tr><tr class="passedeven"><td rowspan="1">AssessmentsRunner.Provide_ScoreRunner</td><td><a href="#m6">runScenario</a></td><td rowspan="1">1732559249058</td><td rowspan="1">44840</td></tr><tr class="passedodd"><td rowspan="1">AssessmentsRunner.QuizCreationRunner</td><td><a href="#m7">runScenario</a></td><td rowspan="1">1732558575970</td><td rowspan="1">170668</td></tr><tr class="passedeven"><td rowspan="1">AssessmentsRunner.QuizSubmissionRunner</td><td><a href="#m8">runScenario</a></td><td rowspan="1">1732558948529</td><td rowspan="1">170486</td></tr><tr class="passedodd"><td rowspan="2">AssessmentsRunner.SISprovisioningRunner</td><td><a href="#m9">runScenario</a></td><td rowspan="2">1732558364584</td><td rowspan="2">83028</td></tr><tr class="passedodd"><td><a href="#m10">runScenario</a></td></tr><tr class="passedeven"><td rowspan="1">AssessmentsRunner.Teacher_ActivityprogressRunner</td><td><a href="#m11">runScenario</a></td><td rowspan="1">1732559295839</td><td rowspan="1">69172</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">AssessmentsRunner.Benchmark_TeacherRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1732710725736</td><td rowspan="1">79517</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">AssessmentsRunner.Provide_ScoreRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Validate the Score from Overall SpeedGrader&quot;</td><td>&quot;Verify the Score Submission at Teacher side&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-icon[contains(text(), &apos; score&apos;)]&quot;}
+<h2>Default test</h2><h3 id="m0">AssessmentsRunner.Benchmark_TeacherRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Activating and Deactivating toggles against Benchmark names&quot;</td><td>&quot;Verify the Benchmark Management process for Teacher&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //*[local-name()=&apos;svg&apos; and @matTooltip=&apos;Grades&apos;] /*[name()=&apos;g&apos;]/*[name()=&apos;path&apos;][1]&apos; (tried for 30 second(s) with 1000 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.Utils.Wait.elementToBeClickable(Wait.java:30)
+	at com.Assessments.pages.Benchmark_TeacherPage.Grade(Benchmark_TeacherPage.java:160)
+	at AssessmentsStepdef.Benchmark_TeacherStepdefinitions.user_navigates_to_grade_tab(Benchmark_TeacherStepdefinitions.java:76)
+	at ✽.User navigates to Grade tab(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/Benchmark_Teacher.feature:15)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[local-name()=&apos;svg&apos; and @matTooltip=&apos;Grades&apos;] /*[name()=&apos;g&apos;]/*[name()=&apos;path&apos;][1]&quot;}
   (Session info: chrome=131.0.6778.86)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a3fb2401d8bd7bcfa340ccbdedc1b924, findElement {value=//mat-icon[contains(text(), &apos; score&apos;)], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\SURESH~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63617}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63617/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a3fb2401d8bd7bcfa340ccbdedc1b924
+Command: [4e8933f8c4d634c5c25337ab0f8c90b0, findElement {using=xpath, value=//*[local-name()=&apos;svg&apos; and @matTooltip=&apos;Grades&apos;] /*[name()=&apos;g&apos;]/*[name()=&apos;path&apos;][1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58797}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58797/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4e8933f8c4d634c5c25337ab0f8c90b0
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -35,21 +45,62 @@ Session ID: a3fb2401d8bd7bcfa340ccbdedc1b924
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
-	at com.Assessments.pages.Score_SubmissionPage.click_On_Score(Score_SubmissionPage.java:101)
-	at AssessmentsStepdef.Score_SubmissionStepdefination.clicks_on_score_button(Score_SubmissionStepdefination.java:57)
-	at ✽.clicks on Score button(file:///C:/Users/SureshRajaboina/OneDrive%20-%20FocalPointK12,%20Inc/Focalpoint%20Automation/Benchmarks_AC/src/test/resources/AssessmentsFeatures/Provide_Score.feature:11)
-... Removed 5 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">AssessmentsRunner.AnnouncementsRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Creating Announcements&quot;</td><td>&quot;Verify the Announcements functionality&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">AssessmentsRunner.Benchmark_TeacherRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Activating and Deactivating toggles against Benchmark names&quot;</td><td>&quot;Verify the Benchmark Management process for Teacher&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">AssessmentsRunner.BenchmarksRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Creating Benchmarks and activating&quot;</td><td>&quot;Verify the Benchmarks functionality&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">AssessmentsRunner.BenchmarksRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Activating Benchmark Through Test Administration&quot;</td><td>&quot;Verify the Benchmarks functionality&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">AssessmentsRunner.PerformingExamRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Submitting Exam&quot;</td><td>&quot;Performing Exam at student side&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">AssessmentsRunner.Provide_ScoreRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Validate the Score In Assessment SpeedGrader screen&quot;</td><td>&quot;Verify the Score Submission at Teacher side&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">AssessmentsRunner.QuizCreationRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Checking the Quiz Creation Functionality&quot;</td><td>&quot;Validate the Quiz Creation for Teacher&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">AssessmentsRunner.QuizSubmissionRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Submitting Quiz&quot;</td><td>&quot;Performing Quiz at student side&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m9">AssessmentsRunner.SISprovisioningRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Verify the Users Creation Functionality with valid Data&quot;</td><td>&quot;Verify the SIS Provisioning Creation Functionality&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m10">AssessmentsRunner.SISprovisioningRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Checking the School, Classroom, Section Creation Functionality With valid Data&quot;</td><td>&quot;Verify the SIS Provisioning Creation Functionality&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m11">AssessmentsRunner.Teacher_ActivityprogressRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Validating the Activity progress screen from AC Home tab&quot;</td><td>&quot;Verify the Activity progress from ToDo List at teacher&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+	at jdk.proxy2/jdk.proxy2.$Proxy28.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at com.Utils.Wait.elementToBeClickable(Wait.java:30)
+	at com.Assessments.pages.Benchmark_TeacherPage.Grade(Benchmark_TeacherPage.java:160)
+	at AssessmentsStepdef.Benchmark_TeacherStepdefinitions.user_navigates_to_grade_tab(Benchmark_TeacherStepdefinitions.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

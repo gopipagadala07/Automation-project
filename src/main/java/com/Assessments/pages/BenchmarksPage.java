@@ -193,14 +193,16 @@ public class BenchmarksPage extends ActionType {
 	}
 	public void clickOnSectionTab() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		JavascriptExecutor js=(JavascriptExecutor) driver;
 		int retries = 0;
 		int maxRetries = 10;
 
 		while (retries < maxRetries) {
 			try {
 				WebElement sectionTab = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'SECTIONS')]")));
-				Actions actions = new Actions(driver);
-				actions.moveToElement(sectionTab).click().perform();
+//				Actions actions = new Actions(driver);
+//				actions.moveToElement(sectionTab).click().perform();
+				js.executeScript("arguments[0].click()", sectionTab);
 				return;
 
 			} catch (StaleElementReferenceException e) {
@@ -239,7 +241,7 @@ public class BenchmarksPage extends ActionType {
 		wait.elementToBeClickable(CourseBenchmarkDropDown);	
 
 		cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
-		System.out.println(SectionName + "---------------------------------------------------------------");
+		//.out.println(SectionName + "---------------------------------------------------------------");
 	}
 
 

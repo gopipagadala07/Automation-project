@@ -51,7 +51,7 @@ public class Benchmark_TeacherPage extends ActionType{
 
 	@FindBy(how=How.XPATH,using = "//div[@class='table_body_item']/child::label/child::small")private WebElement bandstatus;
 	@FindBy(how=How.XPATH,using = "//mat-icon[contains(@class, 'mat-icon') and contains(text(), 'close')]")private WebElement closebtn;
-	@FindBy(how=How.XPATH,using = "//*[local-name()='svg' and @matTooltip='Grades'] /*[name()='g']")private WebElement Gradetab;
+	@FindBy(how=How.XPATH,using = "//*[local-name()='svg' and @matTooltip='Grades'] /*[name()='g']/*[name()='path'][1]")private WebElement Gradetab;
 	@FindBy(how=How.XPATH,using = "//mat-icon[@role='img' and contains(@class, 'mat-icon') and text()='print']")private WebElement print;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(),'By Standard')]")private WebElement bystandard;
 	@FindBy(how=How.XPATH,using = "//mat-icon[@role='img' and contains(@class, 'mat-icon') and text()='print']")private WebElement stdprint;
@@ -67,8 +67,8 @@ public class Benchmark_TeacherPage extends ActionType{
 	@FindBy(how = How.XPATH, using = "//h3[contains(text(),'Benchmarks')]/parent::div/parent::div/following-sibling::div/child::mat-list/mat-list-item/span")
 	private List<WebElement> bmcount; // Using List to get all matches
 
-	@FindBy(how = How.XPATH, using = "//div[@role='tab' and @id='mat-tab-label-0-0']")
-	private WebElement hometab;
+//	@FindBy(how = How.XPATH, using = "//div[@role='tab' and @id='mat-tab-label-0-0']")
+//	private WebElement hometab;
 
 	@FindBy(how = How.XPATH,using="//input[contains(@type,'search')]")
 	public WebElement Searchhere;
@@ -93,7 +93,6 @@ public class Benchmark_TeacherPage extends ActionType{
 			AC.click();
 		}
 	}
-
 	public WebElement getCommunityNameElement(String ClassroomName) {
 		String xpath = "//span[(text()='"+ClassroomName+"')]/parent::div/parent::mat-card-content/preceding-sibling::mat-card-header/child::div/mat-card-title/child::span";
 		return driver.findElement(By.xpath(xpath));
@@ -144,35 +143,28 @@ public class Benchmark_TeacherPage extends ActionType{
 		}
 	}
 
-
-
 	public void bandstatus()
-
 	{
-
 		String statusText = bandstatus.getText();
 
 		System.out.println("Band Status: " + statusText);
 
 		wait.elementToBeClickable(closebtn);
 		closebtn.click();
-
-
+		StaticWait(3);
 	}
-
 
 	public void Grade()
 	{
-		StaticWait(2);
+		
 		wait.elementToBeClickable(Gradetab);
-		Gradetab.click();
-
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+        Actions a=new Actions(driver);
+        a.moveToElement(Gradetab).click().build().perform();
 		StaticWait(2);
 		wait.elementToBeClickable(print);
 		print.click();
-
 	}
-
 	public void standard()
 	{
 		StaticWait(2);
@@ -182,26 +174,10 @@ public class Benchmark_TeacherPage extends ActionType{
 		StaticWait(2);
 		wait.elementToBeClickable(stdprint);
 		stdprint.click();
-		StaticWait(5);
-		hometab.click();
+		//StaticWait(5);
+		//hometab.click();
 
 	}
-
-	/*	public void printCounts() {
-
-		List<WebElement> Benchmarkcount=driver.findElements(By.xpath("//h3[contains(text(),'Benchmarks')]/parent::div/parent::div/following-sibling::div/child::mat-list/mat-list-item"));
-		//app-assessmentcenter-bechmarklist//mat-list  
-		//List<WebElement> Benchmarkcount=driver.findElements(By.xpath("//app-assessmentcenter-bechmarklist//mat-list"));
-
-		List<WebElement> Homecount=driver.findElements(By.xpath("//div[contains(text(),'EXAM')]/parent::div/parent::div/parent::div/parent::div/parent::mat-tab-header/following-sibling::div/mat-tab-body[2]/div/mat-list"));
-
-		int benchmarkCount = Benchmarkcount.size();
-		int examCount = Homecount.size();
-
-		// Print the counts
-		System.out.println("Benchmark Count: " + benchmarkCount);
-		System.out.println("Exam Count: " + examCount);
-	}*/
 
 	public int getListCount(By locator) {
 		List<WebElement> elements = driver.findElements(locator);
@@ -210,7 +186,6 @@ public class Benchmark_TeacherPage extends ActionType{
 
 	public void printCounts() {
 		By benchmarkLocator = By.xpath("//app-assessmentcenter-bechmarklist//mat-list");
-		//    By benchmarkLocator = By.xpath("//h3[contains(text(),'Benchmarks')]/parent::div/parent::div/following-sibling::div/child::mat-list/mat-list-item");
 
 		By examLocator = By.xpath("//div[contains(text(),'EXAM')]/parent::div/parent::div/parent::div/parent::div/parent::mat-tab-header/following-sibling::div/mat-tab-body[2]/div/mat-list");
 
@@ -218,7 +193,6 @@ public class Benchmark_TeacherPage extends ActionType{
 		int benchmarkCount = getListCount(benchmarkLocator);
 		int examCount = getListCount(examLocator);
 
-		// Print the counts
 		System.out.println("Benchmark Count: " + benchmarkCount);
 		System.out.println("Exam Count: " + examCount);
 	}

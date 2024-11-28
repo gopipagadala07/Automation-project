@@ -27,9 +27,7 @@ public class Teacher_ActivityprogressStepdefinitions extends ActionType{
 
 	@Then("Users Click on Assessment Centre tab under Learning in Left menu")
 	public void user_click_on_assessment_centre_tab_under_learning_in_left_menu() {
-
 		activityprogress.learning();
-
 	}
 
 	@Then("Users clicks on the Assessment Centre Course {int}{int}")
@@ -44,9 +42,6 @@ public class Teacher_ActivityprogressStepdefinitions extends ActionType{
 	    String TLastName = testdata.get(row1).get("LastName");
 	    activityprogress.AssessmentCentre(ClaroomName, SectionName, TLastName, TFirstname);
     }
-
-
-
 
 	@When("User click on all Quizzes and navigate back")
 	public void user_click_on_all_quizzes_and_navigate_back() {

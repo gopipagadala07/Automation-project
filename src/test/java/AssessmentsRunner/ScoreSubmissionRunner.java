@@ -6,12 +6,12 @@ import org.testng.annotations.BeforeClass;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features = "src\\test\\resources\\AssessmentsFeatures\\Provide_Score.feature",
+@CucumberOptions(features = "src\\test\\resources\\AssessmentsFeatures\\ScoreSubmission.feature",
 glue = {"AssessmentsStepdef","Hooks"},
 plugin= {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 monochrome = true,
 dryRun = false)
-public class Provide_ScoreRunner  extends AbstractTestNGCucumberTests  {
+public class ScoreSubmissionRunner extends AbstractTestNGCucumberTests  {
 	
 	
 	String TestcaseName;

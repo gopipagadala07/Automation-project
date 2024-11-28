@@ -129,26 +129,23 @@ public class QuizCreationPages extends ActionType{
 				System.out.println("No ellipses found for iteration " + (i + 1));
 				return;
 			}
-
 			WebElement latestEllipsis = ellipsesList.get(ellipsesList.size() - 1);
 			try {
 				wait.until(ExpectedConditions.elementToBeClickable(latestEllipsis));
 				wait.until(ExpectedConditions.visibilityOf(latestEllipsis));
-				StaticWait(2);
+				StaticWait(1);
 				js.executeScript("arguments[0].click();", latestEllipsis);
 			} catch (Exception e) {
 				System.out.println("Failed to click the latest ellipsis in iteration " + (i + 1) + ": " + e.getMessage());
 				continue; 
 			}
-
 			StaticWait(1);
 			childObjectivebtn.click();
 			String childLabel = "ChildObjective" + randomNumberGenerator();
 			StaticWait(1);
 			cp.Name(childLabel);
-			StaticWait(1);
 			cp.Save();
-			StaticWait(2);
+			StaticWait(3);
 		}
 	}
 
@@ -174,11 +171,13 @@ public class QuizCreationPages extends ActionType{
 				continue;
 			}
 			WebElement ellipsis = ellipsesList.get(targetIndex);
+			StaticWait(1);
 			wait.until(ExpectedConditions.elementToBeClickable(ellipsis));
 			js.executeScript("arguments[0].click();", ellipsis);
 			StaticWait(2);
 			WebElement addQuizBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Quiz')]")));
-			addQuizBtn.click();
+			js.executeScript("arguments[0].click();", addQuizBtn);
+//			addQuizBtn.click();
 			wait.until(ExpectedConditions.elementToBeClickable(Searchtestbtn));
 			Searchtestbtn.click();
 			String testname = "\"" + TestName + "\"";
@@ -196,7 +195,6 @@ public class QuizCreationPages extends ActionType{
 			if (ShowTestResult.isEnabled()) {
 				ShowTestResult.click();
 			}
-
 			wait.until(ExpectedConditions.elementToBeClickable(ShowtestSummary));
 			OverrideInstructionstoggle.click();
 			Badgetab.click();
@@ -218,6 +216,7 @@ public class QuizCreationPages extends ActionType{
 			js.executeScript("arguments[0].click();", QuizEllipses(QuizName));
 			StaticWait(1);
 			progressbtn.click();
+			StaticWait(1);
 			wait.until(ExpectedConditions.elementToBeClickable(Activatetoggle));
 			js.executeScript("arguments[0].click();", Activatetoggle);
 			StaticWait(1);

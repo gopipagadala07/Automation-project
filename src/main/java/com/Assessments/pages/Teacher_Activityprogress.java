@@ -39,15 +39,9 @@ public class Teacher_Activityprogress extends ActionType{
 
 	private By Learningtab = By.xpath("//span[contains(text(),'Learning')]");
 	private By AssessmentTab = By.xpath("//a[contains(text(),'Assessment Center')]");
-
-
-
-	//	@FindBy(how = How.XPATH, using = "//div[contains(text(),'QUIZ')]")
-	//	private List<WebElement> Quizzes;
-
 	@FindBy(how = How.XPATH, using = "//cdk-nested-tree-node[@role='treeitem']/child::div/child::div[2]/cdk-nested-tree-node/child::div/child::small")
 	private List<WebElement> Quizzeslist;
-
+	@FindBy(how=How.XPATH,using = "//div[@class='table_body_item']/child::label/child::small")private WebElement bandstatus;
 	private By close = By.xpath("//button[@aria-label='close dialog']/child::span/child::mat-icon");
 
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'EXAM')]")
@@ -93,13 +87,6 @@ public class Teacher_Activityprogress extends ActionType{
 		wait.elementToBeClickable(getCommunityNameElement(ClassroomName));
 		Actions a=new Actions(driver);
 		a.moveToElement(getCommunityNameElement(ClassroomName)).click().build().perform();
-		//      JavascriptExecutor js=(JavascriptExecutor) driver;
-		//      js.executeScript("arguments[0].click();", getCommunityNameElement(ClassroomName));
-
-
-
-		//wait.elementToBeClickable(Assessmentcourse);
-		//Assessmentcourse.click();
 		StaticWait(2);
 
 	}
@@ -110,65 +97,17 @@ public class Teacher_Activityprogress extends ActionType{
 			JavascriptExecutor js=(JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click()", quiz);
 			StaticWait(2);
+			String Band=bandstatus.getText();
+			System.out.println(Band);
 			WebElement closeButton = driver.findElement(close);
 			js.executeScript("arguments[0].click();", closeButton);
-
-			// Static wait to allow the page or modal to close properly
 			StaticWait(2);
-
 		}
-
 	}
-
 	public void examtab() {
-
 		examtab.click();
 		StaticWait(2);
-
 	}
-
-	/*public void clickEachExamAndClose() {
-		System.out.println("Total Exams: " + Examslist.size());
-		for (WebElement exam : Examslist) {
-		    try {
-		        JavascriptExecutor js = (JavascriptExecutor) driver;
-
-
-		        js.executeScript("arguments[0].click()", exam);
-		        StaticWait(5);
-
-
-		        WebElement closeButton = driver.findElement(close);
-		        js.executeScript("arguments[0].click();", closeButton);
-		        StaticWait(2);
-
-		    } catch (NoSuchElementException e) {
-
-
-		    }
-		}*/
-
-	/*public void clickEachExamAndClose() {
-		try {
-			Actions actions = new Actions(driver);
-
-
-			for (WebElement exam : Examslist) {
-
-				System.out.println("Total Exams: " + Examslist.size());
-
-
-				actions.moveToElement(exam).click().perform();
-				StaticWait(2);
-
-
-				WebElement closeButton = driver.findElement(close);
-				actions.moveToElement(closeButton).click().perform();
-				StaticWait(2);
-			}
-		} catch (StaleElementReferenceException e) {
-			System.out.println("Encountered a stale element exception. Retrying...");
-		}*/
 
 	public void clickEachExamAndClose() {
 		System.out.println("Total Exams: " + Examslist.size());
@@ -183,10 +122,10 @@ public class Teacher_Activityprogress extends ActionType{
 					WebElement exam = Examslist.get(i);
 					actions.moveToElement(exam).click().perform();
 					StaticWait(2);
-
+					String Band=bandstatus.getText();
+					System.out.println(Band);
 					WebElement closeButton = driver.findElement(close);
 					actions.moveToElement(closeButton).click().perform();
-					StaticWait(5);
 					break;
 				} catch (StaleElementReferenceException e) {
 					attempts--;
@@ -195,13 +134,12 @@ public class Teacher_Activityprogress extends ActionType{
 					} else {
 						System.out.println("Retrying due to StaleElementReferenceException for exam at index " + i + ". Attempts left: " + attempts);
 					}
-						                
+
 				}
 			}
 		}
-
-
-	}}
+	}
+}
 
 
 

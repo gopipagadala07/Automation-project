@@ -32,16 +32,10 @@ import org.openqa.selenium.StaleElementReferenceException;
 
 public class AnnouncementsPages extends ActionType {
 
-
-
-	//private static final String[] AnnouncementName = null;
 	CommonPages cp=new CommonPages(Base.getDriver());
 	static String announcementName;
 	static	List<String> announcementNames = new ArrayList<>();
 	static String sectionName;
-	//String selectedAnnouncement;
-
-
 	public WebDriver driver;
 	private Wait wait;
 
@@ -123,16 +117,17 @@ public class AnnouncementsPages extends ActionType {
 				Actions actions1 = new Actions(driver);
 				actions1.moveToElement(DescriptionField).click().sendKeys(generateRandomString()).perform();
 
-
 				js.executeScript("arguments[0].scrollIntoView(true);", course);
 
 
 				wait.until(ExpectedConditions.elementToBeClickable(EventDate));
 				wait.until(ExpectedConditions.visibilityOf(EventDate));
+				StaticWait(1);
 				cp.getRandomDate(EventDate);
 
 
 				wait.until(ExpectedConditions.elementToBeClickable(PublishDate));
+				StaticWait(1);
 				wait.until(ExpectedConditions.visibilityOf(PublishDate));
 				cp.CurrentDate(PublishDate);
 
@@ -203,7 +198,7 @@ public class AnnouncementsPages extends ActionType {
 		wait.elementToBeClickable(ADdNewAnnouncement);
 		wait.visibilityOf(ADdNewAnnouncement);
 		ADdNewAnnouncement.click();
-
+        StaticWait(1);
 		wait.elementToBeClickable(SaveButton);
 		wait.visibilityOf(SaveButton);
 		SaveButton.click();
