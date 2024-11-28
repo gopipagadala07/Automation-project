@@ -114,8 +114,8 @@ public class Teacher_Activityprogress extends ActionType{
 				try {
 					actions.moveToElement(Examslist).click().perform();
 					StaticWait(2);
-					String Band=bandstatus.getText();
-					System.out.println(Band);
+					//String Band=bandstatus.getText();
+					//System.out.println(Band);
 					WebElement closeButton = driver.findElement(close);
 					actions.moveToElement(closeButton).click().perform();
 				} catch (StaleElementReferenceException e) {

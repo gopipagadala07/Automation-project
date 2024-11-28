@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import com.Assessments.pages.Benchmark_TeacherPage;
+import com.Assessments.pages.ReportCard_teacherPage;
 import com.Assessments.pages.CommonPages;
 import com.Assessments.pages.SISProvisioningPage;
 import com.Utils.ActionType;
@@ -20,9 +20,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Benchmark_TeacherStepdefinitions extends ActionType{
+public class ReportCard_teacherStepdefinitions extends ActionType{
 
-	Benchmark_TeacherPage benchmarkTeacher=new Benchmark_TeacherPage(Base.getDriver());
+	ReportCard_teacherPage benchmarkTeacher=new ReportCard_teacherPage(Base.getDriver());
 	ExcelReader reader=new ExcelReader();
 	CommonPages cp=new CommonPages(Base.getDriver());
 	static List<Map<String, String>> testdata=null;

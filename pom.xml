@@ -2,8 +2,8 @@
 	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>AssessmentCenter_Benchmarks</groupId>
-	<artifactId>Benchmarks_AC</artifactId>
+	<groupId>FPK12-AssessmentCenter</groupId>
+	<artifactId>FPK12-AssessmentCenter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
@@ -137,25 +137,23 @@
 
 	<build>
 		<plugins>
-			<!-- Maven Compiler Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version> 
+				<version>3.12.1</version>
 				<configuration>
-					<source>1.8</source> 
-					<target>1.8</target> 
+					<source>11</source>
+					<target>11</target>
 				</configuration>
 			</plugin>
 
-			<!-- Maven Surefire Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.2</version>
+				<version>2.22.1</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>AssessmentCenter_TestNG.xml</suiteXmlFile>
+						<suiteXmlFile>C:\Users\GopiPagadala\OneDrive - FocalPointK12, Inc\FPK12 Automation-2024\FPK12-AssessmentCenter\testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

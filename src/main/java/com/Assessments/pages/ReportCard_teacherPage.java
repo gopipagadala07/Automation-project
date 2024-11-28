@@ -1,5 +1,6 @@
 package com.Assessments.pages;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -10,12 +11,14 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
 
-public class Benchmark_TeacherPage extends ActionType{
+public class ReportCard_teacherPage extends ActionType{
 
 	CommonPages cp=new CommonPages(Base.getDriver());
 	public WebDriver driver;
@@ -70,7 +73,7 @@ public class Benchmark_TeacherPage extends ActionType{
 	@FindBy(how = How.XPATH,using="//input[contains(@type,'search')]")
 	public WebElement Searchhere;
 
-	public Benchmark_TeacherPage(WebDriver driver) {
+	public ReportCard_teacherPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new Wait(driver);
@@ -113,10 +116,12 @@ public class Benchmark_TeacherPage extends ActionType{
 		StaticWait(2);
 		wait.elementToBeClickable(Gradetab);
 		wait.visibilityOf(Gradetab);
-		Gradetab.click();
-
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement gradetab=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[local-name()='svg' and @matTooltip='Grades'] /*[name()='g']/*[name()='path'][1]")));
+		Actions a=new Actions(driver);
+		a.moveToElement(gradetab).click().build().perform();
+		//gradetab.click();
 		StaticWait(2);
-		wait.elementToBeClickable(print);
 		print.click();
 
 	}
@@ -134,7 +139,7 @@ public class Benchmark_TeacherPage extends ActionType{
 		js.executeScript("arguments[0].click();", stdprint);
 		//stdprint.click();
 		StaticWait(3);
-		js.executeScript("arguments[0].click();", hometab);
+		//js.executeScript("arguments[0].click();", hometab);
 		//hometab.click();
 
 	}
