@@ -24,7 +24,7 @@ public class ProctorEnrollePage extends ActionType{
 	By enrolleTab=By.xpath("//span[text()='Enrollees']");
 	By examinationsdropdown=By.xpath("//div[text()='ENROLLEES']/../../../../../../../preceding-sibling::div/div/mat-form-field/div/div[1]");
 	By search=By.xpath("//input[@type='search']");
-	By ExamtakerName=By.xpath("(//div[@layout-align='start start'])[1]");
+	By ExamtakerName=By.xpath("//div[@class='fw-bold']");
 	
 	public ProctorEnrollePage(WebDriver driver)
 	{
