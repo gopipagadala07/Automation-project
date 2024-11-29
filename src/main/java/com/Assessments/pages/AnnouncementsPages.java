@@ -3,6 +3,7 @@ package com.Assessments.pages;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 import io.cucumber.java.lu.an;
 
@@ -114,7 +115,7 @@ public class AnnouncementsPages extends ActionType {
 				TitleField.click();
 
 				announcementName = "Announcement" + randomNumberGenerator(); 
-				System.out.println("Announcement Name: " + announcementName);
+				ExtentCucumberAdapter.addTestStepLog("Announcement Name: " + announcementName);
 				announcementNames.add(announcementName);
 
 				Actions actions = new Actions(driver);

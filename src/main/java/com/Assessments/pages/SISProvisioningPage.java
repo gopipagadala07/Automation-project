@@ -1,5 +1,6 @@
 package com.Assessments.pages;
 
+import java.nio.file.Paths;
 import java.time.Duration;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class SISProvisioningPage extends ActionType{
 
@@ -134,7 +136,7 @@ public class SISProvisioningPage extends ActionType{
 	public void SchoolDetails()
 	{
 	    SchoolName="FPK12School"+randomNumberGenerator();
-	    System.out.println(SchoolName);
+	    ExtentCucumberAdapter.addTestStepLog(SchoolName);
 		cp.Name(SchoolName);				
 		Description.sendKeys(generateRandomString());
 	}
@@ -142,7 +144,7 @@ public class SISProvisioningPage extends ActionType{
 	{
 		ClassroomName="FPK12Classroom"+randomNumberGenerator();
 		cp.Name(ClassroomName);
-		System.out.println(ClassroomName);
+		ExtentCucumberAdapter.addTestStepLog(ClassroomName);
 		Description.sendKeys(generateRandomString());
 	}
 	public void SectionDetails()
@@ -150,7 +152,7 @@ public class SISProvisioningPage extends ActionType{
 		SectionName="FPK12Section"+randomNumberGenerator();
 		UtlityVariablesPages.SectionName=SectionName;
 		cp.Name(SectionName);
-		System.out.println(SectionName);
+		ExtentCucumberAdapter.addTestStepLog(SectionName);
 		Description.sendKeys(generateRandomString());
 	}
 	public void TimezoneValue(String TimeZoneValue)
@@ -173,17 +175,18 @@ public class SISProvisioningPage extends ActionType{
 	public void DUserSearch()
 	{
 		cp.searchField(String.valueOf(DLastName));
-		System.out.println(DLastName);
+		ExtentCucumberAdapter.addTestStepLog(String.valueOf(DLastName));
 	}
 	public void TUserSearch()
 	{
 		cp.searchField(String.valueOf(TLastName));
-		System.out.println(TLastName);
+		ExtentCucumberAdapter.addTestStepLog(String.valueOf(TLastName));
 	}
 	public void SUserSearch()
 	{
 		cp.searchField(String.valueOf(SLastName));
-		System.out.println(SLastName);
+		//System.out.println(SLastName);
+		ExtentCucumberAdapter.addTestStepLog(String.valueOf(SLastName));
 	}
 	public void AddnewSchool()
 	{
@@ -319,10 +322,12 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void insertData() throws Exception
 	{
-		cp.InsertdataIntoExcel("./src/test/resources/ExcelFiles/LoginDetails.xlsx", getSheetEnv(), SchoolName, ClassroomName, SectionName);
+		String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "ExcelFiles", "LoginDetails.xlsx").toString();
+		cp.InsertdataIntoExcel(filePath, getSheetEnv(), SchoolName, ClassroomName, SectionName);
 	}
 	public void insertUsersData() throws Exception
 	{
-		cp.InsertmultipledataIntoExcel("./src/test/resources/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+		String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "ExcelFiles", "LoginDetails.xlsx").toString();
+		cp.InsertmultipledataIntoExcel(filePath, getSheetEnv());
 	}
 }

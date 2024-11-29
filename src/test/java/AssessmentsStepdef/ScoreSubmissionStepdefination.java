@@ -39,7 +39,7 @@ public class ScoreSubmissionStepdefination extends ActionType
 		String SFirstname = testdata.get(row2).get("FirstName");
 		String SLastName = testdata.get(row2).get("LastName");
 		
-		System.out.print(ClaroomName + SectionName + "  " + SFirstname + "  "+SLastName);
+		//System.out.print(ClaroomName + SectionName + "  " + SFirstname + "  "+SLastName);
 
 		StaticWait(1);
 		S_Submission.select_CommunitiesDropDown(ClaroomName);

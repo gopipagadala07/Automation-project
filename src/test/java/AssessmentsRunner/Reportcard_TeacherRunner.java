@@ -7,12 +7,12 @@ import org.testng.annotations.Parameters;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features = "src\\test\\resources\\AssessmentsFeatures\\Benchmark_Teacher.feature",
+@CucumberOptions(features = "src\\test\\resources\\AssessmentsFeatures\\ReportCard_teacher.feature",
 glue = {"AssessmentsStepdef","Hooks"},
 plugin= {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 monochrome = true,
 dryRun = false)
-public class Benchmark_TeacherRunner extends AbstractTestNGCucumberTests {
+public class Reportcard_TeacherRunner extends AbstractTestNGCucumberTests {
 	
 	String TestcaseName;
 	//@Parameters("browser")

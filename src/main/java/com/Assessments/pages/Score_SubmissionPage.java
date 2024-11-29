@@ -99,10 +99,6 @@ public class Score_SubmissionPage extends ActionType
 		cp.FPdropdown(All_MembersDropDown, StudentName);
 	}
 
-	public void click_On_Score()
-	{
-
-	}
 	public void provide_the_Score() {
 	    int retry = 0;
 	    int maxretry = 5;

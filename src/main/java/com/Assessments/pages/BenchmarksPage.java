@@ -3,6 +3,7 @@ package com.Assessments.pages;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
@@ -153,7 +154,7 @@ public class BenchmarksPage extends ActionType {
 		wait.visibilityOf(BenchmarkNameField);
 		BenchMarkname="AutoBenchmark"+randomNumberGenerator();
 		BenchmarkNameField.sendKeys(BenchMarkname);
-		System.out.println(BenchMarkname);
+		ExtentCucumberAdapter.addTestStepLog(BenchMarkname);
 		DescriptionFld.sendKeys(generateRandomString());
 
 	}
@@ -167,7 +168,7 @@ public class BenchmarksPage extends ActionType {
 
 	public void testSearch(String Testname) {
 		String testname="\"" + Testname + "\"";
-		System.out.println(testname);
+		ExtentCucumberAdapter.addTestStepLog(testname);
 		cp.SearchTestname(testname);
 		wait.elementToBeClickable(gobutton);
 		gobutton.click();
@@ -263,7 +264,7 @@ public class BenchmarksPage extends ActionType {
 		wait.elementToBeClickable(TeacherDropdown);
 		cp.FPdropdown(TeacherDropdown, LastName +" "+FirstName);
 		String s=LastName +" "+FirstName;
-		System.out.println(s);
+		ExtentCucumberAdapter.addTestStepLog(s);
 	}
 
 	public void classroomDdown(String classroomdown) {

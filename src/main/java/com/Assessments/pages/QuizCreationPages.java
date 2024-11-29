@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class QuizCreationPages extends ActionType{
 
@@ -187,6 +188,7 @@ public class QuizCreationPages extends ActionType{
 			WebElement testAddBtn = wait.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
 			js.executeScript("arguments[0].click();", testAddBtn);
 			String QuizName = " Quiz" + randomNumberGenerator();
+			ExtentCucumberAdapter.addTestStepLog(QuizName);
 			cp.Name(QuizName);
 			Descriptionbox.sendKeys(generateRandomString());
 			Instructionbox.sendKeys(generateRandomString());
@@ -208,7 +210,7 @@ public class QuizCreationPages extends ActionType{
 			importBadgeBtn.click();
 			driver.switchTo().defaultContent();
 			cp.Save();
-			System.out.println("Quiz created successfully!");
+			ExtentCucumberAdapter.addTestStepLog("Quiz created successfully!");
 
 			StaticWait(1);
 			js.executeScript("arguments[0].click();", publishToggle(QuizName));
