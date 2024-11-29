@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import com.Examcenter.Utils.ActionType;
+import com.Utils.ActionType;
 public class Create_Examinations_pages extends ActionType {
 
 	private By AddExambutton= By.xpath("//span[text()=' Add New Exam ']");
@@ -157,13 +157,6 @@ public class Create_Examinations_pages extends ActionType {
 		StaticWait(1);
 		driver.findElement(EnrollToAnExambutton).click();
 	}
-	public void enrollment_save() {
-		//waitForPageLoaded(1);
-		StaticWait(1);
-		driver.findElement(EnrollmentSave).click();
-		StaticWait(1);
-		//driver.quit();
-	}
 	public void Enter_Schedule_name(String ScheduleName) {
 		StaticWait(1);
 		driver.findElement(EnterSchedulename).sendKeys(ScheduleName);
@@ -265,5 +258,11 @@ public class Create_Examinations_pages extends ActionType {
 		StaticWait(1);
 		Slookup.click();
 	}
+	public void enrollment_save() {
+		waitForPageLoaded(1);
+		StaticWait(1);
+		driver.findElement(EnrollmentSave).click();
+		StaticWait(1);
 
+	}
 }

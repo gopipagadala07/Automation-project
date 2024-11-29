@@ -24,8 +24,8 @@ import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 
-import com.Examcenter.Utils.ActionType;
-import com.Examcenter.Utils.Base;
+import com.Utils.ActionType;
+import com.Utils.Base;
 
 public class BulkUpload_Pages extends ActionType{
 
@@ -55,6 +55,7 @@ public class BulkUpload_Pages extends ActionType{
 	}
 	public void bulkUpload(String Path) throws Exception
 	{
+		StaticWait(2);
 		WebElement e = driver.findElement(bulkUpload);
 		e.click();
 		StaticWait(2);
@@ -76,17 +77,19 @@ public class BulkUpload_Pages extends ActionType{
 	}
 	public void Controllerbtn()
 	{
+		StaticWait(2);
 		waitForElement(Controllerbtn);
+		StaticWait(1);
 		driver.findElement(Controllerbtn).click();
 	}
 	public void Examtakersbtn()
 	{
+		StaticWait(2);
 		waitForElement(Examtakerbtn);
 		driver.findElement(Examtakerbtn).click();
 	}
 	public void Excel_Creation(String Path, String sheet, int cellno, String value, int rowno) throws EncryptedDocumentException, IOException
 	{
-
 		FileInputStream f=new FileInputStream(Path);
 		Workbook wb = WorkbookFactory.create(f);
 		Sheet sh = wb.getSheet(sheet);
@@ -107,12 +110,14 @@ public class BulkUpload_Pages extends ActionType{
 
 	public void Proctorbtn()
 	{
+		StaticWait(2);
 		waitForElement(Proctorbtn);
 		driver.findElement(Proctorbtn).click();
 	}
 
 	public void provisioning()
 	{
+		StaticWait(2);
 		waitForElement(provisioning);
 		driver.findElement(provisioning).click();
 	}
