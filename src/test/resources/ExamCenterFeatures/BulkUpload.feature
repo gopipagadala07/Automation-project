@@ -1,6 +1,3 @@
-C:\Users\GopiPagadala\OneDrive - FocalPointK12, Inc\FPK12 Automation-2024\FPK12ExamCenter\src\test\resources\Files\ControllerTemplate.xlsx
-C:\Users\GopiPagadala\OneDrive - FocalPointK12, Inc\FPK12 Automation-2024\FPK12ExamCenter\src\test\resources\Files\Proctor Template.xlsx
-C:\Users\GopiPagadala\OneDrive - FocalPointK12, Inc\FPK12 Automation-2024\FPK12ExamCenter\src\test\resources\Files\Exam Takers Template.xlsx
 Feature: Checking the bulk upload functionality for All Users
 
   Scenario Outline: Testing the Controller Bulk Upload Functionality

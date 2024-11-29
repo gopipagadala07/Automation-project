@@ -29,7 +29,7 @@ public class BulkuploadStepDefinitions extends ActionType{
 	@Then("Click on controller Bulk Upload Icon and Upload the File")
 	public void click_on_controller_bulk_upload_icon() throws Exception {
 
-		String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "Files", "ControllerTemplate.xlsx").toString();
+        String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "Files", "ControllerTemplate.xlsx").toString();
 		System.out.println(filePath);
 		Bulk.bulkUpload(filePath);
 	}
@@ -77,7 +77,7 @@ public class BulkuploadStepDefinitions extends ActionType{
 			String LastName="Automation"+randomnumber;
 			String Email="examtakerautomation"+randomnumber+"@gmail.com";
 			String ID=randomnumber;
-			String path=".\\src\\test\\resources\\Files\\Exam Takers Template.xlsx";
+			String path=".\\sr\\tes\\resources\\Files\\Exam Takers Template.xlsx";
 			//System.out.println(randomnumber);
 			Bulk.Excel_Creation(path, "Bulk Upload", 0, FirstName,i+1);
 			Bulk.Excel_Creation(path, "Bulk Upload", 1, LastName,i+1);

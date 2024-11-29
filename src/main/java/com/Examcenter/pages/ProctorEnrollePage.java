@@ -2,6 +2,7 @@ package com.Examcenter.pages;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -11,6 +12,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
@@ -71,6 +74,9 @@ public class ProctorEnrollePage extends ActionType{
 	}
 	public void printExamtakerName()
 	{
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(ExamtakerName));
+		StaticWait(1);
 		WebElement e1=driver.findElement(ExamtakerName);
 	    String s=e1.getText();
 	    ExtentCucumberAdapter.addTestStepLog(s);
