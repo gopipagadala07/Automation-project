@@ -1,0 +1,33 @@
+2024-10-09 13:24:54,927 INFO  [rootLogger] Enviornment is : LMSPROD
+2024-10-09 13:24:54,946 INFO  [rootLogger] Browser value is: CHROME
+2024-10-09 13:24:57,108 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-09 13:24:57,115 INFO  [rootLogger] Loading URL ... https://lms2.backpack.education/
+2024-10-09 13:25:54,092 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-10-09 13:25:54,119 INFO  [rootLogger] Browser value is: CHROME
+2024-10-09 13:25:55,376 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-09 13:25:55,377 INFO  [rootLogger] Loading URL ... https://lms2.backpack.education/
+2024-10-09 13:26:52,864 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-10-09 13:26:56,285 INFO  [rootLogger] Browser value is: CHROME
+2024-10-09 13:26:57,494 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-09 13:26:57,495 INFO  [rootLogger] Loading URL ... https://lms2.backpack.education/
+2024-10-09 13:28:20,892 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-10-09 13:28:23,320 INFO  [rootLogger] Browser value is: CHROME
+2024-10-09 13:28:24,761 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-09 13:28:24,761 INFO  [rootLogger] Loading URL ... https://lms2.backpack.education/
+2024-10-09 13:29:34,978 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-10-09 13:29:36,380 INFO  [rootLogger] Browser value is: CHROME
+2024-10-09 13:29:37,805 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-09 13:29:37,806 INFO  [rootLogger] Loading URL ... https://lms2.backpack.education/
+2024-10-09 13:30:13,341 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-10-09 13:30:16,026 INFO  [rootLogger] Browser value is: CHROME
+2024-10-09 13:30:17,321 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-09 13:30:17,322 INFO  [rootLogger] Loading URL ... https://lms2.backpack.education/
+2024-10-09 13:31:21,115 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-10-09 13:31:21,218 INFO  [rootLogger] Browser value is: CHROME
+2024-10-09 13:31:23,440 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-09 13:31:23,442 INFO  [rootLogger] Loading URL ... https://lms2.backpack.education/
+2024-10-09 13:32:27,915 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-10-09 13:32:27,937 INFO  [rootLogger] Browser value is: CHROME
+2024-10-09 13:32:29,199 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-09 13:32:29,200 INFO  [rootLogger] Loading URL ... https://lms2.backpack.education/
+2024-10-09 13:33:33,542 INFO  [rootLogger] -----------------End of Scenario-----------------
