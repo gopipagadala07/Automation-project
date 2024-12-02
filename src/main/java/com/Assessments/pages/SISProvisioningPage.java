@@ -4,8 +4,10 @@ import java.nio.file.Paths;
 import java.time.Duration;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -103,15 +105,40 @@ public class SISProvisioningPage extends ActionType{
 		Administrationbtn.click();
 		Provisioningtab.click();
 	}
-	public void Schooltab()
-	{
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeClickable(Schooltab));
-		StaticWait(2);
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", Schooltab);
-		//Schooltab.click();
+
+	public void Schooltab() {
+	    int maxRetries = 3;
+	    int attempt = 0;
+	    boolean success = false;
+
+	    while (attempt < maxRetries && !success) {
+	        try {
+	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	            wait.until(ExpectedConditions.elementToBeClickable(Schooltab));
+	            StaticWait(2);
+	            JavascriptExecutor js = (JavascriptExecutor) driver;
+	            js.executeScript("arguments[0].click();", Schooltab);
+	            success = true;
+	        } catch (TimeoutException e) {
+	            System.out.println("TimeoutException: " + e.getMessage());
+	            Actions a = new Actions(driver);
+	            a.moveToElement(Schooltab).click().perform();
+	            success = true;
+	        } catch (Exception e) {
+	            System.out.println("Exception: " + e.getMessage());
+	        }
+
+	        if (!success) {
+	            attempt++;
+	            if (attempt < maxRetries) {
+	                System.out.println("Retrying... Attempt " + (attempt + 1));
+	            } else {
+	                throw new RuntimeException("Failed to click on Schooltab after " + maxRetries + " attempts.");
+	            }
+	        }
+	    }
 	}
+
 	public void Classroomtab()
 	{
 		wait.elementToBeClickable(Classroomtab);
