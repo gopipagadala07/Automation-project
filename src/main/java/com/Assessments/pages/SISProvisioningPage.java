@@ -107,6 +107,7 @@ public class SISProvisioningPage extends ActionType{
 	{
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(Schooltab));
+		StaticWait(3);
 		Schooltab.click();
 	}
 	public void Classroomtab()
