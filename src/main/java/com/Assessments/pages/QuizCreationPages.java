@@ -100,6 +100,7 @@ public class QuizCreationPages extends ActionType{
 	public void Communityname(String ClassroomName, String SectionName ,String TLastName, String TFirstName)
 	{
 		cp.searchField(ClassroomName + "(" + SectionName + ")-"+ TLastName + " " + TFirstName);
+		System.out.println(ClassroomName);
 		StaticWait(1);
 		wait.visibilityOf(getCommunityNameElement(ClassroomName));
 		wait.elementToBeClickable(getCommunityNameElement(ClassroomName));
@@ -221,6 +222,7 @@ public class QuizCreationPages extends ActionType{
 	                WebElement badgeSelectionElement = wait.until(ExpectedConditions.visibilityOf(BadgeSelection));
 	                js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
 	                actions.moveToElement(badgeSelectionElement).click().perform();
+	                StaticWait(1);
 	                WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(importBadge));
 	                js.executeScript("arguments[0].click();", importBadgeBtn);
 	               // importBadgeBtn.click();
@@ -242,7 +244,6 @@ public class QuizCreationPages extends ActionType{
 	                StaticWait(1);
 	                targetIndex += 2;
 	                StaticWait(1);
-	                
 	                break;
 	            } catch (StaleElementReferenceException e) {
 	                System.out.println("StaleElementReferenceException encountered, retrying... Attempt " + (retry + 1));
