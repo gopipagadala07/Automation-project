@@ -161,82 +161,97 @@ public class QuizCreationPages extends ActionType{
 
 
 	public void QuizzesCreation(String TestName) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		Actions actions = new Actions(driver);
-		int targetIndex = 0;
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    Actions actions = new Actions(driver);
+	    int targetIndex = 0;
 
-		for (int i = 0; i < 8; i++) {
-			List<WebElement> ellipsesList = driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
-			int count = ellipsesList.size();
-			System.out.println("Ellipses count: " + count);
+	    for (int i = 0; i < 8; i++) {
+	        for (int retry = 0; retry < 3; retry++) {
+	            try {
+	                List<WebElement> ellipsesList = driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
+	                int count = ellipsesList.size();
+	                System.out.println("Ellipses count: " + count);
 
-			if (count >= 8) {
-				System.out.println("Ellipses count has reached 8. Stopping the loop.");
-				break;
-			}
+	                if (count >= 8) {
+	                    System.out.println("Ellipses count has reached 8. Stopping the loop.");
+	                    return;
+	                }
 
-			if (count <= targetIndex) {
-				System.out.println("Not enough ellipses available. Retrying...");
-				StaticWait(1);
-				continue;
-			}
-			WebElement ellipsis = ellipsesList.get(targetIndex);
-			StaticWait(3);
-			wait.until(ExpectedConditions.elementToBeClickable(ellipsis));
-			js.executeScript("arguments[0].click();", ellipsis);
-			StaticWait(2);
-			WebElement addQuizBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Quiz')]")));
-			js.executeScript("arguments[0].click();", addQuizBtn);
-//			addQuizBtn.click();
-			wait.until(ExpectedConditions.elementToBeClickable(Searchtestbtn));
-			Searchtestbtn.click();
-			String testname = "\"" + TestName + "\"";
-			cp.SearchTestname(testname);
-			wait.until(ExpectedConditions.elementToBeClickable(gobtn));
-			gobtn.click();
-			WebElement testAddBtn = wait.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
-			js.executeScript("arguments[0].click();", testAddBtn);
-			String QuizName = " Quiz " + randomNumberGenerator();
-			ExtentCucumberAdapter.addTestStepLog(QuizName);
-			cp.Name(QuizName);
-			Descriptionbox.sendKeys(generateRandomString());
-			Instructionbox.sendKeys(generateRandomString());
-			cp.getRandomDate(Datepickericon);
-			ShowAnswers.click();
-			if (ShowTestResult.isEnabled()) {
-				ShowTestResult.click();
-			}
-			wait.until(ExpectedConditions.elementToBeClickable(ShowtestSummary));
-			OverrideInstructionstoggle.click();
-			Badgetab.click();
-			js.executeScript("arguments[0].click();", AddnewBadgebtn);
-			StaticWait(1);
-			driver.switchTo().frame(0);
-			WebElement badgeSelectionElement = wait.until(ExpectedConditions.visibilityOf(BadgeSelection));
-			js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
-			actions.moveToElement(badgeSelectionElement).click().perform();
-			WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(importBadge));
-			importBadgeBtn.click();
-			driver.switchTo().defaultContent();
-			cp.Save();
-			ExtentCucumberAdapter.addTestStepLog("Quiz created successfully!");
+	                if (count <= targetIndex) {
+	                    System.out.println("Not enough ellipses available. Retrying...");
+	                    StaticWait(1);
+	                    continue;
+	                }
 
-			StaticWait(1);
-			js.executeScript("arguments[0].click();", publishToggle(QuizName));
-			wait.until(ExpectedConditions.elementToBeClickable(QuizEllipses(QuizName)));
-			js.executeScript("arguments[0].click();", QuizEllipses(QuizName));
-			StaticWait(1);
-			progressbtn.click();
-			StaticWait(1);
-			wait.until(ExpectedConditions.elementToBeClickable(Activatetoggle));
-			js.executeScript("arguments[0].click();", Activatetoggle);
-			StaticWait(1);
-			js.executeScript("arguments[0].click();", closeicon);
-			StaticWait(1);
-			targetIndex += 2;
-			StaticWait(1);
-		}
+	                WebElement ellipsis = ellipsesList.get(targetIndex);
+	                StaticWait(3);
+	                wait.until(ExpectedConditions.elementToBeClickable(ellipsis));
+	                js.executeScript("arguments[0].click();", ellipsis);
+	                StaticWait(2);
+	                
+	                WebElement addQuizBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Quiz')]")));
+	                js.executeScript("arguments[0].click();", addQuizBtn);
+	                
+	                wait.until(ExpectedConditions.elementToBeClickable(Searchtestbtn));
+	                Searchtestbtn.click();
+	                String testname = "\"" + TestName + "\"";
+	                cp.SearchTestname(testname);
+	                wait.until(ExpectedConditions.elementToBeClickable(gobtn));
+	                gobtn.click();
+	                
+	                WebElement testAddBtn = wait.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
+	                js.executeScript("arguments[0].click();", testAddBtn);
+	                String QuizName = " Quiz " + randomNumberGenerator();
+	                ExtentCucumberAdapter.addTestStepLog(QuizName);
+	                cp.Name(QuizName);
+	                Descriptionbox.sendKeys(generateRandomString());
+	                Instructionbox.sendKeys(generateRandomString());
+	                cp.getRandomDate(Datepickericon);
+	                ShowAnswers.click();
+	                if (ShowTestResult.isEnabled()) {
+	                    ShowTestResult.click();
+	                }
+	                wait.until(ExpectedConditions.elementToBeClickable(ShowtestSummary));
+	                OverrideInstructionstoggle.click();
+	                Badgetab.click();
+	                js.executeScript("arguments[0].click();", AddnewBadgebtn);
+	                StaticWait(1);
+	                driver.switchTo().frame(0);
+	                WebElement badgeSelectionElement = wait.until(ExpectedConditions.visibilityOf(BadgeSelection));
+	                js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
+	                actions.moveToElement(badgeSelectionElement).click().perform();
+	                WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(importBadge));
+	                importBadgeBtn.click();
+	                driver.switchTo().defaultContent();
+	                cp.Save();
+	                ExtentCucumberAdapter.addTestStepLog("Quiz created successfully!");
 
+	                StaticWait(1);
+	                js.executeScript("arguments[0].click();", publishToggle(QuizName));
+	                wait.until(ExpectedConditions.elementToBeClickable(QuizEllipses(QuizName)));
+	                js.executeScript("arguments[0].click();", QuizEllipses(QuizName));
+	                StaticWait(1);
+	                progressbtn.click();
+	                StaticWait(1);
+	                wait.until(ExpectedConditions.elementToBeClickable(Activatetoggle));
+	                js.executeScript("arguments[0].click();", Activatetoggle);
+	                StaticWait(1);
+	                js.executeScript("arguments[0].click();", closeicon);
+	                StaticWait(1);
+	                targetIndex += 2;
+	                StaticWait(1);
+	                
+	                break;
+	            } catch (StaleElementReferenceException e) {
+	                System.out.println("StaleElementReferenceException encountered, retrying... Attempt " + (retry + 1));
+	                StaticWait(2);
+	            } catch (Exception e) {
+	                System.out.println("An exception occurred: " + e.getMessage());
+	                break;
+	            }
+	        }
+	    }
 	}
+
 }

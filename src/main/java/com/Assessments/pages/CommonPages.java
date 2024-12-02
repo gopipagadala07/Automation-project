@@ -25,6 +25,7 @@ import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -43,7 +44,7 @@ public class CommonPages extends ActionType{
 
 	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Save')]")
 	public WebElement Savebtn;
-    @FindBy(how = How.XPATH,using="//input[contains(@type, 'search')]")private WebElement searchInputs;
+	@FindBy(how = How.XPATH,using="//input[contains(@type, 'search')]")private WebElement searchInputs;
 	@FindBy(how = How.XPATH,using="//button[@aria-label='Choose month and year']")
 	public WebElement yearSelection;
 	@FindBy(how = How.XPATH,using="//button[@aria-label='Choose date']")
@@ -53,22 +54,22 @@ public class CommonPages extends ActionType{
 
 	public WebElement DateValue(String ValueSelection)
 	{
-		String xpath="//div[contains(text(),' "+ValueSelection+" ' )]";
+		String xpath="//div[text()=' "+ValueSelection+" ' ]";
 		return driver.findElement(By.xpath(xpath));
 	}
-	
+
 	public void Screensize() {
 		Actions actions = new Actions(driver);
-        actions.keyDown(Keys.CONTROL) 
-               .sendKeys(Keys.SUBTRACT)
-               .keyUp(Keys.CONTROL)
-               .perform(); 
-		
+		actions.keyDown(Keys.CONTROL) 
+		.sendKeys(Keys.SUBTRACT)
+		.keyUp(Keys.CONTROL)
+		.perform(); 
+
 	}
-	
+
 	@FindBy(how=How.XPATH,using = "//fp-textbox[@placeholder='Name']/div/mat-form-field/div/div/div/input")
 	private WebElement Name;
-	
+
 	public CommonPages(WebDriver driver)
 	{
 		this.driver=driver;
@@ -88,24 +89,24 @@ public class CommonPages extends ActionType{
 		Name.sendKeys(Value);
 	}
 	public void searchField(String value) {
-        wait.visibilityOf(searchInputs);
-        searchInputs.sendKeys(value);
-        StaticWait(1);
-    }
+		wait.visibilityOf(searchInputs);
+		searchInputs.sendKeys(value);
+		StaticWait(1);
+	}
 	public void SearchTestname (String TestName) {
 		wait.elementToBeClickable(searchforTest);
 		searchforTest.sendKeys(TestName);
 	}
 	public void FPdropdown(WebElement element, String visibleText) {
 		try {
-			
+
 			wait.elementToBeClickable(element);
 			Actions actions = new Actions(driver);
 			actions.moveToElement(element).click().build().perform();
 			List<WebElement> options =element.findElements(By.xpath("following::div[@role='listbox']/mat-option"));
 			for(WebElement option:options) {
 				String actual = option.getText().trim();
-					//System.out.println(actual);
+				//System.out.println(actual);
 				if(actual.contains(visibleText)) {
 					Actions a=new Actions(driver);
 					a.moveToElement(option);
@@ -182,106 +183,129 @@ public class CommonPages extends ActionType{
 		return monthNames[month - 1];
 	}
 	public void getRandomDate(WebElement element) {
-	    int maxRetries = 3; 
-	    int attempt = 0;
-	    boolean success = false;
+		int maxRetries = 3; 
+		int attempt = 0;
+		boolean success = false;
 
-	    while (attempt < maxRetries && !success) {
-	        try {
-	            attempt++;
-	            LocalDate currentDate = LocalDate.now();
-	            Random random = new Random();
-	            int randomYear = currentDate.getYear() + 1 + random.nextInt(5);
-	            int randomMonth = 1 + random.nextInt(12);
-	            LocalDate randomFutureDate = LocalDate.of(randomYear, randomMonth, 1);
-	            int randomDay = 1 + random.nextInt(randomFutureDate.lengthOfMonth());
-	            element.click(); 
-	            yearSelection.click();
+		while (attempt < maxRetries && !success) {
+			try {
+				attempt++;
+				LocalDate currentDate = LocalDate.now();
+				Random random = new Random();
+				int randomYear = currentDate.getYear() + 1 + random.nextInt(5);
+				int randomMonth = 1 + random.nextInt(12);
+				LocalDate randomFutureDate = LocalDate.of(randomYear, randomMonth, 1);
+				int randomDay = 1 + random.nextInt(randomFutureDate.lengthOfMonth());
+				element.click(); 
+				yearSelection.click();
 
-	            WebElement yearElement = DateValue(String.valueOf(randomYear));
-	            yearElement.click();
+				WebElement yearElement = DateValue(String.valueOf(randomYear));
+				yearElement.click();
 
-	            WebElement monthElement = DateValue(getMonthName(randomMonth));
-	            monthElement.click();
+				WebElement monthElement = DateValue(getMonthName(randomMonth));
+				monthElement.click();
 
-	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-	            WebElement dayElement = DateValue(String.valueOf(randomDay));
-	            wait.until(ExpectedConditions.elementToBeClickable(dayElement));
-	            wait.until(ExpectedConditions.visibilityOf(dayElement));
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+				WebElement dayElement = DateValue(String.valueOf(randomDay));
+				wait.until(ExpectedConditions.elementToBeClickable(dayElement));
+				wait.until(ExpectedConditions.visibilityOf(dayElement));
 
-	            JavascriptExecutor js = (JavascriptExecutor) driver;
-	            js.executeScript("arguments[0].click()", dayElement);
-	            success = true;
-	        } catch (ElementClickInterceptedException e) {
-	            System.out.println("ElementClickInterceptedException on attempt " + attempt + ": " + e.getMessage());
-	        } catch (Exception e) {
-	            System.out.println("Exception on attempt " + attempt + ": " + e.getMessage());
-	        }
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click()", dayElement);
+				success = true;
+			} catch (ElementClickInterceptedException e) {
+				System.out.println("ElementClickInterceptedException on attempt " + attempt + ": " + e.getMessage());
+			} catch (Exception e) {
+				System.out.println("Exception on attempt " + attempt + ": " + e.getMessage());
+			}
 
-	        if (!success && attempt < maxRetries) {
-	            System.out.println("Retrying... Attempt " + (attempt + 1));
-	        }
-	    }
-
-	    if (!success) {
-	        throw new RuntimeException("Failed to select a random date after " + maxRetries + " attempts.");
-	    }
-	}
-
-	public void CurrentDate(WebElement element) {
-		
-		try {
-			LocalDate currentDate = LocalDate.now();
-	        int currentYear=currentDate.getYear();
-	        int CurrentMonth=currentDate.getMonthValue();
-	        int CurrentDate=currentDate.getDayOfMonth();
-	        element.click();
-			yearSelection.click();
-		
-			DateValue(String.valueOf(currentYear)).click();
-			//MonthSelection.click();
-			
-			DateValue(getMonthName(CurrentMonth)).click();
-			
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5)); 
-			wait.until(ExpectedConditions.elementToBeClickable(DateValue(String.valueOf(CurrentDate))));
-			wait.until(ExpectedConditions.visibilityOf(DateValue(String.valueOf(CurrentDate))));
-			
-			JavascriptExecutor js=(JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click()", DateValue(String.valueOf(CurrentDate)));
-
-		} catch (ElementClickInterceptedException e) {
-			System.out.println("e");
+			if (!success && attempt < maxRetries) {
+				System.out.println("Retrying... Attempt " + (attempt + 1));
+			}
 		}
-	        
+
+		if (!success) {
+			throw new RuntimeException("Failed to select a random date after " + maxRetries + " attempts.");
+		}
 	}
+
+	public void selectCurrentDate(WebElement element) {
+		int maxRetries = 3; 
+		int attempt = 0;
+		boolean success = false;
+
+		while (attempt < maxRetries && !success) {
+			try {
+				LocalDate currentDate = LocalDate.now();
+				int currentYear = currentDate.getYear();
+				int currentMonth = currentDate.getMonthValue();
+				int currentDay = currentDate.getDayOfMonth();
+				element.click();
+				yearSelection.click();
+
+				WebElement yearElement = DateValue(String.valueOf(currentYear));
+				yearElement.click();
+
+				WebElement monthElement = DateValue(getMonthName(currentMonth));
+				monthElement.click();
+
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+				WebElement dayElement = DateValue(String.valueOf(currentDay));
+				wait.until(ExpectedConditions.elementToBeClickable(dayElement));
+				wait.until(ExpectedConditions.visibilityOf(dayElement));
+
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click()", dayElement);
+				success = true;
+			} catch (ElementClickInterceptedException e) {
+				System.out.println("ElementClickInterceptedException: " + e.getMessage());
+			} catch (StaleElementReferenceException e) {
+				System.out.println("StaleElementReferenceException: " + e.getMessage());
+			} catch (TimeoutException e) {
+				System.out.println("TimeoutException: " + e.getMessage());
+			} catch (Exception e) {
+				System.out.println("Exception: " + e.getMessage());
+			}
+
+			if (!success) {
+				attempt++;
+				if (attempt < maxRetries) {
+					System.out.println("Retrying... Attempt " + (attempt + 1));
+				} else {
+					throw new RuntimeException("Failed to select the current date after " + maxRetries + " attempts.");
+				}
+			}
+		}
+	}
+
+
 	public void scrollWithRobot() throws AWTException {
-	    try {
-	        Robot robot = new Robot();
-	        for (int i = 0; i < 20; i++) { 
-	            robot.keyPress(KeyEvent.VK_PAGE_DOWN);
-	            robot.keyRelease(KeyEvent.VK_PAGE_DOWN); 
-	        }
-	    } catch (ElementClickInterceptedException e) {
-	        e.printStackTrace();
-	    }
+		try {
+			Robot robot = new Robot();
+			for (int i = 0; i < 20; i++) { 
+				robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+				robot.keyRelease(KeyEvent.VK_PAGE_DOWN); 
+			}
+		} catch (ElementClickInterceptedException e) {
+			e.printStackTrace();
+		}
 	}
-	
-	
+
+
 	public void scrollToElementWithRetry(WebElement element) {
-	    int retries = 10;
-	    while (retries > 0) {
-	        try {
-	            JavascriptExecutor js = (JavascriptExecutor) driver;
-	            js.executeScript("arguments[0].scrollIntoView(true);", element);
-	            break; // Exit the loop if the scroll is successful
-	        } catch (StaleElementReferenceException e) {
-	            System.out.println("Stale Element, retrying...");
-	            retries--;
-	            if (retries == 0) {
-	                System.out.println("Element is stale after retries, failing.");
-	            }
-	        }
-	    }
+		int retries = 10;
+		while (retries > 0) {
+			try {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true);", element);
+				break; // Exit the loop if the scroll is successful
+			} catch (StaleElementReferenceException e) {
+				System.out.println("Stale Element, retrying...");
+				retries--;
+				if (retries == 0) {
+					System.out.println("Element is stale after retries, failing.");
+				}
+			}
+		}
 	}
 }

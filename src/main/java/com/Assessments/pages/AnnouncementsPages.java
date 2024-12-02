@@ -62,12 +62,12 @@ public class AnnouncementsPages extends ActionType {
 	@FindBy(how=How.XPATH,using="//a[text()='Assessment Center']/following::li[2]")private WebElement course;//to scroll page upto course 
 
 
-	
+
 	public WebElement getCommunityNameElement(String ClassroomName) {
 		String xpath = "//span[(text()='"+ClassroomName+"')]/parent::div/parent::mat-card-content/preceding-sibling::mat-card-header/child::div/mat-card-title/child::span";
 		return driver.findElement(By.xpath(xpath));
 	}
-	 
+
 	public void communityClick(String ClassroomName, String SectionName, String TLastName, String TFirstName)
 	{
 		cp.searchField(ClassroomName + "(" + SectionName + ")-"+ TLastName + " " + TFirstName);
@@ -84,7 +84,7 @@ public class AnnouncementsPages extends ActionType {
 		PageFactory.initElements(driver, this);
 		this.wait = new Wait(driver); 
 	}
-	 
+
 	public void ClickOnLearningaAndAssessmentCenter() {
 		wait.elementToBeClickable(LearningTab);
 		LearningTab.click();
@@ -92,13 +92,13 @@ public class AnnouncementsPages extends ActionType {
 		wait.elementToBeClickable(AssessmentcenterTab);
 		AssessmentcenterTab.click();
 	}
-	 
+
 	public void ClickOnAnnouncementTab() {
 		wait.elementToBeClickable(AnnouncementTab);
 		wait.visibilityOf(AnnouncementTab);
 		AnnouncementTab.click();
 	}
-	 
+
 	public void ClickOnAddNewAnnouncement() {
 
 		for (int i = 0; i < 4; i++) {
@@ -120,7 +120,7 @@ public class AnnouncementsPages extends ActionType {
 
 				Actions actions = new Actions(driver);
 				actions.moveToElement(TitleField).click().sendKeys(announcementName).perform();
-
+				StaticWait(1);
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].scrollIntoView(true);", DescriptionField);
 				Actions actions1 = new Actions(driver);
@@ -138,12 +138,11 @@ public class AnnouncementsPages extends ActionType {
 				wait.until(ExpectedConditions.elementToBeClickable(PublishDate));
 				StaticWait(1);
 				wait.until(ExpectedConditions.visibilityOf(PublishDate));
-				cp.CurrentDate(PublishDate);
-
+				cp.selectCurrentDate(PublishDate);
 
 				wait.until(ExpectedConditions.elementToBeClickable(SaveButton));
 				SaveButton.click();
-				StaticWait(1);
+				StaticWait(2);
 			} catch (ElementClickInterceptedException e) {
 				System.out.println("Element click intercepted, retrying...");
 				StaticWait(1);
@@ -151,7 +150,8 @@ public class AnnouncementsPages extends ActionType {
 			} catch (Exception e) {
 				System.out.println("Error while adding new announcement: " + e.getMessage());
 			}}}
-	 
+
+
 	public void AnnouncementsSearch() {
 
 		String an=announcementNames.get(0);
@@ -166,7 +166,7 @@ public class AnnouncementsPages extends ActionType {
 		StaticWait(2);
 	}
 
-	 
+
 	public void PageNation() throws AWTException {
 
 		cp.scrollWithRobot();
@@ -197,18 +197,18 @@ public class AnnouncementsPages extends ActionType {
 	//		FirstPage.click();
 	//		StaticWait(2);
 
-	 
+
 	public void ClickOnHomeTab() {
 		wait.elementToBeClickable(Hometab);
 		wait.visibilityOf(Hometab);
 		Hometab.click();
 	}
-	 
+
 	public void ClickOnAddAndSave() {
 		wait.elementToBeClickable(ADdNewAnnouncement);
 		wait.visibilityOf(ADdNewAnnouncement);
 		ADdNewAnnouncement.click();
-        StaticWait(1);
+		StaticWait(1);
 		wait.elementToBeClickable(SaveButton);
 		wait.visibilityOf(SaveButton);
 		SaveButton.click();
@@ -228,7 +228,7 @@ public class AnnouncementsPages extends ActionType {
 	/*
 	 * Student side verification
 	 */
-	 
+
 	public void ClickOnAnnouncementFromHomeTab() throws AWTException {
 		//List<String> announcementNames = new ArrayList<>();
 		String Aname=announcementNames.get(1);
