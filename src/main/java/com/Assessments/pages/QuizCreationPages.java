@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -116,39 +117,49 @@ public class QuizCreationPages extends ActionType{
 
 
 	public void ChildObjectivesCreation() {
-		StaticWait(2);
-		Allbtn.click();
-		StaticWait(2);
-		WebElement ele = driver.findElement(By.xpath("//h3[@class='assessment__title__all_tabs']"));
-		ele.click();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    StaticWait(2);
+	    Allbtn.click();
+	    StaticWait(2);
+	    WebElement ele = driver.findElement(By.xpath("//h3[@class='assessment__title__all_tabs']"));
+	    ele.click();
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		for (int i = 0; i < 3; i++) {
-			List<WebElement> ellipsesList = driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
-			if (ellipsesList.isEmpty()) {
-				System.out.println("No ellipses found for iteration " + (i + 1));
-				return;
-			}
-			WebElement latestEllipsis = ellipsesList.get(ellipsesList.size() - 1);
-			try {
-				wait.until(ExpectedConditions.elementToBeClickable(latestEllipsis));
-				wait.until(ExpectedConditions.visibilityOf(latestEllipsis));
-				StaticWait(2);
-				js.executeScript("arguments[0].click();", latestEllipsis);
-			} catch (Exception e) {
-				System.out.println("Failed to click the latest ellipsis in iteration " + (i + 1) + ": " + e.getMessage());
-				continue; 
-			}
-			StaticWait(1);
-			childObjectivebtn.click();
-			String childLabel = "ChildObjective" + randomNumberGenerator();
-			StaticWait(1);
-			cp.Name(childLabel);
-			cp.Save();
-			StaticWait(3);
-		}
+	    for (int i = 0; i < 3; i++) {
+	        try {
+	            List<WebElement> ellipsesList = driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
+	            if (ellipsesList.isEmpty()) {
+	                System.out.println("No ellipses found for iteration " + (i + 1));
+	                return;
+	            }
+	            if (ellipsesList.size() == 4) {
+	                System.out.println("Latest ellipses count reached 4, stopping the loop.");
+	                break;
+	            }
+	            WebElement latestEllipsis = ellipsesList.get(ellipsesList.size() - 1);
+
+	            wait.until(ExpectedConditions.elementToBeClickable(latestEllipsis));
+	            wait.until(ExpectedConditions.visibilityOf(latestEllipsis));
+	            StaticWait(2);
+	            js.executeScript("arguments[0].click();", latestEllipsis);
+
+	            StaticWait(1);
+	            childObjectivebtn.click();
+	            String childLabel = "ChildObjective" + randomNumberGenerator();
+	            StaticWait(1);
+	            cp.Name(childLabel);
+	            cp.Save();
+	            StaticWait(3);
+
+	        } catch (StaleElementReferenceException e) {
+	            System.out.println("StaleElementReferenceException encountered, retrying iteration " + (i + 1) + ": " + e.getMessage());
+	            i--; // Decrement the counter to retry the current iteration
+	        } catch (Exception e) {
+	            System.out.println("Failed in iteration " + (i + 1) + ": " + e.getMessage());
+	        }
+	    }
 	}
+
 
 	public void QuizzesCreation(String TestName) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -172,10 +183,10 @@ public class QuizCreationPages extends ActionType{
 				continue;
 			}
 			WebElement ellipsis = ellipsesList.get(targetIndex);
-			StaticWait(2);
+			StaticWait(3);
 			wait.until(ExpectedConditions.elementToBeClickable(ellipsis));
 			js.executeScript("arguments[0].click();", ellipsis);
-			StaticWait(2);
+			StaticWait(1);
 			WebElement addQuizBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Quiz')]")));
 			js.executeScript("arguments[0].click();", addQuizBtn);
 //			addQuizBtn.click();
@@ -187,7 +198,7 @@ public class QuizCreationPages extends ActionType{
 			gobtn.click();
 			WebElement testAddBtn = wait.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
 			js.executeScript("arguments[0].click();", testAddBtn);
-			String QuizName = " Quiz" + randomNumberGenerator();
+			String QuizName = " Quiz " + randomNumberGenerator();
 			ExtentCucumberAdapter.addTestStepLog(QuizName);
 			cp.Name(QuizName);
 			Descriptionbox.sendKeys(generateRandomString());
