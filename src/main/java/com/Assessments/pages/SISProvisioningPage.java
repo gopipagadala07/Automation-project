@@ -116,13 +116,13 @@ public class SISProvisioningPage extends ActionType{
 	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 	            wait.until(ExpectedConditions.elementToBeClickable(Schooltab));
 	            StaticWait(2);
-	            JavascriptExecutor js = (JavascriptExecutor) driver;
-	            js.executeScript("arguments[0].click();", Schooltab);
+	            Actions a = new Actions(driver);
+	            a.moveToElement(Schooltab).click().perform();
 	            success = true;
 	        } catch (TimeoutException e) {
 	            System.out.println("TimeoutException: " + e.getMessage());
-	            Actions a = new Actions(driver);
-	            a.moveToElement(Schooltab).click().perform();
+	            JavascriptExecutor js = (JavascriptExecutor) driver;
+	            js.executeScript("arguments[0].click();", Schooltab);
 	            success = true;
 	        } catch (Exception e) {
 	            System.out.println("Exception: " + e.getMessage());
@@ -334,6 +334,7 @@ public class SISProvisioningPage extends ActionType{
 		wait.elementToBeClickable(Ellipses);
 		StaticWait(2);
 		Ellipses.click();
+		StaticWait(2);
 		wait.elementToBeClickable(Settingsoptions);
 		Settingsoptions.click();
 		StaticWait(1);
@@ -353,7 +354,10 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void SettingClassroom()
 	{
-		SettingsClassroomtab.click();
+		wait.elementToBeClickable(SettingsClassroomtab);		
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click()", SettingsClassroomtab);
+		//SettingsClassroomtab.click();
 	}
 	public void insertData() throws Exception
 	{

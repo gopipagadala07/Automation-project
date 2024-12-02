@@ -222,7 +222,8 @@ public class QuizCreationPages extends ActionType{
 	                js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
 	                actions.moveToElement(badgeSelectionElement).click().perform();
 	                WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(importBadge));
-	                importBadgeBtn.click();
+	                js.executeScript("arguments[0].click();", importBadgeBtn);
+	               // importBadgeBtn.click();
 	                driver.switchTo().defaultContent();
 	                cp.Save();
 	                ExtentCucumberAdapter.addTestStepLog("Quiz created successfully!");
