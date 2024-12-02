@@ -105,6 +105,7 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void Schooltab()
 	{
+		StaticWait(2);
 		wait.elementToBeClickable(Schooltab);
 		Schooltab.click();
 	}

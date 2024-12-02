@@ -134,7 +134,7 @@ public class QuizCreationPages extends ActionType{
 			try {
 				wait.until(ExpectedConditions.elementToBeClickable(latestEllipsis));
 				wait.until(ExpectedConditions.visibilityOf(latestEllipsis));
-				StaticWait(1);
+				StaticWait(2);
 				js.executeScript("arguments[0].click();", latestEllipsis);
 			} catch (Exception e) {
 				System.out.println("Failed to click the latest ellipsis in iteration " + (i + 1) + ": " + e.getMessage());
@@ -172,7 +172,7 @@ public class QuizCreationPages extends ActionType{
 				continue;
 			}
 			WebElement ellipsis = ellipsesList.get(targetIndex);
-			StaticWait(1);
+			StaticWait(2);
 			wait.until(ExpectedConditions.elementToBeClickable(ellipsis));
 			js.executeScript("arguments[0].click();", ellipsis);
 			StaticWait(2);
