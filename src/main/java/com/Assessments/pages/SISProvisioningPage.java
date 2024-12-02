@@ -105,16 +105,20 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void Schooltab()
 	{
-		StaticWait(2);
-		wait.elementToBeClickable(Schooltab);
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(Schooltab));
 		Schooltab.click();
 	}
 	public void Classroomtab()
 	{
+		wait.elementToBeClickable(Classroomtab);
+		wait.visibilityOf(Classroomtab);
 		Classroomtab.click();
 	}
 	public void Sectiontab()
 	{
+		wait.elementToBeClickable(Sectiontab);
+		wait.visibilityOf(Sectiontab);
 		Sectiontab.click();
 	}
 	public void SchoolDropDownSearch()
