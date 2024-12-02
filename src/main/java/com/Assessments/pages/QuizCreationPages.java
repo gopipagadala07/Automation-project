@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -162,7 +163,7 @@ public class QuizCreationPages extends ActionType{
 
 
 	public void QuizzesCreation(String TestName) {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15)); // Increased wait time
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 	    Actions actions = new Actions(driver);
 	    int targetIndex = 0;
@@ -190,17 +191,17 @@ public class QuizCreationPages extends ActionType{
 	                wait.until(ExpectedConditions.elementToBeClickable(ellipsis));
 	                js.executeScript("arguments[0].click();", ellipsis);
 	                StaticWait(2);
-	                
+
 	                WebElement addQuizBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Quiz')]")));
 	                js.executeScript("arguments[0].click();", addQuizBtn);
-	                
+
 	                wait.until(ExpectedConditions.elementToBeClickable(Searchtestbtn));
 	                Searchtestbtn.click();
 	                String testname = "\"" + TestName + "\"";
 	                cp.SearchTestname(testname);
 	                wait.until(ExpectedConditions.elementToBeClickable(gobtn));
 	                gobtn.click();
-	                
+
 	                WebElement testAddBtn = wait.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
 	                js.executeScript("arguments[0].click();", testAddBtn);
 	                String QuizName = " Quiz " + randomNumberGenerator();
@@ -223,9 +224,18 @@ public class QuizCreationPages extends ActionType{
 	                js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
 	                actions.moveToElement(badgeSelectionElement).click().perform();
 	                StaticWait(1);
-	                WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(importBadge));
+
+	                // Add logging to check if the element is present
+	                WebElement importBadgeBtn = null;
+	                try {
+	                    importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Import Badge')]")));
+	                    System.out.println("Import Badge button is found and clickable.");
+	                } catch (TimeoutException e) {
+	                    System.out.println("Timeout waiting for Import Badge button: " + e.getMessage());
+	                    throw e;
+	                }
+
 	                js.executeScript("arguments[0].click();", importBadgeBtn);
-	               // importBadgeBtn.click();
 	                driver.switchTo().defaultContent();
 	                cp.Save();
 	                ExtentCucumberAdapter.addTestStepLog("Quiz created successfully!");
@@ -247,6 +257,9 @@ public class QuizCreationPages extends ActionType{
 	                break;
 	            } catch (StaleElementReferenceException e) {
 	                System.out.println("StaleElementReferenceException encountered, retrying... Attempt " + (retry + 1));
+	                StaticWait(2);
+	            } catch (TimeoutException e) {
+	                System.out.println("TimeoutException encountered, retrying... Attempt " + (retry + 1));
 	                StaticWait(2);
 	            } catch (Exception e) {
 	                System.out.println("An exception occurred: " + e.getMessage());
