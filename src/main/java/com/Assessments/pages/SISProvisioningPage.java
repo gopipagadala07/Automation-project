@@ -171,6 +171,7 @@ public class SISProvisioningPage extends ActionType{
 	public void SchoolDetails()
 	{
 	    SchoolName="FPK12School"+randomNumberGenerator();
+	    System.out.println(SchoolName);
 	    ExtentCucumberAdapter.addTestStepLog(SchoolName);
 		cp.Name(SchoolName);				
 		Description.sendKeys(generateRandomString());
