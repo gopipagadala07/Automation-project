@@ -26,7 +26,6 @@ public class QuizCreationPages extends ActionType{
 	private Wait wait;
 	CommonPages cp=new CommonPages(Base.getDriver());
 
-
 	private By Learningtab = By.xpath("//span[contains(text(),'Learning')]");
 	private By AsseementTab = By.xpath("//a[contains(text(),'Assessment Center')]");
 	@FindBy(how = How.XPATH,using = "//a[contains(text(),'Assessment Center')]")private WebElement AssessmentCenterTab;
@@ -153,7 +152,7 @@ public class QuizCreationPages extends ActionType{
 
 	        } catch (StaleElementReferenceException e) {
 	            System.out.println("StaleElementReferenceException encountered, retrying iteration " + (i + 1) + ": " + e.getMessage());
-	            i--; // Decrement the counter to retry the current iteration
+	            i--;
 	        } catch (Exception e) {
 	            System.out.println("Failed in iteration " + (i + 1) + ": " + e.getMessage());
 	        }
@@ -186,7 +185,7 @@ public class QuizCreationPages extends ActionType{
 			StaticWait(3);
 			wait.until(ExpectedConditions.elementToBeClickable(ellipsis));
 			js.executeScript("arguments[0].click();", ellipsis);
-			StaticWait(1);
+			StaticWait(2);
 			WebElement addQuizBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Quiz')]")));
 			js.executeScript("arguments[0].click();", addQuizBtn);
 //			addQuizBtn.click();
