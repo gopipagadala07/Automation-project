@@ -187,7 +187,6 @@ public class SISProvisioningPage extends ActionType{
 	public void SectionDetails()
 	{
 		SectionName="FPK12Section"+randomNumberGenerator();
-		UtlityVariablesPages.SectionName=SectionName;
 		cp.Name(SectionName);
 		ExtentCucumberAdapter.addTestStepLog(SectionName);
 		Description.sendKeys(generateRandomString());
