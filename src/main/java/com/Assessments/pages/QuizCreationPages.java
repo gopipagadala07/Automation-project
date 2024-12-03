@@ -163,7 +163,7 @@ public class QuizCreationPages extends ActionType{
 
 
 	public void QuizzesCreation(String TestName) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15)); // Increased wait time
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Actions actions = new Actions(driver);
 		int targetIndex = 0;
@@ -216,44 +216,23 @@ public class QuizCreationPages extends ActionType{
 					wait.until(ExpectedConditions.elementToBeClickable(ShowtestSummary));
 					OverrideInstructionstoggle.click();
 					StaticWait(2);
+					System.out.println("-------------");
 					js.executeScript("arguments[0].click();", Badgetab);
+					System.out.println("Badgetab click");
 					//Badgetab.click();
 					StaticWait(1);
 					js.executeScript("arguments[0].click();", AddnewBadgebtn);
+					System.out.println("Badgebtn click");
 					StaticWait(2);
 					driver.switchTo().frame(0);
 					WebElement badgeSelectionElement = wait.until(ExpectedConditions.visibilityOf(BadgeSelection));
 					js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
 					actions.moveToElement(badgeSelectionElement).click().perform();
 					StaticWait(1);
-					int maxRetries = 3;
-					int attempt = 0;
-					boolean success = false;
+					System.out.println("Badgeselection");
 					WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge']")));
-					while (attempt < maxRetries && !success) {
-						try {
-							wait.until(ExpectedConditions.elementToBeClickable(importBadgeBtn));
-							StaticWait(2);
-							Actions a = new Actions(driver);
-							a.moveToElement(importBadgeBtn).click().perform();
-							success = true;
-						} catch (TimeoutException e) {
-							System.out.println("TimeoutException: " + e.getMessage());
-							js.executeScript("arguments[0].click();", importBadgeBtn);
-							success = true;
-						} catch (Exception e) {
-							System.out.println("Exception: " + e.getMessage());
-						}
-
-						if (!success) {
-							attempt++;
-							if (attempt < maxRetries) {
-								System.out.println("Retrying... Attempt " + (attempt + 1));
-							} else {
-								throw new RuntimeException("Failed to click on Schooltab after " + maxRetries + " attempts.");
-							}
-						}
-					}
+					js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
+					System.out.println("import badge");
 					driver.switchTo().defaultContent();
 					StaticWait(2);
 					cp.Save();
