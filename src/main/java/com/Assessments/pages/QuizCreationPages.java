@@ -208,6 +208,7 @@ public class QuizCreationPages extends ActionType{
 	                cp.Name(QuizName);
 	                Descriptionbox.sendKeys(generateRandomString());
 	                Instructionbox.sendKeys(generateRandomString());
+	                StaticWait(2);
 	                cp.getRandomDate(Datepickericon);
 	                ShowAnswers.click();
 	                if (ShowTestResult.isEnabled()) {
@@ -236,7 +237,7 @@ public class QuizCreationPages extends ActionType{
 	                        js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
 	                        js.executeScript("arguments[0].click();", importBadgeBtn);
 	                        System.out.println("Import badge clicked");
-	                        break; // Exit the retry loop if click is successful
+	                        break;
 	                    } catch (TimeoutException e) {
 	                        System.out.println("TimeoutException encountered while clicking Import Badge button, retrying... Attempt " + (badgeRetry + 1));
 	                        StaticWait(2);
