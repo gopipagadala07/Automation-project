@@ -150,7 +150,7 @@ public class QuizCreationPages extends ActionType{
 				StaticWait(1);
 				cp.Name(childLabel);
 				cp.Save();
-				StaticWait(3);
+				StaticWait(1);
 
 			} catch (StaleElementReferenceException e) {
 				System.out.println("StaleElementReferenceException encountered, retrying iteration " + (i + 1) + ": " + e.getMessage());
@@ -187,7 +187,7 @@ public class QuizCreationPages extends ActionType{
 					}
 
 					WebElement ellipsis = ellipsesList.get(targetIndex);
-					StaticWait(3);
+					StaticWait(2);
 					wait.until(ExpectedConditions.elementToBeClickable(ellipsis));
 					js.executeScript("arguments[0].click();", ellipsis);
 					StaticWait(2);
@@ -206,7 +206,7 @@ public class QuizCreationPages extends ActionType{
 					cp.Name(QuizName);
 					Descriptionbox.sendKeys(generateRandomString());
 					Instructionbox.sendKeys(generateRandomString());
-					StaticWait(2);
+					StaticWait(1);
 					cp.getRandomDate(Datepickericon);
 					ShowAnswers.click();
 					if (ShowTestResult.isEnabled()) {
@@ -214,11 +214,11 @@ public class QuizCreationPages extends ActionType{
 					}
 					wait.until(ExpectedConditions.elementToBeClickable(ShowtestSummary));
 					OverrideInstructionstoggle.click();
-					StaticWait(2);
+					StaticWait(1);
 					js.executeScript("arguments[0].click();", Badgetab);
 					StaticWait(1);
 					js.executeScript("arguments[0].click();", AddnewBadgebtn);
-					StaticWait(2);
+					StaticWait(1);
 					driver.switchTo().frame(0);
 					WebElement badgeSelectionElement = wait.until(ExpectedConditions.visibilityOf(BadgeSelection));
 					js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
@@ -236,7 +236,7 @@ public class QuizCreationPages extends ActionType{
 					}
 
 					driver.switchTo().defaultContent();
-					StaticWait(2);
+					StaticWait(1);
 					cp.Save();
 					ExtentCucumberAdapter.addTestStepLog("Quiz created successfully!");
 					System.out.println("Quiz created successfully!");
@@ -261,7 +261,7 @@ public class QuizCreationPages extends ActionType{
 					StaticWait(2);
 				} catch (TimeoutException e) {
 					System.out.println("TimeoutException encountered, retrying... Attempt " + (retry + 1));
-					StaticWait(2);
+					StaticWait(1);
 				} catch (Exception e) {
 					System.out.println("An exception occurred: " + e.getMessage());
 					break;
