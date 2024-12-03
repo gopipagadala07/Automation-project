@@ -36,7 +36,7 @@ public class QuizCreationPages extends ActionType{
 	@FindBy(how = How.XPATH,using = "//label[contains(text(),'Objective')]/parent::div/child::b")private WebElement objectiveLabel;
 	@FindBy(how = How.XPATH,using = "//input[@type='text']")private WebElement objectiveName;
 	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Search Test')]")private WebElement Searchtestbtn;
-	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Go')]")private WebElement gobtn;
+	@FindBy(how = How.XPATH,using = "//span[text()=' Go ']")private WebElement gobtn;
 	@FindBy(how = How.XPATH,using = "(//button[@aria-label='Open calendar'])[2]")private WebElement Datepickericon;
 	@FindBy(how = How.XPATH,using = "(//span[contains(text(),'Show')])[1]")private WebElement ShowAnswers;
 	@FindBy(how = How.XPATH,using = "(//span[contains(text(),'Show')])[2]")private WebElement ShowTestResult;
