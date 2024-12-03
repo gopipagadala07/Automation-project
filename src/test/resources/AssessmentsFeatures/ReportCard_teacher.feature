@@ -1,6 +1,6 @@
-Feature: Verify the Benchmark Management process for Teacher
+Feature: Verify the Grades for Teacher
 
-  Scenario Outline: Activating and Deactivating toggles against Benchmark names
+  Scenario Outline: Checking the Student Reports by Grades
     Given User launch the application with Valid URL
     And User able to see all Fields
     Then User enters the credentials from the excel sheet at <rownumber>
