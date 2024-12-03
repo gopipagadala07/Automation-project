@@ -163,120 +163,111 @@ public class QuizCreationPages extends ActionType{
 
 
 	public void QuizzesCreation(String TestName) {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	    Actions actions = new Actions(driver);
-	    int targetIndex = 0;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Actions actions = new Actions(driver);
+		int targetIndex = 0;
 
-	    for (int i = 0; i < 8; i++) {
-	        for (int retry = 0; retry < 3; retry++) {
-	            try {
-	                List<WebElement> ellipsesList = driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
-	                int count = ellipsesList.size();
-	                System.out.println("Ellipses count: " + count);
+		for (int i = 0; i < 8; i++) {
+			for (int retry = 0; retry < 3; retry++) {
+				try {
+					List<WebElement> ellipsesList = driver.findElements(By.xpath("//mat-icon[text()='more_vert']"));
+					int count = ellipsesList.size();
+					System.out.println("Ellipses count: " + count);
 
-	                if (count >= 8) {
-	                    System.out.println("Ellipses count has reached 8. Stopping the loop.");
-	                    return;
-	                }
+					if (count >= 8) {
+						//System.out.println("Ellipses count has reached 8. Stopping the loop.");
+						return;
+					}
 
-	                if (count <= targetIndex) {
-	                    System.out.println("Not enough ellipses available. Retrying...");
-	                    StaticWait(1);
-	                    continue;
-	                }
+					if (count <= targetIndex) {
+						System.out.println("Not enough ellipses available. Retrying...");
+						StaticWait(1);
+						continue;
+					}
 
-	                WebElement ellipsis = ellipsesList.get(targetIndex);
-	                StaticWait(3);
-	                wait.until(ExpectedConditions.elementToBeClickable(ellipsis));
-	                js.executeScript("arguments[0].click();", ellipsis);
-	                StaticWait(2);
-	                WebElement addQuizBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Quiz')]")));
-	                js.executeScript("arguments[0].click();", addQuizBtn);
-	                wait.until(ExpectedConditions.elementToBeClickable(Searchtestbtn));
-	                Searchtestbtn.click();
-	                String testname = "\"" + TestName + "\"";
-	                cp.SearchTestname(testname);
-	                wait.until(ExpectedConditions.elementToBeClickable(gobtn));
-	                js.executeScript("arguments[0].click();", gobtn);
-	                //gobtn.click();
+					WebElement ellipsis = ellipsesList.get(targetIndex);
+					StaticWait(3);
+					wait.until(ExpectedConditions.elementToBeClickable(ellipsis));
+					js.executeScript("arguments[0].click();", ellipsis);
+					StaticWait(2);
+					WebElement addQuizBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Add Quiz')]")));
+					js.executeScript("arguments[0].click();", addQuizBtn);
+					wait.until(ExpectedConditions.elementToBeClickable(Searchtestbtn));
+					Searchtestbtn.click();
+					String testname = "\"" + TestName + "\"";
+					cp.SearchTestname(testname);
+					wait.until(ExpectedConditions.elementToBeClickable(gobtn));
+					js.executeScript("arguments[0].click();", gobtn);
+					WebElement testAddBtn = wait.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
+					js.executeScript("arguments[0].click();", testAddBtn);
+					String QuizName = " Quiz " + randomNumberGenerator();
+					ExtentCucumberAdapter.addTestStepLog(QuizName);
+					cp.Name(QuizName);
+					Descriptionbox.sendKeys(generateRandomString());
+					Instructionbox.sendKeys(generateRandomString());
+					StaticWait(2);
+					cp.getRandomDate(Datepickericon);
+					ShowAnswers.click();
+					if (ShowTestResult.isEnabled()) {
+						ShowTestResult.click();
+					}
+					wait.until(ExpectedConditions.elementToBeClickable(ShowtestSummary));
+					OverrideInstructionstoggle.click();
+					StaticWait(2);
+					js.executeScript("arguments[0].click();", Badgetab);
+					StaticWait(1);
+					js.executeScript("arguments[0].click();", AddnewBadgebtn);
+					StaticWait(2);
+					driver.switchTo().frame(0);
+					WebElement badgeSelectionElement = wait.until(ExpectedConditions.visibilityOf(BadgeSelection));
+					js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
+					actions.moveToElement(badgeSelectionElement).click().perform();
+					StaticWait(1);
+					for (int badgeRetry = 0; badgeRetry < 1; badgeRetry++) {
+						try {
+							WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge']")));
+							js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
+							js.executeScript("arguments[0].click();", importBadgeBtn);
+							break;
+						} catch (TimeoutException e) {
+							StaticWait(1);
+						}
+					}
 
-	                WebElement testAddBtn = wait.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
-	                js.executeScript("arguments[0].click();", testAddBtn);
-	                String QuizName = " Quiz " + randomNumberGenerator();
-	                ExtentCucumberAdapter.addTestStepLog(QuizName);
-	                cp.Name(QuizName);
-	                Descriptionbox.sendKeys(generateRandomString());
-	                Instructionbox.sendKeys(generateRandomString());
-	                StaticWait(2);
-	                cp.getRandomDate(Datepickericon);
-	                ShowAnswers.click();
-	                if (ShowTestResult.isEnabled()) {
-	                    ShowTestResult.click();
-	                }
-	                wait.until(ExpectedConditions.elementToBeClickable(ShowtestSummary));
-	                OverrideInstructionstoggle.click();
-	                StaticWait(2);
-	                System.out.println("-------------");
-	                js.executeScript("arguments[0].click();", Badgetab);
-	                System.out.println("Badgetab click");
-	                //Badgetab.click();
-	                StaticWait(1);
-	                js.executeScript("arguments[0].click();", AddnewBadgebtn);
-	                System.out.println("Badgebtn click");
-	                StaticWait(2);
-	                driver.switchTo().frame(0);
-	                WebElement badgeSelectionElement = wait.until(ExpectedConditions.visibilityOf(BadgeSelection));
-	                js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
-	                actions.moveToElement(badgeSelectionElement).click().perform();
-	                StaticWait(1);
-	                System.out.println("Badgeselection");
-	                for (int badgeRetry = 0; badgeRetry < 3; badgeRetry++) {
-	                    try {
-	                        WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge']")));
-	                        js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
-	                        js.executeScript("arguments[0].click();", importBadgeBtn);
-	                        System.out.println("Import badge clicked");
-	                        break;
-	                    } catch (TimeoutException e) {
-	                        System.out.println("TimeoutException encountered while clicking Import Badge button, retrying... Attempt " + (badgeRetry + 1));
-	                        StaticWait(2);
-	                    }
-	                }
+					driver.switchTo().defaultContent();
+					StaticWait(2);
+					cp.Save();
+					ExtentCucumberAdapter.addTestStepLog("Quiz created successfully!");
+					System.out.println("Quiz created successfully!");
 
-	                driver.switchTo().defaultContent();
-	                StaticWait(2);
-	                cp.Save();
-	                ExtentCucumberAdapter.addTestStepLog("Quiz created successfully!");
-	                System.out.println("Quiz created successfully!");
-
-	                StaticWait(1);
-	                js.executeScript("arguments[0].click();", publishToggle(QuizName));
-	                wait.until(ExpectedConditions.elementToBeClickable(QuizEllipses(QuizName)));
-	                js.executeScript("arguments[0].click();", QuizEllipses(QuizName));
-	                StaticWait(1);
-	                progressbtn.click();
-	                StaticWait(1);
-	                wait.until(ExpectedConditions.elementToBeClickable(Activatetoggle));
-	                js.executeScript("arguments[0].click();", Activatetoggle);
-	                StaticWait(1);
-	                js.executeScript("arguments[0].click();", closeicon);
-	                StaticWait(1);
-	                targetIndex += 2;
-	                StaticWait(1);
-	                break;
-	            } catch (StaleElementReferenceException e) {
-	                System.out.println("StaleElementReferenceException encountered, retrying... Attempt " + (retry + 1));
-	                StaticWait(2);
-	            } catch (TimeoutException e) {
-	                System.out.println("TimeoutException encountered, retrying... Attempt " + (retry + 1));
-	                StaticWait(2);
-	            } catch (Exception e) {
-	                System.out.println("An exception occurred: " + e.getMessage());
-	                break;
-	            }
-	        }
-	    }
+					StaticWait(1);
+					js.executeScript("arguments[0].click();", publishToggle(QuizName));
+					wait.until(ExpectedConditions.elementToBeClickable(QuizEllipses(QuizName)));
+					js.executeScript("arguments[0].click();", QuizEllipses(QuizName));
+					StaticWait(1);
+					progressbtn.click();
+					StaticWait(1);
+					wait.until(ExpectedConditions.elementToBeClickable(Activatetoggle));
+					js.executeScript("arguments[0].click();", Activatetoggle);
+					StaticWait(1);
+					js.executeScript("arguments[0].click();", closeicon);
+					StaticWait(1);
+					targetIndex += 2;
+					StaticWait(1);
+					break;
+				} catch (StaleElementReferenceException e) {
+					System.out.println("StaleElementReferenceException encountered, retrying... Attempt " + (retry + 1));
+					StaticWait(2);
+				} catch (TimeoutException e) {
+					System.out.println("TimeoutException encountered, retrying... Attempt " + (retry + 1));
+					StaticWait(2);
+				} catch (Exception e) {
+					System.out.println("An exception occurred: " + e.getMessage());
+					break;
+				}
+			}
+		}
 	}
 
 }

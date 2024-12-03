@@ -103,7 +103,7 @@ public class Score_SubmissionPage extends ActionType
 	    int retry = 0;
 	    int maxretry = 5;
 	    int count=Score.size();
-	    System.out.println(count);
+	    System.out.println("Total Quizzes for Scoring: "+count);
 	    while (retry < maxretry) {
 	        try {
 	            for (int i = 0; i < count; i++) {
