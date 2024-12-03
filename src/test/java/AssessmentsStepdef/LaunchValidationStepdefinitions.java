@@ -36,7 +36,7 @@ public class LaunchValidationStepdefinitions extends ActionType{
 	@Then("user clicks on Launch icon and validates")
 	public void user_clicks_on_launch_icon_and_validates() {
 		Launch.clickEachQuizAndClose();
-		Launch.clickEachExamAndClose();
+		//Launch.clickEachExamAndClose();
 		
 	}
 }

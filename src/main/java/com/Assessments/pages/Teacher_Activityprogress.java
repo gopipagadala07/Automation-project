@@ -105,8 +105,12 @@ public class Teacher_Activityprogress extends ActionType{
 		}
 	}
 	public void examtab() {
-		examtab.click();
 		StaticWait(2);
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'EXAM')]")));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click()", e);
+		StaticWait(1);
 	}
 
 	public void clickEachExamAndClose() {

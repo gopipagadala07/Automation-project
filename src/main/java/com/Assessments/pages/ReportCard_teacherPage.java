@@ -137,7 +137,6 @@ public class ReportCard_teacherPage extends ActionType{
 		StaticWait(2);
 		wait.elementToBeClickable(stdprint);
 		js.executeScript("arguments[0].click();", stdprint);
-		//stdprint.click();
 		StaticWait(3);
 		//js.executeScript("arguments[0].click();", hometab);
 		//hometab.click();
