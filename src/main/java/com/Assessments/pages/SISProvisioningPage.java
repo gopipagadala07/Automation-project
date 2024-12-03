@@ -359,21 +359,21 @@ public class SISProvisioningPage extends ActionType{
 	    int maxRetries = 3;
 	    int attempt = 0;
 	    boolean success = false;
-
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    while (attempt < maxRetries && !success) {
 	        try {
-	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(SettingsClassroomtab));
-	            
 	            JavascriptExecutor js = (JavascriptExecutor) driver;
 	            js.executeScript("arguments[0].click();", element);
 	            success = true;
 	        } catch (StaleElementReferenceException e) {
 	            System.out.println("StaleElementReferenceException: " + e.getMessage());
+	            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(SettingsClassroomtab));
+	            Actions a=new Actions(driver);
+	            a.moveToElement(element).click().build().perform();
 	        } catch (Exception e) {
 	            System.out.println("Exception: " + e.getMessage());
 	        }
-
 	        if (!success) {
 	            attempt++;
 	            if (attempt < maxRetries) {

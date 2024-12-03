@@ -224,8 +224,6 @@ public class QuizCreationPages extends ActionType{
 	                js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
 	                actions.moveToElement(badgeSelectionElement).click().perform();
 	                StaticWait(1);
-
-	                // Add logging to check if the element is present
 	                WebElement importBadgeBtn = null;
 	                try {
 	                    importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Import Badge')]")));
@@ -234,11 +232,11 @@ public class QuizCreationPages extends ActionType{
 	                    System.out.println("Timeout waiting for Import Badge button: " + e.getMessage());
 	                    throw e;
 	                }
-
 	                js.executeScript("arguments[0].click();", importBadgeBtn);
 	                driver.switchTo().defaultContent();
 	                cp.Save();
 	                ExtentCucumberAdapter.addTestStepLog("Quiz created successfully!");
+	                System.out.println("Quiz created successfully!");
 
 	                StaticWait(1);
 	                js.executeScript("arguments[0].click();", publishToggle(QuizName));
