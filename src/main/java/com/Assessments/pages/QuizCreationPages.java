@@ -232,6 +232,7 @@ public class QuizCreationPages extends ActionType{
 					System.out.println("Badgeselection");
 					WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge']")));
 					js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
+					js.executeScript("arguments[0].click();", importBadgeBtn);
 					System.out.println("import badge");
 					driver.switchTo().defaultContent();
 					StaticWait(2);
