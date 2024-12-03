@@ -227,11 +227,12 @@ public class QuizCreationPages extends ActionType{
 	                StaticWait(1);
 	                WebElement importBadgeBtn = null;
 	                try {
-	                    importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Import Badge')]")));
+	                    importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge']")));
 	                    System.out.println("Import Badge button is found and clickable.");
 	                } catch (TimeoutException e) {
 	                    System.out.println("Timeout waiting for Import Badge button: " + e.getMessage());
-	                    js.executeScript("arguments[0].click();", importBadgeBtn);
+	                    Actions a=new Actions(driver);
+	                    a.moveToElement(importBadgeBtn).click().build().perform();
 	                }
 	                //js.executeScript("arguments[0].click();", importBadgeBtn);
 	                driver.switchTo().defaultContent();
