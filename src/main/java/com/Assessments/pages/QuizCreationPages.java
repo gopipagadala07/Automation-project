@@ -200,7 +200,8 @@ public class QuizCreationPages extends ActionType{
 	                String testname = "\"" + TestName + "\"";
 	                cp.SearchTestname(testname);
 	                wait.until(ExpectedConditions.elementToBeClickable(gobtn));
-	                gobtn.click();
+	                js.executeScript("arguments[0].click();", gobtn);
+	                //gobtn.click();
 
 	                WebElement testAddBtn = wait.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
 	                js.executeScript("arguments[0].click();", testAddBtn);
