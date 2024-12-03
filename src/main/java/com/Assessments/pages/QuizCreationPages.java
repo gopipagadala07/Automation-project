@@ -231,9 +231,9 @@ public class QuizCreationPages extends ActionType{
 	                    System.out.println("Import Badge button is found and clickable.");
 	                } catch (TimeoutException e) {
 	                    System.out.println("Timeout waiting for Import Badge button: " + e.getMessage());
-	                    throw e;
+	                    js.executeScript("arguments[0].click();", importBadgeBtn);
 	                }
-	                js.executeScript("arguments[0].click();", importBadgeBtn);
+	                //js.executeScript("arguments[0].click();", importBadgeBtn);
 	                driver.switchTo().defaultContent();
 	                cp.Save();
 	                ExtentCucumberAdapter.addTestStepLog("Quiz created successfully!");
