@@ -163,7 +163,7 @@ public class QuizCreationPages extends ActionType{
 
 
 	public void QuizzesCreation(String TestName) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Actions actions = new Actions(driver);
 		int targetIndex = 0;
@@ -187,7 +187,7 @@ public class QuizCreationPages extends ActionType{
 					}
 
 					WebElement ellipsis = ellipsesList.get(targetIndex);
-					StaticWait(2);
+					StaticWait(3);
 					wait.until(ExpectedConditions.elementToBeClickable(ellipsis));
 					js.executeScript("arguments[0].click();", ellipsis);
 					StaticWait(2);
