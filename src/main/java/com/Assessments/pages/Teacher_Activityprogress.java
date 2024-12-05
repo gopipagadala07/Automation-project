@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class Teacher_Activityprogress extends ActionType{
 
@@ -98,6 +99,7 @@ public class Teacher_Activityprogress extends ActionType{
 			js.executeScript("arguments[0].click()", quiz);
 			StaticWait(2);
 			String Band=bandstatus.getText();
+			ExtentCucumberAdapter.addTestStepLog(Band);
 			System.out.println(Band);
 			WebElement closeButton = driver.findElement(close);
 			js.executeScript("arguments[0].click();", closeButton);

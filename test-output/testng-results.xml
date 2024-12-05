@@ -1,55 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-03T13:34:44 IST" name="Default suite" finished-at="2024-12-03T13:37:31 IST" duration-ms="166818">
+  <suite started-at="2024-12-05T12:35:50 IST" name="Default suite" finished-at="2024-12-05T12:38:05 IST" duration-ms="135344">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.QuizCreationRunner@97e93f1]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@5a5a729f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-12-03T13:34:44 IST" name="Default test" finished-at="2024-12-03T13:37:31 IST" duration-ms="166818">
-      <class name="AssessmentsRunner.QuizCreationRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.QuizCreationRunner@97e93f1]" started-at="2024-12-03T13:34:44 IST" name="setUpClass" finished-at="2024-12-03T13:34:45 IST" duration-ms="816" status="PASS">
+    <test started-at="2024-12-05T12:35:50 IST" name="Default test" finished-at="2024-12-05T12:38:05 IST" duration-ms="135344">
+      <class name="AssessmentsRunner.SISprovisioningRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@5a5a729f]" started-at="2024-12-05T12:35:50 IST" name="setUpClass" finished-at="2024-12-05T12:35:51 IST" duration-ms="799" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2a0881f1]]>
+                <![CDATA[org.testng.TestRunner@390978]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.QuizCreationRunner@97e93f1]" started-at="2024-12-03T13:34:45 IST" name="beforeClass" finished-at="2024-12-03T13:34:45 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@5a5a729f]" started-at="2024-12-05T12:35:51 IST" name="beforeClass" finished-at="2024-12-05T12:35:51 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.QuizCreationRunner@97e93f1]" started-at="2024-12-03T13:34:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-03T13:37:28 IST" duration-ms="163538" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@5a5a729f]" started-at="2024-12-05T12:35:51 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-05T12:36:38 IST" duration-ms="47541" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Checking the Quiz Creation Functionality"]]>
+                <![CDATA["Checking the School, Classroom, Section Creation Functionality With valid Data"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validate the Quiz Creation for Teacher"]]>
+                <![CDATA["Verify the SIS Provisioning Creation Functionality"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.QuizCreationRunner@97e93f1]" started-at="2024-12-03T13:37:28 IST" name="afterClass" finished-at="2024-12-03T13:37:28 IST" duration-ms="1" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@5a5a729f]" started-at="2024-12-05T12:36:38 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-05T12:38:03 IST" duration-ms="84628" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify the Users Creation Functionality with valid Data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify the SIS Provisioning Creation Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@5a5a729f]" started-at="2024-12-05T12:38:03 IST" name="afterClass" finished-at="2024-12-05T12:38:03 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.QuizCreationRunner@97e93f1]" started-at="2024-12-03T13:37:28 IST" name="tearDownClass" finished-at="2024-12-03T13:37:31 IST" duration-ms="2416" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.SISprovisioningRunner@5a5a729f]" started-at="2024-12-05T12:38:03 IST" name="tearDownClass" finished-at="2024-12-05T12:38:05 IST" duration-ms="2327" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- AssessmentsRunner.QuizCreationRunner -->
+      </class> <!-- AssessmentsRunner.SISprovisioningRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

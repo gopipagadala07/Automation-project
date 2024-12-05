@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class Score_SubmissionPage extends ActionType
 {
@@ -104,6 +105,7 @@ public class Score_SubmissionPage extends ActionType
 	    int maxretry = 5;
 	    int count=Score.size();
 	    System.out.println("Total Quizzes for Scoring: "+count);
+	    ExtentCucumberAdapter.addTestStepLog("Total Quizzes for Scoring: "+count);
 	    while (retry < maxretry) {
 	        try {
 	            for (int i = 0; i < count; i++) {
