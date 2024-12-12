@@ -1,0 +1,24 @@
+2024-12-11 14:57:09,490 INFO  [rootLogger] Enviornment is : STAGE
+2024-12-11 14:57:09,496 INFO  [rootLogger] Browser value is: CHROME
+2024-12-11 14:57:12,890 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-11 14:57:13,008 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-12-11 14:57:49,530 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-12-11 14:57:54,662 INFO  [rootLogger] Browser value is: CHROME
+2024-12-11 14:57:55,745 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-11 14:57:55,745 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-12-11 14:58:52,709 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-12-11 14:58:53,024 INFO  [rootLogger] Browser value is: CHROME
+2024-12-11 14:58:53,956 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-11 14:58:53,957 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-12-11 14:59:30,562 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-12-11 14:59:30,595 INFO  [rootLogger] Browser value is: CHROME
+2024-12-11 14:59:31,982 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-11 14:59:31,985 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-12-11 15:00:30,624 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-12-11 15:00:34,909 INFO  [rootLogger] Browser value is: CHROME
+2024-12-11 15:00:35,862 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-11 15:00:35,863 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-12-11 15:01:11,980 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-12-11 15:01:12,016 INFO  [rootLogger] Browser value is: CHROME
+2024-12-11 15:01:13,165 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-11 15:01:13,166 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
