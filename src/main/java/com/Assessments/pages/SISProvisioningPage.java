@@ -384,14 +384,24 @@ public class SISProvisioningPage extends ActionType{
 	    }
 	}
 
-	public void insertData() throws Exception
+	public void insertSchoolData() throws Exception
 	{
 		String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "ExcelFiles", "LoginDetails.xlsx").toString();
-		cp.InsertdataIntoExcel(filePath, getSheetEnv(), SchoolName, ClassroomName, SectionName);
+		cp.InsertdataIntoExcel(filePath, getSheetEnv(), SchoolName,0);
+	}
+	public void insertClassroomData() throws Exception
+	{
+		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/LoginDetails.xlsx").toString();
+		cp.InsertdataIntoExcel(filePath, getSheetEnv(), ClassroomName,1);
+	}
+	public void insertSectionData() throws Exception
+	{
+		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/LoginDetails.xlsx").toString();
+		cp.InsertdataIntoExcel(filePath, getSheetEnv(), SectionName,2);
 	}
 	public void insertUsersData() throws Exception
 	{
-		String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "ExcelFiles", "LoginDetails.xlsx").toString();
+		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/LoginDetails.xlsx").toString();
 		cp.InsertmultipledataIntoExcel(filePath, getSheetEnv());
 	}
 }

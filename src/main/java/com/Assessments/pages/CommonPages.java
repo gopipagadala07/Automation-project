@@ -14,6 +14,7 @@ import java.util.Random;
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -121,28 +122,36 @@ public class CommonPages extends ActionType{
 		}	
 	}
 
+	public void InsertdataIntoExcel(String Path, String Sheet, String Value, int colNum) throws Exception, IOException {
 
-	public void InsertdataIntoExcel(String Path, String Sheet, String Schoolname, String ClassroomName, String SectionName) throws Exception, IOException
-	{
-		FileInputStream f=new FileInputStream(Path);
-		Workbook wb = WorkbookFactory.create(f);
-		CellStyle cs=wb.createCellStyle();
-		cs.setVerticalAlignment(VerticalAlignment.CENTER);
-		cs.setAlignment(HorizontalAlignment.CENTER);
-		cs.setBorderBottom(BorderStyle.THIN);
-		cs.setBorderRight(BorderStyle.THIN);
-		Sheet sh=wb.getSheet(Sheet);
-		String[] data = {Schoolname, ClassroomName, SectionName};
-		Row row = sh.getRow(1); 
-		for (int colNum = 0; colNum < data.length; colNum++) {
-			Cell cell = row.createCell(colNum);	                      
-			cell.setCellValue(data[colNum]);  
-			cell.setCellStyle(cs); 
-		}
-		FileOutputStream fileOut = new FileOutputStream(Path);
-		wb.write(fileOut);
+        FileInputStream f = new FileInputStream(Path);
+        Workbook wb = WorkbookFactory.create(f);
+        CellStyle cs = wb.createCellStyle();
+        cs.setVerticalAlignment(VerticalAlignment.CENTER);
+        cs.setAlignment(HorizontalAlignment.CENTER);
+        cs.setBorderBottom(BorderStyle.THIN);
+        cs.setBorderRight(BorderStyle.THIN);
 
-	}
+        Sheet sh = wb.getSheet(Sheet);
+        if (sh == null) {
+            sh = wb.createSheet(Sheet);
+        }
+        Row row = sh.getRow(1); 
+        if (row == null) {
+            row = sh.createRow(1); 
+        }
+        Cell cell = row.createCell(colNum);
+        cell.setCellValue(Value);
+        cell.setCellStyle(cs);
+
+        FileOutputStream fileOut = new FileOutputStream(Path);
+        wb.write(fileOut);
+
+        fileOut.close();
+        wb.close();
+        f.close();       
+        System.out.println("Data inserted successfully...!!!");
+    }
 	public void InsertmultipledataIntoExcel(String Path, String Sheet/*, String Schoolname, String ClassroomName, String SectionName*/) throws Exception
 	{
 		List<String[]> dataToInsert = new ArrayList<>();

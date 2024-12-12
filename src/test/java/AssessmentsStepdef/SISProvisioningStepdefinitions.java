@@ -54,9 +54,10 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	}
 
 	@Then("User Saved the School and Search for the Created School in Search here Field")
-	public void user_saved_the_school_and_search_for_the_created_school_in_search_here_field() {
+	public void user_saved_the_school_and_search_for_the_created_school_in_search_here_field() throws Exception {
 	   cp.Save();
 	   provisioning.SchoolSearch();
+	   provisioning.insertSchoolData();
 	}
 
 	@And("User Navigate to Classroom tab")
@@ -80,9 +81,10 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	}
 
 	@And("User Saved the Classroom and Search for the Created Classroom in Search here Field")
-	public void user_saved_the_classroom_and_search_for_the_created_classroom_in_search_here_field() {
+	public void user_saved_the_classroom_and_search_for_the_created_classroom_in_search_here_field() throws Exception {
 		cp.Save();
 		provisioning.ClassroomSearch();
+		provisioning.insertClassroomData();
 	}
 
 	@Then("User Navigate to Sections tab")
@@ -111,9 +113,10 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	}
 
 	@Then("User Saved the Section and Search for the Created Section in Search here Field")
-	public void user_saved_the_section_and_search_for_the_created_section_in_search_here_field() {
+	public void user_saved_the_section_and_search_for_the_created_section_in_search_here_field() throws Exception {
 		cp.Save();
 		provisioning.SectionSearch();
+		provisioning.insertSectionData();
 	}
 
 	@When("User Navigate to District User tab")
@@ -235,8 +238,8 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	
 	@Then("Store the data in Excel")
 	public void store_the_data_in_excel() throws Exception {
-		provisioning.insertData();
-		System.out.println("Data inserted Sucessfully");
+		//provisioning.insertData();
+//		System.out.println("Data inserted Sucessfully");
 	}
 	@Then("Store the users data in Excel")
 	public void store_the_users_data_in_excel() throws Exception {
