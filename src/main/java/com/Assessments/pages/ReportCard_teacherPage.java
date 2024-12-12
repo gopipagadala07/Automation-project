@@ -1,5 +1,9 @@
 package com.Assessments.pages;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.time.Duration;
 import java.util.List;
 
@@ -125,7 +129,19 @@ public class ReportCard_teacherPage extends ActionType{
 		print.click();
 
 	}
-
+	public void moveDownloadedFile(String downloadedFileName) {
+        try {
+            Path downloadDir = Paths.get(System.getProperty("user.home"), "Downloads");
+            Path source = downloadDir.resolve(downloadedFileName);
+            Path targetDir = Paths.get(System.getProperty("user.dir"), "ReportCard");
+            Files.createDirectories(targetDir);
+            Path target = targetDir.resolve(downloadedFileName);
+            Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
+            System.out.println("File moved to: " + target.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 	public void standard()
 	{
 		StaticWait(2);

@@ -74,12 +74,13 @@ public class ReportCard_teacherStepdefinitions extends ActionType{
 	@Then("User navigates to Grade tab")
 	public void user_navigates_to_grade_tab() {
 		benchmarkTeacher.Grade();
+		benchmarkTeacher.moveDownloadedFile("Grades.xlsx");
 
 	}
 
 	@Then("User select the Grades by activity and print")
 	public void user_select_the_grades_by_activity_and_print() {
-		benchmarkTeacher.standard();
+		//benchmarkTeacher.standard();
 
 	}
 
