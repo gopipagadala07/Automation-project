@@ -25,7 +25,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	private By ExaminationLookupText= By.xpath("//span[text()=' Print Exam Takers ']/../../../div[1]/mat-form-field/div/div/div/mat-select/div/div/span/span");
 	private By ExamTakerCount = By.xpath("//input[@data-placeholder='Exam Taker count allowed']");
 	private By Header = By.xpath("//h2[@class='page-title section-header m-0']");
-	private By Live = By.xpath("//mat-label[text()='Test Status']/../../preceding-sibling::mat-select/../../../../../following-sibling::div[1]/mat-slide-toggle/label");
+	private By Live = By.xpath("(//mat-label[text()='Test Status']/../../preceding-sibling::mat-select/../../../../../parent::div/following-sibling::div/div/mat-slide-toggle/label)[1]");
 	private By LocationLookup = By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]");
 	private By LocationLookupText=By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]/mat-form-field/div/div/div/mat-select/div/div/span/span");
 	private By Notapprove = By.xpath("//mat-icon[contains(text(),'person')]/../.././../following-sibling::div/div/mat-slide-toggle/following-sibling::small");	
@@ -33,7 +33,7 @@ public class Create_TimeSlot_and_enroll_Examatker_Page extends ActionType
 	private By OpenCalender = By.xpath("//button[@aria-label='Open calendar']");
 	private By SaveButton = By.xpath("//mat-icon[text()='save']");
 	private By StartTime = By.xpath("//input[@name='start_time']");
-	private By TimeSlot_Lookup = By.xpath("(//div[text()='TIME SLOTS']/../../.././../../following-sibling::div/mat-tab-body/div/app-ec-enrollees/div[2]/mat-card/mat-card-content/div/div/mat-form-field/div/div/div/mat-select/div)[1]");
+	private By TimeSlot_Lookup = By.xpath("(//div[@class='time_slot_performance']/div/mat-form-field)[1]");
 	private By TimeSlotTab = By.xpath("//*[text()='TIME SLOTS']");
 	//private By H_enrollment = By.xpath("//h2[text()='Enrollments']");
 	private By Unassigned_Toggle1 = By.xpath("(//input[@type='search'])[1]/../../../../../../following-sibling::div/mat-slide-toggle/label/span/span/span[@class='mat-slide-toggle-thumb']");

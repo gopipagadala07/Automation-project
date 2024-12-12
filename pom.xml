@@ -1,11 +1,11 @@
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Focalpoint_EC</groupId>
-	<artifactId>FocalPoint_ExamCenter</artifactId>
+	<groupId>FPK12ExamCenter</groupId>
+	<artifactId>FPK12ExamCenter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<name>FPK12ExamCenter</name>
 
 	<dependencies>
 		<!--
@@ -94,7 +94,7 @@
 			<version>2.12.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
-	<!--	<dependency>
+		<!--	<dependency>
 			<groupId>org.apache.pdfbox</groupId>
 			<artifactId>pdfbox</artifactId>
 			<version>3.0.1</version>
@@ -145,11 +145,6 @@
 			<groupId>com.beust</groupId>
 			<artifactId>jcommander</artifactId>
 			<version>1.48</version>
-		</dependency>
-		<dependency>
-			<groupId>FPK12-AutomationProject</groupId>
-			<artifactId>FPK12-AutomationProject</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

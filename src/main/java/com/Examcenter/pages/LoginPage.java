@@ -1,30 +1,28 @@
 package com.Examcenter.pages;
-import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-
 import com.Utils.ActionType;
 
 
 public class LoginPage extends ActionType{
 
-	private By changepwd=By.xpath("//h3[text()='Change Password']");
 
-	private By close=By.xpath("//mat-icon[text()='close']");
-	private By coun=By.xpath("//mat-toolbar[@id='appHeader']");
 	private WebDriver driver;
 	private	By forgotPassword=By.xpath("//a[text()='Forgot password']");
-	private By fp=By.xpath("//span[text()='FocalPoint']");
 	private	By Login=By.xpath("//button[@value='login']");
 	private	By loginToAppText = By.xpath("//div[@class='text-center m-b-md']/h3");
-	private By menu=By.xpath("//a[@routerlinkactive='selected']");
 	private	By password=By.xpath("//input[@id='Password']");
 	private	By rememeberchkbox=By.xpath("//input[@type='checkbox']");
 	private	By username=By.xpath("//input[@id='Username']");
+	
+	//private	By GotIt=By.xpath("//a[text()='Got it!']");
+	//private	By YesAllow=By.xpath("//button[text()='Yes, Allow']");
+	//private	By closeIcon=By.xpath("//mat-icon[text()='close']");////button[@type='button']
+	
 	public LoginPage(WebDriver driver)
 	{
 		this.driver=driver;
@@ -46,34 +44,22 @@ public class LoginPage extends ActionType{
 		driver.findElement(username).sendKeys(FT+"."+LT+"."+Tid);
 	}
 
-	public void header()
-	{
-		List<WebElement> Header=driver.findElements(menu);
-		WebElement cng=driver.findElement(changepwd);
-		WebElement cls=driver.findElement(close);
-
-		cls.click();
-		StaticWait(5);
-		waitForPageLoad();
-
-		waitForElement(menu);
-
-		int n=Header.size();
-
-		if(n==9)
-		{
-			System.out.println("Controller login is working Successfully..!!");
-		}
-		else if(n==4) 
-		{
-			System.out.println("Proctor login is working Successfully..!!");
-		}
-		else if(n==1)
-		{
-			System.out.println("Examtaker login is working Successfully..!!");
-		}
-		waitForPageLoad();
+	public void header() {
+		try {
+            WebElement idServerAllow = driver.findElement(By.xpath("//button[@value='yes']"));
+            if (idServerAllow.isDisplayed()) {
+            	JavascriptExecutor js = (JavascriptExecutor) driver;
+            	js.executeScript("arguments[0].scrollIntoView(true);", idServerAllow);  
+            	js.executeScript("arguments[0].click();", idServerAllow);
+                //idServerAllow.click();
+            }
+        } catch (NoSuchElementException e) {
+          
+        }
+        WebElement cls = driver.findElement(By.xpath("//button[@type='button']"));
+        cls.click();
 	}
+
 	public void loginbtn()
 	{
 		driver.findElement(Login).click();
