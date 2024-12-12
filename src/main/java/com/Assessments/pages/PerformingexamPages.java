@@ -63,14 +63,14 @@ public class PerformingexamPages extends ActionType {
 	@FindBy(how=How.XPATH,using="//mat-icon[text()='close']/parent::span")private WebElement CloseIcon;
 	@FindBy(how=How.XPATH,using="//iframe[@class='iframe-styling ng-star-inserted']")private WebElement iFrame;
 
-	
-//	@FindBy(how=How.XPATH,using = "(//mat-tab-body/div/following::mat-tab-body)[2]/div/app-benchmark-delivery/div/div[2]/div/div/span/following::div[2]/child::button/span/child::mat-icon")
-//	private WebElement LaunchFromBenchmarktab;
-//	@FindBy(how=How.XPATH,using="//div/cdk-nested-tree-node/div/div/div/div/div/child::button/child::span/child::mat-icon")
-//	private WebElement LaunchfromAssessmentTab;
-	
+
+	//	@FindBy(how=How.XPATH,using = "(//mat-tab-body/div/following::mat-tab-body)[2]/div/app-benchmark-delivery/div/div[2]/div/div/span/following::div[2]/child::button/span/child::mat-icon")
+	//	private WebElement LaunchFromBenchmarktab;
+	//	@FindBy(how=How.XPATH,using="//div/cdk-nested-tree-node/div/div/div/div/div/child::button/child::span/child::mat-icon")
+	//	private WebElement LaunchfromAssessmentTab;
+
 	@FindBy(how=How.XPATH,using="(//div[@role='tab'])[3]")private WebElement BenchmarksTab;
-	
+
 
 
 
@@ -81,7 +81,7 @@ public class PerformingexamPages extends ActionType {
 	//	
 
 	@FindBy(how = How.XPATH, using = "(//mat-tab-body/div/following::mat-tab-body)[2]/div/app-benchmark-delivery/div/div[2]/div/div/span/following::div[2]/child::button/span/child::mat-icon")
-	private List<WebElement> Examlist;
+	private WebElement Examlist;
 
 	public PerformingexamPages(WebDriver driver) { 
 		this.driver = driver;
@@ -97,97 +97,82 @@ public class PerformingexamPages extends ActionType {
 
 	@SuppressWarnings("unused")
 	public void ClickOnLaunchAndCompleteExam() throws AWTException, InterruptedException {
-		System.out.println("Total Exams: " + Examlist.size());
-		//
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Robot robot = new Robot();
+		int retry = 0;
+		int maxRetry = 5;
+		while (retry < maxRetry) {
+			try {
+				js.executeScript("arguments[0].click();", Examlist);
+				StaticWait(2);
+				driver.switchTo().frame(0);
+				WebElement beginTest = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Begin Test')]")));
+				js.executeScript("arguments[0].click();", beginTest);
 
-		for (int j = 0; j < Examlist.size(); j++) {
-			WebElement quiz = Examlist.get(j);
+				List<WebElement> questions = driver.findElements(By.xpath("//div[@id='navigationSideMenu']/ul/li/div/button"));
+				int numberOfQuestions = questions.size();
+				//System.out.println("Total number of questions: " + numberOfQuestions);
+				for (int i = 0; i < numberOfQuestions; i++) {
+					int questionAttempts = 0;
+					int questionMaxAttempts = 5;
+					while (questionAttempts < questionMaxAttempts) {
+						try {
+							WebElement question = driver.findElement(By.xpath("//*[contains(@responseidentifier, 'RESPONSE')]"));
+							String tagName = question.getTagName();
+							StaticWait(1);
 
-
-			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
-			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
-
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click();", quiz);
-			StaticWait(2);
-
-
-			cp.scrollWithRobot();
-			driver.switchTo().frame(iFrame);
-			wait.elementToBeClickable(BeginTest);
-			wait.visibilityOf(BeginTest);
-			cp.scrollWithRobot();
-
-			Actions actions = new Actions(driver);
-			actions.moveToElement(BeginTest).click().perform();
-
-
-			List<WebElement> questions = driver.findElements(By.xpath("//div[@class='question_area']/child::button/child::span[2]"));
-			int numberOfQuestions = questions.size();
-			System.out.println("Total number of questions: " + numberOfQuestions);
-
-
-			for (int i = 0; i < numberOfQuestions; i++) {
-				try {
-
-					WebElement questionElement = driver.findElement(By.xpath("(//div[@class='mdc-radio'])[1] | //p[@class='ck-placeholder'] | //input[@class='ng-untouched ng-pristine ng-valid ng-star-inserted']")); 
-					WebElement NextQ = driver.findElement(By.xpath("//mat-icon[text()='chevron_right']"));
-					
-					String elementType = questionElement.getAttribute("class"); 
-					if (elementType.contains("mdc-radio")) {
-
-						wait.elementToBeClickable(questionElement);
-						questionElement.click();
-						
+							if (tagName.equalsIgnoreCase("choiceinteraction")) {
+								WebElement choiceValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='mdc-radio'])[2]")));
+								new Actions(driver).moveToElement(choiceValue).click().perform();
+								StaticWait(1);
+							} else if (tagName.equalsIgnoreCase("extendedtextinteraction")) {
+								WebElement extendedValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='ck-placeholder']")));
+								StaticWait(1);
+								extendedValue.sendKeys(generateRandomString());
+								StaticWait(1);
+							} else if (tagName.equalsIgnoreCase("textentryinteraction")) {
+								WebElement fillInTheBlankValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtEditorInteraction")));
+								fillInTheBlankValue.click();
+								//                            fillInTheBlankValue.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+								//                            fillInTheBlankValue.sendKeys(Keys.BACK_SPACE);
+								fillInTheBlankValue.sendKeys(generateRandomString());
+							}
+							WebElement nextBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@mattooltip='Next']")));
+							js.executeScript("arguments[0].click();", nextBtn);
+							StaticWait(2);
+							break;
+						} catch (StaleElementReferenceException e) {
+							System.out.println("Attempt " + (questionAttempts + 1) + " - StaleElementReferenceException encountered. Retrying...");
+							questionAttempts++;
+						}
 					}
-					else if (elementType.contains("ck-placeholder")) {
-
-						wait.elementToBeClickable(questionElement);
-						questionElement.click();
-						questionElement.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-						questionElement.sendKeys(Keys.chord(Keys.CONTROL, "x"));
-						StaticWait(1);
-						questionElement.click();
-						questionElement.sendKeys("Extended Text Answer");
-						StaticWait(1);
-						//System.out.println("extended answer");
-					} 
-					
-					else if (elementType.contains("ng-untouched ng-pristine ng-valid ng-star-inserted")) {
-
-						wait.elementToBeClickable(questionElement);
-						questionElement.click();
-						questionElement.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-						questionElement.sendKeys(Keys.chord(Keys.CONTROL, "x"));
-						StaticWait(1);
-						questionElement.click();
-						questionElement.sendKeys("fill in");
-						//System.out.println("Filled in the blank for question ");
-					} 
-					
-					wait.elementToBeClickable(NextQ);
-					JavascriptExecutor jsnv = (JavascriptExecutor) driver;
-					jsnv.executeScript("arguments[0].click();", NextQ);
-					WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(2));
-					wait.until(ExpectedConditions.stalenessOf(NextQ));
-				} catch (Exception e) {
-					//System.out.println("Done");
 				}
-			}
 
-			wait.elementToBeClickable(Finish);
-			wait.visibilityOf(Finish);
-			Finish.click();
-			StaticWait(2);
-			wait.elementToBeClickable(Submit);
-			wait.visibilityOf(Submit);
-			Submit.click();
-			StaticWait(2);
-			driver.switchTo().defaultContent();
-			wait.elementToBeClickable(CloseAfterSubmit);
-			wait.visibilityOf(CloseAfterSubmit);
-			CloseAfterSubmit.click();
+				WebElement finish = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Finish']")));
+				wait.until(ExpectedConditions.elementToBeClickable(finish));
+				js.executeScript("arguments[0].click();", finish);
+				StaticWait(1);
+
+				WebElement submit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Submit']")));
+				wait.until(ExpectedConditions.elementToBeClickable(submit));
+				js.executeScript("arguments[0].click();", submit);
+				StaticWait(2);
+
+				driver.switchTo().defaultContent();
+				WebElement closeAfterSubmit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-icon[@mattooltip='Close']")));
+				wait.until(ExpectedConditions.elementToBeClickable(closeAfterSubmit));
+				js.executeScript("arguments[0].click();", closeAfterSubmit);
+				StaticWait(1);
+				System.out.println("Exam Submitted Successfully...!!!");
+				break;
+
+			}catch (Exception e) {
+				System.out.println("Attempt " + (retry + 1) + " failed with exception: " + e.getMessage());
+			}
+			if (retry == maxRetry) {
+				System.out.println("Failed to process quiz icon at index: " + retry + " after " + maxRetry + " retries.");
+			}
 		}
 	}
 }
