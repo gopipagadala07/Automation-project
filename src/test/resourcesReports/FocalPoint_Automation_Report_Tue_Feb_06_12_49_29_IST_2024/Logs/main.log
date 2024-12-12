@@ -1,0 +1,25 @@
+2024-02-06 12:49:30,086 INFO  [rootLogger] Enviornment is : STAGE
+2024-02-06 12:49:30,099 INFO  [rootLogger] Browser value is: CHROME
+2024-02-06 12:49:32,076 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-02-06 12:49:32,092 INFO  [rootLogger] Loading URL ... https://ade-stage.backpack.education/
+2024-02-06 12:49:39,430 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-02-06 12:49:39,493 INFO  [rootLogger] Browser value is: CHROME
+2024-02-06 12:49:40,480 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-02-06 12:49:40,481 INFO  [rootLogger] Loading URL ... https://ade-stage.backpack.education/
+2024-02-06 12:49:49,466 INFO  [rootLogger] Passed: Login to app text is present in the page as expected
+		Locator: By.xpath: //div[@class='text-center m-b-md']/h3
+2024-02-06 12:49:49,576 INFO  [rootLogger] Passed: Forgot password is present in the page as expected
+		Locator: By.xpath: //a[text()='Forgot password']
+2024-02-06 12:49:49,652 INFO  [rootLogger] Passed: Remember my login is present in the page as expected
+		Locator: By.xpath: //input[@type='checkbox']
+2024-02-06 12:50:17,826 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-02-06 12:50:17,900 INFO  [rootLogger] Browser value is: CHROME
+2024-02-06 12:50:18,938 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-02-06 12:50:18,940 INFO  [rootLogger] Loading URL ... https://ade-stage.backpack.education/
+2024-02-06 12:50:28,357 INFO  [rootLogger] Passed: Login to app text is present in the page as expected
+		Locator: By.xpath: //div[@class='text-center m-b-md']/h3
+2024-02-06 12:50:28,421 INFO  [rootLogger] Passed: Forgot password is present in the page as expected
+		Locator: By.xpath: //a[text()='Forgot password']
+2024-02-06 12:50:28,482 INFO  [rootLogger] Passed: Remember my login is present in the page as expected
+		Locator: By.xpath: //input[@type='checkbox']
+2024-02-06 12:50:52,564 INFO  [rootLogger] -----------------End of Scenario-----------------

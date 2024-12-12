@@ -1,0 +1,5 @@
+2024-10-10 10:22:25,178 INFO  [rootLogger] Enviornment is : LMSPROD
+2024-10-10 10:22:25,184 INFO  [rootLogger] Browser value is: CHROME
+2024-10-10 10:22:27,599 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-10-10 10:22:27,601 INFO  [rootLogger] Loading URL ... https://lms2.backpack.education/
+2024-10-10 10:23:04,167 INFO  [rootLogger] -----------------End of Scenario-----------------

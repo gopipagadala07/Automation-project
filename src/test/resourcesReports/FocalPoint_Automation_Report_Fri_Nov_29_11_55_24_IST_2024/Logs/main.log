@@ -1,0 +1,40 @@
+2024-11-29 11:55:24,191 INFO  [rootLogger] Enviornment is : LMSPROD
+2024-11-29 11:55:24,201 INFO  [rootLogger] Browser value is: CHROME
+2024-11-29 11:55:26,001 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-29 11:55:26,006 INFO  [rootLogger] Loading URL ... https://fp.backpack.education
+2024-11-29 11:56:07,207 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-11-29 11:56:16,586 INFO  [rootLogger] Browser value is: CHROME
+2024-11-29 11:56:18,069 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-29 11:56:18,070 INFO  [rootLogger] Loading URL ... https://fp.backpack.education
+2024-11-29 11:57:15,211 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-11-29 11:57:15,264 INFO  [rootLogger] Browser value is: CHROME
+2024-11-29 11:57:16,797 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-29 11:57:16,805 INFO  [rootLogger] Loading URL ... https://fp.backpack.education
+2024-11-29 11:58:18,225 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-11-29 11:58:18,275 INFO  [rootLogger] Browser value is: CHROME
+2024-11-29 11:58:19,764 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-29 11:58:19,767 INFO  [rootLogger] Loading URL ... https://fp.backpack.education
+2024-11-29 11:59:24,405 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-11-29 11:59:30,403 INFO  [rootLogger] Browser value is: CHROME
+2024-11-29 11:59:31,733 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-29 11:59:31,735 INFO  [rootLogger] Loading URL ... https://fp.backpack.education
+2024-11-29 12:00:11,792 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-11-29 12:00:11,842 INFO  [rootLogger] Browser value is: CHROME
+2024-11-29 12:00:13,359 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-29 12:00:13,362 INFO  [rootLogger] Loading URL ... https://fp.backpack.education
+2024-11-29 12:01:21,143 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-11-29 12:01:21,177 INFO  [rootLogger] Browser value is: CHROME
+2024-11-29 12:01:22,593 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-29 12:01:22,593 INFO  [rootLogger] Loading URL ... https://fp.backpack.education
+2024-11-29 12:02:19,537 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-11-29 12:02:24,156 INFO  [rootLogger] Browser value is: CHROME
+2024-11-29 12:02:25,580 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-29 12:02:25,581 INFO  [rootLogger] Loading URL ... https://fp.backpack.education
+2024-11-29 12:03:23,344 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-11-29 12:03:23,361 INFO  [rootLogger] Browser value is: CHROME
+2024-11-29 12:03:24,574 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-29 12:03:24,574 INFO  [rootLogger] Loading URL ... https://fp.backpack.education
+2024-11-29 12:04:22,640 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-11-29 12:04:26,292 INFO  [rootLogger] Browser value is: CHROME
+2024-11-29 12:04:27,633 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-29 12:04:27,634 INFO  [rootLogger] Loading URL ... https://fp.backpack.education
