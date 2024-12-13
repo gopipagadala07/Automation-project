@@ -434,7 +434,7 @@ public class ActionType extends Base {
 	public String generateRandomString()
 	{
 		Random r=new Random();
-		String randomstring = RandomStringUtils.random(6, "abcdefghijklmnopqrstuvwxyz");
+		String randomstring = RandomStringUtils.random(15, "abcdefghijklmnopqrstuvwxyz");
 		return randomstring;
 	}
 //		public String generateRandomString(String type, int length) {

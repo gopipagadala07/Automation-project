@@ -15,7 +15,6 @@ import java.util.Random;
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -159,13 +158,13 @@ public class CommonPages extends ActionType{
 		String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "ExcelFiles", FileName).toString();
 		InsertdataIntoExcel(filePath, getSheetEnv(), Value,Colnum);
 	}
-	public void InsertmultipledataIntoExcel(String Path, String Sheet/*, String Schoolname, String ClassroomName, String SectionName*/) throws Exception
+	public void InsertmultipledataIntoExcel(String Path, String Sheet, String Value1, int Value2, String Value3,int Value4, String Value5, int Value6) throws Exception
 	{
 		List<String[]> dataToInsert = new ArrayList<>();
 		//dataToInsert.add(new String[]{Schoolname, ClassroomName, SectionName});
-		dataToInsert.add(new String[]{SISProvisioningPage.DFirstName,String.valueOf(SISProvisioningPage.DLastName)});
-		dataToInsert.add(new String[]{SISProvisioningPage.TFirstName,String.valueOf(SISProvisioningPage.TLastName)});
-		dataToInsert.add(new String[]{SISProvisioningPage.SFirstName,String.valueOf(SISProvisioningPage.SLastName)});	
+		dataToInsert.add(new String[]{Value1,String.valueOf(Value2)});
+		dataToInsert.add(new String[]{Value3,String.valueOf(Value4)});
+		dataToInsert.add(new String[]{Value5,String.valueOf(Value6)});	
 
 		FileInputStream f=new FileInputStream(Path);
 		Workbook wb = WorkbookFactory.create(f);

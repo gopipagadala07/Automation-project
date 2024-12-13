@@ -103,9 +103,16 @@ public class Score_SubmissionPage extends ActionType
 	public void provide_the_Score() {
 	    int retry = 0;
 	    int maxretry = 5;
-	    int count=Score.size();
-	    System.out.println("Total Quizzes for Scoring: "+count);
-	    ExtentCucumberAdapter.addTestStepLog("Total Quizzes for Scoring: "+count);
+	    int count = Score.size();
+	    
+	    System.out.println("Total Quizzes for Scoring: " + count);
+	    ExtentCucumberAdapter.addTestStepLog("Total Quizzes for Scoring: " + count);
+	    if (count == 0) {
+	        System.out.println("No quizzes available for scoring.");
+	        ExtentCucumberAdapter.addTestStepLog("No quizzes available for scoring.");
+	        return;
+	    }
+	    
 	    while (retry < maxretry) {
 	        try {
 	            for (int i = 0; i < count; i++) {
@@ -113,8 +120,8 @@ public class Score_SubmissionPage extends ActionType
 	                Score.get(i).click();
 	                StaticWait(1);
 	                driver.switchTo().frame(0);
-	                Provide_Score.sendKeys(Keys.chord(Keys.CONTROL,"a"));
-	                Provide_Score.sendKeys(Keys.chord(Keys.CONTROL,"x"));
+	                Provide_Score.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+	                Provide_Score.sendKeys(Keys.chord(Keys.CONTROL, "x"));
 	                Provide_Score.sendKeys("4");
 	                String randomString = generateRandomString();
 	                Provide_Feedback.sendKeys(randomString);
@@ -136,6 +143,7 @@ public class Score_SubmissionPage extends ActionType
 	        }
 	    }
 	}
+
 
 	public void click_On_Quiz_Tab_and_All()
 	{

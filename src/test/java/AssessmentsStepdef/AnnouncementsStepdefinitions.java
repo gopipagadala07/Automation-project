@@ -42,7 +42,7 @@ public class AnnouncementsStepdefinitions extends ActionType{
 	public void user_clicks_on_the_classroom_name(int row,int row1) throws InvalidFormatException, IOException {
 	//	announce.classroomClick();
 //		if (testdata == null) {
-//	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+//	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 //	    }
 //	    String Classroom = testdata.get(row).get("Classroom Name");
 //	    String section = testdata.get(row).get("Section Name");
@@ -52,7 +52,7 @@ public class AnnouncementsStepdefinitions extends ActionType{
 //		announce.clickonCommunity(Classroom, section, lastname, Fname);
 //	}
 		if (testdata == null) {
-	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 	    }
 	    String ClaroomName = testdata.get(row).get("Classroom Name");	
 	    String SectionName = testdata.get(row).get("Section Name");

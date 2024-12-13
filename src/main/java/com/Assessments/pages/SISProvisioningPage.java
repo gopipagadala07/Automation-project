@@ -148,9 +148,11 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void Sectiontab()
 	{
-		wait.elementToBeClickable(Sectiontab);
-		wait.visibilityOf(Sectiontab);
-		Sectiontab.click();
+		WebDriverWait wait=new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(Sectiontab));
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", Sectiontab);
+//				Sectiontab.click();
 	}
 	public void SchoolDropDownSearch()
 	{
@@ -174,7 +176,7 @@ public class SISProvisioningPage extends ActionType{
 	    SchoolName="FPK12School"+randomNumberGenerator();
 	    System.out.println(SchoolName);
 	    ExtentCucumberAdapter.addTestStepLog(SchoolName);
-	    cp.insertData("LoginDetails.xlsx", SchoolName, 0);
+	    cp.insertData("AssessmentCenterDetails.xlsx", SchoolName, 0);
 		cp.Name(SchoolName);				
 		Description.sendKeys(generateRandomString());
 	}
@@ -183,7 +185,7 @@ public class SISProvisioningPage extends ActionType{
 		ClassroomName="FPK12Classroom"+randomNumberGenerator();
 		cp.Name(ClassroomName);
 		ExtentCucumberAdapter.addTestStepLog(ClassroomName);
-		cp.insertData("LoginDetails.xlsx", SchoolName, 0);
+		cp.insertData("AssessmentCenterDetails.xlsx", SchoolName, 0);
 		Description.sendKeys(generateRandomString());
 	}
 	public void SectionDetails() throws Exception
@@ -191,7 +193,7 @@ public class SISProvisioningPage extends ActionType{
 		SectionName="FPK12Section"+randomNumberGenerator();
 		cp.Name(SectionName);
 		ExtentCucumberAdapter.addTestStepLog(SectionName);
-		cp.insertData("LoginDetails.xlsx", SchoolName, 0);
+		cp.insertData("AssessmentCenterDetails.xlsx", SchoolName, 0);
 		Description.sendKeys(generateRandomString());
 	}
 	public void TimezoneValue(String TimeZoneValue)
@@ -388,7 +390,7 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void insertUsersData() throws Exception
 	{
-		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/LoginDetails.xlsx").toString();
-		cp.InsertmultipledataIntoExcel(filePath, getSheetEnv());
+		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/AssessmentCenterDetails.xlsx").toString();
+		cp.InsertmultipledataIntoExcel(filePath, getSheetEnv(),DFirstName,DLastName,TFirstName,TLastName,SFirstName,SLastName);
 	}
 }

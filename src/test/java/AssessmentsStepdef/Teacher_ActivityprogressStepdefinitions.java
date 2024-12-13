@@ -34,7 +34,7 @@ public class Teacher_ActivityprogressStepdefinitions extends ActionType{
 	public void user_click_on_the_assessment_centre_course(Integer row,int row1) throws InvalidFormatException, IOException {
 
 		if (testdata == null) {
-	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 	    }
 	    String ClaroomName = testdata.get(row).get("Classroom Name");	
 	    String SectionName = testdata.get(row).get("Section Name");

@@ -35,7 +35,7 @@ public class QuizCreationStepdefinitions extends ActionType{
 	public void search_for_the_particular_course_and_click_on_it(int row,int row1) throws Exception, IOException {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/LoginDetails.xlsx",getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx",getSheetEnv());
 		}
 		String ClassroomName=testdata.get(row).get("Classroom Name");
 		String SectionName=testdata.get(row).get("Section Name");
@@ -58,7 +58,7 @@ public class QuizCreationStepdefinitions extends ActionType{
 	public void add_any_test_to_the_quiz(int row) throws Exception, IOException {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/LoginDetails.xlsx",getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx",getSheetEnv());
 		}
 		String Testname=testdata.get(row).get("TestName");
 		QP.QuizzesCreation(Testname);

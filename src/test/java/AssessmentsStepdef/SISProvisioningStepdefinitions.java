@@ -47,7 +47,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	public void user_select_the_timezone_from_dropdown(int TimeZone) throws Exception {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 		}
 		String value=testdata.get(TimeZone).get("TimeZone");
 		provisioning.TimezoneValue(value);
@@ -94,7 +94,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	public void user_select_the_active_year_from_year_dropdown(int Year) throws Exception, IOException {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 		}
 		String value=testdata.get(Year).get("Year");
 		provisioning.YearDropDownSearch(value);
@@ -196,7 +196,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 		}
 		String Yearvalue=testdata.get(Year).get("Year");
 	    provisioning.YearDropDownSearch(Yearvalue);
