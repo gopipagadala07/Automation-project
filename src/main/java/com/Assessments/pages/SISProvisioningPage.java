@@ -185,7 +185,7 @@ public class SISProvisioningPage extends ActionType{
 		ClassroomName="FPK12Classroom"+randomNumberGenerator();
 		cp.Name(ClassroomName);
 		ExtentCucumberAdapter.addTestStepLog(ClassroomName);
-		cp.insertData("AssessmentCenterDetails.xlsx", SchoolName, 0);
+		cp.insertData("AssessmentCenterDetails.xlsx", ClassroomName, 1);
 		Description.sendKeys(generateRandomString());
 	}
 	public void SectionDetails() throws Exception
@@ -193,7 +193,7 @@ public class SISProvisioningPage extends ActionType{
 		SectionName="FPK12Section"+randomNumberGenerator();
 		cp.Name(SectionName);
 		ExtentCucumberAdapter.addTestStepLog(SectionName);
-		cp.insertData("AssessmentCenterDetails.xlsx", SchoolName, 0);
+		cp.insertData("AssessmentCenterDetails.xlsx", SectionName, 2);
 		Description.sendKeys(generateRandomString());
 	}
 	public void TimezoneValue(String TimeZoneValue)
