@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import com.Utils.ActionType;
+import com.Utils.Base;
 import com.Utils.Wait;
 
 
@@ -152,6 +154,11 @@ public class CommonPages extends ActionType{
         f.close();       
         System.out.println("Data inserted successfully...!!!");
     }
+	public void insertData(String FileName, String Value, int Colnum) throws Exception
+	{
+		String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "ExcelFiles", FileName).toString();
+		InsertdataIntoExcel(filePath, getSheetEnv(), Value,Colnum);
+	}
 	public void InsertmultipledataIntoExcel(String Path, String Sheet/*, String Schoolname, String ClassroomName, String SectionName*/) throws Exception
 	{
 		List<String[]> dataToInsert = new ArrayList<>();

@@ -169,26 +169,29 @@ public class SISProvisioningPage extends ActionType{
 	{
 		cp.FPdropdown(SectionDown, SectionName);
 	}
-	public void SchoolDetails()
+	public void SchoolDetails() throws Exception
 	{
 	    SchoolName="FPK12School"+randomNumberGenerator();
 	    System.out.println(SchoolName);
 	    ExtentCucumberAdapter.addTestStepLog(SchoolName);
+	    cp.insertData("LoginDetails.xlsx", SchoolName, 0);
 		cp.Name(SchoolName);				
 		Description.sendKeys(generateRandomString());
 	}
-	public void ClassroomDetails()
+	public void ClassroomDetails() throws Exception
 	{
 		ClassroomName="FPK12Classroom"+randomNumberGenerator();
 		cp.Name(ClassroomName);
 		ExtentCucumberAdapter.addTestStepLog(ClassroomName);
+		cp.insertData("LoginDetails.xlsx", SchoolName, 0);
 		Description.sendKeys(generateRandomString());
 	}
-	public void SectionDetails()
+	public void SectionDetails() throws Exception
 	{
 		SectionName="FPK12Section"+randomNumberGenerator();
 		cp.Name(SectionName);
 		ExtentCucumberAdapter.addTestStepLog(SectionName);
+		cp.insertData("LoginDetails.xlsx", SchoolName, 0);
 		Description.sendKeys(generateRandomString());
 	}
 	public void TimezoneValue(String TimeZoneValue)
@@ -382,22 +385,6 @@ public class SISProvisioningPage extends ActionType{
 	            }
 	        }
 	    }
-	}
-
-	public void insertSchoolData() throws Exception
-	{
-		String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "ExcelFiles", "LoginDetails.xlsx").toString();
-		cp.InsertdataIntoExcel(filePath, getSheetEnv(), SchoolName,0);
-	}
-	public void insertClassroomData() throws Exception
-	{
-		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/LoginDetails.xlsx").toString();
-		cp.InsertdataIntoExcel(filePath, getSheetEnv(), ClassroomName,1);
-	}
-	public void insertSectionData() throws Exception
-	{
-		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/LoginDetails.xlsx").toString();
-		cp.InsertdataIntoExcel(filePath, getSheetEnv(), SectionName,2);
 	}
 	public void insertUsersData() throws Exception
 	{

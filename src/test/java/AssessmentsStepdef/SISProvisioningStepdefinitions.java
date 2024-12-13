@@ -39,7 +39,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	}
 
 	@When("User Enter the Name and Description")
-	public void user_enter_the_name_and_description() {
+	public void user_enter_the_name_and_description() throws Exception {
 		provisioning.SchoolDetails();
 	}
 
@@ -57,7 +57,6 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	public void user_saved_the_school_and_search_for_the_created_school_in_search_here_field() throws Exception {
 	   cp.Save();
 	   provisioning.SchoolSearch();
-	   provisioning.insertSchoolData();
 	}
 
 	@And("User Navigate to Classroom tab")
@@ -76,7 +75,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	}
 
 	@Then("User Enter the Classroom Name and Description")
-	public void user_enter_the_classroom_name_and_description() {
+	public void user_enter_the_classroom_name_and_description() throws Exception {
 	    provisioning.ClassroomDetails();
 	}
 
@@ -84,7 +83,6 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	public void user_saved_the_classroom_and_search_for_the_created_classroom_in_search_here_field() throws Exception {
 		cp.Save();
 		provisioning.ClassroomSearch();
-		provisioning.insertClassroomData();
 	}
 
 	@Then("User Navigate to Sections tab")
@@ -108,7 +106,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	}
 
 	@And("User Enter the Section Name and Description")
-	public void user_enter_the_section_name_and_description() {
+	public void user_enter_the_section_name_and_description() throws Exception {
 	    provisioning.SectionDetails();
 	}
 
@@ -116,7 +114,6 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	public void user_saved_the_section_and_search_for_the_created_section_in_search_here_field() throws Exception {
 		cp.Save();
 		provisioning.SectionSearch();
-		provisioning.insertSectionData();
 	}
 
 	@When("User Navigate to District User tab")
@@ -180,7 +177,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	
 	@Then("User Enters the Teacher Email, Teacher First name, Teacher Last name into the Respective Fields")
 	public void user_enters_the_teacher_email_teacher_first_name_teacher_last_name_into_the_respective_fields() {
-		provisioning.TeacherUserDetails("Tutor");;
+		provisioning.TeacherUserDetails("Teacher");;
 	}
 	
 	@When("User Saved the Teacher and Search for the User in search here Field")
