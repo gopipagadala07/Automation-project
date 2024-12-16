@@ -10,6 +10,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -48,13 +51,13 @@ public class Base {
 	 * @return this will return tldriver.
 	 */
 	public WebDriver init_driver(String browser) {
-
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			ChromeOptions options=new ChromeOptions();
-     		options.addArguments("--headless");
-//			//options.addArguments("--window-size=1920,1080");
-			options.addArguments("--remote-allow-origins=*");
+//			ChromeOptions options=new ChromeOptions();
+//     		options.addArguments("--headless");
+//     		options.addArguments("--headless");
+//		    options.addArguments("--window-size=1920,1080");
+			//options.addArguments("--remote-allow-origins=*");
 			tlDriver.set(new ChromeDriver());
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
@@ -87,5 +90,6 @@ public class Base {
 		prop = readProp.loadConfig();
 		env = prop.getProperty("env");
 	}
-
+ 
+	
 }

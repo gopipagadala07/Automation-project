@@ -53,7 +53,7 @@ public class BulkuploadStepDefinitions extends ActionType{
 	{
 		for(int i=0;i<30;i++)
 		{
-			String randomnumber = randomNumberGenerator();
+			String randomnumber = String.valueOf(randomNumberGenerator());
 			String FirstName="Controller"+randomnumber;
 			String LastName="Automation"+randomnumber;
 			String Email="controllerautomation"+randomnumber+"@gmail.com";
@@ -72,7 +72,7 @@ public class BulkuploadStepDefinitions extends ActionType{
 	{
 		for(int i=0;i<30;i++)
 		{
-			String randomnumber = randomNumberGenerator();
+			String randomnumber = String.valueOf(randomNumberGenerator());
 			String FirstName="Examtaker"+randomnumber;
 			String LastName="Automation"+randomnumber;
 			String Email="examtakerautomation"+randomnumber+"@gmail.com";
@@ -91,7 +91,7 @@ public class BulkuploadStepDefinitions extends ActionType{
 	{
 		for(int i=0;i<30;i++)
 		{
-			String randomnumber = randomNumberGenerator();
+			String randomnumber =String.valueOf(randomNumberGenerator());
 			String FirstName="Proctor"+randomnumber;
 			String LastName="Automation"+randomnumber;
 			String Email="proctorautomation"+randomnumber+"@gmail.com";
