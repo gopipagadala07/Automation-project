@@ -45,10 +45,10 @@ public class AssessmentSubmission_Stepdefination extends ActionType{
 //	}
 
 	@Then("Logout from the Application")
-	public void Logout_from_the_Application()
-	{
-		Sub.logout();
-	}
+//	public void Logout_from_the_Application()
+//	{
+//		Sub.logout();
+//	}
 
 	@Then("Search for particular exam and Click on it {int}")
 	public void search_for_particular_exam_and_click_on_it(Integer rownumber) throws InvalidFormatException, IOException, InterruptedException {

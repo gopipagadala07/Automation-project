@@ -20,7 +20,7 @@ Feature: Checking the Create Users Functionality
     Then User is on Proctor tab
     Then User clicks on Add new button
     When User Enter the valid Proctor details <rownumber> <RowNumber2>
-    Then Uszpo6er clicks on Save button
+    Then User clicks on Save button
     And User Enter the Proctor Name in search Textbox
     Then User clicks on Edit button
     And User clicks on Create new Login button on Add/edit pop up
