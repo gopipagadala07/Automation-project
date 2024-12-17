@@ -20,6 +20,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -340,4 +341,43 @@ public class CommonPages extends ActionType{
 			}
 		}
 	}
+	 public static void Retrive_row_data() {
+	        String excelFilePath = "path/to/your/excel/file.xlsx"; // Path to your Excel file
+	        int targetColumnIndex = 0; // Specify the column index (0-based)
+	        int maxRowsToRead = 100; // Limit to 100 rows
+
+	        try (FileInputStream fis = new FileInputStream(excelFilePath);
+	             Workbook workbook = new XSSFWorkbook(fis)) {
+
+	            Sheet sheet = workbook.getSheetAt(0); // Get the first sheet
+	            int rowCount = Math.min(sheet.getLastRowNum() + 1, maxRowsToRead); // Ensure we only read up to 100 rows
+
+	            for (int i = 0; i < rowCount; i++) {
+	                Row row = sheet.getRow(i);
+	                if (row != null) {
+	                    Cell cell = row.getCell(targetColumnIndex);
+	                    if (cell != null) {
+	                        switch (cell.getCellType()) {
+	                            case STRING:
+	                                System.out.println("Row " + (i + 1) + ": " + cell.getStringCellValue());
+	                                break;
+//	                            case NUMERIC:
+//	                                System.out.println("Row " + (i + 1) + ": " + cell.getNumericCellValue());
+//	                                break;
+//	                            case BOOLEAN:
+//	                                System.out.println("Row " + (i + 1) + ": " + cell.getBooleanCellValue());
+//	                                break;
+	                            default:
+	                                System.out.println("Row " + (i + 1) + ": [Empty or Unsupported]");
+	                        }
+	                    } else {
+	                        System.out.println("Row " + (i + 1) + ": [No Data]");
+	                    }
+	                }
+	            }
+
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
 }

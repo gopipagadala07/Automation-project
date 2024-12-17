@@ -9,7 +9,7 @@ Feature: Checking the Create Users Functionality
     #Controller Creation
     Then User clicks on Controller tab
     And User clicks on Add new button
-    When User Enter the valid Controller details
+    When User Enter the valid Controller details <rownumber>
     Then User clicks on Save button
     And User Enter the Controller Name in search Textbox
     Then User clicks on Edit button
@@ -20,7 +20,7 @@ Feature: Checking the Create Users Functionality
     Then User is on Proctor tab
     Then User clicks on Add new button
     When User Enter the valid Proctor details <rownumber> <RowNumber2>
-    Then User clicks on Save button
+    Then Uszpo6er clicks on Save button
     And User Enter the Proctor Name in search Textbox
     Then User clicks on Edit button
     And User clicks on Create new Login button on Add/edit pop up
@@ -39,6 +39,5 @@ Feature: Checking the Create Users Functionality
     Then Store the users data in Excel
 
     Examples: 
-      | rownumber |  | RowNumber2 |  | RowNumber3 |
-      |         0 |  |          2 |  |          3 |
-
+      | rownumber | RowNumber1 | RowNumber2 |  | RowNumber3 |
+      |         0 |          1 |          2 |  |          3 |

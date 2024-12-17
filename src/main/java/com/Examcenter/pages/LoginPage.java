@@ -23,6 +23,8 @@ public class LoginPage extends ActionType{
 	//private	By YesAllow=By.xpath("//button[text()='Yes, Allow']");
 	//private	By closeIcon=By.xpath("//mat-icon[text()='close']");////button[@type='button']
 	
+
+	
 	public LoginPage(WebDriver driver)
 	{
 		this.driver=driver;
@@ -71,4 +73,5 @@ public class LoginPage extends ActionType{
 		loginbtn();
 		StaticWait(4);
 	}
+	
 }

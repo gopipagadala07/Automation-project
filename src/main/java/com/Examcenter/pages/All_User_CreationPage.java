@@ -82,11 +82,12 @@ public class All_User_CreationPage extends ActionType
 				Addnewbtn.click();
 				break;
 			} catch (StaleElementReferenceException e) {
-				System.out.println("Click intercepted. Retrying...");
+				System.out.println("StaleElementReferenceException. Retrying...");
 				retries--;
 				wait.elementToBeClickable(Addnewbtn);
 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", Addnewbtn);
 			}
+			
 		}
 	}
 	public void Adminstarationbtn()

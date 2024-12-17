@@ -108,9 +108,16 @@ public class CreateUsersStepdefinitions extends ActionType{
 	}
 
 
-	@When("User Enter the valid Controller details")
-	public void user_enter_the_valid_user_details() throws Exception {
-		Users.Create_Controller_User("Controller");
+	@When("User Enter the valid Controller details {int}")
+	public void user_enter_the_valid_user_details(int rownumber1) throws Exception {
+		waitForPageLoad();
+		testdata=null;
+		if(testdata == null)
+		{
+			testdata=reader.getData("/ExcelFiles/User_Details.xlsx", getSheetEnv());
+		}
+		String User_Role=testdata.get(rownumber1).get("User Role");
+		Users.Create_Controller_User(User_Role);
 		Users.isAdminChkBox();
 	}
 

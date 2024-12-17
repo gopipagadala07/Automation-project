@@ -4,15 +4,12 @@ Feature: Checking the Examtaker Assessment Submission
     Given User launch the application with Valid URL
     And User able to see all Fields
     Then User enters the credentials from the excel sheet at <rownumber>
+    #And User is on homepage
     Then Search for particular exam and Click on it <rownumber1>
     And Clicks on Launch button
-    Then Enter the valid Invigilatory Token <rownumber1>
-    And clicks on begin test
-    Then Select all Answers
-    And submit the Exam
+    #Then Enter the valid Invigilatory Token <rownumber1>
+    Then Perform and Submit the Test
     Then capture the status band
-    Then Logout from the Application
-
     Examples: 
       | rownumber | rownumber1 |
       |         3 |          0 |

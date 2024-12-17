@@ -1,131 +1,186 @@
 package com.Examcenter.pages;
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
-
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
+import com.Utils.Wait;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class ExamtakerSubmissionPage extends ActionType{
-
-	By begintest=By.xpath("//button[@aria-label='Begin Test']");
-	By blankAnswer=By.xpath("//input[@id='txtEditorInteraction']");
-	By close=By.xpath("//mat-icon[text()='close']");
 	private WebDriver driver;
-	By examinationbtn=By.xpath("//span[text()='Examinations']");
-	By ExtendedTypeAnswer=By.xpath("//body[@contenteditable='true']");
-	By finish=By.xpath("//span[text()='Finish']");
-	By frame=By.xpath("//iframe[@frameborder='0']");
-	By launchbtn=By.xpath("//span[text()=' Launch ']");
-	By logout=By.xpath("//span[text()='logout']");
-	By mcqAnswer=By.xpath("(//div[@class='mdc-radio'])[3]");
-	By nextbtn=By.xpath("//mat-icon[text()='chevron_right']");
-	By Qcount=By.xpath("//div[@id='navigationSideMenu']/ul/li/div/button");
-	By returnbtn=By.xpath("//button[@value='login']");
-	By searchheretxt=By.xpath("//input[@type='search']");
-	By statusband=By.xpath("//b[text()='Performance']/../span/span");
-	By Submit=By.xpath("//span[text()='Submit']");
-	By tokentxt=By.xpath("//input[@type='password']");
-	By validatebtn=By.xpath("//button[@aria-label='Validate']");
+	private Wait wait;
+	@FindBy(how = How.XPATH,using="//button[@aria-label='Begin Test']")private WebElement begintest;
+	@FindBy(how = How.XPATH,using="//input[@id='txtEditorInteraction']")private WebElement blankAnswer;
+	@FindBy(how = How.XPATH,using="//mat-icon[text()='close']")private WebElement close;
+	@FindBy(how = How.XPATH,using="//span[text()='Examinations']")private WebElement examinationbtn;	
+	@FindBy(how = How.XPATH,using="//body[@contenteditable='true']")private WebElement ExtendedTypeAnswer;
+	@FindBy(how = How.XPATH,using="//span[text()='Finish']")private WebElement finish;
+	@FindBy(how = How.XPATH,using="//span[text()=' Launch ']")private WebElement launchbtn;
+	@FindBy(how = How.XPATH,using="//iframe[@frameborder='0']")private WebElement frame;	
+	@FindBy(how = How.XPATH,using="//span[text()='logout']")private WebElement logout;
+	@FindBy(how = How.XPATH,using="(//div[@class='mdc-radio'])[3]")private WebElement mcqAnswer;
+	@FindBy(how = How.XPATH,using="//mat-icon[text()='chevron_right']")private WebElement nextbtn;
+	@FindBy(how = How.XPATH,using="//div[@id='navigationSideMenu']/ul/li/div/button")private List<WebElement> Qcount;
+	@FindBy(how = How.XPATH,using="//button[@value='login']")private WebElement returnbtn;
+	@FindBy(how = How.XPATH,using="//input[@type='search']")private WebElement searchheretxt;
+	@FindBy(how = How.XPATH,using="//b[text()='Performance']/../span/span")private WebElement statusband;
+	@FindBy(how = How.XPATH,using="//span[text()='Submit']")private WebElement Submit;
+	@FindBy(how = How.XPATH,using="//input[@type='password']")private WebElement tokentxt;
+	@FindBy(how = How.XPATH,using="//button[@aria-label='Validate']")private WebElement validatebtn;
+	@FindBy(how = How.XPATH,using="//span[text()='Examinations']")private WebElement Examinations;
+
 	public ExamtakerSubmissionPage(WebDriver driver)
 	{
-		this.driver=driver;
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+		this.wait = new Wait(driver);
 	}
 
 	public void Answers()
 	{
-		List<WebElement> Count = driver.findElements(Qcount);
-		System.out.println(Count.size());
-		for(int i=1;i<=Count.size();i++)
-		{
-			waitForElement(mcqAnswer);
-			StaticWait(1);
-			WebElement e=driver.findElement(mcqAnswer);
-//			JavascriptExecutor j=(JavascriptExecutor) driver;
-//			j.executeScript("arguments[0].click()",e);
-			Actions a=new Actions(driver);
-			a.moveToElement(e);
-			a.click().build().perform();
-			StaticWait(1);
-			WebElement e2=driver.findElement(nextbtn);
-			JavascriptExecutor j=(JavascriptExecutor) driver;
-			j.executeScript("arguments[0].click()",e2);
-			
-		}
-	}
-	public void begintest()
-	{
-		waitForElement(begintest);
-		WebElement e=driver.findElement(begintest);	
-		JavascriptExecutor j=(JavascriptExecutor) driver;
-		j.executeScript("arguments[0].click()",e);
-	}
-	public void close()
-	{
-		driver.switchTo().defaultContent();
-		driver.findElement(close).click();
-	}
-	public void examinationbtn()
-	{
-		waitForElement(examinationbtn);
-		driver.findElement(examinationbtn).click();
-	}
-	public void Finish()
-	{
-		driver.findElement(finish).click();
-		waitForElement(Submit);
-		StaticWait(1);
-		driver.findElement(Submit).click();
-		StaticWait(2);
-	}
-	public void launchbtn()
-	{
-		waitForElement(launchbtn);
-		StaticWait(2);
-		WebElement e1=driver.findElement(launchbtn);
-		JavascriptExecutor j=(JavascriptExecutor)driver;
-		j.executeScript("arguments[0].click()",e1);
-		driver.switchTo().frame(0);
-	}
-	public void logout()
-	{
-		driver.findElement(logout).click();
-//		WebElement e=driver.findElement(returnbtn);
-//		e.click();
+        StaticWait(2);
+        driver.switchTo().frame(0);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement beginTest = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Begin Test')]")));
+        js.executeScript("arguments[0].click();", beginTest);
+
+        List<WebElement> questions = driver.findElements(By.xpath("//div[@id='navigationSideMenu']/ul/li/div/button"));
+        int numberOfQuestions = questions.size();
+       //System.out.println("Total number of questions: " + numberOfQuestions);
+        for (int i = 0; i < numberOfQuestions; i++) {
+            int questionAttempts = 0;
+            int questionMaxAttempts = 5;
+
+            while (questionAttempts < questionMaxAttempts) {
+                try {
+                    WebElement question = driver.findElement(By.xpath("//*[contains(@responseidentifier, 'RESPONSE')]"));
+                    String tagName = question.getTagName();
+                    StaticWait(1);
+
+                    if (tagName.equalsIgnoreCase("choiceinteraction")) {
+                        WebElement choiceValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='mdc-radio'])[2]")));
+                        new Actions(driver).moveToElement(choiceValue).click().perform();
+                        StaticWait(1);
+                    } else if (tagName.equalsIgnoreCase("extendedtextinteraction")) {
+                        WebElement extendedValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='ck-placeholder']")));
+                        StaticWait(1);
+                        extendedValue.sendKeys(generateRandomString());
+                        StaticWait(1);
+                    } else if (tagName.equalsIgnoreCase("textentryinteraction")) {
+                        WebElement fillInTheBlankValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtEditorInteraction")));
+                        fillInTheBlankValue.click();
+//                        fillInTheBlankValue.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+//                        fillInTheBlankValue.sendKeys(Keys.BACK_SPACE);
+                        fillInTheBlankValue.sendKeys(generateRandomString());
+                    }
+                    WebElement nextBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@mattooltip='Next']")));
+                    js.executeScript("arguments[0].click();", nextBtn);
+                    StaticWait(2);
+                    break;
+                } catch (StaleElementReferenceException e) {
+                    System.out.println("Attempt " + (questionAttempts + 1) + " - StaleElementReferenceException encountered. Retrying...");
+                    questionAttempts++;
+                }
+            }
+        }
+
+        WebElement finish = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Finish']")));
+        wait.until(ExpectedConditions.elementToBeClickable(finish));
+        js.executeScript("arguments[0].click();", finish);
+        StaticWait(1);
+
+        WebElement submit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Submit']")));
+        wait.until(ExpectedConditions.elementToBeClickable(submit));
+        js.executeScript("arguments[0].click();", submit);
+        StaticWait(2);
+
+        driver.switchTo().defaultContent();
+
+        WebElement closeAfterSubmit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-icon[text()='close']")));
+        wait.until(ExpectedConditions.elementToBeClickable(closeAfterSubmit));
+        js.executeScript("arguments[0].click();", closeAfterSubmit);
+        StaticWait(1);
 	}
 
-	public void searchheretxt(String Examname, String ScheduleName)
+	public void launchbtn()
 	{
-		waitForElement(searchheretxt);
-		driver.findElement(searchheretxt).sendKeys(Examname+" - "+ScheduleName);
+		wait.elementToBeClickable(launchbtn);
 		StaticWait(2);
+		JavascriptExecutor j=(JavascriptExecutor)driver;
+		j.executeScript("arguments[0].click()",launchbtn);
+	}
+
+
+	public void searchheretxt(String Examname, String ScheduleName) throws InterruptedException
+	{
+
+		try {
+            WebElement idServerAllow = driver.findElement(By.xpath("//button[@value='yes']"));
+            if (idServerAllow.isDisplayed()) {
+            	JavascriptExecutor js = (JavascriptExecutor) driver;
+            	js.executeScript("arguments[0].scrollIntoView(true);", idServerAllow);  
+            	js.executeScript("arguments[0].click();", idServerAllow);
+                //idServerAllow.click();
+            }
+        } catch (NoSuchElementException e) {
+          
+        }	
+
+		wait.elementToBeClickable(Examinations);
+		Examinations.click();
+		
+		wait.elementToBeClickable(searchheretxt);
+		searchheretxt.sendKeys(Examname+" - "+ScheduleName);
 		WebElement element=driver.findElement(By.xpath("//b[text()='"+Examname+" - "+ScheduleName+"']"));
-		JavascriptExecutor j=(JavascriptExecutor) driver;
-		j.executeScript("arguments[0].click()",element);
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		wait.until(ExpectedConditions.visibilityOf(element));
+
+		int retries = 3;
+		while (retries > 0) {
+		    try {
+		        element.click();
+		        break;
+		    } catch (StaleElementReferenceException e) {
+		        System.out.println("Page reloaded. Retrying...");
+		 
+		        Thread.sleep(2000);
+		    }
+		}
+		if (retries == 0) {
+		    throw new RuntimeException("Failed to interact with the element after retries.");
+		}
 
 	}
 	public void statusband()
 	{
-		StaticWait(2);
-		String band=driver.findElement(statusband).getText();
+		String band=statusband.getText();
 		ExtentCucumberAdapter.addTestStepLog(band);
-		StaticWait(2);
 	}
 	public void tokentxt(String Token)
 	{
-		waitForElement(tokentxt);
-		driver.findElement(tokentxt).sendKeys(Token);
+		wait.elementToBeClickable(tokentxt);
+		tokentxt.sendKeys(Token);
 	}
 	public void validatebtn()
 	{
-		waitForElement(validatebtn);
-		driver.findElement(validatebtn).click();
+		wait.elementToBeClickable(validatebtn);
+		validatebtn.click();
 	}
 }
