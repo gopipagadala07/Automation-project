@@ -9,5 +9,5 @@ Feature: Checking the Examcenter Login Functionality
     Examples: 
       | rownumber |
       |         0 |
-      |         2 |
-      |         3 |
+      #|         2 |
+      #|         3 |

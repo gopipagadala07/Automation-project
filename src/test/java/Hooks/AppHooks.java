@@ -47,7 +47,11 @@ public class AppHooks extends Base {
 	@After(order = 1)
 	public void quitBrowser() {
 		a.StaticWait(2);
+<<<<<<< HEAD
+//		driver.quit();
+=======
 		//driver.quit();
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 	}
 
 	@After(order = 2)

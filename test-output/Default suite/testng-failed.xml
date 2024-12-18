@@ -3,6 +3,9 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
+      <class name="ExamCenterRunners.Users_Creation_Runner"/>
+=======
       <class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
         <methods>
           <include name="setUpClass"/>
@@ -12,6 +15,7 @@
           <include name="beforeclass"/>
         </methods>
       </class> <!-- ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
