@@ -1,5 +1,4 @@
 package com.Examcenter.pages;
-
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -10,14 +9,10 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-import javax.swing.text.DateFormatter;
-
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -27,6 +22,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -48,6 +44,11 @@ import com.Utils.Wait;
 
 public class CommonPages extends ActionType{
 	private Wait wait;
+	static int currentHour;
+	static int min;
+	static int Ehour;
+	static int EfutureMinute;
+	
 
 	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Save')]")
 	public WebElement Savebtn;
@@ -109,7 +110,9 @@ public class CommonPages extends ActionType{
 
 			wait.elementToBeClickable(element);
 			Actions actions = new Actions(driver);
-			actions.moveToElement(element).click().build().perform();
+			actions.moveToElement(element).perform();
+			StaticWait(1);
+			actions.click().build().perform();
 			StaticWait(1);
 			List<WebElement> options =element.findElements(By.xpath("following::div[@role='listbox']/mat-option"));
 			for(WebElement option:options) {
@@ -300,60 +303,61 @@ public class CommonPages extends ActionType{
 		}
 	}
 
-
 	public void selectCurrentTime(WebElement timePickerElement) {
-		int maxRetries = 3;
-		int attempt = 0;
-		boolean success = false;
+	    int maxRetries = 3;
+	    int attempt = 0;
+	    boolean success = false;
 
-		while (attempt < maxRetries && !success) {
-			try {
-				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				LocalTime currentTime = LocalTime.now();
-				int currentHour = currentTime.getHour();
-				int currentMinute = currentTime.getMinute();
+	    while (attempt < maxRetries && !success) {
+	        try {
+	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	            JavascriptExecutor js = (JavascriptExecutor) driver;
+	            LocalTime currentTime = LocalTime.now();
+	            currentHour = currentTime.getHour();
+	            int currentMinute = currentTime.getMinute();
+	            String formattedMinute = String.format("%02d", currentMinute);
 
-				System.out.println("Current Time: Hour - " + currentHour + ", Minute - " + currentMinute);
-				WebElement e = wait.until(ExpectedConditions.elementToBeClickable(timePickerElement));
-				js.executeScript("arguments[0].click();", e);
-				StaticWait(1);
-				int hourDegree = currentHour * 30;
-				String hourDegreeTransform = "rotateZ(-"+hourDegree+"deg)";
-				String hourXpath="//button[contains(@style,'transform: "+hourDegreeTransform+";')]";
-				WebElement hourElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(hourXpath)));
-				Actions a=new Actions(driver);
-				a.moveToElement(hourElement).perform();
-				a.click().build().perform();
-				StaticWait(1);
-				int min=5+currentMinute;
-				int minuteDegree = min * 6;
-				String minuteDegreeTransform = "rotateZ(-"+minuteDegree+"deg)";
-				String minuteXpath="//button[contains(@style,'transform: "+minuteDegreeTransform+";')]";
-				WebElement minuteElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(minuteXpath)));
-				a.moveToElement(minuteElement).perform();
-				a.click().build().perform();
-				success = true;
-				System.out.println("Selected Hour: " + currentHour + ", Minute: " + currentMinute);
-			} catch (ElementClickInterceptedException e) {
-				System.out.println("ElementClickInterceptedException: " + e.getMessage());
-			} catch (StaleElementReferenceException e) {
-				System.out.println("StaleElementReferenceException: " + e.getMessage());
-			} catch (TimeoutException e) {
-				System.out.println("TimeoutException: " + e.getMessage());
-			} catch (Exception e) {
-				System.out.println("Exception: " + e.getMessage());
-			}
+	            System.out.println("Current Time: Hour - " + currentHour + ", Minute - " + formattedMinute);
+	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(timePickerElement));
+	            js.executeScript("arguments[0].click();", e);
+	            StaticWait(1);
+	            int hourDegree = currentHour * 30;
+	            String hourDegreeTransform = "rotateZ(-" + hourDegree + "deg)";
+	            String hourXpath = "//button[contains(@style,'transform: " + hourDegreeTransform + ";')]";
+	            WebElement hourElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(hourXpath)));
+	            Actions a = new Actions(driver);
+	            a.moveToElement(hourElement).perform();
+	            a.click().build().perform();
+	            StaticWait(1);
+	            min = (1 + currentMinute) % 60;
+	            String formattedMin = String.format("%02d", min);
+	            int minuteDegree = min * 6;
+	            String minuteDegreeTransform = "rotateZ(-" + minuteDegree + "deg)";
+	            String minuteXpath = "//button[contains(@style,'transform: " + minuteDegreeTransform + ";')]";
+	            WebElement minuteElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(minuteXpath)));
+	            a.moveToElement(minuteElement).perform();
+	            a.click().build().perform();
+	            success = true;
+	            System.out.println("Selected Hour: " + currentHour + ", Minute: " + formattedMin);
+	        } catch (ElementClickInterceptedException e) {
+	            System.out.println("ElementClickInterceptedException: " + e.getMessage());
+	        } catch (StaleElementReferenceException e) {
+	            System.out.println("StaleElementReferenceException: " + e.getMessage());
+	        } catch (TimeoutException e) {
+	            System.out.println("TimeoutException: " + e.getMessage());
+	        } catch (Exception e) {
+	            System.out.println("Exception: " + e.getMessage());
+	        }
 
-			if (!success) {
-				attempt++;
-				if (attempt < maxRetries) {
-					System.out.println("Retrying... Attempt " + (attempt + 1));
-				} else {
-					throw new RuntimeException("Failed to select the current time after " + maxRetries + " attempts.");
-				}
-			}
-		}
+	        if (!success) {
+	            attempt++;
+	            if (attempt < maxRetries) {
+	                System.out.println("Retrying... Attempt " + (attempt + 1));
+	            } else {
+	                throw new RuntimeException("Failed to select the current time after " + maxRetries + " attempts.");
+	            }
+	        }
+	    }
 	}
 
 
@@ -367,18 +371,19 @@ public class CommonPages extends ActionType{
 	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	            JavascriptExecutor js = (JavascriptExecutor) driver;
 	            Random random = new Random();
+
 	            int additionalMinutes = random.nextInt(60) + 1;
 	            LocalTime currentTime = LocalTime.now();
 	            LocalTime futureTime = currentTime.plus(additionalMinutes, ChronoUnit.MINUTES);
 	            int futureHour = futureTime.getHour();
-	            int futureMinute = futureTime.getMinute();
+	            EfutureMinute = futureTime.getMinute();
 
-	            System.out.println("Future Time: Hour - " + futureHour + ", Minute - " + futureMinute);
+	            System.out.println("Future Time: Hour - " + futureHour + ", Minute - " + EfutureMinute);
 	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(timePickerElement));
 	            js.executeScript("arguments[0].click();", e);
 	            StaticWait(1);
-	            int hour=1+futureHour;
-	            int hourDegree = hour * 30;
+	            Ehour=1+futureHour;
+	            int hourDegree = Ehour * 30;
 	            String hourDegreeTransform = "rotateZ(-" + hourDegree + "deg)";
 	            String hourXpath = "//button[contains(@style,'transform: " + hourDegreeTransform + ";')]";
 	            WebElement hourElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(hourXpath)));
@@ -386,14 +391,15 @@ public class CommonPages extends ActionType{
 	            a.moveToElement(hourElement).perform();
 	            a.click().build().perform();
 	            StaticWait(1);
-	            int minuteDegree = futureMinute * 6;
+	            int minuteDegree = EfutureMinute * 6;
 	            String minuteDegreeTransform = "rotateZ(-" + minuteDegree + "deg)";
 	            String minuteXpath = "//button[contains(@style,'transform: " + minuteDegreeTransform + ";')]";
 	            WebElement minuteElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(minuteXpath)));
 	            a.moveToElement(minuteElement).perform();
 	            a.click().build().perform();
+
 	            success = true;
-	            System.out.println("Selected Future Hour: " + futureHour + ", Minute: " + futureMinute);
+	            System.out.println("Selected Future Hour: " + futureHour + ", Minute: " + EfutureMinute);
 	        } catch (ElementClickInterceptedException e) {
 	            System.out.println("ElementClickInterceptedException: " + e.getMessage());
 	        } catch (StaleElementReferenceException e) {
@@ -418,6 +424,7 @@ public class CommonPages extends ActionType{
 
 
 
+
 	public void scrollWithRobot() throws AWTException {
 		try {
 			Robot robot = new Robot();
@@ -430,14 +437,13 @@ public class CommonPages extends ActionType{
 		}
 	}
 
-
 	public void scrollToElementWithRetry(WebElement element) {
 		int retries = 10;
 		while (retries > 0) {
 			try {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].scrollIntoView(true);", element);
-				break; // Exit the loop if the scroll is successful
+				break;
 			} catch (StaleElementReferenceException e) {
 				System.out.println("Stale Element, retrying...");
 				retries--;

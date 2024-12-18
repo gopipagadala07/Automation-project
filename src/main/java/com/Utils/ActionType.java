@@ -171,6 +171,7 @@ public class ActionType extends Base {
 
 	private String getText(By by, String locator, boolean scrollRequired) {
 		try {
+	
 			waitForElement(by);
 			String text = getDriver().findElement(by).getText().trim();
 			generateInfoReport("Text on " + locator + ":" + text);
@@ -410,7 +411,7 @@ public class ActionType extends Base {
 	 */
 	public int randomNumberGenerator() {
 		Random random = new Random();
-		int randomNumber=random.nextInt(100000);
+		int randomNumber=random.nextInt(1000000);
 	        return randomNumber;
 		
 	}
@@ -433,7 +434,6 @@ public class ActionType extends Base {
 		
 	public String generateRandomString()
 	{
-		Random r=new Random();
 		String randomstring = RandomStringUtils.random(15, "abcdefghijklmnopqrstuvwxyz");
 		return randomstring;
 	}
