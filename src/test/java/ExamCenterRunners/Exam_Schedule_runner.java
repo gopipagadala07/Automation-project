@@ -17,9 +17,7 @@ import io.cucumber.testng.CucumberOptions;
 			monochrome = true,
 			dryRun = false
 			)
-	
-	
-	public class Examinations_Schedule_runner extends AbstractTestNGCucumberTests{
+	public class Exam_Schedule_runner extends AbstractTestNGCucumberTests{
 	String testcasename;
 		
 		@Parameters("browser")
@@ -35,8 +33,4 @@ import io.cucumber.testng.CucumberOptions;
 		public void testDownClass() throws IOException {
 			System.out.println("***************** " + testcasename + " Test end *****************");
 		}
-//		@DataProvider
-//		public Object[][] getexcel()  {
-//			return this.scenarios();
-//		}
 }

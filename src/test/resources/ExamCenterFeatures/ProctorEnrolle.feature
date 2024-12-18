@@ -6,11 +6,10 @@ Feature: Checking the Test Analytics under Enroller tab at Proctor side
     Then User enters the credentials from the excel sheet at <rownumber>
     And User is on homepage
     And user click on Enrolle tab
-    Then User click on Examinations lookups
-    And user select the Examination from Examination lookup<Examination>
+    When User Select the ExamSchedule <Examination>
     Then search for Examtaker<ExamTakerName>
     Then user click on Test Analytics icon<Examination>
-    And finally print the Examtaker Name in that pop up
+    And finally print the Examtaker Name in that pop up <ExamTakerName>
 
     Examples: 
       | rownumber | Examination | ExamTakerName |

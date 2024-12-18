@@ -7,17 +7,15 @@ Feature: FocalPointk12 Exam_Center Procter Comment, Reset the Examination
     Then User enters the credentials from the excel sheet at <rownumber>
     And User is on homepage
     Then User click on Enrollment
-    Then User Select the Examination <Examinations_details_rownumber>
-    Then User Select the Location <Location>
-    When User select the particular Timeslot <Timeslot_rownumber>
-    Then User search the particular ExamTaker <Examtaker_details_rownumber>
-    When Examtaker not added in the Timeslot then add the Examtaker in the Timeslot
-    Then User search the added ExamTaker in the TimeSlot <Examtaker_details_rownumber>
-    Then User provide the comment to the Examtaker <Examinations_details_rownumber>
-
+    Then User Select the Examination <rownumber1>
+    Then User Select the Location <rownumber1>
+    #When User select the particular Timeslot <Timeslot_rownumber>
+    #Then User search the added ExamTaker in the TimeSlot <rownumber2>
+    Then User provide the comment to the Examtaker
     #When User reset the Examinataion for the ExamTaker
-    #Then User click on ExamTaker Entry Details
+    Then User click on ExamTaker Entry Details
+
     #Then User remove the ExamTaker from the Timeslot
     Examples: 
-      | rownumber | Examinations_details_rownumber | Timeslot_rownumber | Examtaker_details_rownumber | Location |
-      |         2 |                              0 |                  0 |                           3 |        2 |
+      | rownumber | rownumber1 | Timeslot_rownumber | rownumber2 |
+      |         2 |          0 |                  0 |          3 |

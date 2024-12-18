@@ -1,92 +1,119 @@
 package com.Examcenter.pages;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
+import java.util.Optional;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
+import com.Utils.Base;
+import com.Utils.Wait;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
-
-import io.cucumber.java.Scenario;
-
 public class ProctorEnrollePage extends ActionType{
 
 	public WebDriver driver;
-	
-	By enrolleTab=By.xpath("//span[text()='Enrollees']");
-	By examinationsdropdown=By.xpath("//div[text()='ENROLLEES']/../../../../../../../preceding-sibling::div/div/mat-form-field/div/div[1]");
-	By search=By.xpath("//input[@type='search']");
-	By ExamtakerName=By.xpath("//div[@class='fw-bold']");
-	
+	private Wait wait;
+	CommonPages cp=new CommonPages(Base.getDriver());
+	@FindBy(how=How.XPATH,using = "//span[text()='Enrollees']") private WebElement enrolleTab;
+	@FindBy(how=How.XPATH,using = "//div[@class='fw-bold']") private WebElement ExamtakerName;
+	@FindBy(how=How.ID,using = "printTestSummary") private WebElement printtestanalytics;
 	public ProctorEnrollePage(WebDriver driver)
 	{
 		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		this.wait = new Wait(driver);
 	}
-	
+
 	public void EnrolleTab()
 	{
-		driver.findElement(enrolleTab).click();
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", enrolleTab);
 	}
-	
-	public void ExaminationsDropdown()
-	{
-		waitForElement(examinationsdropdown);
+	public void select_the_Examination(String ExamName, String ScheduleName) {
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		String fullExamScheduleName = ExamName + "-" + ScheduleName;
+		WebElement ExaminationLookupText = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Examination ']/parent::label/parent::span/preceding-sibling::mat-select/parent::div")));
 		StaticWait(1);
-		WebElement e=driver.findElement(examinationsdropdown);
-		JavascriptExecutor j=(JavascriptExecutor)getDriver();
-		j.executeScript("arguments[0].click()", e);
+		cp.FPdropdown(ExaminationLookupText, fullExamScheduleName);
+//		System.out.println(fullExamScheduleName);
 	}
-	
-	public void ExaminationsSelect(String ExamName, String ScheduleName)
-	{
-		StaticWait(2);
-		WebElement e=driver.findElement(By.xpath("(//span[text()=' "+ExamName+"-"+ScheduleName+" '])[2]"));
-		e.click();
-	}
-	public void examtakerSearch(String LastName, String FirstName)
-	{
-		WebElement e=driver.findElement(search);
-		e.click();
-		e.sendKeys(FirstName+" ");
-		StaticWait(1);
-		e.sendKeys(LastName);
-	}
+
 	public void TestAnalytics(String ExamName, String ScheduleName)
 	{
-		StaticWait(5);
-		WebElement e=driver.findElement(By.xpath("//span[text()=' "+ExamName+"-"+ScheduleName+" ']/../../td[7]/span/span/button"));
-		Dimension d=new Dimension(1920,1080);
-		driver.manage().window().setSize(d);
-		StaticWait(1);	
-		e.click();
-	    driver.switchTo().frame(0);	    
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=' "+ExamName+"-"+ScheduleName+" ']/../../td[7]/span/span/button")));
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", e);
+		driver.switchTo().frame(0);	    
 	}
-	public void printExamtakerName()
+	public void printExamtakerName(String Examtaker)
 	{
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeClickable(ExamtakerName));
+		WebElement e=wait.until(ExpectedConditions.elementToBeClickable(ExamtakerName));
+		wait.until(ExpectedConditions.visibilityOf(ExamtakerName));
 		StaticWait(1);
-		WebElement e1=driver.findElement(ExamtakerName);
-	    String s=e1.getText();
-	    ExtentCucumberAdapter.addTestStepLog(s);
+		String s=e.getText();
+		ExtentCucumberAdapter.addTestStepLog(s);
+		if(s.equalsIgnoreCase(Examtaker))
+		{
+			System.out.println("Test Analytics Previewed Successfully..!");
+			ExtentCucumberAdapter.addTestStepLog("Test Analytics Previewed Successfully..!");
+		}
+		else {
+			System.out.println("Test Analytics Not able to see..!");
+			ExtentCucumberAdapter.addTestStepLog("Test Analytics Not able to see..!");
+		}
+		wait.until(ExpectedConditions.visibilityOf(printtestanalytics));
+		StaticWait(2);
+		printtestanalytics.click();
 	}
-	public void Capturescreenshot() throws Exception
-	{
-		//String screenshotName = scenario.getName().replaceAll(" ", "_");
-		File sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		File dest=new File("./test-output/Reports/Screenshots/TestAnalytics.png");
-		FileUtils.copyFile(sourcePath, dest);
-		//ExtentCucumberAdapter.addTestStepScreenCaptureFromPath("/test-output/Reports/TestAnalytics.png");
+
+
+	public void moveLatestDownloadedFile() {
+	    try {
+	        LocalDateTime now = LocalDateTime.now();
+	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM_dd_yyyy,_h_mm_ss_a");
+	        String currentDateTime = now.format(formatter).toUpperCase();
+	        Path downloadDir = Paths.get(System.getProperty("user.home"), "Downloads");
+	        Path reportCardDir = Paths.get(System.getProperty("user.dir"), "ReportCard");
+	        Optional<Path> latestFile = Files.list(downloadDir)
+	            .filter(Files::isRegularFile)
+	            .max(Comparator.comparingLong(p -> p.toFile().lastModified()));
+	        if (latestFile.isPresent()) {
+	            Path source = latestFile.get();
+	            String dirName = "Student_Summary_" + currentDateTime;
+	            Path target = reportCardDir.resolve(dirName + ".pdf");
+	            Files.createDirectories(reportCardDir);
+	            Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
+	            System.out.println("File moved to: " + target.toString());
+	            ExtentCucumberAdapter.addTestStepLog("File moved to: " + target.toString());
+	        } else {
+	            System.out.println("No files found in the Downloads directory.");
+	        }
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
+
+
+
+
 }

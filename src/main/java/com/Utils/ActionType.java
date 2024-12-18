@@ -3,6 +3,7 @@ package com.Utils;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -12,10 +13,8 @@ import java.time.Duration;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -32,7 +31,7 @@ import com.google.common.base.Function;
  *
  */
 public class ActionType extends Base {
-	
+
 
 	/**
 	 * Return env
@@ -118,7 +117,7 @@ public class ActionType extends Base {
 			generatePassReport(passText);
 		} else {
 			generateFailReport(failText);
-			
+
 		}
 	}
 
@@ -393,27 +392,78 @@ public class ActionType extends Base {
 
 	/**
 	 * return unique email id for new user registration
+	 * @param User 
 	 * @return 
 	 */
-	public String randomEmailIdGenerator(String number) {
-		String randomNumber = randomNumberGenerator();
-//		String generatedString = RandomStringUtils.randomNumeric(5);
-		String randomEmailId = "automation" + randomNumber + "@sapphirus.com";
+	public String randomEmailIdGenerator(String User) {
+		int randomNumber = randomNumberGenerator();
+		//		String generatedString = RandomStringUtils.randomNumeric(5);
+		String randomEmailId = User+"automation" + randomNumber + "@fpk12.com";
 		generateInfoReport("Email Id: " + randomEmailId);
 		return randomEmailId;
-		
+
 	}
 
 	/**
 	 * return unique email id for registration
 	 * @return 
 	 */
-	public String randomNumberGenerator() {
-		
-		String randomNumber = RandomStringUtils.randomNumeric(5);
-		return randomNumber;
+	public int randomNumberGenerator() {
+		Random random = new Random();
+		int randomNumber=random.nextInt(100000);
+	        return randomNumber;
 		
 	}
+
+	/*
+	 * return random String for registration
+	 */
+//		public static String generateRandomString(int length) {
+//	        String characters = "abcdefghijklmnopqrstuvwxyz";
+//	        StringBuilder randomString = new StringBuilder();
+//
+//	        Random random = new Random();
+//	        for (int i = 0; i < length; i++) {
+//	            int index = random.nextInt(characters.length());
+//	            randomString.append(characters.charAt(index));
+//	        }
+//
+//	        return randomString.toString();
+//	    }
+		
+	public String generateRandomString()
+	{
+		Random r=new Random();
+		String randomstring = RandomStringUtils.random(15, "abcdefghijklmnopqrstuvwxyz");
+		return randomstring;
+	}
+//		public String generateRandomString(String type, int length) {
+//			String candidateChars=null;
+//			StringBuilder sb = new StringBuilder ();
+//			Random random = new Random ();
+//			switch (type.toLowerCase()) {
+//			case "word":
+//				candidateChars="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//				for (int i = 0; i < length; i ++) {
+//		            sb.append (candidateChars.charAt (random.nextInt (candidateChars
+//		                    .length ())));
+//		        }
+//				break;
+//			case "number":
+//				candidateChars="0123456789";
+//				for (int i = 0; i < length; i ++) {
+//		            sb.append (candidateChars.charAt (random.nextInt (candidateChars
+//		                    .length ())));
+//		        }
+//				break;
+//			default:
+//				System.out.println("Mention type properly");
+//				break;
+//			}
+//			return sb.toString();
+//			
+//		}
+
 
 	/**
 	 * Thread.sleep
@@ -443,7 +493,16 @@ public class ActionType extends Base {
 		}
 
 	}
+	public void switchToFrame(WebElement Element) {
+		try {
+			getDriver().switchTo().frame(Element);
 
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
 	/**
 	 * Window index starts from 0
 	 * 
@@ -490,22 +549,13 @@ public class ActionType extends Base {
 		return waitForElement(by, seconds);
 	}
 
-		public void waitForPageLoad() {
-
-//			ExpectedCondition<Boolean> cond = new ExpectedCondition<Boolean>() {
-//			    @Override
-//			    public Boolean apply(WebDriver input) {
-//			        JavascriptExecutor js = (JavascriptExecutor) driver; 
-//			        return js.executeScript("return document.readyState;").equals("complete");
-//			            }
-//			        };
-//			         
-//			    new WebDriverWait(driver, Duration.ofSeconds(10)).until(cond);
+	@SuppressWarnings("deprecation")
+	public void waitForPageLoad() {
 		getDriver().manage().timeouts().pageLoadTimeout(Integer.parseInt(getProperty("pageLoadTimeOut")),
 				TimeUnit.SECONDS);
-		
+
 	}
-	
+
 	/**
 	 * Wait for the given time to load the page
 	 * 
@@ -514,7 +564,7 @@ public class ActionType extends Base {
 	public void waitForPageLoaded(int seconds) {
 		waitForPageLoad();
 	}
-	
+
 	/**
 	 * If element is not visible it returns true, otherwise false and generate
 	 * report
@@ -532,5 +582,4 @@ public class ActionType extends Base {
 			return true;
 		}
 	}
-
 }

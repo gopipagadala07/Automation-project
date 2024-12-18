@@ -53,11 +53,11 @@ public class BulkuploadStepDefinitions extends ActionType{
 	{
 		for(int i=0;i<30;i++)
 		{
-			String randomnumber = randomNumberGenerator();
+			int randomnumber = randomNumberGenerator();
 			String FirstName="Controller"+randomnumber;
 			String LastName="Automation"+randomnumber;
 			String Email="controllerautomation"+randomnumber+"@gmail.com";
-			String ID=randomnumber;
+			String ID=String.valueOf(randomnumber);
 			//System.out.println(randomnumber);
 			String path=".\\src\\test\\resources\\Files\\ControllerTemplate.xlsx";
 			Bulk.Excel_Creation(path, "Bulk Upload", 0, FirstName,i+1);
@@ -72,12 +72,12 @@ public class BulkuploadStepDefinitions extends ActionType{
 	{
 		for(int i=0;i<30;i++)
 		{
-			String randomnumber = randomNumberGenerator();
+			int randomnumber = randomNumberGenerator();
 			String FirstName="Examtaker"+randomnumber;
 			String LastName="Automation"+randomnumber;
 			String Email="examtakerautomation"+randomnumber+"@gmail.com";
-			String ID=randomnumber;
-			String path=".\\sr\\tes\\resources\\Files\\Exam Takers Template.xlsx";
+			String ID=String.valueOf(randomnumber);
+			String path=".\\src\\test\\resources\\Files\\Exam Takers Template.xlsx";
 			//System.out.println(randomnumber);
 			Bulk.Excel_Creation(path, "Bulk Upload", 0, FirstName,i+1);
 			Bulk.Excel_Creation(path, "Bulk Upload", 1, LastName,i+1);
@@ -91,11 +91,11 @@ public class BulkuploadStepDefinitions extends ActionType{
 	{
 		for(int i=0;i<30;i++)
 		{
-			String randomnumber = randomNumberGenerator();
+			int randomnumber = randomNumberGenerator();
 			String FirstName="Proctor"+randomnumber;
 			String LastName="Automation"+randomnumber;
 			String Email="proctorautomation"+randomnumber+"@gmail.com";
-			String ID=randomnumber;
+			String ID=String.valueOf(randomnumber);
 			String path=".\\src\\test\\resources\\Files\\Proctor Template.xlsx";
 			//System.out.println(randomnumber);
 			Bulk.Excel_Creation(path, "Bulk Upload", 0, FirstName,i+1);

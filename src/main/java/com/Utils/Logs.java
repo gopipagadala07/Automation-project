@@ -1,5 +1,4 @@
 package com.Utils;
-
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -34,7 +33,6 @@ public class Logs {
 	private static void init() {
 		if (log == null) {
 			try {
-				
 				InputStream in = Logs.class.getClassLoader()
 		                .getResourceAsStream("log4j.properties");
 				PropertyConfigurator.configure(props);

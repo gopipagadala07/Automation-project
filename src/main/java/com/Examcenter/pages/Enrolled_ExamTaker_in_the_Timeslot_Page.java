@@ -8,122 +8,56 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
+import com.Utils.Wait;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 {
+	private Wait wait;
+	static String ScheduleName;
+	static String ExamName;
 	private WebDriver driver;
-	//private By Unassigned_Toggle = By.xpath("(//input[@type='search'])[1]/../../../../../../following-sibling::div/mat-slide-toggle/label/span/span");
-	private By Add = By.xpath("//mat-icon[text()='add']");
+	CommonPages cp=new CommonPages(Base.getDriver());
+	JavascriptExecutor j=(JavascriptExecutor) Base.getDriver();
+	Actions a=new Actions(Base.getDriver());
 	
-	private By close_bttn = By.xpath("//button[@aria-label='close dialog']");
-	private By Comment = By.xpath("//div[@class='matFabIcons']/button[1]");
-	private By Comment_Textbox = By.xpath("//p[@data-placeholder='Type here']/..");
-
-	private By ET_Entry_details_button= By.xpath("//mat-icon[text()='computer']");
-	private By List_cells= By.xpath("//table[@id='tblEntryDetails']/tbody/tr[1]/td");
-	private By List_rows = By.xpath("//table[@id='tblEntryDetails']/tbody/tr");
-	private By remove_button = By.xpath("//mat-icon[text()='remove']");
-	private By Reset_buttton = By.xpath("//div[@class='matFabIcons']/button[2]");
-	private By Save_button = By.xpath("//span[text()=' Save ']");
-	private By Token_no = By.xpath("(//input[@type='search'])[2]/../../../../../../../following-sibling::div/mat-list/div/mat-list-item/span/div/div/div/small/small");
-	private By Yes_buttton = By.xpath("//button[text()='Yes, Please Reset!']");
-	
-	
+	@FindBy(how=How.XPATH,using="//mat-icon[@name='myMatIcon' and text()='comment']")private WebElement Commenticon;
+	@FindBy(how=How.XPATH,using="//p[@data-placeholder='Type here']/parent::div")private WebElement Comment_Textbox;
+	@FindBy(how=How.XPATH,using="//mat-icon[@name='myMatIcon' and text()='computer']")private WebElement Entry_reentryIcon;
+	@FindBy(how=How.XPATH,using="//mat-icon[text()='close']")private WebElement Closeicon;
 	
 	public Enrolled_ExamTaker_in_the_Timeslot_Page(WebDriver driver)
 	{
 		this.driver = driver;
+		PageFactory.initElements(driver, this);
+		this.wait = new Wait(driver);
 	}
 
-	public void add_Examtaker()
-	{
-//		StaticWait(3);
-//		driver.findElement(Unassigned_Toggle).click();
-		StaticWait(1);
-		if(driver.findElement(Add).isEnabled())
-		{
-			Dimension d=new Dimension(1920,1080);
-			driver.manage().window().setSize(d);
-			StaticWait(1);	
-			driver.findElement(Add).click();
-			StaticWait(2);
-		}	
-	}
 	public void ET_Entry_details()
 	{
+		WebElement table = driver.findElement(By.id("tblEntryDetails"));
+        List<WebElement> rows = table.findElements(By.tagName("tr"));
+
+        for (WebElement row : rows) {
+            List<WebElement> columns = row.findElements(By.tagName("td"));
+            if (columns.size() >= 2) {
+                System.out.println(columns.get(0).getText() + " | " + columns.get(1).getText());
+            }
+        }		
 		StaticWait(1);
-		driver.findElement(ET_Entry_details_button).click();
-		List<WebElement> rows =  driver.findElements(List_rows);
-		int ri = rows.size();
-		//System.out.println(ri);
-		if(ri>1)				
-		{
-				String s = null;
-				for (int i = 1;i<=ri;i++) 
-				{
-					List<WebElement> cells = driver.findElements(List_cells);
-					int di = cells.size();
-					ExtentCucumberAdapter.addTestStepLog("Ip Address and Entry/Reentry Times : ");
-					//System.out.println("Ip Address and Entry/Reentry Times : ");
-							for (int j = 1;j<=di;j++)
-							{
-								s=driver.findElement(By.xpath("//table[@id='tblEntryDetails']/tbody/tr["+i+"]/td["+j+"]")).getText();
-								//System.out.print("Ip Address and Entry/Reentry Times : "+s+ "   ");							
-							}
-							String Ed = (s+" ---- "+s);
-							//System.out.println("**************************");
-							ExtentCucumberAdapter.addTestStepLog(Ed+ "   ");
-				}
-		}
-		else 
-		{
-			//System.out.println("Exam Taker still not started the Exam !!!!!!!!");
-			ExtentCucumberAdapter.addTestStepLog("!!!!!!!!!  Exam Taker still not started the Exam  !!!!!!!!");
-		}		
-		StaticWait(1);
-		WebElement ele = driver.findElement(close_bttn);
 		Actions act = new Actions(driver);
-		act.moveToElement(ele).click().build().perform();		
+		act.moveToElement(Closeicon).click().build().perform();		
 	}
-	public void p_comment(String Procter_comment)
+	public void p_comment()
 	{
-		Dimension d=new Dimension(1920,1080);
-		driver.manage().window().setSize(d);
-		StaticWait(1);	
-		WebElement ele=driver.findElement(Comment);
 		Actions act = new Actions(Base.getDriver());
-		act.moveToElement(ele).click().build().perform();
-		StaticWait(2);
-		driver.manage().window().setSize(d);
-		StaticWait(1);	
-		WebElement e=driver.findElement(Comment_Textbox);
-		JavascriptExecutor j=(JavascriptExecutor)Base.getDriver();
-		j.executeScript("arguments[0].click()", e);
-		StaticWait(2);
-		e.sendKeys(Procter_comment);
-		driver.findElement(Save_button).click();
-	}
-	public void remove_the_examtaker()
-	{
-		driver.findElement(remove_button).click();
-	}
-	public void Reset_the_Examination()
-	{
-		String Token_number1= driver.findElement(Token_no).getText();
-		//System.out.println("The Previous Token Number: "+Token_number);
-		ExtentCucumberAdapter.addTestStepLog("The Previous Token Number: "+Token_number1);		
-		WebElement ele=driver.findElement(Reset_buttton);
-		StaticWait(2);
-		Actions act = new Actions(Base.getDriver());
-		act.moveToElement(ele).click().build().perform();
-		driver.findElement(Yes_buttton).click();
-		StaticWait(2);
-		String Token_number2= driver.findElement(Token_no).getText();
-		//System.out.println("The Current Token Number: "+Token_number);
-		ExtentCucumberAdapter.addTestStepLog("The Current Token Number: "+Token_number2);
+		act.moveToElement(Commenticon).click().build().perform();
+       Comment_Textbox.sendKeys(generateRandomString());
 	}
 }
