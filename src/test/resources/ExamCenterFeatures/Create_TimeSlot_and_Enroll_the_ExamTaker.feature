@@ -6,41 +6,24 @@ Feature: FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Take
     Then User enters the credentials from the excel sheet at <rownumber>
     And User is on homepage
     Then User click on Enrollment
-    #When User click on the Examination Lookup
-    When User Select the Examination <ExamTaker_details_rownumber>
-    #When User click on the Location Lookup
-    Then User Select the Location <Location>
+    When User Select the Examination <rownumber1>
+    Then User Select the Location <rownumber1>
     And User click on TimeSlot Tab
     Then User click on Add New TimeSlot
-    #When User click on the calender in Exam Time slot popup
-    #Then User select the Exam date <Timeslot_rownumber>
-    When User click on the start Time in Exam Time slot popup
-    Then User select the start Time in Hr <Timeslot_rownumber>
-    Then User select the start Time in Min <Timeslot_rownumber>
-    When User click on the end Time in Exam Time slot popup
-    Then User select the end Time in Hr <Timeslot_rownumber>
-    Then User select the end Time in Min <Timeslot_rownumber>
-    And User provide the examtaker count <Timeslot_rownumber>
+    When User click on the calender and select the Exam date from calendar
+    Then User select the start time from time picker
+    Then User clicks on ok button
+    Then User click on the end Time in Exam Time slot popup
+    Then User clicks on ok button
+    And User provide the examtaker count
     Then User click on Exam Time Slot Save button
-
-    Examples: 
-      | rownumber | ExamTaker_details_rownumber | Timeslot_rownumber | Location |
-      |         2 |                           0 |                  0 |        2 |
-
-  Scenario Outline: Add the Examataker in a Particular TimeSlot
-    Given User launch the application with Valid URL
-    And User able to see all Fields
-    Then User enters the credentials from the excel sheet at <rownumber>
-    And User is on homepage
-    Then User click on Enrollment
-    When User Select the Examination <Exam_details_rownumber>
-    Then User Select the Location <Location>
-    When User select the particular Timeslot <Timeslot_rownumber>
-    Then User search the particular ExamTaker <ExamTaker_details_rownumber>
+    Then User click on Enrollee tab
+    Then User click Timeslot lookup and select particular Timeslot
+    Then User search the particular ExamTaker <rownumber1>
     When User add the Examtaker in the Timeslot
-    Then User search the added ExamTaker in the TimeSlot <ExamTaker_details_rownumber>
+    Then User search the added ExamTaker in the TimeSlot <rownumber1>
     When User approve and Live the Examtaker for the Examination
 
     Examples: 
-      | rownumber | ExamTaker_details_rownumber | Timeslot_rownumber | Exam_details_rownumber | Location |
-      |         2 |                           3 |                  0 |                      0 |        2 |
+      | rownumber | rownumber1 |
+      |         2 |          0 |

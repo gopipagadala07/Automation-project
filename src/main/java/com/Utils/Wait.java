@@ -57,6 +57,7 @@ public class Wait extends Base{
 //	visibilityOfAllElementsLocatedBy()
 //	visibilityOfElementLocated()
 
+
 	
 
 }
