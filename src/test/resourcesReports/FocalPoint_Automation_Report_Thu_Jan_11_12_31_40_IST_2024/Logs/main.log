@@ -1,0 +1,17 @@
+2024-01-11 12:31:40,868 INFO  [rootLogger] Enviornment is : PROD
+2024-01-11 12:31:40,873 INFO  [rootLogger] Browser value is: CHROME
+2024-01-11 12:31:42,217 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-11 12:31:42,222 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
+2024-01-11 12:31:51,981 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-01-11 12:31:56,346 INFO  [rootLogger] Browser value is: CHROME
+2024-01-11 12:31:57,164 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-11 12:31:57,164 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
+2024-01-11 12:32:22,637 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-01-11 12:32:22,653 INFO  [rootLogger] Browser value is: CHROME
+2024-01-11 12:32:23,428 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-11 12:32:23,428 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
+2024-01-11 12:32:57,143 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-01-11 12:33:00,841 INFO  [rootLogger] Browser value is: CHROME
+2024-01-11 12:33:01,822 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-11 12:33:01,823 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
+2024-01-11 12:33:54,611 INFO  [rootLogger] -----------------End of Scenario-----------------
