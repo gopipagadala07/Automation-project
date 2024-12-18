@@ -16,7 +16,6 @@ import io.cucumber.testng.CucumberOptions;
 		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 		monochrome = true,
 		dryRun = false
-
 		)
 
 public class Create_Time_Slot_and_Enroll_the_ExamTakerRunner extends AbstractTestNGCucumberTests

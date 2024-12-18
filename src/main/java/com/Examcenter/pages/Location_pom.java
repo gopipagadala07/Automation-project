@@ -1,93 +1,82 @@
 package com.Examcenter.pages;
 
-import java.time.Duration;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 import com.Utils.ActionType;
+import com.Utils.Base;
+import com.Utils.Wait;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class Location_pom extends ActionType {
-	private By AddNewbutton=By.xpath("//span[text()=' Add New ']");
 	
-private By Addressfield=By.xpath("(//input[@type='text'])[2]");
-	//	private By ChangepwdClose= By.xpath("//mat-icon[text()='close']");
-	private By Administrationbtn= By.xpath("//span[text()='Administration']");
-	private WebDriver driver;
-	//private By LocationEditIcon= By.xpath("//td[text()=' Focalpoint 01']/following-sibling::td/button/span/mat-icon");
-	private By EditLocationName=By.xpath("(//input[@type='text'])[1]");
-	private By EditSaveLocation=By.xpath("//span[text()=' Save ']");
-	private By LocationNamefield= By.xpath("(//input[@type='text'])[1]");
 	
-	private By LocationSave= By.xpath("//span[text()=' Save ']");
-	private By Locationtab= By.xpath("//a[text()='Locations']");
+	CommonPages cp=new CommonPages(Base.getDriver());
+	public WebDriver driver;
+	private Wait wait;
+	
+	static String LocationName;
+	static String Addressfield;
+	
+	
+	//Location Creation
+	@FindBy(how=How.XPATH,using = "//span[text()='Administration']")private WebElement Administrationbtn;
+	@FindBy(how=How.XPATH,using = "//a[text()='Locations']")private WebElement Locationtab;
+	@FindBy(how=How.XPATH,using = "//span[text()=' Add New ']") private WebElement AddNewbutton;
+	@FindBy(how=How.XPATH,using = "//mat-label[text()='Name ']")private WebElement LocationNamefield;
+	@FindBy(how=How.XPATH,using = "//mat-label[text()='Address ']")private WebElement AddressNamefield;
+	@FindBy(how = How.XPATH,using = "//span[text()=' Save ']")private WebElement LocationSave;
+
 	
 	public Location_pom(WebDriver driver) {
 		this.driver=driver;
+		PageFactory.initElements(driver, this);
+		this.wait=new Wait(driver);
 	}
 	
-public void Addnew_location() {
-		StaticWait(1);
-		driver.findElement(AddNewbutton).click();
-	}
 	
-	public void Address_field(String Addresstext) {
-		StaticWait(1);
-		driver.findElement(Addressfield).sendKeys(Addresstext);
-	}
-	//	public void Change_password_closeIcon() {
-//		
-//		driver.findElement(ChangepwdClose).click();
-//		StaticWait(4);
-//	}
-	public void Adminstarationbtn()
+	public void Adminstrationbtn()
 	{
-		waitForPageLoad();
-		WebElement L=driver.findElement(Administrationbtn);
-		waitForElement(Administrationbtn);
-		StaticWait(2);
-		Actions a=new Actions(driver);
-		a.moveToElement(L).click().build().perform();	
-    }
-	public void Edit_Location_name(String Editlocationname) {
-		StaticWait(2);
-		WebElement E1= driver.findElement(EditLocationName);
-		E1.click();
-		E1.clear();
-		E1.sendKeys(Editlocationname);
-	
-	}
-	public void Edit_Save_Location() {
-		driver.findElement(EditSaveLocation).click();
+		Administrationbtn.click();
 		
-	}
-	public void Location_Edit_Icon(String locationnametxtfield) {
-		StaticWait(1);
-		WebElement Edit=driver.findElement(By.xpath("//td[text()=' "+locationnametxtfield+"']/../td[2]/button/span/mat-icon"));
-		Actions a=new Actions(driver);
-		a.moveToElement(Edit).build().perform();
-		JavascriptExecutor j=(JavascriptExecutor) driver;
-		j.executeScript("arguments[0].click()",Edit);
-	}
-	
-	public void Location_Name_field(String locationnametxtfield) {
-		StaticWait(1);
-		driver.findElement(LocationNamefield).sendKeys(locationnametxtfield);
-	}
-	public void Location_Save() {
-		driver.findElement(LocationSave).click();
-		StaticWait(1);
-		ExtentCucumberAdapter.addTestStepLog("Location Saved Successfully");
-	}
+    }
 	public void Location_tab() {
-		StaticWait(1);
-		Actions a=new Actions(driver);
-		WebElement L=driver.findElement(Locationtab);
-		a.moveToElement(L).click().build().perform();
+		Locationtab.click();
 	}
 	
-}
+	public void Addnew_location() {
+		AddNewbutton.click();
+	}
+	public void Location_Name() throws Exception 
+	{
+		 LocationName="ECLocation"+randomNumberGenerator();
+		    System.out.println(LocationName);
+		    ExtentCucumberAdapter.addTestStepLog(LocationName);
+			cp.Name(LocationName);
+			cp.insertData("ExamCenterDetails.xlsx", LocationName, 5);
+			
+	}
+	
+	public void Address_field() {
+	    Addressfield = "Address" + randomNumberGenerator();
+	    System.out.println(Addressfield);
+//	    ExtentCucumberAdapter.addTestStepLog(Addressfield);
+	    cp.Name(Addressfield);
+	}
+
+//	public void Location_Save() {
+//		LocationSave.click();
+//		StaticWait(1);
+//		ExtentCucumberAdapter.addTestStepLog("Location Saved Successfully");
+//	}
+//	
+	public void savebutton() {
+		cp.Savebtn.click();
+
+}}

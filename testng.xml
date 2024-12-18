@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+<<<<<<< HEAD
+  <test thread-count="5" name="Test">
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+=======
 	<test name="Test1">
 		<parameter name="browser" value="chrome" />
 		<classes>
@@ -8,13 +13,13 @@
 			<class name="ExamCenterRunners.Users_Creation_Runner"></class>
 			<class name="ExamCenterRunners.Examinations_Schedule_runner"></class>
 			<class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"></class>
-			<class name="ExamCenterRunners.AssessmentSubmissionRunner"></class>
 			<class name="ExamCenterRunners.AssessmentSubmissionRunner"></class>		
-			<!--<class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>-->
+			<class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>
 			<class name="ExamCenterRunners.EnrolleRunner"></class>
 			<class name="ExamCenterRunners.BulkUploadRunner"></class>
-			<!--<class name="ExamCenterRunners.LoginPageRunner"></class>-->
+    		<!--<class name="ExamCenterRunners.LoginPageRunner"></class>-->
 		</classes>
 	</test> <!--Test -->
 </suite> <!--Suite -->
 
+>>>>>>> branch 'FPK12ExamCenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
