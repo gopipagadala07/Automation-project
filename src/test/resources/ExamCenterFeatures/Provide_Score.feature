@@ -1,15 +1,20 @@
 Feature: Checking the Examtaker Assessment Submission
 
-  Scenario Outline: Checking the Examcenter Examtaker Assessment Submission Functionality
+  Scenario Outline: Provide the Score at Controller side
     Given User launch the application with Valid URL
     And User able to see all Fields
-    Then User enters the credentials from the excel sheet at <rownumber>
-    #And User is on homepage
-    Then Search for particular exam and Click on it <rownumber1>
-    And Clicks on Launch button
-    #Then Enter the valid Invigilatory Token <rownumber1>
-    Then Perform and Submit the Test
-    Then capture the status band
+    Then User enters the credentials from the excel sheet at <rownumber1>
+    And User is on homepage
+    And User clicks on Administration tab
+    Then User clicks on Controller tab
+    And User Enter the Controller Name in Search here Textbox <rownumber1>
+    Then User select the the Examination from the from the Lookups <rownumber>
+    And Enable the Location <rownumber>
+    Then User click on Score Exam Tab
+    And User select the Examination from the from the Lookups <rownumber>
+    Then User select the Location from the from the Lookups <rownumber>
+    And User Click on Score button and provide the score
+
     Examples: 
-      | rownumber | rownumber1 |
-      |         3 |          0 |
+      | rownumber1 | rownumber  |
+      |          1 |          0 |
