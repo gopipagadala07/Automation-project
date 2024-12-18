@@ -171,6 +171,7 @@ public class ActionType extends Base {
 
 	private String getText(By by, String locator, boolean scrollRequired) {
 		try {
+	
 			waitForElement(by);
 			String text = getDriver().findElement(by).getText().trim();
 			generateInfoReport("Text on " + locator + ":" + text);
@@ -410,7 +411,11 @@ public class ActionType extends Base {
 	 */
 	public int randomNumberGenerator() {
 		Random random = new Random();
+<<<<<<< HEAD
 		int randomNumber=random.nextInt(1000000);
+=======
+		int randomNumber=random.nextInt(100000);
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 	        return randomNumber;
 		
 	}

@@ -1,30 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results total="1" passed="1" failed="0" skipped="0">
+=======
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite started-at="2024-12-12T19:30:09Z" name="Default suite" finished-at="2024-12-12T19:30:55Z" duration-ms="45990">
+=======
+  <suite started-at="2024-12-16T09:56:38 IST" name="Default suite" finished-at="2024-12-16T09:58:24 IST" duration-ms="105872">
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     <groups>
       <group name="cucumber">
+<<<<<<< HEAD
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@33308786]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+=======
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7c137fd5]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
       </group> <!-- cucumber -->
     </groups>
+<<<<<<< HEAD
     <test started-at="2024-12-12T19:30:09Z" name="Default test" finished-at="2024-12-12T19:30:55Z" duration-ms="45990">
       <class name="ExamCenterRunners.Users_Creation_Runner">
         <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@33308786]" started-at="2024-12-13T01:00:09Z" name="setUpClass" finished-at="2024-12-13T01:00:10Z" duration-ms="812" status="PASS">
+=======
+    <test started-at="2024-12-16T09:56:38 IST" name="Default test" finished-at="2024-12-16T09:58:24 IST" duration-ms="105872">
+      <class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7c137fd5]" started-at="2024-12-16T09:56:38 IST" name="setUpClass" finished-at="2024-12-16T09:56:42 IST" duration-ms="3932" status="PASS">
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
                 <![CDATA[org.testng.TestRunner@2b1d1a5]]>
+=======
+                <![CDATA[org.testng.TestRunner@1e000a17]]>
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
+<<<<<<< HEAD
         <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@33308786]" started-at="2024-12-13T01:00:10Z" name="beforeclass" finished-at="2024-12-13T01:00:10Z" duration-ms="3" status="PASS">
+=======
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7c137fd5]" started-at="2024-12-16T09:56:42 IST" name="beforeclass" finished-at="2024-12-16T09:56:42 IST" duration-ms="8" status="PASS">
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeclass -->
+<<<<<<< HEAD
         <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@33308786]" started-at="2024-12-13T01:00:10Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-13T01:00:53Z" duration-ms="43574" status="PASS">
           <params>
             <param index="0">
@@ -38,18 +65,58 @@
               </value>
             </param>
           </params>
+=======
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7c137fd5]" started-at="2024-12-16T09:56:42 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-16T09:58:21 IST" duration-ms="98425" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Create a Time_Slot for the Examination"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[Failed to select the current date after 3 attempts.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: Failed to select the current date after 3 attempts.
+at com.Examcenter.pages.CommonPages.selectCurrentDate(CommonPages.java:320)
+at com.Examcenter.pages.TimeSlotCreation_and_enrollExamataker_Page.click_on_ChooseMonthandYear(TimeSlotCreation_and_enrollExamataker_Page.java:178)
+at ExamCenterStepDefinitions.Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.user_select_the_exam_date_from_calendar(Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.java:96)
+at ✽.User select the Exam date from calendar(file:///C:/Users/RavaliManthena/OneDrive/Eclipse-EC/src/test/resources/ExamCenterFeatures/Create_TimeSlot_and_Enroll_the_ExamTaker.feature:16)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
+<<<<<<< HEAD
         <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@33308786]" started-at="2024-12-13T01:00:53Z" name="tearDownClass" finished-at="2024-12-13T01:00:55Z" duration-ms="1587" status="PASS">
+=======
+        <test-method is-config="true" signature="testDownClass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7c137fd5]" started-at="2024-12-16T09:58:21 IST" name="testDownClass" finished-at="2024-12-16T09:58:21 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDownClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7c137fd5]" started-at="2024-12-16T09:58:21 IST" name="tearDownClass" finished-at="2024-12-16T09:58:24 IST" duration-ms="3382" status="PASS">
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
+<<<<<<< HEAD
         <test-method is-config="true" signature="Afterclass()[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@33308786]" started-at="2024-12-13T01:00:53Z" name="Afterclass" finished-at="2024-12-13T01:00:53Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Afterclass -->
       </class> <!-- ExamCenterRunners.Users_Creation_Runner -->
+=======
+      </class> <!-- ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+<<<<<<< HEAD
+  <test thread-count="5" name="Test">
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+=======
 	<test name="Test1">
 		<parameter name="browser" value="chrome" />
 		<classes>
@@ -17,3 +22,4 @@
 	</test> <!--Test -->
 </suite> <!--Suite -->
 
+>>>>>>> branch 'FPK12ExamCenter-Branch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0

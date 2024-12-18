@@ -1,6 +1,9 @@
 package com.Utils;
 
+//import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -53,12 +56,27 @@ public class Base {
 	public WebDriver init_driver(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
+<<<<<<< HEAD
 //			ChromeOptions options=new ChromeOptions();
 //     		options.addArguments("--headless");
 //     		options.addArguments("--headless");
 //		    options.addArguments("--window-size=1920,1080");
 			//options.addArguments("--remote-allow-origins=*");
 			tlDriver.set(new ChromeDriver());
+=======
+			ChromeOptions options=new ChromeOptions();
+     		options.addArguments("--headless");
+//     		options.addArguments("--headless");
+//		    options.addArguments("--window-size=1920,1080");
+			//options.addArguments("--remote-allow-origins=*");
+     		Map<String, Object> prefs = new HashMap<String, Object>();
+           // String downloadFilepath = Paths.get(System.getProperty("user.home") + "/Downloads").toString();
+           // prefs.put("download.default_directory",downloadFilepath);
+            prefs.put("profile.default_content_settings.popups", 0);
+            prefs.put("download.prompt_for_download", false);
+            options.setExperimentalOption("prefs", prefs);
+			tlDriver.set(new ChromeDriver(options));
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());

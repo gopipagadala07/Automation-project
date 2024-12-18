@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,8 +24,9 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +51,11 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+<<<<<<< HEAD
                     <span>C:\Users\SahooSuryakanta\AppData\Local\Temp\testng-eclipse-1689789389\testng-customsuite.xml</span>
+=======
+                    <span>C:\Users\RavaliManthena\AppData\Local\Temp\testng-eclipse-1182709593\testng-customsuite.xml</span>
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,6 +97,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
+<<<<<<< HEAD
                     <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
@@ -106,6 +113,23 @@
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
+=======
+                    <span class="method-stats">1 method, 1 failed,   </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Create a Time_Slot for the Examination&quot;, &quot;FocalPointk12 Exam_Center Create a Time_Slot and Enrolled...)">runScenario("Create a Time_Slot for the Examination", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,6 +141,7 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+<<<<<<< HEAD
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -135,13 +160,56 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
+=======
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Create a Time_Slot for the Examination&quot;, &quot;FocalPointk12 Exam_Center Create a Time_Slot and Enrolled...)">
+                  </a> <!-- runScenario("Create a Time_Slot for the Examination", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Create a Time_Slot for the Examination", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot")</span>
+                  <div class="stack-trace">java.lang.RuntimeException: Failed to select the current date after 3 attempts.
+	at com.Examcenter.pages.CommonPages.selectCurrentDate(CommonPages.java:320)
+	at com.Examcenter.pages.TimeSlotCreation_and_enrollExamataker_Page.click_on_ChooseMonthandYear(TimeSlotCreation_and_enrollExamataker_Page.java:178)
+	at ExamCenterStepDefinitions.Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.user_select_the_exam_date_from_calendar(Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.java:96)
+	at ✽.User select the Exam date from calendar(file:///C:/Users/RavaliManthena/OneDrive/Eclipse-EC/src/test/resources/ExamCenterFeatures/Create_TimeSlot_and_Enroll_the_ExamTaker.feature:16)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
             <span class="header-content">C:\Users\SahooSuryakanta\AppData\Local\Temp\testng-eclipse-1689789389\testng-customsuite.xml</span>
+=======
+            <span class="header-content">C:\Users\RavaliManthena\AppData\Local\Temp\testng-eclipse-1182709593\testng-customsuite.xml</span>
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
+<<<<<<< HEAD
+=======
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
@@ -189,13 +257,22 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
+<<<<<<< HEAD
 data.setCell(0, 2, 'ExamCenterRunners.Users_Creation_Runner')
 data.setCell(0, 3, 43574);
+=======
+data.setCell(0, 2, 'ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner')
+data.setCell(0, 3, 98425);
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
+<<<<<<< HEAD
               <span class="suite-total-time">Total running time: 43 seconds</span>
+=======
+              <span class="suite-total-time">Total running time: 1 minutes</span>
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -221,13 +298,22 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+<<<<<<< HEAD
               <div class="chronological-class-name">ExamCenterRunners.Users_Creation_Runner</div> <!-- chronological-class-name -->
+=======
+              <div class="chronological-class-name">ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner</div> <!-- chronological-class-name -->
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
               <div class="configuration-class before">
+<<<<<<< HEAD
                 <span class="method-name">setUpClass(org.testng.TestRunner@2b1d1a5)</span>
+=======
+                <span class="method-name">setUpClass(org.testng.TestRunner@1e000a17)</span>
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeclass</span>
+<<<<<<< HEAD
                 <span class="method-start">812 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
@@ -237,14 +323,32 @@ return data;
               <div class="configuration-class after">
                 <span class="method-name">Afterclass</span>
                 <span class="method-start">44395 ms</span>
+=======
+                <span class="method-start">3936 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Create a Time_Slot for the Examination", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled...)</span>
+                <span class="method-start">3964 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">testDownClass</span>
+                <span class="method-start">102394 ms</span>
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
+<<<<<<< HEAD
                 <span class="method-start">44395 ms</span>
+=======
+                <span class="method-start">102395 ms</span>
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>
