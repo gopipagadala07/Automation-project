@@ -9,6 +9,8 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,9 +52,9 @@ public class CommonPages extends ActionType{
 	static int EfutureMinute;
 	
 
-	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Save')]")
+	@FindBy(how = How.XPATH,using = "//span[text()='Save']")
 	public WebElement Savebtn;
-	@FindBy(how = How.XPATH,using="//input[contains(@type, 'search')]")private WebElement searchInputs;
+	@FindBy(how = How.XPATH,using="//input[@type= 'search']")private WebElement searchInputs;
 	@FindBy(how = How.XPATH,using="//button[@aria-label='Choose month and year']")
 	public WebElement yearSelection;
 	@FindBy(how = How.XPATH,using="//button[@aria-label='Choose date']")
@@ -304,6 +306,63 @@ public class CommonPages extends ActionType{
 		}
 	}
 
+//	public void selectCurrentTime(WebElement timePickerElement) {
+//	    int maxRetries = 3;
+//	    int attempt = 0;
+//	    boolean success = false;
+//
+//	    while (attempt < maxRetries && !success) {
+//	        try {
+//	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//	            JavascriptExecutor js = (JavascriptExecutor) driver;
+//	            LocalTime currentTime = LocalTime.now();
+//	            currentHour = currentTime.getHour();
+//	            int currentMinute = currentTime.getMinute();
+//	            String formattedMinute = String.format("%02d", currentMinute);
+//
+//	            System.out.println("Current Time: Hour - " + currentHour + ", Minute - " + formattedMinute);
+//	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(timePickerElement));
+//	            js.executeScript("arguments[0].click();", e);
+//	            StaticWait(1);
+//	            int hourDegree = currentHour * 30;
+//	            String hourDegreeTransform = "rotateZ(-" + hourDegree + "deg)";
+//	            String hourXpath = "//button[contains(@style,'transform: " + hourDegreeTransform + ";')]";
+//	            WebElement hourElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(hourXpath)));
+//	            Actions a = new Actions(driver);
+//	            a.moveToElement(hourElement).perform();
+//	            a.click().build().perform();
+//	            StaticWait(1);
+//	            int min = (1 + currentMinute) % 60;
+//	            formattedMin = String.format("%02d", min);
+//	            int minuteDegree = min * 6;
+//	            String minuteDegreeTransform = "rotateZ(-" + minuteDegree + "deg)";
+//	            String minuteXpath = "//button[contains(@style,'transform: " + minuteDegreeTransform + ";')]";
+//	            WebElement minuteElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(minuteXpath)));
+//	            a.moveToElement(minuteElement).perform();
+//	            a.click().build().perform();
+//	            success = true;
+//	            System.out.println("Selected Hour: " + currentHour + ", Minute: " + formattedMin);
+//	        } catch (ElementClickInterceptedException e) {
+//	            System.out.println("ElementClickInterceptedException: " + e.getMessage());
+//	        } catch (StaleElementReferenceException e) {
+//	            System.out.println("StaleElementReferenceException: " + e.getMessage());
+//	        } catch (TimeoutException e) {
+//	            System.out.println("TimeoutException: " + e.getMessage());
+//	        } catch (Exception e) {
+//	            System.out.println("Exception: " + e.getMessage());
+//	        }
+//
+//	        if (!success) {
+//	            attempt++;
+//	            if (attempt < maxRetries) {
+//	                System.out.println("Retrying... Attempt " + (attempt + 1));
+//	            } else {
+//	                throw new RuntimeException("Failed to select the current time after " + maxRetries + " attempts.");
+//	            }
+//	        }
+//	    }
+//	}
+
 	public void selectCurrentTime(WebElement timePickerElement) {
 	    int maxRetries = 3;
 	    int attempt = 0;
@@ -313,12 +372,12 @@ public class CommonPages extends ActionType{
 	        try {
 	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	            JavascriptExecutor js = (JavascriptExecutor) driver;
-	            LocalTime currentTime = LocalTime.now();
-	            currentHour = currentTime.getHour();
-	            int currentMinute = currentTime.getMinute();
+	            ZonedDateTime utcTime = ZonedDateTime.now(ZoneOffset.UTC);
+	            currentHour = utcTime.getHour();
+	            int currentMinute = utcTime.getMinute();
 	            String formattedMinute = String.format("%02d", currentMinute);
 
-	            System.out.println("Current Time: Hour - " + currentHour + ", Minute - " + formattedMinute);
+	            System.out.println("Current UTC Time: Hour - " + currentHour + ", Minute - " + formattedMinute);
 	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(timePickerElement));
 	            js.executeScript("arguments[0].click();", e);
 	            StaticWait(1);

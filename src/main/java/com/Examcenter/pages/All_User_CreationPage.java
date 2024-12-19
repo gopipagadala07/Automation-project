@@ -19,6 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class All_User_CreationPage extends ActionType
 {
@@ -112,6 +113,8 @@ public class All_User_CreationPage extends ActionType
 		ControllerF_Name = "FPKController".toLowerCase();
 		Firstnametxt.sendKeys(ControllerF_Name);
 		ControllerL_Name = randomNumberGenerator();
+		System.out.println(ControllerL_Name);
+		ExtentCucumberAdapter.addTestStepLog(String.valueOf(ControllerL_Name));
 		Lastnametxt.sendKeys(String.valueOf(ControllerL_Name));
 		Idtxt = randomNumberGenerator();
 		IDtxt.sendKeys(String.valueOf(Idtxt));
@@ -129,6 +132,8 @@ public class All_User_CreationPage extends ActionType
 		ExamTakerF_Name = "FPK"+UserRole.toLowerCase();
 		Firstnametxt.sendKeys(ExamTakerF_Name);
 		ExamTakerL_Name = randomNumberGenerator();
+		System.out.println(ExamTakerL_Name);
+		ExtentCucumberAdapter.addTestStepLog(String.valueOf(ExamTakerL_Name));
 		Lastnametxt.sendKeys(String.valueOf(ExamTakerL_Name));
 		Idtxt = randomNumberGenerator();
 		IDtxt.sendKeys(String.valueOf(Idtxt));
@@ -145,6 +150,8 @@ public class All_User_CreationPage extends ActionType
 		ProctorF_Name = "FPK"+UserRole.toLowerCase();
 		Firstnametxt.sendKeys(ProctorF_Name);
 		ProctorL_Name = randomNumberGenerator();
+		System.out.println(ProctorL_Name);
+		ExtentCucumberAdapter.addTestStepLog(String.valueOf(ProctorL_Name));
 		Lastnametxt.sendKeys(String.valueOf(ProctorL_Name));
 		Idtxt = randomNumberGenerator();
 		IDtxt.sendKeys(String.valueOf(Idtxt));

@@ -1,16 +1,21 @@
 package com.Examcenter.pages;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
@@ -27,9 +32,9 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	JavascriptExecutor j=(JavascriptExecutor) Base.getDriver();
 	Actions a=new Actions(Base.getDriver());
 	
-	@FindBy(how=How.XPATH,using="//mat-icon[@name='myMatIcon' and text()='comment']")private WebElement Commenticon;
+	@FindBy(how=How.XPATH,using="//mat-icon[text()='comment']")private WebElement Commenticon;
 	@FindBy(how=How.XPATH,using="//p[@data-placeholder='Type here']/parent::div")private WebElement Comment_Textbox;
-	@FindBy(how=How.XPATH,using="//mat-icon[@name='myMatIcon' and text()='computer']")private WebElement Entry_reentryIcon;
+	@FindBy(how=How.XPATH,using="//mat-icon[text()='computer']")private WebElement Entry_reentryIcon;
 	@FindBy(how=How.XPATH,using="//mat-icon[text()='close']")private WebElement Closeicon;
 	
 	public Enrolled_ExamTaker_in_the_Timeslot_Page(WebDriver driver)
@@ -57,10 +62,40 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 		Actions act = new Actions(driver);
 		act.moveToElement(Closeicon).click().build().perform();		
 	}
-	public void p_comment()
-	{
-		Actions act = new Actions(Base.getDriver());
-		act.moveToElement(Commenticon).click().build().perform();
-       Comment_Textbox.sendKeys(generateRandomString());
+	public void p_comment() {
+	    int retries = 3;
+	    boolean success = false;
+	    
+	    for (int attempt = 0; attempt < retries; attempt++) {
+	        try {
+	            Actions act = new Actions(Base.getDriver());
+	            act.moveToElement(Commenticon).click().build().perform();
+	            StaticWait(2);
+	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//textarea[@id='descriptionField']/parent::div/child::div/child::div[2]/child::div[2]")));
+	            if (e.isDisplayed() && e.isEnabled()) {
+	                act.moveToElement(e).click().build().perform();
+	                StaticWait(2);
+	                e.sendKeys(generateRandomString());
+	                System.out.println("Value sent to the comment box");
+	                success = true;
+	                break;
+	            } else {
+	                System.out.println("Element is not interactable");
+	            }
+	        } catch (TimeoutException te) {
+	            System.out.println("Timeout: Element not found or not interactable. Attempt: " + (attempt + 1));
+	        } catch (NoSuchElementException nse) {
+	            System.out.println("No Such Element: The element was not found. Attempt: " + (attempt + 1));
+	        } catch (Exception ex) {
+	            ex.printStackTrace();
+	        }
+
+	        StaticWait(2);
+	    }
+	    if (!success) {
+	        System.out.println("Failed to interact with the element after " + retries + " attempts");
+	    }
 	}
+
 }
