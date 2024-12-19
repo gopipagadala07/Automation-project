@@ -1,5 +1,6 @@
 package com.Examcenter.pages;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -11,6 +12,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
@@ -63,6 +66,9 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 		act.moveToElement(Commenticon).click().build().perform();
 		System.out.println("Comment box clicked");
 		StaticWait(2);
-       Comment_Textbox.sendKeys(generateRandomString());
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(15));
+		WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[@data-placeholder='Type here']/parent::div")));
+		act.moveToElement(e).click().build().perform();
+		e.sendKeys(generateRandomString());
 	}
 }
