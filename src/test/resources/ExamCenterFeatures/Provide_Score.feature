@@ -1,4 +1,4 @@
-Feature: Checking the Examtaker Assessment Submission
+Feature: Checking the Examtaker Assessment Scoring Submission
 
   Scenario Outline: Provide the Score at Controller side
     Given User launch the application with Valid URL
