@@ -61,6 +61,8 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	{
 		Actions act = new Actions(Base.getDriver());
 		act.moveToElement(Commenticon).click().build().perform();
+		System.out.println("Comment box clicked");
+		StaticWait(2);
        Comment_Textbox.sendKeys(generateRandomString());
 	}
 }
