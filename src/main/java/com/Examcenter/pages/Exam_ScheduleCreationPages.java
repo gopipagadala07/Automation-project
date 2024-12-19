@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -26,14 +27,14 @@ public class Exam_ScheduleCreationPages extends ActionType{
 	CommonPages cp=new CommonPages(Base.getDriver());
 	JavascriptExecutor j=(JavascriptExecutor) Base.getDriver();
 	Actions a=new Actions(Base.getDriver());
-	
+
 	@FindBy(how=How.XPATH,using="//span[text()=' Add New Exam ']")private WebElement AddExambutton;
 	@FindBy(how=How.XPATH,using="//mat-icon[text()='add']")private WebElement Addicon;
 	@FindBy(how=How.XPATH,using="//span[text()=' Add New Schedule ']")private WebElement AddnewSchedule;
 	@FindBy(how=How.XPATH,using="//mat-icon[text()=' settings ']")private WebElement Adminstrationbtn;
 	@FindBy(how=How.XPATH,using="//button[@aria-label='Choose month and year']")private WebElement Choosemonthandyear;
-	@FindBy(how=How.XPATH,using="//h2[text()='Enrollment']/../following-sibling::mat-dialog-content/div/mat-form-field[1]")private WebElement clickonExaminationdropdown;
-	@FindBy(how=How.XPATH,using="//h2[text()='Enrollment']/../following-sibling::mat-dialog-content/div/mat-form-field[2]")private WebElement clickonScheduledropdown;
+	@FindBy(how=How.XPATH,using="//mat-label[text()='Examination']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")private WebElement clickonExaminationdropdown;
+	@FindBy(how=How.XPATH,using="//mat-label[text()='Schedule']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")private WebElement clickonScheduledropdown;
 	@FindBy(how=How.XPATH,using="//button[@id='btnNewTestAdmin']")private WebElement clickonSearchTest;
 	@FindBy(how=How.XPATH,using="(//button[@aria-label='Open calendar'])[2]")private WebElement datepickerforEndsonfield;
 	@FindBy(how=How.XPATH,using="//input[@type='text']")private WebElement Examname;
@@ -104,21 +105,35 @@ public class Exam_ScheduleCreationPages extends ActionType{
 	public void click_on_datepicker() {
 		cp.getRandomDate(datepickerforEndsonfield);
 	}
-	public void click_on_exam_dropdown() {
-		wait.elementToBeClickable(clickonExaminationdropdown);
-		clickonExaminationdropdown.click();
-	}
-	public void click_on_Schedule_dropdown() {
-		wait.elementToBeClickable(clickonScheduledropdown);
-		clickonScheduledropdown.click();
-	}
 	public void click_on_searched_examtaker(String Lastnametext, String Firstnametext) {
-	
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
-		WebElement e=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='"+Lastnametext+" "+Firstnametext+"']")));
-        wait.until(ExpectedConditions.elementToBeClickable(e));
-		j.executeScript("arguments[0].click();", e);
+	    int retry = 0;
+	    int maxretry = 3;
+	    boolean success = false; 
+
+	    while (retry < maxretry) {
+	        try {
+	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	            WebElement e = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='" + Lastnametext + " " + Firstnametext + "']")));
+	            wait.until(ExpectedConditions.elementToBeClickable(e));
+	            j.executeScript("arguments[0].click();", e);
+	            success = true;
+	            break;
+	        } catch (StaleElementReferenceException e) {
+	            retry++;
+	            System.out.println("StaleElementReferenceException caught, retrying... " + retry);
+	            try {
+	                Thread.sleep(1000);
+	            } catch (InterruptedException ie) {
+	                Thread.currentThread().interrupt();
+	            }
+	        }
+	    }
+
+	    if (!success) {
+	        throw new RuntimeException("Failed to click on the searched examtaker after " + maxretry + " attempts.");
+	    }
 	}
+
 
 	public void Dropdowns() {
 		Generaldropdown.click();
@@ -136,8 +151,8 @@ public class Exam_ScheduleCreationPages extends ActionType{
 		cp.insertData("ExamCenterDetails.xlsx", ScheduleName, 8);
 	}
 	public void Exam_Administration() {
-        wait.elementToBeClickable(ExamAdministrationtab);
-        wait.visibilityOf(ExamAdministrationtab);
+		wait.elementToBeClickable(ExamAdministrationtab);
+		wait.visibilityOf(ExamAdministrationtab);
 		j.executeScript("arguments[0].click();", ExamAdministrationtab);
 
 	}
@@ -193,13 +208,14 @@ public class Exam_ScheduleCreationPages extends ActionType{
 		String testname = "\"" + TestName + "\"";
 		cp.SearchTestname(testname);
 	}
-	public void select_examinations_lookup() {
+	public void select_examinations_lookup(String value) {
 		StaticWait(1);	
-		cp.FPdropdown(clickonExaminationdropdown, ExamName);	
+		cp.FPdropdown(clickonExaminationdropdown, value);
+		System.out.println(value);
 	}
 	public void select_schedule_lookup() {
 		StaticWait(1);	
-		cp.FPdropdown(clickonScheduledropdown, ExamName);
+		cp.FPdropdown(clickonScheduledropdown, ScheduleName);
 	}
 
 }

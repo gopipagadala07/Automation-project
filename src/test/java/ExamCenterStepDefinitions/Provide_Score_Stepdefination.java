@@ -27,7 +27,7 @@ public class Provide_Score_Stepdefination extends ActionType
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/ExcelFiles/User_Details.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/ExamCenterDetails.xlsx", getSheetEnv());
 		}
 		String L_Name=testdata.get(rownumber).get("LastName");
 		String F_Name=testdata.get(rownumber).get("FirstName");
@@ -40,7 +40,7 @@ public class Provide_Score_Stepdefination extends ActionType
 		testdata=null;
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/User_Details.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/ExamCenterDetails.xlsx", getSheetEnv());
 		}
 		String examname=testdata.get(rownumber).get("ExamName");
 		String schedulename=testdata.get(rownumber).get("ScheduleName");
@@ -55,7 +55,7 @@ public class Provide_Score_Stepdefination extends ActionType
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/ExcelFiles/User_Details.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/ExamCenterDetails.xlsx", getSheetEnv());
 		}
 		String Location_Name=testdata.get(rownumber).get("Location");
 		PS.Location_Toggle(Location_Name);
@@ -73,7 +73,7 @@ public class Provide_Score_Stepdefination extends ActionType
 		testdata=null;
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/User_Details.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/ExamCenterDetails.xlsx", getSheetEnv());
 		}
 		String examname=testdata.get(rownumber).get("ExamName");
 		String schedulename=testdata.get(rownumber).get("ScheduleName");
@@ -87,7 +87,7 @@ public class Provide_Score_Stepdefination extends ActionType
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/ExcelFiles/User_Details.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/ExamCenterDetails.xlsx", getSheetEnv());
 		}
 		String Location_Name=testdata.get(rownumber).get("Location");
 		PS.select_Location(Location_Name);

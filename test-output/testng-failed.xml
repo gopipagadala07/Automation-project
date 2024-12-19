@@ -1,41 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test" verbose="2">
     <classes>
-<<<<<<< HEAD
       <class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
-=======
-<<<<<<< HEAD
-      <class name="ExamCenterRunners.Users_Creation_Runner"/>
-=======
-      <class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="testDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-          <include name="beforeclass"/>
-        </methods>
-      </class> <!-- ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     </classes>
-<<<<<<< HEAD
   </test> <!-- Default test -->
-  <test parallel="none" name="Default test(failed)">
-    <classes>
-      <class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-          <include name="testDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner -->
-    </classes>
-=======
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

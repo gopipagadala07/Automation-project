@@ -24,6 +24,8 @@ import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 public class ExamtakerSubmissionPage extends ActionType{
 	private WebDriver driver;
 	private Wait wait;
+	CommonPages cp=new CommonPages(Base.getDriver());
+	
 	@FindBy(how = How.XPATH,using="//button[@aria-label='Begin Test']")private WebElement begintest;
 	@FindBy(how = How.XPATH,using="//input[@id='txtEditorInteraction']")private WebElement blankAnswer;
 	@FindBy(how = How.XPATH,using="//mat-icon[text()='close']")private WebElement close;
@@ -38,7 +40,7 @@ public class ExamtakerSubmissionPage extends ActionType{
 	@FindBy(how = How.XPATH,using="//div[@id='navigationSideMenu']/ul/li/div/button")private List<WebElement> Qcount;
 	@FindBy(how = How.XPATH,using="//button[@value='login']")private WebElement returnbtn;
 	@FindBy(how = How.XPATH,using="//input[@type='search']")private WebElement searchheretxt;
-	@FindBy(how = How.XPATH,using="//b[text()='Performance']/../span/span")private WebElement statusband;
+	@FindBy(how = How.XPATH,using="//b[text()='Status']/parent::div/span")private WebElement statusband;
 	@FindBy(how = How.XPATH,using="//span[text()='Submit']")private WebElement Submit;
 	@FindBy(how = How.XPATH,using="//input[@type='password']")private WebElement tokentxt;
 	@FindBy(how = How.XPATH,using="//button[@aria-label='Validate']")private WebElement validatebtn;
@@ -126,7 +128,13 @@ public class ExamtakerSubmissionPage extends ActionType{
 		j.executeScript("arguments[0].click()",launchbtn);
 	}
 
-
+	public void logout()
+	{
+		wait.elementToBeClickable(logout);
+		StaticWait(2);
+		JavascriptExecutor j=(JavascriptExecutor)driver;
+		j.executeScript("arguments[0].click()",logout);
+	}
 	public void searchheretxt(String Examname, String ScheduleName) throws InterruptedException
 	{
 
@@ -144,29 +152,29 @@ public class ExamtakerSubmissionPage extends ActionType{
 
 		wait.elementToBeClickable(Examinations);
 		Examinations.click();
-		
-		wait.elementToBeClickable(searchheretxt);
-		searchheretxt.sendKeys(Examname+" - "+ScheduleName);
-		WebElement element=driver.findElement(By.xpath("//b[text()='"+Examname+" - "+ScheduleName+"']"));
-		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		wait.until(ExpectedConditions.visibilityOf(element));
+		cp.searchField(Examname+" - "+ScheduleName);
 
-		int retries = 3;
-		while (retries > 0) {
+		int retries = 0;
+		int maxretry=3;
+		boolean success = false;
+		while (retries < maxretry) {
 		    try {
-		        element.click();
+				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebElement element=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//b[text()='"+Examname+" - "+ScheduleName+"']")));
+				wait.until(ExpectedConditions.visibilityOf(element));
+				JavascriptExecutor js=(JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", element);
+				success=true;
 		        break;
 		    } catch (StaleElementReferenceException e) {
 		        System.out.println("Page reloaded. Retrying...");
-		 
+		        retries++;
 		        Thread.sleep(2000);
 		    }
 		}
-		if (retries == 0) {
+		if (!success) {
 		    throw new RuntimeException("Failed to interact with the element after retries.");
 		}
-
 	}
 	public void statusband()
 	{

@@ -1,5 +1,6 @@
 package com.Examcenter.pages;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,6 +17,7 @@ import org.openqa.selenium.JavascriptExecutor;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -43,8 +45,11 @@ public class ProctorEnrollePage extends ActionType{
 
 	public void EnrolleTab()
 	{
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", enrolleTab);
+		Actions a=new Actions(driver);
+		a.moveToElement(enrolleTab).build().perform();
+		a.doubleClick().perform();
+//		JavascriptExecutor js=(JavascriptExecutor) driver;
+//		js.executeScript("arguments[0].click();", enrolleTab);
 	}
 	public void select_the_Examination(String ExamName, String ScheduleName) {
 
@@ -86,7 +91,6 @@ public class ProctorEnrollePage extends ActionType{
 		printtestanalytics.click();
 	}
 
-
 	public void moveLatestDownloadedFile() {
 	    try {
 	        LocalDateTime now = LocalDateTime.now();
@@ -94,14 +98,21 @@ public class ProctorEnrollePage extends ActionType{
 	        String currentDateTime = now.format(formatter).toUpperCase();
 	        Path downloadDir = Paths.get(System.getProperty("user.home"), "Downloads");
 	        Path reportCardDir = Paths.get(System.getProperty("user.dir"), "ReportCard");
+	        if (Files.exists(reportCardDir)) {
+	            Files.walk(reportCardDir)
+	                .sorted(Comparator.reverseOrder())
+	                .map(Path::toFile)
+	                .forEach(File::delete);
+	        }
+	        Files.createDirectories(reportCardDir);
 	        Optional<Path> latestFile = Files.list(downloadDir)
 	            .filter(Files::isRegularFile)
 	            .max(Comparator.comparingLong(p -> p.toFile().lastModified()));
+
 	        if (latestFile.isPresent()) {
 	            Path source = latestFile.get();
 	            String dirName = "Student_Summary_" + currentDateTime;
 	            Path target = reportCardDir.resolve(dirName + ".pdf");
-	            Files.createDirectories(reportCardDir);
 	            Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
 	            System.out.println("File moved to: " + target.toString());
 	            ExtentCucumberAdapter.addTestStepLog("File moved to: " + target.toString());

@@ -22,7 +22,6 @@ public class Location_pom extends ActionType {
 	private Wait wait;
 
 	static String LocationName;
-	static String Addressfield;
 
 
 	//Location Creation
@@ -30,7 +29,11 @@ public class Location_pom extends ActionType {
 	@FindBy(how=How.XPATH,using = "//a[text()='Locations']")private WebElement Locationtab;
 	@FindBy(how=How.XPATH,using = "//span[text()=' Add New ']") private WebElement AddNewbutton;
 	@FindBy(how=How.XPATH,using = "//mat-label[text()='Name ']")private WebElement LocationNamefield;
-	@FindBy(how=How.XPATH,using = "//mat-label[text()='Address ']")private WebElement AddressNamefield;
+	@FindBy(how=How.XPATH,using = "(//input[@type='text'])[2]")private WebElement AddressNamefield;
+	@FindBy(how=How.XPATH,using = "(//input[@type='text'])[3]")private WebElement Cityfield;
+	@FindBy(how=How.XPATH,using = "(//input[@type='text'])[4]")private WebElement Zipfield;
+	@FindBy(how=How.XPATH,using = "(//input[@type='text'])[5]")private WebElement Statefield;
+	@FindBy(how=How.XPATH,using = "(//input[@type='text'])[6]")private WebElement Mobilenumberfield;
 	@FindBy(how = How.XPATH,using = "//span[text()=' Save ']")private WebElement LocationSave;
 
 
@@ -59,17 +62,20 @@ public class Location_pom extends ActionType {
 		System.out.println(LocationName);
 		ExtentCucumberAdapter.addTestStepLog(LocationName);
 		cp.Name(LocationName);
-		cp.insertData("ExamCenterDetails.xlsx", LocationName, 5);
+		cp.insertData("ExamCenterDetails.xlsx", LocationName, 0);
 
 	}
 
-	public void Address_field() {
-		Addressfield = "Address" + randomNumberGenerator();
-		System.out.println(Addressfield);
-		//	    ExtentCucumberAdapter.addTestStepLog(Addressfield);
-		cp.Name(Addressfield);
+	public void Other_fields() {
+		AddressNamefield.sendKeys(String.valueOf(randomNumberGenerator()));
+		Cityfield.sendKeys(generateRandomString());
+		Zipfield.sendKeys(String.valueOf(randomNumberGenerator()));
+		Statefield.sendKeys(generateRandomString());
+		Mobilenumberfield.sendKeys(String.valueOf(randomNumberGenerator()));	
 	}
 	public void savebutton() {
 		cp.Savebtn.click();
 
-	}}
+	}
+
+}

@@ -18,7 +18,7 @@ import io.cucumber.testng.CucumberOptions;
 				)
 public class Enrolled_ExamTaker_in_a_TimeSlotRunner extends AbstractTestNGCucumberTests
 {
-	String testcasename;  // 
+	String testcasename;  
 	
 	@Parameters("browser")
 	@BeforeClass
@@ -27,12 +27,6 @@ public class Enrolled_ExamTaker_in_a_TimeSlotRunner extends AbstractTestNGCucumb
 		System.out.println("***************** " + testcasename + " Test Starting *****************");
 
 	}
-	
-	@DataProvider
-	public Object[][] getexcel()  {
-		return this.scenarios();
-	}
-	
 	@AfterClass(alwaysRun = true)
 	public void testDownClass() throws IOException {
 		System.out.println("***************** " + testcasename + " Test end *****************");

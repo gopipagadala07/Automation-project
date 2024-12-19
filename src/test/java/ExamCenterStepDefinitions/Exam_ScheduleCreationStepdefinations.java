@@ -161,9 +161,16 @@ public class Exam_ScheduleCreationStepdefinations extends ActionType{
 		ESpages.Enroll_To_An_Exam();
 	}
 
-	@And("Select one Examinations name from Examinations lookups")
-	public void select_one_examinations_name_from_Examinations_lookups(){
-		ESpages.select_examinations_lookup();
+	@And("Select one Examinations name from Examinations lookups {int}")
+	public void select_one_examinations_name_from_Examinations_lookups(int rowno) throws InvalidFormatException, IOException{
+		testdata=null;
+		if(testdata == null) {
+			testdata = 
+					reader.getData("/ExcelFiles/ExamCenterDetails.xlsx", getSheetEnv());	
+
+		}
+		String Examname=testdata.get(rowno).get("ExamName");
+		ESpages.select_examinations_lookup(Examname);
 	}
 
 	@Then("Select one Schedule name from an selected Examinations")

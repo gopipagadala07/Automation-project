@@ -41,13 +41,16 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 
 	public void ET_Entry_details()
 	{
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", Entry_reentryIcon);
+		StaticWait(1);
 		WebElement table = driver.findElement(By.id("tblEntryDetails"));
         List<WebElement> rows = table.findElements(By.tagName("tr"));
-
         for (WebElement row : rows) {
             List<WebElement> columns = row.findElements(By.tagName("td"));
             if (columns.size() >= 2) {
-                System.out.println(columns.get(0).getText() + " | " + columns.get(1).getText());
+                System.out.println(columns.get(0).getText() + " || " + columns.get(1).getText());
+                ExtentCucumberAdapter.addTestStepLog(columns.get(0).getText() + " || " + columns.get(1).getText());
             }
         }		
 		StaticWait(1);

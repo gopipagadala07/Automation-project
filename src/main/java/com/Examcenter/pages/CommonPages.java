@@ -45,7 +45,7 @@ import com.Utils.Wait;
 public class CommonPages extends ActionType{
 	private Wait wait;
 	static int currentHour;
-	static int min;
+	static String formattedMin;;
 	static int Ehour;
 	static int EfutureMinute;
 	
@@ -119,9 +119,10 @@ public class CommonPages extends ActionType{
 				String actual = option.getText().trim();
 				//System.out.println(actual);
 				if(actual.contains(visibleText)) {
-					Actions a=new Actions(driver);
-					a.moveToElement(option);
-					option.click();
+					WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+					WebElement e=wait.until(ExpectedConditions.elementToBeClickable(option));
+					JavascriptExecutor js=(JavascriptExecutor) driver;
+					js.executeScript("arguments[0].click();", e);
 					break;
 				}		
 			}
@@ -329,8 +330,8 @@ public class CommonPages extends ActionType{
 	            a.moveToElement(hourElement).perform();
 	            a.click().build().perform();
 	            StaticWait(1);
-	            min = (1 + currentMinute) % 60;
-	            String formattedMin = String.format("%02d", min);
+	            int min = (1 + currentMinute) % 60;
+	            formattedMin = String.format("%02d", min);
 	            int minuteDegree = min * 6;
 	            String minuteDegreeTransform = "rotateZ(-" + minuteDegree + "deg)";
 	            String minuteXpath = "//button[contains(@style,'transform: " + minuteDegreeTransform + ";')]";
@@ -359,7 +360,6 @@ public class CommonPages extends ActionType{
 	        }
 	    }
 	}
-
 
 	public void selectFutureRandomTime(WebElement timePickerElement) {
 	    int maxRetries = 3;

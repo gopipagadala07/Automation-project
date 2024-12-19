@@ -1,6 +1,7 @@
 package ExamCenterStepDefinitions;
 
 
+import com.Examcenter.pages.CommonPages;
 import com.Examcenter.pages.Enrolled_ExamTaker_in_the_Timeslot_Page;
 import com.Utils.ActionType;
 import com.Utils.Base;
@@ -20,7 +21,7 @@ public class Enroled_ExamTaker_in_a_Timeslot_Stepdefination extends ActionType
 {
 	static ExcelReader reader = new ExcelReader();
     static List<Map<String,String>> testData = null;
-    
+    CommonPages cp=new CommonPages(Base.getDriver());
 	private Enrolled_ExamTaker_in_the_Timeslot_Page Enr = new Enrolled_ExamTaker_in_the_Timeslot_Page(Base.getDriver());
 
 	@Then("User click on ExamTaker Entry Details")
@@ -33,6 +34,7 @@ public class Enroled_ExamTaker_in_a_Timeslot_Stepdefination extends ActionType
 	public void user_provide_the_comment_to_the_examtaker()
 	{
 			Enr.p_comment();
+			cp.Save();
 	}
 	@Then("User remove the ExamTaker from the Timeslot")
 	public void user_remove_the_exam_taker_from_the_timeslot() 

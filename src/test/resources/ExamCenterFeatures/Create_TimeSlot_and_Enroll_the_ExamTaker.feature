@@ -19,11 +19,11 @@ Feature: FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Take
     Then User click on Exam Time Slot Save button
     Then User click on Enrollee tab
     Then User click Timeslot lookup and select particular Timeslot
-    Then User search the particular ExamTaker <rownumber1>
+    Then User search the particular ExamTaker <rownumber2>
     When User add the Examtaker in the Timeslot
-    Then User search the added ExamTaker in the TimeSlot <rownumber1>
+    Then User search the added ExamTaker in the TimeSlot <rownumber2>
     When User approve and Live the Examtaker for the Examination
 
     Examples: 
-      | rownumber | rownumber1 |
-      |         2 |          0 |
+      | rownumber | rownumber1 | rownumber2 |
+      |         2 |          0 |          3 |

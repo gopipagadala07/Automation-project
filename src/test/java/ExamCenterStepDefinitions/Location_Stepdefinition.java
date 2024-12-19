@@ -42,7 +42,7 @@ public class Location_Stepdefinition extends ActionType {
 	@Then("User enters the LocationName and Addressfield generated randomly")
 	public void user_enters_the_location_name_and_addressfield_generated_randomly() throws Exception {
 		Location.Location_Name();
-		Location.Address_field();
+		Location.Other_fields();
 	}
 	
 	@Then("User click on Locationsave button")

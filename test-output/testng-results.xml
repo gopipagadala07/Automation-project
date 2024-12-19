@@ -1,76 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testng-results total="1" passed="0" failed="1" skipped="0">
-=======
-<<<<<<< HEAD
 <testng-results total="1" passed="1" failed="0" skipped="0">
-=======
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
   <reporter-output>
   </reporter-output>
-<<<<<<< HEAD
-  <suite started-at="2024-12-18T09:15:02Z" name="Default suite" finished-at="2024-12-18T09:15:41Z" duration-ms="39298">
-=======
-<<<<<<< HEAD
-  <suite started-at="2024-12-12T19:30:09Z" name="Default suite" finished-at="2024-12-12T19:30:55Z" duration-ms="45990">
-=======
-  <suite started-at="2024-12-16T09:56:38 IST" name="Default suite" finished-at="2024-12-16T09:58:24 IST" duration-ms="105872">
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+  <suite started-at="2024-12-19T09:06:35Z" name="Default suite" finished-at="2024-12-19T09:07:35Z" duration-ms="60436">
     <groups>
       <group name="cucumber">
-<<<<<<< HEAD
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@48e92c5c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-=======
-<<<<<<< HEAD
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@33308786]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-=======
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7c137fd5]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-<<<<<<< HEAD
-    <test started-at="2024-12-18T09:15:02Z" name="Default test" finished-at="2024-12-18T09:15:41Z" duration-ms="39298">
+    <test started-at="2024-12-19T09:06:35Z" name="Default test" finished-at="2024-12-19T09:07:35Z" duration-ms="60436">
       <class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@48e92c5c]" started-at="2024-12-18T14:45:02Z" name="setUpClass" finished-at="2024-12-18T14:45:03Z" duration-ms="885" status="PASS">
-=======
-<<<<<<< HEAD
-    <test started-at="2024-12-12T19:30:09Z" name="Default test" finished-at="2024-12-12T19:30:55Z" duration-ms="45990">
-      <class name="ExamCenterRunners.Users_Creation_Runner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@33308786]" started-at="2024-12-13T01:00:09Z" name="setUpClass" finished-at="2024-12-13T01:00:10Z" duration-ms="812" status="PASS">
-=======
-    <test started-at="2024-12-16T09:56:38 IST" name="Default test" finished-at="2024-12-16T09:58:24 IST" duration-ms="105872">
-      <class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7c137fd5]" started-at="2024-12-16T09:56:38 IST" name="setUpClass" finished-at="2024-12-16T09:56:42 IST" duration-ms="3932" status="PASS">
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2024-12-19T14:36:35Z" name="setUpClass" finished-at="2024-12-19T14:36:36Z" duration-ms="869" status="PASS">
           <params>
             <param index="0">
               <value>
-<<<<<<< HEAD
-                <![CDATA[org.testng.TestRunner@4301fa39]]>
-=======
-<<<<<<< HEAD
-                <![CDATA[org.testng.TestRunner@2b1d1a5]]>
-=======
-                <![CDATA[org.testng.TestRunner@1e000a17]]>
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+                <![CDATA[org.testng.TestRunner@6ca33187]]>
               </value>
             </param>
           </params>
-<<<<<<< HEAD
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@48e92c5c]" started-at="2024-12-18T14:45:03Z" name="beforeclass" finished-at="2024-12-18T14:45:03Z" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2024-12-19T14:36:36Z" name="beforeclass" finished-at="2024-12-19T14:36:36Z" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeclass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@48e92c5c]" started-at="2024-12-18T14:45:03Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-18T14:45:36Z" duration-ms="32449" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2024-12-19T14:36:36Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-19T14:37:33Z" duration-ms="57563" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -83,174 +38,18 @@
               </value>
             </param>
           </params>
-          <exception class="io.cucumber.testng.UndefinedStepException">
-            <message>
-              <![CDATA[The step 'User click on Enrollment' and 2 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Then("User click on Enrollment")
-public void user_click_on_enrollment() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("User Select the Examination {int}")
-public void user_select_the_examination(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("User Select the Location {int}")
-public void user_select_the_location(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'User click on Enrollment' and 2 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Then("User click on Enrollment")
-public void user_click_on_enrollment() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("User Select the Examination {int}")
-public void user_select_the_examination(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("User Select the Location {int}")
-public void user_select_the_location(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
-	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
-	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
-	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
-=======
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-          <reporter-output>
-          </reporter-output>
-<<<<<<< HEAD
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="testDownClass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@48e92c5c]" started-at="2024-12-18T14:45:36Z" name="testDownClass" finished-at="2024-12-18T14:45:36Z" duration-ms="16" status="PASS">
-=======
-        </test-method> <!-- setUpClass -->
-<<<<<<< HEAD
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@33308786]" started-at="2024-12-13T01:00:10Z" name="beforeclass" finished-at="2024-12-13T01:00:10Z" duration-ms="3" status="PASS">
-=======
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7c137fd5]" started-at="2024-12-16T09:56:42 IST" name="beforeclass" finished-at="2024-12-16T09:56:42 IST" duration-ms="8" status="PASS">
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-          <reporter-output>
-          </reporter-output>
-<<<<<<< HEAD
-        </test-method> <!-- testDownClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@48e92c5c]" started-at="2024-12-18T14:45:36Z" name="tearDownClass" finished-at="2024-12-18T14:45:41Z" duration-ms="5921" status="PASS">
-=======
-        </test-method> <!-- beforeclass -->
-<<<<<<< HEAD
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@33308786]" started-at="2024-12-13T01:00:10Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-13T01:00:53Z" duration-ms="43574" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Checking the Creation of controller User"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Checking the Create Users Functionality"]]>
-              </value>
-            </param>
-          </params>
-=======
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7c137fd5]" started-at="2024-12-16T09:56:42 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-16T09:58:21 IST" duration-ms="98425" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Create a Time_Slot for the Examination"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.RuntimeException">
-            <message>
-              <![CDATA[Failed to select the current date after 3 attempts.]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: Failed to select the current date after 3 attempts.
-at com.Examcenter.pages.CommonPages.selectCurrentDate(CommonPages.java:320)
-at com.Examcenter.pages.TimeSlotCreation_and_enrollExamataker_Page.click_on_ChooseMonthandYear(TimeSlotCreation_and_enrollExamataker_Page.java:178)
-at ExamCenterStepDefinitions.Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.user_select_the_exam_date_from_calendar(Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.java:96)
-at ✽.User select the Exam date from calendar(file:///C:/Users/RavaliManthena/OneDrive/Eclipse-EC/src/test/resources/ExamCenterFeatures/Create_TimeSlot_and_Enroll_the_ExamTaker.feature:16)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.RuntimeException -->
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-<<<<<<< HEAD
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@33308786]" started-at="2024-12-13T01:00:53Z" name="tearDownClass" finished-at="2024-12-13T01:00:55Z" duration-ms="1587" status="PASS">
-=======
-        <test-method is-config="true" signature="testDownClass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7c137fd5]" started-at="2024-12-16T09:58:21 IST" name="testDownClass" finished-at="2024-12-16T09:58:21 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="testDownClass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2024-12-19T14:37:33Z" name="testDownClass" finished-at="2024-12-19T14:37:33Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDownClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7c137fd5]" started-at="2024-12-16T09:58:21 IST" name="tearDownClass" finished-at="2024-12-16T09:58:24 IST" duration-ms="3382" status="PASS">
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2024-12-19T14:37:33Z" name="tearDownClass" finished-at="2024-12-19T14:37:35Z" duration-ms="1990" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-<<<<<<< HEAD
       </class> <!-- ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner -->
-=======
-<<<<<<< HEAD
-        <test-method is-config="true" signature="Afterclass()[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@33308786]" started-at="2024-12-13T01:00:53Z" name="Afterclass" finished-at="2024-12-13T01:00:53Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Afterclass -->
-      </class> <!-- ExamCenterRunners.Users_Creation_Runner -->
-=======
-      </class> <!-- ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

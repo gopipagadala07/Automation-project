@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import com.Examcenter.pages.Users_CreationPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.ExcelReader;
@@ -64,19 +63,19 @@ public class CreateUsersStepdefinitions extends ActionType{
 	@And("User Enter the Controller Name in search Textbox")
 	public void user_enter_the_details_in_search_textbox() throws InvalidFormatException, IOException {
 		waitForPageLoad();
-		Users.searchtxt(All_User_CreationPage.ControllerL_Name, All_User_CreationPage.ControllerF_Name);
+		Users.searchtxt(String.valueOf(All_User_CreationPage.ControllerL_Name), All_User_CreationPage.ControllerF_Name);
 	}
 
 	@And("User Enter the Proctor Name in search Textbox")
 	public void user_enter_the_proctor_details_in_search_textbox() {
 		waitForPageLoad();
-		Users.searchtxt(All_User_CreationPage.ProctorL_Name, All_User_CreationPage.ProctorF_Name);
+		Users.searchtxt(String.valueOf(All_User_CreationPage.ProctorL_Name), All_User_CreationPage.ProctorF_Name);
 	}
 	@And("User Enter the ExamTaker Name in search Textbox")
 	public void user_enter_the_ExamTaker_Name_in_search_textbox() 
 	{
 		waitForPageLoad();
-		Users.searchtxt(All_User_CreationPage.ExamTakerL_Name, All_User_CreationPage.ExamTakerF_Name);
+		Users.searchtxt(String.valueOf(All_User_CreationPage.ExamTakerL_Name), All_User_CreationPage.ExamTakerF_Name);
 	}
 
 
@@ -86,7 +85,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 			testdata=null;
 			if(testdata == null)
 			{
-				testdata=reader.getData("/ExcelFiles/User_Details.xlsx", getSheetEnv());
+				testdata=reader.getData("/ExcelFiles/ExamCenterDetails.xlsx", getSheetEnv());
 			}
 			String User_Role=testdata.get(rownumber3).get("User Role");
 			String location=testdata.get(rownumber).get("Location");
@@ -99,7 +98,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/ExcelFiles/User_Details.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/ExamCenterDetails.xlsx", getSheetEnv());
 		}
 		String User_Role=testdata.get(rownumber2).get("User Role");
 		String location=testdata.get(rownumber).get("Location");
@@ -114,7 +113,7 @@ public class CreateUsersStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/ExcelFiles/User_Details.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/ExamCenterDetails.xlsx", getSheetEnv());
 		}
 		String User_Role=testdata.get(rownumber1).get("User Role");
 		Users.Create_Controller_User(User_Role);

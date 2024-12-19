@@ -25,11 +25,11 @@ public class All_User_CreationPage extends ActionType
 	private WebDriver driver;
 	private Wait wait;
 	public static String ControllerF_Name;
-	public static String ControllerL_Name;
+	public static int ControllerL_Name;
 	public static String ProctorF_Name;
-	public static String ProctorL_Name;
+	public static int ProctorL_Name;
 	public static String ExamTakerF_Name;
-	public static String ExamTakerL_Name;
+	public static int ExamTakerL_Name;
 	static int Idtxt;
 	static String Email;
 	CommonPages cp=new CommonPages(Base.getDriver());
@@ -111,8 +111,8 @@ public class All_User_CreationPage extends ActionType
 		Emailtxt.sendKeys(Email);
 		ControllerF_Name = "FPKController".toLowerCase();
 		Firstnametxt.sendKeys(ControllerF_Name);
-		ControllerL_Name = String.valueOf(randomNumberGenerator());
-		Lastnametxt.sendKeys(ControllerL_Name);
+		ControllerL_Name = randomNumberGenerator();
+		Lastnametxt.sendKeys(String.valueOf(ControllerL_Name));
 		Idtxt = randomNumberGenerator();
 		IDtxt.sendKeys(String.valueOf(Idtxt));
 	}
@@ -128,12 +128,11 @@ public class All_User_CreationPage extends ActionType
 		Emailtxt.sendKeys(Email);
 		ExamTakerF_Name = "FPK"+UserRole.toLowerCase();
 		Firstnametxt.sendKeys(ExamTakerF_Name);
-		ExamTakerL_Name = String.valueOf(randomNumberGenerator());
-		Lastnametxt.sendKeys(ExamTakerL_Name);
+		ExamTakerL_Name = randomNumberGenerator();
+		Lastnametxt.sendKeys(String.valueOf(ExamTakerL_Name));
 		Idtxt = randomNumberGenerator();
 		IDtxt.sendKeys(String.valueOf(Idtxt));
 		PLoc(Location);		
-		//		DOBtxt(Yeartext, Monthtext, Datetext);
 		cp.selectCurrentDate(DOB);
 
 	}
@@ -145,8 +144,8 @@ public class All_User_CreationPage extends ActionType
 		Emailtxt.sendKeys(Email);
 		ProctorF_Name = "FPK"+UserRole.toLowerCase();
 		Firstnametxt.sendKeys(ProctorF_Name);
-		ProctorL_Name = String.valueOf(randomNumberGenerator());
-		Lastnametxt.sendKeys(ProctorL_Name);
+		ProctorL_Name = randomNumberGenerator();
+		Lastnametxt.sendKeys(String.valueOf(ProctorL_Name));
 		Idtxt = randomNumberGenerator();
 		IDtxt.sendKeys(String.valueOf(Idtxt));
 		PLoc(Location);
@@ -251,7 +250,7 @@ public class All_User_CreationPage extends ActionType
 	}
 	public void insertUsersData() throws Exception
 	{
-		String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "ExcelFiles", "User_Details.xlsx").toString();
+		String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "ExcelFiles", "ExamCenterDetails.xlsx").toString();
 		cp.InsertmultipledataIntoExcel(filePath, getSheetEnv(), ControllerF_Name, ControllerL_Name,ProctorF_Name, ProctorL_Name, ExamTakerF_Name, ExamTakerL_Name);
 	}
 
