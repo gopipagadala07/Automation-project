@@ -27,9 +27,9 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	JavascriptExecutor j=(JavascriptExecutor) Base.getDriver();
 	Actions a=new Actions(Base.getDriver());
 	
-	@FindBy(how=How.XPATH,using="//mat-icon[@name='myMatIcon' and text()='comment']")private WebElement Commenticon;
+	@FindBy(how=How.XPATH,using="//mat-icon[text()='comment']")private WebElement Commenticon;
 	@FindBy(how=How.XPATH,using="//p[@data-placeholder='Type here']/parent::div")private WebElement Comment_Textbox;
-	@FindBy(how=How.XPATH,using="//mat-icon[@name='myMatIcon' and text()='computer']")private WebElement Entry_reentryIcon;
+	@FindBy(how=How.XPATH,using="//mat-icon[text()='computer']")private WebElement Entry_reentryIcon;
 	@FindBy(how=How.XPATH,using="//mat-icon[text()='close']")private WebElement Closeicon;
 	
 	public Enrolled_ExamTaker_in_the_Timeslot_Page(WebDriver driver)
