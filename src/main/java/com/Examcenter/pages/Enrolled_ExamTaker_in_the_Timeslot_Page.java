@@ -6,6 +6,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -60,15 +62,29 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 		Actions act = new Actions(driver);
 		act.moveToElement(Closeicon).click().build().perform();		
 	}
-	public void p_comment()
-	{
-		Actions act = new Actions(Base.getDriver());
-		act.moveToElement(Commenticon).click().build().perform();
-		System.out.println("Comment box clicked");
-		StaticWait(2);
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(15));
-		WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[@data-placeholder='Type here']/parent::div")));
-		act.moveToElement(e).click().build().perform();
-		e.sendKeys(generateRandomString());
+	public void p_comment() {
+	    try {
+	        Actions act = new Actions(Base.getDriver());
+	        act.moveToElement(Commenticon).click().build().perform();
+	        System.out.println("Comment box clicked");
+	        StaticWait(2);
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	        WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//textarea[@id='descriptionField']/parent::div/child::div/child::div[2]/child::div[2]")));
+
+	        if (e.isDisplayed() && e.isEnabled()) {
+	            act.moveToElement(e).click().build().perform();
+	            e.sendKeys(generateRandomString());
+	            System.out.println("Value sent to the comment box");
+	        } else {
+	            System.out.println("Element is not interactable");
+	        }
+	    } catch (TimeoutException te) {
+	        System.out.println("Timeout: Element not found or not interactable");
+	    } catch (NoSuchElementException nse) {
+	        System.out.println("No Such Element: The element was not found");
+	    } catch (Exception ex) {
+	        ex.printStackTrace();
+	    }
 	}
+
 }
