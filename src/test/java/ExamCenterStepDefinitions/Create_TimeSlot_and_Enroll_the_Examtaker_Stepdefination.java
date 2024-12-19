@@ -113,7 +113,7 @@ public class Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination extends Act
 	public void user_click_on_Exam_Time_Slot_Save_button() 
 	{
 		cp.Save();
-		//ExtentCucumberAdapter.addTestStepLog("Timeslot created..!!");
+		ExtentCucumberAdapter.addTestStepLog("Timeslot created..!!");
 	}
 	
 	

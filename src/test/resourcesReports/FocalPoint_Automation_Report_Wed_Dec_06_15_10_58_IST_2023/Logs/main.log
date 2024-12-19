@@ -1,6 +1,0 @@
-2023-12-06 15:10:58,441 INFO  [rootLogger] Enviornment is : STAGE
-2023-12-06 15:10:58,444 INFO  [rootLogger] Browser value is: CHROME
-2023-12-06 15:10:59,829 INFO  [rootLogger] -----------------Start of Scenario-----------------
-2023-12-06 15:10:59,829 INFO  [rootLogger] Loading URL ... chrome
-2023-12-06 15:10:59,850 INFO  [rootLogger] Loading URL ... null
-2023-12-06 15:10:59,994 INFO  [rootLogger] -----------------End of Scenario-----------------

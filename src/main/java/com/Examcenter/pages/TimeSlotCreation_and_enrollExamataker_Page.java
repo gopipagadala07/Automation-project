@@ -2,9 +2,7 @@ package com.Examcenter.pages;
 
 import java.time.Duration;
 
-import org.apache.poi.ss.formula.functions.Now;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -15,11 +13,9 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
-import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 {
@@ -157,29 +153,32 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		StaticWait(1);
 	}
 
-	public void click_on_Time_slot_Lookup_and_select_timeslot()
-	
-	{
-		if(CommonPages.currentHour<=12)
-		{
-			String timeslotvalue=CommonPages.currentHour+":"+CommonPages.min+"AM";
-			System.out.println(timeslotvalue);
-			TimeSlot_Lookup.click();
-			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-			WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
-			e.click();
-		}
-		else if(CommonPages.currentHour>12) 
-		
-		{
-			int currentHour=CommonPages.currentHour-12;
-			System.out.println(currentHour);
-			String timeslotvalue=currentHour+":"+CommonPages.min+"PM";
-			TimeSlot_Lookup.click();
-			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-			WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
-			e.click();
-		}
+	public void click_on_Time_slot_Lookup_and_select_timeslot() {
+	    if (CommonPages.currentHour < 12) {
+	        String timeslotvalue = CommonPages.currentHour + ":" + CommonPages.formattedMin + "AM";
+	        System.out.println(timeslotvalue);
+	        TimeSlot_Lookup.click();
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
+	        e.click();
+	    } else if (CommonPages.currentHour > 12) {
+	        int currentHour = CommonPages.currentHour - 12;
+	        System.out.println(currentHour);
+	        String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
+	        TimeSlot_Lookup.click();
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
+	        e.click();
+	    }
+	    else if (CommonPages.currentHour == 12) {
+	        int currentHour = CommonPages.currentHour;
+	        System.out.println(currentHour);
+	        String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
+	        TimeSlot_Lookup.click();
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
+	        e.click();
+	    }
 	}
 	
 	public void search_Examtaker_under_enrollment(String EFirstName, String ELastName)
@@ -244,108 +243,3 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 	    }
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//public void approve_and_Live_the_Examtaker() {
-//
-//    try {
-//        // Wait for 'approve' button to be present
-//        At.waitForElement((By) approve);
-//        WebElement approveButton = driver.findElement((By) approve);
-//
-//        // Use JavaScriptExecutor to click the 'approve' button
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].scrollIntoView(true);", approveButton);
-//        js.executeScript("arguments[0].click();", approveButton);
-//        System.out.println("Approve button clicked successfully.");
-//
-//        // Wait for 'Live' button to be present
-//        waitForElement((By) Live);
-//        WebElement liveButton = driver.findElement((By) Live);
-//
-//        // Use JavaScriptExecutor to click the 'Live' button
-//        js.executeScript("arguments[0].scrollIntoView(true);", liveButton);
-//        js.executeScript("arguments[0].click();", liveButton);
-//        System.out.println("Live button clicked successfully.");
-//
-//    } catch (Exception e) {
-//        System.err.println("Error in approveAndLiveTheExamtaker: " + e.getMessage());
-//        throw new RuntimeException("Failed to click Approve and Live buttons.", e);
-//    }
-//}
-
-//public void approve_and_Live_the_Examtaker()
-//{
-//
-////JavascriptExecutor js=(JavascriptExecutor) driver;
-////js.executeScript("arguments[0].click();", approve);
-////js.executeScript("arguments[0].click();", Live);
-//
-//waitForElement(Notapprove);
-//String s = driver.findElement(Notapprove).getText();
-//if(s.equalsIgnoreCase("Not Approved"))
-//{
-//	Dimension d=new Dimension(1920,1080);
-//	driver.manage().window().setSize(d);
-//	StaticWait(1);	
-//	waitForElement((By) approve);
-//	StaticWait(1);
-//	approve.click();			
-//	Actions a=new Actions(Base.getDriver());
-//	a.moveToElement(e).build().perform();
-//	StaticWait(1);
-//	a.click(e).build().perform();
-//	//e.click();
-//	waitForElement((By) Live);
-//	StaticWait(5);
-//	Live.click();
-////	e1.click();
-//	JavascriptExecutor j=(JavascriptExecutor) Base.getDriver();
-//	j.executeScript("arguments[0].click()", e1);
-////	a.moveToElement(e1).click(e1).build().perform();
-//}		
-//}

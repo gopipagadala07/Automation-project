@@ -34,10 +34,9 @@ public class Provide_Score_Pages extends ActionType
 	@FindBy(how = How.XPATH,using = "//*[contains(text(), 'Candidate Response')]/following::div[3]/div/following::span/span/descendant::input")private WebElement Provide_Score;
 	@FindBy(how = How.XPATH,using = "//div[@role='textbox']")private WebElement Provide_Feedback;
 	@FindBy(how = How.XPATH,using = "//span[text()='Submit Scoring']")private WebElement Submit_score;
-	@FindBy(how = How.XPATH,using = "//mat-label[text()='Examination ']/ancestor::span")private WebElement Examination;
-	@FindBy(how = How.XPATH,using = "//mat-label[text()='Examination']/ancestor::span")private WebElement Examination1;
-	@FindBy(how = How.XPATH,using = "//mat-label[text()='Locations']")private WebElement Location_lookup;
-
+	@FindBy(how = How.XPATH,using = "//mat-label[text()='Examination']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")private WebElement ScoreExamination;
+	@FindBy(how = How.XPATH,using = "//mat-label[text()='Examination ']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")private WebElement LocExamination;
+	@FindBy(how = How.XPATH,using = "//mat-label[text()='Locations']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")private WebElement Location_lookup;
 
 
 	public Provide_Score_Pages(WebDriver driver)
@@ -70,47 +69,32 @@ public class Provide_Score_Pages extends ActionType
 	public void click_on_Score_Exam_Tab() 
 	{   
 		wait.elementToBeClickable(Score_ExamTab);
-		Score_ExamTab.click();
-
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", Score_ExamTab);
 	}
 	public void select_Location(String Location) 
 	{   
 		cp.FPdropdown(Location_lookup, Location);
-
 	}
 
 	public void Select_the_Examination(String examname, String ScheduleName) 
 	{   
-		StaticWait(2);
-	    wait.elementToBeClickable(Examination);
-	    Actions actions = new Actions(driver);
-	    actions.moveToElement(Examination).click().build().perform();
-
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    WebElement Examination = wait.until(ExpectedConditions.visibilityOfElementLocated(
-	        By.xpath(" //span[text()=' "+examname+" - "+ScheduleName+" ']")));
-
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	    js.executeScript("arguments[0].scrollIntoView(true);", Examination);
-
-	    Examination.click();
+		cp.FPdropdown(LocExamination, examname+" - "+ScheduleName);
 	}
 
 	public void Select_the_Examination_for_Score(String examname, String ScheduleName) 
 	{   
 		StaticWait(2);
-	    wait.elementToBeClickable(Examination1);
+	    wait.elementToBeClickable(ScoreExamination);
 	    Actions actions = new Actions(driver);
-	    actions.moveToElement(Examination1).click().build().perform();
+	    actions.moveToElement(ScoreExamination).click().build().perform();
 
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    WebElement Examination = wait.until(ExpectedConditions.visibilityOfElementLocated(
-	        By.xpath(" //span[text()='"+examname+" - "+ScheduleName+"']")));
-
+	        By.xpath("//span[text()='"+examname+" - "+ScheduleName+"']")));
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("arguments[0].scrollIntoView(true);", Examination);
-
-	    Examination.click();
+	    js.executeScript("arguments[0].click();", Examination);
 	}
 
 	public void Location_Toggle(String Location) 
@@ -118,11 +102,11 @@ public class Provide_Score_Pages extends ActionType
 		StaticWait(1);
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    WebElement ELocation = wait.until(ExpectedConditions.elementToBeClickable(
-	        By.xpath("//small[text()='"+Location+"']/../following-sibling::div/descendant::label/span/span[1]")));
-	    
+	        By.xpath("//small[text()='"+Location+"']/parent::div/following-sibling::div/child::mat-slide-toggle/child::label/child::span[1]/child::span")));	    
+	    wait.until(ExpectedConditions.elementToBeClickable(ELocation));
 	    System.out.println(Location);
-	    Actions actions = new Actions(driver);
-	    actions.moveToElement(ELocation).click().perform();
+	    JavascriptExecutor js=(JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].click();", ELocation);
 	}
 
 	public void Score_Exam() 

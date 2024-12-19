@@ -1,6 +1,6 @@
 package com.Utils;
 
-//import java.nio.file.Paths;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,9 +13,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.logging.LogEntries;
-import org.openqa.selenium.logging.LogEntry;
-import org.openqa.selenium.logging.LogType;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -56,14 +53,6 @@ public class Base {
 	public WebDriver init_driver(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-<<<<<<< HEAD
-//			ChromeOptions options=new ChromeOptions();
-//     		options.addArguments("--headless");
-//     		options.addArguments("--headless");
-//		    options.addArguments("--window-size=1920,1080");
-			//options.addArguments("--remote-allow-origins=*");
-			tlDriver.set(new ChromeDriver());
-=======
 			ChromeOptions options=new ChromeOptions();
      		options.addArguments("--headless");
 //     		options.addArguments("--headless");
@@ -76,7 +65,6 @@ public class Base {
             prefs.put("download.prompt_for_download", false);
             options.setExperimentalOption("prefs", prefs);
 			tlDriver.set(new ChromeDriver(options));
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());

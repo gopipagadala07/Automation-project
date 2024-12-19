@@ -411,11 +411,7 @@ public class ActionType extends Base {
 	 */
 	public int randomNumberGenerator() {
 		Random random = new Random();
-<<<<<<< HEAD
 		int randomNumber=random.nextInt(1000000);
-=======
-		int randomNumber=random.nextInt(100000);
->>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 	        return randomNumber;
 		
 	}
@@ -438,8 +434,7 @@ public class ActionType extends Base {
 		
 	public String generateRandomString()
 	{
-		Random r=new Random();
-		String randomstring = RandomStringUtils.random(6, "abcdefghijklmnopqrstuvwxyz");
+		String randomstring = RandomStringUtils.random(15, "abcdefghijklmnopqrstuvwxyz");
 		return randomstring;
 	}
 //		public String generateRandomString(String type, int length) {

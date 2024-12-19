@@ -1,7 +1,0 @@
-2024-12-12 22:43:04,257 INFO  [rootLogger] Enviornment is : STAGE
-2024-12-12 22:43:04,269 INFO  [rootLogger] Browser value is: CHROME
-2024-12-12 22:43:05,808 INFO  [rootLogger] -----------------Start of Scenario-----------------
-2024-12-12 22:43:05,809 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
-2024-12-12 22:43:36,762 INFO  [rootLogger] Info: Email Id: automation60494@sapphirus.com
-2024-12-12 22:43:36,762 INFO  [rootLogger] Info: Email Id: automation74730@sapphirus.com
-2024-12-12 22:43:40,390 INFO  [rootLogger] -----------------End of Scenario-----------------

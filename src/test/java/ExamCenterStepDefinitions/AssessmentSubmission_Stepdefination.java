@@ -22,11 +22,6 @@ public class AssessmentSubmission_Stepdefination extends ActionType{
 	private LoginPage login=new LoginPage(Base.getDriver());
 	private ExamtakerSubmissionPage Sub=new ExamtakerSubmissionPage(Base.getDriver());
 
-//	@And("clicks on begin test")
-//	public void clicks_on_begin_test() {
-//		Sub.begintest();
-//	}
-
 	@And("Clicks on Launch button")
 	public void clicks_on_launch_button() {
 	    Sub.launchbtn();
@@ -45,18 +40,17 @@ public class AssessmentSubmission_Stepdefination extends ActionType{
 //	}
 
 	@Then("Logout from the Application")
-//	public void Logout_from_the_Application()
-//	{
-//		Sub.logout();
-//	}
+	public void Logout_from_the_Application()
+	{
+		Sub.logout();
+	}
 
 	@Then("Search for particular exam and Click on it {int}")
 	public void search_for_particular_exam_and_click_on_it(Integer rownumber) throws InvalidFormatException, IOException, InterruptedException {
-//		Sub.examinationbtn();
 		testdata=null;
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/User_Details.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/ExamCenterDetails.xlsx", getSheetEnv());
 		}
 		String examname=testdata.get(rownumber).get("ExamName");
 		String schedulename=testdata.get(rownumber).get("ScheduleName");
@@ -65,21 +59,8 @@ public class AssessmentSubmission_Stepdefination extends ActionType{
 
     @Then("Perform and Submit the Test")
 	public void select_all_answers() throws InvalidFormatException, IOException {
-//		testdata=null;
-//		if(testdata==null)
-//		{
-//			testdata=reader.getData("/ExcelFiles/Credentials.xlsx", getSheetEnv());
-//		}
-//		String EtAnswer=testdata.get(Answer).get("Extended Type");
-//		String BlankAnswer=testdata.get(Answer).get("Blank Answer");
 		Sub.Answers();
 	}
-//	@And("submit the Exam")
-//	public void submit_the_exam() {
-//	    
-//	Sub.Finish();
-//	Sub.close();
-//	}
 	@Then("capture the status band")
 	public void Then_capture_the_status_band()
 	{
