@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test1</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Dec 19 14:26:59 IST 2024</td>
+<td>Started on:</td><td>Fri Dec 20 14:55:15 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>233 seconds (233798 ms)</td>
+<tr><td>Total time:</td><td>335 seconds (335217 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,69 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner.runScenario()'><b>runScenario</b><br>Test class: ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Provide the Procter Comment to a ExamTaker", "FocalPointk12 Exam_Center Procter Comment, Reset the Examination"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#tblEntryDetails&quot;}
-  (Session info: chrome=131.0.6778.140)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [648c8d5218326c81146767004538cddb, findElement {using=id, value=tblEntryDetails}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.140, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63997}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63997/devtoo..., se:cdpVersion: 131.0.6778.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 648c8d5218326c81146767004538cddb
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.Examcenter.pages.Enrolled_ExamTaker_in_the_Timeslot_Page.ET_Entry_details(Enrolled_ExamTaker_in_the_Timeslot_Page.java:44)
-	at ExamCenterStepDefinitions.Enroled_ExamTaker_in_a_Timeslot_Stepdefination.user_click_on_exam_taker_entry_details(Enroled_ExamTaker_in_a_Timeslot_Stepdefination.java:30)
-	at ✽.User click on ExamTaker Entry Details(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12ExamCenter/src/test/resources/ExamCenterFeatures/Enrolled_Examtaker_in_TimeSlot.feature:16)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace586681910", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace586681910'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#tblEntryDetails&quot;}
-  (Session info: chrome=131.0.6778.140)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [648c8d5218326c81146767004538cddb, findElement {using=id, value=tblEntryDetails}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.140, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63997}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63997/devtoo..., se:cdpVersion: 131.0.6778.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 648c8d5218326c81146767004538cddb
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.Examcenter.pages.Enrolled_ExamTaker_in_the_Timeslot_Page.ET_Entry_details(Enrolled_ExamTaker_in_the_Timeslot_Page.java:44)
-	at ExamCenterStepDefinitions.Enroled_ExamTaker_in_a_Timeslot_Stepdefination.user_click_on_exam_taker_entry_details(Enroled_ExamTaker_in_a_Timeslot_Stepdefination.java:30)
-	at ✽.User click on ExamTaker Entry Details(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12ExamCenter/src/test/resources/ExamCenterFeatures/Enrolled_Examtaker_in_TimeSlot.feature:16)
-</pre></div></td>
-<td>51</td>
-<td>ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@344f4dea</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -138,20 +75,30 @@ Session ID: 648c8d5218326c81146767004538cddb
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner.runScenario()'><b>runScenario</b><br>Test class: ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create a Time_Slot for the Examination", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot"</td>
+<td></td>
+<td>63</td>
+<td>ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@344f4dea</td></tr>
+<tr>
 <td title='ExamCenterRunners.AssessmentSubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: ExamCenterRunners.AssessmentSubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the Examcenter Examtaker Assessment Submission Functionality", "Checking the Examtaker Assessment Submission"</td>
 <td></td>
-<td>65</td>
-<td>ExamCenterRunners.AssessmentSubmissionRunner@4b6e2263</td></tr>
+<td>72</td>
+<td>ExamCenterRunners.AssessmentSubmissionRunner@1b7c473a</td></tr>
 <tr>
-<td title='ExamCenterRunners.Score_SubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: ExamCenterRunners.Score_SubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Provide the Score at Controller side", "Checking the Examtaker Assessment Submission"</td>
+<td title='ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner.runScenario()'><b>runScenario</b><br>Test class: ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Provide the Procter Comment to a ExamTaker", "FocalPointk12 Exam_Center Procter Comment, Reset the Examination"</td>
 <td></td>
-<td>61</td>
-<td>ExamCenterRunners.Score_SubmissionRunner@1b7c473a</td></tr>
+<td>59</td>
+<td>ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@5e4bd84a</td></tr>
+<tr>
+<td title='ExamCenterRunners.Score_SubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: ExamCenterRunners.Score_SubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Provide the Score at Controller side", "Checking the Examtaker Assessment Scoring Submission"</td>
+<td></td>
+<td>67</td>
+<td>ExamCenterRunners.Score_SubmissionRunner@648c94da</td></tr>
 <tr>
 <td title='ExamCenterRunners.EnrolleRunner.runScenario()'><b>runScenario</b><br>Test class: ExamCenterRunners.EnrolleRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Testing the Test Analytics popup at proctor Enrolle side", "Checking the Test Analytics under Enroller tab at Proctor side"</td>
 <td></td>
-<td>48</td>
-<td>ExamCenterRunners.EnrolleRunner@5e4bd84a</td></tr>
+<td>64</td>
+<td>ExamCenterRunners.EnrolleRunner@2a62b5bc</td></tr>
 </table><p>
 </body>
 </html>

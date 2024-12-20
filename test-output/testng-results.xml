@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="0" failed="1" skipped="0">
+<testng-results total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-20T05:53:34Z" name="Default suite" finished-at="2024-12-20T05:54:49Z" duration-ms="75115">
+  <suite started-at="2024-12-20T09:25:15Z" name="Suite" finished-at="2024-12-20T09:30:50Z" duration-ms="335217">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7d1cfb8b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.AssessmentSubmissionRunner@1b7c473a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@344f4dea]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.EnrolleRunner@2a62b5bc]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@5e4bd84a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Score_SubmissionRunner@648c94da]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-12-20T05:53:34Z" name="Default test" finished-at="2024-12-20T05:54:49Z" duration-ms="75115">
+    <test started-at="2024-12-20T09:25:15Z" name="Test1" finished-at="2024-12-20T09:30:50Z" duration-ms="335217">
       <class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7d1cfb8b]" started-at="2024-12-20T11:23:34Z" name="setUpClass" finished-at="2024-12-20T11:23:34Z" duration-ms="820" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@344f4dea]" started-at="2024-12-20T14:55:15Z" name="setUpClass" finished-at="2024-12-20T14:55:15Z" duration-ms="763" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@52d59507]]>
+                <![CDATA[org.testng.TestRunner@659e003e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7d1cfb8b]" started-at="2024-12-20T11:23:34Z" name="beforeclass" finished-at="2024-12-20T11:23:34Z" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@344f4dea]" started-at="2024-12-20T14:55:15Z" name="beforeclass" finished-at="2024-12-20T14:55:15Z" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeclass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7d1cfb8b]" started-at="2024-12-20T11:23:34Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-20T11:24:44Z" duration-ms="69961" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@344f4dea]" started-at="2024-12-20T14:55:15Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-20T14:56:19Z" duration-ms="63865" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -38,63 +42,182 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//mat-icon[text()='add']"}
-  (Session info: chrome=131.0.6778.205)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b1b7c02177773af281af96965c3e5deb, findElement {using=xpath, value=//mat-icon[text()='add']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50256}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50256/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b1b7c02177773af281af96965c3e5deb]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//mat-icon[text()='add']"}
-  (Session info: chrome=131.0.6778.205)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b1b7c02177773af281af96965c3e5deb, findElement {using=xpath, value=//mat-icon[text()='add']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50256}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50256/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b1b7c02177773af281af96965c3e5deb
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy29.click(Unknown Source)
-	at com.Examcenter.pages.TimeSlotCreation_and_enrollExamataker_Page.addExamtaker(TimeSlotCreation_and_enrollExamataker_Page.java:192)
-	at ExamCenterStepDefinitions.Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.user_add_the_examtaker_in_the_timeslot(Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.java:151)
-	at ✽.User add the Examtaker in the Timeslot(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12ExamCenter/src/test/resources/ExamCenterFeatures/Create_TimeSlot_and_Enroll_the_ExamTaker.feature:23)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7d1cfb8b]" started-at="2024-12-20T11:24:44Z" name="tearDownClass" finished-at="2024-12-20T11:24:49Z" duration-ms="4316" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-        <test-method is-config="true" signature="testDownClass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7d1cfb8b]" started-at="2024-12-20T11:24:44Z" name="testDownClass" finished-at="2024-12-20T11:24:44Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="testDownClass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@344f4dea]" started-at="2024-12-20T14:56:19Z" name="testDownClass" finished-at="2024-12-20T14:56:19Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDownClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@344f4dea]" started-at="2024-12-20T14:56:19Z" name="tearDownClass" finished-at="2024-12-20T14:56:21Z" duration-ms="1628" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
       </class> <!-- ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="ExamCenterRunners.AssessmentSubmissionRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.AssessmentSubmissionRunner@1b7c473a]" started-at="2024-12-20T14:56:21Z" name="setUpClass" finished-at="2024-12-20T14:56:21Z" duration-ms="20" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@659e003e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:ExamCenterRunners.AssessmentSubmissionRunner@1b7c473a]" started-at="2024-12-20T14:56:21Z" name="beforeClass" finished-at="2024-12-20T14:56:21Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.AssessmentSubmissionRunner@1b7c473a]" started-at="2024-12-20T14:56:21Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-20T14:57:33Z" duration-ms="72342" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Checking the Examcenter Examtaker Assessment Submission Functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Checking the Examtaker Assessment Submission"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:ExamCenterRunners.AssessmentSubmissionRunner@1b7c473a]" started-at="2024-12-20T14:57:33Z" name="afterClass" finished-at="2024-12-20T14:57:33Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.AssessmentSubmissionRunner@1b7c473a]" started-at="2024-12-20T14:57:33Z" name="tearDownClass" finished-at="2024-12-20T14:57:35Z" duration-ms="1287" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- ExamCenterRunners.AssessmentSubmissionRunner -->
+      <class name="ExamCenterRunners.Score_SubmissionRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Score_SubmissionRunner@648c94da]" started-at="2024-12-20T14:58:35Z" name="setUpClass" finished-at="2024-12-20T14:58:35Z" duration-ms="13" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@659e003e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Score_SubmissionRunner@648c94da]" started-at="2024-12-20T14:58:35Z" name="beforeclass" finished-at="2024-12-20T14:58:35Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Score_SubmissionRunner@648c94da]" started-at="2024-12-20T14:58:35Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-20T14:59:42Z" duration-ms="67078" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Provide the Score at Controller side"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Checking the Examtaker Assessment Scoring Submission"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Score_SubmissionRunner@648c94da]" started-at="2024-12-20T14:59:42Z" name="tearDownClass" finished-at="2024-12-20T14:59:44Z" duration-ms="1294" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method is-config="true" signature="Afterclass()[pri:0, instance:ExamCenterRunners.Score_SubmissionRunner@648c94da]" started-at="2024-12-20T14:59:42Z" name="Afterclass" finished-at="2024-12-20T14:59:42Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Afterclass -->
+      </class> <!-- ExamCenterRunners.Score_SubmissionRunner -->
+      <class name="ExamCenterRunners.EnrolleRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.EnrolleRunner@2a62b5bc]" started-at="2024-12-20T14:59:44Z" name="setUpClass" finished-at="2024-12-20T14:59:44Z" duration-ms="29" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@659e003e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:ExamCenterRunners.EnrolleRunner@2a62b5bc]" started-at="2024-12-20T14:59:44Z" name="beforeClass" finished-at="2024-12-20T14:59:44Z" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.EnrolleRunner@2a62b5bc]" started-at="2024-12-20T14:59:44Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-20T15:00:48Z" duration-ms="64843" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Testing the Test Analytics popup at proctor Enrolle side"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Checking the Test Analytics under Enroller tab at Proctor side"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.EnrolleRunner@2a62b5bc]" started-at="2024-12-20T15:00:48Z" name="tearDownClass" finished-at="2024-12-20T15:00:50Z" duration-ms="1393" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:ExamCenterRunners.EnrolleRunner@2a62b5bc]" started-at="2024-12-20T15:00:48Z" name="afterClass" finished-at="2024-12-20T15:00:48Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- ExamCenterRunners.EnrolleRunner -->
+      <class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@5e4bd84a]" started-at="2024-12-20T14:57:35Z" name="setUpClass" finished-at="2024-12-20T14:57:35Z" duration-ms="27" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@659e003e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@5e4bd84a]" started-at="2024-12-20T14:57:35Z" name="beforeclass" finished-at="2024-12-20T14:57:35Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@5e4bd84a]" started-at="2024-12-20T14:57:35Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-20T14:58:34Z" duration-ms="59344" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Provide the Procter Comment to a ExamTaker"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["FocalPointk12 Exam_Center Procter Comment, Reset the Examination"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="testDownClass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@5e4bd84a]" started-at="2024-12-20T14:58:34Z" name="testDownClass" finished-at="2024-12-20T14:58:34Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDownClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@5e4bd84a]" started-at="2024-12-20T14:58:34Z" name="tearDownClass" finished-at="2024-12-20T14:58:35Z" duration-ms="1261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner -->
+    </test> <!-- Test1 -->
+  </suite> <!-- Suite -->
 </testng-results>

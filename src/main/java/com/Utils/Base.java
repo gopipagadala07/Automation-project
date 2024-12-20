@@ -64,7 +64,7 @@ public class Base {
             prefs.put("profile.default_content_settings.popups", 0);
             prefs.put("download.prompt_for_download", false);
             options.setExperimentalOption("prefs", prefs);
-			tlDriver.set(new ChromeDriver());
+			tlDriver.set(new ChromeDriver(options));
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());

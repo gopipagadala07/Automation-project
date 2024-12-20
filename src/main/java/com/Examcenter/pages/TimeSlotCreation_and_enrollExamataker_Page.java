@@ -76,10 +76,10 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 
 	public void select_the_Examination(String ExamName, String ScheduleName) {
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		String fullExamScheduleName = ExamName + " - " + ScheduleName;
 		WebElement ExaminationLookupText = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=' Print Exam Takers ']/../../../div[1]/mat-form-field/div/div[1]")));
-		StaticWait(1);
+		StaticWait(2);
 		cp.FPdropdown(ExaminationLookupText, fullExamScheduleName);
 		System.out.println(fullExamScheduleName);
 	}
