@@ -5,6 +5,9 @@
   <test name="Test1">
     <parameter name="browser" value="chrome"/>
     <classes>
+      <class name="ExamCenterRunners.Location_Runner"/>
+      <class name="ExamCenterRunners.Users_Creation_Runner"/>
+      <class name="ExamCenterRunners.Exam_Schedule_runner"/>
       <class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"/>
       <class name="ExamCenterRunners.AssessmentSubmissionRunner"/>
       <class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
