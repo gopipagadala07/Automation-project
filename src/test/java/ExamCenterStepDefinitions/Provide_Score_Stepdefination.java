@@ -34,7 +34,7 @@ public class Provide_Score_Stepdefination extends ActionType
 		PS.searchtxt(L_Name, F_Name);
 	}
 	
-	@Then("User select the the Examination from the from the Lookups {int}")
+	@Then("User select the the Examination from the Lookups {int}")
 	public void user_select_the_the_examination_from_the_from_the_lookups(Integer rownumber) throws InvalidFormatException, IOException 
 	{
 		testdata=null;
@@ -67,7 +67,7 @@ public class Provide_Score_Stepdefination extends ActionType
 	  PS.click_on_Score_Exam_Tab();
 	}
 
-	@And("User select the Examination from the from the Lookups {int}")
+	@And("User select the Examination from the Lookups {int}")
 	public void user_select_the_examination_from_the_from_the_lookups(Integer rownumber) throws InvalidFormatException, IOException 
 	{
 		testdata=null;

@@ -122,7 +122,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 
 	public void select_start_time_from_timepicker() {
 
-		cp.selectCurrentTime(StartTime);
+		cp.selectCurrentTime(StartTime,true);
 	}
 
 	public void okButton() 
@@ -135,7 +135,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 	public void clickon_EndTime() 
 	{
 		StaticWait(1);
-		cp.selectFutureRandomTime(EndTime);
+		cp.selectFutureRandomTime(EndTime,true);
 	}
 
 	
