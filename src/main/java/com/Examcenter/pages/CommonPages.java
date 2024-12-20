@@ -9,6 +9,7 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
@@ -363,7 +364,8 @@ public class CommonPages extends ActionType{
 //	    }
 //	}
 
-	public void selectCurrentTime(WebElement timePickerElement) {
+
+	public void selectCurrentTime(WebElement timePickerElement, boolean useIST) {
 	    int maxRetries = 3;
 	    int attempt = 0;
 	    boolean success = false;
@@ -372,15 +374,24 @@ public class CommonPages extends ActionType{
 	        try {
 	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	            JavascriptExecutor js = (JavascriptExecutor) driver;
-	            ZonedDateTime utcTime = ZonedDateTime.now(ZoneOffset.UTC);
-	            currentHour = utcTime.getHour();
-	            int currentMinute = utcTime.getMinute();
+	            
+	            ZonedDateTime currentTime;
+	            if (useIST) {
+	                currentTime = ZonedDateTime.now(ZoneId.of("Asia/Kolkata"));
+	                System.out.println("Current IST Time: Hour - " + currentTime.getHour() + ", Minute - " + currentTime.getMinute());
+	            } else {
+	                currentTime = ZonedDateTime.now(ZoneOffset.UTC);
+	                System.out.println("Current UTC Time: Hour - " + currentTime.getHour() + ", Minute - " + currentTime.getMinute());
+	            }
+	            
+	            currentHour = currentTime.getHour();
+	            int currentMinute = currentTime.getMinute();
 	            String formattedMinute = String.format("%02d", currentMinute);
 
-	            System.out.println("Current UTC Time: Hour - " + currentHour + ", Minute - " + formattedMinute);
 	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(timePickerElement));
 	            js.executeScript("arguments[0].click();", e);
 	            StaticWait(1);
+	            
 	            int hourDegree = currentHour * 30;
 	            String hourDegreeTransform = "rotateZ(-" + hourDegree + "deg)";
 	            String hourXpath = "//button[contains(@style,'transform: " + hourDegreeTransform + ";')]";
@@ -389,6 +400,7 @@ public class CommonPages extends ActionType{
 	            a.moveToElement(hourElement).perform();
 	            a.click().build().perform();
 	            StaticWait(1);
+	            
 	            int min = (1 + currentMinute) % 60;
 	            formattedMin = String.format("%02d", min);
 	            int minuteDegree = min * 6;
@@ -397,6 +409,7 @@ public class CommonPages extends ActionType{
 	            WebElement minuteElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(minuteXpath)));
 	            a.moveToElement(minuteElement).perform();
 	            a.click().build().perform();
+	            
 	            success = true;
 	            System.out.println("Selected Hour: " + currentHour + ", Minute: " + formattedMin);
 	        } catch (ElementClickInterceptedException e) {
@@ -420,7 +433,8 @@ public class CommonPages extends ActionType{
 	    }
 	}
 
-	public void selectFutureRandomTime(WebElement timePickerElement) {
+
+	public void selectFutureRandomTime(WebElement timePickerElement, boolean useIST) {
 	    int maxRetries = 3;
 	    int attempt = 0;
 	    boolean success = false;
@@ -432,8 +446,16 @@ public class CommonPages extends ActionType{
 	            Random random = new Random();
 
 	            int additionalMinutes = random.nextInt(60) + 1;
-	            LocalTime currentTime = LocalTime.now();
-	            LocalTime futureTime = currentTime.plus(additionalMinutes, ChronoUnit.MINUTES);
+	            ZonedDateTime currentTime;
+	            if (useIST) {
+	                currentTime = ZonedDateTime.now(ZoneId.of("Asia/Kolkata"));
+	                System.out.println("Current IST Time: Hour - " + currentTime.getHour() + ", Minute - " + currentTime.getMinute());
+	            } else {
+	                currentTime = ZonedDateTime.now(ZoneOffset.UTC);
+	                System.out.println("Current UTC Time: Hour - " + currentTime.getHour() + ", Minute - " + currentTime.getMinute());
+	            }
+
+	            ZonedDateTime futureTime = currentTime.plus(additionalMinutes, ChronoUnit.MINUTES);
 	            int futureHour = futureTime.getHour();
 	            EfutureMinute = futureTime.getMinute();
 
@@ -441,7 +463,7 @@ public class CommonPages extends ActionType{
 	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(timePickerElement));
 	            js.executeScript("arguments[0].click();", e);
 	            StaticWait(1);
-	            Ehour=1+futureHour;
+	            Ehour = 1 + futureHour;
 	            int hourDegree = Ehour * 30;
 	            String hourDegreeTransform = "rotateZ(-" + hourDegree + "deg)";
 	            String hourXpath = "//button[contains(@style,'transform: " + hourDegreeTransform + ";')]";
@@ -479,9 +501,6 @@ public class CommonPages extends ActionType{
 	        }
 	    }
 	}
-
-
-
 
 
 	public void scrollWithRobot() throws AWTException {
