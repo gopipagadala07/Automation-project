@@ -149,7 +149,8 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		wait.elementToBeClickable(Enrolleetab);
 		wait.visibilityOf(Enrolleetab);
 		StaticWait(1);
-		Enrolleetab.click();
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", Enrolleetab);
 		StaticWait(1);
 	}
 

@@ -65,17 +65,17 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	public void p_comment() {
 	    int retries = 3;
 	    boolean success = false;
-	    
+
 	    for (int attempt = 0; attempt < retries; attempt++) {
 	        try {
 	            Actions act = new Actions(Base.getDriver());
 	            act.moveToElement(Commenticon).click().build().perform();
-	            StaticWait(2);
-	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	            System.out.println("Comment box clicked");
+	            StaticWait(5);
+	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//textarea[@id='descriptionField']/parent::div/child::div/child::div[2]/child::div[2]")));
 	            if (e.isDisplayed() && e.isEnabled()) {
 	                act.moveToElement(e).click().build().perform();
-	                StaticWait(2);
 	                e.sendKeys(generateRandomString());
 	                System.out.println("Value sent to the comment box");
 	                success = true;
@@ -85,14 +85,15 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	            }
 	        } catch (TimeoutException te) {
 	            System.out.println("Timeout: Element not found or not interactable. Attempt: " + (attempt + 1));
+	            p_comment();
 	        } catch (NoSuchElementException nse) {
 	            System.out.println("No Such Element: The element was not found. Attempt: " + (attempt + 1));
 	        } catch (Exception ex) {
 	            ex.printStackTrace();
 	        }
-
-	        StaticWait(2);
+	        StaticWait(5);
 	    }
+
 	    if (!success) {
 	        System.out.println("Failed to interact with the element after " + retries + " attempts");
 	    }
