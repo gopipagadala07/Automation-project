@@ -420,6 +420,7 @@ public class CommonPages extends ActionType{
 	    }
 	}
 
+
 	public void selectFutureRandomTime(WebElement timePickerElement) {
 	    int maxRetries = 3;
 	    int attempt = 0;
@@ -432,16 +433,16 @@ public class CommonPages extends ActionType{
 	            Random random = new Random();
 
 	            int additionalMinutes = random.nextInt(60) + 1;
-	            LocalTime currentTime = LocalTime.now();
-	            LocalTime futureTime = currentTime.plus(additionalMinutes, ChronoUnit.MINUTES);
+	            ZonedDateTime utcTime = ZonedDateTime.now(ZoneOffset.UTC);
+	            ZonedDateTime futureTime = utcTime.plus(additionalMinutes, ChronoUnit.MINUTES);
 	            int futureHour = futureTime.getHour();
 	            EfutureMinute = futureTime.getMinute();
 
-	            System.out.println("Future Time: Hour - " + futureHour + ", Minute - " + EfutureMinute);
+	            System.out.println("Future UTC Time: Hour - " + futureHour + ", Minute - " + EfutureMinute);
 	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(timePickerElement));
 	            js.executeScript("arguments[0].click();", e);
 	            StaticWait(1);
-	            Ehour=1+futureHour;
+	            Ehour = 1 + futureHour;
 	            int hourDegree = Ehour * 30;
 	            String hourDegreeTransform = "rotateZ(-" + hourDegree + "deg)";
 	            String hourXpath = "//button[contains(@style,'transform: " + hourDegreeTransform + ";')]";
@@ -479,10 +480,6 @@ public class CommonPages extends ActionType{
 	        }
 	    }
 	}
-
-
-
-
 
 	public void scrollWithRobot() throws AWTException {
 		try {
