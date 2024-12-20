@@ -34,6 +34,20 @@ public class Provide_Score_Stepdefination extends ActionType
 		PS.searchtxt(L_Name, F_Name);
 	}
 	
+	@Then("User select the Examination from the Lookups {int}")
+	public void user_select_the_the_examination_from_the_from_the_lookups(Integer rownumber) throws InvalidFormatException, IOException 
+	{
+		testdata=null;
+		if(testdata==null)
+		{
+			testdata=reader.getData("/ExcelFiles/ExamCenterDetails.xlsx", getSheetEnv());
+		}
+		String examname=testdata.get(rownumber).get("ExamName");
+		String schedulename=testdata.get(rownumber).get("ScheduleName");
+		PS.Select_the_Examination(examname, schedulename);
+	}
+	
+
 	@And("Enable the Location {int}")
 	public void enable_the_location(Integer rownumber) throws InvalidFormatException, IOException 
 	{
@@ -53,7 +67,7 @@ public class Provide_Score_Stepdefination extends ActionType
 	  PS.click_on_Score_Exam_Tab();
 	}
 
-	@And("User select the Examination from the Lookups {int}")
+	@And("User select the Score Examination from the Lookups {int}")
 	public void user_select_the_examination_from_the_from_the_lookups(Integer rownumber) throws InvalidFormatException, IOException 
 	{
 		testdata=null;
