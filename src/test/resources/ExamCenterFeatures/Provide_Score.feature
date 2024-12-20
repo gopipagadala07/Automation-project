@@ -16,5 +16,5 @@ Feature: Checking the Examtaker Assessment Scoring Submission
     And User Click on Score button and provide the score
 
     Examples: 
-      | rownumber1 | rownumber  |
-      |          1 |          0 |
+      | rownumber1 | rownumber |
+      |          1 |         0 |
