@@ -76,20 +76,19 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 
 	public void select_the_Examination(String ExamName, String ScheduleName) {
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		String fullExamScheduleName = ExamName + " - " + ScheduleName;
-		WebElement ExaminationLookupText = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=' Print Exam Takers ']/../../../div[1]/mat-form-field/div/div[1]")));
-		StaticWait(1);
-		cp.FPdropdown(ExaminationLookupText, fullExamScheduleName);
+		WebElement ExaminationLookup= wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Examination']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")));
+		StaticWait(2);
+		cp.FPdropdown(ExaminationLookup, fullExamScheduleName);
 		System.out.println(fullExamScheduleName);
 	}
 
 	public void select_the_Location(String Location) {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement LocationlookupText = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=' Print Exam Takers ']/../../../div[2]/mat-form-field/div/div[1]")));
-
-		cp.FPdropdown(LocationlookupText, Location);
+		WebElement Locationlookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Location']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")));
+		cp.FPdropdown(Locationlookup, Location);
 		System.out.println(Location);
 	}
 
