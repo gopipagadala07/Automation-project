@@ -66,6 +66,7 @@ public class ProctorEnrollePage extends ActionType{
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=' "+ExamName+"-"+ScheduleName+" ']/../../td[7]/span/span/button")));
 		JavascriptExecutor js=(JavascriptExecutor) driver;
+		StaticWait(1);
 		js.executeScript("arguments[0].click();", e);
 		driver.switchTo().frame(0);	    
 	}
