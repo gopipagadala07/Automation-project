@@ -74,7 +74,7 @@ public class ProctorEnrollePage extends ActionType{
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement e=wait.until(ExpectedConditions.elementToBeClickable(ExamtakerName));
 		wait.until(ExpectedConditions.visibilityOf(ExamtakerName));
-		StaticWait(1);
+		StaticWait(5);
 		String s=e.getText();
 		ExtentCucumberAdapter.addTestStepLog(s);
 		if(s.equalsIgnoreCase(Examtaker))
