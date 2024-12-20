@@ -1,0 +1,5 @@
+2024-01-18 17:29:00,746 INFO  [rootLogger] Enviornment is : PROD
+2024-01-18 17:29:00,753 INFO  [rootLogger] Browser value is: CHROME
+2024-01-18 17:29:02,093 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-01-18 17:29:02,116 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-01-18 17:29:08,053 INFO  [rootLogger] Browser value is: CHROME

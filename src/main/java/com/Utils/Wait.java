@@ -1,0 +1,62 @@
+package com.Utils;
+
+import java.time.Duration;
+
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+
+public class Wait extends Base{
+	
+	WebDriver driver;
+	      Actions actions;
+          FluentWait<WebDriver> wait1;
+	
+	@SuppressWarnings("unchecked")
+	public Wait(WebDriver driver) {
+		this.driver=driver;
+		actions = new Actions(driver);
+		wait1 = new FluentWait(driver).withTimeout(Duration.ofSeconds(30)).pollingEvery(Duration.ofSeconds(1))
+				.ignoring(NoSuchElementException.class).ignoring(ElementClickInterceptedException.class);
+		
+	}
+	
+	public void elementToBeClickable(WebElement element) {
+		wait1.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
+	public void	visibilityOf(WebElement element) {
+		wait1.until(ExpectedConditions.visibilityOf(element));
+	}
+	
+	public void elementToBeSelected(WebElement element) {
+		wait1.until(ExpectedConditions.elementToBeSelected(element));
+	}
+	
+	public void invisibilityOf(WebElement element) {
+		wait1.until(ExpectedConditions.invisibilityOf(element));
+	}
+//	elementToBeSelected()
+//	frameToBeAvaliableAndSwitchToIt()
+//	invisibilityOfTheElementLocated()
+//	invisibilityOfElementWithText()
+//	presenceOfAllElementsLocatedBy()
+//	presenceOfElementLocated()
+//	textToBePresentInElement()
+//	textToBePresentInElementLocated()
+//	textToBePresentInElementValue()
+//	titleIs()
+//	titleContains()
+//	visibilityOf()
+//	visibilityOfAllElements()
+//	visibilityOfAllElementsLocatedBy()
+//	visibilityOfElementLocated()
+
+	
+
+}
