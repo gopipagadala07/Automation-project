@@ -84,7 +84,6 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	            }
 	        } catch (TimeoutException te) {
 	            System.out.println("Timeout: Element not found or not interactable. Attempt: " + (attempt + 1));
-	            p_comment();
 	        } catch (NoSuchElementException nse) {
 	            System.out.println("No Such Element: The element was not found. Attempt: " + (attempt + 1));
 	        } catch (Exception ex) {
