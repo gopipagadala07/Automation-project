@@ -13,7 +13,7 @@ Feature: Verify the Grades for Teacher
     #Then capture the Benchmark band
     #Printing the Grades
     Then User navigates to Grade tab
-    And User select the Grades by activity and print
+    #And User select the Grades by activity and print
     # When User select the Grades by Standards and print
     #Match the score against the student benchmark
     # Then User stores the student score

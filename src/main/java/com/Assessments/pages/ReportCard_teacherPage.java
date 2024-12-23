@@ -1,11 +1,17 @@
 package com.Assessments.pages;
 
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -21,6 +27,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class ReportCard_teacherPage extends ActionType{
 
@@ -127,21 +134,30 @@ public class ReportCard_teacherPage extends ActionType{
 		//gradetab.click();
 		StaticWait(2);
 		print.click();
-
+		StaticWait(2);
 	}
-	public void moveDownloadedFile(String downloadedFileName) {
-        try {
-            Path downloadDir = Paths.get(System.getProperty("user.home"), "Downloads");
-            Path source = downloadDir.resolve(downloadedFileName);
-            Path targetDir = Paths.get(System.getProperty("user.dir"), "ReportCard");
-            Files.createDirectories(targetDir);
-            Path target = targetDir.resolve(downloadedFileName);
-            Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
-            System.out.println("File moved to: " + target.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
+	public void attachDownloadedFileToReport() {
+	    try {
+	        Path downloadDir = Paths.get(System.getProperty("user.home"), "Downloads");
+	        Optional<Path> latestFile = Files.list(downloadDir)
+	            .filter(Files::isRegularFile)
+	            .max(Comparator.comparingLong(p -> p.toFile().lastModified()));
+
+	        if (latestFile.isPresent()) {
+	            Path source = latestFile.get();
+	            System.out.println("Latest file found: " + source.toString());
+	            String filePath = source.toAbsolutePath().toString();
+	            String fileLink = "<a href='file:///" + filePath + "' target='_blank'>Download Grades File</a>";
+	            ExtentCucumberAdapter.addTestStepLog("Latest file found: " + source.toString() + " - " + fileLink);
+	        } else {
+	            System.out.println("No files found in the Downloads directory.");
+	        }
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+
 	public void standard()
 	{
 		StaticWait(2);
