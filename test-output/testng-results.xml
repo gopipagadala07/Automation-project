@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
 =======
 <testng-results total="10" passed="10" failed="0" skipped="0">
 >>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+=======
+<testng-results total="1" passed="1" failed="0" skipped="0">
+>>>>>>> branch 'ExamCenter-G' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <suite started-at="2024-12-13T17:14:28 IST" name="Default suite" finished-at="2024-12-13T17:16:06 IST" duration-ms="97353">
 =======
   <suite started-at="2024-12-20T09:45:13Z" name="Suite" finished-at="2024-12-20T09:55:57Z" duration-ms="643750">
 >>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+=======
+  <suite started-at="2024-12-23T07:10:22Z" name="Default suite" finished-at="2024-12-23T07:11:29Z" duration-ms="66451">
+>>>>>>> branch 'ExamCenter-G' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     <groups>
       <group name="cucumber">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.ScoreSubmissionRunner@624ea235]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
 =======
@@ -25,8 +34,12 @@
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Score_SubmissionRunner@1f3f02ee]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@535779e4]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
 >>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+=======
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.EnrolleRunner@63787180]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+>>>>>>> branch 'ExamCenter-G' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
       </group> <!-- cucumber -->
     </groups>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <test started-at="2024-12-13T17:14:28 IST" name="Default test" finished-at="2024-12-13T17:16:06 IST" duration-ms="97353">
       <class name="AssessmentsRunner.ScoreSubmissionRunner">
@@ -365,23 +378,26 @@
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- ExamCenterRunners.Location_Runner -->
+=======
+    <test started-at="2024-12-23T07:10:22Z" name="Default test" finished-at="2024-12-23T07:11:29Z" duration-ms="66451">
+>>>>>>> branch 'ExamCenter-G' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
       <class name="ExamCenterRunners.EnrolleRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.EnrolleRunner@1fde5d22]" started-at="2024-12-20T15:25:04Z" name="setUpClass" finished-at="2024-12-20T15:25:04Z" duration-ms="13" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.EnrolleRunner@63787180]" started-at="2024-12-23T12:40:22Z" name="setUpClass" finished-at="2024-12-23T12:40:23Z" duration-ms="833" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@578036a2]]>
+                <![CDATA[org.testng.TestRunner@2e1291a4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:ExamCenterRunners.EnrolleRunner@1fde5d22]" started-at="2024-12-20T15:25:04Z" name="beforeClass" finished-at="2024-12-20T15:25:04Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:ExamCenterRunners.EnrolleRunner@63787180]" started-at="2024-12-23T12:40:23Z" name="beforeClass" finished-at="2024-12-23T12:40:23Z" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.EnrolleRunner@1fde5d22]" started-at="2024-12-20T15:25:04Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-20T15:25:55Z" duration-ms="51624" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.EnrolleRunner@63787180]" started-at="2024-12-23T12:40:23Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-23T12:41:27Z" duration-ms="63495" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -397,15 +413,16 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:ExamCenterRunners.EnrolleRunner@1fde5d22]" started-at="2024-12-20T15:25:55Z" name="afterClass" finished-at="2024-12-20T15:25:56Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:ExamCenterRunners.EnrolleRunner@63787180]" started-at="2024-12-23T12:41:27Z" name="afterClass" finished-at="2024-12-23T12:41:27Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.EnrolleRunner@1fde5d22]" started-at="2024-12-20T15:25:56Z" name="tearDownClass" finished-at="2024-12-20T15:25:57Z" duration-ms="1336" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.EnrolleRunner@63787180]" started-at="2024-12-23T12:41:27Z" name="tearDownClass" finished-at="2024-12-23T12:41:29Z" duration-ms="2103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- ExamCenterRunners.EnrolleRunner -->
+<<<<<<< HEAD
       <class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner">
         <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@24111ef1]" started-at="2024-12-20T15:22:55Z" name="setUpClass" finished-at="2024-12-20T15:22:55Z" duration-ms="16" status="PASS">
           <params>
@@ -450,4 +467,8 @@
     </test> <!-- Test1 -->
   </suite> <!-- Suite -->
 >>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+=======
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+>>>>>>> branch 'ExamCenter-G' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 </testng-results>

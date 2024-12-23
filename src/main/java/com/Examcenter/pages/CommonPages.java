@@ -55,7 +55,7 @@ public class CommonPages extends ActionType{
 
 	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Save')]")
 	public WebElement Savebtn;
-	@FindBy(how = How.XPATH,using="//input[@type= 'search']")private WebElement searchInputs;
+	@FindBy(how = How.XPATH,using="//input[@type='search']")private WebElement searchInputs;
 	@FindBy(how = How.XPATH,using="//button[@aria-label='Choose month and year']")
 	public WebElement yearSelection;
 	@FindBy(how = How.XPATH,using="//button[@aria-label='Choose date']")
@@ -101,6 +101,9 @@ public class CommonPages extends ActionType{
 	}
 	public void searchField(String value) {
 		wait.visibilityOf(searchInputs);
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(searchInputs));
+		wait.until(ExpectedConditions.visibilityOf(searchInputs));
 		searchInputs.sendKeys(value);
 		StaticWait(1);
 	}
@@ -108,33 +111,36 @@ public class CommonPages extends ActionType{
 		wait.elementToBeClickable(searchforTest);
 		searchforTest.sendKeys(TestName);
 	}
-	public void FPdropdown(WebElement element, String visibleText) {
-		try {
-
-			wait.elementToBeClickable(element);
-			Actions actions = new Actions(driver);
-			actions.moveToElement(element).perform();
-			StaticWait(1);
-			actions.click().build().perform();
-			StaticWait(1);
-			List<WebElement> options =element.findElements(By.xpath("following::div[@role='listbox']/mat-option"));
-			for(WebElement option:options) {
-				String actual = option.getText().trim();
-				//System.out.println(actual);
-				if(actual.contains(visibleText)) {
-					WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-					WebElement e=wait.until(ExpectedConditions.elementToBeClickable(option));
-					JavascriptExecutor js=(JavascriptExecutor) driver;
-					js.executeScript("arguments[0].click();", e);
-					break;
-				}		
-			}
-		} catch (Exception e) {
-			SoftAssert soft =new SoftAssert();
-			soft.fail();
-			e.printStackTrace();
-		}	
-	}
+	  public void FPdropdown(WebElement element, String visibleText) {
+	        try {
+	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	            wait.until(ExpectedConditions.elementToBeClickable(element));
+	            Actions actions = new Actions(driver);
+	            actions.moveToElement(element).perform();
+	            StaticWait(1);
+	            actions.click().build().perform();
+	            StaticWait(1);
+	            List<WebElement> options = element.findElements(By.xpath("following::div[@role='listbox']/mat-option"));
+	            for (WebElement option : options) {
+	                String actual = option.getText().trim();
+	                if (actual.contains(visibleText)) {
+	                    try {
+	                        WebElement e = wait.until(ExpectedConditions.elementToBeClickable(option));
+	                        e.click();
+	                    } catch (ElementClickInterceptedException ex) {
+	                        JavascriptExecutor js = (JavascriptExecutor) driver;
+	                        js.executeScript("arguments[0].scrollIntoView(true);", option);
+	                        js.executeScript("arguments[0].click();", option);
+	                    }
+	                    break;
+	                }
+	            }
+	        } catch (Exception e) {
+	            SoftAssert soft = new SoftAssert();
+	            soft.fail();
+	            e.printStackTrace();
+	        }
+	    }
 
 	public void InsertdataIntoExcel(String Path, String Sheet, String Value, int colNum) throws Exception, IOException {
 

@@ -20,7 +20,7 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test" verbose="2">
     <classes>
-      <class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"/>
+      <class name="ExamCenterRunners.EnrolleRunner"/>
     </classes>
   </test> <!-- Default test -->
 >>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
