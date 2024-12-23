@@ -87,7 +87,19 @@ public class BenchmarksPage extends ActionType {
 		return driver.findElement(By.xpath(xpath));
 	}
 	public void clickOnNewBencmark() {
-		NewBenchmarkName(BenchMarkname).click();
+		for(int retry=0;retry<=3;retry++)
+		{
+			try {
+				JavascriptExecutor js=(JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", NewBenchmarkName(BenchMarkname));
+				break;
+			}catch (StaleElementReferenceException e) {
+				retry++;
+				System.out.println("Stale Element referenec Exception occuring..!!");
+			}
+		}
+		
+		//NewBenchmarkName(BenchMarkname).click();
 	}
 	public BenchmarksPage(WebDriver driver) {
 		this.driver = driver;

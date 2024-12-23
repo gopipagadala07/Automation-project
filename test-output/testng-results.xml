@@ -1,55 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-23T11:12:24 IST" name="Default suite" finished-at="2024-12-23T11:13:18 IST" duration-ms="54699">
+  <suite started-at="2024-12-23T16:01:31 IST" name="Default suite" finished-at="2024-12-23T16:02:32 IST" duration-ms="61341">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.Reportcard_TeacherRunner@624ea235]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.PerformingExamRunner@6b09fb41]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-12-23T11:12:24 IST" name="Default test" finished-at="2024-12-23T11:13:18 IST" duration-ms="54699">
-      <class name="AssessmentsRunner.Reportcard_TeacherRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.Reportcard_TeacherRunner@624ea235]" started-at="2024-12-23T11:12:24 IST" name="setUpClass" finished-at="2024-12-23T11:12:25 IST" duration-ms="977" status="PASS">
+    <test started-at="2024-12-23T16:01:31 IST" name="Default test" finished-at="2024-12-23T16:02:32 IST" duration-ms="61341">
+      <class name="AssessmentsRunner.PerformingExamRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.PerformingExamRunner@6b09fb41]" started-at="2024-12-23T16:01:31 IST" name="setUpClass" finished-at="2024-12-23T16:01:32 IST" duration-ms="1293" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@7227926b]]>
+                <![CDATA[org.testng.TestRunner@4780341]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.Reportcard_TeacherRunner@624ea235]" started-at="2024-12-23T11:12:25 IST" name="beforeClass" finished-at="2024-12-23T11:12:25 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.PerformingExamRunner@6b09fb41]" started-at="2024-12-23T16:01:32 IST" name="beforeClass" finished-at="2024-12-23T16:01:32 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.Reportcard_TeacherRunner@624ea235]" started-at="2024-12-23T11:12:25 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-23T11:13:15 IST" duration-ms="50076" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.PerformingExamRunner@6b09fb41]" started-at="2024-12-23T16:01:32 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-23T16:02:29 IST" duration-ms="57573" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Checking the Student Reports by Grades"]]>
+                <![CDATA["Submitting Exam"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Verify the Grades for Teacher"]]>
+                <![CDATA["Performing Exam at student side"]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//mat-tab-body/div/following::mat-tab-body)[2]/div/app-benchmark-delivery/div/div[2]/div/div/span/following::div[2]/child::button/span/child::mat-icon"}
+  (Session info: chrome=131.0.6778.205)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c5fa8bf826636695656073e4c58846a1, findElement {value=(//mat-tab-body/div/following::mat-tab-body)[2]/div/app-benchmark-delivery/div/div[2]/div/div/span/following::div[2]/child::button/span/child::mat-icon, using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63574}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63574/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c5fa8bf826636695656073e4c58846a1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//mat-tab-body/div/following::mat-tab-body)[2]/div/app-benchmark-delivery/div/div[2]/div/div/span/following::div[2]/child::button/span/child::mat-icon"}
+  (Session info: chrome=131.0.6778.205)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c5fa8bf826636695656073e4c58846a1, findElement {value=(//mat-tab-body/div/following::mat-tab-body)[2]/div/app-benchmark-delivery/div/div[2]/div/div/span/following::div[2]/child::button/span/child::mat-icon, using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63574}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63574/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c5fa8bf826636695656073e4c58846a1
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy28.isDisplayed(Unknown Source)
+at com.Assessments.pages.PerformingexamPages.ClickOnLaunchAndCompleteExam(PerformingexamPages.java:105)
+at AssessmentsStepdef.ExamSubmissionStepdefinitions.User_will_launch_and_submit_all_Exams(ExamSubmissionStepdefinitions.java:44)
+at ✽.User will launch and submit all Exams(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/PerformingExam.feature:11)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.Reportcard_TeacherRunner@624ea235]" started-at="2024-12-23T11:13:15 IST" name="afterClass" finished-at="2024-12-23T11:13:15 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.PerformingExamRunner@6b09fb41]" started-at="2024-12-23T16:02:29 IST" name="afterClass" finished-at="2024-12-23T16:02:29 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.Reportcard_TeacherRunner@624ea235]" started-at="2024-12-23T11:13:15 IST" name="tearDownClass" finished-at="2024-12-23T11:13:18 IST" duration-ms="3602" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.PerformingExamRunner@6b09fb41]" started-at="2024-12-23T16:02:29 IST" name="tearDownClass" finished-at="2024-12-23T16:02:32 IST" duration-ms="2403" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- AssessmentsRunner.Reportcard_TeacherRunner -->
+      </class> <!-- AssessmentsRunner.PerformingExamRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

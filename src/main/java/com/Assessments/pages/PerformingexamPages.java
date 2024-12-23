@@ -102,6 +102,10 @@ public class PerformingexamPages extends ActionType {
 		Robot robot = new Robot();
 		int retry = 0;
 		int maxRetry = 5;
+		if (Examlist == null || !Examlist.isDisplayed() || !Examlist.isEnabled()) {
+	        System.out.println("Exam list is not available. Exiting the loop.");
+	        return;
+	    }
 		while (retry < maxRetry) {
 			try {
 				js.executeScript("arguments[0].click();", Examlist);
@@ -166,7 +170,6 @@ public class PerformingexamPages extends ActionType {
 				StaticWait(1);
 				System.out.println("Exam Submitted Successfully...!!!");
 				break;
-
 			}catch (Exception e) {
 				System.out.println("Attempt " + (retry + 1) + " failed with exception: " + e.getMessage());
 			}

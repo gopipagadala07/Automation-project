@@ -12,7 +12,6 @@ import com.Assessments.pages.CommonPages;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.ExcelReader;
-import com.Utils.ExtentReportUtil;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
@@ -25,7 +24,6 @@ public class ReportCard_teacherStepdefinitions extends ActionType {
     ExcelReader reader = new ExcelReader();
     CommonPages cp = new CommonPages(Base.getDriver());
     static List<Map<String, String>> testdata = null;
-    private ExtentTest extentTest;
     @Then("User Click on Assessment Centre tab under Learning in Left menu")
     public void user_click_on_assessment_centre_tab_under_learning_in_left_menu() {
         benchmarkTeacher.learning();
