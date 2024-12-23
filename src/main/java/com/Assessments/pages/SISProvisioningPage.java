@@ -148,7 +148,7 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void Sectiontab()
 	{
-		WebDriverWait wait=new WebDriverWait(driver, 10);
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(Sectiontab));
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", Sectiontab);

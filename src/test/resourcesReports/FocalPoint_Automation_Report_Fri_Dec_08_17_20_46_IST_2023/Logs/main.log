@@ -1,7 +1,0 @@
-2023-12-08 17:20:46,209 INFO  [rootLogger] Enviornment is : STAGE
-2023-12-08 17:20:46,214 INFO  [rootLogger] Browser value is: CHROME
-2023-12-08 17:20:47,944 INFO  [rootLogger] -----------------Start of Scenario-----------------
-2023-12-08 17:20:47,944 INFO  [rootLogger] Loading URL ... https://ade-stage.backpack.education/
-2023-12-08 17:20:56,782 INFO  [rootLogger] Info: Username : pc.controller1.5
-2023-12-08 17:20:56,870 INFO  [rootLogger] Info: Password : @Abcd1234
-2023-12-08 17:21:12,115 INFO  [rootLogger] -----------------End of Scenario-----------------

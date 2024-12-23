@@ -41,22 +41,5 @@ public class Wait extends Base{
 	public void invisibilityOf(WebElement element) {
 		wait1.until(ExpectedConditions.invisibilityOf(element));
 	}
-//	elementToBeSelected()
-//	frameToBeAvaliableAndSwitchToIt()
-//	invisibilityOfTheElementLocated()
-//	invisibilityOfElementWithText()
-//	presenceOfAllElementsLocatedBy()
-//	presenceOfElementLocated()
-//	textToBePresentInElement()
-//	textToBePresentInElementLocated()
-//	textToBePresentInElementValue()
-//	titleIs()
-//	titleContains()
-//	visibilityOf()
-//	visibilityOfAllElements()
-//	visibilityOfAllElementsLocatedBy()
-//	visibilityOfElementLocated()
-
-	
 
 }

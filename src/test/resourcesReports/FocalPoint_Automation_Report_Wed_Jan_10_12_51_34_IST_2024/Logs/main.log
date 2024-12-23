@@ -1,9 +1,0 @@
-2024-01-10 12:51:34,360 INFO  [rootLogger] Enviornment is : PROD
-2024-01-10 12:51:34,362 INFO  [rootLogger] Browser value is: CHROME
-2024-01-10 12:51:35,851 INFO  [rootLogger] -----------------Start of Scenario-----------------
-2024-01-10 12:51:35,852 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
-2024-01-10 12:52:09,628 INFO  [rootLogger] -----------------End of Scenario-----------------
-2024-01-10 12:52:09,636 INFO  [rootLogger] Browser value is: CHROME
-2024-01-10 12:52:10,438 INFO  [rootLogger] -----------------Start of Scenario-----------------
-2024-01-10 12:52:10,439 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
-2024-01-10 12:52:11,493 INFO  [rootLogger] -----------------End of Scenario-----------------

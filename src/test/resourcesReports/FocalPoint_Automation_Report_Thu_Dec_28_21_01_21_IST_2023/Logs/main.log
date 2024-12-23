@@ -1,7 +1,0 @@
-2023-12-28 21:01:21,738 INFO  [rootLogger] Enviornment is : PROD
-2023-12-28 21:01:21,741 INFO  [rootLogger] Browser value is: CHROME
-2023-12-28 21:01:23,480 INFO  [rootLogger] -----------------Start of Scenario-----------------
-2023-12-28 21:01:23,480 INFO  [rootLogger] Loading URL ... https://ade.backpack.education/
-2023-12-28 21:01:37,725 INFO  [rootLogger] Info: Username : prod.controller02.5
-2023-12-28 21:01:37,801 INFO  [rootLogger] Info: Password : @Abcd1234
-2023-12-28 21:01:53,265 INFO  [rootLogger] -----------------End of Scenario-----------------

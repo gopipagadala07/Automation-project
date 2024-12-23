@@ -1,5 +1,4 @@
 package com.Utils;
-
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -8,7 +7,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 import org.apache.log4j.PropertyConfigurator;
-
 
 public class Logs {
 	static Logger log;
@@ -34,7 +32,6 @@ public class Logs {
 	private static void init() {
 		if (log == null) {
 			try {
-				
 				InputStream in = Logs.class.getClassLoader()
 		                .getResourceAsStream("log4j.properties");
 				PropertyConfigurator.configure(props);

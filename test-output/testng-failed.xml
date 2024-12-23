@@ -3,6 +3,7 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="AssessmentsRunner.ScoreSubmissionRunner">
         <methods>
           <include name="setUpClass"/>
@@ -12,6 +13,21 @@
           <include name="beforeClass"/>
         </methods>
       </class> <!-- AssessmentsRunner.ScoreSubmissionRunner -->
+=======
+      <class name="ExamCenterRunners.Location_Runner"/>
+      <class name="ExamCenterRunners.Users_Creation_Runner"/>
+      <class name="ExamCenterRunners.Exam_Schedule_runner"/>
+      <class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"/>
+      <class name="ExamCenterRunners.AssessmentSubmissionRunner"/>
+      <class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
+      <class name="ExamCenterRunners.Score_SubmissionRunner"/>
+      <class name="ExamCenterRunners.EnrolleRunner"/>
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     </classes>
+<<<<<<< HEAD
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
+=======
+  </test> <!-- Test1 -->
+</suite> <!-- Failed suite [Suite] -->
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0

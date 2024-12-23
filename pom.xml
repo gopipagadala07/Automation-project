@@ -1,20 +1,9 @@
-<<<<<<< HEAD
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>FPK12AutomationProject</groupId>
   <artifactId>FPK12AutomationProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>FPK12AutomationProject</name>
-</project>
-=======
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>FPK12-AssessmentCenter</groupId>
-	<artifactId>FPK12-AssessmentCenter</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-
 	<dependencies>
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -23,6 +12,11 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.18.1</version>
 		</dependency>
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.2</version>
+		</dependency>
 		<!--
 		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 		<dependency>
@@ -30,11 +24,7 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.7.0</version>
 		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-support</artifactId>
-			<version>4.0.0</version>
-		</dependency>
+
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -105,7 +95,19 @@
 			<artifactId>extent-pdf-report</artifactId>
 			<version>2.12.0</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+		<!--	<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>3.0.1</version>
+		</dependency>-->
+		<!--
+		https://mvnrepository.com/artifact/org.apache.pdfbox/fontbox -->
+		<!--<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>fontbox</artifactId>
+			<version>3.0.1</version>
+		</dependency>-->
 		<!--
 		https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
 		<dependency>
@@ -130,10 +132,9 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.7.0</version>
+			<version>6.9.10</version>
 			<scope>compile</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -146,7 +147,6 @@
 			<version>1.48</version>
 		</dependency>
 	</dependencies>
-
 
 	<build>
 		<plugins>
@@ -163,14 +163,17 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.1</version>
+				<version>3.0.0-M5</version>
 				<configuration>
+					<systemPropertyVariables>
+						<env>${env}</env>
+					</systemPropertyVariables>
 					<suiteXmlFiles>
-						<suiteXmlFile>src\test\resources\testng.xml</suiteXmlFile>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<suiteXmlFile>testng1.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 </project>
->>>>>>> branch 'FPK12-AssessmentCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0

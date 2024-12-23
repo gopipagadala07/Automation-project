@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
+<<<<<<< HEAD
       <class name="AssessmentsRunner.ScoreSubmissionRunner">
         <methods>
           <include name="setUpClass"/>
@@ -33,4 +34,16 @@
       </class> <!-- AssessmentsRunner.Teacher_ActivityprogressRunner -->
     </classes>
   </test> <!-- Test(failed) -->
+=======
+      <class name="ExamCenterRunners.Location_Runner"/>
+      <class name="ExamCenterRunners.Users_Creation_Runner"/>
+      <class name="ExamCenterRunners.Exam_Schedule_runner"/>
+      <class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"/>
+      <class name="ExamCenterRunners.AssessmentSubmissionRunner"/>
+      <class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
+      <class name="ExamCenterRunners.Score_SubmissionRunner"/>
+      <class name="ExamCenterRunners.EnrolleRunner"/>
+    </classes>
+  </test> <!-- Test1 -->
+>>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 </suite> <!-- Failed suite [Suite] -->
