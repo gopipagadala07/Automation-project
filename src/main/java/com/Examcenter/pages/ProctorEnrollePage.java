@@ -14,7 +14,7 @@ import java.util.Optional;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -48,8 +48,8 @@ public class ProctorEnrollePage extends ActionType{
 		Actions a=new Actions(driver);
 		a.moveToElement(enrolleTab).build().perform();
 		a.doubleClick().perform();
-//		JavascriptExecutor js=(JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].click();", enrolleTab);
+		//		JavascriptExecutor js=(JavascriptExecutor) driver;
+		//		js.executeScript("arguments[0].click();", enrolleTab);
 	}
 	public void select_the_Examination(String ExamName, String ScheduleName) {
 
@@ -58,17 +58,34 @@ public class ProctorEnrollePage extends ActionType{
 		WebElement ExaminationLookupText = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Examination ']/parent::label/parent::span/preceding-sibling::mat-select/parent::div")));
 		StaticWait(1);
 		cp.FPdropdown(ExaminationLookupText, fullExamScheduleName);
-//		System.out.println(fullExamScheduleName);
+		//		System.out.println(fullExamScheduleName);
 	}
 
 	public void TestAnalytics(String ExamName, String ScheduleName)
 	{
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=' "+ExamName+"-"+ScheduleName+" ']/../../td[7]/span/span/button")));
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		StaticWait(1);
-		js.executeScript("arguments[0].click();", e);
-		driver.switchTo().frame(0);	    
+		int maxretry=5;
+		for(int retry=0;retry<=maxretry;retry++)
+		{
+			try {
+				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=' "+ExamName+"-"+ScheduleName+" ']/parent::td/parent::tr/child::td[7]/child::span/child::span/child::button[1]")));
+				JavascriptExecutor js=(JavascriptExecutor) driver;
+				StaticWait(1);
+				js.executeScript("arguments[0].click();", e);
+				driver.switchTo().frame(0);	
+				break;
+			}catch (StaleElementReferenceException e) {
+				if (retry == maxretry) {
+					System.out.println("Max retries reached, unable to find the element.");
+					break;
+				}
+				System.out.println("StaleElementReferenceException, retrying... Attempt: " + (retry + 1));
+			}
+			catch (Exception e) {
+				System.out.println("Exception occurred: " + e.getMessage());
+				break;
+			}
+		}   
 	}
 	public void printExamtakerName(String Examtaker)
 	{
@@ -90,33 +107,21 @@ public class ProctorEnrollePage extends ActionType{
 		wait.until(ExpectedConditions.visibilityOf(printtestanalytics));
 		StaticWait(2);
 		printtestanalytics.click();
+		StaticWait(2);
 	}
-
-	public void moveLatestDownloadedFile() {
+	public void attachDownloadedFileToReport() {
 	    try {
-	        LocalDateTime now = LocalDateTime.now();
-	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM_dd_yyyy,_h_mm_ss_a");
-	        String currentDateTime = now.format(formatter).toUpperCase();
 	        Path downloadDir = Paths.get(System.getProperty("user.home"), "Downloads");
-	        Path reportCardDir = Paths.get(System.getProperty("user.dir"), "ReportCard");
-	        if (Files.exists(reportCardDir)) {
-	            Files.walk(reportCardDir)
-	                .sorted(Comparator.reverseOrder())
-	                .map(Path::toFile)
-	                .forEach(File::delete);
-	        }
-	        Files.createDirectories(reportCardDir);
 	        Optional<Path> latestFile = Files.list(downloadDir)
 	            .filter(Files::isRegularFile)
 	            .max(Comparator.comparingLong(p -> p.toFile().lastModified()));
 
 	        if (latestFile.isPresent()) {
 	            Path source = latestFile.get();
-	            String dirName = "Student_Summary_" + currentDateTime;
-	            Path target = reportCardDir.resolve(dirName + ".pdf");
-	            Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
-	            System.out.println("File moved to: " + target.toString());
-	            ExtentCucumberAdapter.addTestStepLog("File moved to: " + target.toString());
+	            System.out.println("Latest file found: " + source.toString());
+	            String filePath = source.toAbsolutePath().toString();
+	            String fileLink = "<a href='file:///" + filePath + "' target='_blank'>Download Grades File</a>";
+	            ExtentCucumberAdapter.addTestStepLog("Latest file found: " + source.toString() + " - " + fileLink);
 	        } else {
 	            System.out.println("No files found in the Downloads directory.");
 	        }
@@ -124,8 +129,4 @@ public class ProctorEnrollePage extends ActionType{
 	        e.printStackTrace();
 	    }
 	}
-
-
-
-
 }

@@ -55,16 +55,7 @@ public class Base {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options=new ChromeOptions();
      		options.addArguments("--headless");
-//     		options.addArguments("--headless");
-//		    options.addArguments("--window-size=1920,1080");
-			//options.addArguments("--remote-allow-origins=*");
-     		Map<String, Object> prefs = new HashMap<String, Object>();
-           // String downloadFilepath = Paths.get(System.getProperty("user.home") + "/Downloads").toString();
-           // prefs.put("download.default_directory",downloadFilepath);
-            prefs.put("profile.default_content_settings.popups", 0);
-            prefs.put("download.prompt_for_download", false);
-            options.setExperimentalOption("prefs", prefs);
-			tlDriver.set(new ChromeDriver(options));
+			tlDriver.set(new ChromeDriver());
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());

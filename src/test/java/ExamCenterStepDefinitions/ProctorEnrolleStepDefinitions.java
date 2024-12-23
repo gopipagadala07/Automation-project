@@ -85,6 +85,6 @@ public class ProctorEnrolleStepDefinitions extends ActionType{
 		String LastName=testdata.get(rownumber).get("LastName");
 		String FirstName=testdata.get(rownumber).get("FirstName");
 		pe.printExamtakerName(LastName+" "+FirstName);
-        pe.moveLatestDownloadedFile();
+        pe.attachDownloadedFileToReport();
 	}
 }
