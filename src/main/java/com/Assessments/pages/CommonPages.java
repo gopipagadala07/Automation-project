@@ -197,6 +197,7 @@ public class CommonPages extends ActionType{
 		};
 		return monthNames[month - 1];
 	}
+	
 	public void getRandomDate(WebElement element) {
 		int maxRetries = 3; 
 		int attempt = 0;

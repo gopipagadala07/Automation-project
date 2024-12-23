@@ -107,7 +107,7 @@ public class Exam_ScheduleCreationPages extends ActionType{
 	}
 	public void click_on_searched_examtaker(String Lastnametext, String Firstnametext) {
 	    int retry = 0;
-	    int maxretry = 3;
+	    int maxretry = 5;
 	    boolean success = false; 
 
 	    while (retry < maxretry) {

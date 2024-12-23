@@ -11,14 +11,19 @@
     <classes>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <class name="AssessmentsRunner.ScoreSubmissionRunner">
+=======
+      <class name="AssessmentsRunner.Reportcard_TeacherRunner">
+>>>>>>> branch 'FPK12-AssessmentCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
         <methods>
-          <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0 1"/>
-          <include name="tearDownClass"/>
           <include name="afterClass"/>
+          <include name="setUpClass"/>
           <include name="beforeClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
         </methods>
+<<<<<<< HEAD
       </class> <!-- AssessmentsRunner.ScoreSubmissionRunner -->
 =======
       <class name="ExamCenterRunners.Location_Runner"/>
@@ -32,6 +37,9 @@
 >>>>>>> branch 'ExamCenter-G' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
       <class name="ExamCenterRunners.EnrolleRunner"/>
 >>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+=======
+      </class> <!-- AssessmentsRunner.Reportcard_TeacherRunner -->
+>>>>>>> branch 'FPK12-AssessmentCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     </classes>
 <<<<<<< HEAD
 <<<<<<< HEAD
