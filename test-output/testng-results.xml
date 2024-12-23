@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-12-23T10:56:21 IST" name="Suite" finished-at="2024-12-23T11:04:49 IST" duration-ms="507938">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.AssignmentsSubmissionRunner@4e5ed836]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.DeletePortfolioCourseRunner@3ad83a66]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner@2a8448fa]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.MultiScoringPortfolioCourseRuner@43f02ef2]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.MultiScoringSubmissionRuner@2de56eb2]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@2ab4bc72]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.SISprovisioningRunner@673fdbce]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.ScoreSubmissionRunner@740fb309]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2024-12-23T10:56:21 IST" name="Test" finished-at="2024-12-23T11:04:49 IST" duration-ms="507938">
+      <class name="PortfolioCenterRunner.MultiScoringSubmissionRuner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:PortfolioCenterRunner.MultiScoringSubmissionRuner@2de56eb2]" started-at="2024-12-23T11:03:19 IST" name="setUpClass" finished-at="2024-12-23T11:03:19 IST" duration-ms="57" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@135de93b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:PortfolioCenterRunner.MultiScoringSubmissionRuner@2de56eb2]" started-at="2024-12-23T11:03:19 IST" name="beforeClass" finished-at="2024-12-23T11:03:19 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.MultiScoringSubmissionRuner@2de56eb2]" started-at="2024-12-23T11:03:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-23T11:04:04 IST" duration-ms="44977" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify the Multi Scoring Portfolio Center Score Submission at Admin side"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Checking the Multi Scoring Portfolio Center Score Submission at Admin side"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:PortfolioCenterRunner.MultiScoringSubmissionRuner@2de56eb2]" started-at="2024-12-23T11:04:04 IST" name="afterClass" finished-at="2024-12-23T11:04:04 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:PortfolioCenterRunner.MultiScoringSubmissionRuner@2de56eb2]" started-at="2024-12-23T11:04:04 IST" name="tearDownClass" finished-at="2024-12-23T11:04:05 IST" duration-ms="1314" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- PortfolioCenterRunner.MultiScoringSubmissionRuner -->
+      <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@2ab4bc72]" started-at="2024-12-23T10:58:57 IST" name="setUpClass" finished-at="2024-12-23T10:58:57 IST" duration-ms="52" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@135de93b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@2ab4bc72]" started-at="2024-12-23T10:58:57 IST" name="beforeClass" finished-at="2024-12-23T10:58:57 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@2ab4bc72]" started-at="2024-12-23T10:58:57 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-23T10:59:55 IST" duration-ms="58646" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verifying the Portfolio Course Creation Functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Checking the Portfolio Center Course Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@2ab4bc72]" started-at="2024-12-23T10:59:55 IST" name="afterClass" finished-at="2024-12-23T10:59:55 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@2ab4bc72]" started-at="2024-12-23T10:59:55 IST" name="tearDownClass" finished-at="2024-12-23T10:59:57 IST" duration-ms="1324" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- PortfolioCenterRunner.PortfolioCenterCourseRunner -->
+      <class name="PortfolioCenterRunner.MultiScoringPortfolioCourseRuner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:PortfolioCenterRunner.MultiScoringPortfolioCourseRuner@43f02ef2]" started-at="2024-12-23T11:01:26 IST" name="setUpClass" finished-at="2024-12-23T11:01:26 IST" duration-ms="63" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@135de93b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:PortfolioCenterRunner.MultiScoringPortfolioCourseRuner@43f02ef2]" started-at="2024-12-23T11:01:26 IST" name="beforeClass" finished-at="2024-12-23T11:01:26 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.MultiScoringPortfolioCourseRuner@43f02ef2]" started-at="2024-12-23T11:01:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-23T11:02:29 IST" duration-ms="63543" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verifying the Multi Scoring Portfolio Center Course Functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Checking the Multi Scoring Portfolio Center Course Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:PortfolioCenterRunner.MultiScoringPortfolioCourseRuner@43f02ef2]" started-at="2024-12-23T11:02:29 IST" name="afterClass" finished-at="2024-12-23T11:02:29 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:PortfolioCenterRunner.MultiScoringPortfolioCourseRuner@43f02ef2]" started-at="2024-12-23T11:02:29 IST" name="tearDownClass" finished-at="2024-12-23T11:02:30 IST" duration-ms="1271" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- PortfolioCenterRunner.MultiScoringPortfolioCourseRuner -->
+      <class name="PortfolioCenterRunner.SISprovisioningRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:PortfolioCenterRunner.SISprovisioningRunner@673fdbce]" started-at="2024-12-23T10:56:21 IST" name="setUpClass" finished-at="2024-12-23T10:56:22 IST" duration-ms="1260" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@135de93b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:PortfolioCenterRunner.SISprovisioningRunner@673fdbce]" started-at="2024-12-23T10:56:22 IST" name="beforeClass" finished-at="2024-12-23T10:56:22 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.SISprovisioningRunner@673fdbce]" started-at="2024-12-23T10:56:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-23T10:57:15 IST" duration-ms="53274" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Checking the School, Classroom, Section Creation Functionality With valid Data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify the SIS Provisioning Creation Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.SISprovisioningRunner@673fdbce]" started-at="2024-12-23T10:57:16 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-23T10:58:55 IST" duration-ms="99175" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify the Users Creation Functionality with valid Data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify the SIS Provisioning Creation Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:PortfolioCenterRunner.SISprovisioningRunner@673fdbce]" started-at="2024-12-23T10:58:55 IST" name="afterClass" finished-at="2024-12-23T10:58:55 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:PortfolioCenterRunner.SISprovisioningRunner@673fdbce]" started-at="2024-12-23T10:58:55 IST" name="tearDownClass" finished-at="2024-12-23T10:58:57 IST" duration-ms="1950" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- PortfolioCenterRunner.SISprovisioningRunner -->
+      <class name="PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner@2a8448fa]" started-at="2024-12-23T11:02:30 IST" name="setUpClass" finished-at="2024-12-23T11:02:30 IST" duration-ms="53" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@135de93b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner@2a8448fa]" started-at="2024-12-23T11:02:30 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-23T11:03:18 IST" duration-ms="47214" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verifying the Multi Scoring Portfolio Center Assignment Submission Functionality At student side"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Checking the Multi Scoring Portfolio Center Assignment Submission Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner@2a8448fa]" started-at="2024-12-23T11:02:30 IST" name="beforeClass" finished-at="2024-12-23T11:02:30 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner@2a8448fa]" started-at="2024-12-23T11:03:18 IST" name="afterClass" finished-at="2024-12-23T11:03:18 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner@2a8448fa]" started-at="2024-12-23T11:03:18 IST" name="tearDownClass" finished-at="2024-12-23T11:03:19 IST" duration-ms="1240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner -->
+      <class name="PortfolioCenterRunner.AssignmentsSubmissionRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:PortfolioCenterRunner.AssignmentsSubmissionRunner@4e5ed836]" started-at="2024-12-23T10:59:57 IST" name="setUpClass" finished-at="2024-12-23T10:59:57 IST" duration-ms="51" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@135de93b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:PortfolioCenterRunner.AssignmentsSubmissionRunner@4e5ed836]" started-at="2024-12-23T10:59:57 IST" name="beforeClass" finished-at="2024-12-23T10:59:57 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.AssignmentsSubmissionRunner@4e5ed836]" started-at="2024-12-23T10:59:57 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-23T11:00:39 IST" duration-ms="42063" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verifying the Assignment Submission Functionality At student side"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Checking the Assignment Submission Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:PortfolioCenterRunner.AssignmentsSubmissionRunner@4e5ed836]" started-at="2024-12-23T11:00:39 IST" name="afterClass" finished-at="2024-12-23T11:00:39 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:PortfolioCenterRunner.AssignmentsSubmissionRunner@4e5ed836]" started-at="2024-12-23T11:00:39 IST" name="tearDownClass" finished-at="2024-12-23T11:00:40 IST" duration-ms="1340" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- PortfolioCenterRunner.AssignmentsSubmissionRunner -->
+      <class name="PortfolioCenterRunner.ScoreSubmissionRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:PortfolioCenterRunner.ScoreSubmissionRunner@740fb309]" started-at="2024-12-23T11:00:40 IST" name="setUpClass" finished-at="2024-12-23T11:00:40 IST" duration-ms="49" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@135de93b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:PortfolioCenterRunner.ScoreSubmissionRunner@740fb309]" started-at="2024-12-23T11:00:40 IST" name="beforeClass" finished-at="2024-12-23T11:00:40 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.ScoreSubmissionRunner@740fb309]" started-at="2024-12-23T11:00:40 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-23T11:01:24 IST" duration-ms="44020" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify the Score Submission Functionality at Admin side"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify the Score Submission Functionality at Admin side"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:PortfolioCenterRunner.ScoreSubmissionRunner@740fb309]" started-at="2024-12-23T11:01:24 IST" name="afterClass" finished-at="2024-12-23T11:01:24 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:PortfolioCenterRunner.ScoreSubmissionRunner@740fb309]" started-at="2024-12-23T11:01:24 IST" name="tearDownClass" finished-at="2024-12-23T11:01:26 IST" duration-ms="1324" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- PortfolioCenterRunner.ScoreSubmissionRunner -->
+      <class name="PortfolioCenterRunner.DeletePortfolioCourseRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:PortfolioCenterRunner.DeletePortfolioCourseRunner@3ad83a66]" started-at="2024-12-23T11:04:05 IST" name="setUpClass" finished-at="2024-12-23T11:04:05 IST" duration-ms="87" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@135de93b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:PortfolioCenterRunner.DeletePortfolioCourseRunner@3ad83a66]" started-at="2024-12-23T11:04:05 IST" name="beforeClass" finished-at="2024-12-23T11:04:05 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.DeletePortfolioCourseRunner@3ad83a66]" started-at="2024-12-23T11:04:05 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-23T11:04:48 IST" duration-ms="42164" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verifying the Portfolio Course Creation Functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Checking the Portfolio Center Course Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:PortfolioCenterRunner.DeletePortfolioCourseRunner@3ad83a66]" started-at="2024-12-23T11:04:48 IST" name="afterClass" finished-at="2024-12-23T11:04:48 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:PortfolioCenterRunner.DeletePortfolioCourseRunner@3ad83a66]" started-at="2024-12-23T11:04:48 IST" name="tearDownClass" finished-at="2024-12-23T11:04:49 IST" duration-ms="1356" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- PortfolioCenterRunner.DeletePortfolioCourseRunner -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

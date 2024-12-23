@@ -1,0 +1,1141 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href='http://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title></title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+			
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+        <a href="#!" class="brand-logo black"><img src="http://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'></span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Dec 23, 2024 10:56:21 AM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Features</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='$100%'>
+                    <span class='strong'>8</span> features passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> features failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> skipped
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Scenarios</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='child-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
+                    <span class='strong'>9</span> scenarios passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> scenarios failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> others
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Steps</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='grandchild-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
+                    <span class='strong'>128</span> steps passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> steps failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify the SIS Provisioning Creation Functionality</span>
+						<span class='test-time'>Dec 23, 2024 10:56:22 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='2' status='pass'>
+
+	<span class='duration right label'>00 00 53.100</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Checking the School, Classroom, Section Creation Functionality With valid Data</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td></tr><tr><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='3' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Checking the School, Classroom, Section Creation Functionality With valid Data</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='7' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='8' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='9' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 0</h6>
+
+				</li>
+				<li test-id='10' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_sis_provisining_tab_under_administration_in_left_menu()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on SIS provisining tab under Administration in Left menu</h6>
+
+				</li>
+				<li test-id='11' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_navigate_to_school_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Navigate to School tab</h6>
+
+				</li>
+				<li test-id='12' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_the_add_new_school_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on the Add New School button</h6>
+
+				</li>
+				<li test-id='13' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_enter_the_name_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Enter the Name and Description</h6>
+
+							<div class="node-step">FPK12School86822</div>
+				</li>
+				<li test-id='14' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_select_the_timezone_from_dropdown(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Select the Timezone from Dropdown 0</h6>
+
+				</li>
+				<li test-id='15' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_saved_the_school_and_search_for_the_created_school_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Saved the School and Search for the Created School in Search here Field</h6>
+
+				</li>
+				<li test-id='16' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_navigate_to_classroom_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Navigate to Classroom tab</h6>
+
+				</li>
+				<li test-id='17' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_select_the_created_school_in_school_dropdown()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Select the Created School in School dropdown</h6>
+
+				</li>
+				<li test-id='18' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_the_add_new_classroom_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on the Add New Classroom button</h6>
+
+				</li>
+				<li test-id='19' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_enter_the_classroom_name_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Enter the Classroom Name and Description</h6>
+
+							<div class="node-step">FPK12Classroom65053</div>
+				</li>
+				<li test-id='20' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_saved_the_classroom_and_search_for_the_created_classroom_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Saved the Classroom and Search for the Created Classroom in Search here Field</h6>
+
+				</li>
+				<li test-id='21' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_navigate_to_sections_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Navigate to Sections tab</h6>
+
+				</li>
+				<li test-id='22' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_select_the_active_year_from_year_dropdown(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Select the Active Year from year Dropdown 0</h6>
+
+				</li>
+				<li test-id='23' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_the_add_new_sections_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Click on the Add New Sections button</h6>
+
+				</li>
+				<li test-id='24' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_enter_the_section_name_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Enter the Section Name and Description</h6>
+
+							<div class="node-step">FPK12Section37498</div>
+				</li>
+				<li test-id='25' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_saved_the_section_and_search_for_the_created_section_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Saved the Section and Search for the Created Section in Search here Field</h6>
+
+				</li>
+				<li test-id='26' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.store_the_data_in_excel()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Store the data in Excel</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario outline node' test-id='30' status='pass'>
+
+	<span class='duration right label'>00 01 39.142</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Verify the Users Creation Functionality with valid Data</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td></tr><tr><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='31' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Verify the Users Creation Functionality with valid Data</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='35' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='36' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='37' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 0</h6>
+
+				</li>
+				<li test-id='38' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_sis_provisining_tab_under_administration_in_left_menu()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on SIS provisining tab under Administration in Left menu</h6>
+
+				</li>
+				<li test-id='39' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_navigate_to_district_user_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Navigate to District User tab</h6>
+
+				</li>
+				<li test-id='40' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_add_new_user_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Add New User button</h6>
+
+				</li>
+				<li test-id='41' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_enters_the_district_user_email_district_user_first_name_district_user_last_name_into_the_respective_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Enters the District user Email, District user First name, District user Last name into the Respective Fields</h6>
+
+				</li>
+				<li test-id='42' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_saved_the_district_user_and_search_for_the_user_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Saved the District User and Search for the User in search here Field</h6>
+
+							<div class="node-step">88434</div>
+				</li>
+				<li test-id='43' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_edit_option_for_logins_creations()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user Click on Edit option for Logins Creations</h6>
+
+				</li>
+				<li test-id='44' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.click_on_create_new_login_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Click on Create New login button</h6>
+
+				</li>
+				<li test-id='45' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_reset_the_password_and_save_the_user()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Reset the Password and save the user</h6>
+
+				</li>
+				<li test-id='46' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_settings_option_at_user_level_ellipses()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Settings option at User level Ellipses</h6>
+
+				</li>
+				<li test-id='47' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_check_the_is_district_admin_checkbox()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Check the Is District Admin Checkbox</h6>
+
+				</li>
+				<li test-id='48' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_close_the_settings_pop_up()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Close the Settings Pop up</h6>
+
+				</li>
+				<li test-id='49' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.store_the_users_data_in_excel()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Store the users data in Excel</h6>
+
+				</li>
+				<li test-id='50' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_navigate_to_teachers_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Navigate to Teachers tab</h6>
+
+				</li>
+				<li test-id='51' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_select_the_created_school_in_school_dropdown()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Select the Created School in School dropdown</h6>
+
+				</li>
+				<li test-id='52' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_add_new_teacher_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Add New Teacher button</h6>
+
+				</li>
+				<li test-id='53' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_enters_the_teacher_email_teacher_first_name_teacher_last_name_into_the_respective_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Enters the Teacher Email, Teacher First name, Teacher Last name into the Respective Fields</h6>
+
+				</li>
+				<li test-id='54' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_saved_the_teacher_and_search_for_the_user_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Saved the Teacher and Search for the User in search here Field</h6>
+
+							<div class="node-step">44572</div>
+				</li>
+				<li test-id='55' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_edit_option_for_logins_creations()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user Click on Edit option for Logins Creations</h6>
+
+				</li>
+				<li test-id='56' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.click_on_create_new_login_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Click on Create New login button</h6>
+
+				</li>
+				<li test-id='57' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_reset_the_password_and_save_the_user()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Reset the Password and save the user</h6>
+
+				</li>
+				<li test-id='58' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_settings_option_at_user_level_ellipses()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Settings option at User level Ellipses</h6>
+
+				</li>
+				<li test-id='59' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_navigate_to_classrooms_tab_in_settings_pop_up()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Navigate to Classrooms tab in settings Pop up</h6>
+
+				</li>
+				<li test-id='60' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_select_the_values_in_the_year_section_classroom_dropdown_and_click_on_add_button(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Select the Values in the Year 0, Section, Classroom dropdown and Click on Add button</h6>
+
+				</li>
+				<li test-id='61' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_close_the_settings_pop_up()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Close the Settings Pop up</h6>
+
+				</li>
+				<li test-id='62' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.store_the_users_data_in_excel()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Store the users data in Excel</h6>
+
+				</li>
+				<li test-id='63' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_navigate_to_students_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Navigate to Students tab</h6>
+
+				</li>
+				<li test-id='64' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_select_the_created_school_in_school_dropdown()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Select the Created School in School dropdown</h6>
+
+				</li>
+				<li test-id='65' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_add_new_student_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Add New Student button</h6>
+
+				</li>
+				<li test-id='66' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_enters_the_student_email_student_first_name_student_last_name_into_the_respective_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Enters the Student Email, Student First name, Student Last name into the Respective Fields</h6>
+
+				</li>
+				<li test-id='67' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_saved_the_student_and_search_for_the_user_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Saved the Student and Search for the User in search here Field</h6>
+
+							<div class="node-step">65535</div>
+				</li>
+				<li test-id='68' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_edit_option_for_logins_creations()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user Click on Edit option for Logins Creations</h6>
+
+				</li>
+				<li test-id='69' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.click_on_create_new_login_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Click on Create New login button</h6>
+
+				</li>
+				<li test-id='70' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_reset_the_password_and_save_the_user()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Reset the Password and save the user</h6>
+
+				</li>
+				<li test-id='71' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_click_on_settings_option_at_user_level_ellipses()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Settings option at User level Ellipses</h6>
+
+				</li>
+				<li test-id='72' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_select_the_value_from_classroom_dropdown_and_click_on_add_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Select the Value from Classroom dropdown and Click on Add button</h6>
+
+				</li>
+				<li test-id='73' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.user_close_the_settings_pop_up()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Close the Settings Pop up</h6>
+
+				</li>
+				<li test-id='74' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.SISProvisioningStepdefinitions.store_the_users_data_in_excel()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Store the users data in Excel</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='78'>
+					<div class='test-heading'>
+						<span class='test-name'>Checking the Portfolio Center Course Functionality</span>
+						<span class='test-time'>Dec 23, 2024 10:58:57 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='79' status='pass'>
+
+	<span class='duration right label'>00 00 58.629</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Verifying the Portfolio Course Creation Functionality</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>1</td><td>0</td><td>3</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='80' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Verifying the Portfolio Course Creation Functionality</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='84' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='85' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='86' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 1</h6>
+
+				</li>
+				<li test-id='87' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='88' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_clicks_on_learning_and_portfolio_center()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on Learning and Portfolio Center</h6>
+
+				</li>
+				<li test-id='89' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_creates_a_portfolio_course_by_entering_the_title_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user creates a Portfolio Course by entering the Title and Description</h6>
+
+				</li>
+				<li test-id='90' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_searches_for_the_specific_course_and_clicks_on_it(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user searches for the specific course and clicks on it 0</h6>
+
+				</li>
+				<li test-id='91' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_clicks_on_the_add_portfolio_assignment_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Add Portfolio Assignment button</h6>
+
+				</li>
+				<li test-id='92' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_enters_the_assignment_name_description_and_selects_standards(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user enters the Assignment Name, Description, and selects Standards 0</h6>
+
+				</li>
+				<li test-id='93' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_clicks_on_the_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Save button</h6>
+
+				</li>
+				<li test-id='94' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_navigates_to_the_members_tab_searches_for_the_username_in_the_search_here_field_using_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user navigates to the Members tab, searches for the username in the Search Here field using row 3</h6>
+
+				</li>
+				<li test-id='95' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.assign_the_user_to_the_assignment()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And assign the user to the assignment</h6>
+
+				</li>
+				<li test-id='96' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_navigates_to_the_portfolio_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user navigates to the Portfolio tab,</h6>
+
+				</li>
+				<li test-id='97' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.clicks_on_the_assignment_and_verifies_that_the_user_is_added_to_the_assignment(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And clicks on the assignment, and verifies that the user is added to the assignment 3</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='101'>
+					<div class='test-heading'>
+						<span class='test-name'>Checking the Assignment Submission Functionality</span>
+						<span class='test-time'>Dec 23, 2024 10:59:57 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='102' status='pass'>
+
+	<span class='duration right label'>00 00 42.046</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Verifying the Assignment Submission Functionality At student side</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>3</td><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='103' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Verifying the Assignment Submission Functionality At student side</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='107' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='108' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='109' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 3</h6>
+
+				</li>
+				<li test-id='110' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='111' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.AssignmentsSubmissionStepdef.the_user_clicks_on_learning_and_portfolio_courses()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on Learning and Portfolio Courses</h6>
+
+				</li>
+				<li test-id='112' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.AssignmentsSubmissionStepdef.the_user_selects_the_course_and_clicks_on_the_continue_learning(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Course and clicks on the Continue Learning 0</h6>
+
+				</li>
+				<li test-id='113' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.AssignmentsSubmissionStepdef.the_user_launches_the_assignment_and_submit_the_assignment(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then The user launches the Assignment and  Submit the Assignment 0</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='117'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify the Score Submission Functionality at Admin side</span>
+						<span class='test-time'>Dec 23, 2024 11:00:40 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='118' status='pass'>
+
+	<span class='duration right label'>00 00 43.998</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Verify the Score Submission Functionality at Admin side</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>1</td><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='119' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Verify the Score Submission Functionality at Admin side</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='123' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='124' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='125' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 1</h6>
+
+				</li>
+				<li test-id='126' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='127' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_clicks_on_learning_and_portfolio_center()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on Learning and Portfolio Center</h6>
+
+				</li>
+				<li test-id='128' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.ScoreSubmissionStepdef.the_user_searches_for_the_course_and_clicks_on_it(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user searches for the course and clicks on it 0</h6>
+
+				</li>
+				<li test-id='129' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.ScoreSubmissionStepdef.the_user_clicks_on_the_assignment_then_click_on_score_student_portfolio_button_assignment_name(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the assignment then click on Score Student Portfolio button 0</h6>
+
+				</li>
+				<li test-id='130' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.ScoreSubmissionStepdef.enter_the_score_and_comments_and_submit_the_score_score(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Enter the Score and Comments and submit the Score 0</h6>
+
+				</li>
+				<li test-id='131' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.ScoreSubmissionStepdef.the_user_clicks_on_the_assignment_and_validates_the_status_and_performance_report()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Assignment and validates the Status and Performance Report.</h6>
+
+				</li>
+				<li test-id='132' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.ScoreSubmissionStepdef.the_user_clicks_on_the_report_card_tab_and_validates_the_score_in_the_report_card(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Report Card tab and validates the Score in the Report Card 0</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='136'>
+					<div class='test-heading'>
+						<span class='test-name'>Checking the Multi Scoring Portfolio Center Course Functionality</span>
+						<span class='test-time'>Dec 23, 2024 11:01:26 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='137' status='pass'>
+
+	<span class='duration right label'>00 01 03.530</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Verifying the Multi Scoring Portfolio Center Course Functionality</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td><td>rownumber3</td><td>rownumber4</td><td>rownumber5</td></tr><tr><td>1</td><td>0</td><td>3</td><td>0</td><td>0</td><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='138' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Verifying the Multi Scoring Portfolio Center Course Functionality</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='142' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='143' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='144' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 1</h6>
+
+				</li>
+				<li test-id='145' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='146' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_clicks_on_learning_and_portfolio_center()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on Learning and Portfolio Center</h6>
+
+				</li>
+				<li test-id='147' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.MultiScoringPortfolioCourseStepdef.the_user_creates_a_multi_scoring_portfolio_course_by_entering_the_title_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user creates a Multi Scoring Portfolio Course by entering the Title and Description</h6>
+
+				</li>
+				<li test-id='148' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.MultiScoringPortfolioCourseStepdef.the_user_searches_for_the_multi_scoring_portfolio_course_and_clicks_on_it(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user searches for the Multi Scoring Portfolio Course and clicks on it 0</h6>
+
+				</li>
+				<li test-id='149' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_clicks_on_the_add_portfolio_assignment_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Add Portfolio Assignment button</h6>
+
+				</li>
+				<li test-id='150' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.MultiScoringPortfolioCourseStepdef.the_user_enters_the_assignment_name_description_and_add_multi_standards(java.lang.Integer,java.lang.Integer,java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user enters the Assignment Name, Description, and Add Multi Standards 0 0 0</h6>
+
+				</li>
+				<li test-id='151' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_clicks_on_the_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Save button</h6>
+
+				</li>
+				<li test-id='152' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_navigates_to_the_members_tab_searches_for_the_username_in_the_search_here_field_using_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user navigates to the Members tab, searches for the username in the Search Here field using row 3</h6>
+
+				</li>
+				<li test-id='153' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.assign_the_user_to_the_assignment()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And assign the user to the assignment</h6>
+
+				</li>
+				<li test-id='154' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_navigates_to_the_portfolio_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user navigates to the Portfolio tab,</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='158'>
+					<div class='test-heading'>
+						<span class='test-name'>Checking the Multi Scoring Portfolio Center Assignment Submission Functionality</span>
+						<span class='test-time'>Dec 23, 2024 11:02:30 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='159' status='pass'>
+
+	<span class='duration right label'>00 00 47.201</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Verifying the Multi Scoring Portfolio Center Assignment Submission Functionality At student side</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>3</td><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='160' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Verifying the Multi Scoring Portfolio Center Assignment Submission Functionality At student side</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='164' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='165' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='166' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 3</h6>
+
+				</li>
+				<li test-id='167' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='168' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.AssignmentsSubmissionStepdef.the_user_clicks_on_learning_and_portfolio_courses()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on Learning and Portfolio Courses</h6>
+
+				</li>
+				<li test-id='169' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.MultiScoringAssignmentSubmissionSetpdef.the_user_selects_the_multi_scoring_course_and_clicks_on_the_continue_learning(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Multi Scoring Course and clicks on the Continue Learning 0</h6>
+
+				</li>
+				<li test-id='170' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.MultiScoringAssignmentSubmissionSetpdef.the_user_launches_the_multi_scoring_course_assignment_and_submit_the_assignment(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then The user launches the Multi Scoring Course Assignment and  Submit the Assignment 0</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='174'>
+					<div class='test-heading'>
+						<span class='test-name'>Checking the Multi Scoring Portfolio Center Score Submission at Admin side</span>
+						<span class='test-time'>Dec 23, 2024 11:03:19 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='175' status='pass'>
+
+	<span class='duration right label'>00 00 44.959</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Verify the Multi Scoring Portfolio Center Score Submission at Admin side</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td><td>rownumber3</td><td>rownumber4</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='176' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Verify the Multi Scoring Portfolio Center Score Submission at Admin side</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='180' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='181' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='182' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 1</h6>
+
+				</li>
+				<li test-id='183' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='184' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_clicks_on_learning_and_portfolio_center()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on Learning and Portfolio Center</h6>
+
+				</li>
+				<li test-id='185' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.MultiScoringSubmissionStepdef.the_user_searches_for_the_multi_scoring_portfolio_course(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user searches for the Multi Scoring Portfolio Course 0</h6>
+
+				</li>
+				<li test-id='186' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.MultiScoringSubmissionStepdef.the_user_clicks_on_the_multi_scoring_assignment_then_click_on_multi_scoring_button(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Multi Scoring assignment then click on Multi Scoring button 0</h6>
+
+				</li>
+				<li test-id='187' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.MultiScoringSubmissionStepdef.enter_the_score_and_submit_the_score(java.lang.Integer,java.lang.Integer,java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Enter the Score and submit the Score 0 0 0</h6>
+
+				</li>
+				<li test-id='188' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.MultiScoringSubmissionStepdef.the_user_clicks_on_the_multi_scoring_assignment_and_validates_the_status_and_performance_report()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Multi Scoring Assignment and validates the Status and Performance Report.</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='192'>
+					<div class='test-heading'>
+						<span class='test-name'>Checking the Portfolio Center Course Functionality</span>
+						<span class='test-time'>Dec 23, 2024 11:04:05 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='193' status='pass'>
+
+	<span class='duration right label'>00 00 42.148</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Verifying the Portfolio Course Creation Functionality</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>1</td><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='194' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Verifying the Portfolio Course Creation Functionality</div>
+
+
+			<ul class='gc steps'>
+				<li test-id='198' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='199' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='200' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 1</h6>
+
+				</li>
+				<li test-id='201' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='202' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_clicks_on_learning_and_portfolio_center()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on Learning and Portfolio Center</h6>
+
+				</li>
+				<li test-id='203' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.DeletePortfolioCourseStepdef.the_user_creates_a_portfolio_course_by_providing_a_title_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user creates a Portfolio Course by providing a Title and Description.</h6>
+
+				</li>
+				<li test-id='204' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.DeletePortfolioCourseStepdef.the_user_searche_for_the_course_and_clicks_on_it(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user searche for the course and clicks on it 0</h6>
+
+				</li>
+				<li test-id='205' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.DeletePortfolioCourseStepdef.the_user_clicks_on_the_edit_portfolio_course_button_and_deletes_the_portfolio_course()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And The user clicks on the Edit Portfolio Course button and deletes the Portfolio Course.</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>8</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>9</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>128</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Dec 23, 2024 10:56:21 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Dec 23, 2024 11:04:48 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>00 08 26.459</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>AppName</td>
+								<td>Portfolio Center</td>
+							</tr>
+							<tr>
+								<td>user</td>
+								<td>Srinivas Teegala</td>
+							</tr>
+							<tr>
+								<td>build</td>
+								<td>1.1</td>
+							</tr>
+							<tr>
+								<td>os</td>
+								<td>Windows10</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 8,
+				passParent: 8,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				childCount: 9,
+				passChild: 9,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				grandChildCount: 128,
+				passGrandChild: 128,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+			};
+			</script>
+		
+		<script>
+			var timeline = {
+			        "Verify the SIS Provisioning Creation Functionality":152.291,"Checking the Portfolio Center Course Functionality":58.629,"Checking the Assignment Submission Functionality":42.046,"Verify the Score Submission Functionality at Admin side":43.998,"Checking the Multi Scoring Portfolio Center Course Functionality":63.53,"Checking the Multi Scoring Portfolio Center Assignment Submission Functionality":47.201,"Checking the Multi Scoring Portfolio Center Score Submission at Admin side":44.959,"Checking the Portfolio Center Course Functionality":42.148
+			};
+		</script>
+		
+		  <script src='http://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/js/extent.js' type='text/javascript'></script>
+		
+		
+		<script type='text/javascript'>
+				
+		</script> 
+
+	</body>
+</html>
