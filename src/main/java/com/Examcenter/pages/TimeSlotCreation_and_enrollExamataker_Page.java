@@ -3,8 +3,10 @@ package com.Examcenter.pages;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -75,13 +77,32 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 	}
 
 	public void select_the_Examination(String ExamName, String ScheduleName) {
-
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		String fullExamScheduleName = ExamName + " - " + ScheduleName;
-		WebElement ExaminationLookup= wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Examination']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")));
-		StaticWait(3);
-		cp.FPdropdown(ExaminationLookup, fullExamScheduleName);
-		System.out.println(fullExamScheduleName);
+		for(int retry=0;retry<=3;retry++)
+		{
+			try {
+				WebElement ExaminationLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Examination']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")));
+				wait.until(ExpectedConditions.visibilityOf(ExaminationLookup));
+				if (ExaminationLookup.isEnabled()) {
+					cp.FPdropdown(ExaminationLookup, fullExamScheduleName);
+					break;
+				} else {
+					throw new ElementNotInteractableException("Examination Lookup element is not enabled.");
+				}
+			} catch (TimeoutException e) {
+				retry++;
+				System.err.println("Timeout waiting for the Examination Lookup element to be clickable/visible.");
+				e.printStackTrace();
+			} catch (ElementNotInteractableException e) {
+				System.err.println("The Examination Lookup element is not interactable.");
+				e.printStackTrace();
+			} catch (Exception e) {
+				System.err.println("An unexpected error occurred while selecting the examination.");
+				e.printStackTrace();
+			}
+		}
+
 	}
 
 	public void select_the_Location(String Location) {
@@ -137,7 +158,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		cp.selectFutureRandomTime(EndTime,true);
 	}
 
-	
+
 	public void ExamTaker_Count()
 	{
 		ExamTakerCount.sendKeys(String.valueOf(randomNumberGenerator()));
@@ -154,92 +175,92 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 	}
 
 	public void click_on_Time_slot_Lookup_and_select_timeslot() {
-	    if (CommonPages.currentHour < 12) {
-	        String timeslotvalue = CommonPages.currentHour + ":" + CommonPages.formattedMin + "AM";
-	        System.out.println(timeslotvalue);
-	        TimeSlot_Lookup.click();
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	        WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
-	        e.click();
-	    } else if (CommonPages.currentHour > 12) {
-	        int currentHour = CommonPages.currentHour - 12;
-	        System.out.println(currentHour);
-	        String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
-	        TimeSlot_Lookup.click();
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	        WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
-	        e.click();
-	    }
-	    else if (CommonPages.currentHour == 12) {
-	        int currentHour = CommonPages.currentHour;
-	        System.out.println(currentHour);
-	        String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
-	        TimeSlot_Lookup.click();
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	        WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
-	        e.click();
-	    }
+		if (CommonPages.currentHour < 12) {
+			String timeslotvalue = CommonPages.currentHour + ":" + CommonPages.formattedMin + "AM";
+			System.out.println(timeslotvalue);
+			TimeSlot_Lookup.click();
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
+			e.click();
+		} else if (CommonPages.currentHour > 12) {
+			int currentHour = CommonPages.currentHour - 12;
+			System.out.println(currentHour);
+			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
+			TimeSlot_Lookup.click();
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
+			e.click();
+		}
+		else if (CommonPages.currentHour == 12) {
+			int currentHour = CommonPages.currentHour;
+			System.out.println(currentHour);
+			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
+			TimeSlot_Lookup.click();
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
+			e.click();
+		}
 	}
-	
+
 	public void search_Examtaker_under_enrollment(String EFirstName, String ELastName)
 	{
-			cp.searchField(ELastName + " " + EFirstName);
-		
+		cp.searchField(ELastName + " " + EFirstName);
+
 	}
 	public void addExamtaker()
 	{	
-	AddExamtaker.click();
+		AddExamtaker.click();
 	}
-	
+
 	public void search_Examtaker_in_a_Timeslot(String EFName, String ELName)
 	{
 		Search.sendKeys(ELName + " " + EFName);
 	}
-	
-	
-	public void approve_and_Live_the_Examtaker() {
-	    try {
-	        StaticWait(1);
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	        JavascriptExecutor js = (JavascriptExecutor) driver;
-	        Actions a = new Actions(driver);
-	        WebElement approveButton = wait.until(ExpectedConditions.elementToBeClickable(
-	                By.xpath("//small[text()='Not Approved']/parent::div/child::mat-slide-toggle/child::label/child::span[1]")));
-	        wait.until(ExpectedConditions.visibilityOf(approveButton));
-	        js.executeScript("arguments[0].click();", approveButton);
-	        System.out.println("Approve button clicked successfully.");
-	        StaticWait(1);
-	        int maxRetries = 3;
-	        int attempt = 0;
-	        boolean success = false;
 
-	        while (attempt < maxRetries && !success) {
-	            try {
-	                js.executeScript("arguments[0].scrollIntoView(true);", Live);
-	                WebElement liveButton = wait.until(ExpectedConditions.presenceOfElementLocated(
-	                        By.xpath("//small[text()='Not Live']/parent::div/child::mat-slide-toggle/child::label/child::span[1]")));
-	                wait.until(ExpectedConditions.elementToBeClickable(liveButton));
-	                wait.until(ExpectedConditions.visibilityOf(liveButton));
-	                StaticWait(1);
-	                a.moveToElement(liveButton).perform();
-	                StaticWait(2);
-	                a.click().build().perform();
-	                System.out.println("Live button clicked successfully.");
-	                success = true;
-	            } catch (StaleElementReferenceException ex) {
-	                System.out.println("StaleElementReferenceException: Retrying... Attempt " + (attempt + 1));
-	            } catch (Exception ex) {
-	                System.out.println("Exception: " + ex.getMessage());
-	                throw ex;
-	            }
-	            attempt++;
-	            if (attempt >= maxRetries && !success) {
-	                throw new RuntimeException("Failed to click the Live button after " + maxRetries + " attempts.");
-	            }
-	        }
-	    } catch (Exception ex) {
-	        System.out.println("Exception in approve_and_Live_the_Examtaker: " + ex.getMessage());
-	        throw ex;
-	    }
+
+	public void approve_and_Live_the_Examtaker() {
+		try {
+			StaticWait(1);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			Actions a = new Actions(driver);
+			WebElement approveButton = wait.until(ExpectedConditions.elementToBeClickable(
+					By.xpath("//small[text()='Not Approved']/parent::div/child::mat-slide-toggle/child::label/child::span[1]")));
+			wait.until(ExpectedConditions.visibilityOf(approveButton));
+			js.executeScript("arguments[0].click();", approveButton);
+			System.out.println("Approve button clicked successfully.");
+			StaticWait(1);
+			int maxRetries = 3;
+			int attempt = 0;
+			boolean success = false;
+
+			while (attempt < maxRetries && !success) {
+				try {
+					js.executeScript("arguments[0].scrollIntoView(true);", Live);
+					WebElement liveButton = wait.until(ExpectedConditions.presenceOfElementLocated(
+							By.xpath("//small[text()='Not Live']/parent::div/child::mat-slide-toggle/child::label/child::span[1]")));
+					wait.until(ExpectedConditions.elementToBeClickable(liveButton));
+					wait.until(ExpectedConditions.visibilityOf(liveButton));
+					StaticWait(1);
+					a.moveToElement(liveButton).perform();
+					StaticWait(2);
+					a.click().build().perform();
+					System.out.println("Live button clicked successfully.");
+					success = true;
+				} catch (StaleElementReferenceException ex) {
+					System.out.println("StaleElementReferenceException: Retrying... Attempt " + (attempt + 1));
+				} catch (Exception ex) {
+					System.out.println("Exception: " + ex.getMessage());
+					throw ex;
+				}
+				attempt++;
+				if (attempt >= maxRetries && !success) {
+					throw new RuntimeException("Failed to click the Live button after " + maxRetries + " attempts.");
+				}
+			}
+		} catch (Exception ex) {
+			System.out.println("Exception in approve_and_Live_the_Examtaker: " + ex.getMessage());
+			throw ex;
+		}
 	}
 }
