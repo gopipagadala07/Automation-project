@@ -222,7 +222,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 	                wait.until(ExpectedConditions.visibilityOf(liveButton));
 	                StaticWait(1);
 	                a.moveToElement(liveButton).perform();
-	                StaticWait(1);
+	                StaticWait(2);
 	                a.click().build().perform();
 	                System.out.println("Live button clicked successfully.");
 	                success = true;

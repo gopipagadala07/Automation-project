@@ -69,7 +69,6 @@ public class LoginPage extends ActionType{
         WebElement cls = driver.findElement(By.xpath("//button[@type='button']"));
         cls.click();
 	}
-
 	public void loginbtn()
 	{
 		driver.findElement(Login).click();
