@@ -346,15 +346,23 @@ public class SISProvisioningPage extends ActionType{
 
 	public void Settings()
 	{
-		wait.elementToBeClickable(Ellipses);
-		StaticWait(2);
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='more_vert']")));
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", Ellipses);
-		wait.until(ExpectedConditions.elementToBeClickable(Settingsoptions));
-		js.executeScript("arguments[0].click();", Settingsoptions);
-		StaticWait(1);
+		for(int retry=0;retry<=3;retry++)
+		{
+			try {
+				wait.elementToBeClickable(Ellipses);
+				StaticWait(2);
+				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='more_vert']")));
+				JavascriptExecutor js=(JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", Ellipses);
+				wait.until(ExpectedConditions.elementToBeClickable(Settingsoptions));
+				js.executeScript("arguments[0].click();", Settingsoptions);
+				StaticWait(1);
+				break;
+			}catch (StaleElementReferenceException e) {
+				retry++;
+			}
+		}
 	}
 	public void Checkbox()
 	{
