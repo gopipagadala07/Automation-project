@@ -290,6 +290,7 @@ public class SISProvisioningPage extends ActionType{
 		FirstnameField.sendKeys(DFirstName);
 		DLastName=randomNumberGenerator();
 		LastnameField.sendKeys(String.valueOf(DLastName));
+		StaticWait(1);
 	}
 	public void TeacherUserDetails(String UserRole)
 	{
@@ -301,6 +302,7 @@ public class SISProvisioningPage extends ActionType{
 		FirstnameField.sendKeys(TFirstName);
 		TLastName=randomNumberGenerator();
 		LastnameField.sendKeys(String.valueOf(TLastName));
+		StaticWait(1);
 	}
 	public void StudentUserDetails(String UserRole)
 	{
@@ -312,6 +314,7 @@ public class SISProvisioningPage extends ActionType{
 		FirstnameField.sendKeys(SFirstName);
 		SLastName=randomNumberGenerator();
 		LastnameField.sendKeys(String.valueOf(SLastName));
+		StaticWait(1);
 	}
 	public void EditScreen() {
 	    int attempts = 0;
@@ -332,17 +335,22 @@ public class SISProvisioningPage extends ActionType{
 	public void CreateNewLogin()
 	{
 		wait.elementToBeClickable(CreateNewLoginbtn);
+		StaticWait(1);
 		CreateNewLoginbtn.click();
+		StaticWait(1);
 	}
 	public void ResetPwd()
 	{
 		StaticWait(2);
 		wait.elementToBeClickable(resetpwdbtn);
 		resetpwdbtn.click();
+		StaticWait(1);
 		wait.elementToBeClickable(Confirmationresetbtn);
 		Confirmationresetbtn.click();
+		StaticWait(1);
 		wait.elementToBeClickable(resetpopup);
 		resetpopup.click();
+		StaticWait(1);
 		cp.Save();
 	}
 	
@@ -366,15 +374,18 @@ public class SISProvisioningPage extends ActionType{
 		    }
 		}
 
-		StaticWait(2);
+		StaticWait(4);
 		wait.elementToBeClickable(Settingsoptions);
+		StaticWait(1);
 		Settingsoptions.click();
 		StaticWait(1);
 	}
 	public void Checkbox()
 	{
 		IsDistrcitAdminchkbox.click();
+		StaticWait(1);
 		wait.elementToBeClickable(Speedgraderchkbox);
+		StaticWait(1);
 		Speedgraderchkbox.click();
 	}
 	public void close()
