@@ -104,7 +104,7 @@ public class MultiScoringSubmissionPages extends ActionType{
 	     wait.elementToBeClickable(inputsearchhereElement);
 			jc.executeScript("arguments[0].click();", inputsearchhereElement); 
 			if (testdata == null) {
-				testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+				testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 			}
 			String MultiPortfolioCourse = testdata.get(MultiScoringCourseName).get("MultiScoringCourseName");
 //	     cp.searchField(MultiPortfolioCourse);
@@ -123,7 +123,7 @@ public class MultiScoringSubmissionPages extends ActionType{
 		StaticWait(2);
 		JavascriptExecutor jc = (JavascriptExecutor) driver;
 		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 		}
 		String MultiPortfolioName = testdata.get(MultiAssignmentName).get("MultiAssignmentName");
 	     wait.elementToBeClickable(Multiassignmentname(MultiPortfolioName));
@@ -146,7 +146,7 @@ public class MultiScoringSubmissionPages extends ActionType{
 //	     wait.elementToBeClickable(Scorefield);
 //	     j.executeScript("arguments[0].click();", Scorefield);
 	     if (testdata == null) {
-				testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+				testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 			}
 	     	wait.elementToBeClickable(Score1Btn);
 			Score1Btn.click();

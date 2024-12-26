@@ -108,7 +108,7 @@ public class ScoreSubmissionPages extends ActionType{
 
 	    // Retrieve data from Excel
 	    if (testdata == null) {
-	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+	        testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 	    }
 	    String PortfolioName = testdata.get(CourseName).get("CourseName");
 
@@ -152,7 +152,7 @@ public class ScoreSubmissionPages extends ActionType{
 	
 	public void the_user_clicks_on_the_assignment_then_click_on_score_student_portfolio_button_assignment_name(Integer AssignmentName) throws InvalidFormatException, IOException {
 		 if (testdata == null) {
-				testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+				testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 			}
 			String ScoreAssignment = testdata.get(AssignmentName).get("AssignmentName");
 			Actions act = new Actions(driver);
@@ -207,7 +207,7 @@ public class ScoreSubmissionPages extends ActionType{
 		
 	     StaticWait(2);
 	     if (testdata == null) {
-				testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+				testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 			}
 			String Number = testdata.get(Score).get("Score");
 			Scorefield.sendKeys(Number);
@@ -248,7 +248,7 @@ public class ScoreSubmissionPages extends ActionType{
 		wait.elementToBeClickable(PerformanceReportelement);
 		j.executeScript("arguments[0].click();", PerformanceReportelement);
 		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 		}
 		String Number = testdata.get(Score).get("Score");
 //		wait.visibilityOf(StandardScore(Number));

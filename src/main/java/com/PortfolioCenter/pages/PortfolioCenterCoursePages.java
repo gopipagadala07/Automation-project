@@ -119,7 +119,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 	   j.executeScript("arguments[0].click();", PortfolioCenterTab);
 	}
 
-	public void the_user_creates_a_portfolio_course_by_entering_the_title_and_description() {
+	public void the_user_creates_a_portfolio_course_by_entering_the_title_and_description() throws Exception {
 		StaticWait(3);
 	     wait.elementToBeClickable(EllipseBtn);
 	     EllipseBtn.click();
@@ -129,6 +129,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 	     JavascriptExecutor jc = (JavascriptExecutor) driver;
 	     jc.executeScript("arguments[0].click();", TitleElement);     
 	     PortfolioCourseName = "PortfolioCourse"+number;
+	     cp.insertData("PortfolioCenter.xlsx", PortfolioCourseName, 12);
 	     StaticWait(1);
 	     inputTitleElement.sendKeys(PortfolioCourseName);
 	     wait.elementToBeClickable(DescriptionElement);
@@ -197,11 +198,12 @@ public class PortfolioCenterCoursePages extends ActionType{
 	     AddAssignmentElement.click();  
 	}
 
-	public void the_user_enters_the_assignment_name_description_and_selects_standards(Integer Standards) throws InvalidFormatException, IOException {
+	public void the_user_enters_the_assignment_name_description_and_selects_standards(Integer Standards) throws Exception {
 		StaticWait(1);
 		 wait.elementToBeClickable(inputAssignmentNameElement);
 		 inputAssignmentNameElement.click();
 		 assignmentname ="AssignmentName"+number;
+		 cp.insertData("PortfolioCenter.xlsx", assignmentname, 14);
 		 inputAssignmentNameElement.sendKeys(assignmentname);
 	     wait.elementToBeClickable(DecInstElement);
 	     DecInstElement.click();
@@ -216,7 +218,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 	     StaticWait(1);
   
 	     if (testdata == null) {
-				testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+				testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 			}
 			String StandardsCode = testdata.get(Standards).get("Standards");
 			Actions act = new Actions(driver);
@@ -242,7 +244,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 		ManageMembersbElement.click();
 		
 		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 		}
 		String User = testdata.get(LastName).get("LastName");
 		System.out.println(User);
@@ -278,7 +280,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 	    StaticWait(1);
 	    cp.scrollWithRobot();
 		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 		}
 		String Name = testdata.get(verifyName).get("LastName");
 		String verify = testdata.get(verifyName).get("LastName");
@@ -294,18 +296,6 @@ public class PortfolioCenterCoursePages extends ActionType{
 	
 		
 	}
-	public void PortfolioCourseNameInsertmultipledataIntoExcel() throws Exception
-	{
-		cp.PortfolioCourseNameInsertmultipledataIntoExcel("./src/test/resources/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
-	}
-	
-	public void PortfolioAssignmentnameInsertmultipledataIntoExcel() throws Exception
-	{
-		cp.PortfolioAssignmentnameInsertmultipledataIntoExcel("./src/test/resources/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
-	}
-//	public void intert() throws Exception
-//	{
-//		cp.InsertdataIntoExcelOne("./src/test/resources/ExcelFiles/LoginDetails.xlsx", getSheetEnv(), PortfolioCenterCoursePages.assignmentname, 20);
-//	}
+
 
 }

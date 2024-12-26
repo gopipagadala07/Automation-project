@@ -25,7 +25,7 @@ public class PortfolioCenterCourseStepdef extends ActionType{
 	}
 
 	@Then("the user creates a Portfolio Course by entering the Title and Description")
-	public void the_user_creates_a_portfolio_course_by_entering_the_title_and_description() {
+	public void the_user_creates_a_portfolio_course_by_entering_the_title_and_description() throws Exception {
 		PortfolioCenterCourse.the_user_creates_a_portfolio_course_by_entering_the_title_and_description();
 	     
 	}
@@ -43,7 +43,7 @@ public class PortfolioCenterCourseStepdef extends ActionType{
 	}
 
 	@Then("the user enters the Assignment Name, Description, and selects Standards {int}")
-	public void the_user_enters_the_assignment_name_description_and_selects_standards(Integer Standards) throws InvalidFormatException, IOException {
+	public void the_user_enters_the_assignment_name_description_and_selects_standards(Integer Standards) throws Exception {
 		PortfolioCenterCourse.the_user_enters_the_assignment_name_description_and_selects_standards(Standards);
 	     
 	}
@@ -72,11 +72,7 @@ public class PortfolioCenterCourseStepdef extends ActionType{
 	@Then("clicks on the assignment, and verifies that the user is added to the assignment {int}")
 	public void clicks_on_the_assignment_and_verifies_that_the_user_is_added_to_the_assignment(Integer LastName) throws Exception {
 		PortfolioCenterCourse.clicks_on_the_assignment_and_verifies_that_the_user_is_added_to_the_assignment(LastName);
-		PortfolioCenterCourse.PortfolioCourseNameInsertmultipledataIntoExcel();
-		System.out.println("Portfolio Course Name inserted Sucessfully");
-		PortfolioCenterCourse.PortfolioAssignmentnameInsertmultipledataIntoExcel();
-//		PortfolioCenterCourse.intert();
-		System.out.println("Portfolio Assignment Name inserted Sucessfully");
+
 	}
 
 }

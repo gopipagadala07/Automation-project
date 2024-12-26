@@ -39,7 +39,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	}
 
 	@When("User Enter the Name and Description")
-	public void user_enter_the_name_and_description() {
+	public void user_enter_the_name_and_description() throws Exception {
 		provisioning.SchoolDetails();
 	}
 
@@ -47,7 +47,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	public void user_select_the_timezone_from_dropdown(int TimeZone) throws Exception {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 		}
 		String value=testdata.get(TimeZone).get("TimeZone");
 		provisioning.TimezoneValue(value);
@@ -75,7 +75,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	}
 
 	@Then("User Enter the Classroom Name and Description")
-	public void user_enter_the_classroom_name_and_description() {
+	public void user_enter_the_classroom_name_and_description() throws Exception {
 	    provisioning.ClassroomDetails();
 	}
 
@@ -94,7 +94,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	public void user_select_the_active_year_from_year_dropdown(int Year) throws Exception, IOException {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 		}
 		String value=testdata.get(Year).get("Year");
 		provisioning.YearDropDownSearch(value);
@@ -106,7 +106,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	}
 
 	@And("User Enter the Section Name and Description")
-	public void user_enter_the_section_name_and_description() {
+	public void user_enter_the_section_name_and_description() throws Exception {
 	    provisioning.SectionDetails();
 	}
 
@@ -196,7 +196,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 		}
 		String Yearvalue=testdata.get(Year).get("Year");
 	    provisioning.YearDropDownSearch(Yearvalue);
@@ -235,7 +235,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	
 	@Then("Store the data in Excel")
 	public void store_the_data_in_excel() throws Exception {
-		provisioning.insertData();
+//		provisioning.insertData();
 		System.out.println("Data inserted Sucessfully");
 	}
 	@Then("Store the users data in Excel")

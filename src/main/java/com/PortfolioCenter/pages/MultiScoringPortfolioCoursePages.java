@@ -83,7 +83,7 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 	}
 	
 
-	public void the_user_creates_a_multi_scoring_portfolio_course_by_entering_the_title_and_description() {
+	public void the_user_creates_a_multi_scoring_portfolio_course_by_entering_the_title_and_description() throws Exception {
 		 wait.elementToBeClickable(EllipseBtn);
 	     EllipseBtn.click();
 	     wait.elementToBeClickable(AddNewCourseBtn);
@@ -92,6 +92,7 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 	     JavascriptExecutor jc = (JavascriptExecutor) driver;
 	     jc.executeScript("arguments[0].click();", TitleElement);     
 	     MultiPortfolioCourseName = "PortfolioCourse"+Number;
+	     cp.insertData("PortfolioCenter.xlsx", MultiPortfolioCourseName, 16);
 	     System.out.println(MultiPortfolioCourseName);
 	     StaticWait(1);
 	     inputTitleElement.sendKeys(MultiPortfolioCourseName);
@@ -172,11 +173,12 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 	}
 
 	
-	public void the_user_enters_the_assignment_name_description_and_add_multi_standards(Integer Standard1, Integer Standard2, Integer Standard3) throws InvalidFormatException, IOException {
+	public void the_user_enters_the_assignment_name_description_and_add_multi_standards(Integer Standard1, Integer Standard2, Integer Standard3) throws Exception {
 		StaticWait(1);
 		 wait.elementToBeClickable(inputAssignmentNameElement);
 		 inputAssignmentNameElement.click();
 		 Multiassignmentname ="AssignmentName"+Number;
+		 cp.insertData("PortfolioCenter.xlsx", Multiassignmentname, 20);
 		 System.out.println(Multiassignmentname);
 		 inputAssignmentNameElement.sendKeys(Multiassignmentname);
 	     wait.elementToBeClickable(DecInstElement);
@@ -192,7 +194,7 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 	     StaticWait(1);
 
 	     if (testdata == null) {
-				testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+				testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 			}
 			String StandardsCod1 = testdata.get(Standard1).get("Standard1");
 			String StandardsCod2 = testdata.get(Standard2).get("Standard2");
@@ -212,16 +214,6 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 	
 	
 	
-	public void multiPortfolioCourseNameInsertmultipledataIntoExcel() throws Exception
-	{
 	
-		cp.multiPortfolioCourseNameInsertmultipledataIntoExcel("./src/test/resources/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
-	}
-	
-	public void MultiassignmentnameNameInsertmultipledataIntoExcel() throws Exception
-	{
-	
-		cp.MultiassignmentnameNameInsertmultipledataIntoExcel("./src/test/resources/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
-	}
 
 }

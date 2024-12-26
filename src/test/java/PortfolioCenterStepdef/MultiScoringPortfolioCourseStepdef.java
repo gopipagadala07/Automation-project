@@ -22,7 +22,7 @@ public class MultiScoringPortfolioCourseStepdef extends ActionType{
 	
 	
 	@Then("the user creates a Multi Scoring Portfolio Course by entering the Title and Description")
-	public void the_user_creates_a_multi_scoring_portfolio_course_by_entering_the_title_and_description() {
+	public void the_user_creates_a_multi_scoring_portfolio_course_by_entering_the_title_and_description() throws Exception {
 		Multi.the_user_creates_a_multi_scoring_portfolio_course_by_entering_the_title_and_description();
 	}
 	
@@ -34,8 +34,7 @@ public class MultiScoringPortfolioCourseStepdef extends ActionType{
 	@Then("the user enters the Assignment Name, Description, and Add Multi Standards {int} {int} {int}")
 	public void the_user_enters_the_assignment_name_description_and_add_multi_standards(Integer Standard1, Integer Standard2, Integer Standard3) throws Exception {
 		Multi.the_user_enters_the_assignment_name_description_and_add_multi_standards(Standard1, Standard2, Standard3);
-		Multi.multiPortfolioCourseNameInsertmultipledataIntoExcel();
-		Multi.MultiassignmentnameNameInsertmultipledataIntoExcel();
+		
 	}
 
 }

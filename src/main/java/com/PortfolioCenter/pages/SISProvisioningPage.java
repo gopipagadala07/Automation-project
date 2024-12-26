@@ -24,6 +24,7 @@ import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 public class SISProvisioningPage extends ActionType{
 
 	CommonPages cp=new CommonPages(Base.getDriver());
+	JavascriptExecutor js=(JavascriptExecutor) Base.getDriver();
 	public WebDriver driver;
 	private Wait wait;
 	static String SchoolName;
@@ -35,7 +36,7 @@ public class SISProvisioningPage extends ActionType{
 	static String DFirstName;
 	static String TFirstName;
 	static String SFirstName;
-	
+
 	/*
 	 * School Creation
 	 */
@@ -45,7 +46,7 @@ public class SISProvisioningPage extends ActionType{
 	@FindBy(how=How.XPATH,using = "//span[contains(text(),'Add New School')]")private WebElement AddnewSchoolbtn;
 	@FindBy(how=How.XPATH,using = "//div[@role='textbox']")private WebElement Description;
 	@FindBy(how = How.XPATH,using = "//fp-dropdown[@placeholder='TimeZone']")private WebElement TimeZoneDropdown;
-	
+
 	/*
 	 * Classroom Creation
 	 */
@@ -59,19 +60,19 @@ public class SISProvisioningPage extends ActionType{
 	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[4]")private WebElement Sectiontab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Section')]")private WebElement AddnewSectionbtn;
 	@FindBy(how = How.XPATH,using = "//fp-dropdown[@controlname='year']")private WebElement YearDropDown;
-	
+
 	/*
 	 * Districtuser Creation
 	 */
 	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[3]")private WebElement Districtusertab;
-	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New User')]")private WebElement AddnewDistrictUserbtn;
+	@FindBy(how=How.XPATH,using = "//span[text()= ' Add New User ']")private WebElement AddnewDistrictUserbtn;
 	@FindBy(how=How.XPATH,using = "(//input[@type='text'])[1]")private WebElement Emailfield;
 	@FindBy(how=How.XPATH,using = "(//input[@type='text'])[2]")private WebElement FirstnameField;
 	@FindBy(how=How.XPATH,using = "(//input[@type='text'])[3]")private WebElement LastnameField;
-	@FindBy(how=How.XPATH,using = "//*[text()='more_vert']") private WebElement Ellipses;
-	@FindBy(how=How.XPATH,using = "//span[contains(text(),'Edit')]")private WebElement Editoption;
-	@FindBy(how=How.XPATH,using = "//span[contains(text(),'Create New Login')]")private WebElement CreateNewLoginbtn;
-	@FindBy(how=How.XPATH,using = "//span[contains(text(),' Reset Password')]")private WebElement resetpwdbtn;
+	@FindBy(how=How.XPATH,using = "//mat-icon[text()='more_vert']") private WebElement Ellipses;
+	@FindBy(how=How.XPATH,using = "//span[text()='Edit']")private WebElement Editoption;
+	@FindBy(how=How.XPATH,using = "//span[text()=' Create New Login ']")private WebElement CreateNewLoginbtn;
+	@FindBy(how=How.XPATH,using = "//span[text()=' Reset Password ']")private WebElement resetpwdbtn;
 	@FindBy(how=How.XPATH,using = "//span[(text()=' Reset ')]")private WebElement Confirmationresetbtn;
 	@FindBy(how = How.XPATH,using = "//button[text()='Cancel']/parent::div/button[1]")private WebElement resetpopup;
 
@@ -80,7 +81,7 @@ public class SISProvisioningPage extends ActionType{
 	 */
 	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[2]")private WebElement Teachertab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Teacher')]")private WebElement AddnewTeacherbtn;
-	@FindBy(how=How.XPATH,using = "//span[contains(text(),'Settings')]")private WebElement Settingsoptions;
+	@FindBy(how=How.XPATH,using = "//span[text()='Settings']")private WebElement Settingsoptions;
 	@FindBy(how=How.XPATH,using = "//div[contains(text(),'Is District Admin ')]/mat-checkbox")private WebElement IsDistrcitAdminchkbox;
 	@FindBy(how=How.XPATH,using = "//div[contains(text(),'Is Scorer ')]/mat-checkbox")private WebElement Speedgraderchkbox;
 	@FindBy(how=How.XPATH,using = "//mat-icon[contains(text(),'close')]")private WebElement Closeicon;
@@ -94,13 +95,13 @@ public class SISProvisioningPage extends ActionType{
 	 */
 	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[1]")private WebElement Studenttab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Student')]")private WebElement AddnewStudentbtn;
-	
+
 	public SISProvisioningPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new Wait(driver);
 	}
-	
+
 	public void Administrationtab()
 	{
 		//Wait.visibilityOf(Administrationbtn)
@@ -109,36 +110,36 @@ public class SISProvisioningPage extends ActionType{
 	}
 
 	public void Schooltab() {
-	    int maxRetries = 3;
-	    int attempt = 0;
-	    boolean success = false;
+		int maxRetries = 3;
+		int attempt = 0;
+		boolean success = false;
 
-	    while (attempt < maxRetries && !success) {
-	        try {
-	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-	            wait.until(ExpectedConditions.elementToBeClickable(Schooltab));
-	            StaticWait(2);
-	            Actions a = new Actions(driver);
-	            a.moveToElement(Schooltab).click().perform();
-	            success = true;
-	        } catch (TimeoutException e) {
-	            System.out.println("TimeoutException: " + e.getMessage());
-	            JavascriptExecutor js = (JavascriptExecutor) driver;
-	            js.executeScript("arguments[0].click();", Schooltab);
-	            success = true;
-	        } catch (Exception e) {
-	            System.out.println("Exception: " + e.getMessage());
-	        }
+		while (attempt < maxRetries && !success) {
+			try {
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+				wait.until(ExpectedConditions.elementToBeClickable(Schooltab));
+				StaticWait(2);
+				Actions a = new Actions(driver);
+				a.moveToElement(Schooltab).click().perform();
+				success = true;
+			} catch (TimeoutException e) {
+				System.out.println("TimeoutException: " + e.getMessage());
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", Schooltab);
+				success = true;
+			} catch (Exception e) {
+				System.out.println("Exception: " + e.getMessage());
+			}
 
-	        if (!success) {
-	            attempt++;
-	            if (attempt < maxRetries) {
-	                System.out.println("Retrying... Attempt " + (attempt + 1));
-	            } else {
-	                throw new RuntimeException("Failed to click on Schooltab after " + maxRetries + " attempts.");
-	            }
-	        }
-	    }
+			if (!success) {
+				attempt++;
+				if (attempt < maxRetries) {
+					System.out.println("Retrying... Attempt " + (attempt + 1));
+				} else {
+					throw new RuntimeException("Failed to click on Schooltab after " + maxRetries + " attempts.");
+				}
+			}
+		}
 	}
 
 	public void Classroomtab()
@@ -149,9 +150,11 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void Sectiontab()
 	{
-		wait.elementToBeClickable(Sectiontab);
-		wait.visibilityOf(Sectiontab);
-		Sectiontab.click();
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(Sectiontab));
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", Sectiontab);
+		//				Sectiontab.click();
 	}
 	public void SchoolDropDownSearch()
 	{
@@ -170,36 +173,36 @@ public class SISProvisioningPage extends ActionType{
 	{
 		cp.FPdropdown(SectionDown, SectionName);
 	}
-	public void SchoolDetails()
+	public void SchoolDetails() throws Exception
 	{
-	    SchoolName="FPK12School"+randomNumberGenerator();
-	    System.out.println(SchoolName);
-	    ExtentCucumberAdapter.addTestStepLog(SchoolName);
+		SchoolName="FPK12School"+randomNumberGenerator();
+		System.out.println(SchoolName);
+		ExtentCucumberAdapter.addTestStepLog(SchoolName);
+		cp.insertData("PortfolioCenter.xlsx", SchoolName, 0);
 		cp.Name(SchoolName);				
 		Description.sendKeys(generateRandomString());
 	}
-	public void ClassroomDetails()
+	public void ClassroomDetails() throws Exception
 	{
 		ClassroomName="FPK12Classroom"+randomNumberGenerator();
 		cp.Name(ClassroomName);
-		StaticWait(2);
 		ExtentCucumberAdapter.addTestStepLog(ClassroomName);
+		cp.insertData("PortfolioCenter.xlsx", ClassroomName, 1);
 		Description.sendKeys(generateRandomString());
 	}
-	public void SectionDetails()
+	public void SectionDetails() throws Exception
 	{
 		SectionName="FPK12Section"+randomNumberGenerator();
-		
 		cp.Name(SectionName);
-		
 		ExtentCucumberAdapter.addTestStepLog(SectionName);
+		cp.insertData("PortfolioCenter.xlsx", SectionName, 2);
 		Description.sendKeys(generateRandomString());
 	}
 	public void TimezoneValue(String TimeZoneValue)
 	{
 		cp.FPdropdown(TimeZoneDropdown,TimeZoneValue);
 	}	
-	
+
 	public void SchoolSearch()
 	{
 		cp.searchField(SchoolName);
@@ -219,6 +222,7 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void TUserSearch()
 	{
+		StaticWait(1);
 		cp.searchField(String.valueOf(TLastName));
 		ExtentCucumberAdapter.addTestStepLog(String.valueOf(TLastName));
 	}
@@ -230,158 +234,113 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void AddnewSchool()
 	{
-		AddnewSchoolbtn.click();
+		js.executeScript("arguments[0].click();", AddnewSchoolbtn);
 	}
 	public void AddNewClassroom()
 	{
-		AddnewClassroombtn.click();
+		js.executeScript("arguments[0].click();", AddnewClassroombtn);
 	}
 
 	public void AddNewSection()
 	{
-		AddnewSectionbtn.click();
+		js.executeScript("arguments[0].click();", AddnewSectionbtn);
 	}
 	public void DistrictUserTab()
 	{
 		wait.elementToBeClickable(Districtusertab);
-		StaticWait(2);
-		Districtusertab.click();
+		js.executeScript("arguments[0].click();", Districtusertab);
 	}
 	public void TeacherTab()
 	{
 		wait.elementToBeClickable(Teachertab);
-		StaticWait(2);
-		Teachertab.click();
+		js.executeScript("arguments[0].click();", Teachertab);
 	}
 	public void StudentTab()
 	{
 		wait.elementToBeClickable(Studenttab);
-		StaticWait(2);
-		Studenttab.click();
+		js.executeScript("arguments[0].click();", Studenttab);
 	}
 	public void SettingsAdd()
 	{
-		StaticWait(2);
-		Settingsadd.click();
-		StaticWait(2);
+		js.executeScript("arguments[0].click();", Settingsadd);
 	}
 	public void AddNewDistrictUser()
 	{
-		StaticWait(1);
-		AddnewDistrictUserbtn.click();
+		js.executeScript("arguments[0].click();", AddnewDistrictUserbtn);
 	}
 	public void AddNewTeacher()
 	{
-		AddnewTeacherbtn.click();
-		StaticWait(2);
+		js.executeScript("arguments[0].click();", AddnewTeacherbtn);
 	}
 	public void AddNewStudent()
 	{
-		AddnewStudentbtn.click();
-		StaticWait(2);
+		js.executeScript("arguments[0].click();", AddnewStudentbtn);
 	}
 	public void DistrictUserDetails(String UserRole)
 	{
 		wait.elementToBeClickable(Emailfield);
 		wait.visibilityOf(Emailfield);
-		StaticWait(1);
 		Emailfield.sendKeys(randomEmailIdGenerator(UserRole).toLowerCase());
 		DFirstName="FPK12Admin".toLowerCase();
 		FirstnameField.sendKeys(DFirstName);
 		DLastName=randomNumberGenerator();
 		LastnameField.sendKeys(String.valueOf(DLastName));
-		StaticWait(1);
 	}
 	public void TeacherUserDetails(String UserRole)
 	{
 		wait.elementToBeClickable(Emailfield);
 		wait.visibilityOf(Emailfield);
-		StaticWait(1);
 		Emailfield.sendKeys(randomEmailIdGenerator(UserRole).toLowerCase());
 		TFirstName="FPK12Teacher".toLowerCase();
 		FirstnameField.sendKeys(TFirstName);
 		TLastName=randomNumberGenerator();
 		LastnameField.sendKeys(String.valueOf(TLastName));
-		StaticWait(1);
 	}
 	public void StudentUserDetails(String UserRole)
 	{
 		wait.elementToBeClickable(Emailfield);
 		wait.visibilityOf(Emailfield);
-		StaticWait(1);
 		Emailfield.sendKeys(randomEmailIdGenerator(UserRole).toLowerCase());
 		SFirstName="FPK12Student".toLowerCase();
 		FirstnameField.sendKeys(SFirstName);
 		SLastName=randomNumberGenerator();
 		LastnameField.sendKeys(String.valueOf(SLastName));
-		StaticWait(1);
 	}
 	public void EditScreen() {
-	    int attempts = 0;
-	    while (attempts++ < 5) {
-	        try {
-	        	WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-	            wait.until(ExpectedConditions.elementToBeClickable(Ellipses)).click();
-	            wait.until(ExpectedConditions.elementToBeClickable(Editoption)).click();
-	            return; 
-	        } catch (Exception e) {
-	            if (attempts < 5) try { Thread.sleep(500); } catch (InterruptedException ie) { Thread.currentThread().interrupt(); }
-	        }
-	    }
-	    throw new RuntimeException("Failed to perform EditScreen action after 5 attempts.");
+		for(int retry=0;retry<=5;retry++) {
+			try {
+				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='more_vert']")));
+				wait.until(ExpectedConditions.visibilityOf(e));
+				js.executeScript("arguments[0].click();", e);
+				WebElement e1=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Edit']")));
+				wait.until(ExpectedConditions.visibilityOf(e1));
+				js.executeScript("arguments[0].click();", e1);
+				break;
+			} catch (RuntimeException e) {
+			     retry++;
+			}
+		}
 	}
 
 
 	public void CreateNewLogin()
 	{
 		wait.elementToBeClickable(CreateNewLoginbtn);
-		StaticWait(1);
-		CreateNewLoginbtn.click();
-		StaticWait(1);
+		js.executeScript("arguments[0].click();", CreateNewLoginbtn);
+		//CreateNewLoginbtn.click();
 	}
 	public void ResetPwd()
 	{
-		StaticWait(2);
 		wait.elementToBeClickable(resetpwdbtn);
 		resetpwdbtn.click();
-		StaticWait(1);
 		wait.elementToBeClickable(Confirmationresetbtn);
 		Confirmationresetbtn.click();
-		StaticWait(1);
 		wait.elementToBeClickable(resetpopup);
 		resetpopup.click();
-		StaticWait(1);
 		cp.Save();
 	}
-	
-//	public void Settings()
-//	{
-//		try {
-//		    StaticWait(2);
-//		    wait.elementToBeClickable(Ellipses);
-//		    StaticWait(2);
-//		    JavascriptExecutor js = (JavascriptExecutor) driver;
-//		    js.executeScript("arguments[0].click()", Ellipses);
-//		} catch (Exception e) {
-//		    try {
-//		        // Alternative XPath if the first one fails
-//		        WebElement alternateElement = driver.findElement(By.xpath("//*[text()='more_vert']/parent::span/parent::button"));
-//		        JavascriptExecutor js = (JavascriptExecutor) driver;
-//		        js.executeScript("arguments[0].click()", alternateElement);
-//		    } catch (Exception innerException) {
-//		        System.out.println("Both attempts to click the element failed: " + innerException.getMessage());
-//		        // Optionally log the full stack trace or take further action
-//		    }
-//		}
-//
-//		StaticWait(4);
-//		wait.elementToBeClickable(Settingsoptions);
-//		StaticWait(1);
-//		Settingsoptions.click();
-//		StaticWait(1);
-//	}
-	
-	
+
 	public void Settings()
 	{
 		for(int retry=0;retry<=3;retry++)
@@ -402,62 +361,72 @@ public class SISProvisioningPage extends ActionType{
 			}
 		}
 	}
-	
-	
 	public void Checkbox()
 	{
 		IsDistrcitAdminchkbox.click();
-		StaticWait(1);
 		wait.elementToBeClickable(Speedgraderchkbox);
-		StaticWait(1);
 		Speedgraderchkbox.click();
 	}
-	public void close()
-	{
-		wait.elementToBeClickable(Closeicon);		
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click()", Closeicon);
-
+	public void close() {
+		wait.elementToBeClickable(Closeicon);
+		for (int retry = 0; retry < 3; retry++) {
+			try {
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+				wait.until(ExpectedConditions.elementToBeClickable(Closeicon));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click()", Closeicon);
+				break;
+			} catch (StaleElementReferenceException e) {
+				if (retry == 3) {
+					System.err.println("Element became stale after multiple attempts: " + e.getMessage());
+				}
+			} catch (TimeoutException e) {
+				System.err.println("Element not clickable within the wait time: " + e.getMessage());
+				break;
+			} catch (Exception e) {
+				System.err.println("An error occurred: " + e.getMessage());
+				break;
+			}
+		}
 	}
 
 	public void SettingClassroom() {
-	    int maxRetries = 3;
-	    int attempt = 0;
-	    boolean success = false;
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    while (attempt < maxRetries && !success) {
-	        try {
-	            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(SettingsClassroomtab));
-	            JavascriptExecutor js = (JavascriptExecutor) driver;
-	            js.executeScript("arguments[0].click();", element);
-	            success = true;
-	        } catch (StaleElementReferenceException e) {
-	            System.out.println("StaleElementReferenceException: " + e.getMessage());
-	            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(SettingsClassroomtab));
-	            Actions a=new Actions(driver);
-	            a.moveToElement(element).click().build().perform();
-	        } catch (Exception e) {
-	            System.out.println("Exception: " + e.getMessage());
-	        }
-	        if (!success) {
-	            attempt++;
-	            if (attempt < maxRetries) {
-	                System.out.println("Retrying... Attempt " + (attempt + 1));
-	            } else {
-	                throw new RuntimeException("Failed to click on SettingsClassroomtab after " + maxRetries + " attempts.");
-	            }
-	        }
-	    }
-	}
-
-	public void insertData() throws Exception
-	{
-		String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "ExcelFiles", "LoginDetails.xlsx").toString();
-		cp.InsertdataIntoExcel(filePath, getSheetEnv(), SchoolName, ClassroomName, SectionName);
+		int maxRetries = 3;
+		int attempt = 0;
+		boolean success = false;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		while (attempt < maxRetries && !success) {
+			try {
+				WebElement element = wait.until(ExpectedConditions.elementToBeClickable(SettingsClassroomtab));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", element);
+				success = true;
+			} catch (StaleElementReferenceException e) {
+				try {
+					StaticWait(1);
+					System.out.println("StaleElementReferenceException: " + e.getMessage());
+					WebElement element = wait.until(ExpectedConditions.elementToBeClickable(SettingsClassroomtab));
+					Actions a=new Actions(driver);
+					a.moveToElement(element).click().build().perform();
+				} catch (StaleElementReferenceException e2) {
+					System.out.println("Exception: " + e.getMessage());
+				}
+			} catch (Exception e) {
+				System.out.println("Exception: " + e.getMessage());
+			}
+			if (!success) {
+				attempt++;
+				if (attempt < maxRetries) {
+					System.out.println("Retrying... Attempt " + (attempt + 1));
+				} else {
+					throw new RuntimeException("Failed to click on SettingsClassroomtab after " + maxRetries + " attempts.");
+				}
+			}
+		}
 	}
 	public void insertUsersData() throws Exception
 	{
-		String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "ExcelFiles", "LoginDetails.xlsx").toString();
-		cp.InsertmultipledataIntoExcel(filePath, getSheetEnv());
+		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/PortfolioCenter.xlsx").toString();
+		cp.InsertmultipledataIntoExcel(filePath, getSheetEnv(),DFirstName,DLastName,TFirstName,TLastName,SFirstName,SLastName);
 	}
 }
