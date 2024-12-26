@@ -138,6 +138,7 @@ public class All_User_CreationPage extends ActionType
 		Idtxt = randomNumberGenerator();
 		IDtxt.sendKeys(String.valueOf(Idtxt));
 		PLoc(Location);		
+		StaticWait(1);
 		cp.selectCurrentDate(DOB);
 
 	}

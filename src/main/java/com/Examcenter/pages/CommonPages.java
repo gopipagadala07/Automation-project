@@ -280,7 +280,8 @@ public class CommonPages extends ActionType{
 				int currentYear = currentDate.getYear();
 				int currentMonth = currentDate.getMonthValue();
 				int currentDay = currentDate.getDayOfMonth();
-				element.click();
+				JavascriptExecutor js=(JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", element);
 				StaticWait(1);
 				yearSelection.click();
 
@@ -295,7 +296,6 @@ public class CommonPages extends ActionType{
 				wait.until(ExpectedConditions.elementToBeClickable(dayElement));
 				wait.until(ExpectedConditions.visibilityOf(dayElement));
 
-				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].click()", dayElement);
 				success = true;
 			} catch (ElementClickInterceptedException e) {
