@@ -354,32 +354,56 @@ public class SISProvisioningPage extends ActionType{
 		cp.Save();
 	}
 	
+//	public void Settings()
+//	{
+//		try {
+//		    StaticWait(2);
+//		    wait.elementToBeClickable(Ellipses);
+//		    StaticWait(2);
+//		    JavascriptExecutor js = (JavascriptExecutor) driver;
+//		    js.executeScript("arguments[0].click()", Ellipses);
+//		} catch (Exception e) {
+//		    try {
+//		        // Alternative XPath if the first one fails
+//		        WebElement alternateElement = driver.findElement(By.xpath("//*[text()='more_vert']/parent::span/parent::button"));
+//		        JavascriptExecutor js = (JavascriptExecutor) driver;
+//		        js.executeScript("arguments[0].click()", alternateElement);
+//		    } catch (Exception innerException) {
+//		        System.out.println("Both attempts to click the element failed: " + innerException.getMessage());
+//		        // Optionally log the full stack trace or take further action
+//		    }
+//		}
+//
+//		StaticWait(4);
+//		wait.elementToBeClickable(Settingsoptions);
+//		StaticWait(1);
+//		Settingsoptions.click();
+//		StaticWait(1);
+//	}
+	
+	
 	public void Settings()
 	{
-		try {
-		    StaticWait(2);
-		    wait.elementToBeClickable(Ellipses);
-		    StaticWait(2);
-		    JavascriptExecutor js = (JavascriptExecutor) driver;
-		    js.executeScript("arguments[0].click()", Ellipses);
-		} catch (Exception e) {
-		    try {
-		        // Alternative XPath if the first one fails
-		        WebElement alternateElement = driver.findElement(By.xpath("//*[text()='more_vert']/parent::span/parent::button"));
-		        JavascriptExecutor js = (JavascriptExecutor) driver;
-		        js.executeScript("arguments[0].click()", alternateElement);
-		    } catch (Exception innerException) {
-		        System.out.println("Both attempts to click the element failed: " + innerException.getMessage());
-		        // Optionally log the full stack trace or take further action
-		    }
+		for(int retry=0;retry<=3;retry++)
+		{
+			try {
+				wait.elementToBeClickable(Ellipses);
+				StaticWait(2);
+				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='more_vert']")));
+				JavascriptExecutor js=(JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", Ellipses);
+				wait.until(ExpectedConditions.elementToBeClickable(Settingsoptions));
+				js.executeScript("arguments[0].click();", Settingsoptions);
+				StaticWait(1);
+				break;
+			}catch (StaleElementReferenceException e) {
+				retry++;
+			}
 		}
-
-		StaticWait(4);
-		wait.elementToBeClickable(Settingsoptions);
-		StaticWait(1);
-		Settingsoptions.click();
-		StaticWait(1);
 	}
+	
+	
 	public void Checkbox()
 	{
 		IsDistrcitAdminchkbox.click();
