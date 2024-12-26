@@ -261,9 +261,9 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void SettingsAdd()
 	{
-		StaticWait(1);
+		StaticWait(2);
 		Settingsadd.click();
-		StaticWait(1);
+		StaticWait(2);
 	}
 	public void AddNewDistrictUser()
 	{
