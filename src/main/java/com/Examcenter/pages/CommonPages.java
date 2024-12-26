@@ -129,7 +129,9 @@ public class CommonPages extends ActionType{
 	                if (actual.contains(visibleText)) {
 	                    try {
 	                        WebElement e = wait.until(ExpectedConditions.elementToBeClickable(option));
-	                        e.click();
+	                        JavascriptExecutor js = (JavascriptExecutor) driver;
+	                        js.executeScript("arguments[0].scrollIntoView(true);", e);
+	                        js.executeScript("arguments[0].click();", e);
 	                    } catch (ElementClickInterceptedException ex) {
 	                        JavascriptExecutor js = (JavascriptExecutor) driver;
 	                        js.executeScript("arguments[0].scrollIntoView(true);", option);
