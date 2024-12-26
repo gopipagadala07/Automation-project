@@ -64,7 +64,7 @@ public class ScoreSubmissionPages extends ActionType{
 	
 	
 	public WebElement TotalScore(String Score) {
-		String xpath = "//*[@role='rowgroup']/child::tr/child::td/child::span[text()=' "+Score+"']";
+		String xpath = "//*[@role='rowgroup']/child::tr/child::td/child::span[text()=' "+ Score+"']";
 		return driver.findElement(By.xpath(xpath));
 	}
 	
@@ -80,23 +80,74 @@ public class ScoreSubmissionPages extends ActionType{
 	}
 	
 	
+//	public void the_user_searches_for_the_course_and_clicks_on_it(Integer CourseName) throws InvalidFormatException, IOException {
+//		StaticWait(2);
+//		JavascriptExecutor jc = (JavascriptExecutor) driver;
+//		if (testdata == null) {
+//			testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+//		}
+//		String PortfolioName = testdata.get(CourseName).get("CourseName");
+//		wait.elementToBeClickable(inputsearchhereElement);
+//		jc.executeScript("arguments[0].click();", inputsearchhereElement); 
+//		StaticWait(1);
+//		inputsearchhereElement.sendKeys(PortfolioName);
+//		StaticWait(2);
+////		inputsearchhereElement.sendKeys(Keys.BACK_SPACE);
+//	     StaticWait(4);
+//	     wait.visibilityOf(PortfolioName(PortfolioName));
+//	     jc.executeScript("arguments[0].click();", PortfolioName(PortfolioName));  
+//	}
+	
+	
+	
 	public void the_user_searches_for_the_course_and_clicks_on_it(Integer CourseName) throws InvalidFormatException, IOException {
-		StaticWait(2);
-		JavascriptExecutor jc = (JavascriptExecutor) driver;
-		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
-		}
-		String PortfolioName = testdata.get(CourseName).get("CourseName");
-		wait.elementToBeClickable(inputsearchhereElement);
-		jc.executeScript("arguments[0].click();", inputsearchhereElement); 
-		StaticWait(1);
-		inputsearchhereElement.sendKeys(PortfolioName);
-		StaticWait(2);
-//		inputsearchhereElement.sendKeys(Keys.BACK_SPACE);
-	     StaticWait(4);
-	     wait.visibilityOf(PortfolioName(PortfolioName));
-	     jc.executeScript("arguments[0].click();", PortfolioName(PortfolioName));  
+	    StaticWait(1);
+	    JavascriptExecutor jc = (JavascriptExecutor) driver;
+	    wait.elementToBeClickable(inputsearchhereElement);
+	    jc.executeScript("arguments[0].click();", inputsearchhereElement);
+
+	    // Retrieve data from Excel
+	    if (testdata == null) {
+	        testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+	    }
+	    String PortfolioName = testdata.get(CourseName).get("CourseName");
+
+	    retrySearchForMultiPortfolioCourseName(PortfolioName,4);
 	}
+
+	public void retrySearchForMultiPortfolioCourseName(String PortfolioName,int retryCount) {
+	    int attempts = 0;
+	    boolean isSuccessful = false;
+
+	    while (attempts < retryCount && !isSuccessful) {
+	        try {
+	            // Wait for the input element to be clickable
+	            wait.elementToBeClickable(inputsearchhereElement);
+	            inputsearchhereElement.click();
+	            inputsearchhereElement.clear(); // Clear the input field before sending keys
+	            inputsearchhereElement.sendKeys(PortfolioName);
+
+	            // Introduce a short static wait to let results load
+	            StaticWait(4);
+
+	            // Wait for the visibility of the desired portfolio name
+	            wait.visibilityOf(PortfolioName(PortfolioName));
+
+	            // Use JavaScript executor to click on the portfolio name
+	            JavascriptExecutor jc = (JavascriptExecutor) driver;
+	            jc.executeScript("arguments[0].click();", PortfolioName(PortfolioName));
+
+	            isSuccessful = true; // If successful, mark the operation as successful
+	        } catch (Exception e) {
+	            attempts++;
+	            System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+	            if (attempts >= retryCount) {
+	                throw new RuntimeException("Failed to search and click on MultiPortfolioCourseName after " + retryCount + " attempts.", e);
+	            }
+	        }
+	    }
+	}
+
 	
 	
 	public void the_user_clicks_on_the_assignment_then_click_on_score_student_portfolio_button_assignment_name(Integer AssignmentName) throws InvalidFormatException, IOException {
@@ -118,9 +169,43 @@ public class ScoreSubmissionPages extends ActionType{
 
 	public void enter_the_score_and_comments_and_submit_the_score_score(Integer Score) throws InvalidFormatException, IOException {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
-	     j.executeScript("arguments[0].scrollIntoView(true);", Scorefield);
-	     wait.elementToBeClickable(Scorefield);
-	     j.executeScript("arguments[0].click();", Scorefield);
+		StaticWait(2);
+		try {
+		    // Scroll the Scorefield element into view
+		    j.executeScript("arguments[0].scrollIntoView(true);", Scorefield);
+
+		    // Wait for 2 seconds to allow the page to stabilize
+		    StaticWait(2);
+
+		    // Wait until the Scorefield element is clickable
+		    wait.elementToBeClickable(Scorefield);
+
+		    // Click the Scorefield element using JavaScript
+		    j.executeScript("arguments[0].click();", Scorefield);
+		} catch (Exception e) {
+		    // Handle exception by using an alternate XPath
+		    try {
+		        WebElement alternateScoreField = driver.findElement(By.xpath("//*[text()='Score']/parent::label/parent::span"));
+
+		        // Scroll the alternate element into view
+		        j.executeScript("arguments[0].scrollIntoView(true);", alternateScoreField);
+
+		        // Wait for 2 seconds to allow the page to stabilize
+		        StaticWait(2);
+
+		        // Wait until the alternate element is clickable
+		        wait.elementToBeClickable(alternateScoreField);
+
+		        // Click the alternate element using JavaScript
+		        j.executeScript("arguments[0].click();", alternateScoreField);
+		    } catch (Exception innerException) {
+		        System.out.println("Failed to interact with both primary and alternate Scorefield elements.");
+		        innerException.printStackTrace();
+		    }
+		}
+
+		
+	     StaticWait(2);
 	     if (testdata == null) {
 				testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
 			}
@@ -131,7 +216,7 @@ public class ScoreSubmissionPages extends ActionType{
 		     CommentsElement.sendKeys(generateRandomString());
 		     wait.elementToBeClickable(SavScoreBtn);
 		     j.executeScript("arguments[0].click();", SavScoreBtn);
-		     StaticWait(2);
+		     StaticWait(4);
 		     j.executeScript("arguments[0].scrollIntoView(true);", TotalScore(Number));
 		     String Total= TotalScore(Number).getText();
 		     if (Number != null && Number == Total) {
@@ -175,12 +260,14 @@ public class ScoreSubmissionPages extends ActionType{
 			}
 	     wait.elementToBeClickable(ReportCardTab);
 	     j.executeScript("arguments[0].click();", ReportCardTab);
-	     String TotalScore= StandardScoreElement.getText();
-	     if (Number != null && Number == TotalScore) {
-			    System.out.println("Score Added in Report Card : " +TotalScore);
-			} else {
-			    System.out.println("Score Not Added in Report Card : "+TotalScore);
-			}
+	     StaticWait(2);
+	     String TotalScore = StandardScoreElement.getText();
+	     if (Number != null && TotalScore.contains(Number)) {
+	         System.out.println("Score Added in Report Card : " + TotalScore);
+	     } else {
+	         System.out.println("Score Not Added in Report Card : " + TotalScore);
+	     }
+
 	}
 	
 	

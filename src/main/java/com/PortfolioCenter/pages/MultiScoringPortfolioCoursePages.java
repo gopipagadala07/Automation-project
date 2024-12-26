@@ -102,25 +102,74 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 	     StaticWait(2);
 	}
 	
-	public void the_user_searches_for_the_multi_scoring_portfolio_course_and_clicks_on_it(Integer MultiScoringCourseName) throws InvalidFormatException, IOException {
-		StaticWait(1);
-	     JavascriptExecutor jc = (JavascriptExecutor) driver;
-	     wait.elementToBeClickable(inputsearchhereElement);
-			jc.executeScript("arguments[0].click();", inputsearchhereElement); 
-//			if (testdata == null) {
-//				testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
-//			}
-//			String MultiPortfolioCourse = testdata.get(MultiScoringCourseName).get("MultiScoringCourseName");
-//	     cp.searchField(MultiPortfolioCourse);
-			wait.elementToBeClickable(inputsearchhereElement);
-			inputsearchhereElement.click();
-			inputsearchhereElement.sendKeys(MultiPortfolioCourseName);
-	     StaticWait(4);
-	     wait.visibilityOf(MultiPortfolioName(MultiPortfolioCourseName));
-//	     PortfolioName(PortfolioCourseName).click();	 
-	     jc.executeScript("arguments[0].click();", MultiPortfolioName(MultiPortfolioCourseName));
-	}
+//	public void the_user_searches_for_the_multi_scoring_portfolio_course_and_clicks_on_it(Integer MultiScoringCourseName) throws InvalidFormatException, IOException {
+//		StaticWait(1);
+//	     JavascriptExecutor jc = (JavascriptExecutor) driver;
+//	     wait.elementToBeClickable(inputsearchhereElement);
+//			jc.executeScript("arguments[0].click();", inputsearchhereElement); 
+////			if (testdata == null) {
+////				testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+////			}
+////			String MultiPortfolioCourse = testdata.get(MultiScoringCourseName).get("MultiScoringCourseName");
+////	     cp.searchField(MultiPortfolioCourse);
+//			wait.elementToBeClickable(inputsearchhereElement);
+//			inputsearchhereElement.click();
+//			inputsearchhereElement.sendKeys(MultiPortfolioCourseName);
+//	     StaticWait(4);
+//	     wait.visibilityOf(MultiPortfolioName(MultiPortfolioCourseName));
+////	     PortfolioName(PortfolioCourseName).click();	 
+//	     jc.executeScript("arguments[0].click();", MultiPortfolioName(MultiPortfolioCourseName));
+//	}
 	
+	public void the_user_searches_for_the_multi_scoring_portfolio_course_and_clicks_on_it(Integer MultiScoringCourseName) throws InvalidFormatException, IOException {
+	    StaticWait(1);
+	    JavascriptExecutor jc = (JavascriptExecutor) driver;
+	    wait.elementToBeClickable(inputsearchhereElement);
+	    jc.executeScript("arguments[0].click();", inputsearchhereElement);
+
+	    // Uncomment and configure test data retrieval if needed
+	    // if (testdata == null) {
+	    //     testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+	    // }
+	    // String MultiPortfolioCourse = testdata.get(MultiScoringCourseName).get("MultiScoringCourseName");
+	    // cp.searchField(MultiPortfolioCourse);
+
+	    retrySearchForMultiPortfolioCourseName(5);
+	}
+
+	public void retrySearchForMultiPortfolioCourseName( int retryCount) {
+	    int attempts = 0;
+	    boolean isSuccessful = false;
+
+	    while (attempts < retryCount && !isSuccessful) {
+	        try {
+	            // Wait for the input element to be clickable
+	            wait.elementToBeClickable(inputsearchhereElement);
+	            inputsearchhereElement.click();
+	            inputsearchhereElement.clear(); // Clear the input field before sending keys
+	            inputsearchhereElement.sendKeys(MultiPortfolioCourseName);
+
+	            // Introduce a short static wait to let results load
+	            StaticWait(4);
+
+	            // Wait for the visibility of the desired portfolio name
+	            wait.visibilityOf(MultiPortfolioName(MultiPortfolioCourseName));
+
+	            // Use JavaScript executor to click on the portfolio name
+	            JavascriptExecutor jc = (JavascriptExecutor) driver;
+	            jc.executeScript("arguments[0].click();", MultiPortfolioName(MultiPortfolioCourseName));
+
+	            isSuccessful = true; // If successful, mark the operation as successful
+	        } catch (Exception e) {
+	            attempts++;
+	            System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+	            if (attempts >= retryCount) {
+	                throw new RuntimeException("Failed to search and click on MultiPortfolioCourseName after " + retryCount + " attempts.", e);
+	            }
+	        }
+	    }
+	}
+
 	
 	public void the_user_enters_the_assignment_name_description_and_add_multi_standards(Integer Standard1, Integer Standard2, Integer Standard3) throws InvalidFormatException, IOException {
 		StaticWait(1);
@@ -148,12 +197,12 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 			String StandardsCod2 = testdata.get(Standard2).get("Standard2");
 			String StandardsCod3 = testdata.get(Standard3).get("Standard3");
 			
-			Actions act = new Actions(driver);
+			Actions act = new Actions(Base.getDriver());
 			act.moveToElement(Standard1(StandardsCod1)).perform();
 			act.click().perform();
 			act.moveToElement(Standard2(StandardsCod2)).perform();
 			act.click().perform();
-			act.moveToElement(Standard3	(StandardsCod3)).perform();
+			act.moveToElement(Standard3(StandardsCod3)).perform();
 			act.click().perform();
 		     StaticWait(1);
 	 

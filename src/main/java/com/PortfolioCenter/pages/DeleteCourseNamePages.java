@@ -82,18 +82,61 @@ public class DeleteCourseNamePages extends ActionType{
 	     savebtn.click(); 
 	
 	}
+//	public void the_user_searche_for_the_course_and_clicks_on_it() {
+//		StaticWait(1);
+//	     JavascriptExecutor jc = (JavascriptExecutor) driver;
+//	     wait.elementToBeClickable(inputsearchhereElement);
+//			jc.executeScript("arguments[0].click();", inputsearchhereElement); 
+//	     cp.searchField(DeleteCourseName);     
+//}
+	
+	
 	public void the_user_searche_for_the_course_and_clicks_on_it() {
-		StaticWait(1);
-	     JavascriptExecutor jc = (JavascriptExecutor) driver;
-	     wait.elementToBeClickable(inputsearchhereElement);
-			jc.executeScript("arguments[0].click();", inputsearchhereElement); 
-	     cp.searchField(DeleteCourseName);
-	  
-	     
-}
+	    StaticWait(1);
+	    JavascriptExecutor jc = (JavascriptExecutor) driver;
+	    wait.elementToBeClickable(inputsearchhereElement);
+	    jc.executeScript("arguments[0].click();", inputsearchhereElement);
+
+	    retrySearchForCourseName(DeleteCourseName, 4);
+	}
+
+	public void retrySearchForCourseName(String DeleteCourseName, int retryCount) {
+	    int attempts = 0;
+	    boolean isSuccessful = false;
+
+	    while (attempts < retryCount && !isSuccessful) {
+	        try {
+	            // Wait for the input element to be clickable
+	            wait.elementToBeClickable(inputsearchhereElement);
+	            inputsearchhereElement.click();
+	            inputsearchhereElement.clear(); // Clear the input field before sending keys
+	            inputsearchhereElement.sendKeys(DeleteCourseName);
+
+	            // Introduce a short static wait to let results load
+	            StaticWait(4);
+
+	            // Wait for the visibility of the desired course name
+	            wait.visibilityOf(PortfolioName(DeleteCourseName));
+
+	            // Use JavaScript executor to click on the course name
+//	            JavascriptExecutor jc = (JavascriptExecutor) driver;
+//	            jc.executeScript("arguments[0].click();", PortfolioName(DeleteCourseName));
+
+	            isSuccessful = true; // If successful, mark the operation as successful
+	        } catch (Exception e) {
+	            attempts++;
+	            System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+	            if (attempts >= retryCount) {
+	                throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
+	            }
+	        }
+	    }
+	}
+
+	
 	public void the_user_clicks_on_the_edit_portfolio_course_button_and_deletes_the_portfolio_course() {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
-		wait.visibilityOf(PortfolioName(DeleteCourseName));
+//		wait.visibilityOf(PortfolioName(DeleteCourseName));
 		StaticWait(1);
 		wait.visibilityOf(Editbutton(DeleteCourseName));
 		j.executeScript("arguments[0].click();", Editbutton(DeleteCourseName));

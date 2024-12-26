@@ -2,6 +2,7 @@ package com.PortfolioCenter.pages;
 
 import java.awt.AWTException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +16,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
@@ -107,13 +110,17 @@ public class PortfolioCenterCoursePages extends ActionType{
 	}
 	
 	public void the_user_clicks_on_learning_and_portfolio_center() {
-	   wait.elementToBeClickable(Learningtab); 
-	   Learningtab.click();
+		StaticWait(4);
+	        WebDriverWait waitdrive = new WebDriverWait(Base.getDriver(), Duration.ofSeconds(10)); // 10 seconds timeout
+	        WebElement element = waitdrive.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[(text()='Learning')]"))); 
+	   JavascriptExecutor j = (JavascriptExecutor) driver;
+	     j.executeScript("arguments[0].click();", element);
 	   wait.elementToBeClickable(PortfolioCenterTab);
-	   PortfolioCenterTab.click();
+	   j.executeScript("arguments[0].click();", PortfolioCenterTab);
 	}
 
 	public void the_user_creates_a_portfolio_course_by_entering_the_title_and_description() {
+		StaticWait(3);
 	     wait.elementToBeClickable(EllipseBtn);
 	     EllipseBtn.click();
 	     wait.elementToBeClickable(AddNewCourseBtn);

@@ -56,10 +56,11 @@ public class LoginPage extends ActionType{
 	}
 
 	public void header() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		try {
             WebElement idServerAllow = driver.findElement(By.xpath("//button[@value='yes']"));
             if (idServerAllow.isDisplayed()) {
-            	JavascriptExecutor js = (JavascriptExecutor) driver;
+            	
             	js.executeScript("arguments[0].scrollIntoView(true);", idServerAllow);  
             	js.executeScript("arguments[0].click();", idServerAllow);
                 //idServerAllow.click();
@@ -67,8 +68,9 @@ public class LoginPage extends ActionType{
         } catch (NoSuchElementException e) {
           
         }
-        WebElement cls = driver.findElement(By.xpath("//button[@type='button']"));
-        cls.click();
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement cls =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='button']")));
+		js.executeScript("arguments[0].click();", cls);
 	}
 
 	public void loginbtn()

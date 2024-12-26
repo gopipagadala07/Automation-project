@@ -335,6 +335,7 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void ResetPwd()
 	{
+		StaticWait(2);
 		wait.elementToBeClickable(resetpwdbtn);
 		resetpwdbtn.click();
 		wait.elementToBeClickable(Confirmationresetbtn);
