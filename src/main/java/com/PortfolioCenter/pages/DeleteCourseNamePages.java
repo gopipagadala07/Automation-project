@@ -137,7 +137,7 @@ public class DeleteCourseNamePages extends ActionType{
 	public void the_user_clicks_on_the_edit_portfolio_course_button_and_deletes_the_portfolio_course() {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 //		wait.visibilityOf(PortfolioName(DeleteCourseName));
-		StaticWait(1);
+		StaticWait(2);
 		wait.visibilityOf(Editbutton(DeleteCourseName));
 		j.executeScript("arguments[0].click();", Editbutton(DeleteCourseName));
 		System.out.println(DeleteCourseName);

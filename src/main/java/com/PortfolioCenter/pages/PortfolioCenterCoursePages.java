@@ -140,16 +140,56 @@ public class PortfolioCenterCoursePages extends ActionType{
 
 	public void the_user_searches_for_the_specific_course_and_clicks_on_it() throws InvalidFormatException, IOException {	
 	     StaticWait(1);
-	     JavascriptExecutor jc = (JavascriptExecutor) driver;
-	     wait.elementToBeClickable(inputsearchhereElement);
-			jc.executeScript("arguments[0].click();", inputsearchhereElement); 
-	     cp.searchField(PortfolioCourseName);
-	     inputsearchhereElement.sendKeys(Keys.BACK_SPACE);
-	     wait.visibilityOf(PortfolioName(PortfolioCourseName));
+//	     JavascriptExecutor jc = (JavascriptExecutor) driver;
+//	     wait.elementToBeClickable(inputsearchhereElement);
+//		 jc.executeScript("arguments[0].click();", inputsearchhereElement); 
+//	     cp.searchField(PortfolioCourseName);
+//	     inputsearchhereElement.sendKeys(Keys.BACK_SPACE);
+//	     wait.visibilityOf(PortfolioName(PortfolioCourseName));
 //	     PortfolioName(PortfolioCourseName).click();	 
-	     jc.executeScript("arguments[0].click();", PortfolioName(PortfolioCourseName));
+//	     jc.executeScript("arguments[0].click();", PortfolioName(PortfolioCourseName));
 			    
-	}
+	     retrySearchForCourseName(PortfolioCourseName, 7);
+	    	}
+
+	    	public void retrySearchForCourseName(String PortfolioCourseName, int retryCount) {
+	    	    int attempts = 0;
+	    	    boolean isSuccessful = false;
+
+	    	    while (attempts < retryCount && !isSuccessful) {
+	    	        try {
+	    	            // Wait for the input element to be clickable
+	    	            wait.elementToBeClickable(inputsearchhereElement);
+	    	            inputsearchhereElement.click();
+	    	            inputsearchhereElement.clear(); // Clear the input field before sending keys
+	    	            inputsearchhereElement.sendKeys(PortfolioCourseName);
+
+	    	            // Introduce a short static wait to let results load
+	    	            StaticWait(4);
+
+	    	            // Wait for the visibility of the desired course name
+	    	            wait.visibilityOf(PortfolioName(PortfolioCourseName));
+
+//	    	             Use JavaScript executor to click on the course name
+	    	            JavascriptExecutor jc = (JavascriptExecutor) driver;
+	    	            jc.executeScript("arguments[0].click();", PortfolioName(PortfolioCourseName));
+
+	    	            isSuccessful = true; // If successful, mark the operation as successful
+	    	        } catch (Exception e) {
+	    	            attempts++;
+	    	            System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+	    	            if (attempts >= retryCount) {
+	    	                throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
+	    	            }
+	    	        }
+	    	    }
+	    	}
+	
+	
+	
+	
+	
+	
 
 	public void the_user_clicks_on_the_add_portfolio_assignment_button() {
 		StaticWait(1);
