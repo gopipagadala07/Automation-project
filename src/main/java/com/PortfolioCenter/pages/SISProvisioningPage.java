@@ -334,11 +334,11 @@ public class SISProvisioningPage extends ActionType{
 	{
 		StaticWait(1);
 		wait.elementToBeClickable(resetpwdbtn);
-		resetpwdbtn.click();
+		js.executeScript("arguments[0].click();", resetpwdbtn);
 		wait.elementToBeClickable(Confirmationresetbtn);
-		Confirmationresetbtn.click();
+		js.executeScript("arguments[0].click();", Confirmationresetbtn);
 		wait.elementToBeClickable(resetpopup);
-		resetpopup.click();
+		js.executeScript("arguments[0].click();", resetpopup);
 		cp.Save();
 	}
 
