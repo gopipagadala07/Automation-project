@@ -163,7 +163,6 @@ public class BenchmarkStepdefinitions extends ActionType{
 	    }
 	    String CourseBmark = testdata.get(SectionName1).get("Section Name");	   	   
 		    bpages.CourseBenchmarkDdown(CourseBmark);
-		    //System.out.println(CourseBmark + "-----------------------------------------------------------------------------------------------------");
 	}
 
 	@And("the user selects the school from the dropdown at row {int}")

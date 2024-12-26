@@ -92,7 +92,13 @@ public class CommonPages extends ActionType{
 	}
 	public void searchField(String value) {
 		wait.visibilityOf(searchInputs);
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(searchInputs));
+		wait.until(ExpectedConditions.visibilityOf(searchInputs));
 		searchInputs.sendKeys(value);
+		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"a"));
+		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"x"));
+		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"v"));
 		StaticWait(1);
 	}
 	public void SearchTestname (String TestName) {

@@ -234,10 +234,6 @@ public class BenchmarksPage extends ActionType {
 	{
 		  StaticWait(1);
 		cp.searchField(SectionName);
-	    cp.searchField(Keys.chord(Keys.CONTROL,"a"));
-	    cp.searchField(Keys.chord(Keys.CONTROL,"x"));
-	    StaticWait(1);
-	    cp.searchField(Keys.chord(Keys.CONTROL,"v"));
 	}
 
 	public void clickOnAdd(String SectionName) {
