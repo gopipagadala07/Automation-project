@@ -38,8 +38,8 @@ public class LaunchValidationPages extends ActionType {
 	@FindBy(how = How.XPATH, using = "//cdk-nested-tree-node[@role='treeitem']/child::div/child::div/cdk-nested-tree-node/child::div/child::div[2]/child::span[2]/child::mat-icon")
 	private List<WebElement> Quizzeslist;
 
-	@FindBy(how = How.XPATH, using = "//small[@class='announce__list--icon']")
-	private List<WebElement> examsList;
+	@FindBy(how = How.XPATH, using = "//small[@class='announce__list--icon']/child::span[2]/child::mat-icon")
+	private WebElement examsList;
 
 
 	public LaunchValidationPages(WebDriver driver) {
@@ -56,7 +56,7 @@ public class LaunchValidationPages extends ActionType {
 			js.executeScript("arguments[0].click()", quiz);
 			StaticWait(1);
 			String s=StatusBand.getText();
-			ExtentCucumberAdapter.addTestStepLog(s);
+			ExtentCucumberAdapter.addTestStepLog("Quizzes :"+s);
 			System.out.println(s);
 			JavascriptExecutor js1 = (JavascriptExecutor) driver;
 			js1.executeScript("arguments[0].click()", CloseIcon);
@@ -64,26 +64,25 @@ public class LaunchValidationPages extends ActionType {
 		}
 	}
 	public void clickEachExamAndClose() {
-		System.out.println("Total exams: " + examsList.size());
 		StaticWait(2);
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement e1=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'EXAM')]")));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", e1);
-		//ExamTab.click();
 		Actions actions = new Actions(driver);
 		try {
-			actions.moveToElement(e1).click().perform();
+			WebElement e2=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//small[@class='announce__list--icon']/child::span[2]/child::mat-icon")));
+			actions.moveToElement(e2).click().perform();
 			StaticWait(2);
-			String Band=bandstatus.getText();
-			System.out.println(Band);
-			WebElement closeButton = driver.findElement(By.xpath("//mat-icon[text()='close']/parent::span"));
-			actions.moveToElement(closeButton).click().perform();
+			String s=StatusBand.getText();
+			System.out.println(s);
+			ExtentCucumberAdapter.addTestStepLog("Exam: "+s);
+			JavascriptExecutor js1 = (JavascriptExecutor) driver;
+			js1.executeScript("arguments[0].click()", CloseIcon);
+			StaticWait(1); 
 		} catch (StaleElementReferenceException e) {
-
-
+			
 		}
-		StaticWait(1); 
 	}
 
 }
