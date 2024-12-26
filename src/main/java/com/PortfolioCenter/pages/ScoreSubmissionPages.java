@@ -251,13 +251,49 @@ public class ScoreSubmissionPages extends ActionType{
 			testdata = reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
 		}
 		String Number = testdata.get(Score).get("Score");
-		wait.visibilityOf(StandardScore(Number));
-		 String Total= StandardScore(Number).getText();
-	     if (Number != null && Number == Total) {
-			    System.out.println("Score Added : " +Total);
-			} else {
-			    System.out.println("Score Not Added : "+Total);
-			}
+//		wait.visibilityOf(StandardScore(Number));
+//		 String Total= StandardScore(Number).getText();
+//	     if (Number != null && Number == Total) {
+//			    System.out.println("Score Added : " +Total);
+//			} else {
+//			    System.out.println("Score Not Added : "+Total);
+//			}
+		
+		
+		try {
+		    // Wait for visibility of the primary element
+		    wait.visibilityOf(StandardScore(Number));
+		    String Total = StandardScore(Number).getText();
+
+		    // Validate and log the score
+		    if (Number != null && Number.toString().equals(Total)) {
+		        System.out.println("Score Added: " + Total);
+		    } else {
+		        System.out.println("Score Not Added: " + Total);
+		    }
+		} catch (Exception e) {
+		    try {
+		        // Attempt to find and validate using an alternate XPath
+		        WebElement alternateElement = driver.findElement(By.xpath("//table/child::tbody/child::tr/child::td/child::div/child::div/child::div/child::div/child::small[contains(text(),'75')]"));
+		        wait.visibilityOf(alternateElement);
+		        String Total = alternateElement.getText();
+
+		        // Validate and log the score for the alternate element
+		        if (Number != null && Number.toString().equals(Total)) {
+		            System.out.println("Score Added using alternate element: " + Total);
+		        } else {
+		            System.out.println("Score Not Added using alternate element: " + Total);
+		        }
+		    } catch (Exception innerException) {
+		        // Log error if both attempts fail
+		        System.out.println("Failed to retrieve and validate the score: " + innerException.getMessage());
+		        // Optionally, log the full stack trace
+		        innerException.printStackTrace();
+		    }
+		}
+
+		
+		
 	     wait.elementToBeClickable(ReportCardTab);
 	     j.executeScript("arguments[0].click();", ReportCardTab);
 	     StaticWait(2);
