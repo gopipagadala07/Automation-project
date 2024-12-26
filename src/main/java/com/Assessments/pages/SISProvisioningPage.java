@@ -235,18 +235,15 @@ public class SISProvisioningPage extends ActionType{
 	public void AddnewSchool()
 	{
 		js.executeScript("arguments[0].click();", AddnewSchoolbtn);
-		//		AddnewSchoolbtn.click();
 	}
 	public void AddNewClassroom()
 	{
 		js.executeScript("arguments[0].click();", AddnewClassroombtn);
-		//AddnewClassroombtn.click();
 	}
 
 	public void AddNewSection()
 	{
 		js.executeScript("arguments[0].click();", AddnewSectionbtn);
-		//AddnewSectionbtn.click();
 	}
 	public void DistrictUserTab()
 	{
@@ -262,7 +259,6 @@ public class SISProvisioningPage extends ActionType{
 	{
 		wait.elementToBeClickable(Studenttab);
 		js.executeScript("arguments[0].click();", Studenttab);
-		//Studenttab.click();
 	}
 	public void SettingsAdd()
 	{
@@ -406,10 +402,15 @@ public class SISProvisioningPage extends ActionType{
 				js.executeScript("arguments[0].click();", element);
 				success = true;
 			} catch (StaleElementReferenceException e) {
-				System.out.println("StaleElementReferenceException: " + e.getMessage());
-				WebElement element = wait.until(ExpectedConditions.elementToBeClickable(SettingsClassroomtab));
-				Actions a=new Actions(driver);
-				a.moveToElement(element).click().build().perform();
+				try {
+					StaticWait(1);
+					System.out.println("StaleElementReferenceException: " + e.getMessage());
+					WebElement element = wait.until(ExpectedConditions.elementToBeClickable(SettingsClassroomtab));
+					Actions a=new Actions(driver);
+					a.moveToElement(element).click().build().perform();
+				} catch (StaleElementReferenceException e2) {
+					System.out.println("Exception: " + e.getMessage());
+				}
 			} catch (Exception e) {
 				System.out.println("Exception: " + e.getMessage());
 			}
