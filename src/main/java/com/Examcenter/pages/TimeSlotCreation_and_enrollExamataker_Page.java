@@ -85,6 +85,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 				WebElement ExaminationLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Examination']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")));
 				wait.until(ExpectedConditions.visibilityOf(ExaminationLookup));
 				if (ExaminationLookup.isEnabled()) {
+					StaticWait(2);
 					cp.FPdropdown(ExaminationLookup, fullExamScheduleName);
 					break;
 				} else {
@@ -109,6 +110,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement Locationlookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Location']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")));
+		StaticWait(2);
 		cp.FPdropdown(Locationlookup, Location);
 		System.out.println(Location);
 	}
