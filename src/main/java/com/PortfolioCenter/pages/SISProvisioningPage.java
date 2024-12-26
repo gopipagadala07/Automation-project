@@ -67,7 +67,7 @@ public class SISProvisioningPage extends ActionType{
 	@FindBy(how=How.XPATH,using = "(//input[@type='text'])[1]")private WebElement Emailfield;
 	@FindBy(how=How.XPATH,using = "(//input[@type='text'])[2]")private WebElement FirstnameField;
 	@FindBy(how=How.XPATH,using = "(//input[@type='text'])[3]")private WebElement LastnameField;
-	@FindBy(how=How.XPATH,using = "//mat-icon[contains(text(),'more_vert')]") private WebElement Ellipses;
+	@FindBy(how=How.XPATH,using = "//*[text()='more_vert']") private WebElement Ellipses;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(),'Edit')]")private WebElement Editoption;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(),'Create New Login')]")private WebElement CreateNewLoginbtn;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(),' Reset Password')]")private WebElement resetpwdbtn;
