@@ -66,7 +66,7 @@ public class BenchmarksPage extends ActionType {
 	@FindBy(how=How.XPATH,using="//fp-dropdown[@controlname='school']")private WebElement SchoolDropdown;
 	@FindBy(how=How.XPATH,using="//fp-dropdown[@controlname='teacher']")private WebElement TeacherDropdown;
 	@FindBy(how=How.XPATH,using="//fp-dropdown[@controlname='classroomID']")private WebElement ClassroomdropDown;
-	@FindBy(how=How.XPATH,using="//span[contains(text(),' Activate all test status. ')] ")private WebElement ToggleActive;
+	@FindBy(how=How.XPATH,using="//span[text()=' Activate all test status. ']")private WebElement ToggleActive;
 	@FindBy(how=How.XPATH,using="//span[contains(text(),' Deactivate all test status. ')] ")private WebElement ToggleInActive;
 	@FindBy(how=How.XPATH,using="//button[text()='Yes']")private WebElement ClickOnYEs;//click on yes to activate benchmark
 	@FindBy(how=How.XPATH,using="//mat-label[contains(text(),'Status')]/following::span[contains(text(),'Not Started')]")private WebElement NotStartedStatus;
