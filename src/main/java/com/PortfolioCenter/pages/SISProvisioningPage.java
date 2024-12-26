@@ -3,6 +3,7 @@ package com.PortfolioCenter.pages;
 import java.nio.file.Paths;
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
@@ -347,9 +348,24 @@ public class SISProvisioningPage extends ActionType{
 	
 	public void Settings()
 	{
-		wait.elementToBeClickable(Ellipses);
-		StaticWait(2);
-		Ellipses.click();
+		try {
+		    StaticWait(2);
+		    wait.elementToBeClickable(Ellipses);
+		    StaticWait(2);
+		    JavascriptExecutor js = (JavascriptExecutor) driver;
+		    js.executeScript("arguments[0].click()", Ellipses);
+		} catch (Exception e) {
+		    try {
+		        // Alternative XPath if the first one fails
+		        WebElement alternateElement = driver.findElement(By.xpath("//*[text()='more_vert']/parent::span/parent::button"));
+		        JavascriptExecutor js = (JavascriptExecutor) driver;
+		        js.executeScript("arguments[0].click()", alternateElement);
+		    } catch (Exception innerException) {
+		        System.out.println("Both attempts to click the element failed: " + innerException.getMessage());
+		        // Optionally log the full stack trace or take further action
+		    }
+		}
+
 		StaticWait(2);
 		wait.elementToBeClickable(Settingsoptions);
 		Settingsoptions.click();
