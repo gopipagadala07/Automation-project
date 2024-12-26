@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 
 public class Wait extends Base{
 	
-	//WebDriver driver;
+	WebDriver driver;
 	      Actions actions;
           FluentWait<WebDriver> wait1;
 	

@@ -1,6 +1,6 @@
-Feature: Performing Quix/Exams at student side
+Feature: Validating the Quiz/Exams at student side
 
-  Scenario Outline: Creating Validating Launch Icon Through Home Tab
+  Scenario Outline: Validating Quiz/Exams Through Home Tab
     Given User launch the application with Valid URL
     And User able to see all Fields
     Then User enters the credentials from the excel sheet at <rownumber>

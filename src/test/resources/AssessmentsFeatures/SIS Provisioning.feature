@@ -21,12 +21,10 @@ Feature: Verify the SIS Provisioning Creation Functionality
     Then User Click on the Add New Sections button
     And User Enter the Section Name and Description
     Then User Saved the Section and Search for the Created Section in Search here Field
-    Then Store the data in Excel
 
     Examples: 
       | rownumber |
       |         0 |
-
   Scenario Outline: Verify the Users Creation Functionality with valid Data
     Given User launch the application with Valid URL
     And User able to see all Fields

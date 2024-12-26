@@ -39,7 +39,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	}
 
 	@When("User Enter the Name and Description")
-	public void user_enter_the_name_and_description() {
+	public void user_enter_the_name_and_description() throws Exception {
 		provisioning.SchoolDetails();
 	}
 
@@ -47,14 +47,14 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	public void user_select_the_timezone_from_dropdown(int TimeZone) throws Exception {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 		}
 		String value=testdata.get(TimeZone).get("TimeZone");
 		provisioning.TimezoneValue(value);
 	}
 
 	@Then("User Saved the School and Search for the Created School in Search here Field")
-	public void user_saved_the_school_and_search_for_the_created_school_in_search_here_field() {
+	public void user_saved_the_school_and_search_for_the_created_school_in_search_here_field() throws Exception {
 	   cp.Save();
 	   provisioning.SchoolSearch();
 	}
@@ -75,12 +75,12 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	}
 
 	@Then("User Enter the Classroom Name and Description")
-	public void user_enter_the_classroom_name_and_description() {
+	public void user_enter_the_classroom_name_and_description() throws Exception {
 	    provisioning.ClassroomDetails();
 	}
 
 	@And("User Saved the Classroom and Search for the Created Classroom in Search here Field")
-	public void user_saved_the_classroom_and_search_for_the_created_classroom_in_search_here_field() {
+	public void user_saved_the_classroom_and_search_for_the_created_classroom_in_search_here_field() throws Exception {
 		cp.Save();
 		provisioning.ClassroomSearch();
 	}
@@ -94,7 +94,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	public void user_select_the_active_year_from_year_dropdown(int Year) throws Exception, IOException {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 		}
 		String value=testdata.get(Year).get("Year");
 		provisioning.YearDropDownSearch(value);
@@ -106,12 +106,12 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	}
 
 	@And("User Enter the Section Name and Description")
-	public void user_enter_the_section_name_and_description() {
+	public void user_enter_the_section_name_and_description() throws Exception {
 	    provisioning.SectionDetails();
 	}
 
 	@Then("User Saved the Section and Search for the Created Section in Search here Field")
-	public void user_saved_the_section_and_search_for_the_created_section_in_search_here_field() {
+	public void user_saved_the_section_and_search_for_the_created_section_in_search_here_field() throws Exception {
 		cp.Save();
 		provisioning.SectionSearch();
 	}
@@ -177,7 +177,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	
 	@Then("User Enters the Teacher Email, Teacher First name, Teacher Last name into the Respective Fields")
 	public void user_enters_the_teacher_email_teacher_first_name_teacher_last_name_into_the_respective_fields() {
-		provisioning.TeacherUserDetails("Tutor");;
+		provisioning.TeacherUserDetails("Teacher");;
 	}
 	
 	@When("User Saved the Teacher and Search for the User in search here Field")
@@ -196,7 +196,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 		}
 		String Yearvalue=testdata.get(Year).get("Year");
 	    provisioning.YearDropDownSearch(Yearvalue);
@@ -235,8 +235,8 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	
 	@Then("Store the data in Excel")
 	public void store_the_data_in_excel() throws Exception {
-		provisioning.insertData();
-		System.out.println("Data inserted Sucessfully");
+		//provisioning.insertData();
+//		System.out.println("Data inserted Sucessfully");
 	}
 	@Then("Store the users data in Excel")
 	public void store_the_users_data_in_excel() throws Exception {

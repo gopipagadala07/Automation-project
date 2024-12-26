@@ -1,19 +1,14 @@
 package com.Assessments.pages;
-
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
-
-import io.cucumber.java.lu.an;
+import org.openqa.selenium.support.How;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 import java.awt.AWTException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
-
-import org.apache.poi.hssf.record.PageBreakRecord.Break;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -21,30 +16,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.StaleElementReferenceException;
 
 public class AnnouncementsPages extends ActionType {
 
-
-
-	//private static final String[] AnnouncementName = null;
 	CommonPages cp=new CommonPages(Base.getDriver());
-	private String announcementName;
-	private	List<String> announcementNames = new ArrayList<>(); // Initialize the list
-	//	String classroomName;
-	//	String sectionName;
-	//	String lastname;
-	//	String firstname;
-	//String selectedAnnouncement;
-
-
+	static String announcementName;
+	static	List<String> announcementNames = new ArrayList<>();
+	static String sectionName;
 	public WebDriver driver;
 	private Wait wait;
 
@@ -67,6 +48,8 @@ public class AnnouncementsPages extends ActionType {
 	@FindBy(how=How.XPATH,using="(//div[@role='tab'])[1]")private WebElement Hometab;
 	@FindBy(how=How.XPATH,using="//a[text()='Assessment Center']/following::li[2]")private WebElement course;//to scroll page upto course 
 
+
+
 	public WebElement getCommunityNameElement(String ClassroomName) {
 		String xpath = "//span[(text()='"+ClassroomName+"')]/parent::div/parent::mat-card-content/preceding-sibling::mat-card-header/child::div/mat-card-title/child::span";
 		return driver.findElement(By.xpath(xpath));
@@ -82,11 +65,13 @@ public class AnnouncementsPages extends ActionType {
 		a.moveToElement(getCommunityNameElement(ClassroomName)).click().build().perform();
 		StaticWait(2);
 	}
+
 	public AnnouncementsPages(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new Wait(driver); 
 	}
+
 	public void ClickOnLearningaAndAssessmentCenter() {
 		wait.elementToBeClickable(LearningTab);
 		LearningTab.click();
@@ -94,14 +79,16 @@ public class AnnouncementsPages extends ActionType {
 		wait.elementToBeClickable(AssessmentcenterTab);
 		AssessmentcenterTab.click();
 	}
+
 	public void ClickOnAnnouncementTab() {
 		wait.elementToBeClickable(AnnouncementTab);
 		wait.visibilityOf(AnnouncementTab);
 		AnnouncementTab.click();
 	}
+
 	public void ClickOnAddNewAnnouncement() {
 
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 4; i++) {
 			try {
 
 				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -115,41 +102,42 @@ public class AnnouncementsPages extends ActionType {
 				TitleField.click();
 
 				announcementName = "Announcement" + randomNumberGenerator(); 
-				System.out.println("Announcement Name: " + announcementName);
+				ExtentCucumberAdapter.addTestStepLog("Announcement Name: " + announcementName);
 				announcementNames.add(announcementName);
 
 				Actions actions = new Actions(driver);
 				actions.moveToElement(TitleField).click().sendKeys(announcementName).perform();
-
+				StaticWait(1);
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].scrollIntoView(true);", DescriptionField);
 				Actions actions1 = new Actions(driver);
 				actions1.moveToElement(DescriptionField).click().sendKeys(generateRandomString()).perform();
 
-
 				js.executeScript("arguments[0].scrollIntoView(true);", course);
 
-
+				StaticWait(1);
 				wait.until(ExpectedConditions.elementToBeClickable(EventDate));
 				wait.until(ExpectedConditions.visibilityOf(EventDate));
+				StaticWait(1);
 				cp.getRandomDate(EventDate);
 
 
 				wait.until(ExpectedConditions.elementToBeClickable(PublishDate));
+				StaticWait(1);
 				wait.until(ExpectedConditions.visibilityOf(PublishDate));
-				cp.CurrentDate(PublishDate);
-
+				cp.selectCurrentDate(PublishDate);
 
 				wait.until(ExpectedConditions.elementToBeClickable(SaveButton));
 				SaveButton.click();
-				StaticWait(1);
+				StaticWait(2);
 			} catch (ElementClickInterceptedException e) {
 				System.out.println("Element click intercepted, retrying...");
 				StaticWait(1);
-				i--; // Retry the same iteration
+				i--; 
 			} catch (Exception e) {
 				System.out.println("Error while adding new announcement: " + e.getMessage());
 			}}}
+
 
 	public void AnnouncementsSearch() {
 
@@ -175,6 +163,8 @@ public class AnnouncementsPages extends ActionType {
 		StaticWait(2);
 		wait.elementToBeClickable(nextpage);
 		wait.visibilityOf(nextpage);
+		//		Dimension d=new Dimension(1920,1080);
+		//		driver.manage().window().setSize(d);
 		nextpage.click();
 		StaticWait(2);
 
@@ -200,42 +190,51 @@ public class AnnouncementsPages extends ActionType {
 		wait.visibilityOf(Hometab);
 		Hometab.click();
 	}
+
 	public void ClickOnAddAndSave() {
 		wait.elementToBeClickable(ADdNewAnnouncement);
 		wait.visibilityOf(ADdNewAnnouncement);
 		ADdNewAnnouncement.click();
-
+		StaticWait(1);
 		wait.elementToBeClickable(SaveButton);
 		wait.visibilityOf(SaveButton);
 		SaveButton.click();
 
-//		try {
-//			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
-//			wait.until(ExpectedConditions.alertIsPresent());  
-//			Alert alert = driver.switchTo().alert(); 
-//			String popupMessage = alert.getText(); 
-//			System.out.println("-------------Popup Message:-------- " + popupMessage);
-//		} catch (NoAlertPresentException e) {
-//			System.out.println("No alert present: " + e.getMessage());
-//		}
+		//		try {
+		//			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
+		//			wait.until(ExpectedConditions.alertIsPresent());  
+		//			Alert alert = driver.switchTo().alert(); 
+		//			String popupMessage = alert.getText(); 
+		//			System.out.println("-------------Popup Message:-------- " + popupMessage);
+		//		} catch (NoAlertPresentException e) {
+		//			System.out.println("No alert present: " + e.getMessage());
+		//		}
 
 
 	}
 	/*
 	 * Student side verification
 	 */
+
 	public void ClickOnAnnouncementFromHomeTab() throws AWTException {
-		String an1=announcementName;
-		System.out.println("------------------------------------------------------------------------------------" + an1);
+		//List<String> announcementNames = new ArrayList<>();
+		String Aname=announcementNames.get(1);
+		String an1=Aname;
+		System.out.println("Announcement:" + an1);
 		WebElement announcementElement = driver.findElement(By.xpath("//a[contains(text(),'" + an1 + "')]"));
 
-		if (announcementElement.isDisplayed()) {
-			announcementElement.click();
-		} else {
-			wait.visibilityOf(announcementElement);
-			cp.scrollWithRobot();
-			announcementElement.click();
-		}
+		//		Actions a=new Actions(driver);
+		//		a.moveToElement(announcementElement).click().perform(); 
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", announcementElement);
+
+		//		if (announcementElement.isDisplayed()) {
+		//			Actions a=new Actions(driver);
+		//			a.moveToElement(announcementElement).click().perform();
+		//		} else {
+		//			JavascriptExecutor js = (JavascriptExecutor) driver;
+		//			js.executeScript("arguments[0].click();", announcementElement);
+		//		}
 	}
 }
 

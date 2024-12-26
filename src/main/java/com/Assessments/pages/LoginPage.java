@@ -1,13 +1,18 @@
 package com.Assessments.pages;
+
+import java.time.Duration;
+import java.util.concurrent.TimeoutException;
 import java.awt.AWTException;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Wait;
@@ -15,16 +20,11 @@ import com.Utils.Wait;
 
 public class LoginPage extends ActionType{
 
-	private Wait wait;
-	private By close=By.xpath("//button[@type='button']");
-	private By changepwd=By.xpath("//h3[text()='Change Password']");
-	private By coun=By.xpath("//mat-toolbar[@id='appHeader']");
+
 	private WebDriver driver;
 	private	By forgotPassword=By.xpath("//a[text()='Forgot password']");
-	private By fp=By.xpath("//span[text()='FocalPoint']");
 	private	By Login=By.xpath("//button[@value='login']");
 	private	By loginToAppText = By.xpath("//div[@class='text-center m-b-md']/h3");
-	private By menu=By.xpath("//a[@routerlinkactive='selected']");
 	private	By password=By.xpath("//input[@id='Password']");
 	private	By rememeberchkbox=By.xpath("//input[@type='checkbox']");
 	private	By username=By.xpath("//input[@id='Username']");
@@ -36,8 +36,6 @@ public class LoginPage extends ActionType{
 	public LoginPage(WebDriver driver)
 	{
 		this.driver=driver;
-
-		this.wait=new Wait(driver);
 	}
 
 	public void allFieldsDispayed() {
@@ -56,19 +54,22 @@ public class LoginPage extends ActionType{
 		driver.findElement(username).sendKeys(FT+"."+LT+"."+Tid);
 	}
 
+	public void header() {
+		try {
+            WebElement idServerAllow = driver.findElement(By.xpath("//button[@value='yes']"));
+            if (idServerAllow.isDisplayed()) {
+            	JavascriptExecutor js = (JavascriptExecutor) driver;
+            	js.executeScript("arguments[0].scrollIntoView(true);", idServerAllow);  
+            	js.executeScript("arguments[0].click();", idServerAllow);
+                //idServerAllow.click();
+            }
+        } catch (NoSuchElementException e) {
+          
+        }
+        WebElement cls = driver.findElement(By.xpath("//button[@type='button']"));
+        cls.click();
+	}
 
-	public void header() 
-	{
-		
-	
-		WebElement cls=driver.findElement(close);
-			wait.elementToBeClickable(cls);
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click();", cls);		
-
-   
-
-    }
 	public void loginbtn()
 	{
 		driver.findElement(Login).click();

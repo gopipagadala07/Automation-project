@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class Teacher_Activityprogress extends ActionType{
 
@@ -38,23 +40,17 @@ public class Teacher_Activityprogress extends ActionType{
 
 	private By Learningtab = By.xpath("//span[contains(text(),'Learning')]");
 	private By AssessmentTab = By.xpath("//a[contains(text(),'Assessment Center')]");
-
-
-
-	//	@FindBy(how = How.XPATH, using = "//div[contains(text(),'QUIZ')]")
-	//	private List<WebElement> Quizzes;
-
 	@FindBy(how = How.XPATH, using = "//cdk-nested-tree-node[@role='treeitem']/child::div/child::div[2]/cdk-nested-tree-node/child::div/child::small")
 	private List<WebElement> Quizzeslist;
-
-	private By close = By.xpath("//mat-icon[normalize-space()='close']");
+	@FindBy(how=How.XPATH,using = "//div[@class='table_body_item']/child::label")private WebElement bandstatus;
+	private By close = By.xpath("//button[@aria-label='close dialog']/child::span/child::mat-icon");
 
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'EXAM')]")
 	private WebElement examtab;
 
 
 	@FindBy(how = How.XPATH, using = "//mat-tab-body[@role='tabpanel']/child::div/child::mat-list/child::mat-list-item/child::span/child::small")
-	private List<WebElement> Examslist;
+	private WebElement Examslist;
 
 
 	public Teacher_Activityprogress(WebDriver driver) {
@@ -92,13 +88,6 @@ public class Teacher_Activityprogress extends ActionType{
 		wait.elementToBeClickable(getCommunityNameElement(ClassroomName));
 		Actions a=new Actions(driver);
 		a.moveToElement(getCommunityNameElement(ClassroomName)).click().build().perform();
-		//      JavascriptExecutor js=(JavascriptExecutor) driver;
-		//      js.executeScript("arguments[0].click();", getCommunityNameElement(ClassroomName));
-
-
-
-		//wait.elementToBeClickable(Assessmentcourse);
-		//Assessmentcourse.click();
 		StaticWait(2);
 
 	}
@@ -109,60 +98,36 @@ public class Teacher_Activityprogress extends ActionType{
 			JavascriptExecutor js=(JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click()", quiz);
 			StaticWait(2);
+			String Band=bandstatus.getText();
+			ExtentCucumberAdapter.addTestStepLog(Band);
+			System.out.println(Band);
 			WebElement closeButton = driver.findElement(close);
 			js.executeScript("arguments[0].click();", closeButton);
-
-			// Static wait to allow the page or modal to close properly
 			StaticWait(2);
+		}
+	}
+	public void examtab() {
+		StaticWait(2);
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'EXAM')]")));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click()", e);
+		StaticWait(1);
+	}
+
+	public void clickEachExamAndClose() {
+		Actions actions = new Actions(driver);
+				try {
+					actions.moveToElement(Examslist).click().perform();
+					StaticWait(2);
+					//String Band=bandstatus.getText();
+					//System.out.println(Band);
+					WebElement closeButton = driver.findElement(close);
+					actions.moveToElement(closeButton).click().perform();
+				} catch (StaleElementReferenceException e) {
+					
+	
+				}
 
 		}
-
-	}
-
-	public void examtab() {
-
-		examtab.click();
-		StaticWait(2);
-
-	}
-
-	/*public void clickEachExamAndClose() {
-		System.out.println(Examslist.size());
-		for (WebElement exam : Examslist) {
-			JavascriptExecutor js=(JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click()", exam);
-			StaticWait(2);
-			WebElement closeButton1 = driver.findElement(close);
-			js.executeScript("arguments[0].click();", closeButton1);
-			StaticWait(2);
-	 */
-	public void clickEachExamAndClose() {
-		
-		int min=0;
-		int max=5;
-	
-	        
-	            try {
-	            	
-	        		Actions actions = new Actions(driver);
-
-	        		for (WebElement exam : Examslist) {
-	        			System.out.println("Total Exams: " + Examslist.size());
-	        			while (min < max) {
-
-	        			actions.moveToElement(exam).click().perform();
-	        			StaticWait(2);
-	        			WebElement closeButton = driver.findElement(close);
-	        			actions.moveToElement(closeButton).click().perform();
-	        			StaticWait(2);
-	        		}
-	        		
-	                break; // Exit the loop if the action is successful
-	            }} catch (StaleElementReferenceException e) {
-	                min++;
-	               
-	                }
-		
-	
-	}
 }

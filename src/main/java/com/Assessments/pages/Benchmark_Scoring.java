@@ -39,22 +39,17 @@ public class Benchmark_Scoring extends ActionType{
 
 	private By Learningtab = By.xpath("//span[contains(text(),'Learning')]");
 	private By AssessmentTab = By.xpath("//a[contains(text(),'Assessment Center')]");
-
 	@FindBy(how=How.XPATH,using = "//*[local-name()='svg' and @matTooltip='Benchmarks'] /*[name()='g']")private WebElement Benchmarktab;
-
 	@FindBy(how = How.XPATH,using = "//button[@mattooltip='Schedule']")private WebElement Schedule;
-
 	@FindBy(how=How.XPATH,using = "//span[text()='Progress']")private WebElement progress;
-
-	private By close = By.xpath("//mat-icon[normalize-space()='close']");
-
 	@FindBy(how=How.XPATH,using = "//div[@class='table_body_item']/*[text()='Score']")private WebElement scorebnd;
 	@FindBy(how=How.XPATH,using = "//div[@class='table_body_item']/child::label/child::small")private WebElement bandstatus;
 	@FindBy(how=How.XPATH,using = "//input[@type='number']")private WebElement score;
 	@FindBy(how=How.XPATH,using = "//iframe[@class='dashboard-report']")private WebElement iframe;
-	
-	
+	@FindBy(how=How.XPATH,using = "//span[normalize-space()='Submit Scoring']")private WebElement submit;
+	@FindBy(how=How.XPATH,using="//div[text() = 'Benchmark']/ancestor::mat-dialog-container/descendant::span/mat-icon[text()='close']")private WebElement CloseAfterSubmit;
 
+	@FindBy(how=How.XPATH,using = "//h3[text()='Benchmarks']")private WebElement bclick;
 
 	public Benchmark_Scoring(WebDriver driver) {
 		this.driver=driver;
@@ -110,33 +105,50 @@ public class Benchmark_Scoring extends ActionType{
 
 	public void Activityprogress(){
 
-		StaticWait(2);
+		
 		wait.elementToBeClickable(Schedule);
+		wait.visibilityOf(Schedule);
+		//StaticWait(3);
+		Actions actions=new Actions(driver);
+		actions.moveToElement(bclick).click().perform();
 		Schedule.click();
 
-
-		StaticWait(2);
+		
 		wait.elementToBeClickable(progress);
+		wait.visibilityOf(progress);
+		StaticWait(2);
+		
 		progress.click();
 	}
 	public void Scoringscreen(){
 
 		StaticWait(2);
 		wait.elementToBeClickable(scorebnd);
+		wait.visibilityOf(scorebnd);
 		scorebnd.click();
 
 	}
 
 	public void Submitscore(){
-		
-		driver.switchTo().frame(0);
-		
-		StaticWait(5);
-		wait.elementToBeClickable(score);
-		score.sendKeys("3");
-		
-	}	
 
+		driver.switchTo().frame(0);
+
+		StaticWait(2);
+		wait.elementToBeClickable(score);
+		wait.visibilityOf(score);
+		score.sendKeys("3");
+
+
+		StaticWait(2);
+		wait.elementToBeClickable(submit);
+		submit.click();
+
+		StaticWait(2);
+		driver.switchTo().defaultContent();
+		StaticWait(2);
+		wait.elementToBeClickable(CloseAfterSubmit);
+		CloseAfterSubmit.click();
+	}
 
 	public void bandstatus(){
 

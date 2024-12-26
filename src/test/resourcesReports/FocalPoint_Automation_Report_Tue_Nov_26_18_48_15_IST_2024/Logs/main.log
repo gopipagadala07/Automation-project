@@ -1,0 +1,24 @@
+2024-11-26 18:48:15,272 INFO  [rootLogger] Enviornment is : STAGE
+2024-11-26 18:48:15,286 INFO  [rootLogger] Browser value is: CHROME
+2024-11-26 18:48:18,899 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-26 18:48:18,904 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-11-26 18:49:26,094 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-11-26 18:49:26,147 INFO  [rootLogger] Browser value is: CHROME
+2024-11-26 18:49:31,694 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-26 18:49:31,695 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-11-26 18:50:22,897 INFO  [rootLogger] Info: Email Id: DistrictUserautomation4187@fpk12.com
+2024-11-26 18:50:40,335 INFO  [rootLogger] Info: Email Id: Tutorautomation9900@fpk12.com
+2024-11-26 18:50:59,824 INFO  [rootLogger] Info: Email Id: Studentautomation7417@fpk12.com
+2024-11-26 18:51:13,713 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-11-26 18:51:16,475 INFO  [rootLogger] Browser value is: CHROME
+2024-11-26 18:51:19,219 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-26 18:51:19,220 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-11-26 18:52:14,687 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-11-26 18:52:14,741 INFO  [rootLogger] Browser value is: CHROME
+2024-11-26 18:52:17,604 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-26 18:52:17,604 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-11-26 18:53:23,155 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-11-26 18:53:24,817 INFO  [rootLogger] Browser value is: CHROME
+2024-11-26 18:53:28,202 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-11-26 18:53:28,203 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-11-26 18:53:57,593 INFO  [rootLogger] -----------------End of Scenario-----------------

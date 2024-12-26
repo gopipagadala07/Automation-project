@@ -33,7 +33,7 @@ public class LoginStepdefinintions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/ExcelFiles/LoginDetails.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 		}
 		String FtName=testdata.get(rownumber).get("FirstName");
 		String LtName=testdata.get(rownumber).get("LastName");

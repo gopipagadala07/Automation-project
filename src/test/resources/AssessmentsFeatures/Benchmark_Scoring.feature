@@ -1,4 +1,4 @@
-Feature: Verify the Benchmark Scoring from Teacher Activity progress
+Feature: Verify the  Benchmark Scoring from Teacher Activity progress
 
   Scenario Outline: Validating the Benchmark Scoring from Teacher Activity progress screen
     Given User launch the application with Valid URL
@@ -16,3 +16,6 @@ Feature: Verify the Benchmark Scoring from Teacher Activity progress
     Examples: 
       | rownumber | rownumber1 |
       |         2 |          0 |
+
+      
+      

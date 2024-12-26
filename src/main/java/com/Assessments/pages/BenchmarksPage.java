@@ -3,6 +3,7 @@ package com.Assessments.pages;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
@@ -86,7 +87,19 @@ public class BenchmarksPage extends ActionType {
 		return driver.findElement(By.xpath(xpath));
 	}
 	public void clickOnNewBencmark() {
-		NewBenchmarkName(BenchMarkname).click();
+		for(int retry=0;retry<=3;retry++)
+		{
+			try {
+				JavascriptExecutor js=(JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", NewBenchmarkName(BenchMarkname));
+				break;
+			}catch (StaleElementReferenceException e) {
+				retry++;
+				System.out.println("Stale Element referenec Exception occuring..!!");
+			}
+		}
+		
+		//NewBenchmarkName(BenchMarkname).click();
 	}
 	public BenchmarksPage(WebDriver driver) {
 		this.driver = driver;
@@ -153,7 +166,7 @@ public class BenchmarksPage extends ActionType {
 		wait.visibilityOf(BenchmarkNameField);
 		BenchMarkname="AutoBenchmark"+randomNumberGenerator();
 		BenchmarkNameField.sendKeys(BenchMarkname);
-		System.out.println(BenchMarkname);
+		ExtentCucumberAdapter.addTestStepLog(BenchMarkname);
 		DescriptionFld.sendKeys(generateRandomString());
 
 	}
@@ -167,10 +180,11 @@ public class BenchmarksPage extends ActionType {
 
 	public void testSearch(String Testname) {
 		String testname="\"" + Testname + "\"";
-		System.out.println(testname);
+		ExtentCucumberAdapter.addTestStepLog(testname);
 		cp.SearchTestname(testname);
 		wait.elementToBeClickable(gobutton);
 		gobutton.click();
+		StaticWait(2);
 	}
 	public void addicon() {
 
@@ -190,32 +204,41 @@ public class BenchmarksPage extends ActionType {
 		savebutton.click();
 		StaticWait(1);
 	}
-	public void clickOnSectionTab() {
+	public void clickOnSectionTab() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		int retries = 0;
-		int maxRetries = 3;
+		int maxRetries = 15;
+		boolean success = false;
 
-		while (retries < maxRetries) {
+		while (retries < maxRetries && !success) {
 			try {
 				WebElement sectionTab = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'SECTIONS')]")));
-				Actions actions = new Actions(driver);
-				actions.moveToElement(sectionTab).click().perform();
-				return;
-
+				js.executeScript("arguments[0].click()", sectionTab);
+				success = true;
 			} catch (StaleElementReferenceException e) {
 				retries++;
-				try {
-					Thread.sleep(500);
-				} catch (InterruptedException ie) {
-					Thread.currentThread().interrupt();
-				}
 			} catch (Exception e) {
 				e.printStackTrace();
 				return;
 			}
 		}
+		
+		if (!success) {
+			System.out.println("Failed to click the section tab after " + maxRetries + " attempts.");
+		}
 	}
 
+
+	public void SectionSearch(String SectionName)
+	{
+		  StaticWait(1);
+		cp.searchField(SectionName);
+	    cp.searchField(Keys.chord(Keys.CONTROL,"a"));
+	    cp.searchField(Keys.chord(Keys.CONTROL,"x"));
+	    StaticWait(1);
+	    cp.searchField(Keys.chord(Keys.CONTROL,"v"));
+	}
 
 	public void clickOnAdd(String SectionName) {
 
@@ -238,7 +261,7 @@ public class BenchmarksPage extends ActionType {
 		wait.elementToBeClickable(CourseBenchmarkDropDown);	
 
 		cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
-		System.out.println(SectionName);
+		//.out.println(SectionName + "---------------------------------------------------------------");
 	}
 
 
@@ -253,42 +276,64 @@ public class BenchmarksPage extends ActionType {
 		wait.elementToBeClickable(TeacherDropdown);
 		cp.FPdropdown(TeacherDropdown, LastName +" "+FirstName);
 		String s=LastName +" "+FirstName;
-		System.out.println(s);
+		ExtentCucumberAdapter.addTestStepLog(s);
 	}
 
 	public void classroomDdown(String classroomdown) {
 		wait.elementToBeClickable(ClassroomdropDown);
 		wait.visibilityOf(ClassroomdropDown);
 		cp.FPdropdown(ClassroomdropDown, classroomdown);
+		StaticWait(3);
 	}
 
 
 	public void ActiveToggle() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));  // You can adjust the timeout as needed
+	    int maxRetries = 3;
+	    int retries = 0;
 
-		try {
-			if (ToggleActive.isDisplayed())
-			{
-				wait.elementToBeClickable(ToggleActive);
-				Actions actions = new Actions(driver);
-				actions.moveToElement(ToggleActive).click().perform(); 
-				wait.elementToBeClickable(ClickOnYEs);
-				ClickOnYEs.click(); 
-			} 
-			else
-			{
+	    while (retries < maxRetries) {
+	        try {
+	            
+	            if (ToggleActive.isDisplayed()) {
+	                wait.until(ExpectedConditions.elementToBeClickable(ToggleActive)); 
+	                Actions actions = new Actions(driver);
+	                actions.moveToElement(ToggleActive).click().perform(); 
 
-				StaticWait(1);
-				Actions actions = new Actions(driver);
-				actions.moveToElement(ToggleInActive).click().perform(); 
-				wait.elementToBeClickable(ClickOnYEs);
-				wait.visibilityOf(ClickOnYEs); 
-				ClickOnYEs.click(); 
-			}
-		} catch (NoSuchElementException e) {
-			System.out.println("Element is stale. Trying to re-fetch.");
+	                wait.until(ExpectedConditions.elementToBeClickable(ClickOnYEs));
+	                ClickOnYEs.click();
+	                return; 
+	            } else {
+	                StaticWait(1); 
+	                Actions actions = new Actions(driver);
+	                actions.moveToElement(ToggleInActive).click().perform(); 
 
-		}
+	                wait.until(ExpectedConditions.elementToBeClickable(ClickOnYEs));
+	                wait.until(ExpectedConditions.visibilityOf(ClickOnYEs));
+	                ClickOnYEs.click();
+	                return;
+	            }
+	        } catch (NoSuchElementException | StaleElementReferenceException e) {
+	     
+	            System.out.println("Element not found or stale. Retrying... Attempt " + (retries + 1));
+	            retries++;
+
+	          
+	            if (retries >= maxRetries) {
+	                System.out.println("Max retries reached. Unable to find the element.");
+	                throw new RuntimeException("Failed to toggle the element after " + maxRetries + " retries.");
+	            }
+
+	         
+	            StaticWait(1);
+	        } catch (Exception e) {
+	          
+	            System.out.println("Unexpected error: " + e.getMessage());
+	            break; 
+	        }
+	    }
 	}
+
 	public void CheckingStatus() {
 
 		if (NotStartedStatus.equals("Not Started"))  {

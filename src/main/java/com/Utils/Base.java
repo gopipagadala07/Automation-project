@@ -1,6 +1,9 @@
 package com.Utils;
 
+import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -51,14 +54,11 @@ public class Base {
 	 * @return this will return tldriver.
 	 */
 	public WebDriver init_driver(String browser) {
-
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options=new ChromeOptions();
-//     		options.addArguments("--headless");
-//			//options.addArguments("--window-size=1920,1080");
-			options.addArguments("--remote-allow-origins=*");
-			tlDriver.set(new ChromeDriver());
+     		options.addArguments("--headless");
+			tlDriver.set(new ChromeDriver(options));
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());

@@ -410,7 +410,7 @@ public class ActionType extends Base {
 	 */
 	public int randomNumberGenerator() {
 		Random random = new Random();
-		int randomNumber=random.nextInt(10000);
+		int randomNumber=random.nextInt(100000);
 	        return randomNumber;
 		
 	}
@@ -434,7 +434,7 @@ public class ActionType extends Base {
 	public String generateRandomString()
 	{
 		Random r=new Random();
-		String randomstring = RandomStringUtils.random(6, "abcdefghijklmnopqrstuvwxyz");
+		String randomstring = RandomStringUtils.random(15, "abcdefghijklmnopqrstuvwxyz");
 		return randomstring;
 	}
 //		public String generateRandomString(String type, int length) {
