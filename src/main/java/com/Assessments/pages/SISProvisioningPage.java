@@ -222,6 +222,7 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void TUserSearch()
 	{
+		StaticWait(1);
 		cp.searchField(String.valueOf(TLastName));
 		ExtentCucumberAdapter.addTestStepLog(String.valueOf(TLastName));
 	}

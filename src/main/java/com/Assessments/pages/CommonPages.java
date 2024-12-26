@@ -98,6 +98,7 @@ public class CommonPages extends ActionType{
 		searchInputs.sendKeys(value);
 		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"a"));
 		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"x"));
+		StaticWait(1);
 		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"v"));
 		StaticWait(1);
 	}
