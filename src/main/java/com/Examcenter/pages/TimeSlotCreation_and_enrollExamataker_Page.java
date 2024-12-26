@@ -119,7 +119,8 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 	{
 		wait.elementToBeClickable(TimeSlotTab);
 		wait.visibilityOf(TimeSlotTab);
-		TimeSlotTab.click();
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", TimeSlotTab);
 		StaticWait(1);
 	}
 	public void Add_New_TimeSlot() 
