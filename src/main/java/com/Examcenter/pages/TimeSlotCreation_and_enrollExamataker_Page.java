@@ -24,6 +24,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 
 	ActionType At=new ActionType();
 	CommonPages cp=new CommonPages(Base.getDriver());
+	JavascriptExecutor js=(JavascriptExecutor) Base.getDriver();
 	public WebDriver driver;
 	private Wait wait;
 
@@ -190,7 +191,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		if (CommonPages.currentHour < 12) {
 			String timeslotvalue = CommonPages.currentHour + ":" + CommonPages.formattedMin + "AM";
 			System.out.println(timeslotvalue);
-			TimeSlot_Lookup.click();
+			js.executeScript("arguments[0].click();", TimeSlot_Lookup);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
@@ -198,7 +199,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			int currentHour = CommonPages.currentHour - 12;
 			System.out.println(currentHour);
 			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
-			TimeSlot_Lookup.click();
+			js.executeScript("arguments[0].click();", TimeSlot_Lookup);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
@@ -207,7 +208,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			int currentHour = CommonPages.currentHour;
 			System.out.println(currentHour);
 			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
-			TimeSlot_Lookup.click();
+			js.executeScript("arguments[0].click();", TimeSlot_Lookup);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
@@ -234,7 +235,6 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		try {
 			StaticWait(1);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			JavascriptExecutor js = (JavascriptExecutor) driver;
 			Actions a = new Actions(driver);
 			WebElement approveButton = wait.until(ExpectedConditions.elementToBeClickable(
 					By.xpath("//small[text()='Not Approved']/parent::div/child::mat-slide-toggle/child::label/child::span[1]")));

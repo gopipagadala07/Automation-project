@@ -75,8 +75,8 @@ public class LaunchValidationPages extends ActionType {
 		try {
 			actions.moveToElement(e1).click().perform();
 			StaticWait(2);
-			//String Band=bandstatus.getText();
-			//System.out.println(Band);
+			String Band=bandstatus.getText();
+			System.out.println(Band);
 			WebElement closeButton = driver.findElement(By.xpath("//mat-icon[text()='close']/parent::span"));
 			actions.moveToElement(closeButton).click().perform();
 		} catch (StaleElementReferenceException e) {
