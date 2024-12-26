@@ -106,13 +106,22 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 
 	}
 
-	public void select_the_Location(String Location) {
-
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement Locationlookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Location']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")));
-		StaticWait(2);
-		cp.FPdropdown(Locationlookup, Location);
-		System.out.println(Location);
+	public void select_the_Location(String Location) 
+	{
+		for(int retry=0;retry<3;retry++)
+		{
+			try {
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebElement Locationlookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Location']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")));
+				StaticWait(2);
+				cp.FPdropdown(Locationlookup, Location);
+				System.out.println(Location);
+				break;
+			}catch (TimeoutException e) {
+				retry++;
+			}
+		}
+		
 	}
 
 	public void click_on_TimeslotTab() 

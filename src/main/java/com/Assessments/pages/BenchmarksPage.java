@@ -95,11 +95,9 @@ public class BenchmarksPage extends ActionType {
 				break;
 			}catch (StaleElementReferenceException e) {
 				retry++;
-				System.out.println("Stale Element referenec Exception occuring..!!");
+				System.out.println("Stale Element reference Exception occuring..!!");
 			}
 		}
-		
-		//NewBenchmarkName(BenchMarkname).click();
 	}
 	public BenchmarksPage(WebDriver driver) {
 		this.driver = driver;
@@ -232,7 +230,7 @@ public class BenchmarksPage extends ActionType {
 
 	public void SectionSearch(String SectionName)
 	{
-		  StaticWait(1);
+		StaticWait(2);
 		cp.searchField(SectionName);
 	}
 
