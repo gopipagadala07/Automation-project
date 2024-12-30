@@ -156,9 +156,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version>
 				<configuration>
-					<systemPropertyVariables>
+					<!--<systemPropertyVariables>
 						<env>${env}</env>
-					</systemPropertyVariables>
+					</systemPropertyVariables>-->
 					<suiteXmlFiles>
 						<suiteXmlFile>src\test\resources\testng.xml</suiteXmlFile>
 					</suiteXmlFiles>

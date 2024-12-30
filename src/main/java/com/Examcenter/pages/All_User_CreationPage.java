@@ -80,8 +80,7 @@ public class All_User_CreationPage extends ActionType
 		int retries = 10;
 		while (retries > 0) {
 			try {
-				JavascriptExecutor j=(JavascriptExecutor)getDriver();
-				j.executeScript("arguments[0].click()", Addnewbtn);
+				Addnewbtn.click();
 				break;
 			} catch (StaleElementReferenceException e) {
 				System.out.println("StaleElementReferenceException. Retrying...");

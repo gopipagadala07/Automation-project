@@ -1,4 +1,4 @@
-package com.Examcenter.pages;
+package com.Assessments.pages;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -105,10 +105,9 @@ public class CommonPages extends ActionType{
 		wait.until(ExpectedConditions.elementToBeClickable(searchInputs));
 		wait.until(ExpectedConditions.visibilityOf(searchInputs));
 		searchInputs.sendKeys(value);
-		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"a"));
-		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"x"));
+		searchInputs.clear();
 		StaticWait(1);
-		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"v"));
+		searchInputs.sendKeys(value);
 		StaticWait(1);
 	}
 	public void SearchTestname (String TestName) {
