@@ -116,7 +116,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 				WebElement Locationlookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Location']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")));
 				StaticWait(2);
 				cp.FPdropdown(Locationlookup, Location);
-				System.out.println(Location);
+				//System.out.println(Location);
 				break;
 			}catch (TimeoutException e) {
 				retry++;
@@ -190,11 +190,20 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			String timeslotvalue = CommonPages.currentHour + ":" + CommonPages.formattedMin + "AM";
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			System.out.println(timeslotvalue);
-			WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field/child::div")));
-//			js.executeScript("arguments[0].click();", TimeSlotLookup);
-			Actions a=new Actions(driver);
-			a.moveToElement(TimeSlotLookup).perform();
-			a.click().build().perform();
+			for(int retry=0;retry<=3;retry++)
+			{
+				try {
+					WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field/child::div")));
+					Actions a=new Actions(driver);
+					a.moveToElement(TimeSlotLookup).perform();
+					StaticWait(1);
+					a.click().build().perform();
+					break;
+				}catch (Exception e) {
+					retry++;
+				}
+			}
+			
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
 		} else if (CommonPages.currentHour > 12) {
@@ -202,11 +211,19 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			System.out.println(currentHour);
 			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field/child::div")));
-//			js.executeScript("arguments[0].click();", TimeSlotLookup);
-			Actions a=new Actions(driver);
-			a.moveToElement(TimeSlotLookup).perform();
-			a.click().build().perform();		
+			for(int retry=0;retry<=3;retry++)
+			{
+				try {
+					WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field/child::div")));
+					Actions a=new Actions(driver);
+					a.moveToElement(TimeSlotLookup).perform();
+					StaticWait(1);
+					a.click().build().perform();
+					break;
+				}catch (Exception e) {
+					retry++;
+				}
+			}	
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
 		}
@@ -215,11 +232,19 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			System.out.println(currentHour);
 			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field/child::div")));
-//			js.executeScript("arguments[0].click();", TimeSlotLookup);
-			Actions a=new Actions(driver);
-			a.moveToElement(TimeSlotLookup).perform();
-			a.click().build().perform();
+			for(int retry=0;retry<=3;retry++)
+			{
+				try {
+					WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field/child::div")));
+					Actions a=new Actions(driver);
+					a.moveToElement(TimeSlotLookup).perform();
+					StaticWait(1);
+					a.click().build().perform();
+					break;
+				}catch (Exception e) {
+					retry++;
+				}
+			}
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
 		}
