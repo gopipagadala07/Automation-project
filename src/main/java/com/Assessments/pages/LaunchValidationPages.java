@@ -66,7 +66,7 @@ public class LaunchValidationPages extends ActionType {
 	public void clickEachExamAndClose() {
 		StaticWait(2);
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement e1=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[text()='Assessments']/parent::mat-card-content/descendant::mat-tab-header/descendant::div[@role='tab'][2]l")));
+		WebElement e1=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[text()='Assessments']/parent::mat-card-content/descendant::mat-tab-header/descendant::div[@role='tab'][2]")));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(e1).perform();
 		actions.click().build().perform();
