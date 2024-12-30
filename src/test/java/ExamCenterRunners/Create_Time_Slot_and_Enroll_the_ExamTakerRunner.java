@@ -20,20 +20,20 @@ import io.cucumber.testng.CucumberOptions;
 
 public class Create_Time_Slot_and_Enroll_the_ExamTakerRunner extends AbstractTestNGCucumberTests
 {
-	String testcasename;  
+	String TestcaseName;  
 
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeclass(/*String browser*/) {
 
-		testcasename = this.getClass().getSimpleName();
-		System.out.println("***************** " + testcasename + " Test Starting *****************");
+		TestcaseName = this.getClass().getSimpleName();
+		System.out.println("<---------------" + TestcaseName + "Test Start--------------->");
 
 	}
 
 	@AfterClass(alwaysRun = true)
 	public void testDownClass() throws IOException {
-		System.out.println("***************** " + testcasename + " Test end *****************");
+		System.out.println("<---------------" + TestcaseName + "Test End--------------->");
 
 	}
 }
