@@ -67,9 +67,9 @@ public class LaunchValidationPages extends ActionType {
 		StaticWait(2);
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement e1=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'EXAM')]")));
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click()", e1);
 		Actions actions = new Actions(driver);
+		actions.moveToElement(e1).perform();
+		actions.click().build().perform();
 		try {
 			WebElement e2=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//small[@class='announce__list--icon']/child::span[2]/child::mat-icon")));
 			actions.moveToElement(e2).click().perform();
