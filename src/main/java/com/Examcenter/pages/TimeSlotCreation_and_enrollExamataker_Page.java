@@ -1,6 +1,7 @@
 package com.Examcenter.pages;
 
 import java.time.Duration;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
@@ -182,13 +183,13 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		StaticWait(1);
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", Enrolleetab);
-		StaticWait(1);
+		StaticWait(2);
 	}
 
 	public void click_on_Time_slot_Lookup_and_select_timeslot() {
 		if (CommonPages.currentHour < 12) {
 			String timeslotvalue = CommonPages.currentHour + ":" + CommonPages.formattedMin + "AM";
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 			System.out.println(timeslotvalue);
 			for(int retry=0;retry<=3;retry++)
 			{
@@ -199,7 +200,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 					StaticWait(1);
 					a.click().build().perform();
 					break;
-				}catch (Exception e) {
+				}catch (NoSuchElementException e) {
 					retry++;
 				}
 			}
@@ -210,7 +211,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			int currentHour = CommonPages.currentHour - 12;
 			System.out.println(currentHour);
 			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 			for(int retry=0;retry<=3;retry++)
 			{
 				try {
@@ -220,7 +221,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 					StaticWait(1);
 					a.click().build().perform();
 					break;
-				}catch (Exception e) {
+				}catch (NoSuchElementException e) {
 					retry++;
 				}
 			}	
@@ -231,7 +232,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			int currentHour = CommonPages.currentHour;
 			System.out.println(currentHour);
 			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 			for(int retry=0;retry<=3;retry++)
 			{
 				try {
@@ -241,7 +242,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 					StaticWait(1);
 					a.click().build().perform();
 					break;
-				}catch (Exception e) {
+				}catch (NoSuchElementException e) {
 					retry++;
 				}
 			}

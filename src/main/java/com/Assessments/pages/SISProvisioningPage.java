@@ -163,15 +163,39 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void YearDropDownSearch(String Year)
 	{
-		cp.FPdropdown(YearDropDown, Year);
+		for(int retry=0;retry<3;retry++)
+		{
+			try {
+				cp.FPdropdown(YearDropDown, Year);
+				break;
+			} catch (StaleElementReferenceException e) {
+				retry++;
+			}
+		}
 	}
 	public void ClassroomDropDownSearch()
 	{
-		cp.FPdropdown(ClassroomDown, ClassroomName);
+		for(int retry=0;retry<3;retry++)
+		{
+			try {
+				cp.FPdropdown(ClassroomDown, ClassroomName);
+				break;
+			} catch (StaleElementReferenceException e) {
+				retry++;
+			}
+		}
 	}
 	public void SectionDropDownSearch()
 	{
-		cp.FPdropdown(SectionDown, SectionName);
+		for(int retry=0;retry<3;retry++)
+		{
+			try {
+				cp.FPdropdown(SectionDown, SectionName);
+				break;
+			} catch (StaleElementReferenceException e) {
+				retry++;
+			}
+		}
 	}
 	public void SchoolDetails() throws Exception
 	{
@@ -318,7 +342,7 @@ public class SISProvisioningPage extends ActionType{
 				js.executeScript("arguments[0].click();", e1);
 				break;
 			} catch (RuntimeException e) {
-			     retry++;
+				retry++;
 			}
 		}
 	}
