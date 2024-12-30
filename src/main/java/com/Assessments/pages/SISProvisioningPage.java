@@ -172,20 +172,30 @@ public class SISProvisioningPage extends ActionType{
 			}
 		}
 	}
-	public void ClassroomDropDownSearch()
-	{
-		for(int retry=0;retry<3;retry++)
-		{
-			try {
-				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-				WebElement ClassroomDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='classroom']")));
-				cp.FPdropdown(ClassroomDown, ClassroomName);
-				break;
-			} catch (StaleElementReferenceException e) {
-				retry++;
-			}
-		}
+	public void ClassroomDropDownSearch() {
+	    boolean success = false;
+	    for (int retry = 0; retry < 3; retry++) {
+	        try {
+	        	StaticWait(1);
+	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	            WebElement ClassroomDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='classroom']")));
+	            cp.FPdropdown(ClassroomDown, ClassroomName);
+	            success = true;
+	            break;
+	        } catch (StaleElementReferenceException e) {
+	            System.out.println("StaleElementReferenceException caught. Retrying... Attempt " + (retry + 1));
+	            try {
+	                Thread.sleep(1000);
+	            } catch (InterruptedException ie) {
+	                Thread.currentThread().interrupt();
+	            }
+	        }
+	    }
+	    if (!success) {
+	        System.out.println("Operation failed after 3 retries.");
+	    }
 	}
+
 	public void SectionDropDownSearch()
 	{
 		for(int retry=0;retry<3;retry++)

@@ -56,6 +56,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	@Then("User Saved the School and Search for the Created School in Search here Field")
 	public void user_saved_the_school_and_search_for_the_created_school_in_search_here_field() throws Exception {
 	   cp.Save();
+	   StaticWait(3);
 	   provisioning.SchoolSearch();
 	}
 
