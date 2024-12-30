@@ -95,11 +95,9 @@ public class PerformingexamPages extends ActionType {
 		BenchmarksTab.click();
 	}
 
-	@SuppressWarnings("unused")
 	public void ClickOnLaunchAndCompleteExam() throws AWTException, InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		Robot robot = new Robot();
 		int retry = 0;
 		int maxRetry = 5;
 		while (retry < maxRetry) {
@@ -172,6 +170,7 @@ public class PerformingexamPages extends ActionType {
 			}
 			if (retry == maxRetry) {
 				System.out.println("Failed to process quiz icon at index: " + retry + " after " + maxRetry + " retries.");
+				break;
 			}
 		}
 	}

@@ -210,8 +210,16 @@ public class Exam_ScheduleCreationPages extends ActionType{
 	}
 	public void select_examinations_lookup(String value) {
 		StaticWait(1);	
-		cp.FPdropdown(clickonExaminationdropdown, value);
-		System.out.println(value);
+		for(int retry=0;retry<=3;retry++)
+		{
+			try {
+				cp.FPdropdown(clickonExaminationdropdown, value);
+				System.out.println(value);
+				break;
+			} catch (Exception e) {
+				retry++;
+			}
+		}
 	}
 	public void select_schedule_lookup() {
 		StaticWait(1);	

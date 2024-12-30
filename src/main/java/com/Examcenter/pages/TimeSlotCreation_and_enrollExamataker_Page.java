@@ -79,33 +79,39 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 	}
 
 	public void select_the_Examination(String ExamName, String ScheduleName) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		String fullExamScheduleName = ExamName + " - " + ScheduleName;
-		for(int retry=0;retry<=3;retry++)
-		{
-			try {
-				WebElement ExaminationLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Examination']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")));
-				wait.until(ExpectedConditions.visibilityOf(ExaminationLookup));
-				if (ExaminationLookup.isEnabled()) {
-					StaticWait(2);
-					cp.FPdropdown(ExaminationLookup, fullExamScheduleName);
-					break;
-				} else {
-					throw new ElementNotInteractableException("Examination Lookup element is not enabled.");
-				}
-			} catch (TimeoutException e) {
-				retry++;
-				System.err.println("Timeout waiting for the Examination Lookup element to be clickable/visible.");
-				e.printStackTrace();
-			} catch (ElementNotInteractableException e) {
-				System.err.println("The Examination Lookup element is not interactable.");
-				e.printStackTrace();
-			} catch (Exception e) {
-				System.err.println("An unexpected error occurred while selecting the examination.");
-				e.printStackTrace();
-			}
-		}
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	    String fullExamScheduleName = ExamName + " - " + ScheduleName;
+	    int maxRetries = 5;
+	    int retry = 0;
 
+	    while (retry <= maxRetries) {
+	        try {
+	            WebElement ExaminationLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Examination']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")));
+	            wait.until(ExpectedConditions.visibilityOf(ExaminationLookup));
+	            if (ExaminationLookup.isEnabled()) {
+	                StaticWait(2);
+	                cp.FPdropdown(ExaminationLookup, fullExamScheduleName);
+	                break;
+	            } else {
+	                throw new ElementNotInteractableException("Examination Lookup element is not enabled.");
+	            }
+	        } catch (TimeoutException e) {
+	            retry++;
+	            System.err.println("Timeout waiting for the Examination Lookup element to be clickable/visible. Attempt " + retry);
+	            e.printStackTrace();
+	            if (retry > maxRetries) {
+	                throw e;
+	            }
+	        } catch (ElementNotInteractableException e) {
+	            System.err.println("The Examination Lookup element is not interactable.");
+	            e.printStackTrace();
+	            break;
+	        } catch (Exception e) {
+	            System.err.println("An unexpected error occurred while selecting the examination.");
+	            e.printStackTrace();
+	            break;
+	        }
+	    }
 	}
 
 	public void select_the_Location(String Location) 
