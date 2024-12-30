@@ -170,8 +170,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		StaticWait(1);
 		cp.selectFutureRandomTime(EndTime,true);
 	}
-
-
+	
 	public void ExamTaker_Count()
 	{
 		ExamTakerCount.sendKeys(String.valueOf(randomNumberGenerator()));
@@ -190,17 +189,19 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 	public void click_on_Time_slot_Lookup_and_select_timeslot() {
 		if (CommonPages.currentHour < 12) {
 			String timeslotvalue = CommonPages.currentHour + ":" + CommonPages.formattedMin + "AM";
-			System.out.println(timeslotvalue);
-			js.executeScript("arguments[0].click();", TimeSlot_Lookup);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			System.out.println(timeslotvalue);
+			WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='time_slot_performance']/div/mat-form-field/child::div)[1]")));
+			js.executeScript("arguments[0].click();", TimeSlotLookup);
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
 		} else if (CommonPages.currentHour > 12) {
 			int currentHour = CommonPages.currentHour - 12;
 			System.out.println(currentHour);
 			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
-			js.executeScript("arguments[0].click();", TimeSlot_Lookup);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='time_slot_performance']/div/mat-form-field/child::div)[1]")));
+			js.executeScript("arguments[0].click();", TimeSlotLookup);			
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
 		}
@@ -208,8 +209,9 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			int currentHour = CommonPages.currentHour;
 			System.out.println(currentHour);
 			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
-			js.executeScript("arguments[0].click();", TimeSlot_Lookup);
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='time_slot_performance']/div/mat-form-field/child::div)[1]")));
+			js.executeScript("arguments[0].click();", TimeSlotLookup);
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
 		}

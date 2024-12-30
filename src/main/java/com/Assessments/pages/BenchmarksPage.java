@@ -253,11 +253,18 @@ public class BenchmarksPage extends ActionType {
 	}
 	public void CourseBenchmarkDdown(String SectionName) {
 		wait.elementToBeClickable(CourseBenchmarkDropDown);	
-
-		cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
-		//.out.println(SectionName + "---------------------------------------------------------------");
+        for(int retry=0;retry<=3;retry++)
+        {
+        	try {
+        		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebElement CourseBenchmarkDropDown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-select[@formcontrolname='benchmark']/parent::div/parent::div/..")));
+        		cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
+        		break;
+        	}catch (Exception e) {
+				retry++;
+			}
+        }
 	}
-
 
 	public void schoolDdown(String schooldrop) {
 		wait.elementToBeClickable(SchoolDropdown);
@@ -282,7 +289,7 @@ public class BenchmarksPage extends ActionType {
 
 
 	public void ActiveToggle() {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));  // You can adjust the timeout as needed
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    int maxRetries = 3;
 	    int retries = 0;
 
