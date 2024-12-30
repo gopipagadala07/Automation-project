@@ -178,6 +178,8 @@ public class SISProvisioningPage extends ActionType{
 		for(int retry=0;retry<3;retry++)
 		{
 			try {
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebElement ClassroomDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='classroom']")));
 				cp.FPdropdown(ClassroomDown, ClassroomName);
 				break;
 			} catch (StaleElementReferenceException e) {
