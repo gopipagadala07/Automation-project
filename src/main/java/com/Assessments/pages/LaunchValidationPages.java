@@ -30,7 +30,7 @@ public class LaunchValidationPages extends ActionType {
 	@FindBy(how=How.XPATH,using="//mat-icon[text()='close']/parent::span")private WebElement CloseIcon;
 	@FindBy(how=How.XPATH,using="//iframe[@class='iframe-styling ng-star-inserted']")private WebElement iFrame;
 
-	@FindBy(how=How.XPATH,using="//div[contains(text(),'EXAM')]")private WebElement ExamTab;
+	@FindBy(how=How.XPATH,using="//h3[text()='Assessments']/parent::mat-card-content/descendant::mat-tab-header/descendant::div[@role='tab'][2]")private WebElement ExamTab;
 	@FindBy(how=How.XPATH,using="//b[text()='Achievement']/parent::div/child::label")private WebElement StatusBand;
 
 
@@ -66,7 +66,7 @@ public class LaunchValidationPages extends ActionType {
 	public void clickEachExamAndClose() {
 		StaticWait(2);
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement e1=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'EXAM')]")));
+		WebElement e1=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[text()='Assessments']/parent::mat-card-content/descendant::mat-tab-header/descendant::div[@role='tab'][2]l")));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(e1).perform();
 		actions.click().build().perform();
