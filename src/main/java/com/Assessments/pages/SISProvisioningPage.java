@@ -2,6 +2,7 @@ package com.Assessments.pages;
 
 import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -104,7 +105,6 @@ public class SISProvisioningPage extends ActionType{
 
 	public void Administrationtab()
 	{
-		//Wait.visibilityOf(Administrationbtn)
 		Administrationbtn.click();
 		Provisioningtab.click();
 	}
@@ -154,7 +154,6 @@ public class SISProvisioningPage extends ActionType{
 		wait.until(ExpectedConditions.elementToBeClickable(Sectiontab));
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", Sectiontab);
-		//				Sectiontab.click();
 	}
 	public void SchoolDropDownSearch()
 	{
@@ -223,6 +222,7 @@ public class SISProvisioningPage extends ActionType{
 		ExtentCucumberAdapter.addTestStepLog(SectionName);
 		cp.insertData("AssessmentCenterDetails.xlsx", SectionName, 2);
 		Description.sendKeys(generateRandomString());
+		StaticWait(2);
 	}
 	public void TimezoneValue(String TimeZoneValue)
 	{
@@ -240,6 +240,20 @@ public class SISProvisioningPage extends ActionType{
 	public void SectionSearch()
 	{
 		cp.searchField(SectionName);
+		WebElement e=driver.findElement(By.tagName("table"));
+		WebElement body=e.findElement(By.tagName("tbody"));
+		List<WebElement> rows=body.findElements(By.tagName("tr"));
+		for(WebElement row:rows)
+		{
+			 List<WebElement> columns = row.findElements(By.tagName("td"));
+			String s=columns.get(0).getText();
+			System.out.println(s);
+			if(s.equalsIgnoreCase(SectionName))
+			{
+				System.out.println("Section Saved Successfully..!!");
+				ExtentCucumberAdapter.addTestStepLog(s);
+			}
+		}
 	}
 	public void DUserSearch()
 	{
@@ -354,7 +368,6 @@ public class SISProvisioningPage extends ActionType{
 	{
 		wait.elementToBeClickable(CreateNewLoginbtn);
 		js.executeScript("arguments[0].click();", CreateNewLoginbtn);
-		//CreateNewLoginbtn.click();
 	}
 	public void ResetPwd()
 	{
