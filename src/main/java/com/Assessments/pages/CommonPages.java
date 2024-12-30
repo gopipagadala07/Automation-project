@@ -97,7 +97,7 @@ public class CommonPages extends ActionType{
 		wait.until(ExpectedConditions.visibilityOf(searchInputs));
 		searchInputs.sendKeys(value);
 		searchInputs.clear();
-		StaticWait(1);
+		StaticWait(2);
 		searchInputs.sendKeys(value);
 		StaticWait(1);
 	}

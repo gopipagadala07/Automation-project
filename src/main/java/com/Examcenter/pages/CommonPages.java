@@ -1,4 +1,5 @@
 package com.Examcenter.pages;
+
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -8,11 +9,6 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -25,7 +21,6 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -42,20 +37,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import com.Utils.ActionType;
+import com.Utils.Base;
 import com.Utils.Wait;
 
 
 public class CommonPages extends ActionType{
 	private Wait wait;
-	static int currentHour;
-	static String formattedMin;;
-	static int Ehour;
-	static int EfutureMinute;
-	
 
 	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Save')]")
 	public WebElement Savebtn;
-	@FindBy(how = How.XPATH,using="//input[@type='search']")private WebElement searchInputs;
+	@FindBy(how = How.XPATH,using="//input[contains(@type, 'search')]")private WebElement searchInputs;
 	@FindBy(how = How.XPATH,using="//button[@aria-label='Choose month and year']")
 	public WebElement yearSelection;
 	@FindBy(how = How.XPATH,using="//button[@aria-label='Choose date']")
@@ -105,79 +96,69 @@ public class CommonPages extends ActionType{
 		wait.until(ExpectedConditions.elementToBeClickable(searchInputs));
 		wait.until(ExpectedConditions.visibilityOf(searchInputs));
 		searchInputs.sendKeys(value);
-		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"a"));
-		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"x"));
-		StaticWait(1);
-		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"v"));
+		searchInputs.clear();
+		StaticWait(2);
+		searchInputs.sendKeys(value);
 		StaticWait(1);
 	}
 	public void SearchTestname (String TestName) {
 		wait.elementToBeClickable(searchforTest);
 		searchforTest.sendKeys(TestName);
 	}
-	  public void FPdropdown(WebElement element, String visibleText) {
-	        try {
-	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	            wait.until(ExpectedConditions.elementToBeClickable(element));
-	            Actions actions = new Actions(driver);
-	            actions.moveToElement(element).perform();
-	            StaticWait(1);
-	            actions.click().build().perform();
-	            StaticWait(1);
-	            List<WebElement> options = element.findElements(By.xpath("following::div[@role='listbox']/mat-option"));
-	            for (WebElement option : options) {
-	                String actual = option.getText().trim();
-	                if (actual.contains(visibleText)) {
-	                    try {
-	                        WebElement e = wait.until(ExpectedConditions.elementToBeClickable(option));
-	                        JavascriptExecutor js = (JavascriptExecutor) driver;
-	                        js.executeScript("arguments[0].scrollIntoView(true);", e);
-	                        js.executeScript("arguments[0].click();", e);
-	                    } catch (ElementClickInterceptedException ex) {
-	                        JavascriptExecutor js = (JavascriptExecutor) driver;
-	                        js.executeScript("arguments[0].scrollIntoView(true);", option);
-	                        js.executeScript("arguments[0].click();", option);
-	                    }
-	                    break;
-	                }
-	            }
-	        } catch (Exception e) {
-	            SoftAssert soft = new SoftAssert();
-	            soft.fail();
-	            e.printStackTrace();
-	        }
-	    }
+	public void FPdropdown(WebElement element, String visibleText) {
+		try {
+
+			wait.elementToBeClickable(element);
+			Actions actions = new Actions(driver);
+			actions.moveToElement(element).click().build().perform();
+			List<WebElement> options =element.findElements(By.xpath("following::div[@role='listbox']/mat-option"));
+			for(WebElement option:options) {
+				String actual = option.getText().trim();
+				//System.out.println(actual);
+				if(actual.contains(visibleText)) {
+					Actions a=new Actions(driver);
+					a.moveToElement(option);
+					option.click();
+					break;
+				}		
+			}
+		} catch (Exception e) {
+			SoftAssert soft =new SoftAssert();
+			soft.fail();
+			e.printStackTrace();
+		}	
+	}
 
 	public void InsertdataIntoExcel(String Path, String Sheet, String Value, int colNum) throws Exception, IOException {
 
-		FileInputStream f = new FileInputStream(Path);
-		Workbook wb = WorkbookFactory.create(f);
-		CellStyle cs = wb.createCellStyle();
-		cs.setVerticalAlignment(VerticalAlignment.CENTER);
-		cs.setAlignment(HorizontalAlignment.CENTER);
-		cs.setBorderBottom(BorderStyle.THIN);
-		cs.setBorderRight(BorderStyle.THIN);
+        FileInputStream f = new FileInputStream(Path);
+        Workbook wb = WorkbookFactory.create(f);
+        CellStyle cs = wb.createCellStyle();
+        cs.setVerticalAlignment(VerticalAlignment.CENTER);
+        cs.setAlignment(HorizontalAlignment.CENTER);
+        cs.setBorderBottom(BorderStyle.THIN);
+        cs.setBorderRight(BorderStyle.THIN);
 
-		Sheet sh = wb.getSheet(Sheet);
-		if (sh == null) {
-			sh = wb.createSheet(Sheet);
-		}
-		Row row = sh.getRow(1); 
-		if (row == null) {
-			row = sh.createRow(1); 
-		}
-		Cell cell = row.createCell(colNum);
-		cell.setCellValue(Value);
-		cell.setCellStyle(cs);
+        Sheet sh = wb.getSheet(Sheet);
+        if (sh == null) {
+            sh = wb.createSheet(Sheet);
+        }
+        Row row = sh.getRow(1); 
+        if (row == null) {
+            row = sh.createRow(1); 
+        }
+        Cell cell = row.createCell(colNum);
+        cell.setCellValue(Value);
+        cell.setCellStyle(cs);
 
-		FileOutputStream fileOut = new FileOutputStream(Path);
-		wb.write(fileOut);
+        FileOutputStream fileOut = new FileOutputStream(Path);
+        wb.write(fileOut);
 
-		fileOut.close();
-		wb.close();
-		f.close();       
-		System.out.println("Data inserted successfully...!!!");
-	}
+        fileOut.close();
+        wb.close();
+        f.close();       
+        System.out.println("Data inserted successfully...!!!");
+    }
 	public void insertData(String FileName, String Value, int Colnum) throws Exception
 	{
 		String filePath = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "ExcelFiles", FileName).toString();
@@ -222,6 +203,7 @@ public class CommonPages extends ActionType{
 		};
 		return monthNames[month - 1];
 	}
+	
 	public void getRandomDate(WebElement element) {
 		int maxRetries = 3; 
 		int attempt = 0;
@@ -270,7 +252,7 @@ public class CommonPages extends ActionType{
 	}
 
 	public void selectCurrentDate(WebElement element) {
-		int maxRetries = 5; 
+		int maxRetries = 3; 
 		int attempt = 0;
 		boolean success = false;
 
@@ -280,9 +262,7 @@ public class CommonPages extends ActionType{
 				int currentYear = currentDate.getYear();
 				int currentMonth = currentDate.getMonthValue();
 				int currentDay = currentDate.getDayOfMonth();
-				JavascriptExecutor js=(JavascriptExecutor) driver;
-				js.executeScript("arguments[0].click();", element);
-				StaticWait(1);
+				element.click();
 				yearSelection.click();
 
 				WebElement yearElement = DateValue(String.valueOf(currentYear));
@@ -296,6 +276,7 @@ public class CommonPages extends ActionType{
 				wait.until(ExpectedConditions.elementToBeClickable(dayElement));
 				wait.until(ExpectedConditions.visibilityOf(dayElement));
 
+				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].click()", dayElement);
 				success = true;
 			} catch (ElementClickInterceptedException e) {
@@ -319,201 +300,6 @@ public class CommonPages extends ActionType{
 		}
 	}
 
-//	public void selectCurrentTime(WebElement timePickerElement) {
-//	    int maxRetries = 3;
-//	    int attempt = 0;
-//	    boolean success = false;
-//
-//	    while (attempt < maxRetries && !success) {
-//	        try {
-//	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//	            JavascriptExecutor js = (JavascriptExecutor) driver;
-//	            LocalTime currentTime = LocalTime.now();
-//	            currentHour = currentTime.getHour();
-//	            int currentMinute = currentTime.getMinute();
-//	            String formattedMinute = String.format("%02d", currentMinute);
-//
-//	            System.out.println("Current Time: Hour - " + currentHour + ", Minute - " + formattedMinute);
-//	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(timePickerElement));
-//	            js.executeScript("arguments[0].click();", e);
-//	            StaticWait(1);
-//	            int hourDegree = currentHour * 30;
-//	            String hourDegreeTransform = "rotateZ(-" + hourDegree + "deg)";
-//	            String hourXpath = "//button[contains(@style,'transform: " + hourDegreeTransform + ";')]";
-//	            WebElement hourElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(hourXpath)));
-//	            Actions a = new Actions(driver);
-//	            a.moveToElement(hourElement).perform();
-//	            a.click().build().perform();
-//	            StaticWait(1);
-//	            int min = (1 + currentMinute) % 60;
-//	            formattedMin = String.format("%02d", min);
-//	            int minuteDegree = min * 6;
-//	            String minuteDegreeTransform = "rotateZ(-" + minuteDegree + "deg)";
-//	            String minuteXpath = "//button[contains(@style,'transform: " + minuteDegreeTransform + ";')]";
-//	            WebElement minuteElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(minuteXpath)));
-//	            a.moveToElement(minuteElement).perform();
-//	            a.click().build().perform();
-//	            success = true;
-//	            System.out.println("Selected Hour: " + currentHour + ", Minute: " + formattedMin);
-//	        } catch (ElementClickInterceptedException e) {
-//	            System.out.println("ElementClickInterceptedException: " + e.getMessage());
-//	        } catch (StaleElementReferenceException e) {
-//	            System.out.println("StaleElementReferenceException: " + e.getMessage());
-//	        } catch (TimeoutException e) {
-//	            System.out.println("TimeoutException: " + e.getMessage());
-//	        } catch (Exception e) {
-//	            System.out.println("Exception: " + e.getMessage());
-//	        }
-//
-//	        if (!success) {
-//	            attempt++;
-//	            if (attempt < maxRetries) {
-//	                System.out.println("Retrying... Attempt " + (attempt + 1));
-//	            } else {
-//	                throw new RuntimeException("Failed to select the current time after " + maxRetries + " attempts.");
-//	            }
-//	        }
-//	    }
-//	}
-
-
-	public void selectCurrentTime(WebElement timePickerElement, boolean useIST) {
-	    int maxRetries = 3;
-	    int attempt = 0;
-	    boolean success = false;
-
-	    while (attempt < maxRetries && !success) {
-	        try {
-	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	            JavascriptExecutor js = (JavascriptExecutor) driver;
-	            
-	            ZonedDateTime currentTime;
-	            if (useIST) {
-	                currentTime = ZonedDateTime.now(ZoneId.of("Asia/Kolkata"));
-	                System.out.println("Current IST Time: Hour - " + currentTime.getHour() + ", Minute - " + currentTime.getMinute());
-	            } else {
-	                currentTime = ZonedDateTime.now(ZoneOffset.UTC);
-	                System.out.println("Current UTC Time: Hour - " + currentTime.getHour() + ", Minute - " + currentTime.getMinute());
-	            }
-	            
-	            currentHour = currentTime.getHour();
-	            int currentMinute = currentTime.getMinute();
-	            String formattedMinute = String.format("%02d", currentMinute);
-
-	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(timePickerElement));
-	            js.executeScript("arguments[0].click();", e);
-	            StaticWait(1);
-	            
-	            int hourDegree = currentHour * 30;
-	            String hourDegreeTransform = "rotateZ(-" + hourDegree + "deg)";
-	            String hourXpath = "//button[contains(@style,'transform: " + hourDegreeTransform + ";')]";
-	            WebElement hourElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(hourXpath)));
-	            Actions a = new Actions(driver);
-	            a.moveToElement(hourElement).perform();
-	            a.click().build().perform();
-	            StaticWait(1);
-	            
-	            int min = (1 + currentMinute) % 60;
-	            formattedMin = String.format("%02d", min);
-	            int minuteDegree = min * 6;
-	            String minuteDegreeTransform = "rotateZ(-" + minuteDegree + "deg)";
-	            String minuteXpath = "//button[contains(@style,'transform: " + minuteDegreeTransform + ";')]";
-	            WebElement minuteElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(minuteXpath)));
-	            a.moveToElement(minuteElement).perform();
-	            a.click().build().perform();
-	            
-	            success = true;
-	            System.out.println("Selected Hour: " + currentHour + ", Minute: " + formattedMin);
-	        } catch (ElementClickInterceptedException e) {
-	            System.out.println("ElementClickInterceptedException: " + e.getMessage());
-	        } catch (StaleElementReferenceException e) {
-	            System.out.println("StaleElementReferenceException: " + e.getMessage());
-	        } catch (TimeoutException e) {
-	            System.out.println("TimeoutException: " + e.getMessage());
-	        } catch (Exception e) {
-	            System.out.println("Exception: " + e.getMessage());
-	        }
-
-	        if (!success) {
-	            attempt++;
-	            if (attempt < maxRetries) {
-	                System.out.println("Retrying... Attempt " + (attempt + 1));
-	            } else {
-	                throw new RuntimeException("Failed to select the current time after " + maxRetries + " attempts.");
-	            }
-	        }
-	    }
-	}
-
-
-	public void selectFutureRandomTime(WebElement timePickerElement, boolean useIST) {
-	    int maxRetries = 3;
-	    int attempt = 0;
-	    boolean success = false;
-
-	    while (attempt < maxRetries && !success) {
-	        try {
-	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	            JavascriptExecutor js = (JavascriptExecutor) driver;
-	            Random random = new Random();
-
-	            int additionalMinutes = random.nextInt(60) + 1;
-	            ZonedDateTime currentTime;
-	            if (useIST) {
-	                currentTime = ZonedDateTime.now(ZoneId.of("Asia/Kolkata"));
-	                System.out.println("Current IST Time: Hour - " + currentTime.getHour() + ", Minute - " + currentTime.getMinute());
-	            } else {
-	                currentTime = ZonedDateTime.now(ZoneOffset.UTC);
-	                System.out.println("Current UTC Time: Hour - " + currentTime.getHour() + ", Minute - " + currentTime.getMinute());
-	            }
-
-	            ZonedDateTime futureTime = currentTime.plus(additionalMinutes, ChronoUnit.MINUTES);
-	            int futureHour = futureTime.getHour();
-	            EfutureMinute = futureTime.getMinute();
-
-	            System.out.println("Future Time: Hour - " + futureHour + ", Minute - " + EfutureMinute);
-	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(timePickerElement));
-	            js.executeScript("arguments[0].click();", e);
-	            StaticWait(1);
-	            Ehour = 1 + futureHour;
-	            int hourDegree = Ehour * 30;
-	            String hourDegreeTransform = "rotateZ(-" + hourDegree + "deg)";
-	            String hourXpath = "//button[contains(@style,'transform: " + hourDegreeTransform + ";')]";
-	            WebElement hourElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(hourXpath)));
-	            Actions a = new Actions(driver);
-	            a.moveToElement(hourElement).perform();
-	            a.click().build().perform();
-	            StaticWait(1);
-	            int minuteDegree = EfutureMinute * 6;
-	            String minuteDegreeTransform = "rotateZ(-" + minuteDegree + "deg)";
-	            String minuteXpath = "//button[contains(@style,'transform: " + minuteDegreeTransform + ";')]";
-	            WebElement minuteElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(minuteXpath)));
-	            a.moveToElement(minuteElement).perform();
-	            a.click().build().perform();
-
-	            success = true;
-	            System.out.println("Selected Future Hour: " + futureHour + ", Minute: " + EfutureMinute);
-	        } catch (ElementClickInterceptedException e) {
-	            System.out.println("ElementClickInterceptedException: " + e.getMessage());
-	        } catch (StaleElementReferenceException e) {
-	            System.out.println("StaleElementReferenceException: " + e.getMessage());
-	        } catch (TimeoutException e) {
-	            System.out.println("TimeoutException: " + e.getMessage());
-	        } catch (Exception e) {
-	            System.out.println("Exception: " + e.getMessage());
-	        }
-
-	        if (!success) {
-	            attempt++;
-	            if (attempt < maxRetries) {
-	                System.out.println("Retrying... Attempt " + (attempt + 1));
-	            } else {
-	                throw new RuntimeException("Failed to select the future random time after " + maxRetries + " attempts.");
-	            }
-	        }
-	    }
-	}
-
 
 	public void scrollWithRobot() throws AWTException {
 		try {
@@ -527,13 +313,14 @@ public class CommonPages extends ActionType{
 		}
 	}
 
+
 	public void scrollToElementWithRetry(WebElement element) {
 		int retries = 10;
 		while (retries > 0) {
 			try {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].scrollIntoView(true);", element);
-				break;
+				break; // Exit the loop if the scroll is successful
 			} catch (StaleElementReferenceException e) {
 				System.out.println("Stale Element, retrying...");
 				retries--;

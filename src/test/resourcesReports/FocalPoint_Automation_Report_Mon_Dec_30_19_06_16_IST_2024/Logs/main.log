@@ -1,0 +1,24 @@
+2024-12-30 19:06:16,030 INFO  [rootLogger] Enviornment is : STAGE
+2024-12-30 19:06:16,031 INFO  [rootLogger] Enviornment is : STAGE
+2024-12-30 19:06:16,043 INFO  [rootLogger] Browser value is: CHROME
+2024-12-30 19:06:16,043 INFO  [rootLogger] Browser value is: CHROME
+2024-12-30 19:06:17,986 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-30 19:06:17,986 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-30 19:06:17,997 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-12-30 19:06:17,998 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-12-30 19:06:57,618 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-12-30 19:06:59,407 INFO  [rootLogger] Browser value is: CHROME
+2024-12-30 19:07:00,403 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-30 19:07:00,404 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-12-30 19:07:21,522 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-12-30 19:07:21,544 INFO  [rootLogger] Browser value is: CHROME
+2024-12-30 19:07:22,523 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-30 19:07:22,524 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-12-30 19:07:31,666 INFO  [rootLogger] Info: Email Id: automation286777@fpk12.com
+2024-12-30 19:07:44,788 INFO  [rootLogger] Info: Email Id: DistrictUserautomation273063@fpk12.com
+2024-12-30 19:07:46,595 INFO  [rootLogger] Info: Email Id: proctorautomation856672@fpk12.com
+2024-12-30 19:08:04,526 INFO  [rootLogger] Info: Email Id: Teacherautomation662729@fpk12.com
+2024-12-30 19:08:05,530 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-12-30 19:08:07,256 INFO  [rootLogger] Browser value is: CHROME
+2024-12-30 19:08:08,151 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-30 19:08:08,151 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
