@@ -23,9 +23,9 @@ import com.Utils.Wait;
 public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 {
 
-	ActionType At=new ActionType();
 	CommonPages cp=new CommonPages(Base.getDriver());
 	JavascriptExecutor js=(JavascriptExecutor) Base.getDriver();
+	Actions a=new Actions(Base.getDriver());
 	public WebDriver driver;
 	private Wait wait;
 
@@ -74,7 +74,9 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		return Xpath;
 	}
 	public void click_On_Enrollment_Tab(){
-		Enrollment.click();
+		a.moveToElement(Enrollment).perform();
+		a.doubleClick().build().perform();
+		//Enrollment.click();
 		StaticWait(2);
 	}
 

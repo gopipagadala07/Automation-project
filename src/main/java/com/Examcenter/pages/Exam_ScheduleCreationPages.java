@@ -153,7 +153,9 @@ public class Exam_ScheduleCreationPages extends ActionType{
 	public void Exam_Administration() {
 		wait.elementToBeClickable(ExamAdministrationtab);
 		wait.visibilityOf(ExamAdministrationtab);
-		j.executeScript("arguments[0].click();", ExamAdministrationtab);
+//		j.executeScript("arguments[0].click();", ExamAdministrationtab);
+		a.moveToElement(ExamAdministrationtab).perform();
+		a.doubleClick().build().perform();
 
 	}
 	public void Exam_Description() {
