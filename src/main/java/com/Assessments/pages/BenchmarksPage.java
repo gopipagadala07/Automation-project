@@ -251,23 +251,24 @@ public class BenchmarksPage extends ActionType {
 		TestAdministrationTab.click();
 	}
 	public void CourseBenchmarkDdown(String SectionName) {
-		wait.elementToBeClickable(CourseBenchmarkDropDown);	
-        for(int retry=0;retry<=3;retry++)
-        {
-        	try {
-        		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-				WebElement CourseBenchmarkDropDown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-select[@formcontrolname='benchmark']/parent::div/parent::div/parent::div")));
-        		cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
-        		break;
-        	}catch (NoSuchElementException e) {
-				if(retry==3)
-				{
-					cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
-	        		break;
-				}
-			}
-        }
+	    wait.elementToBeClickable(CourseBenchmarkDropDown);  
+	    for(int retry = 0; retry <= 3; retry++) {
+	        try {
+	            WebElement CourseBenchmarkDropDown = driver.findElement(By.xpath("//mat-select[@formcontrolname='benchmark']/parent::div/parent::div/parent::div"));
+	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	            CourseBenchmarkDropDown = wait.until(ExpectedConditions.elementToBeClickable(CourseBenchmarkDropDown));
+	            cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
+	            break;
+
+	        } catch (NoSuchElementException e) {
+	            if(retry == 3) {
+	                cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
+	                break;
+	            }
+	        }
+	    }
 	}
+
 
 	public void schoolDdown(String schooldrop) {
 		wait.elementToBeClickable(SchoolDropdown);

@@ -113,8 +113,6 @@ public class SISProvisioningStepdefinitions extends ActionType{
 
 	@Then("User Saved the Section and Search for the Created Section in Search here Field")
 	public void user_saved_the_section_and_search_for_the_created_section_in_search_here_field() throws Exception {
-		cp.Save();
-		StaticWait(2);
 		provisioning.SectionSearch();
 	}
 

@@ -236,6 +236,8 @@ public class SISProvisioningPage extends ActionType{
 		cp.insertData("AssessmentCenterDetails.xlsx", SectionName, 2);
 		Description.sendKeys(generateRandomString());
 		StaticWait(2);
+		cp.Save();
+		StaticWait(4);
 	}
 	public void TimezoneValue(String TimeZoneValue)
 	{
@@ -250,7 +252,7 @@ public class SISProvisioningPage extends ActionType{
 	{
 		cp.searchField(ClassroomName);
 	}
-	public void SectionSearch()
+	public void SectionSearch() throws Exception
 	{
 		cp.searchField(SectionName);
 		WebElement e=driver.findElement(By.tagName("table"));
@@ -267,7 +269,9 @@ public class SISProvisioningPage extends ActionType{
 				ExtentCucumberAdapter.addTestStepLog(s);
 			}
 			else {
-				System.out.println("Section Not Saved...!!");
+				AddNewSection();
+				SectionDetails();
+				SectionSearch();
 			}
 		}
 	}
