@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Dec 30 13:17:00 IST 2024</td>
+<td>Started on:</td><td>Tue Dec 31 12:44:00 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>105 seconds (105078 ms)</td>
+<tr><td>Total time:</td><td>73 seconds (73750 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,158 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='ExamCenterRunners.Exam_Schedule_runner.tearDownClass()'><b>tearDownClass</b><br>Test class: ExamCenterRunners.Exam_Schedule_runner</td>
+<td><div><pre>java.lang.RuntimeException: java.io.IOException: HTTP request failed:
+&gt; PUT https://cucumber-messages-app-s3bucket-61aropwgu4ox.s3.eu-west-3.amazonaws.com/reports/3d8c1a1b-cdca-4d79-a42d-146bb60e5a6c?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAWE4HTFKN25NLZ6GA%2F20241231%2Feu-west-3%2Fs3%2Faws4_request&amp;X-Amz-Date=20241231T071503Z&amp;X-Amz-Expires=900&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMyJGMEQCIEWp3EazrCGGHXjGuS5wv7s3vVrbyKIFDHvou76AQh8yAiAlZqJvrBaXWux1BK6BBcmqmdq98eR2cIGdGywZZCwX3CrGAwif%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDQyMjgwMTc3OTM1NSIM95BbSr6FqJb%2BvvJmKpoDzBCg7a%2FqcG2rPUEP0i%2FJG0YkL3piE8z0kEqW%2Bj8tuOoakz7oKFjt0k597adZjcVxqqGuy%2FFkKjpPNVS6BGb3IDdeiSs0HXhk3lu3QgjEla8Rv8WmDSv8ZJrFGRA7Zr6EOjhozoq8cZBq9sHhMQagRlReV2r8g%2FPXNgF5R9j7EHbYtbdgjMEajsMOR9ZUr4YR162AW5QuSmHismZ0dz5EbD%2Bg%2B76abXau9i7%2FQre%2FOj88dwo6qvOn8oVc1QmisqKOyazAcHcS8S51jp6CJvUUMDtZ2n8DwaO9iVr38Fc09ZGXx3kIUVKhO8XrQvjwEjKR6RrVPa0fhziN64ajqhfRYlhEz1kAjxwF5Ja5c3S0XBH%2BB5D4mKqg7wrVkNOCxbvA1QKwfBG8W03370JDX0x6krZ1PzrMj8mhKu8s1uYErO78%2BhutreF9DM5EONIds0Qfe%2Fs3SdHbvNIG31qzOyxvXlu4vPNpyPZKHjhFgrXeSzHjyG%2ByFM%2FsHPhRimnXDRHErsOnv0RGBUVDLd%2FzxqxS6FNygGzum9rNY6Qw7ZLOuwY6nwFjON0mHpT%2B3HgR0DsN2IngYZseIkx8m%2B2%2F6SV9ny0Gj01%2BeJ9kS8cEIvF9nds9%2BNMw4xRFTrS3VRaZy8jCzlNnRUBS2mEpdgrEkw78NvEb9shMBW1Hk6g1sIXmCrVH5aqos79iy0%2FXRgsQrdt9Y4euZyazN%2BiJ%2Fl4WP%2FATFAaInWx2SPzGMo0Yj0EE2CyvYlEE%2F%2B22SJZ%2B6%2B0KsU5u3uE%3D&amp;X-Amz-Signature=0137144eda36c8b74e83b0141863d477b2305a2a9e8f6bef40cd21820c3c3fa6&amp;X-Amz-SignedHeaders=host
+
+
+	at io.cucumber.core.plugin.MessageFormatter.writeMessage(MessageFormatter.java:32)
+	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
+	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
+	at io.cucumber.core.runtime.SynchronizedEventBus.send(SynchronizedEventBus.java:47)
+	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:125)
+	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:105)
+	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:232)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:115)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.io.IOException: HTTP request failed:
+&gt; PUT https://cucumber-messages-app-s3bucket-61aropwgu4ox.s3.eu-west-3.amazonaws.com/reports/3d8c1a1b-cdca-4d79-a42d-146bb60e5a6c?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAWE4HTFKN25NLZ6GA%2F20241231%2Feu-west-3%2Fs3%2Faws4_request&amp;X-Amz-Date=20241231T071503Z&amp;X-Amz-Expires=900&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMyJGMEQCIEWp3EazrCGGHXjGuS5wv7s3vVrbyKIFDHvou76AQh8yAiAlZqJvrBaXWux1BK6BBcmqmdq98eR2cIGdGywZZCwX3CrGAwif%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDQyMjgwMTc3OTM1NSIM95BbSr6FqJb%2BvvJmKpoDzBCg7a%2FqcG2rPUEP0i%2FJG0YkL3piE8z0kEqW%2Bj8tuOoakz7oKFjt0k597adZjcVxqqGuy%2FFkKjpPNVS6BGb3IDdeiSs0HXhk3lu3QgjEla8Rv8WmDSv8ZJrFGRA7Zr6EOjhozoq8cZBq9sHhMQagRlReV2r8g%2FPXNgF5R9j7EHbYtbdgjMEajsMOR9ZUr4YR162AW5QuSmHismZ0dz5EbD%2Bg%2B76abXau9i7%2FQre%2FOj88dwo6qvOn8oVc1QmisqKOyazAcHcS8S51jp6CJvUUMDtZ2n8DwaO9iVr38Fc09ZGXx3kIUVKhO8XrQvjwEjKR6RrVPa0fhziN64ajqhfRYlhEz1kAjxwF5Ja5c3S0XBH%2BB5D4mKqg7wrVkNOCxbvA1QKwfBG8W03370JDX0x6krZ1PzrMj8mhKu8s1uYErO78%2BhutreF9DM5EONIds0Qfe%2Fs3SdHbvNIG31qzOyxvXlu4vPNpyPZKHjhFgrXeSzHjyG%2ByFM%2FsHPhRimnXDRHErsOnv0RGBUVDLd%2FzxqxS6FNygGzum9rNY6Qw7ZLOuwY6nwFjON0mHpT%2B3HgR0DsN2IngYZseIkx8m%2B2%2F6SV9ny0Gj01%2BeJ9kS8cEIvF9nds9%2BNMw4xRFTrS3VRaZy8jCzlNnRUBS2mEpdgrEkw78NvEb9shMBW1Hk6g1sIXmCrVH5aqos79iy0%2FXRgsQrdt9Y4euZyazN%2BiJ%2Fl4WP%2FATFAaInWx2SPzGMo0Yj0EE2CyvYlEE%2F%2B22SJZ%2B6%2B0KsU5u3uE%3D&amp;X-Amz-Signature=0137144eda36c8b74e83b0141863d477b2305a2a9e8f6bef40cd21820c3c3fa6&amp;X-Amz-SignedHeaders=host
+
+
+	at io.cucumber.core.plugin.UrlOutputStream.createCurlLikeException(UrlOutputStream.java:150)
+	at io.cucumber.core.plugin.UrlOutputStream.sendRequestBody(UrlOutputStream.java:116)
+	at io.cucumber.core.plugin.UrlOutputStream.sendRequest(UrlOutputStream.java:94)
+	at io.cucumber.core.plugin.UrlOutputStream.sendRequest(UrlOutputStream.java:90)
+	at io.cucumber.core.plugin.UrlOutputStream.close(UrlOutputStream.java:65)
+	at java.base/sun.nio.cs.StreamEncoder.implClose(StreamEncoder.java:413)
+	at java.base/sun.nio.cs.StreamEncoder.lockedClose(StreamEncoder.java:231)
+	at java.base/sun.nio.cs.StreamEncoder.close(StreamEncoder.java:222)
+	at java.base/java.io.OutputStreamWriter.close(OutputStreamWriter.java:264)
+	at io.cucumber.core.plugin.MessageFormatter.writeMessage(MessageFormatter.java:29)
+	... 29 more
+Caused by: java.net.UnknownHostException: cucumber-messages-app-s3bucket-61aropwgu4ox.s3.eu-west-3.amazonaws.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:181)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.&lt;init&gt;(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1288)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1129)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1460)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1423)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getOutputStream(HttpsURLConnectionImpl.java:219)
+	at io.cucumber.core.plugin.UrlOutputStream.sendRequestBody(UrlOutputStream.java:111)
+	... 37 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace505777467", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace505777467'><pre>java.lang.RuntimeException: java.io.IOException: HTTP request failed:
+&gt; PUT https://cucumber-messages-app-s3bucket-61aropwgu4ox.s3.eu-west-3.amazonaws.com/reports/3d8c1a1b-cdca-4d79-a42d-146bb60e5a6c?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAWE4HTFKN25NLZ6GA%2F20241231%2Feu-west-3%2Fs3%2Faws4_request&amp;X-Amz-Date=20241231T071503Z&amp;X-Amz-Expires=900&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMyJGMEQCIEWp3EazrCGGHXjGuS5wv7s3vVrbyKIFDHvou76AQh8yAiAlZqJvrBaXWux1BK6BBcmqmdq98eR2cIGdGywZZCwX3CrGAwif%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDQyMjgwMTc3OTM1NSIM95BbSr6FqJb%2BvvJmKpoDzBCg7a%2FqcG2rPUEP0i%2FJG0YkL3piE8z0kEqW%2Bj8tuOoakz7oKFjt0k597adZjcVxqqGuy%2FFkKjpPNVS6BGb3IDdeiSs0HXhk3lu3QgjEla8Rv8WmDSv8ZJrFGRA7Zr6EOjhozoq8cZBq9sHhMQagRlReV2r8g%2FPXNgF5R9j7EHbYtbdgjMEajsMOR9ZUr4YR162AW5QuSmHismZ0dz5EbD%2Bg%2B76abXau9i7%2FQre%2FOj88dwo6qvOn8oVc1QmisqKOyazAcHcS8S51jp6CJvUUMDtZ2n8DwaO9iVr38Fc09ZGXx3kIUVKhO8XrQvjwEjKR6RrVPa0fhziN64ajqhfRYlhEz1kAjxwF5Ja5c3S0XBH%2BB5D4mKqg7wrVkNOCxbvA1QKwfBG8W03370JDX0x6krZ1PzrMj8mhKu8s1uYErO78%2BhutreF9DM5EONIds0Qfe%2Fs3SdHbvNIG31qzOyxvXlu4vPNpyPZKHjhFgrXeSzHjyG%2ByFM%2FsHPhRimnXDRHErsOnv0RGBUVDLd%2FzxqxS6FNygGzum9rNY6Qw7ZLOuwY6nwFjON0mHpT%2B3HgR0DsN2IngYZseIkx8m%2B2%2F6SV9ny0Gj01%2BeJ9kS8cEIvF9nds9%2BNMw4xRFTrS3VRaZy8jCzlNnRUBS2mEpdgrEkw78NvEb9shMBW1Hk6g1sIXmCrVH5aqos79iy0%2FXRgsQrdt9Y4euZyazN%2BiJ%2Fl4WP%2FATFAaInWx2SPzGMo0Yj0EE2CyvYlEE%2F%2B22SJZ%2B6%2B0KsU5u3uE%3D&amp;X-Amz-Signature=0137144eda36c8b74e83b0141863d477b2305a2a9e8f6bef40cd21820c3c3fa6&amp;X-Amz-SignedHeaders=host
+
+
+	at io.cucumber.core.plugin.MessageFormatter.writeMessage(MessageFormatter.java:32)
+	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
+	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
+	at io.cucumber.core.runtime.SynchronizedEventBus.send(SynchronizedEventBus.java:47)
+	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:125)
+	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:105)
+	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:232)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:115)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.io.IOException: HTTP request failed:
+&gt; PUT https://cucumber-messages-app-s3bucket-61aropwgu4ox.s3.eu-west-3.amazonaws.com/reports/3d8c1a1b-cdca-4d79-a42d-146bb60e5a6c?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAWE4HTFKN25NLZ6GA%2F20241231%2Feu-west-3%2Fs3%2Faws4_request&amp;X-Amz-Date=20241231T071503Z&amp;X-Amz-Expires=900&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMyJGMEQCIEWp3EazrCGGHXjGuS5wv7s3vVrbyKIFDHvou76AQh8yAiAlZqJvrBaXWux1BK6BBcmqmdq98eR2cIGdGywZZCwX3CrGAwif%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDQyMjgwMTc3OTM1NSIM95BbSr6FqJb%2BvvJmKpoDzBCg7a%2FqcG2rPUEP0i%2FJG0YkL3piE8z0kEqW%2Bj8tuOoakz7oKFjt0k597adZjcVxqqGuy%2FFkKjpPNVS6BGb3IDdeiSs0HXhk3lu3QgjEla8Rv8WmDSv8ZJrFGRA7Zr6EOjhozoq8cZBq9sHhMQagRlReV2r8g%2FPXNgF5R9j7EHbYtbdgjMEajsMOR9ZUr4YR162AW5QuSmHismZ0dz5EbD%2Bg%2B76abXau9i7%2FQre%2FOj88dwo6qvOn8oVc1QmisqKOyazAcHcS8S51jp6CJvUUMDtZ2n8DwaO9iVr38Fc09ZGXx3kIUVKhO8XrQvjwEjKR6RrVPa0fhziN64ajqhfRYlhEz1kAjxwF5Ja5c3S0XBH%2BB5D4mKqg7wrVkNOCxbvA1QKwfBG8W03370JDX0x6krZ1PzrMj8mhKu8s1uYErO78%2BhutreF9DM5EONIds0Qfe%2Fs3SdHbvNIG31qzOyxvXlu4vPNpyPZKHjhFgrXeSzHjyG%2ByFM%2FsHPhRimnXDRHErsOnv0RGBUVDLd%2FzxqxS6FNygGzum9rNY6Qw7ZLOuwY6nwFjON0mHpT%2B3HgR0DsN2IngYZseIkx8m%2B2%2F6SV9ny0Gj01%2BeJ9kS8cEIvF9nds9%2BNMw4xRFTrS3VRaZy8jCzlNnRUBS2mEpdgrEkw78NvEb9shMBW1Hk6g1sIXmCrVH5aqos79iy0%2FXRgsQrdt9Y4euZyazN%2BiJ%2Fl4WP%2FATFAaInWx2SPzGMo0Yj0EE2CyvYlEE%2F%2B22SJZ%2B6%2B0KsU5u3uE%3D&amp;X-Amz-Signature=0137144eda36c8b74e83b0141863d477b2305a2a9e8f6bef40cd21820c3c3fa6&amp;X-Amz-SignedHeaders=host
+
+
+	at io.cucumber.core.plugin.UrlOutputStream.createCurlLikeException(UrlOutputStream.java:150)
+	at io.cucumber.core.plugin.UrlOutputStream.sendRequestBody(UrlOutputStream.java:116)
+	at io.cucumber.core.plugin.UrlOutputStream.sendRequest(UrlOutputStream.java:94)
+	at io.cucumber.core.plugin.UrlOutputStream.sendRequest(UrlOutputStream.java:90)
+	at io.cucumber.core.plugin.UrlOutputStream.close(UrlOutputStream.java:65)
+	at java.base/sun.nio.cs.StreamEncoder.implClose(StreamEncoder.java:413)
+	at java.base/sun.nio.cs.StreamEncoder.lockedClose(StreamEncoder.java:231)
+	at java.base/sun.nio.cs.StreamEncoder.close(StreamEncoder.java:222)
+	at java.base/java.io.OutputStreamWriter.close(OutputStreamWriter.java:264)
+	at io.cucumber.core.plugin.MessageFormatter.writeMessage(MessageFormatter.java:29)
+	... 29 more
+Caused by: java.net.UnknownHostException: cucumber-messages-app-s3bucket-61aropwgu4ox.s3.eu-west-3.amazonaws.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:181)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.protocol.https.HttpsClient.&lt;init&gt;(HttpsClient.java:264)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:377)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1288)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1129)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1460)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1423)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getOutputStream(HttpsURLConnectionImpl.java:219)
+	at io.cucumber.core.plugin.UrlOutputStream.sendRequestBody(UrlOutputStream.java:111)
+	... 37 more
+</pre></div></td>
+<td>0</td>
+<td>ExamCenterRunners.Exam_Schedule_runner@22356acd</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,15 +227,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='AssessmentsRunner.BenchmarksRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.BenchmarksRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating Benchmarks and activating", "Verify the Benchmarks functionality"</td>
+<td title='ExamCenterRunners.Exam_Schedule_runner.runScenario()'><b>runScenario</b><br>Test class: ExamCenterRunners.Exam_Schedule_runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Enroll the Examination and schedule to the Examtaker", "Examcenter Creation of Examinations Schedules and Examtaker Enrollments feature"</td>
 <td></td>
-<td>51</td>
-<td>AssessmentsRunner.BenchmarksRunner@5443d039</td></tr>
-<tr>
-<td title='AssessmentsRunner.BenchmarksRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.BenchmarksRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Activating Benchmark Through Test Administration", "Verify the Benchmarks functionality"</td>
-<td></td>
-<td>50</td>
-<td>AssessmentsRunner.BenchmarksRunner@5443d039</td></tr>
+<td>60</td>
+<td>ExamCenterRunners.Exam_Schedule_runner@22356acd</td></tr>
 </table><p>
 </body>
 </html>

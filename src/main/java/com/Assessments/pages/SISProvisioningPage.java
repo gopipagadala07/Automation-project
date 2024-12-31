@@ -4,6 +4,7 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -19,6 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
+import com.Utils.CommonPages;
 import com.Utils.Wait;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
@@ -26,7 +28,7 @@ public class SISProvisioningPage extends ActionType{
 
 	CommonPages cp=new CommonPages(Base.getDriver());
 	JavascriptExecutor js=(JavascriptExecutor) Base.getDriver();
-	public WebDriver driver;
+	private WebDriver driver;
 	private Wait wait;
 	static String SchoolName;
 	static String ClassroomName;
@@ -61,6 +63,7 @@ public class SISProvisioningPage extends ActionType{
 	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[4]")private WebElement Sectiontab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Section')]")private WebElement AddnewSectionbtn;
 	@FindBy(how = How.XPATH,using = "//fp-dropdown[@controlname='year']")private WebElement YearDropDown;
+	@FindBy(how = How.XPATH,using = "//div[@role='alert']")private WebElement Alertsection;
 
 	/*
 	 * Districtuser Creation
@@ -429,6 +432,7 @@ public class SISProvisioningPage extends ActionType{
 				js.executeScript("arguments[0].click()", Closeicon);
 				break;
 			} catch (StaleElementReferenceException e) {
+				retry++;
 				if (retry == 3) {
 					System.err.println("Element became stale after multiple attempts: " + e.getMessage());
 				}

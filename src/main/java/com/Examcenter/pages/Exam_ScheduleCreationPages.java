@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
+import com.Utils.CommonPages;
 import com.Utils.Wait;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
@@ -174,6 +175,8 @@ public class Exam_ScheduleCreationPages extends ActionType{
 	}
 
 	public void Examtaker_search(String Lastnametext, String Firstnametext) {
+		cp.searchField(Lastnametext+" ");
+		StaticWait(1);
 		cp.searchField(Lastnametext+" "+Firstnametext);
 	}
 	public void icons_Action(String TestName) {

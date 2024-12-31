@@ -4,7 +4,6 @@ import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
+import com.Utils.CommonPages;
 import com.Utils.Wait;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
@@ -93,8 +93,8 @@ public class Teacher_Activityprogress extends ActionType {
 			js.executeScript("arguments[0].click()", quiz);
 			StaticWait(2);
 			String Band = bandstatus.getText();
-			ExtentCucumberAdapter.addTestStepLog(Band);
-			System.out.println(Band);
+			ExtentCucumberAdapter.addTestStepLog("Quizzes Status band : "+Band);
+			System.out.println("Quizzes Status band : "+Band);
 			WebElement closeButton = driver.findElement(close);
 			js.executeScript("arguments[0].click();", closeButton);
 			StaticWait(2);
@@ -117,8 +117,8 @@ public class Teacher_Activityprogress extends ActionType {
 			actions.moveToElement(Examslist).click().perform();
 			StaticWait(2);
 			String Band = bandstatus.getText();
-			ExtentCucumberAdapter.addTestStepLog(Band);
-			System.out.println(Band);
+			ExtentCucumberAdapter.addTestStepLog("Exam Status band : "+Band);
+			System.out.println("Exam Status band : "+Band);
 			WebElement closeButton = driver.findElement(close);
 			actions.moveToElement(closeButton).click().perform();
 		} catch (StaleElementReferenceException e) {

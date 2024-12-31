@@ -1,6 +1,7 @@
 package com.Assessments.pages;
 import com.Utils.ActionType;
 import com.Utils.Base;
+import com.Utils.CommonPages;
 import com.Utils.Wait;
 import java.awt.AWTException;
 import java.time.Duration;

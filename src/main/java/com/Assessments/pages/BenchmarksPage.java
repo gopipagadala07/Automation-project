@@ -2,6 +2,7 @@ package com.Assessments.pages;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
+import com.Utils.CommonPages;
 import com.Utils.Wait;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
@@ -17,9 +18,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 
 public class BenchmarksPage extends ActionType {
@@ -62,21 +61,21 @@ public class BenchmarksPage extends ActionType {
 	 * Test Administration
 	 */
 	@FindBy(how=How.XPATH,using="//a[contains(text(),'Test Administration')] ")private WebElement TestAdministrationTab;
-	@FindBy(how=How.XPATH,using="//mat-select[@formcontrolname='benchmark']/parent::div/parent::div/..")private WebElement CourseBenchmarkDropDown;
+	@FindBy(how=How.XPATH,using="//mat-select[@formcontrolname='benchmark']/parent::div/parent::div/parent::div")private WebElement CourseBenchmarkDropDown;
 	@FindBy(how=How.XPATH,using="//fp-dropdown[@controlname='school']")private WebElement SchoolDropdown;
 	@FindBy(how=How.XPATH,using="//fp-dropdown[@controlname='teacher']")private WebElement TeacherDropdown;
 	@FindBy(how=How.XPATH,using="//fp-dropdown[@controlname='classroomID']")private WebElement ClassroomdropDown;
 	@FindBy(how=How.XPATH,using="//span[text()=' Activate all test status. ']")private WebElement ToggleActive;
-	@FindBy(how=How.XPATH,using="//span[contains(text(),' Deactivate all test status. ')] ")private WebElement ToggleInActive;
+	@FindBy(how=How.XPATH,using="//span[text()=' Deactivate all test status. ']")private WebElement ToggleInActive;
 	@FindBy(how=How.XPATH,using="//button[text()='Yes']")private WebElement ClickOnYEs;//click on yes to activate benchmark
-	@FindBy(how=How.XPATH,using="//mat-label[contains(text(),'Status')]/following::span[contains(text(),'Not Started')]")private WebElement NotStartedStatus;
+	@FindBy(how=How.XPATH,using="//mat-label[text()='Status']/following::span[text()='Not Started']")private WebElement NotStartedStatus;
 	@FindBy(how=How.XPATH,using="//mat-label[contains(text(),'Status')]/following::span[contains(text(),'In Progress')]")private WebElement InProgressStatus;
 	@FindBy(how=How.XPATH,using="//mat-label[contains(text(),'Status')]/following::span[contains(text(),'In Review')]")private WebElement InReviewStatus;
 	@FindBy(how=How.XPATH,using="//mat-label[contains(text(),'Status')]/following::span[contains(text(),'Completed')]")private WebElement CompletedStatus;
 	@FindBy(how=How.XPATH,using="//mat-icon[contains(text(),'settings_backup_restore')]/parent::span")private WebElement ResetButton;
 	@FindBy(how=How.XPATH,using="//button[text()='Yes, Please reset!']")private WebElement YesPleaseReset;
 
-	@FindBy(how=How.XPATH,using="//li[text()='Benchmark Test Administration']")private WebElement BEnchmarkTD;// click on benchmark test administration
+	@FindBy(how=How.XPATH,using="//li[text()='Benchmark Test Administration']")private WebElement BEnchmarkTD;
 
 	public WebElement NewBenchmarkName(String BenchMarkname) {
 		String xpath = "//a[contains(text(), '"+BenchMarkname+"')]";
@@ -257,11 +256,15 @@ public class BenchmarksPage extends ActionType {
         {
         	try {
         		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-				WebElement CourseBenchmarkDropDown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-select[@formcontrolname='benchmark']/parent::div/parent::div/..")));
+				WebElement CourseBenchmarkDropDown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-select[@formcontrolname='benchmark']/parent::div/parent::div/parent::div")));
         		cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
         		break;
-        	}catch (Exception e) {
-				retry++;
+        	}catch (NoSuchElementException e) {
+				if(retry==3)
+				{
+					cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
+	        		break;
+				}
 			}
         }
 	}

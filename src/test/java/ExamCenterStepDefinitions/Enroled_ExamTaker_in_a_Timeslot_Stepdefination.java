@@ -1,10 +1,10 @@
 package ExamCenterStepDefinitions;
 
 
-import com.Examcenter.pages.CommonPages;
 import com.Examcenter.pages.Enrolled_ExamTaker_in_the_Timeslot_Page;
 import com.Utils.ActionType;
 import com.Utils.Base;
+import com.Utils.CommonPages;
 import com.Utils.ExcelReader;
 
 import java.io.IOException;

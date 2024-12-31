@@ -1,6 +1,7 @@
 package com.Assessments.pages;
 import com.Utils.ActionType;
 import com.Utils.Base;
+import com.Utils.CommonPages;
 import com.Utils.Wait;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
@@ -56,8 +57,8 @@ public class LaunchValidationPages extends ActionType {
 			js.executeScript("arguments[0].click()", quiz);
 			StaticWait(1);
 			String s=StatusBand.getText();
-			ExtentCucumberAdapter.addTestStepLog("Quizzes :"+s);
-			System.out.println(s);
+			ExtentCucumberAdapter.addTestStepLog("Quizzes Status band : "+s);
+			System.out.println("Quizzes Status band : "+s);
 			JavascriptExecutor js1 = (JavascriptExecutor) driver;
 			js1.executeScript("arguments[0].click()", CloseIcon);
 			StaticWait(1); 
@@ -75,8 +76,8 @@ public class LaunchValidationPages extends ActionType {
 			actions.moveToElement(e2).click().perform();
 			StaticWait(2);
 			String s=StatusBand.getText();
-			System.out.println(s);
-			ExtentCucumberAdapter.addTestStepLog("Exam: "+s);
+			ExtentCucumberAdapter.addTestStepLog("Exam Status band : "+s);
+			System.out.println("Exam Status band : "+s);
 			JavascriptExecutor js1 = (JavascriptExecutor) driver;
 			js1.executeScript("arguments[0].click()", CloseIcon);
 			StaticWait(1); 

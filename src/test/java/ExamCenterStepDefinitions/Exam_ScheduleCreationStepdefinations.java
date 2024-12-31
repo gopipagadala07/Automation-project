@@ -6,10 +6,10 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import com.Examcenter.pages.CommonPages;
 import com.Examcenter.pages.Exam_ScheduleCreationPages;
 import com.Utils.ActionType;
 import com.Utils.Base;
+import com.Utils.CommonPages;
 import com.Utils.ExcelReader;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 

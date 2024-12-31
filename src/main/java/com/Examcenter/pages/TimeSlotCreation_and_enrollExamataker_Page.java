@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.Utils.ActionType;
 import com.Utils.Base;
+import com.Utils.CommonPages;
 import com.Utils.Wait;
 
 public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
@@ -81,39 +82,39 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 	}
 
 	public void select_the_Examination(String ExamName, String ScheduleName) {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-	    String fullExamScheduleName = ExamName + " - " + ScheduleName;
-	    int maxRetries = 5;
-	    int retry = 0;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		String fullExamScheduleName = ExamName + " - " + ScheduleName;
+		int maxRetries = 5;
+		int retry = 0;
 
-	    while (retry <= maxRetries) {
-	        try {
-	            WebElement ExaminationLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Examination']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")));
-	            wait.until(ExpectedConditions.visibilityOf(ExaminationLookup));
-	            if (ExaminationLookup.isEnabled()) {
-	                StaticWait(2);
-	                cp.FPdropdown(ExaminationLookup, fullExamScheduleName);
-	                break;
-	            } else {
-	                throw new ElementNotInteractableException("Examination Lookup element is not enabled.");
-	            }
-	        } catch (TimeoutException e) {
-	            retry++;
-	            System.err.println("Timeout waiting for the Examination Lookup element to be clickable/visible. Attempt " + retry);
-	            e.printStackTrace();
-	            if (retry > maxRetries) {
-	                throw e;
-	            }
-	        } catch (ElementNotInteractableException e) {
-	            System.err.println("The Examination Lookup element is not interactable.");
-	            e.printStackTrace();
-	            break;
-	        } catch (Exception e) {
-	            System.err.println("An unexpected error occurred while selecting the examination.");
-	            e.printStackTrace();
-	            break;
-	        }
-	    }
+		while (retry <= maxRetries) {
+			try {
+				WebElement ExaminationLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-label[text()='Examination']/ancestor::span/preceding-sibling::mat-select/ancestor::mat-form-field/child::div")));
+				wait.until(ExpectedConditions.visibilityOf(ExaminationLookup));
+				if (ExaminationLookup.isEnabled()) {
+					StaticWait(2);
+					cp.FPdropdown(ExaminationLookup, fullExamScheduleName);
+					break;
+				} else {
+					throw new ElementNotInteractableException("Examination Lookup element is not enabled.");
+				}
+			} catch (TimeoutException e) {
+				retry++;
+				System.err.println("Timeout waiting for the Examination Lookup element to be clickable/visible. Attempt " + retry);
+				e.printStackTrace();
+				if (retry > maxRetries) {
+					throw e;
+				}
+			} catch (ElementNotInteractableException e) {
+				System.err.println("The Examination Lookup element is not interactable.");
+				e.printStackTrace();
+				break;
+			} catch (Exception e) {
+				System.err.println("An unexpected error occurred while selecting the examination.");
+				e.printStackTrace();
+				break;
+			}
+		}
 	}
 
 	public void select_the_Location(String Location) 
@@ -131,7 +132,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 				retry++;
 			}
 		}
-		
+
 	}
 
 	public void click_on_TimeslotTab() 
@@ -179,7 +180,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		StaticWait(1);
 		cp.selectFutureRandomTime(EndTime,true);
 	}
-	
+
 	public void ExamTaker_Count()
 	{
 		ExamTakerCount.sendKeys(String.valueOf(randomNumberGenerator()));
@@ -201,18 +202,21 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			System.out.println(timeslotvalue);
 			for(int retry=0;retry<=3;retry++)
 			{
+				WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field/child::div")));
 				try {
-					WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field/child::div")));
 					Actions a=new Actions(driver);
 					a.moveToElement(TimeSlotLookup).perform();
 					StaticWait(1);
 					a.click().build().perform();
 					break;
 				}catch (NoSuchElementException e) {
-					retry++;
+					if (retry == 3) {
+						JavascriptExecutor js = (JavascriptExecutor) driver;
+						js.executeScript("arguments[0].click();", TimeSlotLookup);
+					}
 				}
 			}
-			
+
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
 		} else if (CommonPages.currentHour > 12) {
@@ -222,15 +226,18 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 			for(int retry=0;retry<=3;retry++)
 			{
+				WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field/child::div")));
 				try {
-					WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field/child::div")));
 					Actions a=new Actions(driver);
 					a.moveToElement(TimeSlotLookup).perform();
 					StaticWait(1);
 					a.click().build().perform();
 					break;
 				}catch (NoSuchElementException e) {
-					retry++;
+					if (retry == 3) {
+						JavascriptExecutor js = (JavascriptExecutor) driver;
+						js.executeScript("arguments[0].click();", TimeSlotLookup);
+					}
 				}
 			}	
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
@@ -243,15 +250,18 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 			for(int retry=0;retry<=3;retry++)
 			{
+				WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field/child::div")));
 				try {
-					WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field/child::div")));
 					Actions a=new Actions(driver);
 					a.moveToElement(TimeSlotLookup).perform();
 					StaticWait(1);
 					a.click().build().perform();
 					break;
 				}catch (NoSuchElementException e) {
-					retry++;
+					if (retry == 3) {
+						JavascriptExecutor js = (JavascriptExecutor) driver;
+						js.executeScript("arguments[0].click();", TimeSlotLookup);
+					}
 				}
 			}
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));

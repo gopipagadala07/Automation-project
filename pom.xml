@@ -101,11 +101,16 @@
 			<artifactId>extent-pdf-report</artifactId>
 			<version>2.12.0</version>
 		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/com.aventstack/extentreports-cucumber4-adapter -->
+		<!--
+		https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
 		<dependency>
 			<groupId>tech.grasshopper</groupId>
 			<artifactId>extentreports-cucumber7-adapter</artifactId>
 			<version>1.14.0</version>
 		</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
 		<dependency>
@@ -156,9 +161,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version>
 				<configuration>
-					<!--<systemPropertyVariables>
+					<systemPropertyVariables>
 						<env>${env}</env>
-					</systemPropertyVariables>-->
+					</systemPropertyVariables>
 					<suiteXmlFiles>
 						<suiteXmlFile>src\test\resources\testng.xml</suiteXmlFile>
 					</suiteXmlFiles>

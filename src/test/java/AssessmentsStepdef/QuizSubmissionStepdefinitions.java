@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeoutException;
 import com.Utils.Base;
-import com.Assessments.pages.CommonPages;
+import com.Utils.CommonPages;
 import com.Assessments.pages.QuizSubmissionPages;
 import com.Utils.ActionType;
 import com.Utils.ExcelReader;

@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
+import com.Utils.CommonPages;
 import com.Utils.Wait;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
@@ -139,7 +140,11 @@ public class All_User_CreationPage extends ActionType
 		IDtxt.sendKeys(String.valueOf(Idtxt));
 		PLoc(Location);		
 		StaticWait(1);
-		cp.selectCurrentDate(DOB);
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Open calendar']")));
+		Actions a=new Actions(driver);
+		a.moveToElement(e).perform();
+		cp.selectCurrentDate(e);
 
 	}
 

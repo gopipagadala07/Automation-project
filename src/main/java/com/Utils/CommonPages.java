@@ -1,4 +1,4 @@
-package com.Examcenter.pages;
+package com.Utils;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -25,7 +25,6 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -47,8 +46,8 @@ import com.Utils.Wait;
 
 public class CommonPages extends ActionType{
 	private Wait wait;
-	static int currentHour;
-	static String formattedMin;;
+	public static int currentHour;
+	public static String formattedMin;;
 	static int Ehour;
 	static int EfutureMinute;
 	
@@ -105,10 +104,9 @@ public class CommonPages extends ActionType{
 		wait.until(ExpectedConditions.elementToBeClickable(searchInputs));
 		wait.until(ExpectedConditions.visibilityOf(searchInputs));
 		searchInputs.sendKeys(value);
-		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"a"));
-		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"x"));
+		searchInputs.clear();
 		StaticWait(1);
-		searchInputs.sendKeys(Keys.chord(Keys.CONTROL,"v"));
+		searchInputs.sendKeys(value);
 		StaticWait(1);
 	}
 	public void SearchTestname (String TestName) {

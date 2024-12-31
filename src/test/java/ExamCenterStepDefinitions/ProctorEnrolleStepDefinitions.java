@@ -13,10 +13,10 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import com.Examcenter.pages.CommonPages;
 import com.Examcenter.pages.ProctorEnrollePage;
 import com.Utils.ActionType;
 import com.Utils.Base;
+import com.Utils.CommonPages;
 import com.Utils.ExcelReader;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
