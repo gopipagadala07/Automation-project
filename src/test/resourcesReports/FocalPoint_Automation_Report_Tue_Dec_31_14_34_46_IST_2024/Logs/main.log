@@ -1,0 +1,22 @@
+2024-12-31 14:34:46,618 INFO  [rootLogger] Enviornment is : STAGE
+2024-12-31 14:34:46,618 INFO  [rootLogger] Enviornment is : STAGE
+2024-12-31 14:34:46,626 INFO  [rootLogger] Browser value is: CHROME
+2024-12-31 14:34:46,628 INFO  [rootLogger] Browser value is: CHROME
+2024-12-31 14:34:49,138 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-31 14:34:49,139 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-31 14:34:49,148 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-12-31 14:34:49,149 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-12-31 14:35:26,775 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-12-31 14:35:28,376 INFO  [rootLogger] Browser value is: CHROME
+2024-12-31 14:35:29,238 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-31 14:35:29,239 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-12-31 14:36:02,676 INFO  [rootLogger] Info: Email Id: automation223918@fpk12.com
+2024-12-31 14:36:17,917 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-12-31 14:36:17,949 INFO  [rootLogger] Browser value is: CHROME
+2024-12-31 14:36:18,966 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2024-12-31 14:36:18,971 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2024-12-31 14:36:20,495 INFO  [rootLogger] Info: Email Id: proctorautomation608809@fpk12.com
+2024-12-31 14:36:44,684 INFO  [rootLogger] Info: Email Id: examtakerautomation329480@fpk12.com
+2024-12-31 14:36:48,027 INFO  [rootLogger] Info: Email Id: DistrictUserautomation620607@fpk12.com
+2024-12-31 14:37:03,291 INFO  [rootLogger] -----------------End of Scenario-----------------
+2024-12-31 14:37:17,472 INFO  [rootLogger] Info: Email Id: Teacherautomation597955@fpk12.com

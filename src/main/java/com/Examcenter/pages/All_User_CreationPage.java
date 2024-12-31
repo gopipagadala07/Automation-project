@@ -189,7 +189,10 @@ public class All_User_CreationPage extends ActionType
 		int retries = 10;
 		while (retries > 0) {
 			try {
-				Examtakerbtn.click();
+				StaticWait(2);
+				JavascriptExecutor js=(JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", Examtakerbtn);
+				//Examtakerbtn.click();
 				break;
 			} catch (ElementClickInterceptedException e) {
 				System.out.println("Click intercepted. Retrying...");
