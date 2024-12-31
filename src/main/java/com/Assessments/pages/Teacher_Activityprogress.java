@@ -20,9 +20,9 @@ import com.Utils.Base;
 import com.Utils.Wait;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
-public class Teacher_Activityprogress extends ActionType{
+public class Teacher_Activityprogress extends ActionType {
 
-	CommonPages cp=new CommonPages(Base.getDriver());
+	CommonPages cp = new CommonPages(Base.getDriver());
 	public WebDriver driver;
 	private Wait wait;
 	static String ClassroomName;
@@ -42,63 +42,57 @@ public class Teacher_Activityprogress extends ActionType{
 	private By AssessmentTab = By.xpath("//a[contains(text(),'Assessment Center')]");
 	@FindBy(how = How.XPATH, using = "//cdk-nested-tree-node[@role='treeitem']/child::div/child::div[2]/cdk-nested-tree-node/child::div/child::small")
 	private List<WebElement> Quizzeslist;
-	@FindBy(how=How.XPATH,using = "//div[@class='table_body_item']/child::label")private WebElement bandstatus;
+	@FindBy(how = How.XPATH, using = "//div[@class='table_body_item']/child::label")
+	private WebElement bandstatus;
 	private By close = By.xpath("//button[@aria-label='close dialog']/child::span/child::mat-icon");
 
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'EXAM')]")
 	private WebElement examtab;
 
-
 	@FindBy(how = How.XPATH, using = "//mat-tab-body[@role='tabpanel']/child::div/child::mat-list/child::mat-list-item/child::span/child::small")
 	private WebElement Examslist;
 
-
 	public Teacher_Activityprogress(WebDriver driver) {
-		this.driver=driver;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new Wait(driver);
 	}
 
-	public void learning()
-	{
+	public void learning() {
 
 		WebElement AC = driver.findElement(AssessmentTab);
-		if(AC.isDisplayed())
-		{
+		if (AC.isDisplayed()) {
 			AC.click();
-		}
-		else
-		{
+		} else {
 			driver.findElement(Learningtab).click();
 			AC.click();
 		}
 	}
 
-
 	public WebElement getCommunityNameElement(String ClassroomName) {
-		String xpath = "//span[(text()='"+ClassroomName+"')]/parent::div/parent::mat-card-content/preceding-sibling::mat-card-header/child::div/mat-card-title/child::span";
+		String xpath = "//span[(text()='" + ClassroomName
+				+ "')]/parent::div/parent::mat-card-content/preceding-sibling::mat-card-header/child::div/mat-card-title/child::span";
 		return driver.findElement(By.xpath(xpath));
 	}
 
-	public void AssessmentCentre(String ClassroomName, String SectionName, String TLastName, String TFirstName)
-	{
-		cp.searchField(ClassroomName + "(" + SectionName + ")-"+ TLastName + " " + TFirstName);
+	public void AssessmentCentre(String ClassroomName, String SectionName, String TLastName, String TFirstName) {
+		cp.searchField(ClassroomName + "(" + SectionName + ")-" + TLastName + " " + TFirstName);
 		StaticWait(2);
 		wait.visibilityOf(getCommunityNameElement(ClassroomName));
 		wait.elementToBeClickable(getCommunityNameElement(ClassroomName));
-		Actions a=new Actions(driver);
+		Actions a = new Actions(driver);
 		a.moveToElement(getCommunityNameElement(ClassroomName)).click().build().perform();
 		StaticWait(2);
 
 	}
 
 	public void clickEachQuizAndClose() {
-		System.out.println("Total Quizzes: "+Quizzeslist.size());
+		System.out.println("Total Quizzes: " + Quizzeslist.size());
 		for (WebElement quiz : Quizzeslist) {
-			JavascriptExecutor js=(JavascriptExecutor) driver;
+			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click()", quiz);
 			StaticWait(2);
-			String Band=bandstatus.getText();
+			String Band = bandstatus.getText();
 			ExtentCucumberAdapter.addTestStepLog(Band);
 			System.out.println(Band);
 			WebElement closeButton = driver.findElement(close);
@@ -106,10 +100,12 @@ public class Teacher_Activityprogress extends ActionType{
 			StaticWait(2);
 		}
 	}
+
 	public void examtab() {
 		StaticWait(2);
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'EXAM')]")));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"//h3[text()='Assessments']/parent::mat-card-content/descendant::mat-tab-header/descendant::div[@role='tab'][2]")));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click()", e);
 		StaticWait(1);
@@ -117,17 +113,16 @@ public class Teacher_Activityprogress extends ActionType{
 
 	public void clickEachExamAndClose() {
 		Actions actions = new Actions(driver);
-				try {
-					actions.moveToElement(Examslist).click().perform();
-					StaticWait(2);
-					//String Band=bandstatus.getText();
-					//System.out.println(Band);
-					WebElement closeButton = driver.findElement(close);
-					actions.moveToElement(closeButton).click().perform();
-				} catch (StaleElementReferenceException e) {
-					
-	
-				}
+		try {
+			actions.moveToElement(Examslist).click().perform();
+			StaticWait(2);
+			String Band = bandstatus.getText();
+			ExtentCucumberAdapter.addTestStepLog(Band);
+			System.out.println(Band);
+			WebElement closeButton = driver.findElement(close);
+			actions.moveToElement(closeButton).click().perform();
+		} catch (StaleElementReferenceException e) {
 
 		}
+	}
 }

@@ -100,13 +100,21 @@ public class QuizCreationPages extends ActionType{
 	}
 	public void Communityname(String ClassroomName, String SectionName ,String TLastName, String TFirstName)
 	{
-		cp.searchField(ClassroomName + "(" + SectionName + ")-"+ TLastName + " " + TFirstName);
-		System.out.println(ClassroomName);
-		StaticWait(1);
-		wait.visibilityOf(getCommunityNameElement(ClassroomName));
-		wait.elementToBeClickable(getCommunityNameElement(ClassroomName));
-		Actions a=new Actions(driver);
-		a.moveToElement(getCommunityNameElement(ClassroomName)).click().build().perform();
+		for(int retry=0;retry<=3;retry++)
+		{
+			try {
+				cp.searchField(ClassroomName + "(" + SectionName + ")-"+ TLastName + " " + TFirstName);
+				//System.out.println(ClassroomName);
+				StaticWait(1);
+				wait.visibilityOf(getCommunityNameElement(ClassroomName));
+				wait.elementToBeClickable(getCommunityNameElement(ClassroomName));
+				Actions a=new Actions(driver);
+				a.moveToElement(getCommunityNameElement(ClassroomName)).click().build().perform();
+				break;
+			}catch (StaleElementReferenceException e) {
+				retry++;
+			}
+		}
 	}
 	public void Assessmentstab()
 	{

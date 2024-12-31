@@ -8,7 +8,7 @@ Feature: Verify the Activity progress from ToDo List at teacher
     When Users Click on Assessment Centre tab under Learning in Left menu
     Then Users clicks on the Assessment Centre Course <rownumber1><rownumber>
     When User click on all Quizzes and navigate back
-    #Then User click on all benchmarks and navigate back
+    Then User click on all benchmarks and navigate back
 
     Examples: 
       | rownumber | rownumber1 |

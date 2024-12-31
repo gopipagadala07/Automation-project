@@ -46,7 +46,7 @@ public class Teacher_ActivityprogressStepdefinitions extends ActionType{
 	@When("User click on all Quizzes and navigate back")
 	public void user_click_on_all_quizzes_and_navigate_back() {
 	   activityprogress.clickEachQuizAndClose();
-	   //activityprogress.examtab();
+	   activityprogress.examtab();
 	}
 
 	@Then("User click on all benchmarks and navigate back")

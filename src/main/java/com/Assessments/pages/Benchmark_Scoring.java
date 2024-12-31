@@ -112,8 +112,6 @@ public class Benchmark_Scoring extends ActionType{
 		Actions actions=new Actions(driver);
 		actions.moveToElement(bclick).click().perform();
 		Schedule.click();
-
-		
 		wait.elementToBeClickable(progress);
 		wait.visibilityOf(progress);
 		StaticWait(2);
