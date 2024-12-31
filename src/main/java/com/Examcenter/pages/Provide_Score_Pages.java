@@ -50,7 +50,7 @@ public class Provide_Score_Pages extends ActionType
 	{   
 		wait.elementToBeClickable(searchtxt);
 		cp.searchField(L_Name+" ");
-		cp.searchField(F_Name);
+		cp.searchField(L_Name+" "+F_Name);
 
 		int attempts = 0;
 

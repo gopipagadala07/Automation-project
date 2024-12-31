@@ -94,7 +94,7 @@ public class Teacher_Activityprogress extends ActionType {
 			StaticWait(2);
 			String Band = bandstatus.getText();
 			ExtentCucumberAdapter.addTestStepLog("Quizzes Status band : "+Band);
-			System.out.println("Quizzes Status band : "+Band);
+			System.out.println("Quiz Status band : "+Band);
 			WebElement closeButton = driver.findElement(close);
 			js.executeScript("arguments[0].click();", closeButton);
 			StaticWait(2);

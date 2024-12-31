@@ -58,7 +58,7 @@ public class LaunchValidationPages extends ActionType {
 			StaticWait(1);
 			String s=StatusBand.getText();
 			ExtentCucumberAdapter.addTestStepLog("Quizzes Status band : "+s);
-			System.out.println("Quizzes Status band : "+s);
+			System.out.println("Quiz Status band : "+s);
 			JavascriptExecutor js1 = (JavascriptExecutor) driver;
 			js1.executeScript("arguments[0].click()", CloseIcon);
 			StaticWait(1); 
