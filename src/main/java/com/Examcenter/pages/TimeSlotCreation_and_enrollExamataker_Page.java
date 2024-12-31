@@ -211,6 +211,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 					break;
 				}catch (NoSuchElementException e) {
 					if (retry == 3) {
+						StaticWait(1);
 						JavascriptExecutor js = (JavascriptExecutor) driver;
 						js.executeScript("arguments[0].click();", TimeSlotLookup);
 					}

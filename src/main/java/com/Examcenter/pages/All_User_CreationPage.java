@@ -78,18 +78,21 @@ public class All_User_CreationPage extends ActionType
 	public void Addnewbtn()
 	{
 		wait.elementToBeClickable(Addnewbtn);
-		int retries = 10;
-		while (retries > 0) {
+		for(int retry=0;retry<=3;retry++)
+		{
 			try {
-				Addnewbtn.click();
+				StaticWait(2);
+				JavascriptExecutor js=(JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", Addnewbtn);
+				StaticWait(1);
 				break;
 			} catch (StaleElementReferenceException e) {
+				retry++;
 				System.out.println("StaleElementReferenceException. Retrying...");
-				retries--;
-				wait.elementToBeClickable(Addnewbtn);
-				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", Addnewbtn);
+			}catch (ElementClickInterceptedException e) {
+				retry++;
+				System.out.println("StaleElementReferenceException. Retrying...");
 			}
-			
 		}
 	}
 	public void Adminstarationbtn()
@@ -107,18 +110,26 @@ public class All_User_CreationPage extends ActionType
 		jse.executeScript("arguments[0].click()", e);
 	}
 	public void Create_Controller_User(String UserRole) {
-		wait.elementToBeClickable(Emailtxt);
-		wait.visibilityOf(Emailtxt);
-		Email =randomEmailIdGenerator(UserRole).toLowerCase();
-		Emailtxt.sendKeys(Email);
-		ControllerF_Name = "FPKController".toLowerCase();
-		Firstnametxt.sendKeys(ControllerF_Name);
-		ControllerL_Name = randomNumberGenerator();
-		System.out.println(ControllerL_Name);
-		ExtentCucumberAdapter.addTestStepLog(String.valueOf(ControllerL_Name));
-		Lastnametxt.sendKeys(String.valueOf(ControllerL_Name));
-		Idtxt = randomNumberGenerator();
-		IDtxt.sendKeys(String.valueOf(Idtxt));
+		for(int retry=0;retry<=3;retry++)
+		{
+			try {
+				wait.elementToBeClickable(Emailtxt);
+				wait.visibilityOf(Emailtxt);
+				Email =randomEmailIdGenerator(UserRole).toLowerCase();
+				Emailtxt.sendKeys(Email);
+				ControllerF_Name = "FPKController".toLowerCase();
+				Firstnametxt.sendKeys(ControllerF_Name);
+				ControllerL_Name = randomNumberGenerator();
+				System.out.println(ControllerL_Name);
+				ExtentCucumberAdapter.addTestStepLog(String.valueOf(ControllerL_Name));
+				Lastnametxt.sendKeys(String.valueOf(ControllerL_Name));
+				Idtxt = randomNumberGenerator();
+				IDtxt.sendKeys(String.valueOf(Idtxt));
+				break;
+			} catch (StaleElementReferenceException e) {
+				retry++;
+			}
+		}
 	}
 	public void isAdminChkBox()
 	{
@@ -126,42 +137,58 @@ public class All_User_CreationPage extends ActionType
 	}
 
 	public void Create_Examtaker_User(String UserRole,String Location) {
-		wait.elementToBeClickable(Emailtxt);
-		wait.visibilityOf(Emailtxt);
-		Email =randomEmailIdGenerator(UserRole).toLowerCase();
-		Emailtxt.sendKeys(Email);
-		ExamTakerF_Name = "FPK"+UserRole.toLowerCase();
-		Firstnametxt.sendKeys(ExamTakerF_Name);
-		ExamTakerL_Name = randomNumberGenerator();
-		System.out.println(ExamTakerL_Name);
-		ExtentCucumberAdapter.addTestStepLog(String.valueOf(ExamTakerL_Name));
-		Lastnametxt.sendKeys(String.valueOf(ExamTakerL_Name));
-		Idtxt = randomNumberGenerator();
-		IDtxt.sendKeys(String.valueOf(Idtxt));
-		PLoc(Location);		
-		StaticWait(1);
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Open calendar']")));
-		Actions a=new Actions(driver);
-		a.moveToElement(e).perform();
-		cp.selectCurrentDate(e);
-
+		for(int retry=0;retry<=3;retry++)
+		{
+			try {
+				wait.elementToBeClickable(Emailtxt);
+				wait.visibilityOf(Emailtxt);
+				StaticWait(1);
+				Email =randomEmailIdGenerator(UserRole).toLowerCase();
+				Emailtxt.sendKeys(Email);
+				ExamTakerF_Name = "FPK"+UserRole.toLowerCase();
+				Firstnametxt.sendKeys(ExamTakerF_Name);
+				ExamTakerL_Name = randomNumberGenerator();
+				System.out.println(ExamTakerL_Name);
+				ExtentCucumberAdapter.addTestStepLog(String.valueOf(ExamTakerL_Name));
+				Lastnametxt.sendKeys(String.valueOf(ExamTakerL_Name));
+				Idtxt = randomNumberGenerator();
+				IDtxt.sendKeys(String.valueOf(Idtxt));
+				PLoc(Location);		
+				StaticWait(1);
+				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Open calendar']")));
+				Actions a=new Actions(driver);
+				a.moveToElement(e).perform();
+				cp.selectCurrentDate(e);
+				break;
+			} catch (StaleElementReferenceException e) {
+				retry++;
+			}
+		}
 	}
 
 	public void Create_proctor_User(String UserRole,String Location) {
-		wait.elementToBeClickable(Emailtxt);
-		wait.visibilityOf(Emailtxt);
-		Email =randomEmailIdGenerator(UserRole).toLowerCase();
-		Emailtxt.sendKeys(Email);
-		ProctorF_Name = "FPK"+UserRole.toLowerCase();
-		Firstnametxt.sendKeys(ProctorF_Name);
-		ProctorL_Name = randomNumberGenerator();
-		System.out.println(ProctorL_Name);
-		ExtentCucumberAdapter.addTestStepLog(String.valueOf(ProctorL_Name));
-		Lastnametxt.sendKeys(String.valueOf(ProctorL_Name));
-		Idtxt = randomNumberGenerator();
-		IDtxt.sendKeys(String.valueOf(Idtxt));
-		PLoc(Location);
+		for(int retry=0;retry<=3;retry++)
+		{
+			try {
+				wait.elementToBeClickable(Emailtxt);
+				wait.visibilityOf(Emailtxt);
+				Email =randomEmailIdGenerator(UserRole).toLowerCase();
+				Emailtxt.sendKeys(Email);
+				ProctorF_Name = "FPK"+UserRole.toLowerCase();
+				Firstnametxt.sendKeys(ProctorF_Name);
+				ProctorL_Name = randomNumberGenerator();
+				System.out.println(ProctorL_Name);
+				ExtentCucumberAdapter.addTestStepLog(String.valueOf(ProctorL_Name));
+				Lastnametxt.sendKeys(String.valueOf(ProctorL_Name));
+				Idtxt = randomNumberGenerator();
+				IDtxt.sendKeys(String.valueOf(Idtxt));
+				PLoc(Location);
+				break;
+			} catch (StaleElementReferenceException e) {
+				retry++;
+			}
+		}
 	}
 	public void createloginbtn()
 	{
@@ -189,7 +216,7 @@ public class All_User_CreationPage extends ActionType
 		int retries = 10;
 		while (retries > 0) {
 			try {
-				StaticWait(2);
+				StaticWait(1);
 				JavascriptExecutor js=(JavascriptExecutor) driver;
 				js.executeScript("arguments[0].click();", Examtakerbtn);
 				//Examtakerbtn.click();
@@ -220,7 +247,9 @@ public class All_User_CreationPage extends ActionType
 		int retries = 10;
 		while (retries > 0) {
 			try {
-				Proctorbtn.click();
+				StaticWait(1);
+				JavascriptExecutor js=(JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", Proctorbtn);
 				break; 
 			} catch (ElementClickInterceptedException e) {
 				System.out.println("Click intercepted. Retrying...");

@@ -207,7 +207,8 @@ public class Exam_ScheduleCreationPages extends ActionType{
 	}
 	public void clickonsearchTest()
 	{
-		clickonSearchTest.click();
+		StaticWait(1);
+		j.executeScript("arguments[0].click()",clickonSearchTest);
 	}
 	public void Search_Test_button(String TestName) {
 		String testname = "\"" + TestName + "\"";

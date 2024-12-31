@@ -74,7 +74,6 @@ public class CommonPages extends ActionType{
 		.sendKeys(Keys.SUBTRACT)
 		.keyUp(Keys.CONTROL)
 		.perform(); 
-
 	}
 
 	@FindBy(how=How.XPATH,using = "//fp-textbox[@placeholder='Name']/div/mat-form-field/div/div/div/input")
@@ -131,12 +130,13 @@ public class CommonPages extends ActionType{
 	                        JavascriptExecutor js = (JavascriptExecutor) driver;
 	                        js.executeScript("arguments[0].scrollIntoView(true);", e);
 	                        js.executeScript("arguments[0].click();", e);
+	                        break;
 	                    } catch (ElementClickInterceptedException ex) {
 	                        JavascriptExecutor js = (JavascriptExecutor) driver;
 	                        js.executeScript("arguments[0].scrollIntoView(true);", option);
 	                        js.executeScript("arguments[0].click();", option);
+	                        break;
 	                    }
-	                    break;
 	                }
 	            }
 	        } catch (Exception e) {

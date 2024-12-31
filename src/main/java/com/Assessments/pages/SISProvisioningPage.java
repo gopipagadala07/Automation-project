@@ -260,19 +260,29 @@ public class SISProvisioningPage extends ActionType{
 		List<WebElement> rows=body.findElements(By.tagName("tr"));
 		for(WebElement row:rows)
 		{
-			 List<WebElement> columns = row.findElements(By.tagName("td"));
-			String s=columns.get(0).getText();
-			System.out.println(s);
-			if(s.equalsIgnoreCase(SectionName))
-			{
-				System.out.println("Section Saved Successfully..!!");
-				ExtentCucumberAdapter.addTestStepLog(s);
+			try {
+				List<WebElement> columns = row.findElements(By.tagName("td"));
+				String s=columns.get(0).getText();
+				System.out.println(s);
+				if(s.equalsIgnoreCase(SectionName))
+				{
+					System.out.println("Section Saved Successfully..!!");
+					ExtentCucumberAdapter.addTestStepLog(s);
+					break;
+				}
+				else {
+					try {
+						AddNewSection();
+						SectionDetails();
+					}catch (StaleElementReferenceException e1) {
+						
+					}
+					
+				}
+			} catch (StaleElementReferenceException e2) {
+				
 			}
-			else {
-				AddNewSection();
-				SectionDetails();
-				SectionSearch();
-			}
+			 
 		}
 	}
 	public void DUserSearch()
