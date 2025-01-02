@@ -161,7 +161,16 @@ public class SISProvisioningPage extends ActionType{
 	public void SchoolDropDownSearch()
 	{
 		wait.elementToBeClickable(SchoolDropDown);
-		cp.FPdropdown(SchoolDropDown,SISProvisioningPage.SchoolName);
+		for(int retry=0;retry<3;retry++)
+		{
+			try {
+				StaticWait(1);
+				cp.FPdropdown(SchoolDropDown,SchoolName);
+				break;
+			} catch (StaleElementReferenceException e) {
+				retry++;
+			}
+		}
 	}
 	public void YearDropDownSearch(String Year)
 	{
@@ -206,6 +215,9 @@ public class SISProvisioningPage extends ActionType{
 		{
 			try {
 				StaticWait(1);
+	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	            WebElement SectionDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='section']/descendant::mat-form-field/child::div")));
+	            StaticWait(1);
 				cp.FPdropdown(SectionDown, SectionName);
 				break;
 			} catch (StaleElementReferenceException e) {

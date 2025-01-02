@@ -88,9 +88,11 @@ public class All_User_CreationPage extends ActionType
 				break;
 			} catch (StaleElementReferenceException e) {
 				retry++;
+				StaticWait(1);
 				System.out.println("StaleElementReferenceException. Retrying...");
 			}catch (ElementClickInterceptedException e) {
 				retry++;
+				StaticWait(1);
 				System.out.println("StaleElementReferenceException. Retrying...");
 			}
 		}
@@ -142,16 +144,19 @@ public class All_User_CreationPage extends ActionType
 			try {
 				wait.elementToBeClickable(Emailtxt);
 				wait.visibilityOf(Emailtxt);
-				StaticWait(1);
+				StaticWait(2);
 				Email =randomEmailIdGenerator(UserRole).toLowerCase();
 				Emailtxt.sendKeys(Email);
 				ExamTakerF_Name = "FPK"+UserRole.toLowerCase();
+				wait.elementToBeClickable(Firstnametxt);
 				Firstnametxt.sendKeys(ExamTakerF_Name);
 				ExamTakerL_Name = randomNumberGenerator();
 				System.out.println(ExamTakerL_Name);
 				ExtentCucumberAdapter.addTestStepLog(String.valueOf(ExamTakerL_Name));
+				wait.elementToBeClickable(Lastnametxt);
 				Lastnametxt.sendKeys(String.valueOf(ExamTakerL_Name));
 				Idtxt = randomNumberGenerator();
+				wait.elementToBeClickable(IDtxt);
 				IDtxt.sendKeys(String.valueOf(Idtxt));
 				PLoc(Location);		
 				StaticWait(1);
@@ -163,6 +168,7 @@ public class All_User_CreationPage extends ActionType
 				break;
 			} catch (StaleElementReferenceException e) {
 				retry++;
+				StaticWait(2);
 			}
 		}
 	}
