@@ -91,8 +91,8 @@ public class SISProvisioningPage extends ActionType{
 	@FindBy(how=How.XPATH,using = "//mat-icon[contains(text(),'close')]")private WebElement Closeicon;
 	@FindBy(how=How.XPATH,using = "//div[contains(text(),'Manage User')]/parent::div/following::div[1]/div")private WebElement SettingsClassroomtab;
 	@FindBy(how=How.XPATH,using = "//span[(text()=' Add ')]")private WebElement Settingsadd;
-	@FindBy(how = How.XPATH,using = "//fp-dropdown[@controlname='classroom']")private WebElement ClassroomDown;
-	@FindBy(how = How.XPATH,using = "//fp-dropdown[@controlname='section']")private WebElement SectionDown;
+	@FindBy(how = How.XPATH,using = "//fp-dropdown[@controlname='classroom']/descendant::mat-form-field/child::div")private WebElement ClassroomDown;
+	@FindBy(how = How.XPATH,using = "//fp-dropdown[@controlname='section']/descendant::mat-form-field/child::div")private WebElement SectionDown;
 
 	/*
 	 * Student Creation
@@ -181,7 +181,7 @@ public class SISProvisioningPage extends ActionType{
 	        try {
 	        	StaticWait(1);
 	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	            WebElement ClassroomDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='classroom']")));
+	            WebElement ClassroomDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='classroom']/descendant::mat-form-field/child::div")));
 	            cp.FPdropdown(ClassroomDown, ClassroomName);
 	            success = true;
 	            break;
