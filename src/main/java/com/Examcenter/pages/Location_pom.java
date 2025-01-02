@@ -52,6 +52,7 @@ public class Location_pom extends ActionType {
 
 	public void Addnew_location() {
 		AddNewbutton.click();
+		StaticWait(1);
 	}
 	public void Location_Name() throws Exception 
 	{
@@ -60,7 +61,6 @@ public class Location_pom extends ActionType {
 		ExtentCucumberAdapter.addTestStepLog(LocationName);
 		cp.Name(LocationName);
 		cp.insertData("ExamCenterDetails.xlsx", LocationName, 0);
-
 	}
 
 	public void Other_fields() {
@@ -71,8 +71,7 @@ public class Location_pom extends ActionType {
 		Mobilenumberfield.sendKeys(String.valueOf(randomNumberGenerator()));	
 	}
 	public void savebutton() {
-		cp.Savebtn.click();
-
+		cp.Save();
+		StaticWait(1);
 	}
-
 }
