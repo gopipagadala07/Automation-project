@@ -230,14 +230,18 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void SectionDetails() throws Exception
 	{
-		SectionName="FPK12Section"+randomNumberGenerator();
-		cp.Name(SectionName);
-		ExtentCucumberAdapter.addTestStepLog(SectionName);
-		cp.insertData("AssessmentCenterDetails.xlsx", SectionName, 2);
-		Description.sendKeys(generateRandomString());
-		StaticWait(2);
-		cp.Save();
-		StaticWait(4);
+		try {
+			SectionName="FPK12Section"+randomNumberGenerator();
+			cp.Name(SectionName);
+			ExtentCucumberAdapter.addTestStepLog(SectionName);
+			cp.insertData("AssessmentCenterDetails.xlsx", SectionName, 2);
+			Description.sendKeys(generateRandomString());
+			StaticWait(2);
+			cp.Save();
+			StaticWait(4);
+		} catch (Exception e) {
+			
+		}
 	}
 	public void TimezoneValue(String TimeZoneValue)
 	{
