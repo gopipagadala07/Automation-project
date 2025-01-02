@@ -238,7 +238,7 @@ public class SISProvisioningPage extends ActionType{
 			Description.sendKeys(generateRandomString());
 			StaticWait(2);
 			cp.Save();
-			StaticWait(4);
+			StaticWait(5);
 		} catch (Exception e) {
 			
 		}
@@ -256,39 +256,51 @@ public class SISProvisioningPage extends ActionType{
 	{
 		cp.searchField(ClassroomName);
 	}
-	public void SectionSearch() throws Exception
-	{
-		cp.searchField(SectionName);
-		WebElement e=driver.findElement(By.tagName("table"));
-		WebElement body=e.findElement(By.tagName("tbody"));
-		List<WebElement> rows=body.findElements(By.tagName("tr"));
-		for(WebElement row:rows)
-		{
-			try {
-				List<WebElement> columns = row.findElements(By.tagName("td"));
-				String s=columns.get(0).getText();
-				System.out.println(s);
-				if(s.equalsIgnoreCase(SectionName))
-				{
-					System.out.println("Section Saved Successfully..!!");
-					ExtentCucumberAdapter.addTestStepLog(s);
-					break;
-				}
-				else {
-					try {
-						AddNewSection();
-						SectionDetails();
-					}catch (StaleElementReferenceException e1) {
-						
-					}
-					
-				}
-			} catch (StaleElementReferenceException e2) {
-				
-			}
-			 
-		}
+	public void SectionSearch() throws Exception {
+	    boolean sectionFound = false;
+	    int maxAttempts = 5;
+	    int attempts = 0;
+
+	    while (!sectionFound && attempts < maxAttempts) { 
+	    	cp.searchField(SectionName);
+	        StaticWait(1);
+	        WebElement e = driver.findElement(By.tagName("table"));
+	        WebElement body = e.findElement(By.tagName("tbody"));
+	        List<WebElement> rows = body.findElements(By.tagName("tr"));
+
+	        for (WebElement row : rows) {
+	            try {
+	                List<WebElement> columns = row.findElements(By.tagName("td"));
+	                String s = columns.get(0).getText();
+	                //System.out.println(s);
+	                if (s.equalsIgnoreCase(SectionName)) {
+	                    System.out.println("Section Saved Successfully..!!");
+	                    ExtentCucumberAdapter.addTestStepLog(s);
+	                    sectionFound = true; 
+	                    break; 
+	                }
+	            } catch (StaleElementReferenceException e2) {
+	                
+	            }
+	        }
+
+	        if (!sectionFound) { 
+	            try {
+	                AddNewSection();
+	                SectionDetails();
+	            } catch (StaleElementReferenceException e1) {
+	          
+	            }
+	        }
+
+	        attempts++;
+	    }
+
+	    if (!sectionFound) {
+	        System.out.println("Section not found after " + maxAttempts + " attempts.");
+	    }
 	}
+	
 	public void DUserSearch()
 	{
 		cp.searchField(String.valueOf(DLastName));
