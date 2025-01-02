@@ -182,6 +182,7 @@ public class SISProvisioningPage extends ActionType{
 	        	StaticWait(1);
 	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	            WebElement ClassroomDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='classroom']/descendant::mat-form-field/child::div")));
+	            StaticWait(1);
 	            cp.FPdropdown(ClassroomDown, ClassroomName);
 	            success = true;
 	            break;
@@ -204,6 +205,7 @@ public class SISProvisioningPage extends ActionType{
 		for(int retry=0;retry<3;retry++)
 		{
 			try {
+				StaticWait(1);
 				cp.FPdropdown(SectionDown, SectionName);
 				break;
 			} catch (StaleElementReferenceException e) {
