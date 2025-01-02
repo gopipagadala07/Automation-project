@@ -3,7 +3,7 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test" verbose="2">
     <classes>
-      <class name="ExamCenterRunners.Users_Creation_Runner"/>
+      <class name="AssessmentsRunner.SISprovisioningRunner"/>
     </classes>
   </test> <!-- Default test -->
 </suite> <!-- Failed suite [Default suite] -->

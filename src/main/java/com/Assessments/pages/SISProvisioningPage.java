@@ -48,21 +48,21 @@ public class SISProvisioningPage extends ActionType{
 	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[6]")private WebElement Schooltab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(),'Add New School')]")private WebElement AddnewSchoolbtn;
 	@FindBy(how=How.XPATH,using = "//div[@role='textbox']")private WebElement Description;
-	@FindBy(how = How.XPATH,using = "//fp-dropdown[@placeholder='TimeZone']")private WebElement TimeZoneDropdown;
+	@FindBy(how = How.XPATH,using = "//fp-dropdown[@placeholder='TimeZone']/descendant::mat-form-field/child::div")private WebElement TimeZoneDropdown;
 
 	/*
 	 * Classroom Creation
 	 */
 	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[5]")private WebElement Classroomtab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Classroom')]")private WebElement AddnewClassroombtn;
-	@FindBy(how = How.XPATH,using = "//fp-dropdown[@controlname='school']")private WebElement SchoolDropDown;
+	@FindBy(how = How.XPATH,using = "//fp-dropdown[@controlname='school']/descendant::mat-form-field/child::div")private WebElement SchoolDropDown;
 	/*
 	 * Section Creation
 	 */
 	//private WebElement listofTabs=By.xpath("//div[@role='tablist']/div/div");
 	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[4]")private WebElement Sectiontab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Section')]")private WebElement AddnewSectionbtn;
-	@FindBy(how = How.XPATH,using = "//fp-dropdown[@controlname='year']")private WebElement YearDropDown;
+	@FindBy(how = How.XPATH,using = "//fp-dropdown[@controlname='year']/descendant::mat-form-field/child::div")private WebElement YearDropDown;
 	@FindBy(how = How.XPATH,using = "//div[@role='alert']")private WebElement Alertsection;
 
 	/*
@@ -238,7 +238,7 @@ public class SISProvisioningPage extends ActionType{
 			Description.sendKeys(generateRandomString());
 			StaticWait(2);
 			cp.Save();
-			StaticWait(5);
+			StaticWait(1);
 		} catch (Exception e) {
 			
 		}
@@ -417,13 +417,17 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void ResetPwd()
 	{
-		wait.elementToBeClickable(resetpwdbtn);
-		resetpwdbtn.click();
-		wait.elementToBeClickable(Confirmationresetbtn);
-		Confirmationresetbtn.click();
-		wait.elementToBeClickable(resetpopup);
-		resetpopup.click();
-		cp.Save();
+		try {
+			wait.elementToBeClickable(resetpwdbtn);
+			resetpwdbtn.click();
+			wait.elementToBeClickable(Confirmationresetbtn);
+			Confirmationresetbtn.click();
+			wait.elementToBeClickable(resetpopup);
+			resetpopup.click();
+			cp.Save();
+		} catch (StaleElementReferenceException e) {
+			
+		}
 	}
 
 	public void Settings()

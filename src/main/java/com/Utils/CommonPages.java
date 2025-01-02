@@ -119,7 +119,9 @@ public class CommonPages extends ActionType{
 	            Actions actions = new Actions(driver);
 	            actions.moveToElement(element).perform();
 	            StaticWait(1);
-	            actions.click().build().perform();
+                JavascriptExecutor js = (JavascriptExecutor) driver;
+//                js.executeScript("arguments[0].click();", element);
+                actions.click().build().perform();
 	            StaticWait(1);
 	            List<WebElement> options = element.findElements(By.xpath("following::div[@role='listbox']/mat-option"));
 	            for (WebElement option : options) {
@@ -127,12 +129,10 @@ public class CommonPages extends ActionType{
 	                if (actual.contains(visibleText)) {
 	                    try {
 	                        WebElement e = wait.until(ExpectedConditions.elementToBeClickable(option));
-	                        JavascriptExecutor js = (JavascriptExecutor) driver;
 	                        js.executeScript("arguments[0].scrollIntoView(true);", e);
 	                        js.executeScript("arguments[0].click();", e);
 	                        break;
 	                    } catch (ElementClickInterceptedException ex) {
-	                        JavascriptExecutor js = (JavascriptExecutor) driver;
 	                        js.executeScript("arguments[0].scrollIntoView(true);", option);
 	                        js.executeScript("arguments[0].click();", option);
 	                        break;

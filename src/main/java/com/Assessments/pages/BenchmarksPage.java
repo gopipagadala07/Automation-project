@@ -257,18 +257,19 @@ public class BenchmarksPage extends ActionType {
 	            WebElement CourseBenchmarkDropDown = driver.findElement(By.xpath("//mat-select[@formcontrolname='benchmark']/parent::div/parent::div/parent::div"));
 	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	            CourseBenchmarkDropDown = wait.until(ExpectedConditions.elementToBeClickable(CourseBenchmarkDropDown));
+	            StaticWait(2);
 	            cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
 	            break;
-
 	        } catch (NoSuchElementException e) {
+	        	retry++;
 	            if(retry == 3) {
+	            	StaticWait(1);
 	                cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
 	                break;
 	            }
 	        }
 	    }
 	}
-
 
 	public void schoolDdown(String schooldrop) {
 		wait.elementToBeClickable(SchoolDropdown);
