@@ -378,21 +378,27 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void DistrictUserDetails(String UserRole)
 	{
+		StaticWait(1);
 		wait.elementToBeClickable(Emailfield);
 		wait.visibilityOf(Emailfield);
 		Emailfield.sendKeys(randomEmailIdGenerator(UserRole).toLowerCase());
 		DFirstName="FPK12Admin".toLowerCase();
+		wait.visibilityOf(FirstnameField);
 		FirstnameField.sendKeys(DFirstName);
 		DLastName=randomNumberGenerator();
+		wait.visibilityOf(LastnameField);
 		LastnameField.sendKeys(String.valueOf(DLastName));
 	}
 	public void TeacherUserDetails(String UserRole)
 	{
+		StaticWait(1);
 		wait.elementToBeClickable(Emailfield);
 		wait.visibilityOf(Emailfield);
 		Emailfield.sendKeys(randomEmailIdGenerator(UserRole).toLowerCase());
 		TFirstName="FPK12Teacher".toLowerCase();
+		wait.visibilityOf(FirstnameField);
 		FirstnameField.sendKeys(TFirstName);
+		wait.visibilityOf(LastnameField);
 		TLastName=randomNumberGenerator();
 		LastnameField.sendKeys(String.valueOf(TLastName));
 	}
@@ -469,6 +475,7 @@ public class SISProvisioningPage extends ActionType{
 		IsDistrcitAdminchkbox.click();
 		wait.elementToBeClickable(Speedgraderchkbox);
 		Speedgraderchkbox.click();
+		StaticWait(1);
 	}
 	public void close() {
 		wait.elementToBeClickable(Closeicon);
@@ -477,7 +484,8 @@ public class SISProvisioningPage extends ActionType{
 				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 				wait.until(ExpectedConditions.elementToBeClickable(Closeicon));
 				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].click()", Closeicon);
+				js.executeScript("arguments[0].click();", Closeicon);
+				StaticWait(1);
 				break;
 			} catch (StaleElementReferenceException e) {
 				retry++;

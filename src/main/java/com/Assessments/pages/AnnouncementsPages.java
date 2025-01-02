@@ -76,8 +76,9 @@ public class AnnouncementsPages extends ActionType {
 
 	public void ClickOnLearningaAndAssessmentCenter() {
 		wait.elementToBeClickable(LearningTab);
-		LearningTab.click();
-
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", LearningTab);
+		//LearningTab.click();
 		wait.elementToBeClickable(AssessmentcenterTab);
 		AssessmentcenterTab.click();
 	}
