@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="AssessmentsRunner.PerformingExamRunner">
+      <class name="LearningTreeRunner.SISprovisioningRunner">
         <methods>
           <include name="setUpClass"/>
           <include name="beforeClass"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario" invocation-numbers="0 1"/>
           <include name="afterClass"/>
         </methods>
-      </class> <!-- AssessmentsRunner.PerformingExamRunner -->
+      </class> <!-- LearningTreeRunner.SISprovisioningRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

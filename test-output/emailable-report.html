@@ -8,40 +8,51 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">61,341</td><td></td><td></td></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">142,029</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">AssessmentsRunner.PerformingExamRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1734949892349</td><td rowspan="1">57573</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">LearningTreeRunner.SISprovisioningRunner</td><td><a href="#m0">tearDownClass</a></td><td rowspan="1">1735289076754</td><td rowspan="1">3448</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">LearningTreeRunner.SISprovisioningRunner</td><td><a href="#m1">runScenario</a></td><td rowspan="2">1735288939017</td><td rowspan="2">50198</td></tr><tr class="passedeven"><td><a href="#m2">runScenario</a></td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">AssessmentsRunner.PerformingExamRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Submitting Exam&quot;</td><td>&quot;Performing Exam at student side&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//mat-tab-body/div/following::mat-tab-body)[2]/div/app-benchmark-delivery/div/div[2]/div/div/span/following::div[2]/child::button/span/child::mat-icon&quot;}
-  (Session info: chrome=131.0.6778.205)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c5fa8bf826636695656073e4c58846a1, findElement {value=(//mat-tab-body/div/following::mat-tab-body)[2]/div/app-benchmark-delivery/div/div[2]/div/div/span/following::div[2]/child::button/span/child::mat-icon, using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63574}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63574/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c5fa8bf826636695656073e4c58846a1
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at jdk.proxy2/jdk.proxy2.$Proxy28.isDisplayed(Unknown Source)
-	at com.Assessments.pages.PerformingexamPages.ClickOnLaunchAndCompleteExam(PerformingexamPages.java:105)
-	at AssessmentsStepdef.ExamSubmissionStepdefinitions.User_will_launch_and_submit_all_Exams(ExamSubmissionStepdefinitions.java:44)
-	at ✽.User will launch and submit all Exams(file:///C:/Users/GopiPagadala/OneDrive%20-%20FocalPointK12,%20Inc/FPK12%20Automation-2024/FPK12-AssessmentCenter/src/test/resources/AssessmentsFeatures/PerformingExam.feature:11)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">LearningTreeRunner.SISprovisioningRunner#tearDownClass</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AbstractMethodError: Receiver class org.apache.poi.xssf.usermodel.XSSFColor does not define or inherit an implementation of the resolved method &apos;abstract byte[] getStoredRGB()&apos; of abstract class org.apache.poi.ss.usermodel.ExtendedColor.
+	at org.apache.poi.ss.usermodel.ExtendedColor.getRGBOrARGB(ExtendedColor.java:100)
+	at org.apache.poi.xssf.usermodel.XSSFColor.getRGB(XSSFColor.java:189)
+	at org.apache.poi.xssf.usermodel.XSSFFont.setColor(XSSFFont.java:421)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$passTextBoldCellStyle$24(CellStyles.java:171)
+	at tech.grasshopper.excel.report.cell.CellStyles.setFont(CellStyles.java:212)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$passTextBoldCellStyle$25(CellStyles.java:170)
+	at java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1228)
+	at tech.grasshopper.excel.report.cell.CellStyles.passTextBoldCellStyle(CellStyles.java:170)
+	at tech.grasshopper.excel.report.cell.CellStyles.getCellStyle(CellStyles.java:87)
+	at tech.grasshopper.excel.report.cell.CellOperations.writeValue(CellOperations.java:65)
+	at tech.grasshopper.excel.report.table.SimpleTableOperations.writeTableCellValues(SimpleTableOperations.java:38)
+	at tech.grasshopper.excel.report.sheets.scenarios.ScenariosSheet.updateScenariosTableData(ScenariosSheet.java:100)
+	at tech.grasshopper.excel.report.sheets.scenarios.ScenariosSheet.updateSheet(ScenariosSheet.java:48)
+	at tech.grasshopper.excel.report.workbook.ReportWorkbook.updateSheets(ReportWorkbook.java:74)
+	at tech.grasshopper.excel.report.workbook.ExecutionDataReport.updateSheets(ExecutionDataReport.java:20)
+	at tech.grasshopper.excel.report.workbook.ReportWorkbook.createReport(ReportWorkbook.java:46)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.flush(ExtentExcelCucumberReporter.java:70)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.access$100(ExtentExcelCucumberReporter.java:18)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter$1.onNext(ExtentExcelCucumberReporter.java:45)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter$1.onNext(ExtentExcelCucumberReporter.java:37)
+	at io.reactivex.rxjava3.subjects.PublishSubject$PublishDisposable.onNext(PublishSubject.java:310)
+	at io.reactivex.rxjava3.subjects.PublishSubject.onNext(PublishSubject.java:226)
+	at com.aventstack.extentreports.ReactiveSubject.onFlush(ReactiveSubject.java:83)
+	at com.aventstack.extentreports.AbstractProcessor.onFlush(AbstractProcessor.java:96)
+	at com.aventstack.extentreports.ExtentReports.flush(ExtentReports.java:279)
+	at com.aventstack.extentreports.service.ExtentService.flush(ExtentService.java:47)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter.finishReport(ExtentCucumberAdapter.java:301)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:137)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:134)
+	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
+	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
+	at io.cucumber.core.runtime.SynchronizedEventBus.send(SynchronizedEventBus.java:47)
+	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:118)
+	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:105)
+	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 23 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">LearningTreeRunner.SISprovisioningRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Checking the School, Classroom, Section Creation Functionality With valid Data&quot;</td><td>&quot;Verify the SIS Provisioning Creation Functionality&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">LearningTreeRunner.SISprovisioningRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Verify the Users Creation Functionality with valid Data&quot;</td><td>&quot;Verify the SIS Provisioning Creation Functionality&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
