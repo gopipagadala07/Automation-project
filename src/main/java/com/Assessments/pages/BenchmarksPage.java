@@ -168,7 +168,7 @@ public class BenchmarksPage extends ActionType {
 
 	}
 	public void savebutton() {
-		cp.Savebtn.click();
+		cp.Save();
 	}
 	public void findtest() {
 		wait.elementToBeClickable(FindTestBtn);
@@ -198,7 +198,7 @@ public class BenchmarksPage extends ActionType {
 		StaticWait(1);
 	}
 	public void savebuttonn() {
-		savebutton.click();
+		cp.Save();
 		StaticWait(1);
 	}
 	public void clickOnSectionTab() throws InterruptedException {
@@ -234,10 +234,12 @@ public class BenchmarksPage extends ActionType {
 	}
 
 	public void clickOnAdd(String SectionName) {
-
+        wait.visibilityOf(clickonAddSectionbutton(SectionName));
+        StaticWait(1);
 		wait.elementToBeClickable(clickonAddSectionbutton(SectionName));
 		Actions a=new Actions(driver);
 		a.moveToElement(clickonAddSectionbutton(SectionName));
+		StaticWait(1);
 		a.click();
 		a.perform();
 	}
