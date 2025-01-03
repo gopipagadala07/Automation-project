@@ -54,7 +54,7 @@ public class Base {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options=new ChromeOptions();
      		options.addArguments("--headless");
-			tlDriver.set(new ChromeDriver(options));
+			tlDriver.set(new ChromeDriver());
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());

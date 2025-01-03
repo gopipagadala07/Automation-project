@@ -178,6 +178,7 @@ public class SISProvisioningPage extends ActionType{
 		{
 			try {
 				cp.FPdropdown(YearDropDown, Year);
+				System.out.println(Year);
 				break;
 			} catch (StaleElementReferenceException e) {
 				retry++;
@@ -185,28 +186,29 @@ public class SISProvisioningPage extends ActionType{
 		}
 	}
 	public void ClassroomDropDownSearch() {
-	    boolean success = false;
-	    for (int retry = 0; retry < 3; retry++) {
-	        try {
-	        	StaticWait(1);
-	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	            WebElement ClassroomDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='classroom']/descendant::mat-form-field/child::div")));
-	            StaticWait(1);
-	            cp.FPdropdown(ClassroomDown, ClassroomName);
-	            success = true;
-	            break;
-	        } catch (StaleElementReferenceException e) {
-	            System.out.println("StaleElementReferenceException caught. Retrying... Attempt " + (retry + 1));
-	            try {
-	                Thread.sleep(1000);
-	            } catch (InterruptedException ie) {
-	                Thread.currentThread().interrupt();
-	            }
-	        }
-	    }
-	    if (!success) {
-	        System.out.println("Operation failed after 3 retries.");
-	    }
+		boolean success = false;
+		for (int retry = 0; retry < 3; retry++) {
+			try {
+				StaticWait(1);
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebElement ClassroomDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='classroom']/descendant::mat-form-field/child::div")));
+				StaticWait(1);
+				cp.FPdropdown(ClassroomDown, ClassroomName);
+				System.out.println(ClassroomName);
+				success = true;
+				break;
+			} catch (StaleElementReferenceException e) {
+				System.out.println("StaleElementReferenceException caught. Retrying... Attempt " + (retry + 1));
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException ie) {
+					Thread.currentThread().interrupt();
+				}
+			}
+		}
+		if (!success) {
+			System.out.println("Operation failed after 3 retries.");
+		}
 	}
 
 	public void SectionDropDownSearch()
@@ -215,10 +217,12 @@ public class SISProvisioningPage extends ActionType{
 		{
 			try {
 				StaticWait(1);
-	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	            WebElement SectionDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='section']/descendant::mat-form-field/child::div")));
-	            StaticWait(1);
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebElement SectionDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='section']/descendant::mat-form-field/child::div")));
+				wait.until(ExpectedConditions.elementToBeClickable(SectionDown));
+				StaticWait(1);
 				cp.FPdropdown(SectionDown, SectionName);
+				System.out.println(SectionName);
 				break;
 			} catch (StaleElementReferenceException e) {
 				retry++;
@@ -254,7 +258,7 @@ public class SISProvisioningPage extends ActionType{
 			cp.Save();
 			StaticWait(1);
 		} catch (Exception e) {
-			
+
 		}
 	}
 	public void TimezoneValue(String TimeZoneValue)
@@ -271,54 +275,56 @@ public class SISProvisioningPage extends ActionType{
 		cp.searchField(ClassroomName);
 	}
 	public void SectionSearch() throws Exception {
-	    boolean sectionFound = false;
-	    int maxAttempts = 5;
-	    int attempts = 0;
+		boolean sectionFound = false;
+		int maxAttempts = 5;
+		int attempts = 0;
 
-	    while (!sectionFound && attempts < maxAttempts) { 
-	    	cp.searchField(SectionName);
-	        StaticWait(1);
-	        WebElement e = driver.findElement(By.tagName("table"));
-	        WebElement body = e.findElement(By.tagName("tbody"));
-	        List<WebElement> rows = body.findElements(By.tagName("tr"));
+		while (!sectionFound && attempts < maxAttempts) { 
+			cp.searchField(SectionName);
+			StaticWait(1);
+			WebElement e = driver.findElement(By.tagName("table"));
+			WebElement body = e.findElement(By.tagName("tbody"));
+			List<WebElement> rows = body.findElements(By.tagName("tr"));
 
-	        for (WebElement row : rows) {
-	            try {
-	                List<WebElement> columns = row.findElements(By.tagName("td"));
-	                String s = columns.get(0).getText();
-	                //System.out.println(s);
-	                if (s.equalsIgnoreCase(SectionName)) {
-	                    System.out.println("Section Saved Successfully..!!");
-	                    ExtentCucumberAdapter.addTestStepLog(s);
-	                    sectionFound = true; 
-	                    break; 
-	                }
-	            } catch (StaleElementReferenceException e2) {
-	                
-	            }
-	        }
+			for (WebElement row : rows) {
+				try {
+					List<WebElement> columns = row.findElements(By.tagName("td"));
+					String s = columns.get(0).getText();
+					//System.out.println(s);
+					if (s.equalsIgnoreCase(SectionName)) {
+						System.out.println("Section Saved Successfully..!!");
+						ExtentCucumberAdapter.addTestStepLog(s);
+						sectionFound = true; 
+						break; 
+					}
+				} catch (StaleElementReferenceException e2) {
 
-	        if (!sectionFound) { 
-	            try {
-	                AddNewSection();
-	                SectionDetails();
-	            } catch (StaleElementReferenceException e1) {
-	          
-	            }
-	        }
+				}
+			}
 
-	        attempts++;
-	    }
+			if (!sectionFound) { 
+				try {
+					AddNewSection();
+					SectionDetails();
+				} catch (StaleElementReferenceException e1) {
 
-	    if (!sectionFound) {
-	        System.out.println("Section not found after " + maxAttempts + " attempts.");
-	    }
+				}
+			}
+
+			attempts++;
+		}
+
+		if (!sectionFound) {
+			System.out.println("Section not found after " + maxAttempts + " attempts.");
+		}
 	}
-	
+
 	public void DUserSearch()
 	{
+
 		cp.searchField(String.valueOf(DLastName));
 		ExtentCucumberAdapter.addTestStepLog(String.valueOf(DLastName));
+		StaticWait(1);
 	}
 	public void TUserSearch()
 	{
@@ -367,18 +373,20 @@ public class SISProvisioningPage extends ActionType{
 	public void AddNewDistrictUser()
 	{
 		js.executeScript("arguments[0].click();", AddnewDistrictUserbtn);
+		StaticWait(1);
 	}
 	public void AddNewTeacher()
 	{
 		js.executeScript("arguments[0].click();", AddnewTeacherbtn);
+		StaticWait(1);
 	}
 	public void AddNewStudent()
 	{
 		js.executeScript("arguments[0].click();", AddnewStudentbtn);
+		StaticWait(1);
 	}
 	public void DistrictUserDetails(String UserRole)
 	{
-		StaticWait(1);
 		wait.elementToBeClickable(Emailfield);
 		wait.visibilityOf(Emailfield);
 		Emailfield.sendKeys(randomEmailIdGenerator(UserRole).toLowerCase());
@@ -391,7 +399,6 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void TeacherUserDetails(String UserRole)
 	{
-		StaticWait(1);
 		wait.elementToBeClickable(Emailfield);
 		wait.visibilityOf(Emailfield);
 		Emailfield.sendKeys(randomEmailIdGenerator(UserRole).toLowerCase());
@@ -401,6 +408,7 @@ public class SISProvisioningPage extends ActionType{
 		wait.visibilityOf(LastnameField);
 		TLastName=randomNumberGenerator();
 		LastnameField.sendKeys(String.valueOf(TLastName));
+
 	}
 	public void StudentUserDetails(String UserRole)
 	{
@@ -446,7 +454,7 @@ public class SISProvisioningPage extends ActionType{
 			resetpopup.click();
 			cp.Save();
 		} catch (StaleElementReferenceException e) {
-			
+
 		}
 	}
 
@@ -461,6 +469,7 @@ public class SISProvisioningPage extends ActionType{
 				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='more_vert']")));
 				JavascriptExecutor js=(JavascriptExecutor) driver;
 				js.executeScript("arguments[0].click();", Ellipses);
+				StaticWait(2);
 				wait.until(ExpectedConditions.elementToBeClickable(Settingsoptions));
 				js.executeScript("arguments[0].click();", Settingsoptions);
 				StaticWait(1);
@@ -510,8 +519,9 @@ public class SISProvisioningPage extends ActionType{
 		while (attempt < maxRetries && !success) {
 			try {
 				WebElement element = wait.until(ExpectedConditions.elementToBeClickable(SettingsClassroomtab));
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].click();", element);
+				StaticWait(1);
+				Actions a=new Actions(driver);
+				a.moveToElement(element).click().build().perform();	
 				success = true;
 			} catch (StaleElementReferenceException e) {
 				try {
