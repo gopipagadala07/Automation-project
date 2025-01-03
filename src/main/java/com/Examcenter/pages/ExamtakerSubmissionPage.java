@@ -76,7 +76,7 @@ public class ExamtakerSubmissionPage extends ActionType{
                     StaticWait(1);
 
                     if (tagName.equalsIgnoreCase("choiceinteraction")) {
-                        WebElement choiceValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='mdc-radio'])[4]")));
+                        WebElement choiceValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='mdc-radio'])[2]")));
                         new Actions(driver).moveToElement(choiceValue).click().perform();
                         StaticWait(1);
                     } else if (tagName.equalsIgnoreCase("extendedtextinteraction")) {
