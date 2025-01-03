@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,12 +49,12 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse--2056190578\testng-customsuite.xml</span>
+                    <span>C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse-1827029688\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,26 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="AssessmentsRunner.SISprovisioningRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Checking the School, Classroom, Section Creation Functionality With valid Data&quot;, &quot;Verify the SIS Pr...)">runScenario("Checking the School, Classroom, Section Creation Functionality With valid Data", "Verify the SIS Pr...)</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Create a Time_Slot for the Examination&quot;, &quot;FocalPointk12 Exam_Center Create a Time_Slot and Enrolled...)">runScenario("Create a Time_Slot for the Examination", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="AssessmentsRunner.SISprovisioningRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Verify the Users Creation Functionality with valid Data&quot;, &quot;Verify the SIS Provisioning Creation Fun...)">runScenario("Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Fun...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -122,38 +117,114 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">AssessmentsRunner.SISprovisioningRunner</span>
+              <img src="failed.png"/>
+              <span class="class-name">ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Checking the School, Classroom, Section Creation Functionality With valid Data&quot;, &quot;Verify the SIS Pr...)">
-                  </a> <!-- runScenario("Checking the School, Classroom, Section Creation Functionality With valid Data", "Verify the SIS Pr...) -->
+                  <a name="runScenario(&quot;Create a Time_Slot for the Examination&quot;, &quot;FocalPointk12 Exam_Center Create a Time_Slot and Enrolled...)">
+                  </a> <!-- runScenario("Create a Time_Slot for the Examination", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Checking the School, Classroom, Section Creation Functionality With valid Data", "Verify the SIS Provisioning Creation Functionality")</span>
-                  <em>
-(Runs Cucumber Scenarios)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="runScenario(&quot;Verify the Users Creation Functionality with valid Data&quot;, &quot;Verify the SIS Provisioning Creation Fun...)">
-                  </a> <!-- runScenario("Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Fun...) -->
-                  <span class="method-name">runScenario</span>
-                  <span class="parameters">("Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Functionality")</span>
+                  <span class="parameters">("Create a Time_Slot for the Examination", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot")</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //span[text()=&apos; Save &apos;]&apos; (tried for 30 second(s) with 1000 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.Utils.Wait.elementToBeClickable(Wait.java:30)
+	at com.Utils.CommonPages.Save(CommonPages.java:90)
+	at ExamCenterStepDefinitions.Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.user_click_on_Exam_Time_Slot_Save_button(Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.java:114)
+	at ✽.User click on Exam Time Slot Save button(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/ExamCenterFeatures/Create_TimeSlot_and_Enroll_the_ExamTaker.feature:19)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos; Save &apos;]&quot;}
+  (Session info: chrome=131.0.6778.205)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9bffe9367988817d6bc69b79abd05e76, findElement {using=xpath, value=//span[text()=&apos; Save &apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59759}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59759/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9bffe9367988817d6bc69b79abd05e76
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at com.Utils.Wait.elementToBeClickable(Wait.java:30)
+	at com.Utils.CommonPages.Save(CommonPages.java:90)
+	at ExamCenterStepDefinitions.Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.user_click_on_Exam_Time_Slot_Save_button(Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.java:114)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
+          </div> <!-- suite-Default_suite-class-failed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse--2056190578\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse-1827029688\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -162,9 +233,22 @@
 &lt;suite parallel=&quot;none&quot; name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;AssessmentsRunner.SISprovisioningRunner&quot;/&gt;
+      &lt;class name=&quot;ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
+  &lt;test parallel=&quot;none&quot; name=&quot;Default test(failed)&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;testDownClass&quot;/&gt;
+          &lt;include name=&quot;beforeclass&quot;/&gt;
+          &lt;include name=&quot;runScenario&quot; invocation-numbers=&quot;0&quot;/&gt;
+          &lt;include name=&quot;tearDownClass&quot;/&gt;
+          &lt;include name=&quot;setUpClass&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test(failed) --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -177,6 +261,9 @@
             <ul>
               <li>
                 <span class="test-name">Default test (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Default test(failed) (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -210,20 +297,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
-data.setCell(0, 2, 'AssessmentsRunner.SISprovisioningRunner')
-data.setCell(0, 3, 202283);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'runScenario')
-data.setCell(1, 2, 'AssessmentsRunner.SISprovisioningRunner')
-data.setCell(1, 3, 73907);
+data.setCell(0, 2, 'ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner')
+data.setCell(0, 3, 93381);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -249,30 +332,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">AssessmentsRunner.SISprovisioningRunner</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@77d42ed7)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@1c31de5d)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
-                <span class="method-name">beforeClass</span>
-                <span class="method-start">840 ms</span>
+                <span class="method-name">beforeclass</span>
+                <span class="method-start">1022 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">runScenario("Checking the School, Classroom, Section Creation Functionality With valid Data", "Verify the SIS Pr...)</span>
-                <span class="method-start">846 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">runScenario("Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Fun...)</span>
-                <span class="method-start">74755 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Create a Time_Slot for the Examination", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled...)</span>
+                <span class="method-start">1030 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
-                <span class="method-name">afterClass</span>
-                <span class="method-start">277040 ms</span>
+                <span class="method-name">testDownClass</span>
+                <span class="method-start">94413 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">277042 ms</span>
+                <span class="method-start">94414 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
