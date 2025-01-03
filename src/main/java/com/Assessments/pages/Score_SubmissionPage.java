@@ -120,7 +120,7 @@ public class Score_SubmissionPage extends ActionType
 	                driver.switchTo().frame(0);
 	                Provide_Score.sendKeys(Keys.chord(Keys.CONTROL, "a"));
 	                Provide_Score.sendKeys(Keys.chord(Keys.CONTROL, "x"));
-	                Provide_Score.sendKeys("4");
+	                Provide_Score.sendKeys("5");
 	                String randomString = generateRandomString();
 	                Provide_Feedback.sendKeys(randomString);
 	                StaticWait(1);

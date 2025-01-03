@@ -118,7 +118,7 @@ public class Provide_Score_Pages extends ActionType
 	    switchToFrame(iframe_ScoreExam);
 	    Provide_Score.sendKeys(Keys.chord(Keys.CONTROL, "a"));
 	    Provide_Score.sendKeys(Keys.chord(Keys.CONTROL, "x"));
-	    Provide_Score.sendKeys("4");
+	    Provide_Score.sendKeys("5");
 
 	    String randomString = generateRandomString();
 	    Provide_Feedback.sendKeys(randomString);
