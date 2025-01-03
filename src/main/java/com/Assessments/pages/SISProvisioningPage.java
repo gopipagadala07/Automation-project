@@ -43,7 +43,7 @@ public class SISProvisioningPage extends ActionType{
 	/*
 	 * School Creation
 	 */
-	@FindBy(how=How.XPATH,using = "//span[contains(text(),'Administration')]") private WebElement Administrationbtn;
+	@FindBy(how=How.XPATH,using = "//span[text()='Administration']") private WebElement Administrationbtn;
 	@FindBy(how=How.XPATH,using = "//a[contains(text(),'SIS Provisioning')]")private WebElement Provisioningtab;
 	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[6]")private WebElement Schooltab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(),'Add New School')]")private WebElement AddnewSchoolbtn;
