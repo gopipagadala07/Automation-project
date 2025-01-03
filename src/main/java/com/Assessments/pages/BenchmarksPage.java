@@ -254,7 +254,7 @@ public class BenchmarksPage extends ActionType {
 	    wait.elementToBeClickable(CourseBenchmarkDropDown);  
 	    for(int retry = 0; retry <= 3; retry++) {
 	        try {
-	            WebElement CourseBenchmarkDropDown = driver.findElement(By.xpath("//mat-select[@formcontrolname='benchmark']/parent::div/parent::div/parent::div"));
+	            WebElement CourseBenchmarkDropDown = driver.findElement(By.xpath("//mat-label[text()='Course - Benchmark ']/ancestor::span/preceding-sibling::mat-select/parent::div/parent::div/parent::div"));
 	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	            CourseBenchmarkDropDown = wait.until(ExpectedConditions.elementToBeClickable(CourseBenchmarkDropDown));
 	            StaticWait(2);
