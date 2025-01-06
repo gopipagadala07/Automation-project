@@ -5,3 +5,9 @@
 2025-01-06 12:00:36,079 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
 2025-01-06 12:00:36,247 INFO  [rootLogger] -----------------Start of Scenario-----------------
 2025-01-06 12:00:36,249 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-01-06 12:01:14,695 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-06 12:01:18,577 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-06 12:01:18,597 INFO  [rootLogger] Browser value is: CHROME
+2025-01-06 12:01:20,212 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-06 12:01:20,214 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-01-06 12:01:38,117 INFO  [rootLogger] -----------------End of Scenario-----------------
