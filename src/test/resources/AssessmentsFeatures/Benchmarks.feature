@@ -1,3 +1,4 @@
+@AssessmentCenterGroup
 Feature: Verify the Benchmarks functionality
 
   Scenario Outline: Creating Benchmarks and activating

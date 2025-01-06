@@ -1,3 +1,4 @@
+@AssessmentCenterGroup
 Feature: Verify the  Benchmark Scoring from Teacher Activity progress
 
   Scenario Outline: Validating the Benchmark Scoring from Teacher Activity progress screen

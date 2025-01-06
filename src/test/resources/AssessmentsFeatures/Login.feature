@@ -1,3 +1,4 @@
+@AssessmentCenterGroup
 Feature: Checking the Login Functionality
 
   Scenario Outline: Login test with valid credentials scenario

@@ -1,3 +1,4 @@
+@ExamCenterGroup
 Feature: Checking the Examtaker Assessment Submission
 
   Scenario Outline: Checking the Examcenter Examtaker Assessment Submission Functionality

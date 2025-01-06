@@ -1,3 +1,4 @@
+@ExamCenterGroup
 Feature: Checking the Create Users Functionality
 
   Scenario Outline: Verify the Users Creation Functionality with valid Data

@@ -1,3 +1,4 @@
+@AssessmentCenterGroup
 Feature: Verify the Activity progress from ToDo List at teacher
 
   Scenario Outline: Validating the Activity progress screen from AC Home tab

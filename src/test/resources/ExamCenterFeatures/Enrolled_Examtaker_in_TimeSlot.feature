@@ -1,3 +1,4 @@
+@ExamCenterGroup
 Feature: FocalPointk12 Exam_Center Procter Comment, Reset the Examination
 
   #@SmokeTest

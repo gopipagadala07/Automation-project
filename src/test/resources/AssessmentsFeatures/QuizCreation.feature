@@ -1,3 +1,4 @@
+@AssessmentCenterGroup
 Feature: Validate the Quiz Creation for Teacher
 
   Scenario Outline: Checking the Quiz Creation Functionality

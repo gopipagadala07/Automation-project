@@ -1,3 +1,4 @@
+@AssessmentCenterGroup
 Feature: Validating the Quiz Performing at student side
 
   Scenario Outline: Checking the Quizzes Submission for Student

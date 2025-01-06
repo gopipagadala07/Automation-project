@@ -1,3 +1,4 @@
+@ExamCenterGroup
 Feature: Checking the Test Analytics under Enroller tab at Proctor side
 
   Scenario Outline: Testing the Test Analytics popup at proctor Enrolle side

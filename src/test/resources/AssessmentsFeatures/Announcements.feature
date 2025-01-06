@@ -1,3 +1,4 @@
+@AssessmentCenterGroup
 Feature: Verify the Announcements functionality
 
   Scenario Outline: Creating Announcements

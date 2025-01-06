@@ -39,6 +39,7 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+			<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
 		<!-- report name -->
@@ -48,7 +49,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Jan 3, 2025 01:26:27 pm</span>
+			<span class='label blue darken-3 suite-start-time'>Jan 6, 2025 11:39:41 am</span>
 			</a>
 		</ul>
 	</div>
@@ -70,6 +71,17 @@
 			</div>
 			<!-- test toggle -->
 			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@Group2</a></li>
+					<li><a href='#'>@Group1</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
 			<!-- category toggle -->
 			<!-- clear filters -->
 			<div class='chip transparent hide'>
@@ -108,7 +120,7 @@
                 </div>
                 <div class='block text-small'>
                     <span class='tooltipped' data-position='top' data-tooltip='$100%'>
-                    <span class='strong'>1</span> features passed</span>
+                    <span class='strong'>5</span> features passed</span>
                 </div>
                 <div class='block text-small'>
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -126,7 +138,7 @@
                 </div>
                 <div class='block text-small'>
                     <span class='tooltipped' data-position='top' data-tooltip='100%'>
-                    <span class='strong'>2</span> scenarios passed</span>
+                    <span class='strong'>8</span> scenarios passed</span>
                 </div>
                 <div class='block text-small'>
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -146,7 +158,7 @@
                 </div>
                 <div class='block text-small'>
                     <span class='tooltipped' data-position='top' data-tooltip='100%'>
-                    <span class='strong'>36</span> steps passed</span>
+                    <span class='strong'>141</span> steps passed</span>
                 </div>
                 <div class='block text-small'>
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -175,8 +187,8 @@
 			<ul id='test-collection' class='test-collection'>
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Verify the Benchmarks functionality</span>
-						<span class='test-time'>Jan 3, 2025 01:26:28 pm</span>
+						<span class='test-name'>Exam_Center Location feature</span>
+						<span class='test-time'>Jan 6, 2025 11:39:43 am</span>
 						<span class='test-status right pass'>Pass</span>
 					</div>
 					<div class='test-content hide'>
@@ -187,9 +199,800 @@
 	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
 </div>
 
-<div class='scenario outline node' test-id='2' status='pass'>
+<div class='scenario outline node' test-id='3' status='pass'>
 
-	<span class='duration right label'>00 01 03.977</span>
+	<span class='duration right label'>00 01 24.171</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Exam_Center AddEdit Location scenario</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>RowNumber</td></tr><tr><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='6' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Exam_Center AddEdit Location scenario</div>
+
+				<div class='category-list'>
+						<span class='category label'>@Group1</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='14' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='17' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='18' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 0</h6>
+
+				</li>
+				<li test-id='21' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='23' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Location_Stepdefinition.user_click_on_administration_tab_in_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on Administration tab in homepage</h6>
+
+				</li>
+				<li test-id='24' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Location_Stepdefinition.user_click_on_location_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on Location tab</h6>
+
+				</li>
+				<li test-id='26' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Location_Stepdefinition.user_click_on_add_new_button_under_location_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User click on AddNew button under location tab</h6>
+
+				</li>
+				<li test-id='28' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Location_Stepdefinition.user_enters_the_location_name_and_addressfield_generated_randomly()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the LocationName and Addressfield generated randomly</h6>
+
+							<div class="node-step">ECLocation854952</div>
+				</li>
+				<li test-id='30' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Location_Stepdefinition.user_click_on_locationsave_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on Locationsave button</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify the SIS Provisioning Creation Functionality</span>
+						<span class='test-time'>Jan 6, 2025 11:39:43 am</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='4' status='pass'>
+
+	<span class='duration right label'>00 02 05.935</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Checking the School, Classroom, Section Creation Functionality With valid Data</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td></tr><tr><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='5' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Checking the School, Classroom, Section Creation Functionality With valid Data</div>
+
+				<div class='category-list'>
+						<span class='category label'>@Group2</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='12' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='15' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='16' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 0</h6>
+
+				</li>
+				<li test-id='19' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_sis_provisining_tab_under_administration_in_left_menu()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on SIS provisining tab under Administration in Left menu</h6>
+
+				</li>
+				<li test-id='20' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_school_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Navigate to School tab</h6>
+
+				</li>
+				<li test-id='22' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_the_add_new_school_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on the Add New School button</h6>
+
+				</li>
+				<li test-id='25' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_enter_the_name_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Enter the Name and Description</h6>
+
+							<div class="node-step">FPK12School699591</div>
+				</li>
+				<li test-id='27' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_timezone_from_dropdown(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Select the Timezone from Dropdown 0</h6>
+
+				</li>
+				<li test-id='29' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_saved_the_school_and_search_for_the_created_school_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Saved the School and Search for the Created School in Search here Field</h6>
+
+				</li>
+				<li test-id='39' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_classroom_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Navigate to Classroom tab</h6>
+
+				</li>
+				<li test-id='42' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_created_school_in_school_dropdown()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Select the Created School in School dropdown</h6>
+
+				</li>
+				<li test-id='45' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_the_add_new_classroom_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on the Add New Classroom button</h6>
+
+				</li>
+				<li test-id='46' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_enter_the_classroom_name_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Enter the Classroom Name and Description</h6>
+
+							<div class="node-step">FPK12Classroom496793</div>
+				</li>
+				<li test-id='47' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_saved_the_classroom_and_search_for_the_created_classroom_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Saved the Classroom and Search for the Created Classroom in Search here Field</h6>
+
+				</li>
+				<li test-id='49' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_sections_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Navigate to Sections tab</h6>
+
+				</li>
+				<li test-id='50' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_active_year_from_year_dropdown(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Select the Active Year from year Dropdown 0</h6>
+
+				</li>
+				<li test-id='51' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_the_add_new_sections_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Click on the Add New Sections button</h6>
+
+				</li>
+				<li test-id='52' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_enter_the_section_name_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Enter the Section Name and Description</h6>
+
+							<div class="node-step">FPK12Section793047</div>
+				</li>
+				<li test-id='56' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_saved_the_section_and_search_for_the_created_section_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Saved the Section and Search for the Created Section in Search here Field</h6>
+
+							<div class="node-step">FPK12Section793047</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario outline node' test-id='63' status='pass'>
+
+	<span class='duration right label'>00 03 00.092</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Verify the Users Creation Functionality with valid Data</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td></tr><tr><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='64' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Verify the Users Creation Functionality with valid Data</div>
+
+				<div class='category-list'>
+						<span class='category label'>@Group2</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='68' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='84' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='86' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 0</h6>
+
+				</li>
+				<li test-id='92' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_sis_provisining_tab_under_administration_in_left_menu()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on SIS provisining tab under Administration in Left menu</h6>
+
+				</li>
+				<li test-id='97' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_district_user_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Navigate to District User tab</h6>
+
+				</li>
+				<li test-id='106' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_add_new_user_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Add New User button</h6>
+
+				</li>
+				<li test-id='107' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_enters_the_district_user_email_district_user_first_name_district_user_last_name_into_the_respective_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Enters the District user Email, District user First name, District user Last name into the Respective Fields</h6>
+
+				</li>
+				<li test-id='108' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_saved_the_district_user_and_search_for_the_user_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Saved the District User and Search for the User in search here Field</h6>
+
+							<div class="node-step">136565</div>
+				</li>
+				<li test-id='111' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_edit_option_for_logins_creations()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user Click on Edit option for Logins Creations</h6>
+
+				</li>
+				<li test-id='112' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.click_on_create_new_login_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Click on Create New login button</h6>
+
+				</li>
+				<li test-id='113' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_reset_the_password_and_save_the_user()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Reset the Password and save the user</h6>
+
+				</li>
+				<li test-id='114' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_settings_option_at_user_level_ellipses()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Settings option at User level Ellipses</h6>
+
+				</li>
+				<li test-id='116' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_check_the_is_district_admin_checkbox()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Check the Is District Admin Checkbox</h6>
+
+				</li>
+				<li test-id='117' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_close_the_settings_pop_up()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Close the Settings Pop up</h6>
+
+				</li>
+				<li test-id='118' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.store_the_users_data_in_excel()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Store the users data in Excel</h6>
+
+				</li>
+				<li test-id='119' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_teachers_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Navigate to Teachers tab</h6>
+
+				</li>
+				<li test-id='120' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_created_school_in_school_dropdown()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Select the Created School in School dropdown</h6>
+
+				</li>
+				<li test-id='124' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_add_new_teacher_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Add New Teacher button</h6>
+
+				</li>
+				<li test-id='137' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_enters_the_teacher_email_teacher_first_name_teacher_last_name_into_the_respective_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Enters the Teacher Email, Teacher First name, Teacher Last name into the Respective Fields</h6>
+
+				</li>
+				<li test-id='138' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_saved_the_teacher_and_search_for_the_user_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Saved the Teacher and Search for the User in search here Field</h6>
+
+							<div class="node-step">308370</div>
+				</li>
+				<li test-id='140' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_edit_option_for_logins_creations()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user Click on Edit option for Logins Creations</h6>
+
+				</li>
+				<li test-id='141' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.click_on_create_new_login_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Click on Create New login button</h6>
+
+				</li>
+				<li test-id='142' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_reset_the_password_and_save_the_user()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Reset the Password and save the user</h6>
+
+				</li>
+				<li test-id='143' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_settings_option_at_user_level_ellipses()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Settings option at User level Ellipses</h6>
+
+				</li>
+				<li test-id='146' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_classrooms_tab_in_settings_pop_up()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Navigate to Classrooms tab in settings Pop up</h6>
+
+				</li>
+				<li test-id='147' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_values_in_the_year_section_classroom_dropdown_and_click_on_add_button(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Select the Values in the Year 0, Section, Classroom dropdown and Click on Add button</h6>
+
+				</li>
+				<li test-id='157' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_close_the_settings_pop_up()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Close the Settings Pop up</h6>
+
+				</li>
+				<li test-id='159' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.store_the_users_data_in_excel()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Store the users data in Excel</h6>
+
+				</li>
+				<li test-id='160' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_navigate_to_students_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Navigate to Students tab</h6>
+
+				</li>
+				<li test-id='161' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_created_school_in_school_dropdown()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Select the Created School in School dropdown</h6>
+
+				</li>
+				<li test-id='172' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_add_new_student_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Add New Student button</h6>
+
+				</li>
+				<li test-id='175' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_enters_the_student_email_student_first_name_student_last_name_into_the_respective_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Enters the Student Email, Student First name, Student Last name into the Respective Fields</h6>
+
+				</li>
+				<li test-id='176' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_saved_the_student_and_search_for_the_user_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Saved the Student and Search for the User in search here Field</h6>
+
+							<div class="node-step">477185</div>
+				</li>
+				<li test-id='178' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_edit_option_for_logins_creations()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user Click on Edit option for Logins Creations</h6>
+
+				</li>
+				<li test-id='179' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.click_on_create_new_login_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Click on Create New login button</h6>
+
+				</li>
+				<li test-id='180' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_reset_the_password_and_save_the_user()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Reset the Password and save the user</h6>
+
+				</li>
+				<li test-id='181' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_click_on_settings_option_at_user_level_ellipses()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on Settings option at User level Ellipses</h6>
+
+				</li>
+				<li test-id='185' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_select_the_value_from_classroom_dropdown_and_click_on_add_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Select the Value from Classroom dropdown and Click on Add button</h6>
+
+				</li>
+				<li test-id='186' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.user_close_the_settings_pop_up()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Close the Settings Pop up</h6>
+
+				</li>
+				<li test-id='187' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.SISProvisioningStepdefinitions.store_the_users_data_in_excel()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Store the users data in Excel</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='34'>
+					<div class='test-heading'>
+						<span class='test-name'>Checking the Create Users Functionality</span>
+						<span class='test-time'>Jan 6, 2025 11:41:09 am</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='35' status='pass'>
+
+	<span class='duration right label'>00 01 26.189</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Verify the Users Creation Functionality with valid Data</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>RowNumber1</td><td>RowNumber2</td><td></td><td>RowNumber3</td></tr><tr><td>0</td><td>1</td><td>2</td><td></td><td>3</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='36' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Verify the Users Creation Functionality with valid Data</div>
+
+				<div class='category-list'>
+						<span class='category label'>@Group1</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='41' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='43' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='44' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 0</h6>
+
+				</li>
+				<li test-id='48' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='53' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_administration_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User clicks on Administration tab</h6>
+
+				</li>
+				<li test-id='54' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_controller_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User clicks on Controller tab</h6>
+
+				</li>
+				<li test-id='55' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_add_new_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User clicks on Add new button</h6>
+
+				</li>
+				<li test-id='59' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_enter_the_valid_user_details(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Enter the valid Controller details 0</h6>
+
+							<div class="node-step">311557</div>
+				</li>
+				<li test-id='60' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User clicks on Save button</h6>
+
+				</li>
+				<li test-id='61' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_enter_the_details_in_search_textbox()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Enter the Controller Name in search Textbox</h6>
+
+				</li>
+				<li test-id='69' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_edit_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User clicks on Edit button</h6>
+
+				</li>
+				<li test-id='70' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_create_new_login_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User clicks on Create new Login button on Add/edit pop up</h6>
+
+				</li>
+				<li test-id='71' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_reset_password_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User clicks on Reset password button on Add/edit pop up</h6>
+
+				</li>
+				<li test-id='72' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User clicks on Save button</h6>
+
+				</li>
+				<li test-id='73' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_is_on_proctor_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User is on Proctor tab</h6>
+
+				</li>
+				<li test-id='74' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_add_new_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User clicks on Add new button</h6>
+
+				</li>
+				<li test-id='75' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_Enter_the_valid_Proctor_details(int,int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Enter the valid Proctor details 0 2</h6>
+
+							<div class="node-step">446523</div>
+				</li>
+				<li test-id='76' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User clicks on Save button</h6>
+
+				</li>
+				<li test-id='77' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_enter_the_proctor_details_in_search_textbox()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Enter the Proctor Name in search Textbox</h6>
+
+				</li>
+				<li test-id='78' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_edit_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User clicks on Edit button</h6>
+
+				</li>
+				<li test-id='79' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_create_new_login_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User clicks on Create new Login button on Add/edit pop up</h6>
+
+				</li>
+				<li test-id='80' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_reset_password_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User clicks on Reset password button on Add/edit pop up</h6>
+
+				</li>
+				<li test-id='81' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User clicks on Save button</h6>
+
+				</li>
+				<li test-id='82' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_is_on_Examtaker_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User on Examtaker tab</h6>
+
+				</li>
+				<li test-id='83' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_add_new_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User clicks on Add new button</h6>
+
+				</li>
+				<li test-id='85' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.User_enter_the_valid_Examtaker_details(int,int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Enter the valid Examtaker details 0 3</h6>
+
+							<div class="node-step">745152</div>
+				</li>
+				<li test-id='87' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User clicks on Save button</h6>
+
+				</li>
+				<li test-id='88' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_enter_the_ExamTaker_Name_in_search_textbox()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Enter the ExamTaker Name in search Textbox</h6>
+
+				</li>
+				<li test-id='89' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_edit_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User clicks on Edit button</h6>
+
+				</li>
+				<li test-id='90' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_create_new_login_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User clicks on Create new Login button on Add/edit pop up</h6>
+
+				</li>
+				<li test-id='91' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_reset_password_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User clicks on Reset password button on Add/edit pop up</h6>
+
+				</li>
+				<li test-id='93' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.user_clicks_on_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User clicks on Save button</h6>
+
+				</li>
+				<li test-id='94' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.CreateUsersStepdefinitions.store_the_users_data_in_excel()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Store the users data in Excel</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='99'>
+					<div class='test-heading'>
+						<span class='test-name'>Examcenter Creation of Examinations Schedules and Examtaker Enrollments feature</span>
+						<span class='test-time'>Jan 6, 2025 11:42:37 am</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='100' status='pass'>
+
+	<span class='duration right label'>00 00 38.611</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Controller Creating Examinations in Examcenter</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>RowNumber</td></tr><tr><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='101' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Controller Creating Examinations in Examcenter</div>
+
+				<div class='category-list'>
+						<span class='category label'>@Group1</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='105' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='109' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='110' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 0</h6>
+
+				</li>
+				<li test-id='115' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='121' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_click_on_exam_administration_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on ExamAdministration tab</h6>
+
+				</li>
+				<li test-id='122' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_click_on_add_exam_button_under_examination_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User click on AddExam button under Examination tab</h6>
+
+				</li>
+				<li test-id='123' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_enters_the_examname_and_description_for_the_Respective_Fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the Examname and Description for the Respective Fields</h6>
+
+							<div class="node-step">FPK12Exam875622</div>
+				</li>
+				<li test-id='125' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_click_on_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on save button</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario outline node' test-id='129' status='pass'>
+
+	<span class='duration right label'>00 00 56.937</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Creating Schedule for an Examinations</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td></tr><tr><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='130' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Creating Schedule for an Examinations</div>
+
+				<div class='category-list'>
+						<span class='category label'>@Group1</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='134' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='135' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='136' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 0</h6>
+
+				</li>
+				<li test-id='139' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='144' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_click_on_exam_administration_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on ExamAdministration tab</h6>
+
+				</li>
+				<li test-id='145' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_search_the_examination_in_search_here_field()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Search the Examination in Search here field</h6>
+
+				</li>
+				<li test-id='148' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_click_on_add_new_schedule_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on Add New schedule button</h6>
+
+				</li>
+				<li test-id='149' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.click_on_search_test_button_in_add_edit_schedule_popup()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Click on Search Test button in Add-Edit schedule popup</h6>
+
+				</li>
+				<li test-id='150' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_search_the_testname_and_click_on_go_icon(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Search the Testname 0</h6>
+
+				</li>
+				<li test-id='151' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_click_on_go_icon_and_click_on_add_icon_for_that_searched_test(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on Go icon and click on Add icon for that searched test 0</h6>
+
+				</li>
+				<li test-id='152' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_enter_the_schedule_name_with()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User enter the Schedule name</h6>
+
+							<div class="node-step">FPK12Schedule764588</div>
+				</li>
+				<li test-id='153' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_select_the_testtype_dropdown()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User select the Testtype dropdown</h6>
+
+				</li>
+				<li test-id='154' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_enable_the_all_toggles()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User enable the all toggles</h6>
+
+				</li>
+				<li test-id='155' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_choose_the_date_month_year_from_datepicker_icon()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User choose the date month year from datepicker icon</h6>
+
+				</li>
+				<li test-id='156' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_enters_the_text_in_the_ckeditor_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the text in the Ckeditor fields</h6>
+
+				</li>
+				<li test-id='158' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_click_on_schedule_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on Schedule Save button</h6>
+
+				</li>
+				<li test-id='162' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.enabled_the_published_and_exam_live_toggles_with_schedulename()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Enabled the published and Exam live toggles with schedulename</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario outline node' test-id='166' status='pass'>
+
+	<span class='duration right label'>00 00 52.288</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Enroll the Examination and schedule to the Examtaker</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>RowNumber1</td></tr><tr><td>0</td><td>3</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='167' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Enroll the Examination and schedule to the Examtaker</div>
+
+				<div class='category-list'>
+						<span class='category label'>@Group1</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='171' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
+
+				</li>
+				<li test-id='173' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
+
+				</li>
+				<li test-id='174' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 0</h6>
+
+				</li>
+				<li test-id='177' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
+
+				</li>
+				<li test-id='182' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_click_on_administration_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on Administration tab</h6>
+
+				</li>
+				<li test-id='183' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.click_on_provisioning_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Click on Provisioning tab</h6>
+
+				</li>
+				<li test-id='184' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_search_the_examtaker_in_search_here_field(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Search the Examtaker in Search here field 3</h6>
+
+				</li>
+				<li test-id='198' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_click_on_the_searched_examtaker(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on the searched Examtaker 3</h6>
+
+				</li>
+				<li test-id='199' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_click_on_enroll_to_an_exam_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User click on Enroll to an Exam button</h6>
+
+				</li>
+				<li test-id='200' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.select_one_examinations_name_from_Examinations_lookups(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Select one Examinations name from Examinations lookups 0</h6>
+
+				</li>
+				<li test-id='202' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.choose_one_schedule_name_from_an_selected_examinations()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Select one Schedule name from an selected Examinations</h6>
+
+				</li>
+				<li test-id='204' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="ExamCenterStepDefinitions.Exam_ScheduleCreationStepdefinations.user_click_on_enrollment_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User click on Enrollment Save button</h6>
+
+							<div class="node-step">Exam Enrolled Successfully</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='191'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify the Benchmarks functionality</span>
+						<span class='test-time'>Jan 6, 2025 11:44:50 am</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='192' status='pass'>
+
+	<span class='duration right label'>00 00 08.235</span>
 	<div class="bdd-test">
 		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Creating Benchmarks and activating</div>
 	</div>
@@ -198,175 +1001,24 @@
 	
 	
 	<ul class='steps'>
-		<li test-id='3' class='node scenario Pass' status='Pass'>
+		<li test-id='193' class='node scenario Pass' status='Pass'>
 			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Creating Benchmarks and activating</div>
 
+				<div class='category-list'>
+						<span class='category label'>@Group2</span>
+				</div>
 
 			<ul class='gc steps'>
-				<li test-id='7' class='gc given Pass' status='Pass'>
+				<li test-id='197' class='gc given Pass' status='Pass'>
 					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
 
 				</li>
-				<li test-id='8' class='gc and Pass' status='Pass'>
+				<li test-id='201' class='gc and Pass' status='Pass'>
 					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
 
 				</li>
-				<li test-id='9' class='gc then Pass' status='Pass'>
+				<li test-id='203' class='gc then Pass' status='Pass'>
 					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 1</h6>
-
-				</li>
-				<li test-id='10' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
-
-				</li>
-				<li test-id='11' class='gc when Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_districts()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks on the Districts</h6>
-
-				</li>
-				<li test-id='12' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.user_navigates_to_Benchmarks_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user navigates to Benchmarks tab</h6>
-
-				</li>
-				<li test-id='13' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_year_from_the_dropdown_at_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Year from the dropdown at row 0</h6>
-
-				</li>
-				<li test-id='14' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_grade_from_the_dropdown_at_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Grade from the dropdown at row 0</h6>
-
-				</li>
-				<li test-id='15' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_subject_from_the_dropdown_at_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Subject from the dropdown at row 0</h6>
-
-				</li>
-				<li test-id='16' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_add_new_benchmark_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Add New Benchmark button</h6>
-
-				</li>
-				<li test-id='17' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_enters_the_benchmark_name_and_description_generated_randomly()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user enters the benchmark name and description generated randomly</h6>
-
-							<div class="node-step">AutoBenchmark465430</div>
-				</li>
-				<li test-id='18' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_find_test_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Find Test button</h6>
-
-				</li>
-				<li test-id='19' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_search_here_field_and_enters_the_test_name_from_row(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Search Here field and enters the test name from row 0</h6>
-
-							<div class="node-step">"Automation Test"</div>
-				</li>
-				<li test-id='20' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_add_icon_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Add icon button</h6>
-
-				</li>
-				<li test-id='21' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_all_the_checkboxes()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects all the checkboxes</h6>
-
-				</li>
-				<li test-id='22' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Save button</h6>
-
-				</li>
-				<li test-id='23' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_publish_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Publish button</h6>
-
-				</li>
-				<li test-id='24' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.a_confirmation_popup_appears_and_the_user_clicks_on_the_yes_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And a confirmation popup appears, and the user clicks on the Yes button</h6>
-
-				</li>
-				<li test-id='25' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_created_benchmark_and_navigates_to_the_sections_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the created benchmark and navigates to the Sections tab</h6>
-
-				</li>
-				<li test-id='26' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_search_here_field_and_enters_the_section_name_from_row(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Search Here field and enters the section name from row 0</h6>
-
-				</li>
-				<li test-id='27' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_add_button(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Add button 0</h6>
-
-				</li>
-			</ul>
-		</li>
-	</ul>
-</div>
-<div class='scenario outline node' test-id='31' status='pass'>
-
-	<span class='duration right label'>00 00 53.987</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Activating Benchmark Through Test Administration</div>
-	</div>
-	
-		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>0</td><td>2</td><td>1</td></tr></table></div>
-	
-	
-	<ul class='steps'>
-		<li test-id='32' class='node scenario Pass' status='Pass'>
-			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Activating Benchmark Through Test Administration</div>
-
-
-			<ul class='gc steps'>
-				<li test-id='36' class='gc given Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
-
-				</li>
-				<li test-id='37' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
-
-				</li>
-				<li test-id='38' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 1</h6>
-
-				</li>
-				<li test-id='39' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
-
-				</li>
-				<li test-id='40' class='gc when Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_clicks_on_the_districts()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks on the Districts</h6>
-
-				</li>
-				<li test-id='41' class='gc when Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.user_clicks_on_Testadministration_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user clicks on Testadministration tab</h6>
-
-				</li>
-				<li test-id='42' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_year_from_the_dropdown_at_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Year from the dropdown at row 0</h6>
-
-				</li>
-				<li test-id='43' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_grade_from_the_dropdown_at_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Grade from the dropdown at row 0</h6>
-
-				</li>
-				<li test-id='44' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_subject_from_the_dropdown_at_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the Subject from the dropdown at row 0</h6>
-
-				</li>
-				<li test-id='45' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_course_benchmark_from_the_dropdown_at_row_rownumber(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the course benchmark from the dropdown at row 0</h6>
-
-				</li>
-				<li test-id='46' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_school_from_the_dropdown_at_row_rownumber(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the school from the dropdown at row 0</h6>
-
-				</li>
-				<li test-id='47' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_teacher_from_the_dropdown_at_row_rownumber(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the teacher from the dropdown at row 2</h6>
-
-				</li>
-				<li test-id='48' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.the_user_selects_the_classroom_from_the_dropdown_at_row_rownumber(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects the classroom from the dropdown at row 0</h6>
-
-				</li>
-				<li test-id='49' class='gc when Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.user_clicks_on_toggle_to_activate_benchmark()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user clicks on toggle to activate benchmark</h6>
-
-				</li>
-				<li test-id='50' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="AssessmentsStepdef.BenchmarkStepdefinitions.user_checks_the_status_and_reset_the_benchmark_activity()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user checks the status and Reset the Benchmark Activity</h6>
 
 				</li>
 			</ul>
@@ -397,7 +1049,130 @@
 	</div>
 	<!-- subview right -->
 </div>
-<!-- test view --><div id='dashboard-view' class='view hide'>
+<!-- test view --><div id='category-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='category-collection' class='category-collection'>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Group2</span>
+						<span class='category-status right'>
+						<span class='label pass'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 3</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 6, 2025 11:39:43 am</td>
+										<td class='linked' test-id='5'>Checking the School, Classroom, Section Creation Functionality With valid Data</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 6, 2025 11:41:49 am</td>
+										<td class='linked' test-id='64'>Verify the Users Creation Functionality with valid Data</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 6, 2025 11:44:50 am</td>
+										<td class='linked' test-id='193'>Creating Benchmarks and activating</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Group1</span>
+						<span class='category-status right'>
+						<span class='label pass'>5</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 5</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 6, 2025 11:39:43 am</td>
+										<td class='linked' test-id='6'>Exam_Center AddEdit Location scenario</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 6, 2025 11:41:09 am</td>
+										<td class='linked' test-id='36'>Verify the Users Creation Functionality with valid Data</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 6, 2025 11:42:37 am</td>
+										<td class='linked' test-id='101'>Controller Creating Examinations in Examcenter</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 6, 2025 11:43:15 am</td>
+										<td class='linked' test-id='130'>Creating Schedule for an Examinations</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 6, 2025 11:44:12 am</td>
+										<td class='linked' test-id='167'>Enroll the Examination and schedule to the Examtaker</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view --><div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
 		<h5>Dashboard</h5>
 
@@ -405,37 +1180,37 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Features
-					<div class='panel-lead'>1</div>
+					<div class='panel-lead'>5</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>2</div>
+					<div class='panel-lead'>8</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>36</div>
+					<div class='panel-lead'>141</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jan 3, 2025 01:26:27 pm</div>
+					<div class='panel-lead'>Jan 6, 2025 11:39:41 am</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 3, 2025 01:28:26 pm</div>
+			 		<div class='panel-lead'>Jan 6, 2025 11:45:04 am</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>00 01 58.995</div>
+					<div class='panel-lead'>00 05 23.471</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -466,6 +1241,39 @@
 					</table>
 				</div>
 			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Skipped</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@Group2</td>
+							<td>3</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@Group1</td>
+							<td>5</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -474,23 +1282,23 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 1,
-				passParent: 1,
+                parentCount: 5,
+				passParent: 5,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				childCount: 2,
-				passChild: 2,
+				childCount: 8,
+				passChild: 8,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				grandChildCount: 36,
-				passGrandChild: 36,
+				grandChildCount: 141,
+				passGrandChild: 141,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
@@ -502,7 +1310,7 @@
 		
 		<script>
 			var timeline = {
-			        "Verify the Benchmarks functionality":118.046
+			        "Exam_Center Location feature":84.178,"Verify the SIS Provisioning Creation Functionality":306.092,"Checking the Create Users Functionality":86.189,"Examcenter Creation of Examinations Schedules and Examtaker Enrollments feature":147.895,"Verify the Benchmarks functionality":8.236
 			};
 		</script>
 		

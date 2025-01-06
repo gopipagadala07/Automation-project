@@ -1,3 +1,4 @@
+@AssessmentCenterGroup
 Feature: Performing Exam at student side
 
   Scenario Outline: Submitting Exam

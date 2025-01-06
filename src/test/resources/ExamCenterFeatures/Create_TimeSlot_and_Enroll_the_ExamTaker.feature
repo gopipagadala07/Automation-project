@@ -1,3 +1,4 @@
+@ExamCenterGroup
 Feature: FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot
 
   Scenario Outline: Create a Time_Slot for the Examination

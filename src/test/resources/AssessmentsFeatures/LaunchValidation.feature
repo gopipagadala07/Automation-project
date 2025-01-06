@@ -1,3 +1,4 @@
+@AssessmentCenterGroup
 Feature: Validating the Quiz/Exams at student side
 
   Scenario Outline: Validating Quiz/Exams Through Home Tab

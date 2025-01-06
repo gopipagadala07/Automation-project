@@ -1,3 +1,4 @@
+@ExamCenterGroup
 Feature: Exam_Center Location feature
 
   Scenario Outline: Exam_Center AddEdit Location scenario

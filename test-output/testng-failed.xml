@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test name="Default test" verbose="2">
+<suite thread-count="3" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="chrome"/>
+  <test name="Test">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="Group1"/>
+      </run>
+    </groups>
     <classes>
-      <class name="AssessmentsRunner.BenchmarksRunner"/>
+      <class name="ExamCenterRunners.Location_Runner"/>
+      <class name="ExamCenterRunners.Users_Creation_Runner"/>
+      <class name="ExamCenterRunners.Exam_Schedule_runner"/>
+      <class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"/>
+      <class name="ExamCenterRunners.AssessmentSubmissionRunner"/>
+      <class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
+      <class name="ExamCenterRunners.Score_SubmissionRunner"/>
+      <class name="ExamCenterRunners.EnrolleRunner"/>
     </classes>
-  </test> <!-- Default test -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test -->
+  <test name="Test1">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="Group2"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="AssessmentsRunner.SISprovisioningRunner"/>
+      <class name="AssessmentsRunner.BenchmarksRunner"/>
+      <class name="AssessmentsRunner.QuizCreationRunner"/>
+      <class name="AssessmentsRunner.AnnouncementsRunner"/>
+      <class name="AssessmentsRunner.QuizSubmissionRunner"/>
+      <class name="AssessmentsRunner.PerformingExamRunner"/>
+      <class name="AssessmentsRunner.ScoreSubmissionRunner"/>
+      <class name="AssessmentsRunner.Teacher_ActivityprogressRunner"/>
+      <class name="AssessmentsRunner.LaunchValidationRunner"/>
+      <class name="AssessmentsRunner.Reportcard_TeacherRunner"/>
+    </classes>
+  </test> <!-- Test1 -->
+</suite> <!-- Failed suite [Suite] -->

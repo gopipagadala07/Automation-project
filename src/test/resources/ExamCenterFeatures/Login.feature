@@ -1,3 +1,4 @@
+@ExamCenterGroup
 Feature: Checking the Examcenter Login Functionality
 
   Scenario Outline: Examcenter login test with valid credentials scenario

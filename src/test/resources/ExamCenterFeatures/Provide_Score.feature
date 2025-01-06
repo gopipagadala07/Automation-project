@@ -1,3 +1,4 @@
+@ExamCenterGroup
 Feature: Checking the Examtaker Assessment Scoring Submission
 
   Scenario Outline: Provide the Score at Controller side

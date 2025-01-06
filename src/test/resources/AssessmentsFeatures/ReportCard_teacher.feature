@@ -1,3 +1,4 @@
+@AssessmentCenterGroup
 Feature: Verify the Grades for Teacher
 
   Scenario Outline: Checking the Student Reports by Grades

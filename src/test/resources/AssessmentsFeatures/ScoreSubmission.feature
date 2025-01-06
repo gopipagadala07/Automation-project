@@ -1,3 +1,4 @@
+@AssessmentCenterGroup
 Feature: Verify the Score Submission at Teacher side
 
   Scenario Outline: Validate the Score from Overall SpeedGrader
