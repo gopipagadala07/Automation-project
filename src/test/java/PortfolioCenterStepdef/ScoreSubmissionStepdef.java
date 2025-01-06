@@ -38,6 +38,10 @@ public class ScoreSubmissionStepdef extends ActionType{
 		score.enter_the_score_and_comments_and_submit_the_score_score(Score);
 	}
 	
+	@Then("the user is awarded the Badge")
+	public void the_user_is_awarded_the_badge() {
+		score.the_user_is_awarded_the_badge(); 
+	}
 	
 	@Then("the user clicks on the Assignment and validates the Status and Performance Report.")
 	public void the_user_clicks_on_the_assignment_and_validates_the_status_and_performance_report() {

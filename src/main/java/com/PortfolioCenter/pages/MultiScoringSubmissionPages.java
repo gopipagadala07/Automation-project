@@ -56,7 +56,10 @@ public class MultiScoringSubmissionPages extends ActionType{
 	@FindBy(how=How.XPATH,using = "//*[local-name()='svg' and @matTooltip='Report Card']/parent::div")private WebElement ReportCardTab;
 	@FindBy(how=How.XPATH,using = "//table/child::tbody/child::tr/child::td/child::div")private WebElement StandardScoreElement;
 	
-	
+	@FindBy(how = How.XPATH,using = "(//*[text()='more_vert']/parent::span/parent::button)[2]")private WebElement ellipses1;
+	@FindBy(how = How.XPATH,using = "(//*[text()='more_vert']/parent::span/parent::button)[3]")private WebElement ellipses2;
+	@FindBy(how = How.XPATH,using = "(//*[text()='more_vert']/parent::span/parent::button)[4]")private WebElement ellipses3;
+	@FindBy(how = How.XPATH,using = "//*[text()='Award Badge']/parent::button")private WebElement AwardBadge;
 	
 	
 	
@@ -166,6 +169,19 @@ public class MultiScoringSubmissionPages extends ActionType{
 		     
 	}
 
+	public void the_user_is_awarded_the_badge_for_the_multi_scoring_portfolio_course() {
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+		StaticWait(1);
+	    wait.elementToBeClickable(ellipses1);
+	    je.executeScript("arguments[0].click();", ellipses1);
+//	    wait.visibilityOf(AwardBadge);
+	    StaticWait(2);
+	    wait.elementToBeClickable(AwardBadge);
+	    je.executeScript("arguments[0].click();", AwardBadge);
+	    StaticWait(5);
+	    
+	}
+	
 	
 	public void the_user_clicks_on_the_multi_scoring_assignment_and_validates_the_status_and_performance_report() {
 		JavascriptExecutor je = (JavascriptExecutor) driver;

@@ -1,6 +1,7 @@
 package com.PortfolioCenter.pages;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +15,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
@@ -51,7 +54,10 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 	@FindBy(how=How.XPATH,using = "//*[text()='Tags']/parent::div")private WebElement TagsElement;
 	@FindBy(how=How.XPATH,using = "//*[text()=' Standards ']/parent::span")private WebElement  StandardsTabElement;
 	
-	
+	@FindBy(how = How.XPATH,using = "//div[text()='Badge']")private WebElement Badgetab;
+	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Add/Change Badge Image')]")private WebElement AddnewBadgebtn;
+	@FindBy(how = How.XPATH,using = "//*[local-name()='svg' and @class='ng-scope']//*[name()='path' and @fill='#2B8383']")private WebElement BadgeSelection;
+	@FindBy(how = How.XPATH,using = "//button[contains(text(),'Import Badge')]")private WebElement importBadge;
 	
 	
 	
@@ -212,7 +218,21 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 	
 	}
 	
-	
+	public void the_user_added_the_badge_for_multi_scoring_portfolio_course() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Actions actions = new Actions(driver);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		Badgetab.click();
+		js.executeScript("arguments[0].click();", AddnewBadgebtn);
+		StaticWait(1);
+		driver.switchTo().frame(0);
+		WebElement badgeSelectionElement = wait.until(ExpectedConditions.visibilityOf(BadgeSelection));
+		js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
+		actions.moveToElement(badgeSelectionElement).click().perform();
+		WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(importBadge));
+		importBadgeBtn.click();
+		driver.switchTo().defaultContent();
+	}
 	
 	
 

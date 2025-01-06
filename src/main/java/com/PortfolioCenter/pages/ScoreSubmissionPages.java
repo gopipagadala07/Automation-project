@@ -46,7 +46,8 @@ public class ScoreSubmissionPages extends ActionType{
 	@FindBy(how=How.XPATH,using = "//*[local-name()='svg' and @matTooltip='Report Card']/parent::div")private WebElement ReportCardTab;
 	@FindBy(how=How.XPATH,using = "//table/child::tbody/child::tr/child::td/child::div")private WebElement StandardScoreElement;
 	
-	
+	@FindBy(how = How.XPATH,using = "(//*[text()='more_vert']/parent::span/parent::button)[2]")private WebElement ellipses;
+	@FindBy(how = How.XPATH,using = "//*[text()='Award Badge']/parent::button")private WebElement AwardBadge;
 	
 	
 	
@@ -213,7 +214,7 @@ public class ScoreSubmissionPages extends ActionType{
 			Scorefield.sendKeys(Number);
 			wait.elementToBeClickable(CommentsElement);
 		     j.executeScript("arguments[0].click();", CommentsElement);
-		     CommentsElement.sendKeys(generateRandomString());
+		     CommentsElement.sendKeys(generateRandomString());     
 		     wait.elementToBeClickable(SavScoreBtn);
 		     j.executeScript("arguments[0].click();", SavScoreBtn);
 		     StaticWait(4);
@@ -223,16 +224,23 @@ public class ScoreSubmissionPages extends ActionType{
 		    	 System.out.println("Score Added ");
 				} else {
 				    System.out.println("Score Not Added ");
-				}
-		     
-		     
-		     
-		     
-			
+				}			
 }
 
 	
+	public void the_user_is_awarded_the_badge() {
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+	    wait.elementToBeClickable(ellipses);
+	    je.executeScript("arguments[0].click();", ellipses);
+	    wait.elementToBeClickable(AwardBadge);
+	    je.executeScript("arguments[0].click();", AwardBadge);
+	    StaticWait(5);
+	    
+	}
+	
 	public void the_user_clicks_on_the_assignment_and_validates_the_status_and_performance_report() {
+		
+		
 		JavascriptExecutor je = (JavascriptExecutor) driver;
 		je.executeScript("arguments[0].scrollIntoView(true);", statusElement);
 		String status = statusElement.getText();

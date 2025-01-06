@@ -47,6 +47,12 @@ public class PortfolioCenterCourseStepdef extends ActionType{
 		PortfolioCenterCourse.the_user_enters_the_assignment_name_description_and_selects_standards(Standards);
 	     
 	}
+	
+
+	@Then("the user added the Badge")
+	public void the_user_added_the_badge() {
+		PortfolioCenterCourse.the_user_added_the_badge();
+	}
 
 	@Then("the user clicks on the Save button")
 	public void the_user_clicks_on_the_save_button() {

@@ -9,6 +9,7 @@ Feature: Checking the Multi Scoring Portfolio Center Score Submission at Admin s
     Then the user searches for the Multi Scoring Portfolio Course <rownumber1>
     And the user clicks on the Multi Scoring assignment then click on Multi Scoring button <rownumber1>
     Then Enter the Score and submit the Score <rownumber2> <rownumber3> <rownumber4> 
+    Then the user is awarded the Badge for the Multi Scoring Portfolio Course
     And the user clicks on the Multi Scoring Assignment and validates the Status and Performance Report.
     
 

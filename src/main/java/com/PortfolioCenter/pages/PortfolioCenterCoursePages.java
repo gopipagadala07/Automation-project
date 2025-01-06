@@ -70,6 +70,11 @@ public class PortfolioCenterCoursePages extends ActionType{
 //	@FindBy(how = How.XPATH,using = "//*[text()="+AssignmentName+"]/parent::div") private WebElement  ACElement;
 	@FindBy(how = How.XPATH,using = "//*/child::tr/child::td[contains(text(),'+StudentName+')]") private WebElement  StudentElement;
 	
+	@FindBy(how = How.XPATH,using = "//div[text()='Badge']")private WebElement Badgetab;
+	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Add/Change Badge Image')]")private WebElement AddnewBadgebtn;
+	@FindBy(how = How.XPATH,using = "//*[local-name()='svg' and @class='ng-scope']//*[name()='path' and @fill='#2B8383']")private WebElement BadgeSelection;
+	@FindBy(how = How.XPATH,using = "//button[contains(text(),'Import Badge')]")private WebElement importBadge;
+	
 	
 	public WebElement PortfolioName(String PortfolioCourseName) {
 		String xpath ="//*[@class='mat-card-header-text']/child::mat-card-title/child::span/child::b[text()='"+PortfolioCourseName+"']";
@@ -227,6 +232,23 @@ public class PortfolioCenterCoursePages extends ActionType{
 		     StaticWait(1);
 	     
 	}
+	
+	public void the_user_added_the_badge() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Actions actions = new Actions(driver);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		Badgetab.click();
+		js.executeScript("arguments[0].click();", AddnewBadgebtn);
+		StaticWait(1);
+		driver.switchTo().frame(0);
+		WebElement badgeSelectionElement = wait.until(ExpectedConditions.visibilityOf(BadgeSelection));
+		js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
+		actions.moveToElement(badgeSelectionElement).click().perform();
+		WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(importBadge));
+		importBadgeBtn.click();
+		driver.switchTo().defaultContent();
+	}
+	
 
 	public void the_user_clicks_on_the_save_button() {
 	     wait.elementToBeClickable(SavebtnElement);

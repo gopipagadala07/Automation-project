@@ -177,7 +177,7 @@ public class SISProvisioningPage extends ActionType{
 	{
 		SchoolName="FPK12School"+randomNumberGenerator();
 		System.out.println(SchoolName);
-		ExtentCucumberAdapter.addTestStepLog(SchoolName);
+//		ExtentCucumberAdapter.addTestStepLog(SchoolName);
 		cp.insertData("PortfolioCenter.xlsx", SchoolName, 0);
 		cp.Name(SchoolName);				
 		Description.sendKeys(generateRandomString());
@@ -186,7 +186,7 @@ public class SISProvisioningPage extends ActionType{
 	{
 		ClassroomName="FPK12Classroom"+randomNumberGenerator();
 		cp.Name(ClassroomName);
-		ExtentCucumberAdapter.addTestStepLog(ClassroomName);
+//		ExtentCucumberAdapter.addTestStepLog(ClassroomName);
 		cp.insertData("PortfolioCenter.xlsx", ClassroomName, 1);
 		Description.sendKeys(generateRandomString());
 	}
@@ -194,7 +194,7 @@ public class SISProvisioningPage extends ActionType{
 	{
 		SectionName="FPK12Section"+randomNumberGenerator();
 		cp.Name(SectionName);
-		ExtentCucumberAdapter.addTestStepLog(SectionName);
+//		ExtentCucumberAdapter.addTestStepLog(SectionName);
 		cp.insertData("PortfolioCenter.xlsx", SectionName, 2);
 		Description.sendKeys(generateRandomString());
 	}
@@ -218,19 +218,19 @@ public class SISProvisioningPage extends ActionType{
 	public void DUserSearch()
 	{
 		cp.searchField(String.valueOf(DLastName));
-		ExtentCucumberAdapter.addTestStepLog(String.valueOf(DLastName));
+//		ExtentCucumberAdapter.addTestStepLog(String.valueOf(DLastName));
 	}
 	public void TUserSearch()
 	{
 		StaticWait(1);
 		cp.searchField(String.valueOf(TLastName));
-		ExtentCucumberAdapter.addTestStepLog(String.valueOf(TLastName));
+//		ExtentCucumberAdapter.addTestStepLog(String.valueOf(TLastName));
 	}
 	public void SUserSearch()
 	{
 		cp.searchField(String.valueOf(SLastName));
 		//System.out.println(SLastName);
-		ExtentCucumberAdapter.addTestStepLog(String.valueOf(SLastName));
+//		ExtentCucumberAdapter.addTestStepLog(String.valueOf(SLastName));
 	}
 	public void AddnewSchool()
 	{

@@ -36,6 +36,10 @@ public class MultiScoringSubmissionStepdef extends ActionType{
 	public void enter_the_score_and_submit_the_score(Integer Score1, Integer Score2, Integer Score3) throws InvalidFormatException, IOException {
 		MultiScoring.enter_the_score_and_submit_the_score(Score1, Score2, Score3);
 	}
+	@Then("the user is awarded the Badge for the Multi Scoring Portfolio Course")
+	public void the_user_is_awarded_the_badge_for_the_multi_scoring_portfolio_course() {
+		MultiScoring.the_user_is_awarded_the_badge_for_the_multi_scoring_portfolio_course();
+	}
 
 	@Then("the user clicks on the Multi Scoring Assignment and validates the Status and Performance Report.")
 	public void the_user_clicks_on_the_multi_scoring_assignment_and_validates_the_status_and_performance_report() {
