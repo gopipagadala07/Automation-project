@@ -117,7 +117,8 @@ public class Import_Activities_in_LT extends ActionType {
 	//Validate the Activity After importing
 	public void validate_Discussion_Activity(String Activity_Name)
 	{
-		WebElement Activity_ellipse = driver.findElement(By.xpath(Activity_Name))
+		WebElement Activity_ellipse = driver.findElement(By.xpath(Activity_Name));
+		
 		wait.elementToBeClickable(Learning);
 		Learning.click();
 	}
