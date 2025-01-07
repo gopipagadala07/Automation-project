@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Examcenter Suite]" guice-stage="DEVELOPMENT">
@@ -29,3 +30,36 @@
 	Chrome test(failed) -->
 </suite> <!--
 Failed suite [Examcenter Suite] -->
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Examcenter Suite]" guice-stage="DEVELOPMENT">
+	<test thread-count="5" name="Chrome test(failed)">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.Fp_Ec.runner.Examinations_Schedule_runner">
+				<methods>
+					<include name="setUpClass" />
+					<include name="testDownClass" />
+					<include name="beforeclass" />
+					<include name="runScenario" invocation-numbers="2" />
+					<include name="tearDownClass" />
+				</methods>
+			</class> <!--
+			com.Fp_Ec.runner.Examinations_Schedule_runner -->
+			<class name="com.Fp_Ec.runner.Location_Runner">
+				<methods>
+					<include name="setUpClass" />
+					<include name="beforeclass" />
+					<include name="testDownClass" />
+					<include name="runScenario" invocation-numbers="0" />
+					<include name="tearDownClass" />
+				</methods>
+			</class> <!--
+			com.Fp_Ec.runner.Location_Runner -->
+		</classes>
+	</test> <!--
+	Chrome test(failed) -->
+</suite> <!--
+Failed suite [Examcenter Suite] -->
+>>>>>>> branch 'FPK12-PortfolioCenter' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0

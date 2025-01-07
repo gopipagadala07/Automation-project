@@ -1,5 +1,5 @@
-package com.Utils;
 
+package com.Utils;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
@@ -410,11 +410,20 @@ public class ActionType extends Base {
 	 */
 	public int randomNumberGenerator() {
 		Random random = new Random();
-		int randomNumber=random.nextInt(1000000);
+		int randomNumber=random.nextInt(100000);
 	        return randomNumber;
 		
 	}
 
+	
+	public static int randomNumberGeneratorstatic() {
+		Random random = new Random();
+		int randomNumber=random.nextInt(100000);
+	        return randomNumber;
+		
+	}
+	
+	
 	/*
 	 * return random String for registration
 	 */
@@ -433,7 +442,8 @@ public class ActionType extends Base {
 		
 	public String generateRandomString()
 	{
-		String randomstring = RandomStringUtils.random(15, "abcdefghijklmnopqrstuvwxyz");
+		Random r=new Random();
+		String randomstring = RandomStringUtils.random(6, "abcdefghijklmnopqrstuvwxyz");
 		return randomstring;
 	}
 //		public String generateRandomString(String type, int length) {
@@ -581,4 +591,5 @@ public class ActionType extends Base {
 			return true;
 		}
 	}
+	
 }

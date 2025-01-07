@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 eclipse.preferences.version=1
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
 org.eclipse.jdt.core.compiler.compliance=1.8
@@ -33,3 +34,13 @@ org.eclipse.jdt.core.compiler.source=11
 >>>>>>> branch 'FPK12-AssessmentCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 =======
 >>>>>>> branch 'FPK12-ExamCenterBranch' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
+=======
+eclipse.preferences.version=1
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=11
+org.eclipse.jdt.core.compiler.compliance=11
+org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures=disabled
+org.eclipse.jdt.core.compiler.problem.forbiddenReference=warning
+org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures=ignore
+org.eclipse.jdt.core.compiler.release=disabled
+org.eclipse.jdt.core.compiler.source=11
+>>>>>>> branch 'FPK12-PortfolioCenter' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0

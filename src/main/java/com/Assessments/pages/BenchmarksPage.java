@@ -220,7 +220,7 @@ public class BenchmarksPage extends ActionType {
 				return;
 			}
 		}
-		
+
 		if (!success) {
 			System.out.println("Failed to click the section tab after " + maxRetries + " attempts.");
 		}
@@ -234,8 +234,8 @@ public class BenchmarksPage extends ActionType {
 	}
 
 	public void clickOnAdd(String SectionName) {
-        wait.visibilityOf(clickonAddSectionbutton(SectionName));
-        StaticWait(1);
+		wait.visibilityOf(clickonAddSectionbutton(SectionName));
+		StaticWait(1);
 		wait.elementToBeClickable(clickonAddSectionbutton(SectionName));
 		Actions a=new Actions(driver);
 		a.moveToElement(clickonAddSectionbutton(SectionName));
@@ -253,24 +253,24 @@ public class BenchmarksPage extends ActionType {
 		TestAdministrationTab.click();
 	}
 	public void CourseBenchmarkDdown(String SectionName) {
-	    wait.elementToBeClickable(CourseBenchmarkDropDown);  
-	    for(int retry = 0; retry <= 3; retry++) {
-	        try {
-	            WebElement CourseBenchmarkDropDown = driver.findElement(By.xpath("//mat-label[text()='Course - Benchmark ']/ancestor::span/preceding-sibling::mat-select/parent::div/parent::div/parent::div"));
-	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	            CourseBenchmarkDropDown = wait.until(ExpectedConditions.elementToBeClickable(CourseBenchmarkDropDown));
-	            StaticWait(2);
-	            cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
-	            break;
-	        } catch (NoSuchElementException e) {
-	        	retry++;
-	            if(retry == 3) {
-	            	StaticWait(1);
-	                cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
-	                break;
-	            }
-	        }
-	    }
+		wait.elementToBeClickable(CourseBenchmarkDropDown);  
+		for(int retry = 0; retry <= 3; retry++) {
+			try {
+				WebElement CourseBenchmarkDropDown = driver.findElement(By.xpath("//mat-label[text()='Course - Benchmark ']/ancestor::span/preceding-sibling::mat-select/parent::div/parent::div/parent::div"));
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+				CourseBenchmarkDropDown = wait.until(ExpectedConditions.elementToBeClickable(CourseBenchmarkDropDown));
+				StaticWait(2);
+				cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
+				break;
+			} catch (NoSuchElementException e) {
+				retry++;
+				if(retry == 3) {
+					StaticWait(1);
+					cp.FPdropdown(CourseBenchmarkDropDown, SectionName);
+					break;
+				}
+			}
+		}
 	}
 
 	public void schoolDdown(String schooldrop) {
@@ -296,71 +296,75 @@ public class BenchmarksPage extends ActionType {
 
 
 	public void ActiveToggle() {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    int maxRetries = 3;
-	    int retries = 0;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		int maxRetries = 3;
+		int retries = 0;
 
-	    while (retries < maxRetries) {
-	        try {
-	            
-	            if (ToggleActive.isDisplayed()) {
-	                wait.until(ExpectedConditions.elementToBeClickable(ToggleActive)); 
-	                Actions actions = new Actions(driver);
-	                actions.moveToElement(ToggleActive).click().perform(); 
+		while (retries < maxRetries) {
+			try {
 
-	                wait.until(ExpectedConditions.elementToBeClickable(ClickOnYEs));
-	                ClickOnYEs.click();
-	                return; 
-	            } else {
-	                StaticWait(1); 
-	                Actions actions = new Actions(driver);
-	                actions.moveToElement(ToggleInActive).click().perform(); 
+				if (ToggleActive.isDisplayed()) {
+					wait.until(ExpectedConditions.elementToBeClickable(ToggleActive)); 
+					Actions actions = new Actions(driver);
+					actions.moveToElement(ToggleActive).click().perform(); 
 
-	                wait.until(ExpectedConditions.elementToBeClickable(ClickOnYEs));
-	                wait.until(ExpectedConditions.visibilityOf(ClickOnYEs));
-	                ClickOnYEs.click();
-	                return;
-	            }
-	        } catch (NoSuchElementException | StaleElementReferenceException e) {
-	     
-	            System.out.println("Element not found or stale. Retrying... Attempt " + (retries + 1));
-	            retries++;
+					wait.until(ExpectedConditions.elementToBeClickable(ClickOnYEs));
+					ClickOnYEs.click();
+					return; 
+				} else {
+					StaticWait(1); 
+					Actions actions = new Actions(driver);
+					actions.moveToElement(ToggleInActive).click().perform(); 
 
-	          
-	            if (retries >= maxRetries) {
-	                System.out.println("Max retries reached. Unable to find the element.");
-	                throw new RuntimeException("Failed to toggle the element after " + maxRetries + " retries.");
-	            }
+					wait.until(ExpectedConditions.elementToBeClickable(ClickOnYEs));
+					wait.until(ExpectedConditions.visibilityOf(ClickOnYEs));
+					ClickOnYEs.click();
+					return;
+				}
+			} catch (NoSuchElementException | StaleElementReferenceException e) {
 
-	         
-	            StaticWait(1);
-	        } catch (Exception e) {
-	          
-	            System.out.println("Unexpected error: " + e.getMessage());
-	            break; 
-	        }
-	    }
+				System.out.println("Element not found or stale. Retrying... Attempt " + (retries + 1));
+				retries++;
+
+
+				if (retries >= maxRetries) {
+					System.out.println("Max retries reached. Unable to find the element.");
+					throw new RuntimeException("Failed to toggle the element after " + maxRetries + " retries.");
+				}
+
+
+				StaticWait(1);
+			} catch (Exception e) {
+
+				System.out.println("Unexpected error: " + e.getMessage());
+				break; 
+			}
+		}
 	}
 
 	public void CheckingStatus() {
+		for(int retry=0;retry<3;retry++)
+		{
+			try {
+				if (NotStartedStatus.equals("Not Started"))  {
+					StaticWait(1);
+					JavascriptExecutor js = (JavascriptExecutor) driver;
+					js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+					wait.elementToBeClickable(ResetButton);
+					ResetButton.click();
+					wait.elementToBeClickable(YesPleaseReset);
+					YesPleaseReset.click();
+					break;
+				} else {
+					System.out.println(NotStartedStatus.isDisplayed() ? "<--------Not Started-------->" :
+						InProgressStatus.isDisplayed() ? "In Progress" :
+							InReviewStatus.isDisplayed() ? "In Review" : "No active status");
+					break;
+				}
+			} catch (Exception e) {
+				retry++;
+			}
 
-		if (NotStartedStatus.equals("Not Started"))  {
-			StaticWait(1);
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-			wait.elementToBeClickable(ResetButton);
-			ResetButton.click();
-			wait.elementToBeClickable(YesPleaseReset);
-			YesPleaseReset.click();
-		} else {
-			System.out.println(NotStartedStatus.isDisplayed() ? "--------Not Started--------" :
-				InProgressStatus.isDisplayed() ? "In Progress" :
-					InReviewStatus.isDisplayed() ? "In Review" : "No active status");
 		}
-
-
 	}
-
-
-
 }

@@ -84,28 +84,41 @@ public class ProctorEnrollePage extends ActionType{
 			}
 		}   
 	}
-	public void printExamtakerName(String Examtaker)
-	{
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement e=wait.until(ExpectedConditions.elementToBeClickable(ExamtakerName));
-		wait.until(ExpectedConditions.visibilityOf(ExamtakerName));
-		StaticWait(5);
-		String s=e.getText();
-		ExtentCucumberAdapter.addTestStepLog(s);
-		if(s.equalsIgnoreCase(Examtaker))
-		{
-			System.out.println("Test Analytics Previewed Successfully..!");
-			ExtentCucumberAdapter.addTestStepLog("Test Analytics Previewed Successfully..!");
-		}
-		else {
-			System.out.println("Test Analytics Not able to see..!");
-			ExtentCucumberAdapter.addTestStepLog("Test Analytics Not able to see..!");
-		}
-		wait.until(ExpectedConditions.visibilityOf(printtestanalytics));
-		StaticWait(2);
-		printtestanalytics.click();
-		StaticWait(2);
+	public void printExamtakerName(String Examtaker) {
+	
+	    long startTime = System.currentTimeMillis();
+	    
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30)); // Adjust timeout as needed
+	        
+	        WebElement e = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='fw-bold']")));
+	        long endTime = System.currentTimeMillis();
+	        
+	        long timeTaken = endTime - startTime;
+	        System.out.println("Element became visible after: " + timeTaken + "ms");
+	        ExtentCucumberAdapter.addTestStepLog("Element became visible after: " + timeTaken + "ms");
+
+	        String s = e.getText();
+	        ExtentCucumberAdapter.addTestStepLog(s);
+
+	        if (s.equalsIgnoreCase(Examtaker)) {
+	            System.out.println("Test Analytics Previewed Successfully..!");
+	            ExtentCucumberAdapter.addTestStepLog("Test Analytics Previewed Successfully..!");
+	        } else {
+	            System.out.println("Test Analytics Not able to see..!");
+	            ExtentCucumberAdapter.addTestStepLog("Test Analytics Not able to see..!");
+	        }
+	        WebElement printTestAnalyticsElement = wait.until(ExpectedConditions.visibilityOf(printtestanalytics));
+	        printTestAnalyticsElement.click();
+	        StaticWait(2);
+	        System.out.println("Clicked on Print Test Analytics button.");
+	        ExtentCucumberAdapter.addTestStepLog("Clicked on Test Print Analytics button.");
+	    } catch (Exception ex) {
+	        System.out.println("An error occurred: " + ex.getMessage());
+	        ExtentCucumberAdapter.addTestStepLog("An error occurred: " + ex.getMessage());
+	    }
 	}
+
 	public void attachDownloadedFileToReport() {
 	    try {
 	        Path downloadDir = Paths.get(System.getProperty("user.home"), "Downloads");

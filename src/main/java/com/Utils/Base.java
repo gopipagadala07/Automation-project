@@ -1,5 +1,4 @@
 package com.Utils;
-
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.HashMap;
@@ -15,12 +14,6 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-/**
- * This class is to initialize the webdriver and read the properties file
- * 
- * @author anamika.p
- *
- */
 public class Base {
 
 	public static String env;
@@ -50,10 +43,12 @@ public class Base {
 	 * @return this will return tldriver.
 	 */
 	public WebDriver init_driver(String browser) {
+
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options=new ChromeOptions();
      		options.addArguments("--headless");
+			options.addArguments("--remote-allow-origins=*");
 			tlDriver.set(new ChromeDriver());
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();

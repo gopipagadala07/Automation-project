@@ -66,9 +66,10 @@ public class LoginPage extends ActionType{
         } catch (NoSuchElementException e) {
           
         }
-		StaticWait(1);
-        WebElement cls = driver.findElement(By.xpath("//button[@type='button']"));
-        cls.click();
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement cls = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='button']")));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+    	js.executeScript("arguments[0].click();", cls);
 	}
 	public void loginbtn()
 	{

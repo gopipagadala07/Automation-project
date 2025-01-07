@@ -7,7 +7,6 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
@@ -41,5 +40,20 @@ public class Wait extends Base{
 	public void invisibilityOf(WebElement element) {
 		wait1.until(ExpectedConditions.invisibilityOf(element));
 	}
+//	elementToBeSelected()
+//	frameToBeAvaliableAndSwitchToIt()
+//	invisibilityOfTheElementLocated()
+//	invisibilityOfElementWithText()
+//	presenceOfAllElementsLocatedBy()
+//	presenceOfElementLocated()
+//	textToBePresentInElement()
+//	textToBePresentInElementLocated()
+//	textToBePresentInElementValue()
+//	titleIs()
+//	titleContains()
+//	visibilityOf()
+//	visibilityOfAllElements()
+//	visibilityOfAllElementsLocatedBy()
+//	visibilityOfElementLocated()
 
 }

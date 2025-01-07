@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>TestNG:  Test3</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test3</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>9/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Jan 07 14:40:29 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>615 seconds (615983 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='PortfolioCenterRunner.SISprovisioningRunner.runScenario()'><b>runScenario</b><br>Test class: PortfolioCenterRunner.SISprovisioningRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the School, Classroom, Section Creation Functionality With valid Data", "Verify the SIS Provisioning Creation Functionality"</td>
+<td></td>
+<td>72</td>
+<td>PortfolioCenterRunner.SISprovisioningRunner@648c94da</td></tr>
+<tr>
+<td title='PortfolioCenterRunner.SISprovisioningRunner.runScenario()'><b>runScenario</b><br>Test class: PortfolioCenterRunner.SISprovisioningRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Functionality"</td>
+<td></td>
+<td>143</td>
+<td>PortfolioCenterRunner.SISprovisioningRunner@648c94da</td></tr>
+<tr>
+<td title='PortfolioCenterRunner.PortfolioCenterCourseRunner.runScenario()'><b>runScenario</b><br>Test class: PortfolioCenterRunner.PortfolioCenterCourseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verifying the Portfolio Course Creation Functionality", "Checking the Portfolio Center Course Functionality"</td>
+<td></td>
+<td>65</td>
+<td>PortfolioCenterRunner.PortfolioCenterCourseRunner@2a62b5bc</td></tr>
+<tr>
+<td title='PortfolioCenterRunner.AssignmentsSubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: PortfolioCenterRunner.AssignmentsSubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verifying the Assignment Submission Functionality At student side", "Checking the Assignment Submission Functionality"</td>
+<td></td>
+<td>36</td>
+<td>PortfolioCenterRunner.AssignmentsSubmissionRunner@53de625d</td></tr>
+<tr>
+<td title='PortfolioCenterRunner.ScoreSubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: PortfolioCenterRunner.ScoreSubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Score Submission Functionality at Admin side", "Verify the Score Submission Functionality at Admin side"</td>
+<td></td>
+<td>70</td>
+<td>PortfolioCenterRunner.ScoreSubmissionRunner@535779e4</td></tr>
+<tr>
+<td title='PortfolioCenterRunner.MultiScoringPortfolioCourseRuner.runScenario()'><b>runScenario</b><br>Test class: PortfolioCenterRunner.MultiScoringPortfolioCourseRuner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verifying the Multi Scoring Portfolio Center Course Functionality", "Checking the Multi Scoring Portfolio Center Course Functionality"</td>
+<td></td>
+<td>72</td>
+<td>PortfolioCenterRunner.MultiScoringPortfolioCourseRuner@53fd0d10</td></tr>
+<tr>
+<td title='PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verifying the Multi Scoring Portfolio Center Assignment Submission Functionality At student side", "Checking the Multi Scoring Portfolio Center Assignment Submission Functionality"</td>
+<td></td>
+<td>41</td>
+<td>PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner@6c0d9d86</td></tr>
+<tr>
+<td title='PortfolioCenterRunner.MultiScoringSubmissionRuner.runScenario()'><b>runScenario</b><br>Test class: PortfolioCenterRunner.MultiScoringSubmissionRuner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Multi Scoring Portfolio Center Score Submission at Admin side", "Checking the Multi Scoring Portfolio Center Score Submission at Admin side"</td>
+<td></td>
+<td>51</td>
+<td>PortfolioCenterRunner.MultiScoringSubmissionRuner@4ce1d6d0</td></tr>
+<tr>
+<td title='PortfolioCenterRunner.DeletePortfolioCourseRunner.runScenario()'><b>runScenario</b><br>Test class: PortfolioCenterRunner.DeletePortfolioCourseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verifying the Portfolio Course Creation Functionality", "Checking the Portfolio Center Course Functionality"</td>
+<td></td>
+<td>47</td>
+<td>PortfolioCenterRunner.DeletePortfolioCourseRunner@24111ef1</td></tr>
+</table><p>
+</body>
+</html>
