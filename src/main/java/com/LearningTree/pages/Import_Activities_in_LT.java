@@ -1,12 +1,17 @@
 package com.LearningTree.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Utils.ActionType;
 import com.Utils.Base;
@@ -26,7 +31,6 @@ public class Import_Activities_in_LT extends ActionType {
 	@FindBy(how = How.XPATH,using = "//input[@type='search']")public WebElement SearchHere;
 	@FindBy(how = How.XPATH,using = "//mat-icon[text()='more_vert']")public WebElement  Course_ellipse;
 	@FindBy(how = How.XPATH,using = "//span[text()='Search Learning Objective']")public WebElement  Search_Learning_Objective_btn;
-	@FindBy(how = How.XPATH,using = "//span[text()='Assign to Community ']")public WebElement  Assign_to_Community_btn;
 	@FindBy(how = How.XPATH,using = "//input[@type='text']")public WebElement TitleName;
 	@FindBy(how = How.XPATH,using = "//label[contains(text(),'Description')]/parent::div/descendant::p")public WebElement Description;
 	@FindBy(how = How.XPATH,using = "//div[text()=' All ']/parent::div/parent::div/parent::div/parent::div/parent::div/preceding-sibling::div/descendant::label[3]/child::span/child::span[1]")
@@ -34,10 +38,10 @@ public class Import_Activities_in_LT extends ActionType {
 	@FindBy(how = How.XPATH,using = "//div[text()=' All ']/parent::div/parent::div/parent::div/parent::div/parent::div/preceding-sibling::div/descendant::label[2]/child::span/child::span[1]")
 	public WebElement Activate_Toggle;	
 	@FindBy(how = How.XPATH,using = "//span[@mattooltip='Learning']")public WebElement Learning;
-	
-	
-	
-	
+	@FindBy(how = How.XPATH,using = "//*[local-name()='svg' and @matTooltip='Members']")public WebElement Members_Tab;
+	@FindBy(how = How.XPATH,using = "//span[text()=' Manage Members ']")public WebElement Manage_Members_btn;
+	@FindBy(how = How.XPATH,using = "(//input[@data-placeholder='search here'])[1]")public WebElement Search_Users;
+	@FindBy(how = How.XPATH,using = "//mat-icon[text()='close']")public WebElement Close;
 	public Import_Activities_in_LT(WebDriver driver)
 	{
 		this.driver=driver;	
@@ -100,7 +104,10 @@ public class Import_Activities_in_LT extends ActionType {
 		wait.elementToBeClickable(Search_Learning_Objective_btn);
 		Search_Learning_Objective_btn.click();
 		cp.searchField(CD_Name);
+		StaticWait(1);
+		WebElement Assign_to_Community_btn = driver.findElement(By.xpath("//b[text()='"+CD_Name+"']/ancestor::mat-card-header/following-sibling::mat-card-content/following::mat-card-actions/child::div/child::div"));
 		Assign_to_Community_btn.click();
+		StaticWait(1);
 	}
 	public void learningTab()
 	{
@@ -114,12 +121,44 @@ public class Import_Activities_in_LT extends ActionType {
 		wait.elementToBeClickable(Activate_Toggle);
 		Activate_Toggle.click();
 	}
-	//Validate the Activity After importing
-	public void validate_Discussion_Activity(String Activity_Name)
+	public void click_on_Members_Tab()
 	{
-		WebElement Activity_ellipse = driver.findElement(By.xpath(Activity_Name))
-		wait.elementToBeClickable(Learning);
-		Learning.click();
+		wait.elementToBeClickable(Members_Tab);
+		Members_Tab.click();
 	}
+	public void add_Student_in_Member(String Student_Lastname)
+	{
+		wait.elementToBeClickable(Manage_Members_btn);
+		Manage_Members_btn.click();
+		Search_Users.sendKeys(Student_Lastname);
+		WebElement Add_Student =  driver.findElement(By.xpath("//small[contains(text(),'"+Student_Lastname+"')]/parent::span/parent::div/parent::div/following::div/descendant::mat-icon[@mattooltip='Add User']"));
+		try {
+			Add_Student.click();
+
+        } catch (StaleElementReferenceException e) {
+        	Add_Student.click();
+        }	
+		 WebDriverWait wait = new WebDriverWait(driver, 10);
+
+	        try {
+	            // Wait for the toast notification to disappear (using the toast's unique class or id)
+	            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngx-toastr.toast-success")));
+
+	            // Locate the close button (mat-icon) and click
+	            WebElement Close = driver.findElement(By.xpath("//mat-icon[text()='close']"));
+	            wait.until(ExpectedConditions.elementToBeClickable(Close));  // Wait until it's clickable
+	            Close.click();  // Click the close button
+	            System.out.println("Close button clicked.");
+
+	        } catch (ElementClickInterceptedException e) {
+	            System.out.println("Element is blocked by a toast notification or other element.");
+	        } catch (Exception e) {
+	            System.out.println("Error: " + e.getMessage());
+	        }
+
+        
+		
+	}
+
 	
 }

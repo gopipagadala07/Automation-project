@@ -1,5 +1,4 @@
 Feature: Verify the import of Activities in LT
-  
 
   Scenario Outline: Import of Activities in LT
     Given User launch the application with Valid URL
@@ -14,9 +13,10 @@ Feature: Verify the import of Activities in LT
     And User Click on that Course<rownumber1>
     When User Search the Learning Objective and Assign it to the Course<rownumber1>
     And User go to Learning Tab
-    Then User Publish and Activate all Activity
-		#Validate Learnig Tree Community Creation
-		Then Validate the imported Activities 
+    Then User Publish and Activate all the Activities
+    And User go to Member Tab
+    Then User Search and added the Student in the Course<rownumber2>
+
     Examples: 
-      | rownumber | rownumber1 |
-      |         2 |          0 |
+      | rownumber | rownumber1 | rownumber2 |
+      |         2 |          0 |         3 |

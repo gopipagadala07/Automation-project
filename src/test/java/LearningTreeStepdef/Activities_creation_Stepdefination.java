@@ -55,18 +55,18 @@ public class Activities_creation_Stepdefination extends ActionType
 	@Then("User Add Child Objective")
 	public void user_add_child_objective() 
 	{
-	    AC.addChildObjective();
+	    AC.ChildObjectivesCreation();
 	}
 	@Then("User Add Discussion Activity")
 	public void User_Add_Discussion_Activity() 
 	{
-	    AC.click_on_Add_Activity();
+	    AC.click_on_Add_Activity("Unit");
 	    AC.add_Discussion_Activity();
 	}
 	@Then("User Add Assignment Activity")
 	public void User_Add_Assignment_Activity() 
 	{
-	    AC.click_on_Add_Activity();
+	    AC.click_on_Add_Activity("Unit");
 	    AC.add_Assignment_Activity();
 	}
 	@Then("User Add Assessment Activity{int}")
@@ -77,15 +77,62 @@ public class Activities_creation_Stepdefination extends ActionType
 			testdata=reader.getData("/ExcelFiles/LearningTree.xlsx",getSheetEnv());
 		}
 		String Testname=testdata.get(row).get("TestName");
-	    AC.click_on_Add_Activity();
+	    AC.click_on_Add_Activity("Unit");
 	    AC.add_Assessment_Activity(Testname);
 	}
 	@Then("User Add Resources Activity")
 	public void User_Add_Resources_Activity() 
 	{
-	    AC.click_on_Add_Activity();
+	    AC.click_on_Add_Activity("Unit");
 	    AC.add_Resources_Activity();
 	}
+	@Then("User Add External Tool Activity")
+	public void User_Add_External_Tool_Activity() 
+	{
+	    AC.click_on_Add_Activity("Unit");
+	    AC.add_External_Tool_Activity();
+	}
+	@Then("User Add Epub Activity")
+	public void User_Add_Epub_Activity() 
+	{
+	    AC.click_on_Add_Activity("Unit");
+	    AC.add_Epub_Activity();
+	}
+	@Then("User Add LTI Activity")
+	public void User_Add_LTI_Activity() 
+	{
+	    AC.click_on_Add_Activity("Unit");
+	    AC.add_LTI_Activity();
+	}
+	 
+	 @And("User Add Activities in Virtual Goal")
+	public void User_Add_Activities_in_Virtual_Goal() 
+	{
+	    AC.click_on_Add_Activity("Virtual");
+	    AC.add_Assignment_Activity();
+	    AC.click_on_Add_Activity("Virtual");
+	    AC.add_Discussion_Activity();
+	}
+	 @And("User Add Activities in Topic Goal")
+		public void User_Add_Activities_in_Topic_Goal() 
+		{
+		    AC.click_on_Add_Activity("Topic");
+		    AC.add_Assignment_Activity();
+		    AC.click_on_Add_Activity("Topic");
+		    AC.add_Discussion_Activity();
+		}
+	 @Then("User Add Activities in Sub Topic Goal")
+		public void User_Add_Activities_in_Sub_Topic_Goal() 
+		{
+		    AC.click_on_Add_Activity("Sub-Topic");
+		    AC.add_Assignment_Activity();
+		    AC.click_on_Add_Activity("Sub-Topic");
+		    AC.add_Discussion_Activity();
+		}
+
+	     
+	 
+	 
 	@And("User click on Publish Toggle for All Activity in CD")
 	public void User_click_on_Publish_Toggle_for_All_Activity_in_CD() 
 	{
