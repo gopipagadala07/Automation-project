@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import com.LearningTree.pages.Activities_Creation_in_CD;
+import com.LearningTree.pages.Activities_Creation_in_CDPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.ExcelReader;
@@ -19,7 +19,7 @@ public class Activities_creation_Stepdefination extends ActionType
 {
 	ExcelReader reader=new ExcelReader();
 	static List<Map<String, String>> testdata=null;
-	private Activities_Creation_in_CD AC=new Activities_Creation_in_CD(Base.getDriver());
+	private Activities_Creation_in_CDPage AC=new Activities_Creation_in_CDPage(Base.getDriver());
 	
 	
 	@And("User Click Course Designer in Left menu")
@@ -130,10 +130,7 @@ public class Activities_creation_Stepdefination extends ActionType
 		    AC.add_Discussion_Activity();
 		}
 
-	     
-	 
-	 
-	@And("User click on Publish Toggle for All Activity in CD")
+	@And("User click on Publish Toggle for All Activities in CD")
 	public void User_click_on_Publish_Toggle_for_All_Activity_in_CD() 
 	{
 	    AC.publish_All_Activity_in_CD();

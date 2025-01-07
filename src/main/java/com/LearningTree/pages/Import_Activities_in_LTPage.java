@@ -17,7 +17,7 @@ import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
 
-public class Import_Activities_in_LT extends ActionType {
+public class Import_Activities_in_LTPage extends ActionType {
 	private WebDriver driver;
 	private Wait wait;
 	
@@ -42,7 +42,7 @@ public class Import_Activities_in_LT extends ActionType {
 	@FindBy(how = How.XPATH,using = "//span[text()=' Manage Members ']")public WebElement Manage_Members_btn;
 	@FindBy(how = How.XPATH,using = "(//input[@data-placeholder='search here'])[1]")public WebElement Search_Users;
 	@FindBy(how = How.XPATH,using = "//mat-icon[text()='close']")public WebElement Close;
-	public Import_Activities_in_LT(WebDriver driver)
+	public Import_Activities_in_LTPage(WebDriver driver)
 	{
 		this.driver=driver;	
 		PageFactory.initElements(driver, this);

@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import com.LearningTree.pages.Import_Activities_in_LT;
+import com.LearningTree.pages.Import_Activities_in_LTPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.ExcelReader;
@@ -20,7 +20,7 @@ public class Import_Activities_in_LTStefdef extends ActionType
 	
 	ExcelReader reader=new ExcelReader();
 	static List<Map<String, String>> testdata=null;
-	private Import_Activities_in_LT ILT=new Import_Activities_in_LT(Base.getDriver());
+	private Import_Activities_in_LTPage ILT=new Import_Activities_in_LTPage(Base.getDriver());
 	
 	@And("User Click Courses in Left menu")
 	public void user_click_courses_in_left_menu() {

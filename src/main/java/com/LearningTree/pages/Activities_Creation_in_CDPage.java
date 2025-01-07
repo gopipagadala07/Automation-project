@@ -23,7 +23,7 @@ import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
 
-public class Activities_Creation_in_CD extends ActionType
+public class Activities_Creation_in_CDPage extends ActionType
 {
 	private WebDriver driver;
 	private Wait wait;
@@ -84,7 +84,7 @@ public class Activities_Creation_in_CD extends ActionType
 	@FindBy(how = How.XPATH,using = "//h3[text()='Learning']/parent::div/parent::div/descendant::label/child::span/child::span/child::span[1]")private WebElement Publish_Toggle;
 
 
-	public Activities_Creation_in_CD(WebDriver driver)
+	public Activities_Creation_in_CDPage(WebDriver driver)
 	{
 		this.driver=driver;	
 		PageFactory.initElements(driver, this);

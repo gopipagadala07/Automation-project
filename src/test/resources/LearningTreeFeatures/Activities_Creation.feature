@@ -1,6 +1,6 @@
 Feature: Verify the Activities Creation Functionality
 
-  Scenario Outline: Creating the the Activities
+  Scenario Outline: Creating the Activities
     Given User launch the application with Valid URL
     And User able to see all Fields
     Then User enters the credentials from the excel sheet at <rownumber>
@@ -26,7 +26,7 @@ Feature: Verify the Activities Creation Functionality
     And User Add Activities in Topic Goal
     #Activities Creation at Sub Topic Goal
     Then User Add Activities in Sub Topic Goal
-    And User click on Publish Toggle for All Activity in CD
+    And User click on Publish Toggle for All Activities in CD
 
     Examples: 
       | rownumber | rownumber1 |
