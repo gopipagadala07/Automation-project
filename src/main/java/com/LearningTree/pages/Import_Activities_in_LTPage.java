@@ -1,9 +1,11 @@
 package com.LearningTree.pages;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -132,33 +134,31 @@ public class Import_Activities_in_LTPage extends ActionType {
 		Manage_Members_btn.click();
 		Search_Users.sendKeys(Student_Lastname);
 		WebElement Add_Student =  driver.findElement(By.xpath("//small[contains(text(),'"+Student_Lastname+"')]/parent::span/parent::div/parent::div/following::div/descendant::mat-icon[@mattooltip='Add User']"));
-		try {
-			Add_Student.click();
 
-        } catch (StaleElementReferenceException e) {
-        	Add_Student.click();
-        }	
-		 WebDriverWait wait = new WebDriverWait(driver, 10);
 
+		int retries = 10;
+		while (retries > 0) {
+			try {
+				wait.elementToBeClickable(Add_Student);
+				Add_Student.click();
+				break;
+			} catch (StaleElementReferenceException e) {
+				
+				System.out.println("StaleElementReferenceException. Retrying...");
+				StaticWait(1);
+				retries--;
+			}	
+		}
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	        try {
-	            // Wait for the toast notification to disappear (using the toast's unique class or id)
 	            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngx-toastr.toast-success")));
-
-	            // Locate the close button (mat-icon) and click
 	            WebElement Close = driver.findElement(By.xpath("//mat-icon[text()='close']"));
-	            wait.until(ExpectedConditions.elementToBeClickable(Close));  // Wait until it's clickable
-	            Close.click();  // Click the close button
+	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", Close);
 	            System.out.println("Close button clicked.");
-
 	        } catch (ElementClickInterceptedException e) {
 	            System.out.println("Element is blocked by a toast notification or other element.");
 	        } catch (Exception e) {
 	            System.out.println("Error: " + e.getMessage());
-	        }
-
-        
-		
+	        }	
 	}
-
-	
 }

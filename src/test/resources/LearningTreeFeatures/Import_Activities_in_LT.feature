@@ -6,7 +6,7 @@ Feature: Verify the import of Activities in LT
     Then User enters the credentials from the excel sheet at <rownumber>
     And User is on homepage
     And User Click Courses in Left menu
-    #Learing Tree Community Creation
+    ###Learing Tree Community Creation
     Then User Click on the Create New Course button
     When User Enter the Course Name and Description
     Then User Saved the Course and Search for the Created Course in Search here Field<rownumber1>
@@ -19,4 +19,4 @@ Feature: Verify the import of Activities in LT
 
     Examples: 
       | rownumber | rownumber1 | rownumber2 |
-      |         2 |          0 |         3 |
+      |         2 |          0 |         3  |

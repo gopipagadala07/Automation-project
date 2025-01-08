@@ -6,7 +6,7 @@ Feature: Verify the Activities Creation Functionality
     Then User enters the credentials from the excel sheet at <rownumber>
     And User Click Course Designer in Left menu
     ###Course Designer Community Creation
-    Then .User Click on the Add New Community button
+    Then User Click on the Add New Community button
     When User Enter the Community Name and Description
     Then User Saved the Community and Search for the Created Community in Search here Field<rownumber1>
     And User Click on that Community<rownumber1>

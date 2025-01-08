@@ -25,4 +25,10 @@ public class Provide_Score_For_LT_ActivitiesPage
 		PageFactory.initElements(driver, this);
 		this.wait = new Wait(driver);
 	}
+	public click_on_Overal_Speed_Grader(WebDriver driver)
+	{
+		this.driver=driver;	
+		PageFactory.initElements(driver, this);
+		this.wait = new Wait(driver);
+	}
 }
