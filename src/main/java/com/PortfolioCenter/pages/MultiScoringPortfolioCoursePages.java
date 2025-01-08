@@ -191,7 +191,7 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 		StaticWait(1);
 		List<WebElement> badgeSelection = driver.findElements(By.xpath("//*[local-name()='svg' and @class='ng-scope']"));
 		Random r = new Random();
-		int randomBadge = r.nextInt(Math.min(badgeSelection.size(), 103));
+		int randomBadge = r.nextInt(Math.min(badgeSelection.size(), 100));
 		List<WebElement> pathElements = badgeSelection.get(randomBadge).findElements(By.xpath(".//*[name()='path']"));
 		if (!pathElements.isEmpty()) {
 		    int randomPathIndex = r.nextInt(pathElements.size());
