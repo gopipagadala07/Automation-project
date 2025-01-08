@@ -186,29 +186,6 @@ public class SISProvisioningPage extends ActionType{
 		}
 	}
 	public void ClassroomDropDownSearch() {
-//		boolean success = false;
-//		for (int retry = 0; retry < 3; retry++) {
-//			try {
-//				StaticWait(1);
-//				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//				WebElement ClassroomDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='classroom']/descendant::mat-form-field/child::div")));
-//				StaticWait(1);
-//				cp.FPdropdown(ClassroomDown, ClassroomName);
-//				System.out.println(ClassroomName);
-//				success = true;
-//				break;
-//			} catch (StaleElementReferenceException e) {
-//				System.out.println("StaleElementReferenceException caught. Retrying... Attempt " + (retry + 1));
-//				try {
-//					Thread.sleep(1000);
-//				} catch (InterruptedException ie) {
-//					Thread.currentThread().interrupt();
-//				}
-//			}
-//		}
-//		if (!success) {
-//			System.out.println("Operation failed after 3 retries.");
-//		}
 		retryClassroomDropDownSearch(5);
 	}
 
@@ -218,9 +195,6 @@ public class SISProvisioningPage extends ActionType{
 		while (attempts < retryCount && !isSuccessful) {
 			try {
 				cp.FPdropdown(ClassroomDown, ClassroomName);
-//				wait.visibilityOf(clickonAddSectionbutton(SectionName));
-//				JavascriptExecutor jc = (JavascriptExecutor) driver;
-//				jc.executeScript("arguments[0].click();", clickonAddSectionbutton(SectionName));
 				isSuccessful = true;
 				break;
 			} catch (Exception e) {
@@ -238,9 +212,6 @@ public class SISProvisioningPage extends ActionType{
 		while (attempts < retryCount && !isSuccessful) {
 			try {
 				cp.FPdropdown(SectionDown, SectionName);
-//				wait.visibilityOf(clickonAddSectionbutton(SectionName));
-//				JavascriptExecutor jc = (JavascriptExecutor) driver;
-//				jc.executeScript("arguments[0].click();", clickonAddSectionbutton(SectionName));
 				isSuccessful = true;
 				break;
 			} catch (Exception e) {
@@ -251,26 +222,10 @@ public class SISProvisioningPage extends ActionType{
 				}
 			}
 		}
-		}
-	
-	
+	}
+
 	public void SectionDropDownSearch()
 	{
-//		for(int retry=0;retry<3;retry++)
-//		{
-//			try {
-//				StaticWait(1);
-//				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//				WebElement SectionDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='section']/descendant::mat-form-field/child::div")));
-//				wait.until(ExpectedConditions.elementToBeClickable(SectionDown));
-//				StaticWait(1);
-//				cp.FPdropdown(SectionDown, SectionName);
-//				System.out.println(SectionName);
-//				break;
-//			} catch (StaleElementReferenceException e) {
-//				retry++;
-//			}
-//		}
 		retrySectionDropDownSearch(5);
 	}
 	public void SchoolDetails() throws Exception
@@ -284,6 +239,7 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void ClassroomDetails() throws Exception
 	{
+		StaticWait(1);
 		ClassroomName="FPK12Classroom"+randomNumberGenerator();
 		cp.Name(ClassroomName);
 		ExtentCucumberAdapter.addTestStepLog(ClassroomName);
@@ -365,7 +321,6 @@ public class SISProvisioningPage extends ActionType{
 
 	public void DUserSearch()
 	{
-
 		cp.searchField(String.valueOf(DLastName));
 		ExtentCucumberAdapter.addTestStepLog(String.valueOf(DLastName));
 		StaticWait(1);

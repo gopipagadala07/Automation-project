@@ -161,6 +161,7 @@ public class Exam_ScheduleCreationPages extends ActionType{
 	}
 	public void Exam_Description() {
 		ExamDescription.sendKeys(generateRandomString());
+		StaticWait(1);
 	}
 	public void Exam_name_field() throws Exception {
 		ExamName="FPK12Exam"+randomNumberGenerator();

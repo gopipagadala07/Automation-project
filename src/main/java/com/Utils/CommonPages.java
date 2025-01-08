@@ -233,13 +233,12 @@ public class CommonPages extends ActionType{
 		return monthNames[month - 1];
 	}
 	public void getRandomDate(WebElement element) {
-		int maxRetries = 3; 
+		int maxRetries = 5; 
 		int attempt = 0;
 		boolean success = false;
 
 		while (attempt < maxRetries && !success) {
 			try {
-				attempt++;
 				LocalDate currentDate = LocalDate.now();
 				Random random = new Random();
 				int randomYear = currentDate.getYear() + 1 + random.nextInt(5);
@@ -263,10 +262,13 @@ public class CommonPages extends ActionType{
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].click()", dayElement);
 				success = true;
+				break;
 			} catch (ElementClickInterceptedException e) {
 				System.out.println("ElementClickInterceptedException on attempt " + attempt + ": " + e.getMessage());
 			} catch (Exception e) {
+				attempt++;
 				System.out.println("Exception on attempt " + attempt + ": " + e.getMessage());
+				break;
 			}
 
 			if (!success && attempt < maxRetries) {

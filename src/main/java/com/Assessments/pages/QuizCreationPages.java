@@ -2,6 +2,7 @@ package com.Assessments.pages;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -229,21 +230,21 @@ public class QuizCreationPages extends ActionType{
 					js.executeScript("arguments[0].click();", AddnewBadgebtn);
 					StaticWait(1);
 					driver.switchTo().frame(0);
-					WebElement badgeSelectionElement = wait.until(ExpectedConditions.visibilityOf(BadgeSelection));
-					js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
-					actions.moveToElement(badgeSelectionElement).click().perform();
 					StaticWait(1);
-					for (int badgeRetry = 0; badgeRetry < 1; badgeRetry++) {
-						try {
-							WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge']")));
-							js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
-							js.executeScript("arguments[0].click();", importBadgeBtn);
-							break;
-						} catch (TimeoutException e) {
-							StaticWait(1);
-						}
+					List<WebElement> badgeSelection = driver.findElements(By.xpath("//*[local-name()='svg' and @class='ng-scope']"));
+					Random r = new Random();
+					int randomBadge = r.nextInt(Math.min(badgeSelection.size(), 100));
+					List<WebElement> pathElements = badgeSelection.get(randomBadge).findElements(By.xpath(".//*[name()='path']"));
+					if (!pathElements.isEmpty()) {
+					    int randomPathIndex = r.nextInt(pathElements.size());
+					    WebElement targetElement=pathElements.get(randomPathIndex);
+					    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", targetElement);
+					    actions.moveToElement(targetElement).click().build().perform();
+					} else {
+					    System.out.println("No <path> elements found for the selected <svg>.");
 					}
-
+					WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(importBadge));
+					importBadgeBtn.click();
 					driver.switchTo().defaultContent();
 					StaticWait(1);
 					cp.Save();
