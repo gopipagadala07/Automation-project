@@ -103,6 +103,7 @@ public class ProctorEnrollePage extends ActionType{
 	            System.out.println("Test Analytics Not able to see..!");
 	            ExtentCucumberAdapter.addTestStepLog("Test Analytics Not able to see..!");
 	        }
+	        StaticWait(2);
 	        WebElement printTestAnalyticsElement = wait.until(ExpectedConditions.visibilityOf(printtestanalytics));
 	        printTestAnalyticsElement.click();
 	        StaticWait(2);
