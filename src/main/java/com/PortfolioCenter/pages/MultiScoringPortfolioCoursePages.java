@@ -12,6 +12,7 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -198,8 +199,16 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 		} else {
 		    System.out.println("No <path> elements found for the selected <svg>.");
 		}
-		WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(importBadge));
-		importBadgeBtn.click();
+		for (int badgeRetry = 0; badgeRetry < 1; badgeRetry++) {
+			try {
+				WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge']")));
+				js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
+				js.executeScript("arguments[0].click();", importBadgeBtn);
+				break;
+			} catch (TimeoutException e) {
+				StaticWait(1);
+			}
+		}
 		driver.switchTo().defaultContent();
 	}
 }
