@@ -201,7 +201,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		while (attempts < retryCount && !isSuccessful) {
 			try {
 				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-				WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field/child::div")));
+				WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field")));
 				Actions a=new Actions(driver);
 				a.moveToElement(TimeSlotLookup).perform();
 				a.click().build().perform();
@@ -221,13 +221,13 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		if (CommonPages.currentHour < 12) {
 			String timeslotvalue = CommonPages.currentHour + ":" + CommonPages.formattedMin + "AM";
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-			System.out.println(timeslotvalue);
+			//System.out.println(timeslotvalue);
 			retryclickTimeslotLookup(5);
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
 		} else if (CommonPages.currentHour > 12) {
 			int currentHour = CommonPages.currentHour - 12;
-			System.out.println(currentHour);
+			//System.out.println(currentHour);
 			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 			retryclickTimeslotLookup(5);	
@@ -236,7 +236,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		}
 		else if (CommonPages.currentHour == 12) {
 			int currentHour = CommonPages.currentHour;
-			System.out.println(currentHour);
+			//System.out.println(currentHour);
 			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 			retryclickTimeslotLookup(5);

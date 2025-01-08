@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse--1779212938\testng-customsuite.xml</span>
+                    <span>C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse-1685804706\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -129,15 +129,15 @@
                   </a> <!-- runScenario("Create a Time_Slot for the Examination", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled...) -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("Create a Time_Slot for the Examination", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot")</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;1:06PM&apos;]/parent::div/parent::span&quot;}
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-icon[text()=&apos;add&apos;]&quot;}
   (Session info: chrome=131.0.6778.205)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8f9d741a7f3e70e17a5a477de294abaa, findElement {using=xpath, value=//span[text()=&apos;1:06PM&apos;]/parent::div/parent::span}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60609}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60609/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8f9d741a7f3e70e17a5a477de294abaa
+Command: [5d80fe85206f2a0e40ec1bdbf213e629, findElement {using=xpath, value=//mat-icon[text()=&apos;add&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64012}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64012/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5d80fe85206f2a0e40ec1bdbf213e629
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -152,10 +152,12 @@ Session ID: 8f9d741a7f3e70e17a5a477de294abaa
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.Examcenter.pages.TimeSlotCreation_and_enrollExamataker_Page.timeslotselection(TimeSlotCreation_and_enrollExamataker_Page.java:74)
-	at com.Examcenter.pages.TimeSlotCreation_and_enrollExamataker_Page.click_on_Time_slot_Lookup_and_select_timeslot(TimeSlotCreation_and_enrollExamataker_Page.java:233)
-	at ExamCenterStepDefinitions.Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.user_click_Timeslot_lookup_and_select_particular_Timeslot(Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.java:126)
-	at ✽.User click Timeslot lookup and select particular Timeslot(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/ExamCenterFeatures/Create_TimeSlot_and_Enroll_the_ExamTaker.feature:22)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.click(Unknown Source)
+	at com.Examcenter.pages.TimeSlotCreation_and_enrollExamataker_Page.addExamtaker(TimeSlotCreation_and_enrollExamataker_Page.java:254)
+	at ExamCenterStepDefinitions.Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.user_add_the_examtaker_in_the_timeslot(Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.java:150)
+	at ✽.User add the Examtaker in the Timeslot(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/ExamCenterFeatures/Create_TimeSlot_and_Enroll_the_ExamTaker.feature:24)
 
 </div> <!-- stack-trace -->
                   <em>
@@ -167,7 +169,7 @@ Session ID: 8f9d741a7f3e70e17a5a477de294abaa
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse--1779212938\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse-1685804706\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -244,7 +246,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner')
-data.setCell(0, 3, 92627);
+data.setCell(0, 3, 83437);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -277,28 +279,26 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@27a90ce5)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@21eedcde)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeclass</span>
-                <span class="method-start">1026 ms</span>
+                <span class="method-start">1391 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">runScenario("Create a Time_Slot for the Examination", "FocalPointk12 Exam_Center Create a Time_Slot and Enrolled...)</span>
-                <span class="method-start">1036 ms</span>
+                <span class="method-start">1399 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">testDownClass</span>
-                <span class="method-start">93667 ms</span>
+                <span class="method-start">84838 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">93668 ms</span>
+                <span class="method-start">84839 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

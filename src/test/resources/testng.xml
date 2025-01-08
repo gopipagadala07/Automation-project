@@ -33,7 +33,7 @@
 		</classes>
 	</test>
   
-<!-- <test name="Test3">
+ <test name="Test3">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="PortfolioCenterRunner.SISprovisioningRunner"></class>
@@ -45,5 +45,5 @@
 			<class name="PortfolioCenterRunner.MultiScoringSubmissionRuner"></class>
 			<class name="PortfolioCenterRunner.DeletePortfolioCourseRunner"></class>
 		</classes>
-	</test>-->
+	</test>
 </suite> <!-- Suite -->

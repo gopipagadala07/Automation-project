@@ -243,8 +243,17 @@ public class QuizCreationPages extends ActionType{
 					} else {
 					    System.out.println("No <path> elements found for the selected <svg>.");
 					}
-					WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(importBadge));
-					importBadgeBtn.click();
+					for (int badgeRetry = 0; badgeRetry < 1; badgeRetry++) {
+						try {
+							WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge']")));
+							js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
+							js.executeScript("arguments[0].click();", importBadgeBtn);
+							break;
+						} catch (TimeoutException e) {
+							StaticWait(1);
+						}
+					}
+
 					driver.switchTo().defaultContent();
 					StaticWait(1);
 					cp.Save();
