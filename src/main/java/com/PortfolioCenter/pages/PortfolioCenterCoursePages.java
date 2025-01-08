@@ -276,14 +276,36 @@ public class PortfolioCenterCoursePages extends ActionType{
 		String Lname = testdata.get(LastName).get("LastName");
 		//System.out.println(User);
 		StaticWait(1);
-		cp.searchField1(Lname);
-		Actions act = new Actions(driver);
-		act.moveToElement(Addicon(Lname+" "+Fname)).perform();
-		StaticWait(1);
-		act.click().perform();
+		retrySearchUserName(Lname, 5, Fname);
+//		cp.searchField1(Lname);
+//		Actions act = new Actions(driver);
+//		act.moveToElement(Addicon(Lname+" "+Fname)).perform();
+//		StaticWait(1);
+//		act.click().perform();
 
 	}
 
+	public void retrySearchUserName(String Lname, int retryCount, String Fname) {
+		int attempts = 0;
+		boolean isSuccessful = false;
+		while (attempts < retryCount && !isSuccessful) {
+			try {
+				cp.searchField1(Lname);
+				wait.visibilityOf(Addicon(Lname+" "+Fname));
+				JavascriptExecutor jc = (JavascriptExecutor) driver;
+				jc.executeScript("arguments[0].click();", Addicon(Lname+" "+Fname));
+				isSuccessful = true;
+				break;
+			} catch (Exception e) {
+				attempts++;
+				System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+				if (attempts >= retryCount) {
+					throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
+				}
+			}
+		}
+	}
+	
 	public void assign_the_user_to_the_assignment() {
 		wait.elementToBeClickable(closebtnElement);
 		for (int retry = 0; retry < 3; retry++) {
