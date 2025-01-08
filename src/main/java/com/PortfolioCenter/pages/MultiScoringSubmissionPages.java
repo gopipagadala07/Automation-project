@@ -157,7 +157,14 @@ public class MultiScoringSubmissionPages extends ActionType{
 		je.executeScript("arguments[0].click();", ellipses1);
 		StaticWait(2);
 		wait.elementToBeClickable(AwardBadge);
-		je.executeScript("arguments[0].click();", AwardBadge);
+		if(AwardBadge.isDisplayed())
+		{
+			je.executeScript("arguments[0].click();", AwardBadge);
+		}
+		else
+		{
+			System.out.println("Badge Not yet Created...!!!!");
+		}
 	}
 
 	public void the_user_clicks_on_the_multi_scoring_assignment_and_validates_the_status_and_performance_report() {

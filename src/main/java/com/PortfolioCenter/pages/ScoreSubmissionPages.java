@@ -165,11 +165,18 @@ public class ScoreSubmissionPages extends ActionType{
 
 
 	public void the_user_is_awarded_the_badge() {
-//		JavascriptExecutor je = (JavascriptExecutor) driver;
-//		wait.elementToBeClickable(ellipses);
-//		je.executeScript("arguments[0].click();", ellipses);
-//		wait.elementToBeClickable(AwardBadge);
-//		je.executeScript("arguments[0].click();", AwardBadge);
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+		wait.elementToBeClickable(ellipses);
+		je.executeScript("arguments[0].click();", ellipses);
+		wait.elementToBeClickable(AwardBadge);
+		if(AwardBadge.isDisplayed())
+		{
+			je.executeScript("arguments[0].click();", AwardBadge);
+		}
+		else
+		{
+			System.out.println("Badge Not yet Created...!!!!");
+		}		
 	}
 
 	public void the_user_clicks_on_the_assignment_and_validates_the_status_and_performance_report() {

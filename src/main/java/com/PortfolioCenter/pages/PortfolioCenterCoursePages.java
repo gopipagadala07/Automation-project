@@ -277,11 +277,6 @@ public class PortfolioCenterCoursePages extends ActionType{
 		//System.out.println(User);
 		StaticWait(1);
 		retrySearchUserName(Lname, 5, Fname);
-//		cp.searchField1(Lname);
-//		Actions act = new Actions(driver);
-//		act.moveToElement(Addicon(Lname+" "+Fname)).perform();
-//		StaticWait(1);
-//		act.click().perform();
 
 	}
 
