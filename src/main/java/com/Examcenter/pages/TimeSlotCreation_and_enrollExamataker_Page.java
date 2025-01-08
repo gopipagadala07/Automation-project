@@ -219,7 +219,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		if (CommonPages.currentHour < 12) {
 			String timeslotvalue = CommonPages.currentHour + ":" + CommonPages.formattedMin + "AM";
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-			WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field")));
+			WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/descendant::mat-select/descendant::div[3]")));
 			//System.out.println(timeslotvalue);
 			retryclickTimeslotLookup(5,TimeSlotLookup);
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
