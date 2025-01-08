@@ -88,7 +88,7 @@ public class ProctorEnrollePage extends ActionType{
 	
 	    long startTime = System.currentTimeMillis();
 	    try {
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 	        WebElement e = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='fw-bold']")));
 	        long endTime = System.currentTimeMillis();
 	        long timeTaken = endTime - startTime;

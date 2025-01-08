@@ -69,6 +69,7 @@ public class LoginPage extends ActionType{
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement cls = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='button']")));
         JavascriptExecutor js = (JavascriptExecutor) driver;
+        StaticWait(1);
     	js.executeScript("arguments[0].click();", cls);
 	}
 	public void loginbtn()
