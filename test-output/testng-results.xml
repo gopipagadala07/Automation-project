@@ -1,100 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="0" failed="1" skipped="0">
+<testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-08T09:12:21Z" name="Default suite" finished-at="2025-01-08T09:13:40Z" duration-ms="78734">
+  <suite started-at="2025-01-08T09:38:37Z" name="Default suite" finished-at="2025-01-08T09:39:58Z" duration-ms="80800">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7d1cfb8b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@386f0da3]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-01-08T09:12:21Z" name="Default test" finished-at="2025-01-08T09:13:40Z" duration-ms="78734">
-      <class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7d1cfb8b]" started-at="2025-01-08T14:42:21Z" name="setUpClass" finished-at="2025-01-08T14:42:22Z" duration-ms="851" status="PASS">
+    <test started-at="2025-01-08T09:38:37Z" name="Default test" finished-at="2025-01-08T09:39:58Z" duration-ms="80800">
+      <class name="ExamCenterRunners.Users_Creation_Runner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@386f0da3]" started-at="2025-01-08T15:08:37Z" name="setUpClass" finished-at="2025-01-08T15:08:38Z" duration-ms="972" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6338afe2]]>
+                <![CDATA[org.testng.TestRunner@25d23478]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7d1cfb8b]" started-at="2025-01-08T14:42:22Z" name="beforeclass" finished-at="2025-01-08T14:42:22Z" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@386f0da3]" started-at="2025-01-08T15:08:38Z" name="beforeclass" finished-at="2025-01-08T15:08:38Z" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeclass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7d1cfb8b]" started-at="2025-01-08T14:42:22Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-08T14:43:38Z" duration-ms="75673" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@386f0da3]" started-at="2025-01-08T15:08:38Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-08T15:09:56Z" duration-ms="78280" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Create a Time_Slot for the Examination"]]>
+                <![CDATA["Verify the Users Creation Functionality with valid Data"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot"]]>
+                <![CDATA["Checking the Create Users Functionality"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//mat-icon[text()='add']"}
-  (Session info: chrome=131.0.6778.205)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7462c97ef6552e7a82955be083996058, findElement {using=xpath, value=//mat-icon[text()='add']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64278}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64278/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7462c97ef6552e7a82955be083996058]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//mat-icon[text()='add']"}
-  (Session info: chrome=131.0.6778.205)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7462c97ef6552e7a82955be083996058, findElement {using=xpath, value=//mat-icon[text()='add']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64278}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64278/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7462c97ef6552e7a82955be083996058
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy29.click(Unknown Source)
-	at com.Examcenter.pages.TimeSlotCreation_and_enrollExamataker_Page.addExamtaker(TimeSlotCreation_and_enrollExamataker_Page.java:254)
-	at ExamCenterStepDefinitions.Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.user_add_the_examtaker_in_the_timeslot(Create_TimeSlot_and_Enroll_the_Examtaker_Stepdefination.java:150)
-	at ✽.User add the Examtaker in the Timeslot(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/ExamCenterFeatures/Create_TimeSlot_and_Enroll_the_ExamTaker.feature:24)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="testDownClass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7d1cfb8b]" started-at="2025-01-08T14:43:38Z" name="testDownClass" finished-at="2025-01-08T14:43:38Z" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDownClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner@7d1cfb8b]" started-at="2025-01-08T14:43:38Z" name="tearDownClass" finished-at="2025-01-08T14:43:40Z" duration-ms="2187" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@386f0da3]" started-at="2025-01-08T15:09:56Z" name="tearDownClass" finished-at="2025-01-08T15:09:58Z" duration-ms="1527" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
+        <test-method is-config="true" signature="Afterclass()[pri:0, instance:ExamCenterRunners.Users_Creation_Runner@386f0da3]" started-at="2025-01-08T15:09:56Z" name="Afterclass" finished-at="2025-01-08T15:09:56Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Afterclass -->
+      </class> <!-- ExamCenterRunners.Users_Creation_Runner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

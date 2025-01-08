@@ -78,6 +78,7 @@ public class All_User_CreationPage extends ActionType
 	public void Addnewbtn()
 	{
 		wait.elementToBeClickable(Addnewbtn);
+		boolean success=false;
 		for(int retry=0;retry<=3;retry++)
 		{
 			try {
@@ -85,15 +86,21 @@ public class All_User_CreationPage extends ActionType
 				JavascriptExecutor js=(JavascriptExecutor) driver;
 				js.executeScript("arguments[0].click();", Addnewbtn);
 				StaticWait(1);
+				success=true;
 				break;
 			} catch (StaleElementReferenceException e) {
 				retry++;
 				StaticWait(1);
 				System.out.println("StaleElementReferenceException. Retrying...");
+				break;
 			}catch (ElementClickInterceptedException e) {
 				retry++;
 				StaticWait(1);
 				System.out.println("StaleElementReferenceException. Retrying...");
+			}
+			if(!success)
+			{
+				System.out.println("StaleElementReferenceException. Exit...");
 			}
 		}
 	}

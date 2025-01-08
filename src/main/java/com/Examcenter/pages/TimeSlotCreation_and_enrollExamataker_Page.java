@@ -195,13 +195,12 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		StaticWait(2);
 	}
 	
-	public void retryclickTimeslotLookup(int retryCount) {
+	public void retryclickTimeslotLookup(int retryCount, WebElement TimeSlotLookup) {
 		int attempts = 0;
 		boolean isSuccessful = false;
 		while (attempts < retryCount && !isSuccessful) {
 			try {
-				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-				WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field")));
+				
 				Actions a=new Actions(driver);
 				a.moveToElement(TimeSlotLookup).perform();
 				a.click().build().perform();
@@ -221,8 +220,9 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		if (CommonPages.currentHour < 12) {
 			String timeslotvalue = CommonPages.currentHour + ":" + CommonPages.formattedMin + "AM";
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+			WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field")));
 			//System.out.println(timeslotvalue);
-			retryclickTimeslotLookup(5);
+			retryclickTimeslotLookup(5,TimeSlotLookup);
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
 		} else if (CommonPages.currentHour > 12) {
@@ -230,7 +230,9 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			//System.out.println(currentHour);
 			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-			retryclickTimeslotLookup(5);	
+			WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field")));
+			//System.out.println(timeslotvalue);
+			retryclickTimeslotLookup(5,TimeSlotLookup);
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
 		}
@@ -239,7 +241,9 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			//System.out.println(currentHour);
 			String timeslotvalue = currentHour + ":" + CommonPages.formattedMin + "PM";
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-			retryclickTimeslotLookup(5);
+			WebElement TimeSlotLookup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='time_slot_performance']/child::div[1]/child::mat-form-field")));
+			//System.out.println(timeslotvalue);
+			retryclickTimeslotLookup(5,TimeSlotLookup);
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
 			e.click();
 		}
