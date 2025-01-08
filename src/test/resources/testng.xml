@@ -45,7 +45,5 @@
 			<class name="PortfolioCenterRunner.MultiScoringSubmissionRuner"></class>
 			<class name="PortfolioCenterRunner.DeletePortfolioCourseRunner"></class>
 		</classes>
-	</test> 
-	Test 
-  -->
+	</test>-->
 </suite> <!-- Suite -->

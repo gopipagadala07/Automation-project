@@ -186,48 +186,92 @@ public class SISProvisioningPage extends ActionType{
 		}
 	}
 	public void ClassroomDropDownSearch() {
-		boolean success = false;
-		for (int retry = 0; retry < 3; retry++) {
+//		boolean success = false;
+//		for (int retry = 0; retry < 3; retry++) {
+//			try {
+//				StaticWait(1);
+//				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//				WebElement ClassroomDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='classroom']/descendant::mat-form-field/child::div")));
+//				StaticWait(1);
+//				cp.FPdropdown(ClassroomDown, ClassroomName);
+//				System.out.println(ClassroomName);
+//				success = true;
+//				break;
+//			} catch (StaleElementReferenceException e) {
+//				System.out.println("StaleElementReferenceException caught. Retrying... Attempt " + (retry + 1));
+//				try {
+//					Thread.sleep(1000);
+//				} catch (InterruptedException ie) {
+//					Thread.currentThread().interrupt();
+//				}
+//			}
+//		}
+//		if (!success) {
+//			System.out.println("Operation failed after 3 retries.");
+//		}
+		retryClassroomDropDownSearch(5);
+	}
+
+	public void retryClassroomDropDownSearch(int retryCount) {
+		int attempts = 0;
+		boolean isSuccessful = false;
+		while (attempts < retryCount && !isSuccessful) {
 			try {
-				StaticWait(1);
-				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-				WebElement ClassroomDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='classroom']/descendant::mat-form-field/child::div")));
-				StaticWait(1);
 				cp.FPdropdown(ClassroomDown, ClassroomName);
-				System.out.println(ClassroomName);
-				success = true;
+//				wait.visibilityOf(clickonAddSectionbutton(SectionName));
+//				JavascriptExecutor jc = (JavascriptExecutor) driver;
+//				jc.executeScript("arguments[0].click();", clickonAddSectionbutton(SectionName));
+				isSuccessful = true;
 				break;
-			} catch (StaleElementReferenceException e) {
-				System.out.println("StaleElementReferenceException caught. Retrying... Attempt " + (retry + 1));
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException ie) {
-					Thread.currentThread().interrupt();
+			} catch (Exception e) {
+				attempts++;
+				System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+				if (attempts >= retryCount) {
+					throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
 				}
 			}
 		}
-		if (!success) {
-			System.out.println("Operation failed after 3 retries.");
-		}
 	}
-
-	public void SectionDropDownSearch()
-	{
-		for(int retry=0;retry<3;retry++)
-		{
+	public void retrySectionDropDownSearch(int retryCount) {
+		int attempts = 0;
+		boolean isSuccessful = false;
+		while (attempts < retryCount && !isSuccessful) {
 			try {
-				StaticWait(1);
-				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-				WebElement SectionDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='section']/descendant::mat-form-field/child::div")));
-				wait.until(ExpectedConditions.elementToBeClickable(SectionDown));
-				StaticWait(1);
 				cp.FPdropdown(SectionDown, SectionName);
-				System.out.println(SectionName);
+//				wait.visibilityOf(clickonAddSectionbutton(SectionName));
+//				JavascriptExecutor jc = (JavascriptExecutor) driver;
+//				jc.executeScript("arguments[0].click();", clickonAddSectionbutton(SectionName));
+				isSuccessful = true;
 				break;
-			} catch (StaleElementReferenceException e) {
-				retry++;
+			} catch (Exception e) {
+				attempts++;
+				System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+				if (attempts >= retryCount) {
+					throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
+				}
 			}
 		}
+		}
+	
+	
+	public void SectionDropDownSearch()
+	{
+//		for(int retry=0;retry<3;retry++)
+//		{
+//			try {
+//				StaticWait(1);
+//				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//				WebElement SectionDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='section']/descendant::mat-form-field/child::div")));
+//				wait.until(ExpectedConditions.elementToBeClickable(SectionDown));
+//				StaticWait(1);
+//				cp.FPdropdown(SectionDown, SectionName);
+//				System.out.println(SectionName);
+//				break;
+//			} catch (StaleElementReferenceException e) {
+//				retry++;
+//			}
+//		}
+		retrySectionDropDownSearch(5);
 	}
 	public void SchoolDetails() throws Exception
 	{

@@ -237,7 +237,9 @@ public class PortfolioCenterCoursePages extends ActionType{
 		List<WebElement> pathElements = badgeSelection.get(randomBadge).findElements(By.xpath(".//*[name()='path']"));
 		if (!pathElements.isEmpty()) {
 		    int randomPathIndex = r.nextInt(pathElements.size());
-		    actions.moveToElement(pathElements.get(randomPathIndex)).click().build().perform();
+		    WebElement targetElement=pathElements.get(randomPathIndex);
+		    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", targetElement);
+		    actions.moveToElement(targetElement).click().build().perform();
 		} else {
 		    System.out.println("No <path> elements found for the selected <svg>.");
 		}

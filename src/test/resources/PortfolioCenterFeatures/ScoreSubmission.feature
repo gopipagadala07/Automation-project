@@ -1,3 +1,4 @@
+@PortfolioCenterGroup
 Feature: Verify the Score Submission Functionality at Admin side
 
   Scenario Outline: Verify the Score Submission Functionality at Admin side

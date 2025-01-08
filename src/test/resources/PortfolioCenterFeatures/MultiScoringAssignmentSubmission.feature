@@ -1,3 +1,4 @@
+@PortfolioCenterGroup
 Feature: Checking the Multi Scoring Portfolio Center Assignment Submission Functionality
 
 

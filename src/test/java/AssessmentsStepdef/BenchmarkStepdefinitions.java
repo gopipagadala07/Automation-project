@@ -127,7 +127,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	    bpages.clickOnSectionTab();
 	}
 
-	@Then("the user clicks on the Search Here field and enters the section name from row {int}")
+	@Then("the user clicks on the Search Here field and enters the section name from row and clicks on the Add {int}")
 	public void the_user_clicks_on_the_search_here_field_and_enters_the_section_name_from_row(int SectionName) throws Exception, IOException {
 		if (testdata == null) {
 	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
@@ -135,16 +135,6 @@ public class BenchmarkStepdefinitions extends ActionType{
 	    String secname = testdata.get(SectionName).get("Section Name");	
 	    bpages.SectionSearch(secname);
 	
-	}
-
-	@And("the user clicks on the Add button {int}")
-	public void the_user_clicks_on_the_add_button(int SectionName) throws Exception, IOException {
-		
-		if (testdata == null) {
-	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
-	    }
-	    String secname = testdata.get(SectionName).get("Section Name");	   
-	    bpages.clickOnAdd(secname);
 	}
 	
 	/*

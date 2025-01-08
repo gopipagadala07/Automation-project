@@ -1,3 +1,4 @@
+@PortfolioCenterGroup
 Feature: Checking the Multi Scoring Portfolio Center Score Submission at Admin side
 
   Scenario Outline: Verify the Multi Scoring Portfolio Center Score Submission at Admin side

@@ -229,19 +229,29 @@ public class BenchmarksPage extends ActionType {
 
 	public void SectionSearch(String SectionName)
 	{
-		StaticWait(2);
-		cp.searchField(SectionName);
+		StaticWait(1);
+		retrySearchForSectionName(SectionName,5);
 	}
 
-	public void clickOnAdd(String SectionName) {
-		wait.visibilityOf(clickonAddSectionbutton(SectionName));
-		StaticWait(1);
-		wait.elementToBeClickable(clickonAddSectionbutton(SectionName));
-		Actions a=new Actions(driver);
-		a.moveToElement(clickonAddSectionbutton(SectionName));
-		StaticWait(1);
-		a.click();
-		a.perform();
+	public void retrySearchForSectionName(String SectionName, int retryCount) {
+		int attempts = 0;
+		boolean isSuccessful = false;
+		while (attempts < retryCount && !isSuccessful) {
+			try {
+				cp.searchField(SectionName);
+				wait.visibilityOf(clickonAddSectionbutton(SectionName));
+				JavascriptExecutor jc = (JavascriptExecutor) driver;
+				jc.executeScript("arguments[0].click();", clickonAddSectionbutton(SectionName));
+				isSuccessful = true;
+				break;
+			} catch (Exception e) {
+				attempts++;
+				System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+				if (attempts >= retryCount) {
+					throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
+				}
+			}
+		}
 	}
 
 	/*

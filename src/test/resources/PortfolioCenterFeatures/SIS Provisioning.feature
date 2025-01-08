@@ -1,4 +1,4 @@
-@AssessmentCenterGroup
+@PortfolioCenterGroup
 Feature: Verify the SIS Provisioning Creation Functionality
 
   Scenario Outline: Checking the School, Classroom, Section Creation Functionality With valid Data

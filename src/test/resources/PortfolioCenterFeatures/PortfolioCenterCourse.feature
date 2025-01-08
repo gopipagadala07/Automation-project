@@ -1,3 +1,4 @@
+@PortfolioCenterGroup
 Feature: Checking the Portfolio Center Course Functionality
 
   Scenario Outline: Verifying the Portfolio Course Creation Functionality

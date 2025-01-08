@@ -1,3 +1,4 @@
+@PortfolioCenterGroup
 Feature: Checking the Multi Scoring Portfolio Center Course Functionality
 
   Scenario Outline: Verifying the Multi Scoring Portfolio Center Course Functionality

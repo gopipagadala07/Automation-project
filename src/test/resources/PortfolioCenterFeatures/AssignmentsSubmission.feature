@@ -1,3 +1,4 @@
+@PortfolioCenterGroup
 Feature: Checking the Assignment Submission Functionality 
 
   Scenario Outline: Verifying the Assignment Submission Functionality At student side

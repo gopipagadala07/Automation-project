@@ -21,8 +21,7 @@ Feature: Verify the Benchmarks functionality
     Then the user clicks on the Publish button
     And a confirmation popup appears, and the user clicks on the Yes button
     And the user clicks on the created benchmark and navigates to the Sections tab
-    Then the user clicks on the Search Here field and enters the section name from row <rownumber>
-    And the user clicks on the Add button <rownumber>
+    Then the user clicks on the Search Here field and enters the section name from row and clicks on the Add <rownumber>
 
     Examples: 
       | rownumber | rownumber1 |

@@ -87,20 +87,15 @@ public class ProctorEnrollePage extends ActionType{
 	public void printExamtakerName(String Examtaker) {
 	
 	    long startTime = System.currentTimeMillis();
-	    
 	    try {
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30)); // Adjust timeout as needed
-	        
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	        WebElement e = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='fw-bold']")));
 	        long endTime = System.currentTimeMillis();
-	        
 	        long timeTaken = endTime - startTime;
 	        System.out.println("Element became visible after: " + timeTaken + "ms");
 	        ExtentCucumberAdapter.addTestStepLog("Element became visible after: " + timeTaken + "ms");
-
 	        String s = e.getText();
 	        ExtentCucumberAdapter.addTestStepLog(s);
-
 	        if (s.equalsIgnoreCase(Examtaker)) {
 	            System.out.println("Test Analytics Previewed Successfully..!");
 	            ExtentCucumberAdapter.addTestStepLog("Test Analytics Previewed Successfully..!");
