@@ -194,7 +194,7 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		js.executeScript("arguments[0].click();", Enrolleetab);
 		StaticWait(2);
 	}
-	
+
 	public void retryclickTimeslotLookup(int retryCount, WebElement TimeSlotLookup) {
 		int attempts = 0;
 		boolean isSuccessful = false;
@@ -223,7 +223,16 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			//System.out.println(timeslotvalue);
 			retryclickTimeslotLookup(5,TimeSlotLookup);
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
-			e.click();
+			JavascriptExecutor js=(JavascriptExecutor) driver;
+			if(e.isDisplayed())
+			{
+				js.executeScript("arguments[0].click();", e);
+			}
+			else {
+				retryclickTimeslotLookup(5,TimeSlotLookup);
+				StaticWait(1);
+				js.executeScript("arguments[0].click();", e);
+			}
 		} else if (CommonPages.currentHour > 12) {
 			int currentHour = CommonPages.currentHour - 12;
 			//System.out.println(currentHour);
@@ -233,7 +242,16 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			//System.out.println(timeslotvalue);
 			retryclickTimeslotLookup(5,TimeSlotLookup);
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
-			e.click();
+			JavascriptExecutor js=(JavascriptExecutor) driver;
+			if(e.isDisplayed())
+			{
+				js.executeScript("arguments[0].click();", e);
+			}
+			else {
+				retryclickTimeslotLookup(5,TimeSlotLookup);
+				StaticWait(1);
+				js.executeScript("arguments[0].click();", e);
+			}
 		}
 		else if (CommonPages.currentHour == 12) {
 			int currentHour = CommonPages.currentHour;
@@ -244,7 +262,16 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 			//System.out.println(timeslotvalue);
 			retryclickTimeslotLookup(5,TimeSlotLookup);
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(timeslotselection(timeslotvalue))));
-			e.click();
+			JavascriptExecutor js=(JavascriptExecutor) driver;
+			if(e.isDisplayed())
+			{
+				js.executeScript("arguments[0].click();", e);
+			}
+			else {
+				retryclickTimeslotLookup(5,TimeSlotLookup);
+				StaticWait(1);
+				js.executeScript("arguments[0].click();", e);
+			}
 		}
 	}
 
