@@ -33,12 +33,21 @@ public class Student_Activity_Submit_pages extends ActionType {
 	@FindBy(how = How.XPATH,using = "//input[@type='search']")private WebElement SearchHere;
 	@FindBy(how = How.XPATH,using = "//span[@mattooltip='Learning']")private WebElement Learning;
 
+
 	@FindBy(how=How.XPATH,using="//div[text()=' All ']/parent::div")private WebElement All;
-	//	@FindBy(how=How.XPATH,using="//mat-icon[text()='launch']/parent::span")private List<WebElement> LaunchIcon;
+	@FindBy(how=How.XPATH,using="(//mat-icon[text()=' chevron_right '])[1]")private WebElement Topic;
+	@FindBy(how=How.XPATH,using="//mat-icon[text()=' chevron_right ']")private WebElement SubTopic;
+	@FindBy(how=How.XPATH,using="//a[text()='Courses']")private WebElement ScrollTop;
+	
+	@FindBy(how=How.XPATH,using="//div[text()='Assignment']")private WebElement Assignment_Tab;
+	@FindBy(how=How.XPATH,using="//div[text()='Discussion']")private WebElement Discussion_Tab;
+	@FindBy(how=How.XPATH,using="//div[text()='Discussion']")private WebElement Assessment_tab;
+
+	//@FindBy(how=How.XPATH,using="//mat-icon[text()='launch']/parent::span")private List<WebElement> LaunchIcon;
 
 	//Launching Discussion
 	@FindBy(how=How.XPATH,using="//span[text()=' New Post ']")private WebElement NewPost;
-	@FindBy(how=How.XPATH,using="//p[@data-placeholder='Type here']")private WebElement TypehereText;
+	@FindBy(how=How.XPATH,using="//div[@role='textbox']")private WebElement TypehereText;
 
 	@FindBy(how=How.XPATH,using="//span[text()=' Post ']")private WebElement Postbutton;
 	@FindBy(how=How.XPATH,using="//span[text()=' Reply ']")private WebElement Replybutton;
@@ -61,7 +70,8 @@ public class Student_Activity_Submit_pages extends ActionType {
 	@FindBy(how=How.XPATH,using="//mat-icon[text()='chevron_right']")private WebElement NextQ;
 	@FindBy(how=How.XPATH,using="//span[text()='Finish']")private WebElement Finish;
 	@FindBy(how=How.XPATH,using="//span[text()='Submit']")private WebElement Submit;
-
+	
+	
 
 
 	public Student_Activity_Submit_pages(WebDriver driver)
@@ -112,43 +122,68 @@ public class Student_Activity_Submit_pages extends ActionType {
 		StaticWait(2);
 		All.click();
 		StaticWait(2);
+		JavascriptExecutor s = (JavascriptExecutor) driver;
+		s.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
+		s.executeScript("arguments[0].scrollIntoView(true);", Topic);
+		s.executeScript("arguments[0].click();", Topic);
+		StaticWait(3);
+		s.executeScript("arguments[0].scrollIntoView(true);", SubTopic);
+		s.executeScript("arguments[0].click();", SubTopic);
+		StaticWait(1);
 	}
 
 
 	public void performActivities()
 	{
-		List<WebElement> LaunchIcon = driver.findElements(By.xpath("//mat-icon[text()='launch']"));
-		for (int i = 0; i < LaunchIcon.size(); i++) {
-			try {
-				  WebElement nextLaunchIcon = LaunchIcon.get(i); 
-				Actions Ac=new Actions(driver);
-				Ac.moveToElement(nextLaunchIcon).click().build().perform();
 
-				performDiscussionActivity(); 
-	     
-	      
-//	            LaunchIcon = driver.findElements(By.xpath("//mat-icon[text()='launch']"));
-//	            int i = 0;
-//				if (i + 1 < LaunchIcon.size()) {
-//	                WebElement nextLaunchIcon = LaunchIcon.get(i + 1); 
-//	                WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
-//	                wait1.until(ExpectedConditions.elementToBeClickable(nextLaunchIcon));
-//	                Ac.moveToElement(nextLaunchIcon).click().build().perform();
-//	            }
-
-				performAssignmentActivity();
-	            
-			} catch (Exception ex) {
-				System.out.println("Error clicking element: " + ex.getMessage());
-			}
-		}
-	}
-
-
+			JavascriptExecutor s = (JavascriptExecutor) driver;
+			
+		    List<WebElement> matIcons = driver.findElements(By.xpath("//mat-icon[text()='launch']"));
+		    System.out.println("Total Quizzes Found: " + matIcons.size());
+			 for (int targetIndex = 0; targetIndex < matIcons.size(); targetIndex++) {
+			        int retry = 0;
+			        int maxRetry = 5;
+			        while (retry < maxRetry) {
+			            	matIcons = driver.findElements(By.xpath("//mat-icon[text()='launch']"));
+			            	WebElement currentIcon = matIcons.get(targetIndex);
+			                StaticWait(1);
+			                int retries = 10;
+			        		while (retries > 0) {
+			        			try {
+			        				s.executeScript("arguments[0].scrollIntoView(true);", currentIcon);
+					                s.executeScript("arguments[0].click();", currentIcon);	
+			        				break;
+			        			} catch (StaleElementReferenceException e) {
+			        				
+			        				System.out.println("StaleElementReferenceException. Retrying...");
+			        				StaticWait(1);
+			        				retries--;
+			        			}	
+			        		}
+			                String Activity_Title = driver.findElement(By.xpath("//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div")).getText();
+			                System.out.println("Activity Titel: "+Activity_Title);
+			                StaticWait(2);			                
+							 if(Activity_Title.toLowerCase().contains("assignment".toLowerCase()))
+							{
+								performAssignmentActivity();
+							}
+							
+							 
+							 else if(Activity_Title.toLowerCase().contains("discussion".toLowerCase()))
+							{
+			                	performDiscussionActivity();
+							}
 	
+			                StaticWait(1);
+			                break;
+			        }
+			        if (retry == maxRetry) {
+			            System.out.println("Failed to process Activity icon at index: " + targetIndex + " after " + maxRetry + " retries.");
+			        }
+			    }
+	}
 	private void performDiscussionActivity() {
 		System.out.println("Performing Discussion activity...");
-		// Add logic to handle discussion activity
 		NewPost.click();
 		TypehereText.sendKeys(generateRandomString());
 		Postbutton.click();
@@ -156,30 +191,84 @@ public class Student_Activity_Submit_pages extends ActionType {
 		TypehereText.sendKeys(generateRandomString());
 		Postbutton.click();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		 js.executeScript("arguments[0].scrollIntoView(true);", SubmitDiscussion);
-	     js.executeScript("arguments[0].click();", SubmitDiscussion);
-		 js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
-	     js.executeScript("arguments[0].click();", CloseIcon); 
-	//	SubmitDiscussion.click();
+		js.executeScript("arguments[0].scrollIntoView(true);", SubmitDiscussion);
+		js.executeScript("arguments[0].click();", SubmitDiscussion);
+		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
+		js.executeScript("arguments[0].click();", CloseIcon); 
+		StaticWait(1);
 	}
 
 	public void performAssignmentActivity() {
 		System.out.println("Performing Assignment activity...");
-		// Add logic to handle assignment activity
+		StaticWait(2);
 		TypehereText.sendKeys(generateRandomString());
-		//SubmitAssignment.click();
+		StaticWait(2);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		 js.executeScript("arguments[0].scrollIntoView(true);", SubmitAssignment);
-	     js.executeScript("arguments[0].click();", SubmitAssignment);
-		 js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
-	     js.executeScript("arguments[0].click();", CloseIcon); 
-
+		wait.elementToBeClickable(SubmitAssignment);
+		js.executeScript("arguments[0].scrollIntoView(true);", SubmitAssignment);
+		js.executeScript("arguments[0].click();", SubmitAssignment);
+		wait.elementToBeClickable(CloseIcon);
+		js.executeScript("arguments[0].click();", CloseIcon); 
+		StaticWait(1);
 	}
-
 	public void performAssessmentActivity() {
 		System.out.println("Performing Assessment activity...");
 		// Add logic to handle assessment activity
-	}
+		    
+			driver.switchTo().frame(0);
+			StaticWait(2);
+			
+		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		    JavascriptExecutor js = (JavascriptExecutor) driver;
+		    WebElement beginTest = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Begin Test')]")));
+            js.executeScript("arguments[0].click();", beginTest);	 
+            StaticWait(2);
+
+		            // Handle quiz questions
+		            List<WebElement> questions = driver.findElements(By.xpath("//div[@id='navigationSideMenu']/ul/li/div/button"));
+		            int numberOfQuestions = questions.size();
+
+		            for (int i = 0; i < numberOfQuestions; i++) {
+		                WebElement question = driver.findElement(By.xpath("//*[contains(@responseidentifier, 'RESPONSE')]"));
+		                String tagName = question.getTagName();
+		                StaticWait(1);
+
+		                // Handle different question types
+		                if (tagName.equalsIgnoreCase("choiceinteraction")) {
+		                    WebElement choiceValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='mdc-radio'])[2]")));
+		                    new Actions(driver).moveToElement(choiceValue).click().perform();
+		                } else if (tagName.equalsIgnoreCase("extendedtextinteraction")) {
+		                    WebElement extendedValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='ck-placeholder']")));
+		                    extendedValue.sendKeys(generateRandomString());
+		                } else if (tagName.equalsIgnoreCase("textentryinteraction")) {
+		                    WebElement fillInTheBlankValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtEditorInteraction")));
+		                    fillInTheBlankValue.sendKeys(generateRandomString());
+		                }
+
+		                // Click the "Next" button
+		                WebElement nextBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@mattooltip='Next']")));
+		                js.executeScript("arguments[0].click();", nextBtn);
+		                StaticWait(2);
+		            }
+
+		            // Finish and submit the quiz
+		            WebElement finish = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Finish']")));
+		            js.executeScript("arguments[0].click();", finish);
+		            StaticWait(1);
+
+		            WebElement submit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Submit']")));
+		            js.executeScript("arguments[0].click();", submit);
+		            StaticWait(2);
+
+		            // Close the quiz
+		            driver.switchTo().defaultContent();
+		            WebElement closeAfterSubmit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-icon[@mattooltip='Close']")));
+		            js.executeScript("arguments[0].click();", closeAfterSubmit);
+		            StaticWait(1);
+
+		            System.out.println("Quiz completed successfully.");
+		        
+		        } 
 
 }
 

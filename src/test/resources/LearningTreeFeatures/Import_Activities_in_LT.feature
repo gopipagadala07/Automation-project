@@ -1,6 +1,5 @@
 Feature: Verify the import of Activities in LT
-  
-
+ 
   Scenario Outline: Import of Activities in LT
     Given User launch the application with Valid URL
     And User able to see all Fields
