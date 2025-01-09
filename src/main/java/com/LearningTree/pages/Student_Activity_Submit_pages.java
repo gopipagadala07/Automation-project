@@ -41,7 +41,10 @@ public class Student_Activity_Submit_pages extends ActionType {
 	
 	@FindBy(how=How.XPATH,using="//div[text()='Assignment']")private WebElement Assignment_Tab;
 	@FindBy(how=How.XPATH,using="//div[text()='Discussion']")private WebElement Discussion_Tab;
-	@FindBy(how=How.XPATH,using="//div[text()='Discussion']")private WebElement Assessment_tab;
+	@FindBy(how=How.XPATH,using="//div[text()='Assessment']")private WebElement Assessment_tab;
+	
+	@FindBy(how=How.XPATH,using="//div[text()='Notes']")private WebElement Notes_tab;
+
 
 	//@FindBy(how=How.XPATH,using="//mat-icon[text()='launch']/parent::span")private List<WebElement> LaunchIcon;
 
@@ -71,7 +74,10 @@ public class Student_Activity_Submit_pages extends ActionType {
 	@FindBy(how=How.XPATH,using="//span[text()='Finish']")private WebElement Finish;
 	@FindBy(how=How.XPATH,using="//span[text()='Submit']")private WebElement Submit;
 	
+	//Launching Resources
+	@FindBy(how=How.XPATH,using="//span[text()='Launch']")private WebElement Launchbutton;
 	
+
 
 
 	public Student_Activity_Submit_pages(WebDriver driver)
@@ -135,9 +141,8 @@ public class Student_Activity_Submit_pages extends ActionType {
 
 	public void performActivities()
 	{
-
 			JavascriptExecutor s = (JavascriptExecutor) driver;
-			
+
 		    List<WebElement> matIcons = driver.findElements(By.xpath("//mat-icon[text()='launch']"));
 		    System.out.println("Total Quizzes Found: " + matIcons.size());
 			 for (int targetIndex = 0; targetIndex < matIcons.size(); targetIndex++) {
@@ -161,19 +166,43 @@ public class Student_Activity_Submit_pages extends ActionType {
 			        			}	
 			        		}
 			                String Activity_Title = driver.findElement(By.xpath("//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div")).getText();
-			                System.out.println("Activity Titel: "+Activity_Title);
+			                System.out.println("Activity Title: "+Activity_Title);
 			                StaticWait(2);			                
 							 if(Activity_Title.toLowerCase().contains("assignment".toLowerCase()))
 							{
 								performAssignmentActivity();
 							}
 							
-							 
 							 else if(Activity_Title.toLowerCase().contains("discussion".toLowerCase()))
 							{
 			                	performDiscussionActivity();
 							}
-	
+							
+							 else if(Activity_Title.toLowerCase().contains("assessment".toLowerCase()))
+							{
+								 performAssessmentActivity();
+							}
+							 else if(Activity_Title.toLowerCase().contains("resources".toLowerCase()))
+								{
+									 performResourcesActivity();
+								}
+							 else if(Activity_Title.toLowerCase().contains("Content".toLowerCase()))
+								{
+									 performContentActivity();
+								}
+							 else if(Activity_Title.toLowerCase().contains("Epublication".toLowerCase()))
+								{
+									 performEpublicationActivity();
+								}
+							 else if(Activity_Title.toLowerCase().contains("ExternalTool".toLowerCase()))
+								{
+									 performExternalToolActivity();
+								}
+							 else if(Activity_Title.toLowerCase().contains("LTI_Content_Provider_Activity".toLowerCase()))
+								{
+									 performLTI_Content_Provider_Activity();
+								}
+						
 			                StaticWait(1);
 			                break;
 			        }
@@ -181,21 +210,6 @@ public class Student_Activity_Submit_pages extends ActionType {
 			            System.out.println("Failed to process Activity icon at index: " + targetIndex + " after " + maxRetry + " retries.");
 			        }
 			    }
-	}
-	private void performDiscussionActivity() {
-		System.out.println("Performing Discussion activity...");
-		NewPost.click();
-		TypehereText.sendKeys(generateRandomString());
-		Postbutton.click();
-		Replybutton.click();
-		TypehereText.sendKeys(generateRandomString());
-		Postbutton.click();
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", SubmitDiscussion);
-		js.executeScript("arguments[0].click();", SubmitDiscussion);
-		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
-		js.executeScript("arguments[0].click();", CloseIcon); 
-		StaticWait(1);
 	}
 
 	public void performAssignmentActivity() {
@@ -210,16 +224,37 @@ public class Student_Activity_Submit_pages extends ActionType {
 		wait.elementToBeClickable(CloseIcon);
 		js.executeScript("arguments[0].click();", CloseIcon); 
 		StaticWait(1);
+	    System.out.println("Assignment completed successfully.");
+	}
+	
+	public void performDiscussionActivity() {
+		System.out.println("Performing Discussion activity...");
+		StaticWait(1);
+		NewPost.click();
+		TypehereText.sendKeys(generateRandomString());
+		Postbutton.click();
+		Replybutton.click();
+		TypehereText.sendKeys(generateRandomString());
+		Postbutton.click();
+		StaticWait(1);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", SubmitDiscussion);
+		js.executeScript("arguments[0].click();", SubmitDiscussion);
+		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
+		js.executeScript("arguments[0].click();", CloseIcon); 
+		StaticWait(1);
+	    System.out.println("Discussion completed successfully.");
 	}
 	public void performAssessmentActivity() {
 		System.out.println("Performing Assessment activity...");
 		// Add logic to handle assessment activity
 		    
+		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		    JavascriptExecutor js = (JavascriptExecutor) driver;
+			
 			driver.switchTo().frame(0);
 			StaticWait(2);
 			
-		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		    JavascriptExecutor js = (JavascriptExecutor) driver;
 		    WebElement beginTest = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Begin Test')]")));
             js.executeScript("arguments[0].click();", beginTest);	 
             StaticWait(2);
@@ -265,10 +300,61 @@ public class Student_Activity_Submit_pages extends ActionType {
 		            WebElement closeAfterSubmit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-icon[@mattooltip='Close']")));
 		            js.executeScript("arguments[0].click();", closeAfterSubmit);
 		            StaticWait(1);
+		            
+//		            js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
+//		    		js.executeScript("arguments[0].click();", CloseIcon); 
 
-		            System.out.println("Quiz completed successfully.");
+		            System.out.println("Assessment completed successfully.");
 		        
 		        } 
+	public void performResourcesActivity() {
+		System.out.println("Performing Resources activity...");	
+		StaticWait(2);
+		//Launchbutton.click();	
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
+		js.executeScript("arguments[0].click();", CloseIcon); 
+	}
+	public void performContentActivity() {
+		System.out.println("Performing Content activity...");	
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
+		js.executeScript("arguments[0].click();", CloseIcon); 
+	
+	}
+	public void performExternalToolActivity() {
+		System.out.println("Performing ExternalTool activity...");	
+		
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
+		js.executeScript("arguments[0].click();", CloseIcon); 
+	
+	
+	}
+	
+	public void performLTI_Content_Provider_Activity() {
+		System.out.println("Performing LTI_Content_Provider_Activity...");	
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
+		js.executeScript("arguments[0].click();", CloseIcon); 
+	
+	}
+	
+	
+	public void performEpublicationActivity() {
+		System.out.println("Performing Epublication activity...");	
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
+		js.executeScript("arguments[0].click();", CloseIcon); 
+	
+	
+	}
+		    
 
 }
 

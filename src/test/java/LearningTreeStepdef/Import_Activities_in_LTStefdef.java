@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import com.LearningTree.pages.Import_Activities_in_LT;
+import com.LearningTree.pages.Import_Activities_in_LTPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.ExcelReader;
@@ -20,7 +20,7 @@ public class Import_Activities_in_LTStefdef extends ActionType
 	
 	ExcelReader reader=new ExcelReader();
 	static List<Map<String, String>> testdata=null;
-	private Import_Activities_in_LT ILT=new Import_Activities_in_LT(Base.getDriver());
+	private Import_Activities_in_LTPage ILT=new Import_Activities_in_LTPage(Base.getDriver());
 	
 	@And("User Click Courses in Left menu")
 	public void user_click_courses_in_left_menu() {
@@ -73,9 +73,24 @@ public class Import_Activities_in_LTStefdef extends ActionType
 		ILT.learningTab();
 	}
 
-	@Then("User Publish and Activate all Activity")
+	@Then("User Publish and Activate all the Activities")
 	public void user_publish_and_activate_all_activity() {
 		ILT.publish_And_Activate();
 		
+	}
+	@And("User go to Member Tab")
+	public void user_go_to_member_tab() {
+		ILT.click_on_Members_Tab();
+
+	}
+	@Then("User Search and added the Student in the Course{int}")
+	public void User_Search_and_added_the_Student_in_the_Course(int row) throws InvalidFormatException, IOException {
+		if(testdata==null)
+		{
+			testdata=reader.getData("/ExcelFiles/LearningTree.xlsx",getSheetEnv());
+		}
+		String LastName=testdata.get(row).get("LastName");
+		ILT.add_Student_in_Member(LastName);
+
 	}
 }
