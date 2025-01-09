@@ -276,11 +276,13 @@ public class PortfolioCenterCoursePages extends ActionType{
         } catch (Exception e) {
             e.printStackTrace();
         } 
-		for (int badgeRetry = 0; badgeRetry < 1; badgeRetry++) {
+		for (int badgeRetry = 0; badgeRetry < 5; badgeRetry++) {
 			try {
 				WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge']")));
-				js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
-				js.executeScript("arguments[0].click();", importBadgeBtn);
+				Actions a=new Actions(driver);
+				a.moveToElement(importBadgeBtn).build().perform();
+				a.click().build().perform();
+				//js.executeScript("arguments[0].click();", importBadgeBtn);
 				System.out.println("import badge button clicked...!!!");
 				break;
 			} catch (TimeoutException e) {
