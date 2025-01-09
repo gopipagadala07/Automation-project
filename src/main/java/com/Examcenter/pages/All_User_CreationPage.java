@@ -79,12 +79,14 @@ public class All_User_CreationPage extends ActionType
 	{
 		wait.elementToBeClickable(Addnewbtn);
 		boolean success=false;
-		for(int retry=0;retry<=3;retry++)
+		for(int retry=0;retry<=5;retry++)
 		{
 			try {
+				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=' Add New ']")));
 				StaticWait(2);
 				JavascriptExecutor js=(JavascriptExecutor) driver;
-				js.executeScript("arguments[0].click();", Addnewbtn);
+				js.executeScript("arguments[0].click();", e);
 				StaticWait(1);
 				success=true;
 				break;

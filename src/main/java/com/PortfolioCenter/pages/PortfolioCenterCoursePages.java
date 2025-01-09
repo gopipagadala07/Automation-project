@@ -248,11 +248,12 @@ public class PortfolioCenterCoursePages extends ActionType{
                 while (!badgeAdded && retryCount < 3) { 
                     try {
                         actions.click(targetElement).build().perform();
+                        System.out.println("Badge Element Clicked...!!!");
                         StaticWait(1);
 
                         WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
                         if (alertBadge.isDisplayed()) {
-                            System.out.println("Badge added!");
+                            System.out.println("Badge added...!");
                             badgeAdded = true;
                         } else {
                             System.out.println("Alert badge not displayed, retrying...");
@@ -280,8 +281,10 @@ public class PortfolioCenterCoursePages extends ActionType{
 				WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge']")));
 				js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
 				js.executeScript("arguments[0].click();", importBadgeBtn);
+				System.out.println("import badge button clicked...!!!");
 				break;
 			} catch (TimeoutException e) {
+				badgeRetry++;
 				StaticWait(1);
 			}
 		}
