@@ -11,6 +11,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -59,6 +60,7 @@ public class QuizCreationPages extends ActionType{
 	@FindBy(how = How.XPATH,using = "//span[text()='Progress']")private WebElement progressbtn;
 	@FindBy(how = How.XPATH,using = "//b[contains(text(),'Due Date')]/parent::div/following-sibling::div/child::mat-slide-toggle/child::label")private WebElement Activatetoggle;
 	@FindBy(how = How.XPATH,using = "//mat-icon[text()='close']")private WebElement closeicon;
+	@FindBy(how = How.XPATH,using = "//*[local-name()='svg' and @selection='true']")private WebElement alertBadge;
 
 	public WebElement getCommunityNameElement(String ClassroomName) {
 		String xpath = "//span[(text()='"+ClassroomName+"')]/parent::div/parent::mat-card-content/preceding-sibling::mat-card-header/child::div/mat-card-title/child::span";
@@ -231,18 +233,48 @@ public class QuizCreationPages extends ActionType{
 					StaticWait(1);
 					driver.switchTo().frame(0);
 					StaticWait(1);
-					List<WebElement> badgeSelection = driver.findElements(By.xpath("//*[local-name()='svg' and @class='ng-scope']"));
-					Random r = new Random();
-					int randomBadge = r.nextInt(Math.min(badgeSelection.size(), 100));
-					List<WebElement> pathElements = badgeSelection.get(randomBadge).findElements(By.xpath(".//*[name()='path']"));
-					if (!pathElements.isEmpty()) {
-					    int randomPathIndex = r.nextInt(pathElements.size());
-					    WebElement targetElement=pathElements.get(randomPathIndex);
-					    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", targetElement);
-					    actions.moveToElement(targetElement).click().build().perform();
-					} else {
-					    System.out.println("No <path> elements found for the selected <svg>.");
-					}
+					try {
+						List<WebElement> badgeSelection = driver.findElements(By.xpath("//*[local-name()='svg' and @class='ng-scope']"));
+						Random r = new Random();
+						int randomBadge = r.nextInt(Math.min(badgeSelection.size(), 75));
+						List<WebElement> pathElements = badgeSelection.get(randomBadge).findElements(By.xpath(".//*[name()='path']"));
+						if (!pathElements.isEmpty()) {
+							int randomPathIndex = r.nextInt(pathElements.size());
+							WebElement targetElement = pathElements.get(randomPathIndex);
+							js.executeScript("arguments[0].scrollIntoView(true);", targetElement);
+							actions.moveToElement(targetElement).build().perform();
+							boolean badgeAdded = false;
+							int retryCount = 0;
+
+							while (!badgeAdded && retryCount < 3) { 
+								try {
+									actions.click(targetElement).build().perform();
+									StaticWait(1);
+									WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
+									if (alertBadge.isDisplayed()) {
+										System.out.println("Badge added!");
+										badgeAdded = true;
+									} else {
+										System.out.println("Alert badge not displayed, retrying...");
+									}
+								} catch (MoveTargetOutOfBoundsException e) {
+									System.out.println("Target element out of bounds. Retrying...");
+									actions.moveToElement(targetElement).build().perform();
+								} catch (Exception e) {
+									System.out.println("Unexpected error: " + e.getMessage());
+								}
+								retryCount++;
+							}
+
+							if (!badgeAdded) {
+								System.out.println("Failed to add badge after retries.");
+							}
+						} else {
+							System.out.println("No <path> elements found for the selected <svg>.");
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+					} 
 					for (int badgeRetry = 0; badgeRetry < 1; badgeRetry++) {
 						try {
 							WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge']")));
