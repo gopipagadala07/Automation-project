@@ -283,7 +283,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 		StaticWait(2);
 		for (int badgeRetry = 0; badgeRetry < 1; badgeRetry++) {
 			try {
-				WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge']")));
+				WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='button info']")));
 				js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
 				System.out.println("importBadgeBtn need to click...!!!");
 				js.executeScript("arguments[0].click();", importBadgeBtn);
