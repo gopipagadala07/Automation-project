@@ -274,25 +274,26 @@ public class PortfolioCenterCoursePages extends ActionType{
 						System.out.println("No <path> elements found for the selected <svg>.");
 					}
 					WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-					int retry=0;
+int retry=0;
 					int maxretry=5;
 					boolean success=false;
 					while(retry<maxretry && !success)
 					{
 						try {
-							WebElement importBadgeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Import Badge']")));
+							StaticWait(2);
+							WebElement importBadgeBtn = driver.findElement(By.xpath("//button[@ng-click='$ctrl.downloadPNG()']"));
+							wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@ng-click='$ctrl.downloadPNG()']")));
 							js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
 							System.out.println("importBadgeBtn ready to click...!!!");
 							File screenshotsFolder = new File("screenshots");
 							clearOrCreateFolder(screenshotsFolder);
 							takeScreenshot(driver, "Before_Click",screenshotsFolder);
-
 							actions.moveToElement(importBadgeBtn).build().perform();
 							StaticWait(2);
 							actions.click(importBadgeBtn).build().perform();
 							System.out.println("importBadgeBtn clicked...!!!");
-                            StaticWait(1);
-		                    js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
+							StaticWait(1);
+							js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
 							takeScreenshot(driver, "After_Click",screenshotsFolder);
 							driver.switchTo().defaultContent();
 							success=true;
@@ -305,10 +306,6 @@ public class PortfolioCenterCoursePages extends ActionType{
 					}
 				}
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	public void the_user_added_the_badge() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
