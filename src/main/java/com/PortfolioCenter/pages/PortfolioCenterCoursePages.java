@@ -274,36 +274,59 @@ public class PortfolioCenterCoursePages extends ActionType{
 						System.out.println("No <path> elements found for the selected <svg>.");
 					}
 					WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-					int retry=0;
-					int maxretry=5;
-					boolean success=false;
-					while(retry<maxretry && !success)
-					{
-						try {
-							WebElement importBadgeBtn = driver.findElement(By.xpath("//button[text()='Import Badge']"));
-							wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Import Badge']")));
-							js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
-							System.out.println("importBadgeBtn ready to click...!!!");
-							File screenshotsFolder = new File("screenshots");
-							clearOrCreateFolder(screenshotsFolder);
-							takeScreenshot(driver, "Before_Click",screenshotsFolder);
+					int retry = 0;
+					int maxRetry = 5;
+					boolean success = false;
 
-							actions.moveToElement(importBadgeBtn).build().perform();
-							StaticWait(2);
-							actions.click(importBadgeBtn).build().perform();
-							System.out.println("importBadgeBtn clicked...!!!");
-							StaticWait(1);
-							js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
-							takeScreenshot(driver, "After_Click",screenshotsFolder);
-							driver.switchTo().defaultContent();
-							success=true;
-							break;
-						} catch (TimeoutException e) {
-							retry++;
-							e.printStackTrace();
-							break;
-						}
+					while (retry < maxRetry && !success) {
+					    try {
+					        StaticWait(2);
+
+					        // Locate the button element
+					        WebElement importBadgeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(
+					            By.xpath("//button[@ng-click='$ctrl.downloadPNG()']")
+					        ));
+
+					        // Scroll to the button
+					        js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
+					        System.out.println("importBadgeBtn ready to click...!!!");
+
+					        // Ensure the button is interactable
+					        if (!importBadgeBtn.isEnabled() || !importBadgeBtn.isDisplayed()) {
+					            throw new IllegalStateException("Button is not interactable.");
+					        }
+
+					        // Prepare screenshot folder
+					        File screenshotsFolder = new File("screenshots");
+					        clearOrCreateFolder(screenshotsFolder);
+					        takeScreenshot(driver, "Before_Click", screenshotsFolder);
+
+					        // Perform the click action
+					        actions.moveToElement(importBadgeBtn).click().build().perform();
+					        System.out.println("importBadgeBtn clicked...!!!");
+
+					        // Post-click actions
+					        StaticWait(1);
+					        js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
+					        takeScreenshot(driver, "After_Click", screenshotsFolder);
+
+					        driver.switchTo().defaultContent();
+					        success = true;
+					    } catch (TimeoutException e) {
+					        retry++;
+					        System.err.println("Retry " + retry + " due to TimeoutException.");
+					        e.printStackTrace();
+					    } catch (Exception e) {
+					        retry++;
+					        System.err.println("Retry " + retry + " due to an exception.");
+					        e.printStackTrace();
+					    }
 					}
+
+					if (!success) {
+					    throw new RuntimeException("Failed to click the import badge button after " + maxRetry + " retries.");
+					}
+
 				}
 			}
 		} catch (Exception e) {
