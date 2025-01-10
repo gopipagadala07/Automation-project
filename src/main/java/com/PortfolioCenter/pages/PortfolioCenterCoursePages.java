@@ -266,7 +266,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 						System.out.println("Unexpected error: " + e.getMessage());
 					}
 					retryCount++;
-					
+
 					if (!badgeAdded) {
 						System.out.println("Failed to add badge after retries.");
 					}
@@ -274,9 +274,13 @@ public class PortfolioCenterCoursePages extends ActionType{
 						System.out.println("No <path> elements found for the selected <svg>.");
 					}
 					WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-					for (int badgeRetry = 0; badgeRetry < 5; badgeRetry++) {
+					int retry=0;
+					int maxretry=5;
+					boolean success=false;
+					while(retry<maxretry && !success)
+					{
 						try {
-							WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='button info']")));
+							WebElement importBadgeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Import Badge']")));
 							js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
 							System.out.println("importBadgeBtn ready to click...!!!");
 							File screenshotsFolder = new File("screenshots");
@@ -284,21 +288,18 @@ public class PortfolioCenterCoursePages extends ActionType{
 							takeScreenshot(driver, "Before_Click",screenshotsFolder);
 
 							actions.moveToElement(importBadgeBtn).build().perform();
-							actions.click().build().perform();
+							StaticWait(2);
+							actions.click(importBadgeBtn).build().perform();
 							System.out.println("importBadgeBtn clicked...!!!");
 
 							takeScreenshot(driver, "After_Click",screenshotsFolder);
 							driver.switchTo().defaultContent();
+							success=true;
 							break;
 						} catch (TimeoutException e) {
-							badgeRetry++;
-							if(badgeRetry==5)
-							{
-								WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge' and @class='button info']")));
-								js.executeScript("arguments[0].click();;", importBadgeBtn);
-								break;
-							}
+							retry++;
 							e.printStackTrace();
+							break;
 						}
 					}
 				}
