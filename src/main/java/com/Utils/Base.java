@@ -48,7 +48,7 @@ public class Base {
 			ChromeOptions options=new ChromeOptions();
      		options.addArguments("--headless");
 			options.addArguments("--remote-allow-origins=*");
-			tlDriver.set(new ChromeDriver(options));
+			tlDriver.set(new ChromeDriver());
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());

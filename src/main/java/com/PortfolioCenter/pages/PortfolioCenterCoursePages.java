@@ -249,7 +249,6 @@ public class PortfolioCenterCoursePages extends ActionType{
 				while (!badgeAdded && retryCount < 3) { 
 					try {
 						actions.click(targetElement).build().perform();
-						System.out.println("Badge Element Clicked...!!!");
 						StaticWait(1);
 
 						WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
@@ -277,15 +276,9 @@ public class PortfolioCenterCoursePages extends ActionType{
 							WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 							WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='button info']")));
 							js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
-							System.out.println("importBadgeBtn ready to click...!!!");
-							File screenshotsFolder = new File("screenshots");
-							clearOrCreateFolder(screenshotsFolder);
 							StaticWait(1);
-							takeScreenshot(driver, "Before_Click",screenshotsFolder);
 							js.executeScript("arguments[0].click();", importBadgeBtn);
 							StaticWait(1);
-							System.out.println("importBadgeBtn clicked...!!!");
-							takeScreenshot(driver, "After_Click",screenshotsFolder);
 							driver.switchTo().defaultContent();
 							break;
 						} catch (Exception e) {
