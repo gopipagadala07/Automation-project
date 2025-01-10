@@ -2,30 +2,30 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-10T07:52:55Z" name="Default suite" finished-at="2025-01-10T07:54:25Z" duration-ms="90336">
+  <suite started-at="2025-01-10T09:12:48Z" name="Default suite" finished-at="2025-01-10T09:14:11Z" duration-ms="82191">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@63787180]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@386f0da3]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-01-10T07:52:55Z" name="Default test" finished-at="2025-01-10T07:54:25Z" duration-ms="90336">
+    <test started-at="2025-01-10T09:12:48Z" name="Default test" finished-at="2025-01-10T09:14:11Z" duration-ms="82191">
       <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@63787180]" started-at="2025-01-10T13:22:55Z" name="setUpClass" finished-at="2025-01-10T13:22:56Z" duration-ms="842" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@386f0da3]" started-at="2025-01-10T14:42:48Z" name="setUpClass" finished-at="2025-01-10T14:42:50Z" duration-ms="1148" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@65e92505]]>
+                <![CDATA[org.testng.TestRunner@782dc5]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@63787180]" started-at="2025-01-10T13:22:56Z" name="beforeClass" finished-at="2025-01-10T13:22:56Z" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@386f0da3]" started-at="2025-01-10T14:42:50Z" name="beforeClass" finished-at="2025-01-10T14:42:50Z" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@63787180]" started-at="2025-01-10T13:22:56Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-10T13:24:24Z" duration-ms="87893" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@386f0da3]" started-at="2025-01-10T14:42:50Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-10T14:44:09Z" duration-ms="79280" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -41,11 +41,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@63787180]" started-at="2025-01-10T13:24:24Z" name="afterClass" finished-at="2025-01-10T13:24:24Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@386f0da3]" started-at="2025-01-10T14:44:09Z" name="afterClass" finished-at="2025-01-10T14:44:09Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@63787180]" started-at="2025-01-10T13:24:24Z" name="tearDownClass" finished-at="2025-01-10T13:24:25Z" duration-ms="1581" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@386f0da3]" started-at="2025-01-10T14:44:09Z" name="tearDownClass" finished-at="2025-01-10T14:44:11Z" duration-ms="1745" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
