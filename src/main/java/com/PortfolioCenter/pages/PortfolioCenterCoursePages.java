@@ -326,7 +326,6 @@ public class PortfolioCenterCoursePages extends ActionType{
 					if (!success) {
 					    throw new RuntimeException("Failed to click the import badge button after " + maxRetry + " retries.");
 					}
-
 				}
 			}
 		} catch (Exception e) {
