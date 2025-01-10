@@ -182,71 +182,96 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 		}
 	}
 
+	public void addBadge() {
+	    try {
+	        Actions actions = new Actions(driver);
+	        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+	        List<WebElement> badgeSelection = driver.findElements(By.xpath("//*[local-name()='svg' and @class='ng-scope']"));
+	        if (badgeSelection.isEmpty()) {
+	            System.out.println("No badges found to select.");
+	            return;
+	        }
+
+	        Random random = new Random();
+	        int randomBadgeIndex = random.nextInt(Math.min(badgeSelection.size(), 75));
+
+	        WebElement selectedBadge = badgeSelection.get(randomBadgeIndex);
+	        List<WebElement> pathElements = selectedBadge.findElements(By.xpath(".//*[name()='path']"));
+
+	        if (pathElements.isEmpty()) {
+	            System.out.println("No <path> elements found for the selected <svg>.");
+	            return;
+	        }
+
+	        int randomPathIndex = random.nextInt(pathElements.size());
+	        WebElement targetElement = pathElements.get(randomPathIndex);
+
+	        js.executeScript("arguments[0].scrollIntoView(true);", targetElement);
+	        actions.moveToElement(targetElement).build().perform();
+
+	        boolean badgeAdded = false;
+	        int retryCount = 0;
+
+	        // Retry clicking the badge up to 3 times
+	        while (!badgeAdded && retryCount < 3) {
+	            try {
+	                actions.click(targetElement).build().perform();
+	                StaticWait(1);
+
+	                WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
+	                if (alertBadge.isDisplayed()) {
+	                    System.out.println("Badge added successfully.");
+	                    badgeAdded = true;
+	                } else {
+	                    System.out.println("Alert badge not displayed, retrying...");
+	                }
+	            } catch (MoveTargetOutOfBoundsException e) {
+	                System.out.println("Target element out of bounds. Retrying...");
+	                actions.moveToElement(targetElement).build().perform();
+	            } catch (Exception e) {
+	                System.out.println("Unexpected error during badge addition: " + e.getMessage());
+	            }
+	            retryCount++;
+	        }
+
+	        if (!badgeAdded) {
+	            System.out.println("Failed to add badge after retries.");
+	            return;
+	        }
+
+	        // Retry importing the badge up to 5 times
+	        for (int badgeRetry = 0; badgeRetry < 5; badgeRetry++) {
+	            try {
+	                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	                WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='button info']")));
+
+	                js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
+	                StaticWait(1);
+	                js.executeScript("arguments[0].click();", importBadgeBtn);
+	                StaticWait(1);
+
+	                driver.switchTo().defaultContent();
+	                System.out.println("Badge imported successfully.");
+	                break;
+	            } catch (Exception e) {
+	                System.out.println("Error while importing badge: " + e.getMessage());
+	            }
+	        }
+	    } catch (Exception e) {
+	        System.out.println("Unexpected error in addBadge method: " + e.getMessage());
+	        e.printStackTrace();
+	    }
+	}
+	
 	public void the_user_added_the_badge_for_multi_scoring_portfolio_course() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		Actions actions = new Actions(driver);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		Badgetab.click();
 		js.executeScript("arguments[0].click();", AddnewBadgebtn);
 		StaticWait(1);
 		driver.switchTo().frame(0);
 		StaticWait(1);
-//		try {
-//            List<WebElement> badgeSelection = driver.findElements(By.xpath("//*[local-name()='svg' and @class='ng-scope']"));
-//            Random r = new Random();
-//            int randomBadge = r.nextInt(Math.min(badgeSelection.size(), 75));
-//            List<WebElement> pathElements = badgeSelection.get(randomBadge).findElements(By.xpath(".//*[name()='path']"));
-//            if (!pathElements.isEmpty()) {
-//                int randomPathIndex = r.nextInt(pathElements.size());
-//                WebElement targetElement = pathElements.get(randomPathIndex);
-//                js.executeScript("arguments[0].scrollIntoView(true);", targetElement);
-//                actions.moveToElement(targetElement).build().perform();
-//                boolean badgeAdded = false;
-//                int retryCount = 0;
-//                while (!badgeAdded && retryCount < 3) { 
-//                    try {
-//                        actions.click(targetElement).build().perform();
-//                        StaticWait(1);
-//
-//                        WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
-//                        if (alertBadge.isDisplayed()) {
-//                            System.out.println("Badge added!");
-//                            badgeAdded = true;
-//                        } else {
-//                            System.out.println("Alert badge not displayed, retrying...");
-//                        }
-//                    } catch (MoveTargetOutOfBoundsException e) {
-//                        System.out.println("Target element out of bounds. Retrying...");
-//                        actions.moveToElement(targetElement).build().perform();
-//                    } catch (Exception e) {
-//                        System.out.println("Unexpected error: " + e.getMessage());
-//                    }
-//                    retryCount++;
-//                }
-//
-//                if (!badgeAdded) {
-//                    System.out.println("Failed to add badge after retries.");
-//                }
-//            } else {
-//                System.out.println("No <path> elements found for the selected <svg>.");
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-		WebElement badgeSelectionElement = wait.until(ExpectedConditions.visibilityOf(BadgeSelection));
-		js.executeScript("arguments[0].scrollIntoView(true);", badgeSelectionElement);
-		actions.moveToElement(badgeSelectionElement).click().perform();
-		StaticWait(1);
-		for (int badgeRetry = 0; badgeRetry < 1; badgeRetry++) {
-			try {
-				WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Import Badge']")));
-				js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
-				js.executeScript("arguments[0].click();", importBadgeBtn);
-				break;
-			} catch (TimeoutException e) {
-				StaticWait(1);
-			}
-		}
-		driver.switchTo().defaultContent();
+		addBadge();
+		StaticWait(2);
 	}
 }
