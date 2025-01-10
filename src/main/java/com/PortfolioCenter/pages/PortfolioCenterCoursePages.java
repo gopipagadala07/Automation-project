@@ -280,7 +280,8 @@ public class PortfolioCenterCoursePages extends ActionType{
 					while(retry<maxretry && !success)
 					{
 						try {
-							WebElement importBadgeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Import Badge']")));
+							WebElement importBadgeBtn = driver.findElement(By.xpath("//button[text()='Import Badge']"));
+							wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Import Badge']")));
 							js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
 							System.out.println("importBadgeBtn ready to click...!!!");
 							File screenshotsFolder = new File("screenshots");
@@ -291,7 +292,8 @@ public class PortfolioCenterCoursePages extends ActionType{
 							StaticWait(2);
 							actions.click(importBadgeBtn).build().perform();
 							System.out.println("importBadgeBtn clicked...!!!");
-
+							StaticWait(1);
+							js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
 							takeScreenshot(driver, "After_Click",screenshotsFolder);
 							driver.switchTo().defaultContent();
 							success=true;
