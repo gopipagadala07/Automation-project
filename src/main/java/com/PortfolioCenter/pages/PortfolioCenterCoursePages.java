@@ -291,7 +291,8 @@ public class PortfolioCenterCoursePages extends ActionType{
 							StaticWait(2);
 							actions.click(importBadgeBtn).build().perform();
 							System.out.println("importBadgeBtn clicked...!!!");
-
+                            StaticWait(1);
+		                    js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
 							takeScreenshot(driver, "After_Click",screenshotsFolder);
 							driver.switchTo().defaultContent();
 							success=true;
