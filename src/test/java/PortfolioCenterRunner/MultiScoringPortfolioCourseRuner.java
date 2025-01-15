@@ -19,11 +19,11 @@ public class MultiScoringPortfolioCourseRuner extends AbstractTestNGCucumberTest
 	public void beforeClass(/*String browser*/)
 	{
 		TestcaseName=this.getClass().getSimpleName();
-		System.out.println("****************" + TestcaseName + "Test Start****************");
+		System.out.println("<---------------" + TestcaseName + " Test Start--------------->");
 	}
 	@AfterClass
 	public void afterClass()
 	{
-		System.out.println("****************"+TestcaseName+"****************");
+		System.out.println("<---------------" + TestcaseName + " Test End--------------->");
 	}
 }
