@@ -257,6 +257,8 @@ public class PortfolioCenterCoursePages extends ActionType{
 						actions.click(targetElement).build().perform();
 						System.out.println("Badge element clicked...!!!");
 						StaticWait(1);
+						WebElement closetab=driver.findElement(By.xpath("//a[@class='close-tab']"));
+						closetab.click();
 
 						WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
 						if (alertBadge.isDisplayed()) {
@@ -282,14 +284,14 @@ public class PortfolioCenterCoursePages extends ActionType{
 					try {
 						StaticWait(2);
 						WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-						WebElement importBadgeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(
-								By.xpath("//div[@class='cling']/child::svg-editor-export/child::button")
-								));
+						WebElement importBadgeBtn = driver.findElement(By.xpath("//div[@class='cling']/child::svg-editor-export/child::button"));
+						wait.until(ExpectedConditions.elementToBeClickable(importBadgeBtn));
 						js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
 						File screenshotsFolder = new File("screenshots");
 						clearOrCreateFolder(screenshotsFolder);
 						takeScreenshot(driver, "Before_Click", screenshotsFolder);
-						actions.moveToElement(importBadgeBtn).click().build().perform();
+						//actions.moveToElement(importBadgeBtn).click().build().perform();
+						js.executeScript("arguments[0].click();", importBadgeBtn);
 						System.out.println("importBadgeBtn clicked...!!!");
 						StaticWait(1);
 						js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
@@ -341,6 +343,9 @@ public class PortfolioCenterCoursePages extends ActionType{
 	}
 
 	public static void takeScreenshot(WebDriver driver, String fileName, File folder) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+	    jsExecutor.executeScript("window.scrollBy(arguments[0], 0);", 1000);
+	    
 		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		File destFile = new File(folder, fileName + ".png");
 
