@@ -2,17 +2,88 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="3" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <parameter name="browser" value="chrome"/>
-  <test name="Test3">
+  <test name="Test1">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="PortfolioCenterRunner.SISprovisioningRunner"/>
-      <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner"/>
-      <class name="PortfolioCenterRunner.AssignmentsSubmissionRunner"/>
-      <class name="PortfolioCenterRunner.ScoreSubmissionRunner"/>
-      <class name="PortfolioCenterRunner.MultiScoringPortfolioCourseRuner"/>
-      <class name="PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner"/>
-      <class name="PortfolioCenterRunner.MultiScoringSubmissionRuner"/>
-      <class name="PortfolioCenterRunner.DeletePortfolioCourseRunner"/>
+      <class name="ExamCenterRunners.Location_Runner"/>
+      <class name="ExamCenterRunners.Users_Creation_Runner"/>
+      <class name="ExamCenterRunners.Exam_Schedule_runner"/>
+      <class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner"/>
+      <class name="ExamCenterRunners.AssessmentSubmissionRunner"/>
+      <class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner"/>
+      <class name="ExamCenterRunners.Score_SubmissionRunner"/>
+      <class name="ExamCenterRunners.EnrolleRunner"/>
     </classes>
-  </test> <!-- Test3 -->
+  </test> <!-- Test1 -->
+  <test parallel="tests" name="Test1(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="ExamCenterRunners.AssessmentSubmissionRunner">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="afterClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- ExamCenterRunners.AssessmentSubmissionRunner -->
+      <class name="ExamCenterRunners.Users_Creation_Runner">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="beforeclass"/>
+          <include name="Afterclass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- ExamCenterRunners.Users_Creation_Runner -->
+      <class name="ExamCenterRunners.Exam_Schedule_runner">
+        <methods>
+          <include name="testDownClass"/>
+          <include name="beforeclass"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- ExamCenterRunners.Exam_Schedule_runner -->
+      <class name="ExamCenterRunners.Score_SubmissionRunner">
+        <methods>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="beforeclass"/>
+          <include name="Afterclass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- ExamCenterRunners.Score_SubmissionRunner -->
+      <class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner">
+        <methods>
+          <include name="beforeclass"/>
+          <include name="tearDownClass"/>
+          <include name="testDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner -->
+      <class name="ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner">
+        <methods>
+          <include name="testDownClass"/>
+          <include name="beforeclass"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- ExamCenterRunners.Create_Time_Slot_and_Enroll_the_ExamTakerRunner -->
+      <class name="ExamCenterRunners.EnrolleRunner">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="tearDownClass"/>
+          <include name="afterClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- ExamCenterRunners.EnrolleRunner -->
+      <class name="ExamCenterRunners.Location_Runner">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="testDownClass"/>
+          <include name="beforeclass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- ExamCenterRunners.Location_Runner -->
+    </classes>
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->
