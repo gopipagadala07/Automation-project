@@ -276,14 +276,14 @@ public class PortfolioCenterCoursePages extends ActionType{
 					throw new RuntimeException("Failed to add badge after " + retryCount + " retries.");
 				}
 
-				int maxRetry = 5;
+				int maxRetry = 10;
 				boolean success = false;
 				for (int retry = 0; retry < maxRetry && !success; retry++) {
 					try {
 						StaticWait(2);
 						WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 						WebElement importBadgeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(
-								By.xpath("//button[@ng-click='$ctrl.downloadPNG()']")
+								By.xpath("//div[@class='cling']/child::svg-editor-export/child::button")
 								));
 						js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
 						System.out.println("importBadgeBtn ready to click...!!!");
