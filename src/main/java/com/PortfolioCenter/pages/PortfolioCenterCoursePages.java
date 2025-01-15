@@ -255,14 +255,12 @@ public class PortfolioCenterCoursePages extends ActionType{
 				while (!badgeAdded && retryCount < 3) {
 					try {
 						actions.click(targetElement).build().perform();
-						System.out.println("Badge element clicked...!!!");
 						StaticWait(1);
 						WebElement closetab=driver.findElement(By.xpath("//a[@class='close-tab']"));
 						closetab.click();
-
 						WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
 						if (alertBadge.isDisplayed()) {
-							System.out.println("Badge successfully added!");
+							System.out.println("Badge successfully added..!!!");
 							badgeAdded = true;
 						} else {
 							System.out.println("Badge not displayed as added, retrying...");
@@ -287,15 +285,9 @@ public class PortfolioCenterCoursePages extends ActionType{
 						WebElement importBadgeBtn = driver.findElement(By.xpath("//div[@class='cling']/child::svg-editor-export/child::button"));
 						wait.until(ExpectedConditions.elementToBeClickable(importBadgeBtn));
 						js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
-						File screenshotsFolder = new File("screenshots");
-						clearOrCreateFolder(screenshotsFolder);
-						takeScreenshot(driver, "Before_Click", screenshotsFolder);
-						//actions.moveToElement(importBadgeBtn).click().build().perform();
 						js.executeScript("arguments[0].click();", importBadgeBtn);
-						System.out.println("importBadgeBtn clicked...!!!");
 						StaticWait(1);
-						js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
-						takeScreenshot(driver, "After_Click", screenshotsFolder);
+						driver.switchTo().defaultContent();
 						success = true;
 						break;
 					} catch (TimeoutException e) {
@@ -326,49 +318,37 @@ public class PortfolioCenterCoursePages extends ActionType{
 		driver.switchTo().frame(0);
 		StaticWait(1);
 		addBadge();
-		StaticWait(2);
-		
 	} 
-	public static void clearOrCreateFolder(File folder) {
-		try {
-			if (folder.exists()) {
-				FileUtils.cleanDirectory(folder);
-			} else {
-				folder.mkdirs();
-			}
-			//System.out.println("Screenshots folder is ready: " + folder.getAbsolutePath());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void takeScreenshot(WebDriver driver, String fileName, File folder) {
-		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-	    jsExecutor.executeScript("window.scrollBy(arguments[0], 0);", 1000);
-	    
-		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		File destFile = new File(folder, fileName + ".png");
-
-		try {
-			FileUtils.copyFile(srcFile, destFile);
-			System.out.println("Screenshot saved as: " + destFile.getAbsolutePath());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+//	public static void clearOrCreateFolder(File folder) {
+//		try {
+//			if (folder.exists()) {
+//				FileUtils.cleanDirectory(folder);
+//			} else {
+//				folder.mkdirs();
+//			}
+//			//System.out.println("Screenshots folder is ready: " + folder.getAbsolutePath());
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//	}
+//
+//	public static void takeScreenshot(WebDriver driver, String fileName, File folder) {
+//		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+//	    jsExecutor.executeScript("window.scrollBy(arguments[0], 0);", 1000);
+//	    
+//		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//		File destFile = new File(folder, fileName + ".png");
+//
+//		try {
+//			FileUtils.copyFile(srcFile, destFile);
+//			System.out.println("Screenshot saved as: " + destFile.getAbsolutePath());
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 	public void the_user_clicks_on_the_save_button() {
-//		if(!ConfirmBadge.isDisplayed())
-//		{
-//			js.executeScript("arguments[0].click();", AddnewBadgebtn);
-//			driver.switchTo().frame(0);
-//			StaticWait(1);
-//			addBadge();
-//		}
-//		else
-//		{
-//			System.out.println("Badge Already Added");
-//		}
+		StaticWait(1);
 		cp.Save();
 	}
 
