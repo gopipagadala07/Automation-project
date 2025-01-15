@@ -42,9 +42,9 @@ public class PortfolioCenterCourseStepdef extends ActionType{
 	     
 	}
 
-	@Then("the user enters the Assignment Name, Description, and selects Standards {int}")
-	public void the_user_enters_the_assignment_name_description_and_selects_standards(Integer Standards) throws Exception {
-		PortfolioCenterCourse.the_user_enters_the_assignment_name_description_and_selects_standards(Standards);
+	@Then("the user enters the Assignment Name, Description, and selects Standards")
+	public void the_user_enters_the_assignment_name_description_and_selects_standards() throws Exception {
+		PortfolioCenterCourse.the_user_enters_the_assignment_name_description_and_selects_standards();
 	     
 	}
 	

@@ -194,7 +194,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 		AddAssignmentElement.click();  
 	}
 
-	public void the_user_enters_the_assignment_name_description_and_selects_standards(Integer Standards) throws Exception {
+	public void the_user_enters_the_assignment_name_description_and_selects_standards() throws Exception {
 		StaticWait(1);
 		wait.elementToBeClickable(inputAssignmentNameElement);
 		inputAssignmentNameElement.click();
@@ -232,88 +232,88 @@ public class PortfolioCenterCoursePages extends ActionType{
 	}
 
 	public void addBadge() {
-		try {
-			Actions actions = new Actions(driver);
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			List<WebElement> badgeSelection = driver.findElements(By.xpath("//*[local-name()='svg' and @class='ng-scope']"));
-			if (badgeSelection.isEmpty()) {
-				throw new NoSuchElementException("No badges found for selection.");
-			}
+	    try {
+	        List<WebElement> badgeSelection = findBadges();
+	        WebElement selectedBadge = selectRandomBadge(badgeSelection);
+	        WebElement targetElement = selectRandomPath(selectedBadge);
 
-			Random r = new Random();
-			int randomBadgeIndex = r.nextInt(Math.min(badgeSelection.size(), 75));
-			WebElement selectedBadge = badgeSelection.get(randomBadgeIndex);
+	        if (tryAddingBadge(targetElement)) {
+	            clickImportBadgeButton();
+	        } else {
+	            throw new RuntimeException("Failed to add badge after retries.");
+	        }
+	    } catch (Exception e) {
+	        System.err.println("Error in addBadge: " + e.getMessage());
+	        e.printStackTrace();
+	    }
+	}
 
-			List<WebElement> pathElements = selectedBadge.findElements(By.xpath(".//*[name()='path']"));
-			if (!pathElements.isEmpty()) {
-				int randomPathIndex = r.nextInt(pathElements.size());
-				WebElement targetElement = pathElements.get(randomPathIndex);
-				js.executeScript("arguments[0].scrollIntoView(true);", targetElement);
-				actions.moveToElement(targetElement).build().perform();
-				boolean badgeAdded = false;
-				int retryCount = 0;
-				while (!badgeAdded && retryCount < 3) {
-					try {
-						actions.click(targetElement).build().perform();
-						System.out.println("Badge element clicked...!!!");
-						StaticWait(1);
+	private List<WebElement> findBadges() {
+	    List<WebElement> badgeSelection = driver.findElements(By.xpath("//*[local-name()='svg' and @class='ng-scope']"));
+	    if (badgeSelection.isEmpty()) {
+	        throw new NoSuchElementException("No badges found for selection.");
+	    }
+	    return badgeSelection;
+	}
 
-						WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
-						if (alertBadge.isDisplayed()) {
-							System.out.println("Badge successfully added!");
-							badgeAdded = true;
-						} else {
-							System.out.println("Badge not displayed as added, retrying...");
-						}
-					} catch (MoveTargetOutOfBoundsException e) {
-						System.out.println("Target element out of bounds. Retrying...");
-					} catch (Exception e) {
-						System.out.println("Unexpected error: " + e.getMessage());
-					}
-					retryCount++;
-				}
-				if (!badgeAdded) {
-					throw new RuntimeException("Failed to add badge after " + retryCount + " retries.");
-				}
+	private WebElement selectRandomBadge(List<WebElement> badgeSelection) {
+	    Random r = new Random();
+	    int randomBadgeIndex = r.nextInt(Math.min(badgeSelection.size(), 75));
+	    return badgeSelection.get(randomBadgeIndex);
+	}
 
-				int maxRetry = 10;
-				boolean success = false;
-				for (int retry = 0; retry < maxRetry && !success; retry++) {
-					try {
-						StaticWait(2);
-						WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-						WebElement importBadgeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(
-								By.xpath("//div[@class='cling']/child::svg-editor-export/child::button")
-								));
-						js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
-						File screenshotsFolder = new File("screenshots");
-						clearOrCreateFolder(screenshotsFolder);
-						takeScreenshot(driver, "Before_Click", screenshotsFolder);
-						actions.moveToElement(importBadgeBtn).click().build().perform();
-						System.out.println("importBadgeBtn clicked...!!!");
-						driver.switchTo().defaultContent();
-						StaticWait(1);
-						js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
-						takeScreenshot(driver, "After_Click", screenshotsFolder);
-						success = true;
-						break;
-					} catch (TimeoutException e) {
-						System.err.println("Retry due to TimeoutException.");
-						e.printStackTrace();
-					} catch (Exception e) {
-						System.err.println("Retry due to an exception: " + e.getMessage());
-						e.printStackTrace();
-					}
-				}
-				if (!success) {
-					throw new RuntimeException("Failed to click the import badge button after " + maxRetry + " retries.");
-				}
-			}
+	private WebElement selectRandomPath(WebElement selectedBadge) {
+	    List<WebElement> pathElements = selectedBadge.findElements(By.xpath(".//*[name()='path']"));
+	    if (pathElements.isEmpty()) {
+	        throw new NoSuchElementException("No path elements found within the badge.");
+	    }
+	    int randomPathIndex = new Random().nextInt(pathElements.size());
+	    return pathElements.get(randomPathIndex);
+	}
 
-		} catch (Exception e) {
-			System.err.println("Error in addBadge: " + e.getMessage());
-			e.printStackTrace();
-		}
+	private boolean tryAddingBadge(WebElement targetElement) {
+	    Actions actions = new Actions(driver);
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].scrollIntoView(true);", targetElement);
+	    actions.moveToElement(targetElement).build().perform();
+
+	    int retryCount = 0;
+	    while (retryCount < 5) {
+	        try {
+	            actions.click(targetElement).build().perform();
+	            return true; // Assuming some validation logic to confirm the badge is added.
+	        } catch (Exception e) {
+	            System.out.println("Retrying due to: " + e.getMessage());
+	            retryCount++;
+	        }
+	    }
+	    return false;
+	}
+
+	private void clickImportBadgeButton() {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    Actions actions = new Actions(driver);
+	    int retry = 0;
+
+	    while (retry < 5) {
+	        try {
+	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	            WebElement importBadgeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(
+	                By.xpath("//div[@class='cling']/child::svg-editor-export/child::button")));
+	            js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
+	            File screenshotsFolder = new File("screenshots");
+				clearOrCreateFolder(screenshotsFolder);
+	            takeScreenshot(driver, "Before_Click",screenshotsFolder);
+	            actions.moveToElement(importBadgeBtn).click().build().perform();
+	            takeScreenshot(driver, "After_Click",screenshotsFolder);
+	            driver.switchTo().defaultContent();
+	            return;
+	        } catch (Exception e) {
+	            System.out.println("Retrying click import button due to: " + e.getMessage());
+	            retry++;
+	        }
+	    }
+	    throw new RuntimeException("Failed to click the import badge button.");
 	}
 
 
@@ -326,7 +326,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 		StaticWait(1);
 		addBadge();
 		StaticWait(2);
-		
+
 	} 
 	public static void clearOrCreateFolder(File folder) {
 		try {
@@ -354,17 +354,17 @@ public class PortfolioCenterCoursePages extends ActionType{
 	}
 
 	public void the_user_clicks_on_the_save_button() {
-//		if(!ConfirmBadge.isDisplayed())
-//		{
-//			js.executeScript("arguments[0].click();", AddnewBadgebtn);
-//			driver.switchTo().frame(0);
-//			StaticWait(1);
-//			addBadge();
-//		}
-//		else
-//		{
-//			System.out.println("Badge Already Added");
-//		}
+		//		if(!ConfirmBadge.isDisplayed())
+		//		{
+		//			js.executeScript("arguments[0].click();", AddnewBadgebtn);
+		//			driver.switchTo().frame(0);
+		//			StaticWait(1);
+		//			addBadge();
+		//		}
+		//		else
+		//		{
+		//			System.out.println("Badge Already Added");
+		//		}
 		cp.Save();
 	}
 

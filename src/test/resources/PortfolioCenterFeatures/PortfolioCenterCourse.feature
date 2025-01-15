@@ -10,7 +10,7 @@ Feature: Checking the Portfolio Center Course Functionality
     And the user creates a Portfolio Course by entering the Title and Description
     Then the user searches for the specific course and clicks on it <rownumber1>
     And the user clicks on the Add Portfolio Assignment button
-    Then the user enters the Assignment Name, Description, and selects Standards <rownumber1>
+    Then the user enters the Assignment Name, Description, and selects Standards
     And the user added the Badge
     Then the user clicks on the Save button
     And the user navigates to the Members tab, searches for the username in the Search Here field using row <rownumber2>
