@@ -286,12 +286,12 @@ public class PortfolioCenterCoursePages extends ActionType{
 								By.xpath("//div[@class='cling']/child::svg-editor-export/child::button")
 								));
 						js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
-						System.out.println("importBadgeBtn ready to click...!!!");
 						File screenshotsFolder = new File("screenshots");
 						clearOrCreateFolder(screenshotsFolder);
 						takeScreenshot(driver, "Before_Click", screenshotsFolder);
 						actions.moveToElement(importBadgeBtn).click().build().perform();
 						System.out.println("importBadgeBtn clicked...!!!");
+						driver.switchTo().defaultContent();
 						StaticWait(1);
 						js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
 						takeScreenshot(driver, "After_Click", screenshotsFolder);
@@ -326,7 +326,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 		StaticWait(1);
 		addBadge();
 		StaticWait(2);
-
+		
 	} 
 	public static void clearOrCreateFolder(File folder) {
 		try {
