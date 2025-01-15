@@ -354,17 +354,17 @@ public class PortfolioCenterCoursePages extends ActionType{
 	}
 
 	public void the_user_clicks_on_the_save_button() {
-		if(!ConfirmBadge.isDisplayed())
-		{
-			js.executeScript("arguments[0].click();", AddnewBadgebtn);
-			driver.switchTo().frame(0);
-			StaticWait(1);
-			addBadge();
-		}
-		else
-		{
-			System.out.println("Badge Already Added");
-		}
+//		if(!ConfirmBadge.isDisplayed())
+//		{
+//			js.executeScript("arguments[0].click();", AddnewBadgebtn);
+//			driver.switchTo().frame(0);
+//			StaticWait(1);
+//			addBadge();
+//		}
+//		else
+//		{
+//			System.out.println("Badge Already Added");
+//		}
 		cp.Save();
 	}
 
