@@ -255,22 +255,22 @@ public class PortfolioCenterCoursePages extends ActionType{
 				while (!badgeAdded && retryCount < 3) {
 					try {
 						actions.click(targetElement).build().perform();
-						//						WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
-						//						if (alertBadge.isDisplayed()) {
-						//							System.out.println("Badge successfully added!");
-						//							badgeAdded = true;
-						//						} else {
-						//							System.out.println("Badge not displayed as added, retrying...");
-						//						}
-						break;
+						System.out.println("Badge element clicked...!!!");
+						StaticWait(1);
+
+						WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
+						if (alertBadge.isDisplayed()) {
+							System.out.println("Badge successfully added!");
+							badgeAdded = true;
+						} else {
+							System.out.println("Badge not displayed as added, retrying...");
+						}
 					} catch (MoveTargetOutOfBoundsException e) {
-						retryCount++;
 						System.out.println("Target element out of bounds. Retrying...");
-						break;
 					} catch (Exception e) {
 						System.out.println("Unexpected error: " + e.getMessage());
 					}
-
+					retryCount++;
 				}
 				if (!badgeAdded) {
 					throw new RuntimeException("Failed to add badge after " + retryCount + " retries.");
@@ -291,7 +291,6 @@ public class PortfolioCenterCoursePages extends ActionType{
 						takeScreenshot(driver, "Before_Click", screenshotsFolder);
 						actions.moveToElement(importBadgeBtn).click().build().perform();
 						System.out.println("importBadgeBtn clicked...!!!");
-						driver.switchTo().defaultContent();
 						StaticWait(1);
 						js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
 						takeScreenshot(driver, "After_Click", screenshotsFolder);
@@ -316,6 +315,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 		}
 	}
 
+
 	public void the_user_added_the_badge() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Badgetab.click();
@@ -325,7 +325,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 		StaticWait(1);
 		addBadge();
 		StaticWait(2);
-
+		
 	} 
 	public static void clearOrCreateFolder(File folder) {
 		try {
@@ -353,17 +353,17 @@ public class PortfolioCenterCoursePages extends ActionType{
 	}
 
 	public void the_user_clicks_on_the_save_button() {
-		//		if(!ConfirmBadge.isDisplayed())
-		//		{
-		//			js.executeScript("arguments[0].click();", AddnewBadgebtn);
-		//			driver.switchTo().frame(0);
-		//			StaticWait(1);
-		//			addBadge();
-		//		}
-		//		else
-		//		{
-		//			System.out.println("Badge Already Added");
-		//		}
+//		if(!ConfirmBadge.isDisplayed())
+//		{
+//			js.executeScript("arguments[0].click();", AddnewBadgebtn);
+//			driver.switchTo().frame(0);
+//			StaticWait(1);
+//			addBadge();
+//		}
+//		else
+//		{
+//			System.out.println("Badge Already Added");
+//		}
 		cp.Save();
 	}
 
