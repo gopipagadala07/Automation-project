@@ -6,6 +6,8 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="LearningTreeRunner.SISprovisioningRunner"/>
+			<class name="LearningTreeRunner.StudentActivitySubmission_Runner"/>
+			
 		</classes>
 	</test> <!--Test -->
 </suite> <!--

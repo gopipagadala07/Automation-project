@@ -2,6 +2,7 @@ package com.LearningTree.pages;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -42,10 +43,12 @@ public class Student_Activity_Submit_pages extends ActionType {
 	@FindBy(how=How.XPATH,using="//div[text()='Assignment']")private WebElement Assignment_Tab;
 	@FindBy(how=How.XPATH,using="//div[text()='Discussion']")private WebElement Discussion_Tab;
 	@FindBy(how=How.XPATH,using="//div[text()='Assessment']")private WebElement Assessment_tab;
+	@FindBy(how=How.XPATH,using="//div[text()='Resources']")private WebElement Resources_tab;
+	@FindBy(how=How.XPATH,using="//div[text()='Details']")private WebElement Details_tab;
+	@FindBy(how=How.XPATH,using="//div[text()='Content']")private WebElement Content_tab;
 	
 	@FindBy(how=How.XPATH,using="//div[text()='Notes']")private WebElement Notes_tab;
-
-
+	
 	//@FindBy(how=How.XPATH,using="//mat-icon[text()='launch']/parent::span")private List<WebElement> LaunchIcon;
 
 	//Launching Discussion
@@ -77,8 +80,9 @@ public class Student_Activity_Submit_pages extends ActionType {
 	//Launching Resources
 	@FindBy(how=How.XPATH,using="//span[text()='Launch']")private WebElement Launchbutton;
 	
-
-
+	//Launching Extenaltool
+	@FindBy(how=How.XPATH,using="//button[@class='m-l-5 ng-star-inserted']")private WebElement Deeplinkingbutton;
+	
 
 	public Student_Activity_Submit_pages(WebDriver driver)
 	{
@@ -103,17 +107,21 @@ public class Student_Activity_Submit_pages extends ActionType {
 		}
 	}
 
-	public void search_Course(String LT_Name)
+	public void search_Course(String LearningTree_Name)
 	{
-		cp.searchField(LT_Name);
+		cp.searchField(LearningTree_Name);
+		StaticWait(1);
 	}
-	public void click_on_Course(String LT_Name)
+	
+	public void click_on_Course(String LearningTree_Name)
 	{
 		int attempts = 0;
 		while (attempts < 3) {
 			try {
-				WebElement communt=driver.findElement(By.xpath("//b[text()='"+LT_Name+"']"));
-				communt.click();
+				
+				WebElement community=driver.findElement(By.xpath("//b[text()='"+LearningTree_Name+"']"));
+				StaticWait(1);
+				community.click();
 				break;
 			} catch (StaleElementReferenceException e) {
 				attempts++;
@@ -186,21 +194,22 @@ public class Student_Activity_Submit_pages extends ActionType {
 								{
 									 performResourcesActivity();
 								}
-							 else if(Activity_Title.toLowerCase().contains("Content".toLowerCase()))
-								{
-									 performContentActivity();
-								}
-							 else if(Activity_Title.toLowerCase().contains("Epublication".toLowerCase()))
-								{
-									 performEpublicationActivity();
-								}
 							 else if(Activity_Title.toLowerCase().contains("ExternalTool".toLowerCase()))
 								{
 									 performExternalToolActivity();
 								}
-							 else if(Activity_Title.toLowerCase().contains("LTI_Content_Provider_Activity".toLowerCase()))
+							 else if(Activity_Title.toLowerCase().contains("Content".toLowerCase()))
 								{
-									 performLTI_Content_Provider_Activity();
+									 performContentActivity();
+								}
+						
+//							 else if(Activity_Title.toLowerCase().contains("LTI".toLowerCase()))
+//								{
+//									 performLTI_Content_Provider_Activity();
+//								}
+							 else if(Activity_Title.toLowerCase().contains("Epublication".toLowerCase()))
+								{
+									 performEpublicationActivity();
 								}
 						
 			                StaticWait(1);
@@ -215,12 +224,19 @@ public class Student_Activity_Submit_pages extends ActionType {
 	public void performAssignmentActivity() {
 		System.out.println("Performing Assignment activity...");
 		StaticWait(2);
+		Assignment_Tab.click();
+		StaticWait(2);
 		TypehereText.sendKeys(generateRandomString());
 		StaticWait(2);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		wait.elementToBeClickable(SubmitAssignment);
 		js.executeScript("arguments[0].scrollIntoView(true);", SubmitAssignment);
 		js.executeScript("arguments[0].click();", SubmitAssignment);
+		StaticWait(1);
+		Notes_tab.click();
+		TypehereText.sendKeys("StudentNotesforAssignment"+randomNumberGenerator());
+		cp.Save();
+		
 		wait.elementToBeClickable(CloseIcon);
 		js.executeScript("arguments[0].click();", CloseIcon); 
 		StaticWait(1);
@@ -228,8 +244,12 @@ public class Student_Activity_Submit_pages extends ActionType {
 	}
 	
 	public void performDiscussionActivity() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		System.out.println("Performing Discussion activity...");
-		StaticWait(1);
+	
+		Discussion_Tab.click();
+		StaticWait(2);
+		//js.executeScript("arguments[0].click();", NewPost);
 		NewPost.click();
 		TypehereText.sendKeys(generateRandomString());
 		Postbutton.click();
@@ -237,9 +257,13 @@ public class Student_Activity_Submit_pages extends ActionType {
 		TypehereText.sendKeys(generateRandomString());
 		Postbutton.click();
 		StaticWait(1);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
 		js.executeScript("arguments[0].scrollIntoView(true);", SubmitDiscussion);
 		js.executeScript("arguments[0].click();", SubmitDiscussion);
+		Notes_tab.click();
+		TypehereText.sendKeys("StudentNotesforDiscussion"+randomNumberGenerator());
+		cp.Save();
+		
 		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
 		js.executeScript("arguments[0].click();", CloseIcon); 
 		StaticWait(1);
@@ -259,7 +283,7 @@ public class Student_Activity_Submit_pages extends ActionType {
             js.executeScript("arguments[0].click();", beginTest);	 
             StaticWait(2);
 
-		            // Handle quiz questions
+		            // Handle Assessment Activity questions
 		            List<WebElement> questions = driver.findElements(By.xpath("//div[@id='navigationSideMenu']/ul/li/div/button"));
 		            int numberOfQuestions = questions.size();
 
@@ -286,7 +310,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 		                StaticWait(2);
 		            }
 
-		            // Finish and submit the quiz
+		            // Finish and submit the Assessment Activity
 		            WebElement finish = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Finish']")));
 		            js.executeScript("arguments[0].click();", finish);
 		            StaticWait(1);
@@ -295,66 +319,163 @@ public class Student_Activity_Submit_pages extends ActionType {
 		            js.executeScript("arguments[0].click();", submit);
 		            StaticWait(2);
 
-		            // Close the quiz
+		            // Close the Assessment Activity
 		            driver.switchTo().defaultContent();
 		            WebElement closeAfterSubmit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-icon[@mattooltip='Close']")));
 		            js.executeScript("arguments[0].click();", closeAfterSubmit);
 		            StaticWait(1);
-		            
-//		            js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
-//		    		js.executeScript("arguments[0].click();", CloseIcon); 
 
 		            System.out.println("Assessment completed successfully.");
 		        
 		        } 
 	public void performResourcesActivity() {
-		System.out.println("Performing Resources activity...");	
-		StaticWait(2);
-		//Launchbutton.click();	
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
-		js.executeScript("arguments[0].click();", CloseIcon); 
+	    System.out.println("Performing Resources activity...");
+
+	    // Wait for and click the Resources tab
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.elementToBeClickable(Resources_tab)).click();
+
+	    // Click the Launch button
+	    wait.until(ExpectedConditions.elementToBeClickable(Launchbutton)).click();
+
+	    StaticWait(2);
+	    // Switch to the new tab
+	    String originalWindow = driver.getWindowHandle(); // Store the original window handle
+	    Set<String> allWindows = driver.getWindowHandles();
+
+	    for (String windowHandle : allWindows) {
+	        if (!windowHandle.equals(originalWindow)) {
+	            driver.switchTo().window(windowHandle); // Switch to the new tab
+	            break;
+	        }
+	    }
+
+	    // Close the new tab and switch back to the original tab
+	    driver.close();
+	    driver.switchTo().window(originalWindow);
+	    
+	    StaticWait(2);
+	    Notes_tab.click();
+		TypehereText.sendKeys("StudentNotesresources"+randomNumberGenerator());
+		cp.Save();
+
+	    // Scroll to and click the Close icon in the original tab
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
+	    js.executeScript("arguments[0].click();", CloseIcon);
+
+	    System.out.println("Resources completed successfully.");
 	}
+
+	
 	public void performContentActivity() {
 		System.out.println("Performing Content activity...");	
 		
+		Details_tab.click();
+		StaticWait(2);
+		
+		Notes_tab.click();
+		TypehereText.sendKeys("StudentNotesforcontent"+randomNumberGenerator());
+		cp.Save();
+		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
 		js.executeScript("arguments[0].click();", CloseIcon); 
+		
+		  System.out.println("Content completed successfully.");
 	
 	}
 	public void performExternalToolActivity() {
 		System.out.println("Performing ExternalTool activity...");	
+		 
+	//	Content_tab.click();
+		//Deeplinkingbutton.click();
 		
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
-		js.executeScript("arguments[0].click();", CloseIcon); 
+//		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//		    wait.until(ExpectedConditions.elementToBeClickable(Content_tab)).click();
+//		    StaticWait(2);
+//		    wait.until(ExpectedConditions.elementToBeClickable(Deeplinkingbutton)).click();
+//
+//		    StaticWait(2);
+//
+//		    String originalWindow = driver.getWindowHandle(); 
+//		    Set<String> allWindows = driver.getWindowHandles();
+//
+//		    for (String windowHandle : allWindows) {
+//		        if (!windowHandle.equals(originalWindow)) {
+//		            driver.switchTo().window(windowHandle); 
+//		            break;
+//		        }
+//		    }
+//
+//		    driver.close();
+//		    driver.switchTo().window(originalWindow);
+	    
+		//    StaticWait(2);
+//		    Notes_tab.click();
+//			TypehereText.sendKeys("StudentNotesExternalTool"+randomNumberGenerator());
+//			cp.Save();
+
+		    JavascriptExecutor js = (JavascriptExecutor) driver;
+		    js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
+		    js.executeScript("arguments[0].click();", CloseIcon);
 	
-	
+		  System.out.println("Externaltool completed successfully.");
 	}
 	
 	public void performLTI_Content_Provider_Activity() {
 		System.out.println("Performing LTI_Content_Provider_Activity...");	
 		
+		//Content_tab.click();
+		
+//		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//		    wait.until(ExpectedConditions.elementToBeClickable(Content_tab)).click();
+//		    StaticWait(2);
+//		    wait.until(ExpectedConditions.elementToBeClickable(Deeplinkingbutton)).click();
+//
+//		    StaticWait(2);
+//
+//		    String originalWindow = driver.getWindowHandle(); 
+//		    Set<String> allWindows = driver.getWindowHandles();
+//
+//		    for (String windowHandle : allWindows) {
+//		        if (!windowHandle.equals(originalWindow)) {
+//		            driver.switchTo().window(windowHandle); 
+//		            break;
+//		        }
+//		    }
+//
+//		    driver.close();
+//		    driver.switchTo().window(originalWindow);
+		    
+		    StaticWait(2);
+		
+//		Notes_tab.click();
+//		TypehereText.sendKeys("StudentNotesforLTI"+randomNumberGenerator());
+//		cp.Save();
+			
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
 		js.executeScript("arguments[0].click();", CloseIcon); 
-	
+		
+	  System.out.println("LTI Activity completed successfully.");
 	}
 	
 	
 	public void performEpublicationActivity() {
 		System.out.println("Performing Epublication activity...");	
 		
+		Details_tab.click();
+		StaticWait(1);
+		Notes_tab.click();
+		TypehereText.sendKeys("StudentNotesforEpublication"+randomNumberGenerator());
+		cp.Save();
+		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
 		js.executeScript("arguments[0].click();", CloseIcon); 
-	
+		  System.out.println("Epublication completed successfully.");
 	
 	}
-		    
-
 }
 
