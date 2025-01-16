@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jan 13 16:16:11 IST 2025</td>
+<td>Started on:</td><td>Thu Jan 16 10:58:24 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>267 seconds (267564 ms)</td>
+<tr><td>Total time:</td><td>235 seconds (235754 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -140,8 +140,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2038535743", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2038535743'><pre>java.lang.AbstractMethodError: Receiver class org.apache.poi.xssf.usermodel.XSSFColor does not define or inherit an implementation of the resolved method &apos;abstract byte[] getStoredRGB()&apos; of abstract class org.apache.poi.ss.usermodel.ExtendedColor.
+</pre></div><a href='#' onClick='toggleBox("stack-trace1107717901", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1107717901'><pre>java.lang.AbstractMethodError: Receiver class org.apache.poi.xssf.usermodel.XSSFColor does not define or inherit an implementation of the resolved method &apos;abstract byte[] getStoredRGB()&apos; of abstract class org.apache.poi.ss.usermodel.ExtendedColor.
 	at org.apache.poi.ss.usermodel.ExtendedColor.getRGBOrARGB(ExtendedColor.java:100)
 	at org.apache.poi.xssf.usermodel.XSSFColor.getRGB(XSSFColor.java:189)
 	at org.apache.poi.xssf.usermodel.XSSFFont.setColor(XSSFFont.java:421)
@@ -206,7 +206,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>6</td>
-<td>LearningTreeRunner.StudentActivitySubmission_Runner@2a693f59</td></tr>
+<td>LearningTreeRunner.StudentActivitySubmission_Runner@3f4faf53</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
@@ -218,15 +218,15 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='LearningTreeRunner.StudentActivitySubmission_Runner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.StudentActivitySubmission_Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Student Activities Submission", "Verify the Student Activities Submission"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-toolbar[@id=&apos;appHeader&apos;]/child::div[@fxlayoutalign=&apos;space-between&apos;]/child::div&quot;}
-  (Session info: chrome=131.0.6778.206)
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()=&apos;Details&apos;]&quot;}
+  (Session info: chrome=131.0.6778.265)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [14b567486a529b489a7dfb9950ced1cc, findElement {using=xpath, value=//mat-toolbar[@id=&apos;appHeader&apos;]/child::div[@fxlayoutalign=&apos;space-between&apos;]/child::div}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.206, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\RAVALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56702}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56702/devtoo..., se:cdpVersion: 131.0.6778.206, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 14b567486a529b489a7dfb9950ced1cc
+Command: [c982728d61f6370264653d6487003fd2, findElement {value=//div[text()=&apos;Details&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\RAVALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51997}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51997/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c982728d61f6370264653d6487003fd2
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -243,19 +243,23 @@ Session ID: 14b567486a529b489a7dfb9950ced1cc
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.LearningTree.pages.Student_Activity_Submit_pages.performActivities(Student_Activity_Submit_pages.java:176)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+	at com.LearningTree.pages.Student_Activity_Submit_pages.performContentActivity(Student_Activity_Submit_pages.java:374)
+	at com.LearningTree.pages.Student_Activity_Submit_pages.performActivities(Student_Activity_Submit_pages.java:203)
 	at LearningTreeStepdef.Student_Activity_submission_Stepdef.user_click_on_launch_button_for_the_all_activities(Student_Activity_submission_Stepdef.java:74)
 	at ✽.User Click on Launch button for the All Activities(file:///C:/Users/RavaliManthena/eclipse-workspace/Learning_tree_Automation/src/test/resources/LearningTreeFeatures/Student_Activitys_Submission.feature:12)
-</pre></div><a href='#' onClick='toggleBox("stack-trace409529684", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace409529684'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-toolbar[@id=&apos;appHeader&apos;]/child::div[@fxlayoutalign=&apos;space-between&apos;]/child::div&quot;}
-  (Session info: chrome=131.0.6778.206)
+</pre></div><a href='#' onClick='toggleBox("stack-trace332464215", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace332464215'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()=&apos;Details&apos;]&quot;}
+  (Session info: chrome=131.0.6778.265)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [14b567486a529b489a7dfb9950ced1cc, findElement {using=xpath, value=//mat-toolbar[@id=&apos;appHeader&apos;]/child::div[@fxlayoutalign=&apos;space-between&apos;]/child::div}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.206, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\RAVALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56702}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56702/devtoo..., se:cdpVersion: 131.0.6778.206, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 14b567486a529b489a7dfb9950ced1cc
+Command: [c982728d61f6370264653d6487003fd2, findElement {value=//div[text()=&apos;Details&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\RAVALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51997}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51997/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c982728d61f6370264653d6487003fd2
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -272,12 +276,16 @@ Session ID: 14b567486a529b489a7dfb9950ced1cc
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.LearningTree.pages.Student_Activity_Submit_pages.performActivities(Student_Activity_Submit_pages.java:176)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+	at com.LearningTree.pages.Student_Activity_Submit_pages.performContentActivity(Student_Activity_Submit_pages.java:374)
+	at com.LearningTree.pages.Student_Activity_Submit_pages.performActivities(Student_Activity_Submit_pages.java:203)
 	at LearningTreeStepdef.Student_Activity_submission_Stepdef.user_click_on_launch_button_for_the_all_activities(Student_Activity_submission_Stepdef.java:74)
 	at ✽.User Click on Launch button for the All Activities(file:///C:/Users/RavaliManthena/eclipse-workspace/Learning_tree_Automation/src/test/resources/LearningTreeFeatures/Student_Activitys_Submission.feature:12)
 </pre></div></td>
-<td>258</td>
-<td>LearningTreeRunner.StudentActivitySubmission_Runner@2a693f59</td></tr>
+<td>225</td>
+<td>LearningTreeRunner.StudentActivitySubmission_Runner@3f4faf53</td></tr>
 </table><p>
 </body>
 </html>

@@ -2,30 +2,30 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-13T16:16:11 IST" name="Default suite" finished-at="2025-01-13T16:20:38 IST" duration-ms="267564">
+  <suite started-at="2025-01-16T10:58:24 IST" name="Default suite" finished-at="2025-01-16T11:02:20 IST" duration-ms="235754">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.StudentActivitySubmission_Runner@2a693f59]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.StudentActivitySubmission_Runner@3f4faf53]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-01-13T16:16:11 IST" name="Default test" finished-at="2025-01-13T16:20:38 IST" duration-ms="267564">
+    <test started-at="2025-01-16T10:58:24 IST" name="Default test" finished-at="2025-01-16T11:02:20 IST" duration-ms="235754">
       <class name="LearningTreeRunner.StudentActivitySubmission_Runner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:LearningTreeRunner.StudentActivitySubmission_Runner@2a693f59]" started-at="2025-01-13T16:16:11 IST" name="setUpClass" finished-at="2025-01-13T16:16:13 IST" duration-ms="2336" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:LearningTreeRunner.StudentActivitySubmission_Runner@3f4faf53]" started-at="2025-01-16T10:58:24 IST" name="setUpClass" finished-at="2025-01-16T10:58:27 IST" duration-ms="2840" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3fc2a1d1]]>
+                <![CDATA[org.testng.TestRunner@530a46f4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:LearningTreeRunner.StudentActivitySubmission_Runner@2a693f59]" started-at="2025-01-13T16:16:13 IST" name="beforeClass" finished-at="2025-01-13T16:16:13 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:LearningTreeRunner.StudentActivitySubmission_Runner@3f4faf53]" started-at="2025-01-16T10:58:27 IST" name="beforeClass" finished-at="2025-01-16T10:58:27 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.StudentActivitySubmission_Runner@2a693f59]" started-at="2025-01-13T16:16:13 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-13T16:20:31 IST" duration-ms="258095" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.StudentActivitySubmission_Runner@3f4faf53]" started-at="2025-01-16T10:58:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-16T11:02:13 IST" duration-ms="225817" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -40,26 +40,26 @@
           </params>
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div"}
-  (Session info: chrome=131.0.6778.206)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Details']"}
+  (Session info: chrome=131.0.6778.265)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [14b567486a529b489a7dfb9950ced1cc, findElement {using=xpath, value=//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.206, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\RAVALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56702}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56702/devtoo..., se:cdpVersion: 131.0.6778.206, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 14b567486a529b489a7dfb9950ced1cc]]>
+Command: [c982728d61f6370264653d6487003fd2, findElement {value=//div[text()='Details'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\RAVALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51997}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51997/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c982728d61f6370264653d6487003fd2]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div"}
-  (Session info: chrome=131.0.6778.206)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Details']"}
+  (Session info: chrome=131.0.6778.265)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [14b567486a529b489a7dfb9950ced1cc, findElement {using=xpath, value=//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.206, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\RAVALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56702}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56702/devtoo..., se:cdpVersion: 131.0.6778.206, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 14b567486a529b489a7dfb9950ced1cc
+Command: [c982728d61f6370264653d6487003fd2, findElement {value=//div[text()='Details'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\RAVALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51997}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51997/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c982728d61f6370264653d6487003fd2
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -76,7 +76,11 @@ at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(Elemen
 at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at com.LearningTree.pages.Student_Activity_Submit_pages.performActivities(Student_Activity_Submit_pages.java:176)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+at com.LearningTree.pages.Student_Activity_Submit_pages.performContentActivity(Student_Activity_Submit_pages.java:374)
+at com.LearningTree.pages.Student_Activity_Submit_pages.performActivities(Student_Activity_Submit_pages.java:203)
 at LearningTreeStepdef.Student_Activity_submission_Stepdef.user_click_on_launch_button_for_the_all_activities(Student_Activity_submission_Stepdef.java:74)
 at ✽.User Click on Launch button for the All Activities(file:///C:/Users/RavaliManthena/eclipse-workspace/Learning_tree_Automation/src/test/resources/LearningTreeFeatures/Student_Activitys_Submission.feature:12)
 ]]>
@@ -85,11 +89,11 @@ at ✽.User Click on Launch button for the All Activities(file:///C:/Users/Raval
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:LearningTreeRunner.StudentActivitySubmission_Runner@2a693f59]" started-at="2025-01-13T16:20:31 IST" name="afterClass" finished-at="2025-01-13T16:20:31 IST" duration-ms="7" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:LearningTreeRunner.StudentActivitySubmission_Runner@3f4faf53]" started-at="2025-01-16T11:02:13 IST" name="afterClass" finished-at="2025-01-16T11:02:13 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:LearningTreeRunner.StudentActivitySubmission_Runner@2a693f59]" started-at="2025-01-13T16:20:31 IST" name="tearDownClass" finished-at="2025-01-13T16:20:38 IST" duration-ms="6993" status="FAIL">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:LearningTreeRunner.StudentActivitySubmission_Runner@3f4faf53]" started-at="2025-01-16T11:02:13 IST" name="tearDownClass" finished-at="2025-01-16T11:02:20 IST" duration-ms="6980" status="FAIL">
           <exception class="java.lang.AbstractMethodError">
             <message>
               <![CDATA[Receiver class org.apache.poi.xssf.usermodel.XSSFColor does not define or inherit an implementation of the resolved method 'abstract byte[] getStoredRGB()' of abstract class org.apache.poi.ss.usermodel.ExtendedColor.]]>

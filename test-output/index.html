@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\RavaliManthena\AppData\Local\Temp\testng-eclipse--1025794173\testng-customsuite.xml</span>
+                    <span>C:\Users\RavaliManthena\AppData\Local\Temp\testng-eclipse-1430950326\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -130,15 +130,15 @@
                   </a> <!-- runScenario("Student Activities Submission", "Verify the Student Activities Submission") -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("Student Activities Submission","Verify the Student Activities Submission")</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-toolbar[@id=&apos;appHeader&apos;]/child::div[@fxlayoutalign=&apos;space-between&apos;]/child::div&quot;}
-  (Session info: chrome=131.0.6778.206)
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()=&apos;Details&apos;]&quot;}
+  (Session info: chrome=131.0.6778.265)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [14b567486a529b489a7dfb9950ced1cc, findElement {using=xpath, value=//mat-toolbar[@id=&apos;appHeader&apos;]/child::div[@fxlayoutalign=&apos;space-between&apos;]/child::div}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.206, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\RAVALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56702}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56702/devtoo..., se:cdpVersion: 131.0.6778.206, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 14b567486a529b489a7dfb9950ced1cc
+Command: [c982728d61f6370264653d6487003fd2, findElement {value=//div[text()=&apos;Details&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\RAVALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51997}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51997/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c982728d61f6370264653d6487003fd2
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -155,7 +155,11 @@ Session ID: 14b567486a529b489a7dfb9950ced1cc
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.LearningTree.pages.Student_Activity_Submit_pages.performActivities(Student_Activity_Submit_pages.java:176)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+	at com.LearningTree.pages.Student_Activity_Submit_pages.performContentActivity(Student_Activity_Submit_pages.java:374)
+	at com.LearningTree.pages.Student_Activity_Submit_pages.performActivities(Student_Activity_Submit_pages.java:203)
 	at LearningTreeStepdef.Student_Activity_submission_Stepdef.user_click_on_launch_button_for_the_all_activities(Student_Activity_submission_Stepdef.java:74)
 	at ✽.User Click on Launch button for the All Activities(file:///C:/Users/RavaliManthena/eclipse-workspace/Learning_tree_Automation/src/test/resources/LearningTreeFeatures/Student_Activitys_Submission.feature:12)
 
@@ -169,7 +173,7 @@ Session ID: 14b567486a529b489a7dfb9950ced1cc
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\RavaliManthena\AppData\Local\Temp\testng-eclipse--1025794173\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\RavaliManthena\AppData\Local\Temp\testng-eclipse-1430950326\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -230,12 +234,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'LearningTreeRunner.StudentActivitySubmission_Runner')
-data.setCell(0, 3, 258095);
+data.setCell(0, 3, 225817);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -263,28 +267,28 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">LearningTreeRunner.StudentActivitySubmission_Runner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@3fc2a1d1)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@530a46f4)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">2338 ms</span>
+                <span class="method-start">2844 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">runScenario("Student Activities Submission", "Verify the Student Activities Submission")</span>
-                <span class="method-start">2390 ms</span>
+                <span class="method-start">2882 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">260510 ms</span>
+                <span class="method-start">228720 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">260517 ms</span>
+                <span class="method-start">228720 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

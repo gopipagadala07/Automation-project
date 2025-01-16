@@ -7,8 +7,8 @@
         <methods>
           <include name="setUpClass"/>
           <include name="afterClass"/>
-          <include name="tearDownClass"/>
           <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
           <include name="beforeClass"/>
         </methods>
       </class> <!-- LearningTreeRunner.StudentActivitySubmission_Runner -->
