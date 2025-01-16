@@ -203,10 +203,10 @@ public class Student_Activity_Submit_pages extends ActionType {
 									 performContentActivity();
 								}
 						
-//							 else if(Activity_Title.toLowerCase().contains("LTI".toLowerCase()))
-//								{
-//									 performLTI_Content_Provider_Activity();
-//								}
+							 else if(Activity_Title.toLowerCase().contains("LTI".toLowerCase()))
+								{
+									 performLTI_Content_Provider_Activity();
+								}
 							 else if(Activity_Title.toLowerCase().contains("Epublication".toLowerCase()))
 								{
 									 performEpublicationActivity();
@@ -271,8 +271,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 	}
 	public void performAssessmentActivity() {
 		System.out.println("Performing Assessment activity...");
-		// Add logic to handle assessment activity
-		    
+	
 		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		    JavascriptExecutor js = (JavascriptExecutor) driver;
 			
