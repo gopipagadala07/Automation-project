@@ -46,7 +46,10 @@ public class CommonPages extends ActionType{
 
 	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Save')]")
 	public WebElement Savebtn;
-	@FindBy(how = How.XPATH,using="//input[contains(@type, 'search')]")private WebElement searchInputs;
+	@FindBy(how=How.XPATH,using="//mat-icon[text()='close']/parent::span")
+	public WebElement CloseIcon;
+	@FindBy(how = How.XPATH,using="//input[contains(@type, 'search')]")
+	public WebElement searchInputs;
 	@FindBy(how = How.XPATH,using="//button[@aria-label='Choose month and year']")
 	public WebElement yearSelection;
 	@FindBy(how = How.XPATH,using="//button[@aria-label='Choose date']")
@@ -90,6 +93,15 @@ public class CommonPages extends ActionType{
 		wait.elementToBeClickable(Name);
 		Name.sendKeys(Value);
 	}
+	
+	public void CloseIcon()
+	{
+	
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
+		js.executeScript("arguments[0].click();", CloseIcon); 
+	}
+	
 	public void searchField(String value) {
 		wait.visibilityOf(searchInputs);
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));

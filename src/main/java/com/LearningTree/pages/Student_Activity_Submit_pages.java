@@ -80,7 +80,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 	//Launching Resources
 	@FindBy(how=How.XPATH,using="//span[text()='Launch']")private WebElement Launchbutton;
 	
-	//Launching Extenaltool
+	//Launching Externaltool
 	@FindBy(how=How.XPATH,using="//button[@class='m-l-5 ng-star-inserted']")private WebElement Deeplinkingbutton;
 	
 
@@ -145,7 +145,8 @@ public class Student_Activity_Submit_pages extends ActionType {
 		s.executeScript("arguments[0].click();", SubTopic);
 		StaticWait(1);
 	}
-
+	
+	
 
 	public void performActivities()
 	{
@@ -194,19 +195,20 @@ public class Student_Activity_Submit_pages extends ActionType {
 								{
 									 performResourcesActivity();
 								}
-							 else if(Activity_Title.toLowerCase().contains("ExternalTool".toLowerCase()))
-								{
-									 performExternalToolActivity();
-								}
+							
 							 else if(Activity_Title.toLowerCase().contains("Content".toLowerCase()))
 								{
 									 performContentActivity();
 								}
-						
-							 else if(Activity_Title.toLowerCase().contains("LTI".toLowerCase()))
-								{
-									 performLTI_Content_Provider_Activity();
-								}
+//							 else if(Activity_Title.toLowerCase().contains("ExternalTool".toLowerCase()))
+//								{
+//									 performExternalToolActivity();
+//								}
+//						
+//							 else if(Activity_Title.toLowerCase().contains("LTI Content Provider".toLowerCase()))
+//								{
+//									 performLTI_Content_Provider_Activity();
+//								}
 							 else if(Activity_Title.toLowerCase().contains("Epublication".toLowerCase()))
 								{
 									 performEpublicationActivity();
@@ -236,9 +238,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 		Notes_tab.click();
 		TypehereText.sendKeys("StudentNotesforAssignment"+randomNumberGenerator());
 		cp.Save();
-		
-		wait.elementToBeClickable(CloseIcon);
-		js.executeScript("arguments[0].click();", CloseIcon); 
+		cp.CloseIcon();
 		StaticWait(1);
 	    System.out.println("Assignment completed successfully.");
 	}
@@ -263,9 +263,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 		Notes_tab.click();
 		TypehereText.sendKeys("StudentNotesforDiscussion"+randomNumberGenerator());
 		cp.Save();
-		
-		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
-		js.executeScript("arguments[0].click();", CloseIcon); 
+		cp.CloseIcon();
 		StaticWait(1);
 	    System.out.println("Discussion completed successfully.");
 	}
@@ -282,7 +280,7 @@ public class Student_Activity_Submit_pages extends ActionType {
             js.executeScript("arguments[0].click();", beginTest);	 
             StaticWait(2);
 
-		            // Handle Assessment Activity questions
+		       
 		            List<WebElement> questions = driver.findElements(By.xpath("//div[@id='navigationSideMenu']/ul/li/div/button"));
 		            int numberOfQuestions = questions.size();
 
@@ -291,7 +289,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 		                String tagName = question.getTagName();
 		                StaticWait(1);
 
-		                // Handle different question types
+
 		                if (tagName.equalsIgnoreCase("choiceinteraction")) {
 		                    WebElement choiceValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='mdc-radio'])[2]")));
 		                    new Actions(driver).moveToElement(choiceValue).click().perform();
@@ -303,13 +301,12 @@ public class Student_Activity_Submit_pages extends ActionType {
 		                    fillInTheBlankValue.sendKeys(generateRandomString());
 		                }
 
-		                // Click the "Next" button
+	
 		                WebElement nextBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@mattooltip='Next']")));
 		                js.executeScript("arguments[0].click();", nextBtn);
 		                StaticWait(2);
 		            }
 
-		            // Finish and submit the Assessment Activity
 		            WebElement finish = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Finish']")));
 		            js.executeScript("arguments[0].click();", finish);
 		            StaticWait(1);
@@ -318,7 +315,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 		            js.executeScript("arguments[0].click();", submit);
 		            StaticWait(2);
 
-		            // Close the Assessment Activity
+		      
 		            driver.switchTo().defaultContent();
 		            WebElement closeAfterSubmit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-icon[@mattooltip='Close']")));
 		            js.executeScript("arguments[0].click();", closeAfterSubmit);
@@ -330,26 +327,24 @@ public class Student_Activity_Submit_pages extends ActionType {
 	public void performResourcesActivity() {
 	    System.out.println("Performing Resources activity...");
 
-	    // Wait for and click the Resources tab
+
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    wait.until(ExpectedConditions.elementToBeClickable(Resources_tab)).click();
 
-	    // Click the Launch button
 	    wait.until(ExpectedConditions.elementToBeClickable(Launchbutton)).click();
 
 	    StaticWait(2);
-	    // Switch to the new tab
-	    String originalWindow = driver.getWindowHandle(); // Store the original window handle
+	  
+	    String originalWindow = driver.getWindowHandle(); 
 	    Set<String> allWindows = driver.getWindowHandles();
 
 	    for (String windowHandle : allWindows) {
 	        if (!windowHandle.equals(originalWindow)) {
-	            driver.switchTo().window(windowHandle); // Switch to the new tab
+	            driver.switchTo().window(windowHandle);
 	            break;
 	        }
 	    }
 
-	    // Close the new tab and switch back to the original tab
 	    driver.close();
 	    driver.switchTo().window(originalWindow);
 	    
@@ -357,11 +352,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 	    Notes_tab.click();
 		TypehereText.sendKeys("StudentNotesresources"+randomNumberGenerator());
 		cp.Save();
-
-	    // Scroll to and click the Close icon in the original tab
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	    js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
-	    js.executeScript("arguments[0].click();", CloseIcon);
+		cp.CloseIcon();
 
 	    System.out.println("Resources completed successfully.");
 	}
@@ -376,10 +367,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 		Notes_tab.click();
 		TypehereText.sendKeys("StudentNotesforcontent"+randomNumberGenerator());
 		cp.Save();
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
-		js.executeScript("arguments[0].click();", CloseIcon); 
+		cp.CloseIcon();
 		
 		  System.out.println("Content completed successfully.");
 	
@@ -387,7 +375,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 	public void performExternalToolActivity() {
 		System.out.println("Performing ExternalTool activity...");	
 		 
-	//	Content_tab.click();
+		Content_tab.click();
 		//Deeplinkingbutton.click();
 		
 //		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -410,14 +398,12 @@ public class Student_Activity_Submit_pages extends ActionType {
 //		    driver.close();
 //		    driver.switchTo().window(originalWindow);
 	    
-		//    StaticWait(2);
-//		    Notes_tab.click();
-//			TypehereText.sendKeys("StudentNotesExternalTool"+randomNumberGenerator());
-//			cp.Save();
+			StaticWait(2);
+		    Notes_tab.click();
+			TypehereText.sendKeys("StudentNotesExternalTool"+randomNumberGenerator());
+			cp.Save();
 
-		    JavascriptExecutor js = (JavascriptExecutor) driver;
-		    js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
-		    js.executeScript("arguments[0].click();", CloseIcon);
+			cp.CloseIcon();
 	
 		  System.out.println("Externaltool completed successfully.");
 	}
@@ -425,7 +411,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 	public void performLTI_Content_Provider_Activity() {
 		System.out.println("Performing LTI_Content_Provider_Activity...");	
 		
-		//Content_tab.click();
+		Content_tab.click();
 		
 //		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //		    wait.until(ExpectedConditions.elementToBeClickable(Content_tab)).click();
@@ -449,13 +435,10 @@ public class Student_Activity_Submit_pages extends ActionType {
 		    
 		    StaticWait(2);
 		
-//		Notes_tab.click();
-//		TypehereText.sendKeys("StudentNotesforLTI"+randomNumberGenerator());
-//		cp.Save();
-			
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
-		js.executeScript("arguments[0].click();", CloseIcon); 
+		Notes_tab.click();
+		TypehereText.sendKeys("StudentNotesforLTI"+randomNumberGenerator());
+		cp.Save();
+		    cp.CloseIcon();
 		
 	  System.out.println("LTI Activity completed successfully.");
 	}
@@ -469,10 +452,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 		Notes_tab.click();
 		TypehereText.sendKeys("StudentNotesforEpublication"+randomNumberGenerator());
 		cp.Save();
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
-		js.executeScript("arguments[0].click();", CloseIcon); 
+		cp.CloseIcon();
 		  System.out.println("Epublication completed successfully.");
 	
 	}
