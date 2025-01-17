@@ -1,0 +1,16 @@
+2025-01-16 13:45:52,229 INFO  [rootLogger] Enviornment is : DEMO
+2025-01-16 13:45:52,230 INFO  [rootLogger] Enviornment is : DEMO
+2025-01-16 13:45:52,230 INFO  [rootLogger] Enviornment is : DEMO
+2025-01-16 13:45:52,240 INFO  [rootLogger] Browser value is: CHROME
+2025-01-16 13:45:52,240 INFO  [rootLogger] Browser value is: CHROME
+2025-01-16 13:45:52,241 INFO  [rootLogger] Browser value is: CHROME
+2025-01-16 13:45:56,568 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-16 13:45:56,568 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-16 13:45:56,576 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/
+2025-01-16 13:45:56,576 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/
+2025-01-16 13:45:57,137 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-16 13:45:57,139 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/
+2025-01-16 13:46:22,732 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-16 13:46:24,893 INFO  [rootLogger] Browser value is: CHROME
+2025-01-16 13:46:26,962 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-16 13:46:26,964 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/

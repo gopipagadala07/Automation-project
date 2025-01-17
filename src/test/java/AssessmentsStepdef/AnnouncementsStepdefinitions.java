@@ -33,17 +33,6 @@ public class AnnouncementsStepdefinitions extends ActionType{
 	
 	@Then("user clicks on the classroom name {int} {int}")
 	public void user_clicks_on_the_classroom_name(int row,int row1) throws InvalidFormatException, IOException {
-	//	announce.classroomClick();
-//		if (testdata == null) {
-//	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
-//	    }
-//	    String Classroom = testdata.get(row).get("Classroom Name");
-//	    String section = testdata.get(row).get("Section Name");
-//	    String lastname = testdata.get(row1).get("LastName");
-//	    String Fname = testdata.get(row1).get("FirstName");
-//		
-//		announce.clickonCommunity(Classroom, section, lastname, Fname);
-//	}
 		if (testdata == null) {
 	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 	    }
@@ -71,7 +60,7 @@ public class AnnouncementsStepdefinitions extends ActionType{
 	
 	@Then("user  checks the pagenation")
 	public void user_checks_the_pagenation() throws AWTException {
-	   // announce.PageNation();
+	    announce.PageNation();
 	}
 
 	@Then("user clicks on the Hometab")

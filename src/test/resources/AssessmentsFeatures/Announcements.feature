@@ -10,10 +10,10 @@ Feature: Verify the Announcements functionality
     Then user clicks on the classroom name <rownumber1> <rownumber>
     And user clicks on Announcements Tab
     And user clicks on Add New Announcement button
-    Then user checks Announcements search Functionality
     Then user  checks the pagenation
-    Then user clicks on the Hometab
-    And user clicks on Announcements Tab
+    Then user checks Announcements search Functionality
+    #Then user clicks on the Hometab
+    #And user clicks on Announcements Tab
     Then user clicks on Addnew button and save button
 
     Examples: 

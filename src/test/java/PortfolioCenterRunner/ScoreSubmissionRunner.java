@@ -25,6 +25,6 @@ public class ScoreSubmissionRunner extends AbstractTestNGCucumberTests
 	@AfterClass
 	public void afterClass()
 	{
-		System.out.println("<---------------" + TestcaseName + " Test End--------------->");s
+		System.out.println("<---------------" + TestcaseName + " Test End--------------->");
 	}
 }

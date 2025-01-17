@@ -91,7 +91,7 @@ public class AnnouncementsPages extends ActionType {
 
 	public void ClickOnAddNewAnnouncement() {
 
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 12; i++) {
 			try {
 
 				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -148,45 +148,43 @@ public class AnnouncementsPages extends ActionType {
 		wait.elementToBeClickable(searchhereAnnouncements);
 		wait.visibilityOf(searchhereAnnouncements);
 		Actions actions2 = new Actions(driver);
-		actions2.moveToElement(searchhereAnnouncements).click().sendKeys(an).perform();
+		cp.searchField(an);
 		StaticWait(2);
-		wait.elementToBeClickable(ClearSearch);
-		wait.visibilityOf(ClearSearch);
-		ClearSearch.click();
-		StaticWait(2);
+//		wait.elementToBeClickable(ClearSearch);
+//		wait.visibilityOf(ClearSearch);
+//		ClearSearch.click();
+//		StaticWait(2);
 	}
 
 
 	public void PageNation() throws AWTException {
 
-		cp.scrollWithRobot();
-		cp.scrollWithRobot();
-		StaticWait(2);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
 		cp.Screensize();
 		StaticWait(2);
 		wait.elementToBeClickable(nextpage);
 		wait.visibilityOf(nextpage);
-		//		Dimension d=new Dimension(1920,1080);
-		//		driver.manage().window().setSize(d);
-		nextpage.click();
-		StaticWait(2);
+		Actions a=new Actions(driver);
+		a.moveToElement(nextpage).build().perform();
+		js.executeScript("arguments[0].click();", nextpage);
+		StaticWait(1);
 
-		//		wait.elementToBeClickable(lastPage);
-		//		wait.visibilityOf(lastPage);
-		//		lastPage.click();
-		//		StaticWait(2);
+//		wait.elementToBeClickable(lastPage);
+//		wait.visibilityOf(lastPage);
+//		lastPage.click();
+//		StaticWait(2);
 
-		wait.elementToBeClickable(PreviousPage);
-		wait.visibilityOf(PreviousPage);
-		PreviousPage.click();
-		StaticWait(2);}
-	//		cp.scrollWithRobot();
-	//
-	//		wait.elementToBeClickable(FirstPage);
-	//		wait.visibilityOf(FirstPage);
-	//		FirstPage.click();
-	//		StaticWait(2);
+//		wait.elementToBeClickable(PreviousPage);
+//		wait.visibilityOf(PreviousPage);
+//		a.moveToElement(PreviousPage).build().perform();
+//		js.executeScript("arguments[0].click();", PreviousPage);
+		//PreviousPage.click();
 
+//		wait.elementToBeClickable(FirstPage);
+//		wait.visibilityOf(FirstPage);
+//		FirstPage.click();
+	}
 
 	public void ClickOnHomeTab() {
 		wait.elementToBeClickable(Hometab);

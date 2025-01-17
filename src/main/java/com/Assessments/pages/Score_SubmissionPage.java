@@ -2,9 +2,13 @@ package com.Assessments.pages;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -48,6 +52,12 @@ public class Score_SubmissionPage extends ActionType
 	@FindBy(how = How.XPATH,using = "//*[contains(text(), 'Candidate Response')]/following::div[3]/div/following::span/span/descendant::input")private WebElement Provide_Score;
 	@FindBy(how = How.XPATH,using = "//div[@role='textbox']")private WebElement Provide_Feedback;
 	@FindBy(how = How.XPATH,using = "//span[text()='Submit Scoring']")private WebElement Submit_score;
+	 @FindBy(how=How.XPATH,using="//div[text()='Feedback']")private WebElement Feedbacktab;
+	 @FindBy(how=How.XPATH,using="//div[@role='textbox']")private WebElement Feedabackpost;
+	 @FindBy(how=How.XPATH,using="//span[text()=' Post ']")private WebElement postbtn;
+	 @FindBy(how=How.XPATH,using="//div[text()='Assessment']")private WebElement Assessmenttab;
+    @FindBy(how=How.XPATH,using="//*[text()=' Award Badge ']")private WebElement AwardBadge;
+    @FindBy(how=How.XPATH,using="(//mat-icon[text()='close'])[2]")private WebElement Closeicon;
 	/*
 	 *Provide the Score Quiz Level
 	 */
@@ -118,20 +128,71 @@ public class Score_SubmissionPage extends ActionType
 	                Score.get(i).click();
 	                StaticWait(1);
 	                driver.switchTo().frame(0);
-	                Provide_Score.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-	                Provide_Score.sendKeys(Keys.chord(Keys.CONTROL, "x"));
-	                Provide_Score.sendKeys("5");
+	                Random r=new Random();
+	                int randomscore=r.nextInt(5);
+	                if(Provide_Score!=null)
+	        		{
+	                	Provide_Score.clear();
+	        		}
+	                Provide_Score.sendKeys(String.valueOf(randomscore));
 	                String randomString = generateRandomString();
 	                Provide_Feedback.sendKeys(randomString);
 	                StaticWait(1);
 	                Submit_score.click();
 	                driver.switchTo().defaultContent();
 	                StaticWait(1);
-	                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	                WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//mat-icon[text()='close'])[1]")));
-	                Actions a = new Actions(driver);
-	                a.moveToElement(e).click().build().perform();
+	                JavascriptExecutor js=(JavascriptExecutor) driver;
+	                js.executeScript("arguments[0].click();", Feedbacktab);
+	                Feedabackpost.sendKeys(generateRandomString());
+	                postbtn.click();
 	                StaticWait(1);
+	                Assessmenttab.click();
+	                wait.elementToBeClickable(AwardBadge);
+                    int retryCount = 0;
+                    boolean isClicked = false;
+
+                    while (retryCount < 5 && !isClicked) {
+                        try {
+                            if (AwardBadge.isDisplayed()) {
+                                Actions a=new Actions(driver);
+                                a.moveToElement(AwardBadge).build().perform();
+                                js.executeScript("arguments[0].click();", AwardBadge);
+                                StaticWait(2);
+                                isClicked = true;
+                            } else {
+                                System.out.println("Badge Button was not Found");
+                            }
+                        } catch (Exception e) {
+                            System.out.println("Attempt " + (retryCount + 1) + " failed: " + e.getMessage());
+                        }
+                        retryCount++;
+                        StaticWait(1); 
+                        if (!isClicked) {
+                            System.out.println("Failed to click Badge Button after 5 attempts.");
+                        }
+                    }
+	                wait.elementToBeClickable(Closeicon);
+	        		for (retry = 0; retry < 3; retry++) {
+	        			try {
+	        				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	        				WebElement cls = driver.findElement(By.xpath("(//mat-icon[text()='close'])[2]"));
+	        		        wait.until(ExpectedConditions.elementToBeClickable(cls));
+	        		        js.executeScript("arguments[0].click();", cls);
+	        				StaticWait(1);
+	        				break;
+	        			} catch (StaleElementReferenceException e) {
+	        				retry++;
+	        				if (retry == 3) {
+	        					System.err.println("Element became stale after multiple attempts: " + e.getMessage());
+	        				}
+	        			} catch (TimeoutException e) {
+	        				System.err.println("Element not clickable within the wait time: " + e.getMessage());
+	        				break;
+	        			} catch (Exception e) {
+	        				System.err.println("An error occurred: " + e.getMessage());
+	        				break;
+	        			}
+	        		}
 	                if (i == count - 1) {
 	                    break;
 	                }
@@ -230,9 +291,13 @@ public class Score_SubmissionPage extends ActionType
 		Ac.click(Exam).build().perform();
         StaticWait(1);
         driver.switchTo().frame(0);
-        Provide_Score.sendKeys(Keys.chord(Keys.CONTROL,"a"));
-        Provide_Score.sendKeys(Keys.chord(Keys.CONTROL,"x"));
-        Provide_Score.sendKeys("4");
+        Random r=new Random();
+        int randomscore=r.nextInt(5);
+        if(Provide_Score!=null)
+		{
+        	Provide_Score.clear();
+		}
+        Provide_Score.sendKeys(String.valueOf(randomscore));
         String randomString = generateRandomString();
         Provide_Feedback.sendKeys(randomString);
         StaticWait(1);

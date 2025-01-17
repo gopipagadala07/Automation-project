@@ -17,7 +17,7 @@ Feature: Examcenter Creation of Examinations Schedules and Examtaker Enrollments
     #Then User click on edit Save button
     Examples: 
       | RowNumber |
-      |         0 |
+      |         1 |
 
   Scenario Outline: Creating Schedule for an Examinations
     Given User launch the application with Valid URL
@@ -28,8 +28,8 @@ Feature: Examcenter Creation of Examinations Schedules and Examtaker Enrollments
     And User Search the Examination in Search here field
     Then User click on Add New schedule button
     And Click on Search Test button in Add-Edit schedule popup
-    Then User Search the Testname <rownumber>
-    Then User click on Go icon and click on Add icon for that searched test <rownumber>
+    Then User Search the Testname <rownumber1>
+    Then User click on Go icon and click on Add icon for that searched test <rownumber1>
     And User enter the Schedule name
     Then User select the Testtype dropdown
     And User enable the all toggles
@@ -39,8 +39,8 @@ Feature: Examcenter Creation of Examinations Schedules and Examtaker Enrollments
     Then Enabled the published and Exam live toggles with schedulename
 
     Examples: 
-      | rownumber |
-      |         0 |
+      | rownumber | rownumber1 |
+      |         1 |          0 |
 
   Scenario Outline: Enroll the Examination and schedule to the Examtaker
     Given User launch the application with Valid URL
@@ -52,10 +52,10 @@ Feature: Examcenter Creation of Examinations Schedules and Examtaker Enrollments
     And User Search the Examtaker in Search here field <RowNumber1>
     Then User click on the searched Examtaker <RowNumber1>
     Then User click on Enroll to an Exam button
-    And Select one Examinations name from Examinations lookups <rownumber>
+    And Select one Examinations name from Examinations lookups <rownumber2>
     Then Select one Schedule name from an selected Examinations
     And User click on Enrollment Save button
 
     Examples: 
-      | rownumber | RowNumber1 |
-      |         0 |          3 |
+      | rownumber | RowNumber1 | rownumber2 |
+      |         1 |          3 |          0 |
