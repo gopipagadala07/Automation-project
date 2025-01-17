@@ -1,55 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="1" failed="0" skipped="0">
+<testng-results total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-17T09:48:40Z" name="Default suite" finished-at="2025-01-17T09:51:41Z" duration-ms="180560">
+  <suite started-at="2025-01-17T11:27:18Z" name="Default suite" finished-at="2025-01-17T11:28:26Z" duration-ms="67896">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.QuizSubmissionRunner@5443d039]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@22356acd]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-01-17T09:48:40Z" name="Default test" finished-at="2025-01-17T09:51:41Z" duration-ms="180560">
-      <class name="AssessmentsRunner.QuizSubmissionRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.QuizSubmissionRunner@5443d039]" started-at="2025-01-17T15:18:40Z" name="setUpClass" finished-at="2025-01-17T15:18:41Z" duration-ms="749" status="PASS">
+    <test started-at="2025-01-17T11:27:18Z" name="Default test" finished-at="2025-01-17T11:28:26Z" duration-ms="67896">
+      <class name="AssessmentsRunner.AnnouncementsRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@22356acd]" started-at="2025-01-17T16:57:18Z" name="setUpClass" finished-at="2025-01-17T16:57:19Z" duration-ms="938" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@1fa58a48]]>
+                <![CDATA[org.testng.TestRunner@513fab1e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.QuizSubmissionRunner@5443d039]" started-at="2025-01-17T15:18:41Z" name="beforeClass" finished-at="2025-01-17T15:18:41Z" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@22356acd]" started-at="2025-01-17T16:57:19Z" name="beforeClass" finished-at="2025-01-17T16:57:19Z" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.QuizSubmissionRunner@5443d039]" started-at="2025-01-17T15:18:41Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-17T15:21:39Z" duration-ms="177883" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@22356acd]" started-at="2025-01-17T16:57:19Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-17T16:58:10Z" duration-ms="51500" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Checking the Quizzes Submission for Student"]]>
+                <![CDATA["Creating Announcements"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validating the Quiz Performing at student side"]]>
+                <![CDATA["Verify the Announcements functionality"]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.IndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 0 out of bounds for length 0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at com.Assessments.pages.AnnouncementsPages.AnnouncementsSearch(AnnouncementsPages.java:147)
+	at AssessmentsStepdef.AnnouncementsStepdefinitions.user_checks_announcements_search_functionality(AnnouncementsStepdefinitions.java:57)
+	at ✽.user checks Announcements search Functionality(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/AssessmentsFeatures/Announcements.feature:14)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IndexOutOfBoundsException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.QuizSubmissionRunner@5443d039]" started-at="2025-01-17T15:21:39Z" name="afterClass" finished-at="2025-01-17T15:21:39Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@22356acd]" started-at="2025-01-17T16:58:10Z" name="afterClass" finished-at="2025-01-17T16:58:10Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.QuizSubmissionRunner@5443d039]" started-at="2025-01-17T15:21:39Z" name="tearDownClass" finished-at="2025-01-17T15:21:41Z" duration-ms="1907" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.AnnouncementsRunner@22356acd]" started-at="2025-01-17T16:58:10Z" name="tearDownClass" finished-at="2025-01-17T16:58:26Z" duration-ms="15440" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- AssessmentsRunner.QuizSubmissionRunner -->
+      </class> <!-- AssessmentsRunner.AnnouncementsRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -91,7 +91,7 @@ public class AnnouncementsPages extends ActionType {
 
 	public void ClickOnAddNewAnnouncement() {
 
-		for (int i = 0; i < 12; i++) {
+		for (int i = 0; i < 1; i++) {
 			try {
 
 				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -161,7 +161,6 @@ public class AnnouncementsPages extends ActionType {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-		cp.Screensize();
 		StaticWait(2);
 		wait.elementToBeClickable(nextpage);
 		wait.visibilityOf(nextpage);
