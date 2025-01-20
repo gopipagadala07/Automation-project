@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -43,6 +44,7 @@ public class Import_Activities_in_LTPage extends ActionType {
 	@FindBy(how = How.XPATH,using = "//*[local-name()='svg' and @matTooltip='Members']")public WebElement Members_Tab;
 	@FindBy(how = How.XPATH,using = "//span[text()=' Manage Members ']")public WebElement Manage_Members_btn;
 	@FindBy(how = How.XPATH,using = "(//input[@data-placeholder='search here'])[1]")public WebElement Search_Users;
+	@FindBy(how = How.XPATH,using = "//input[@type='search']")private WebElement search;	
 	@FindBy(how = How.XPATH,using = "//mat-icon[text()='close']")public WebElement Close;
 	public Import_Activities_in_LTPage(WebDriver driver)
 	{
@@ -105,10 +107,13 @@ public class Import_Activities_in_LTPage extends ActionType {
 		Course_ellipse.click();
 		wait.elementToBeClickable(Search_Learning_Objective_btn);
 		Search_Learning_Objective_btn.click();
-		cp.searchField(CD_Name);
+		search.sendKeys(CD_Name);
+		search.sendKeys(Keys.BACK_SPACE);
 		StaticWait(1);
+		search.sendKeys(Keys.CONTROL + "z");
 		WebElement Assign_to_Community_btn = driver.findElement(By.xpath("//b[text()='"+CD_Name+"']/ancestor::mat-card-header/following-sibling::mat-card-content/following::mat-card-actions/child::div/child::div"));
 		Assign_to_Community_btn.click();
+		driver.navigate().refresh();
 		StaticWait(1);
 	}
 	public void learningTab()
@@ -147,9 +152,7 @@ public class Import_Activities_in_LTPage extends ActionType {
 				retries--;
 			}	
 		}
-		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	        try {
-//	            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngx-toastr.toast-success")));
 	            WebElement Close = driver.findElement(By.xpath("//mat-icon[text()='close']"));
 	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", Close);
 	            System.out.println("Close button clicked.");

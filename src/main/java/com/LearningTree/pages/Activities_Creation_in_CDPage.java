@@ -8,6 +8,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -82,6 +83,9 @@ public class Activities_Creation_in_CDPage extends ActionType
 	@FindBy(how = How.XPATH,using = "//iframe[@name='badgeFrame']")private WebElement BadgeFrame;
 	@FindBy(how = How.XPATH,using = "//input[@type='number']")private WebElement MaxScore;
 	@FindBy(how = How.XPATH,using = "//h3[text()='Learning']/parent::div/parent::div/descendant::label/child::span/child::span/child::span[1]")private WebElement Publish_Toggle;
+	@FindBy(how = How.XPATH,using = "//input[@type='search']")private WebElement search;
+	@FindBy(how = How.XPATH,using = "//div[text()=' 0 of 0 ']")private WebElement Pagination;
+
 
 
 	public Activities_Creation_in_CDPage(WebDriver driver)
@@ -149,7 +153,10 @@ public class Activities_Creation_in_CDPage extends ActionType
 	}
 	public void search_Community(String CD_Name)
 	{
-		cp.searchField(CD_Name);
+		search.sendKeys(CD_Name);
+		search.sendKeys(Keys.BACK_SPACE);
+		StaticWait(1);
+		search.sendKeys(Keys.CONTROL + "z");
 	}
 	public void click_on_Community(String CD_Name)
 	{
@@ -166,7 +173,6 @@ public class Activities_Creation_in_CDPage extends ActionType
 		}
 	}
 	public void ChildObjectivesCreation() {
-		StaticWait(1);
 		Allbtn.click();
 		StaticWait(1);
 		WebElement ele = driver.findElement(By.xpath("//h3[text()='Learning']"));
@@ -181,8 +187,6 @@ public class Activities_Creation_in_CDPage extends ActionType
 					System.out.println("No ellipses found for iteration " + (i + 1));
 					return;
 				}
-
-
 				if (ellipsesList.size() == 5) {
 					System.out.println("Latest ellipses count reached 4, stopping the loop.");
 					break;
@@ -190,7 +194,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 				WebElement latestEllipsis = ellipsesList.get(ellipsesList.size() - 1);
 				wait.until(ExpectedConditions.elementToBeClickable(latestEllipsis));
 				wait.until(ExpectedConditions.visibilityOf(latestEllipsis));
-				StaticWait(2);
+				StaticWait(1);
 				js.executeScript("arguments[0].click();", latestEllipsis);
 				StaticWait(1);
 				childObjectivebtn.click();
@@ -202,7 +206,6 @@ public class Activities_Creation_in_CDPage extends ActionType
 				select_Tags();
 				cp.Save();
 				StaticWait(1);
-
 			} catch (StaleElementReferenceException e) {
 				System.out.println("StaleElementReferenceException encountered, retrying iteration " + (i + 1) + ": " + e.getMessage());
 				i--;
@@ -219,7 +222,6 @@ public class Activities_Creation_in_CDPage extends ActionType
 				driver.findElement(By.xpath("//h3[text()='Learning']")).click();
 				StaticWait(1);
 				Actions Ac=new Actions(driver);
-
 				WebElement Unit_ellipse = driver.findElement(By.xpath("//span[contains(text(),'"+Goal+"')]/parent::span/parent::div/parent::div/following::div/child::div[6]/child::button/child::span/child::mat-icon"));
 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", Unit_ellipse);
 				Ac.moveToElement(Unit_ellipse).click().build().perform();
@@ -388,7 +390,6 @@ public class Activities_Creation_in_CDPage extends ActionType
 		cp.Save();
 		System.out.println("Epub_Activity Created Succefully");
 	}
-
 	public void select_Tags()
 	{
 		Actions Ac=new Actions(driver);
@@ -396,6 +397,8 @@ public class Activities_Creation_in_CDPage extends ActionType
 		Standards_Lookups.click();
 		StaticWait(1);
 		List<WebElement> elements = driver.findElements(By.xpath("//mat-label[text()='Search here']/ancestor::span/ancestor::mat-form-field/following::div/descendant::span[1]/child::small"));
+	
+
 		if (elements.size() >= 3) {
 			Random random = new Random();
 			int numberOfElementsToClick = random.nextInt(3) + 3;  // Random number between 3 and 5
@@ -408,7 +411,6 @@ public class Activities_Creation_in_CDPage extends ActionType
 				}		        
 				WebElement elementToClick = elements.get(randomIndex);		        
 				Ac.moveToElement(elementToClick).click().build().perform();
-				//				System.out.println("Clicked element: " + elementToClick);
 				clickedIndices.add(randomIndex); 
 			}
 		} 
@@ -428,10 +430,11 @@ public class Activities_Creation_in_CDPage extends ActionType
 				clickedIndices.add(randomIndex);
 			}
 		}
-		else 
+		else if(Pagination.isDisplayed()) 
 		{
 			System.out.println("Not enough elements found to click.");
 		}
+
 	}
 	public void Badges()
 	{

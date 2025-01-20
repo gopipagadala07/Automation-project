@@ -94,10 +94,8 @@ public class Student_Activity_Submit_pages extends ActionType {
 	{
 		search.sendKeys(LearningTree_Name);
 		search.sendKeys(Keys.BACK_SPACE);
-		System.out.println("BACK_SPACE");
 		StaticWait(1);
 		search.sendKeys(Keys.CONTROL + "z");
-		System.out.println("CONTROL Z");
 	}	
 	public void click_on_Course(String LearningTree_Name)
 	{
@@ -106,7 +104,6 @@ public class Student_Activity_Submit_pages extends ActionType {
 			try {
 				
 				WebElement community=driver.findElement(By.xpath("//b[text()='"+LearningTree_Name+"']"));
-				StaticWait(1);
 				community.click();
 				break;
 			} catch (StaleElementReferenceException e) {
@@ -119,14 +116,14 @@ public class Student_Activity_Submit_pages extends ActionType {
 	{
 		wait.elementToBeClickable(Learning);
 		Learning.click();
-		StaticWait(2);
+		StaticWait(1);
 		All.click();
-		StaticWait(2);
+		StaticWait(1);
 		JavascriptExecutor s = (JavascriptExecutor) driver;
 		s.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
 		s.executeScript("arguments[0].scrollIntoView(true);", Topic);
 		s.executeScript("arguments[0].click();", Topic);
-		StaticWait(3);
+		StaticWait(1);
 		s.executeScript("arguments[0].scrollIntoView(true);", SubTopic);
 		s.executeScript("arguments[0].click();", SubTopic);
 		StaticWait(1);
@@ -136,7 +133,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 			JavascriptExecutor s = (JavascriptExecutor) driver;
 
 		    List<WebElement> matIcons = driver.findElements(By.xpath("//mat-icon[text()='launch']"));
-		    System.out.println("Total Quizzes Found: " + matIcons.size());
+		    System.out.println("Total Activities Found: " + matIcons.size());
 			 for (int targetIndex = 0; targetIndex < matIcons.size(); targetIndex++) {
 			        int retry = 0;
 			        int maxRetry = 5;
@@ -159,7 +156,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 			        		}
 			                String Activity_Title = driver.findElement(By.xpath("//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div")).getText();
 			                System.out.println("Activity Title: "+Activity_Title);
-			                StaticWait(2);			                
+			                StaticWait(1);			                
 							 if(Activity_Title.toLowerCase().contains("assignment".toLowerCase()))
 							{
 								performAssignmentActivity();
@@ -207,11 +204,10 @@ public class Student_Activity_Submit_pages extends ActionType {
 	}
 	public void performAssignmentActivity() {
 		System.out.println("Performing Assignment activity...");
-		StaticWait(2);
+		wait.elementToBeClickable(Assignment_Tab);
 		Assignment_Tab.click();
-		StaticWait(2);
+		wait.elementToBeClickable(TypehereText);
 		TypehereText.sendKeys(generateRandomString());
-		StaticWait(2);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		wait.elementToBeClickable(SubmitAssignment);
 		js.executeScript("arguments[0].scrollIntoView(true);", SubmitAssignment);
