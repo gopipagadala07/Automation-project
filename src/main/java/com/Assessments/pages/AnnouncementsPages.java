@@ -105,7 +105,7 @@ public class AnnouncementsPages extends ActionType {
 				TitleField.click();
 
 				announcementName = "Announcement" + randomNumberGenerator(); 
-				ExtentCucumberAdapter.addTestStepLog("Announcement Name: " + announcementName);
+				//ExtentCucumberAdapter.addTestStepLog("Announcement Name: " + announcementName);
 				announcementNames.add(announcementName);
 
 				Actions actions = new Actions(driver);
