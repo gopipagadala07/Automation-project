@@ -245,7 +245,9 @@ public class CommonPages extends ActionType{
 				int randomMonth = 1 + random.nextInt(12);
 				LocalDate randomFutureDate = LocalDate.of(randomYear, randomMonth, 1);
 				int randomDay = 1 + random.nextInt(randomFutureDate.lengthOfMonth());
-				element.click(); 
+				JavascriptExecutor js=(JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", element);
+				//element.click(); 
 				yearSelection.click();
 
 				WebElement yearElement = DateValue(String.valueOf(randomYear));
