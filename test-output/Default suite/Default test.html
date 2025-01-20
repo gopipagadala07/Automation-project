@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Dec 26 14:50:24 IST 2024</td>
+<td>Started on:</td><td>Thu Jan 09 10:08:55 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>25 seconds (25490 ms)</td>
+<tr><td>Total time:</td><td>226 seconds (226723 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,143 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='LearningTreeRunner.Activity_CreationRunner.tearDownClass()'><b>tearDownClass</b><br>Test class: LearningTreeRunner.Activity_CreationRunner</td>
+<td><div><pre>java.lang.AbstractMethodError: Receiver class org.apache.poi.xssf.usermodel.XSSFColor does not define or inherit an implementation of the resolved method &apos;abstract byte[] getStoredRGB()&apos; of abstract class org.apache.poi.ss.usermodel.ExtendedColor.
+	at org.apache.poi.ss.usermodel.ExtendedColor.getRGBOrARGB(ExtendedColor.java:100)
+	at org.apache.poi.xssf.usermodel.XSSFColor.getRGB(XSSFColor.java:189)
+	at org.apache.poi.xssf.usermodel.XSSFFont.setColor(XSSFFont.java:421)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$failTextColorCellStyle$32(CellStyles.java:198)
+	at tech.grasshopper.excel.report.cell.CellStyles.setFont(CellStyles.java:212)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$failTextColorCellStyle$33(CellStyles.java:197)
+	at java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1228)
+	at tech.grasshopper.excel.report.cell.CellStyles.failTextColorCellStyle(CellStyles.java:197)
+	at tech.grasshopper.excel.report.cell.CellStyles.getCellStyle(CellStyles.java:99)
+	at tech.grasshopper.excel.report.cell.CellOperations.writeValue(CellOperations.java:48)
+	at tech.grasshopper.excel.report.table.FeatureScenarioFailSkipTable.writeTableValues(FeatureScenarioFailSkipTable.java:53)
+	at tech.grasshopper.excel.report.sheets.dashboard.components.FeatureScenarioFailSkipDBComponent.updateDBScenarioFeatureFailSkipTableData(FeatureScenarioFailSkipDBComponent.java:176)
+	at tech.grasshopper.excel.report.sheets.dashboard.components.FeatureScenarioFailSkipDBComponent.createComponent(FeatureScenarioFailSkipDBComponent.java:57)
+	at tech.grasshopper.excel.report.sheets.dashboard.DashboardBasicAndFailSkipSheet.updateSheet(DashboardBasicAndFailSkipSheet.java:21)
+	at tech.grasshopper.excel.report.workbook.ExecutionAndFailSkipDataReport.updateSheets(ExecutionAndFailSkipDataReport.java:19)
+	at tech.grasshopper.excel.report.workbook.ReportWorkbook.createReport(ReportWorkbook.java:46)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.flush(ExtentExcelCucumberReporter.java:70)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.access$100(ExtentExcelCucumberReporter.java:18)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter$1.onNext(ExtentExcelCucumberReporter.java:45)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter$1.onNext(ExtentExcelCucumberReporter.java:37)
+	at io.reactivex.rxjava3.subjects.PublishSubject$PublishDisposable.onNext(PublishSubject.java:310)
+	at io.reactivex.rxjava3.subjects.PublishSubject.onNext(PublishSubject.java:226)
+	at com.aventstack.extentreports.ReactiveSubject.onFlush(ReactiveSubject.java:83)
+	at com.aventstack.extentreports.AbstractProcessor.onFlush(AbstractProcessor.java:96)
+	at com.aventstack.extentreports.ExtentReports.flush(ExtentReports.java:279)
+	at com.aventstack.extentreports.service.ExtentService.flush(ExtentService.java:47)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter.finishReport(ExtentCucumberAdapter.java:301)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:137)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:134)
+	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
+	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
+	at io.cucumber.core.runtime.SynchronizedEventBus.send(SynchronizedEventBus.java:47)
+	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:118)
+	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:105)
+	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+	at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:222)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:131)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1548134743", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1548134743'><pre>java.lang.AbstractMethodError: Receiver class org.apache.poi.xssf.usermodel.XSSFColor does not define or inherit an implementation of the resolved method &apos;abstract byte[] getStoredRGB()&apos; of abstract class org.apache.poi.ss.usermodel.ExtendedColor.
+	at org.apache.poi.ss.usermodel.ExtendedColor.getRGBOrARGB(ExtendedColor.java:100)
+	at org.apache.poi.xssf.usermodel.XSSFColor.getRGB(XSSFColor.java:189)
+	at org.apache.poi.xssf.usermodel.XSSFFont.setColor(XSSFFont.java:421)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$failTextColorCellStyle$32(CellStyles.java:198)
+	at tech.grasshopper.excel.report.cell.CellStyles.setFont(CellStyles.java:212)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$failTextColorCellStyle$33(CellStyles.java:197)
+	at java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1228)
+	at tech.grasshopper.excel.report.cell.CellStyles.failTextColorCellStyle(CellStyles.java:197)
+	at tech.grasshopper.excel.report.cell.CellStyles.getCellStyle(CellStyles.java:99)
+	at tech.grasshopper.excel.report.cell.CellOperations.writeValue(CellOperations.java:48)
+	at tech.grasshopper.excel.report.table.FeatureScenarioFailSkipTable.writeTableValues(FeatureScenarioFailSkipTable.java:53)
+	at tech.grasshopper.excel.report.sheets.dashboard.components.FeatureScenarioFailSkipDBComponent.updateDBScenarioFeatureFailSkipTableData(FeatureScenarioFailSkipDBComponent.java:176)
+	at tech.grasshopper.excel.report.sheets.dashboard.components.FeatureScenarioFailSkipDBComponent.createComponent(FeatureScenarioFailSkipDBComponent.java:57)
+	at tech.grasshopper.excel.report.sheets.dashboard.DashboardBasicAndFailSkipSheet.updateSheet(DashboardBasicAndFailSkipSheet.java:21)
+	at tech.grasshopper.excel.report.workbook.ExecutionAndFailSkipDataReport.updateSheets(ExecutionAndFailSkipDataReport.java:19)
+	at tech.grasshopper.excel.report.workbook.ReportWorkbook.createReport(ReportWorkbook.java:46)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.flush(ExtentExcelCucumberReporter.java:70)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.access$100(ExtentExcelCucumberReporter.java:18)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter$1.onNext(ExtentExcelCucumberReporter.java:45)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter$1.onNext(ExtentExcelCucumberReporter.java:37)
+	at io.reactivex.rxjava3.subjects.PublishSubject$PublishDisposable.onNext(PublishSubject.java:310)
+	at io.reactivex.rxjava3.subjects.PublishSubject.onNext(PublishSubject.java:226)
+	at com.aventstack.extentreports.ReactiveSubject.onFlush(ReactiveSubject.java:83)
+	at com.aventstack.extentreports.AbstractProcessor.onFlush(AbstractProcessor.java:96)
+	at com.aventstack.extentreports.ExtentReports.flush(ExtentReports.java:279)
+	at com.aventstack.extentreports.service.ExtentService.flush(ExtentService.java:47)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter.finishReport(ExtentCucumberAdapter.java:301)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:137)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:134)
+	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
+	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
+	at io.cucumber.core.runtime.SynchronizedEventBus.send(SynchronizedEventBus.java:47)
+	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:118)
+	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:105)
+	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+	at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:222)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:131)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>3</td>
+<td>LearningTreeRunner.Activity_CreationRunner@624ea235</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,30 +213,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='LearningTreeRunner.SISprovisioningRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.SISprovisioningRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the School, Classroom, Section Creation Functionality With valid Data", "Verify the SIS Provisioning Creation Functionality"</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;String.toUpperCase()&quot; because &quot;env&quot; is null
-	at com.Utils.ReadProperties.loadConfig(ReadProperties.java:28)
-	at com.Utils.Base.initProperties(Base.java:90)
-	at Hooks.AppHooks.getProperty(AppHooks.java:32)
-</pre></div><a href='#' onClick='toggleBox("stack-trace635739314", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace635739314'><pre>java.lang.NullPointerException: Cannot invoke &quot;String.toUpperCase()&quot; because &quot;env&quot; is null
-	at com.Utils.ReadProperties.loadConfig(ReadProperties.java:28)
-	at com.Utils.Base.initProperties(Base.java:90)
-	at Hooks.AppHooks.getProperty(AppHooks.java:32)
-</pre></div></td>
-<td>3</td>
-<td>LearningTreeRunner.SISprovisioningRunner@6b09fb41</td></tr>
-<tr>
-<td title='LearningTreeRunner.SISprovisioningRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.SISprovisioningRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Functionality"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;Username&apos;]&quot;}
+<td title='LearningTreeRunner.Activity_CreationRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Activity_CreationRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating the Activities", "Verify the Activities Creation Functionality"</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span _ngcontent-xvd-c520=&quot;&quot;&gt;...&lt;/span&gt; is not clickable at point (1375, 499). Other element would receive the click: &lt;div id=&quot;cdk-overlay-41&quot; class=&quot;cdk-overlay-pane&quot; style=&quot;position: static;&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=131.0.6778.205)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cb0c6198c47f62971475bf570d4e1513, findElement {using=xpath, value=//input[@id=&apos;Username&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51017}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51017/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cb0c6198c47f62971475bf570d4e1513
+Command: [aed5004c14bdec33e8b9aa5bbaadcee6, clickElement {id=f.FDEC876D8886C5B178792F6ADBF2E64A.d.3A78B2003457F195B60C0CB731026FBA.e.1198}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57389}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57389/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aed5004c14bdec33e8b9aa5bbaadcee6)] -&gt; xpath: //span[text()=&apos;Add Activity&apos;]]
+Session ID: aed5004c14bdec33e8b9aa5bbaadcee6
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -110,24 +233,25 @@ Session ID: cb0c6198c47f62971475bf570d4e1513
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.LearningTree.pages.LoginPage.enterUsername(LoginPage.java:54)
-	at com.LearningTree.pages.LoginPage.User_login(LoginPage.java:79)
-	at LearningTreeStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
-	at ✽.User enters the credentials from the excel sheet at 0(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/SIS%20Provisioning.feature:31)
-</pre></div><a href='#' onClick='toggleBox("stack-trace36266279", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace36266279'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;Username&apos;]&quot;}
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.click(Unknown Source)
+	at com.LearningTree.pages.Activities_Creation_in_CDPage.click_on_Add_Activity(Activities_Creation_in_CDPage.java:241)
+	at LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Topic_Goal(Activities_creation_Stepdefination.java:121)
+	at ✽.User Add Activities in Topic Goal(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Activities_Creation.feature:26)
+</pre></div><a href='#' onClick='toggleBox("stack-trace504138124", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace504138124'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span _ngcontent-xvd-c520=&quot;&quot;&gt;...&lt;/span&gt; is not clickable at point (1375, 499). Other element would receive the click: &lt;div id=&quot;cdk-overlay-41&quot; class=&quot;cdk-overlay-pane&quot; style=&quot;position: static;&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=131.0.6778.205)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cb0c6198c47f62971475bf570d4e1513, findElement {using=xpath, value=//input[@id=&apos;Username&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51017}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51017/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cb0c6198c47f62971475bf570d4e1513
+Command: [aed5004c14bdec33e8b9aa5bbaadcee6, clickElement {id=f.FDEC876D8886C5B178792F6ADBF2E64A.d.3A78B2003457F195B60C0CB731026FBA.e.1198}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57389}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57389/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (aed5004c14bdec33e8b9aa5bbaadcee6)] -&gt; xpath: //span[text()=&apos;Add Activity&apos;]]
+Session ID: aed5004c14bdec33e8b9aa5bbaadcee6
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -138,17 +262,18 @@ Session ID: cb0c6198c47f62971475bf570d4e1513
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.LearningTree.pages.LoginPage.enterUsername(LoginPage.java:54)
-	at com.LearningTree.pages.LoginPage.User_login(LoginPage.java:79)
-	at LearningTreeStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
-	at ✽.User enters the credentials from the excel sheet at 0(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/SIS%20Provisioning.feature:31)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.click(Unknown Source)
+	at com.LearningTree.pages.Activities_Creation_in_CDPage.click_on_Add_Activity(Activities_Creation_in_CDPage.java:241)
+	at LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Topic_Goal(Activities_creation_Stepdefination.java:121)
+	at ✽.User Add Activities in Topic Goal(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Activities_Creation.feature:26)
 </pre></div></td>
-<td>19</td>
-<td>LearningTreeRunner.SISprovisioningRunner@6b09fb41</td></tr>
+<td>222</td>
+<td>LearningTreeRunner.Activity_CreationRunner@624ea235</td></tr>
 </table><p>
 </body>
 </html>

@@ -134,13 +134,11 @@ public class Import_Activities_in_LTPage extends ActionType {
 		Manage_Members_btn.click();
 		Search_Users.sendKeys(Student_Lastname);
 		WebElement Add_Student =  driver.findElement(By.xpath("//small[contains(text(),'"+Student_Lastname+"')]/parent::span/parent::div/parent::div/following::div/descendant::mat-icon[@mattooltip='Add User']"));
-
-
 		int retries = 10;
 		while (retries > 0) {
 			try {
 				wait.elementToBeClickable(Add_Student);
-				Add_Student.click();
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", Add_Student);
 				break;
 			} catch (StaleElementReferenceException e) {
 				
@@ -151,14 +149,16 @@ public class Import_Activities_in_LTPage extends ActionType {
 		}
 		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	        try {
-	            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngx-toastr.toast-success")));
+//	            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngx-toastr.toast-success")));
 	            WebElement Close = driver.findElement(By.xpath("//mat-icon[text()='close']"));
 	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", Close);
 	            System.out.println("Close button clicked.");
 	        } catch (ElementClickInterceptedException e) {
 	            System.out.println("Element is blocked by a toast notification or other element.");
+	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", Close);
 	        } catch (Exception e) {
 	            System.out.println("Error: " + e.getMessage());
+	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", Close);
 	        }	
 	}
 }

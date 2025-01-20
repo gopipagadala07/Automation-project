@@ -122,57 +122,62 @@ public class Student_Activity_Submit_pages extends ActionType {
 	public void performActivities()
 	{
 
-			JavascriptExecutor s = (JavascriptExecutor) driver;
-			s.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
-			s.executeScript("arguments[0].scrollIntoView(true);", Topic);
-			s.executeScript("arguments[0].click();", Topic);
-			StaticWait(3);
-			s.executeScript("arguments[0].scrollIntoView(true);", SubTopic);
-			s.executeScript("arguments[0].click();", SubTopic);
-			StaticWait(1);
-		    List<WebElement> matIcons = driver.findElements(By.xpath("//mat-icon[text()='launch']"));
-		    System.out.println("Total Quizzes Found: " + matIcons.size());
-			 for (int targetIndex = 0; targetIndex < matIcons.size(); targetIndex++) {
-			        int retry = 0;
-			        int maxRetry = 5;
-			        while (retry < maxRetry) {
-			            	matIcons = driver.findElements(By.xpath("//mat-icon[text()='launch']"));
-			            	WebElement currentIcon = matIcons.get(targetIndex);
-			                StaticWait(1);
-			                int retries = 10;
-			        		while (retries > 0) {
-			        			try {
-			        				s.executeScript("arguments[0].scrollIntoView(true);", currentIcon);
-					                s.executeScript("arguments[0].click();", currentIcon);	
-			        				break;
-			        			} catch (StaleElementReferenceException e) {
-			        				
-			        				System.out.println("StaleElementReferenceException. Retrying...");
-			        				StaticWait(1);
-			        				retries--;
-			        			}	
-			        		}
-			                String Activity_Title = driver.findElement(By.xpath("//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div")).getText();
-			                System.out.println("Activity Titel: "+Activity_Title);
-			                StaticWait(2);			                
-							 if(Activity_Title.toLowerCase().contains("assignment".toLowerCase()))
-							{
-								performAssignmentActivity();
-							}
-							
-							 
-							 else if(Activity_Title.toLowerCase().contains("discussion".toLowerCase()))
-							{
-			                	performDiscussionActivity();
-							}
-	
-			                StaticWait(1);
-			                break;
-			        }
-			        if (retry == maxRetry) {
-			            System.out.println("Failed to process Activity icon at index: " + targetIndex + " after " + maxRetry + " retries.");
-			        }
-			    }
+		JavascriptExecutor s = (JavascriptExecutor) driver;
+		s.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
+		s.executeScript("arguments[0].scrollIntoView(true);", Topic);
+		s.executeScript("arguments[0].click();", Topic);
+		StaticWait(3);
+		s.executeScript("arguments[0].scrollIntoView(true);", SubTopic);
+		s.executeScript("arguments[0].click();", SubTopic);
+		StaticWait(1);
+		List<WebElement> matIcons = driver.findElements(By.xpath("//mat-icon[text()='launch']"));
+		System.out.println("Total Quizzes Found: " + matIcons.size());
+		for (int targetIndex = 0; targetIndex < matIcons.size(); targetIndex++) {
+			int retry = 0;
+			int maxRetry = 5;
+			while (retry < maxRetry) {
+				matIcons = driver.findElements(By.xpath("//mat-icon[text()='launch']"));
+				WebElement currentIcon = matIcons.get(targetIndex);
+				StaticWait(1);
+				int retries = 10;
+				while (retries > 0) {
+					try {
+						s.executeScript("arguments[0].scrollIntoView(true);", currentIcon);
+						s.executeScript("arguments[0].click();", currentIcon);	
+						break;
+					} catch (StaleElementReferenceException e) {
+
+						System.out.println("StaleElementReferenceException. Retrying...");
+						StaticWait(1);
+						retries--;
+					}	
+				}
+				String Activity_Title = driver.findElement(By.xpath("//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div")).getText();
+				System.out.println("Activity Titel: "+Activity_Title);
+				StaticWait(2);			                
+				if(Activity_Title.toLowerCase().contains("assignment".toLowerCase()))
+				{
+					performAssignmentActivity();
+				}
+
+
+				else if(Activity_Title.toLowerCase().contains("discussion".toLowerCase()))
+				{
+					performDiscussionActivity();
+				}
+				else if(Activity_Title.toLowerCase().contains("assessment".toLowerCase()))
+				{
+					performAssessmentActivity();
+				}
+
+
+				StaticWait(1);
+				break;
+			}
+			if (retry == maxRetry) {
+				System.out.println("Failed to process Activity icon at index: " + targetIndex + " after " + maxRetry + " retries.");
+			}
+		}
 	}
 	private void performDiscussionActivity() {
 		System.out.println("Performing Discussion activity...");
@@ -203,9 +208,67 @@ public class Student_Activity_Submit_pages extends ActionType {
 		js.executeScript("arguments[0].click();", CloseIcon); 
 		StaticWait(1);
 	}
-	public void performAssessmentActivity() {
+	public void performAssessmentActivity()
+	{
 		System.out.println("Performing Assessment activity...");
 		// Add logic to handle assessment activity
+		    
+		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		    JavascriptExecutor js = (JavascriptExecutor) driver;
+			
+			driver.switchTo().frame(0);
+			StaticWait(2);
+			
+		    WebElement beginTest = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Begin Test')]")));
+            js.executeScript("arguments[0].click();", beginTest);	 
+            StaticWait(2);
+
+		            // Handle quiz questions
+		            List<WebElement> questions = driver.findElements(By.xpath("//div[@id='navigationSideMenu']/ul/li/div/button"));
+		            int numberOfQuestions = questions.size();
+
+		            for (int i = 0; i < numberOfQuestions; i++) {
+		                WebElement question = driver.findElement(By.xpath("//*[contains(@responseidentifier, 'RESPONSE')]"));
+		                String tagName = question.getTagName();
+		                StaticWait(1);
+
+		                // Handle different question types
+		                if (tagName.equalsIgnoreCase("choiceinteraction")) {
+		                    WebElement choiceValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='mdc-radio'])[2]")));
+		                    new Actions(driver).moveToElement(choiceValue).click().perform();
+		                } else if (tagName.equalsIgnoreCase("extendedtextinteraction")) {
+		                    WebElement extendedValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='ck-placeholder']")));
+		                    extendedValue.sendKeys(generateRandomString());
+		                } else if (tagName.equalsIgnoreCase("textentryinteraction")) {
+		                    WebElement fillInTheBlankValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtEditorInteraction")));
+		                    fillInTheBlankValue.sendKeys(generateRandomString());
+		                }
+
+		                // Click the "Next" button
+		                WebElement nextBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@mattooltip='Next']")));
+		                js.executeScript("arguments[0].click();", nextBtn);
+		                StaticWait(2);
+		            }
+
+		            // Finish and submit the quiz
+		            WebElement finish = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Finish']")));
+		            js.executeScript("arguments[0].click();", finish);
+		            StaticWait(1);
+
+		            WebElement submit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Submit']")));
+		            js.executeScript("arguments[0].click();", submit);
+		            StaticWait(2);
+
+		            // Close the quiz
+		            driver.switchTo().defaultContent();
+		            WebElement closeAfterSubmit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-icon[@mattooltip='Close']")));
+		            js.executeScript("arguments[0].click();", closeAfterSubmit);
+		            StaticWait(1);
+		            
+//		            js.executeScript("arguments[0].scrollIntoView(true);", CloseIcon);
+//		    		js.executeScript("arguments[0].click();", CloseIcon); 
+
+		            System.out.println("Assessment completed successfully.");
 	}
 
 }

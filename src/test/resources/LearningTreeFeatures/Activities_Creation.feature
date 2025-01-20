@@ -12,7 +12,7 @@ Feature: Verify the Activities Creation Functionality
     And User Click on that Community<rownumber1>
     Then User Add Child Objective
     ###Activities Creation at Virtual Goal
-    And User Add Activities in Virtual Goal
+    And User Add Activities in Virtual Goal<rownumber1>
     ###Activities Creation at Unit Goal
     Then User Add Discussion Activity
     Then User Add Assignment Activity
@@ -23,9 +23,9 @@ Feature: Verify the Activities Creation Functionality
     #Then User Add Epub Activity
     #Then User Add LTI Activity
     ###Activities Creation at Topic Goal
-    And User Add Activities in Topic Goal
+    And User Add Activities in Topic Goal<rownumber1>
     #Activities Creation at Sub Topic Goal
-    Then User Add Activities in Sub Topic Goal
+    Then User Add Activities in Sub Topic Goal<rownumber1>
     And User click on Publish Toggle for All Activities in CD
 
     Examples: 

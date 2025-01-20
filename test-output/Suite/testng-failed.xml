@@ -4,33 +4,24 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="AssessmentsRunner.ScoreSubmissionRunner">
+      <class name="LearningTreeRunner.Student_Activities_SubmissionRunner">
         <methods>
-          <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="1"/>
-          <include name="tearDownClass"/>
           <include name="afterClass"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- AssessmentsRunner.ScoreSubmissionRunner -->
-      <class name="AssessmentsRunner.Benchmark_TeacherRunner">
-        <methods>
           <include name="setUpClass"/>
-          <include name="afterClass"/>
           <include name="tearDownClass"/>
           <include name="runScenario" invocation-numbers="0"/>
           <include name="beforeClass"/>
         </methods>
-      </class> <!-- AssessmentsRunner.Benchmark_TeacherRunner -->
-      <class name="AssessmentsRunner.Teacher_ActivityprogressRunner">
+      </class> <!-- LearningTreeRunner.Student_Activities_SubmissionRunner -->
+      <class name="LearningTreeRunner.Provide_Score_in_LTRunner">
         <methods>
           <include name="setUpClass"/>
           <include name="beforeClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
           <include name="afterClass"/>
         </methods>
-      </class> <!-- AssessmentsRunner.Teacher_ActivityprogressRunner -->
+      </class> <!-- LearningTreeRunner.Provide_Score_in_LTRunner -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
