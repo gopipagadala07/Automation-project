@@ -148,7 +148,7 @@ public class Import_Activities_in_LTPage extends ActionType {
 		wait.elementToBeClickable(Manage_Members_btn);
 		Manage_Members_btn.click();
 		Search_Users.sendKeys(Student_Lastname);
-		WebElement Add_Student =  driver.findElement(By.xpath("//small[contains(text(),'"+Student_Lastname+"')]/parent::span/parent::div/parent::div/following::div/descendant::mat-icon[@mattooltip='Add User']"));
+		WebElement Add_Student =  driver.findElement(By.xpath("//mat-icon[@mattooltip='Add User']"));
 		int retries = 10;
 		while (retries > 0) {
 			try {

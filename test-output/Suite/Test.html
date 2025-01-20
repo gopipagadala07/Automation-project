@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jan 20 14:44:52 IST 2025</td>
+<td>Started on:</td><td>Mon Jan 20 16:54:10 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>843 seconds (843268 ms)</td>
+<tr><td>Total time:</td><td>734 seconds (734608 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -115,8 +115,8 @@ function toggleAllBoxes() {
 	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
 	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1305643394", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1305643394'><pre>java.lang.AbstractMethodError: Receiver class org.apache.poi.xssf.usermodel.XSSFColor does not define or inherit an implementation of the resolved method &apos;abstract byte[] getStoredRGB()&apos; of abstract class org.apache.poi.ss.usermodel.ExtendedColor.
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1316910947", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1316910947'><pre>java.lang.AbstractMethodError: Receiver class org.apache.poi.xssf.usermodel.XSSFColor does not define or inherit an implementation of the resolved method &apos;abstract byte[] getStoredRGB()&apos; of abstract class org.apache.poi.ss.usermodel.ExtendedColor.
 	at org.apache.poi.ss.usermodel.ExtendedColor.getRGBOrARGB(ExtendedColor.java:100)
 	at org.apache.poi.xssf.usermodel.XSSFColor.getRGB(XSSFColor.java:189)
 	at org.apache.poi.xssf.usermodel.XSSFFont.setColor(XSSFFont.java:421)
@@ -178,8 +178,214 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>3</td>
+<td>4</td>
 <td>LearningTreeRunner.Activity_CreationRunner@624ea235</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='LearningTreeRunner.Provide_Score_in_LTRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Provide_Score_in_LTRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring in LT"</td>
+<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;User launch the application with Valid URL&apos; and 13 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given(&quot;User launch the application with Valid URL&quot;)
+public void user_launch_the_application_with_valid_url() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Given(&quot;User able to see all Fields&quot;)
+public void user_able_to_see_all_fields() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User enters the credentials from the excel sheet at {int}&quot;)
+public void user_enters_the_credentials_from_the_excel_sheet_at(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User is on homepage&quot;)
+public void user_is_on_homepage() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Click Courses in Left menu&quot;)
+public void user_click_courses_in_left_menu() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Click on Overal Speed Grader&quot;)
+public void user_click_on_overal_speed_grader() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When(&quot;User select All lookups in Activities To Grade screen03&quot;)
+public void user_select_all_lookups_in_activities_to_grade_screen03() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;provide the score for all Activities&quot;)
+public void provide_the_score_for_all_activities() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When(&quot;User Close Activity to Grade Screen&quot;)
+public void user_close_activity_to_grade_screen() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Saved the Course and Search for the Created Course in Search here Field0&quot;)
+public void user_saved_the_course_and_search_for_the_created_course_in_search_here_field0() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Click on that Course0&quot;)
+public void user_click_on_that_course0() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Provide the Score in Activity To Grade&quot;)
+public void user_provide_the_score_in_activity_to_grade() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User go to Learning Tab&quot;)
+public void user_go_to_learning_tab() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Provide the Score in Activity Progress screen3&quot;)
+public void user_provide_the_score_in_activity_progress_screen3() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1639667568", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1639667568'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;User launch the application with Valid URL&apos; and 13 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given(&quot;User launch the application with Valid URL&quot;)
+public void user_launch_the_application_with_valid_url() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Given(&quot;User able to see all Fields&quot;)
+public void user_able_to_see_all_fields() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User enters the credentials from the excel sheet at {int}&quot;)
+public void user_enters_the_credentials_from_the_excel_sheet_at(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User is on homepage&quot;)
+public void user_is_on_homepage() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Click Courses in Left menu&quot;)
+public void user_click_courses_in_left_menu() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Click on Overal Speed Grader&quot;)
+public void user_click_on_overal_speed_grader() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When(&quot;User select All lookups in Activities To Grade screen03&quot;)
+public void user_select_all_lookups_in_activities_to_grade_screen03() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;provide the score for all Activities&quot;)
+public void provide_the_score_for_all_activities() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When(&quot;User Close Activity to Grade Screen&quot;)
+public void user_close_activity_to_grade_screen() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Saved the Course and Search for the Created Course in Search here Field0&quot;)
+public void user_saved_the_course_and_search_for_the_created_course_in_search_here_field0() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Click on that Course0&quot;)
+public void user_click_on_that_course0() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Provide the Score in Activity To Grade&quot;)
+public void user_provide_the_score_in_activity_to_grade() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User go to Learning Tab&quot;)
+public void user_go_to_learning_tab() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Provide the Score in Activity Progress screen3&quot;)
+public void user_provide_the_score_in_activity_progress_screen3() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>LearningTreeRunner.Provide_Score_in_LTRunner@6f15d60e</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -190,25 +396,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='LearningTreeRunner.Student_Activities_SubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Student_Activities_SubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Student Activities Submission", "Verify the Student Activities Submission"</td>
-<td></td>
-<td>296</td>
-<td>LearningTreeRunner.Student_Activities_SubmissionRunner@7857fe2</td></tr>
-<tr>
-<td title='LearningTreeRunner.Provide_Score_in_LTRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Provide_Score_in_LTRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring in LT"</td>
-<td></td>
-<td>168</td>
-<td>LearningTreeRunner.Provide_Score_in_LTRunner@6f15d60e</td></tr>
-<tr>
 <td title='LearningTreeRunner.Import_Activities_in_LTRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Import_Activities_in_LTRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Import of Activities in LT", "Verify the import of Activities in LT"</td>
 <td></td>
-<td>60</td>
+<td>69</td>
 <td>LearningTreeRunner.Import_Activities_in_LTRunner@20b2475a</td></tr>
 <tr>
 <td title='LearningTreeRunner.Activity_CreationRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Activity_CreationRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating the Activities", "Verify the Activities Creation Functionality"</td>
 <td></td>
-<td>308</td>
+<td>346</td>
 <td>LearningTreeRunner.Activity_CreationRunner@624ea235</td></tr>
+<tr>
+<td title='LearningTreeRunner.Student_Activities_SubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Student_Activities_SubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Student Activities Submission", "Verify the Student Activities Submission"</td>
+<td></td>
+<td>308</td>
+<td>LearningTreeRunner.Student_Activities_SubmissionRunner@7857fe2</td></tr>
 </table><p>
 </body>
 </html>

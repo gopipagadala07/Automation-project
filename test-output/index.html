@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="LearningTreeRunner.Provide_Score_in_LTRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Provide the Score for all Activities at Speed Grder and Activities to Garde&quot;, &quot;Verify the Scoring i...)">runScenario("Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring i...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,22 +117,17 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="LearningTreeRunner.Student_Activities_SubmissionRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Student Activities Submission&quot;, &quot;Verify the Student Activities Submission&quot;)">runScenario("Student Activities Submission", "Verify the Student Activities Submission")</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="LearningTreeRunner.Provide_Score_in_LTRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Provide the Score for all Activities at Speed Grder and Activities to Garde&quot;, &quot;Verify the Scoring i...)">runScenario("Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring i...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="LearningTreeRunner.Import_Activities_in_LTRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Import of Activities in LT&quot;, &quot;Verify the import of Activities in LT&quot;)">runScenario("Import of Activities in LT", "Verify the import of Activities in LT")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="LearningTreeRunner.Activity_CreationRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Creating the Activities&quot;, &quot;Verify the Activities Creation Functionality&quot;)">runScenario("Creating the Activities", "Verify the Activities Creation Functionality")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="LearningTreeRunner.Student_Activities_SubmissionRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Student Activities Submission&quot;, &quot;Verify the Student Activities Submission&quot;)">runScenario("Student Activities Submission", "Verify the Student Activities Submission")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -133,6 +142,109 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">LearningTreeRunner.Provide_Score_in_LTRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Provide the Score for all Activities at Speed Grder and Activities to Garde&quot;, &quot;Verify the Scoring i...)">
+                  </a> <!-- runScenario("Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring i...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Provide the Score for all Activities at Speed Grder and Activities to Garde","Verify the Scoring in LT")</span>
+                  <div class="stack-trace">io.cucumber.testng.UndefinedStepException: The step &apos;User launch the application with Valid URL&apos; and 13 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given(&quot;User launch the application with Valid URL&quot;)
+public void user_launch_the_application_with_valid_url() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Given(&quot;User able to see all Fields&quot;)
+public void user_able_to_see_all_fields() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User enters the credentials from the excel sheet at {int}&quot;)
+public void user_enters_the_credentials_from_the_excel_sheet_at(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User is on homepage&quot;)
+public void user_is_on_homepage() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Click Courses in Left menu&quot;)
+public void user_click_courses_in_left_menu() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Click on Overal Speed Grader&quot;)
+public void user_click_on_overal_speed_grader() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When(&quot;User select All lookups in Activities To Grade screen03&quot;)
+public void user_select_all_lookups_in_activities_to_grade_screen03() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;provide the score for all Activities&quot;)
+public void provide_the_score_for_all_activities() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When(&quot;User Close Activity to Grade Screen&quot;)
+public void user_close_activity_to_grade_screen() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Saved the Course and Search for the Created Course in Search here Field0&quot;)
+public void user_saved_the_course_and_search_for_the_created_course_in_search_here_field0() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Click on that Course0&quot;)
+public void user_click_on_that_course0() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Provide the Score in Activity To Grade&quot;)
+public void user_provide_the_score_in_activity_to_grade() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User go to Learning Tab&quot;)
+public void user_go_to_learning_tab() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;User Provide the Score in Activity Progress screen3&quot;)
+public void user_provide_the_score_in_activity_progress_screen3() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -163,24 +275,6 @@
                   </a> <!-- runScenario("Import of Activities in LT", "Verify the import of Activities in LT") -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("Import of Activities in LT","Verify the import of Activities in LT")</span>
-                  <em>
-(Runs Cucumber Scenarios)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">LearningTreeRunner.Provide_Score_in_LTRunner</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="runScenario(&quot;Provide the Score for all Activities at Speed Grder and Activities to Garde&quot;, &quot;Verify the Scoring i...)">
-                  </a> <!-- runScenario("Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring i...) -->
-                  <span class="method-name">runScenario</span>
-                  <span class="parameters">("Provide the Score for all Activities at Speed Grder and Activities to Garde","Verify the Scoring in LT")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -273,24 +367,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'LearningTreeRunner.Activity_CreationRunner')
-data.setCell(0, 3, 308203);
+data.setCell(0, 3, 346929);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
 data.setCell(1, 2, 'LearningTreeRunner.Student_Activities_SubmissionRunner')
-data.setCell(1, 3, 296359);
+data.setCell(1, 3, 308342);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'runScenario')
-data.setCell(2, 2, 'LearningTreeRunner.Provide_Score_in_LTRunner')
-data.setCell(2, 3, 168739);
+data.setCell(2, 2, 'LearningTreeRunner.Import_Activities_in_LTRunner')
+data.setCell(2, 3, 69664);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'runScenario')
-data.setCell(3, 2, 'LearningTreeRunner.Import_Activities_in_LTRunner')
-data.setCell(3, 3, 60277);
+data.setCell(3, 2, 'LearningTreeRunner.Provide_Score_in_LTRunner')
+data.setCell(3, 3, 113);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 minutes</span>
+              <span class="suite-total-time">Total running time: 12 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -318,95 +412,97 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">LearningTreeRunner.Activity_CreationRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@5ccb2393)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@52a7c9de)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">825 ms</span>
+                <span class="method-start">881 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Creating the Activities", "Verify the Activities Creation Functionality")</span>
-                <span class="method-start">835 ms</span>
+                <span class="method-start">895 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">309047 ms</span>
+                <span class="method-start">347856 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">309053 ms</span>
+                <span class="method-start">347859 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">LearningTreeRunner.Import_Activities_in_LTRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@5ccb2393)</span>
-                <span class="method-start">312984 ms</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@52a7c9de)</span>
+                <span class="method-start">352235 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">313112 ms</span>
+                <span class="method-start">352301 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Import of Activities in LT", "Verify the import of Activities in LT")</span>
-                <span class="method-start">313115 ms</span>
+                <span class="method-start">352303 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">373394 ms</span>
+                <span class="method-start">421972 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">373395 ms</span>
+                <span class="method-start">421972 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">LearningTreeRunner.Student_Activities_SubmissionRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@5ccb2393)</span>
-                <span class="method-start">375128 ms</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@52a7c9de)</span>
+                <span class="method-start">424294 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">375143 ms</span>
+                <span class="method-start">424423 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Student Activities Submission", "Verify the Student Activities Submission")</span>
-                <span class="method-start">375144 ms</span>
+                <span class="method-start">424426 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
-                <span class="method-name">tearDownClass</span>
-                <span class="method-start">671508 ms</span>
+                <span class="method-name">afterClass</span>
+                <span class="method-start">732798 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
-                <span class="method-name">afterClass</span>
-                <span class="method-start">671508 ms</span>
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">732811 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">LearningTreeRunner.Provide_Score_in_LTRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@5ccb2393)</span>
-                <span class="method-start">672850 ms</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@52a7c9de)</span>
+                <span class="method-start">734330 ms</span>
               </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">runScenario("Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring i...)</span>
-                <span class="method-start">673103 ms</span>
-              </div> <!-- test-method -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">673103 ms</span>
+                <span class="method-start">734433 ms</span>
               </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring i...)</span>
+                <span class="method-start">734435 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">841848 ms</span>
+                <span class="method-start">734551 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">841850 ms</span>
+                <span class="method-start">734552 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
