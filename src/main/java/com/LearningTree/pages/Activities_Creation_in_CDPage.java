@@ -292,9 +292,8 @@ public class Activities_Creation_in_CDPage extends ActionType
 		js.executeScript("arguments[0].click();", gobtn);
 		WebElement testAddBtn = wait1.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
 		js.executeScript("arguments[0].click();", testAddBtn);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait1.until(ExpectedConditions.visibilityOfElementLocated((By) TitleName));
-		TitleName.sendKeys("Assessment"+randomNumberGenerator());
+		String AName = "Assessment"+randomNumberGenerator();
+		cp.Name(AName);
 		String Description_Txt="Description"+"       "+generateRandomString();
 		Description.sendKeys(Description_Txt);
 		Instructionbox.sendKeys(generateRandomString());

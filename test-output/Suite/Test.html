@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/4/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jan 20 16:54:10 IST 2025</td>
+<td>Started on:</td><td>Mon Jan 20 17:18:43 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>734 seconds (734608 ms)</td>
+<tr><td>Total time:</td><td>87 seconds (87843 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -81,18 +81,18 @@ function toggleAllBoxes() {
 	at org.apache.poi.ss.usermodel.ExtendedColor.getRGBOrARGB(ExtendedColor.java:100)
 	at org.apache.poi.xssf.usermodel.XSSFColor.getRGB(XSSFColor.java:189)
 	at org.apache.poi.xssf.usermodel.XSSFFont.setColor(XSSFFont.java:421)
-	at tech.grasshopper.excel.report.cell.CellStyles.lambda$passTextBoldCellStyle$24(CellStyles.java:171)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$failTextColorCellStyle$32(CellStyles.java:198)
 	at tech.grasshopper.excel.report.cell.CellStyles.setFont(CellStyles.java:212)
-	at tech.grasshopper.excel.report.cell.CellStyles.lambda$passTextBoldCellStyle$25(CellStyles.java:170)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$failTextColorCellStyle$33(CellStyles.java:197)
 	at java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1228)
-	at tech.grasshopper.excel.report.cell.CellStyles.passTextBoldCellStyle(CellStyles.java:170)
-	at tech.grasshopper.excel.report.cell.CellStyles.getCellStyle(CellStyles.java:87)
-	at tech.grasshopper.excel.report.cell.CellOperations.writeValue(CellOperations.java:65)
-	at tech.grasshopper.excel.report.table.SimpleTableOperations.writeTableCellValues(SimpleTableOperations.java:38)
-	at tech.grasshopper.excel.report.sheets.scenarios.ScenariosSheet.updateScenariosTableData(ScenariosSheet.java:100)
-	at tech.grasshopper.excel.report.sheets.scenarios.ScenariosSheet.updateSheet(ScenariosSheet.java:48)
-	at tech.grasshopper.excel.report.workbook.ReportWorkbook.updateSheets(ReportWorkbook.java:74)
-	at tech.grasshopper.excel.report.workbook.ExecutionDataReport.updateSheets(ExecutionDataReport.java:20)
+	at tech.grasshopper.excel.report.cell.CellStyles.failTextColorCellStyle(CellStyles.java:197)
+	at tech.grasshopper.excel.report.cell.CellStyles.getCellStyle(CellStyles.java:99)
+	at tech.grasshopper.excel.report.cell.CellOperations.writeValue(CellOperations.java:48)
+	at tech.grasshopper.excel.report.table.FeatureScenarioFailSkipTable.writeTableValues(FeatureScenarioFailSkipTable.java:53)
+	at tech.grasshopper.excel.report.sheets.dashboard.components.FeatureScenarioFailSkipDBComponent.updateDBScenarioFeatureFailSkipTableData(FeatureScenarioFailSkipDBComponent.java:176)
+	at tech.grasshopper.excel.report.sheets.dashboard.components.FeatureScenarioFailSkipDBComponent.createComponent(FeatureScenarioFailSkipDBComponent.java:57)
+	at tech.grasshopper.excel.report.sheets.dashboard.DashboardBasicAndFailSkipSheet.updateSheet(DashboardBasicAndFailSkipSheet.java:21)
+	at tech.grasshopper.excel.report.workbook.ExecutionAndFailSkipDataReport.updateSheets(ExecutionAndFailSkipDataReport.java:19)
 	at tech.grasshopper.excel.report.workbook.ReportWorkbook.createReport(ReportWorkbook.java:46)
 	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.flush(ExtentExcelCucumberReporter.java:70)
 	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.access$100(ExtentExcelCucumberReporter.java:18)
@@ -115,23 +115,23 @@ function toggleAllBoxes() {
 	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
 	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1316910947", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1316910947'><pre>java.lang.AbstractMethodError: Receiver class org.apache.poi.xssf.usermodel.XSSFColor does not define or inherit an implementation of the resolved method &apos;abstract byte[] getStoredRGB()&apos; of abstract class org.apache.poi.ss.usermodel.ExtendedColor.
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace706139356", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace706139356'><pre>java.lang.AbstractMethodError: Receiver class org.apache.poi.xssf.usermodel.XSSFColor does not define or inherit an implementation of the resolved method &apos;abstract byte[] getStoredRGB()&apos; of abstract class org.apache.poi.ss.usermodel.ExtendedColor.
 	at org.apache.poi.ss.usermodel.ExtendedColor.getRGBOrARGB(ExtendedColor.java:100)
 	at org.apache.poi.xssf.usermodel.XSSFColor.getRGB(XSSFColor.java:189)
 	at org.apache.poi.xssf.usermodel.XSSFFont.setColor(XSSFFont.java:421)
-	at tech.grasshopper.excel.report.cell.CellStyles.lambda$passTextBoldCellStyle$24(CellStyles.java:171)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$failTextColorCellStyle$32(CellStyles.java:198)
 	at tech.grasshopper.excel.report.cell.CellStyles.setFont(CellStyles.java:212)
-	at tech.grasshopper.excel.report.cell.CellStyles.lambda$passTextBoldCellStyle$25(CellStyles.java:170)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$failTextColorCellStyle$33(CellStyles.java:197)
 	at java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1228)
-	at tech.grasshopper.excel.report.cell.CellStyles.passTextBoldCellStyle(CellStyles.java:170)
-	at tech.grasshopper.excel.report.cell.CellStyles.getCellStyle(CellStyles.java:87)
-	at tech.grasshopper.excel.report.cell.CellOperations.writeValue(CellOperations.java:65)
-	at tech.grasshopper.excel.report.table.SimpleTableOperations.writeTableCellValues(SimpleTableOperations.java:38)
-	at tech.grasshopper.excel.report.sheets.scenarios.ScenariosSheet.updateScenariosTableData(ScenariosSheet.java:100)
-	at tech.grasshopper.excel.report.sheets.scenarios.ScenariosSheet.updateSheet(ScenariosSheet.java:48)
-	at tech.grasshopper.excel.report.workbook.ReportWorkbook.updateSheets(ReportWorkbook.java:74)
-	at tech.grasshopper.excel.report.workbook.ExecutionDataReport.updateSheets(ExecutionDataReport.java:20)
+	at tech.grasshopper.excel.report.cell.CellStyles.failTextColorCellStyle(CellStyles.java:197)
+	at tech.grasshopper.excel.report.cell.CellStyles.getCellStyle(CellStyles.java:99)
+	at tech.grasshopper.excel.report.cell.CellOperations.writeValue(CellOperations.java:48)
+	at tech.grasshopper.excel.report.table.FeatureScenarioFailSkipTable.writeTableValues(FeatureScenarioFailSkipTable.java:53)
+	at tech.grasshopper.excel.report.sheets.dashboard.components.FeatureScenarioFailSkipDBComponent.updateDBScenarioFeatureFailSkipTableData(FeatureScenarioFailSkipDBComponent.java:176)
+	at tech.grasshopper.excel.report.sheets.dashboard.components.FeatureScenarioFailSkipDBComponent.createComponent(FeatureScenarioFailSkipDBComponent.java:57)
+	at tech.grasshopper.excel.report.sheets.dashboard.DashboardBasicAndFailSkipSheet.updateSheet(DashboardBasicAndFailSkipSheet.java:21)
+	at tech.grasshopper.excel.report.workbook.ExecutionAndFailSkipDataReport.updateSheets(ExecutionAndFailSkipDataReport.java:19)
 	at tech.grasshopper.excel.report.workbook.ReportWorkbook.createReport(ReportWorkbook.java:46)
 	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.flush(ExtentExcelCucumberReporter.java:70)
 	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.access$100(ExtentExcelCucumberReporter.java:18)
@@ -178,8 +178,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>4</td>
-<td>LearningTreeRunner.Activity_CreationRunner@624ea235</td></tr>
+<td>1</td>
+<td>LearningTreeRunner.Activity_CreationRunner@6b09fb41</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
@@ -190,226 +190,233 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='LearningTreeRunner.Provide_Score_in_LTRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Provide_Score_in_LTRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring in LT"</td>
-<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;User launch the application with Valid URL&apos; and 13 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given(&quot;User launch the application with Valid URL&quot;)
-public void user_launch_the_application_with_valid_url() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Given(&quot;User able to see all Fields&quot;)
-public void user_able_to_see_all_fields() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User enters the credentials from the excel sheet at {int}&quot;)
-public void user_enters_the_credentials_from_the_excel_sheet_at(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User is on homepage&quot;)
-public void user_is_on_homepage() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User Click Courses in Left menu&quot;)
-public void user_click_courses_in_left_menu() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User Click on Overal Speed Grader&quot;)
-public void user_click_on_overal_speed_grader() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When(&quot;User select All lookups in Activities To Grade screen03&quot;)
-public void user_select_all_lookups_in_activities_to_grade_screen03() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;provide the score for all Activities&quot;)
-public void provide_the_score_for_all_activities() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When(&quot;User Close Activity to Grade Screen&quot;)
-public void user_close_activity_to_grade_screen() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User Saved the Course and Search for the Created Course in Search here Field0&quot;)
-public void user_saved_the_course_and_search_for_the_created_course_in_search_here_field0() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User Click on that Course0&quot;)
-public void user_click_on_that_course0() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User Provide the Score in Activity To Grade&quot;)
-public void user_provide_the_score_in_activity_to_grade() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User go to Learning Tab&quot;)
-public void user_go_to_learning_tab() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User Provide the Score in Activity Progress screen3&quot;)
-public void user_provide_the_score_in_activity_progress_screen3() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
-	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
-	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
-	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1639667568", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1639667568'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;User launch the application with Valid URL&apos; and 13 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given(&quot;User launch the application with Valid URL&quot;)
-public void user_launch_the_application_with_valid_url() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Given(&quot;User able to see all Fields&quot;)
-public void user_able_to_see_all_fields() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User enters the credentials from the excel sheet at {int}&quot;)
-public void user_enters_the_credentials_from_the_excel_sheet_at(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User is on homepage&quot;)
-public void user_is_on_homepage() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User Click Courses in Left menu&quot;)
-public void user_click_courses_in_left_menu() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User Click on Overal Speed Grader&quot;)
-public void user_click_on_overal_speed_grader() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When(&quot;User select All lookups in Activities To Grade screen03&quot;)
-public void user_select_all_lookups_in_activities_to_grade_screen03() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;provide the score for all Activities&quot;)
-public void provide_the_score_for_all_activities() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When(&quot;User Close Activity to Grade Screen&quot;)
-public void user_close_activity_to_grade_screen() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User Saved the Course and Search for the Created Course in Search here Field0&quot;)
-public void user_saved_the_course_and_search_for_the_created_course_in_search_here_field0() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User Click on that Course0&quot;)
-public void user_click_on_that_course0() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User Provide the Score in Activity To Grade&quot;)
-public void user_provide_the_score_in_activity_to_grade() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User go to Learning Tab&quot;)
-public void user_go_to_learning_tab() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;User Provide the Score in Activity Progress screen3&quot;)
-public void user_provide_the_score_in_activity_progress_screen3() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
-	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
-	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
-	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:829)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>LearningTreeRunner.Provide_Score_in_LTRunner@6f15d60e</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
 <td title='LearningTreeRunner.Import_Activities_in_LTRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Import_Activities_in_LTRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Import of Activities in LT", "Verify the import of Activities in LT"</td>
-<td></td>
-<td>69</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.83)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa0be8aaf04945cd2ced1b28530a1a85, findElement {using=xpath, value=//input[@id=&apos;Username&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51067}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51067/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aa0be8aaf04945cd2ced1b28530a1a85
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at com.LearningTree.pages.LoginPage.enterUsername(LoginPage.java:54)
+	at com.LearningTree.pages.LoginPage.User_login(LoginPage.java:79)
+	at LearningTreeStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
+	at ✽.User enters the credentials from the excel sheet at 2(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Import_Activities_in_LT.feature:6)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1811058529", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1811058529'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.83)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa0be8aaf04945cd2ced1b28530a1a85, findElement {using=xpath, value=//input[@id=&apos;Username&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51067}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51067/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aa0be8aaf04945cd2ced1b28530a1a85
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at com.LearningTree.pages.LoginPage.enterUsername(LoginPage.java:54)
+	at com.LearningTree.pages.LoginPage.User_login(LoginPage.java:79)
+	at LearningTreeStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
+	at ✽.User enters the credentials from the excel sheet at 2(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Import_Activities_in_LT.feature:6)
+</pre></div></td>
+<td>7</td>
 <td>LearningTreeRunner.Import_Activities_in_LTRunner@20b2475a</td></tr>
 <tr>
-<td title='LearningTreeRunner.Activity_CreationRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Activity_CreationRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating the Activities", "Verify the Activities Creation Functionality"</td>
-<td></td>
-<td>346</td>
-<td>LearningTreeRunner.Activity_CreationRunner@624ea235</td></tr>
-<tr>
 <td title='LearningTreeRunner.Student_Activities_SubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Student_Activities_SubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Student Activities Submission", "Verify the Student Activities Submission"</td>
-<td></td>
-<td>308</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.83)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2d0f34d3bd9818b965d0b26f7eaac4c6, findElement {using=xpath, value=//input[@id=&apos;Username&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51093}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51093/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2d0f34d3bd9818b965d0b26f7eaac4c6
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at com.LearningTree.pages.LoginPage.enterUsername(LoginPage.java:54)
+	at com.LearningTree.pages.LoginPage.User_login(LoginPage.java:79)
+	at LearningTreeStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
+	at ✽.User enters the credentials from the excel sheet at 3(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Student_Activitys_Submission.feature:6)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2050379292", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2050379292'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.83)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2d0f34d3bd9818b965d0b26f7eaac4c6, findElement {using=xpath, value=//input[@id=&apos;Username&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51093}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51093/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2d0f34d3bd9818b965d0b26f7eaac4c6
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at com.LearningTree.pages.LoginPage.enterUsername(LoginPage.java:54)
+	at com.LearningTree.pages.LoginPage.User_login(LoginPage.java:79)
+	at LearningTreeStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
+	at ✽.User enters the credentials from the excel sheet at 3(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Student_Activitys_Submission.feature:6)
+</pre></div></td>
+<td>6</td>
 <td>LearningTreeRunner.Student_Activities_SubmissionRunner@7857fe2</td></tr>
+<tr>
+<td title='LearningTreeRunner.Activity_CreationRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Activity_CreationRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating the Activities", "Verify the Activities Creation Functionality"</td>
+<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=132.0.6834.83)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9e13596ecc07e10dbbd699394d1dd15a, sendKeysToElement {value=[Ljava.lang.CharSequence;@57b63253, id=f.8E28B7706D0618171755C936DAD55662.d.9CCDB9444FED92D4A3A7C901BA32B31A.e.445}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51027}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51027/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (9e13596ecc07e10dbbd699394d1dd15a)] -&gt; xpath: //input[@type=&apos;text&apos;]]
+Session ID: 9e13596ecc07e10dbbd699394d1dd15a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.sendKeys(Unknown Source)
+	at com.LearningTree.pages.Activities_Creation_in_CDPage.add_Assessment_Activity(Activities_Creation_in_CDPage.java:296)
+	at LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Virtual_Goal(Activities_creation_Stepdefination.java:114)
+	at ✽.User Add Activities in Virtual Goal0(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Activities_Creation.feature:16)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace878765293", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace878765293'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=132.0.6834.83)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9e13596ecc07e10dbbd699394d1dd15a, sendKeysToElement {value=[Ljava.lang.CharSequence;@57b63253, id=f.8E28B7706D0618171755C936DAD55662.d.9CCDB9444FED92D4A3A7C901BA32B31A.e.445}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51027}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51027/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (9e13596ecc07e10dbbd699394d1dd15a)] -&gt; xpath: //input[@type=&apos;text&apos;]]
+Session ID: 9e13596ecc07e10dbbd699394d1dd15a
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.sendKeys(Unknown Source)
+	at com.LearningTree.pages.Activities_Creation_in_CDPage.add_Assessment_Activity(Activities_Creation_in_CDPage.java:296)
+	at LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Virtual_Goal(Activities_creation_Stepdefination.java:114)
+	at ✽.User Add Activities in Virtual Goal0(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Activities_Creation.feature:16)
+</pre></div></td>
+<td>59</td>
+<td>LearningTreeRunner.Activity_CreationRunner@6b09fb41</td></tr>
+<tr>
+<td title='LearningTreeRunner.Provide_Score_in_LTRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Provide_Score_in_LTRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring in LT"</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.83)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [23fd89014edaad102a8d60c89ab1224a, findElement {using=xpath, value=//input[@id=&apos;Username&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51123}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51123/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 23fd89014edaad102a8d60c89ab1224a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at com.LearningTree.pages.LoginPage.enterUsername(LoginPage.java:54)
+	at com.LearningTree.pages.LoginPage.User_login(LoginPage.java:79)
+	at LearningTreeStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
+	at ✽.User enters the credentials from the excel sheet at 2(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Provide_Score_in_LT.feature:6)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace23862545", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace23862545'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.83)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [23fd89014edaad102a8d60c89ab1224a, findElement {using=xpath, value=//input[@id=&apos;Username&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51123}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51123/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 23fd89014edaad102a8d60c89ab1224a
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at com.LearningTree.pages.LoginPage.enterUsername(LoginPage.java:54)
+	at com.LearningTree.pages.LoginPage.User_login(LoginPage.java:79)
+	at LearningTreeStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
+	at ✽.User enters the credentials from the excel sheet at 2(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Provide_Score_in_LT.feature:6)
+</pre></div></td>
+<td>7</td>
+<td>LearningTreeRunner.Provide_Score_in_LTRunner@6f15d60e</td></tr>
 </table><p>
 </body>
 </html>

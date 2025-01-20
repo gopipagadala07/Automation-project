@@ -39,6 +39,7 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
 		<!-- report name -->
@@ -48,7 +49,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Jan 20, 2025 04:54:10 pm</span>
+			<span class='label blue darken-3 suite-start-time'>Jan 20, 2025 05:22:39 pm</span>
 			</a>
 		</ul>
 	</div>
@@ -63,8 +64,7 @@
 				<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+										<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -108,11 +108,11 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='$75%'>
-                    <span class='strong'>3</span> features passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='$0%'>
+                    <span class='strong'>0</span> features passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='25%'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>
                     1</span> features failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped
@@ -126,11 +126,11 @@
                     <canvas id='child-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='75%'>
-                    <span class='strong'>3</span> scenarios passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='0%'>
+                    <span class='strong'>0</span> scenarios passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='25%'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>
                     1</span> scenarios failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped, 
@@ -146,14 +146,14 @@
                     <canvas id='grandchild-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='73%'>
-                    <span class='strong'>39</span> steps passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='52%'>
+                    <span class='strong'>9</span> steps passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='1%'>
-                    1</span> steps failed, 
-                    <span class='strong tooltipped' data-position='top' data-tooltip='24%'>
-                    13</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='11%'>
+                    2</span> steps failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='35%'>
+                    6</span> skipped, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> others
                 </div>
@@ -174,11 +174,11 @@
 	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify the Activities Creation Functionality</span>
-						<span class='test-time'>Jan 20, 2025 04:54:11 pm</span>
-						<span class='test-status right pass'>Pass</span>
+						<span class='test-time'>Jan 20, 2025 05:22:40 pm</span>
+						<span class='test-status right fail'>Fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class="sr-filters bdd-filters">
@@ -188,19 +188,19 @@
 	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
 </div>
 
-<div class='scenario outline node' test-id='2' status='pass'>
+<div class='scenario outline node' test-id='2' status='fail'>
 
-	<span class='duration right label'>00 05 46.777</span>
+	<span class='duration right label'>00 01 11.694</span>
 	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Creating the Activities</div>
+		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario Outline: Creating the Activities</div>
 	</div>
 	
 		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>0</td><td>0</td></tr></table></div>
 	
 	
 	<ul class='steps'>
-		<li test-id='3' class='node scenario Pass' status='Pass'>
-			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Creating the Activities</div>
+		<li test-id='3' class='node scenario Fail' status='Fail'>
+			<div class="step-name" title="()"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Creating the Activities</div>
 
 
 			<ul class='gc steps'>
@@ -240,303 +240,93 @@
 					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.user_add_child_objective()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Add Child Objective</h6>
 
 				</li>
-				<li test-id='16' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Virtual_Goal(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Add Activities in Virtual Goal0</h6>
+				<li test-id='16' class='gc and Fail' status='Fail'>
+					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Virtual_Goal(int)"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>And User Add Activities in Virtual Goal0</h6>
 
+							<textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=132.0.6834.83)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0569e67769bf4cd9d3d025ecfdec8e9d, findElements {using=xpath, value=//mat-label[text()='Search here']/ancestor::span/ancestor::mat-form-field/following::div/descendant::span[1]/child::small}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51174}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51174/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0569e67769bf4cd9d3d025ecfdec8e9d
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:182)
+	at org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:103)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:369)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:363)
+	at com.LearningTree.pages.Activities_Creation_in_CDPage.select_Tags(Activities_Creation_in_CDPage.java:401)
+	at com.LearningTree.pages.Activities_Creation_in_CDPage.add_Assessment_Activity(Activities_Creation_in_CDPage.java:307)
+	at LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Virtual_Goal(Activities_creation_Stepdefination.java:114)
+	at ✽.User Add Activities in Virtual Goal0(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Activities_Creation.feature:16)
+</textarea>
 				</li>
-				<li test-id='17' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Discussion_Activity()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Add Discussion Activity</h6>
-
-				</li>
-				<li test-id='18' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Assignment_Activity()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Add Assignment Activity</h6>
-
-				</li>
-				<li test-id='19' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Assessment_Activity(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Add Assessment Activity0</h6>
-
-				</li>
-				<li test-id='20' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Topic_Goal(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Add Activities in Topic Goal0</h6>
-
-				</li>
-				<li test-id='21' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Sub_Topic_Goal(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Add Activities in Sub Topic Goal0</h6>
-
-				</li>
-				<li test-id='22' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_click_on_Publish_Toggle_for_All_Activity_in_CD()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User click on Publish Toggle for All Activities in CD</h6>
-
-				</li>
-			</ul>
-		</li>
-	</ul>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='26'>
-					<div class='test-heading'>
-						<span class='test-name'>Verify the import of Activities in LT</span>
-						<span class='test-time'>Jan 20, 2025 05:00:03 pm</span>
-						<span class='test-status right pass'>Pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class="sr-filters bdd-filters">
-	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
-	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
-	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
-	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
-</div>
-
-<div class='scenario outline node' test-id='27' status='pass'>
-
-	<span class='duration right label'>00 01 09.608</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Import of Activities in LT</div>
-	</div>
-	
-		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>2</td><td>0</td><td>3</td></tr></table></div>
-	
-	
-	<ul class='steps'>
-		<li test-id='28' class='node scenario Pass' status='Pass'>
-			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Import of Activities in LT</div>
-
-
-			<ul class='gc steps'>
-				<li test-id='32' class='gc given Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
-
-				</li>
-				<li test-id='33' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
-
-				</li>
-				<li test-id='34' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 2</h6>
-
-				</li>
-				<li test-id='35' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
-
-				</li>
-				<li test-id='36' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Import_Activities_in_LTStefdef.user_click_courses_in_left_menu()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click Courses in Left menu</h6>
-
-				</li>
-				<li test-id='37' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Import_Activities_in_LTStefdef.user_click_on_the_create_new_course_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Click on the Create New Course button</h6>
-
-				</li>
-				<li test-id='38' class='gc when Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Import_Activities_in_LTStefdef.user_enter_the_course_name_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Enter the Course Name and Description</h6>
-
-				</li>
-				<li test-id='39' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Import_Activities_in_LTStefdef.user_saved_the_course_and_search_for_the_created_course_in_search_here_field(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Saved the Course and Search for the Created Course in Search here Field0</h6>
-
-				</li>
-				<li test-id='40' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Import_Activities_in_LTStefdef.user_click_on_that_course(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on that Course0</h6>
-
-				</li>
-				<li test-id='41' class='gc when Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Import_Activities_in_LTStefdef.user_search_the_learning_objective_and_assign_it_to_the_course(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Search the Learning Objective and Assign it to the Course0</h6>
-
-				</li>
-				<li test-id='42' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Import_Activities_in_LTStefdef.User_go_to_Learning_Tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User go to Learning Tab</h6>
-
-				</li>
-				<li test-id='43' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Import_Activities_in_LTStefdef.user_publish_and_activate_all_activity()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Publish and Activate all the Activities</h6>
-
-				</li>
-				<li test-id='44' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Import_Activities_in_LTStefdef.user_go_to_member_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User go to Member Tab</h6>
-
-				</li>
-				<li test-id='45' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Import_Activities_in_LTStefdef.User_Search_and_added_the_Student_in_the_Course(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Search and added the Student in the Course3</h6>
-
-				</li>
-			</ul>
-		</li>
-	</ul>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='49'>
-					<div class='test-heading'>
-						<span class='test-name'>Verify the Student Activities Submission</span>
-						<span class='test-time'>Jan 20, 2025 05:01:15 pm</span>
-						<span class='test-status right pass'>Pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class="sr-filters bdd-filters">
-	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
-	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
-	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
-	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
-</div>
-
-<div class='scenario outline node' test-id='50' status='pass'>
-
-	<span class='duration right label'>00 05 08.318</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Student Activities Submission</div>
-	</div>
-	
-		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>3</td><td>0</td></tr></table></div>
-	
-	
-	<ul class='steps'>
-		<li test-id='51' class='node scenario Pass' status='Pass'>
-			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Student Activities Submission</div>
-
-
-			<ul class='gc steps'>
-				<li test-id='55' class='gc given Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.LoginStepdefinintions.user_launch_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launch the application with Valid URL</h6>
-
-				</li>
-				<li test-id='56' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.LoginStepdefinintions.user_able_to_see_all_fields()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User able to see all Fields</h6>
-
-				</li>
-				<li test-id='57' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User enters the credentials from the excel sheet at 3</h6>
-
-				</li>
-				<li test-id='58' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.LoginStepdefinintions.user_is_on_homepage()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User is on homepage</h6>
-
-				</li>
-				<li test-id='59' class='gc when Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Student_Activity_submission_Stepdef.user_click_learning_tree_from_left_menu()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User Click Learning Tree from Left menu</h6>
-
-				</li>
-				<li test-id='60' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Student_Activity_submission_Stepdef.user_search_for_the_course_in_search_here_field(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Search for the Course in Search here Field0</h6>
-
-				</li>
-				<li test-id='61' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Student_Activity_submission_Stepdef.user_click_on_that_course_name(int)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User Click on that CourseName0</h6>
-
-				</li>
-				<li test-id='62' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Student_Activity_submission_Stepdef.user_go_to_learning_tab_in_community_landing_page()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User go to Learning Tab in community landing page</h6>
-
-				</li>
-				<li test-id='63' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="LearningTreeStepdef.Student_Activity_submission_Stepdef.user_click_on_launch_button_for_the_all_activities()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User Click on Launch button for the All Activities</h6>
-
-				</li>
-			</ul>
-		</li>
-	</ul>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='67'>
-					<div class='test-heading'>
-						<span class='test-name'>Verify the Scoring in LT</span>
-						<span class='test-time'>Jan 20, 2025 05:06:25 pm</span>
-						<span class='test-status right fail'>Fail</span>
-					</div>
-					<div class='test-content hide'>
-<div class="sr-filters bdd-filters">
-	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
-	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
-	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
-	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
-</div>
-
-<div class='scenario outline node' test-id='68' status='fail'>
-
-	<span class='duration right label'>00 00 00.015</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario Outline: Provide the Score for all Activities at Speed Grder and Activities to Garde</div>
-	</div>
-	
-		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>2</td><td>0</td><td>3</td></tr></table></div>
-	
-	
-	<ul class='steps'>
-		<li test-id='69' class='node scenario Fail' status='Fail'>
-			<div class="step-name" title="()"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Provide the Score for all Activities at Speed Grder and Activities to Garde</div>
-
-
-			<ul class='gc steps'>
-				<li test-id='70' class='gc given Fail' status='Fail'>
-					<h6 class="step-name" title=""><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Given User launch the application with Valid URL</h6>
-
-							<div class="node-step">Step undefined</div>
-				</li>
-				<li test-id='71' class='gc and Skip' status='Skip'>
-					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User able to see all Fields</h6>
+				<li test-id='17' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Discussion_Activity()"><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User Add Discussion Activity</h6>
 
 							<div class="node-step">Step skipped</div>
 				</li>
-				<li test-id='72' class='gc then Skip' status='Skip'>
-					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User enters the credentials from the excel sheet at 2</h6>
+				<li test-id='18' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Assignment_Activity()"><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User Add Assignment Activity</h6>
 
 							<div class="node-step">Step skipped</div>
 				</li>
-				<li test-id='73' class='gc and Skip' status='Skip'>
-					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User is on homepage</h6>
+				<li test-id='19' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Assessment_Activity(int)"><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User Add Assessment Activity0</h6>
 
 							<div class="node-step">Step skipped</div>
 				</li>
-				<li test-id='74' class='gc and Skip' status='Skip'>
-					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User Click Courses in Left menu</h6>
+				<li test-id='20' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Topic_Goal(int)"><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User Add Activities in Topic Goal0</h6>
 
 							<div class="node-step">Step skipped</div>
 				</li>
-				<li test-id='75' class='gc then Skip' status='Skip'>
-					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User Click on Overal Speed Grader</h6>
+				<li test-id='21' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Sub_Topic_Goal(int)"><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User Add Activities in Sub Topic Goal0</h6>
 
 							<div class="node-step">Step skipped</div>
 				</li>
-				<li test-id='76' class='gc when Skip' status='Skip'>
-					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>When User select All lookups in Activities To Grade screen03</h6>
+				<li test-id='22' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title="LearningTreeStepdef.Activities_creation_Stepdefination.User_click_on_Publish_Toggle_for_All_Activity_in_CD()"><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User click on Publish Toggle for All Activities in CD</h6>
 
 							<div class="node-step">Step skipped</div>
 				</li>
-				<li test-id='77' class='gc then Skip' status='Skip'>
-					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then provide the score for all Activities</h6>
+				<li test-id='23' class='gc * Fail' status='Fail'>
+					<h6 class="step-name" title="AFTER"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Hooks.AppHooks.tearDown(io.cucumber.java.Scenario)</h6>
 
-							<div class="node-step">Step skipped</div>
-				</li>
-				<li test-id='78' class='gc when Skip' status='Skip'>
-					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>When User Close Activity to Grade Screen</h6>
-
-							<div class="node-step">Step skipped</div>
-				</li>
-				<li test-id='79' class='gc then Skip' status='Skip'>
-					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User Saved the Course and Search for the Created Course in Search here Field0</h6>
-
-							<div class="node-step">Step skipped</div>
-				</li>
-				<li test-id='80' class='gc and Skip' status='Skip'>
-					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User Click on that Course0</h6>
-
-							<div class="node-step">Step skipped</div>
-				</li>
-				<li test-id='81' class='gc then Skip' status='Skip'>
-					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User Provide the Score in Activity To Grade</h6>
-
-							<div class="node-step">Step skipped</div>
-				</li>
-				<li test-id='82' class='gc and Skip' status='Skip'>
-					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User go to Learning Tab</h6>
-
-							<div class="node-step">Step skipped</div>
-				</li>
-				<li test-id='83' class='gc then Skip' status='Skip'>
-					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User Provide the Score in Activity Progress screen3</h6>
-
-							<div class="node-step">Step skipped</div>
+							<textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0569e67769bf4cd9d3d025ecfdec8e9d, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51174}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51174/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0569e67769bf4cd9d3d025ecfdec8e9d
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:592)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:322)
+	at Hooks.AppHooks.tearDown(AppHooks.java:59)
+</textarea>
 				</li>
 			</ul>
 		</li>
@@ -566,7 +356,123 @@
 	</div>
 	<!-- subview right -->
 </div>
-<!-- test view --><div id='dashboard-view' class='view hide'>
+<!-- test view --><div id='exception-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='exception-collection' class='exception-collection'>
+				<li class='exception displayed active'>
+					<div class='exception-heading'>
+						<span class='exception-name'>org.openqa.selenium.NoSuchSessionException</span>
+						<span class='exception-count right'><span class='label red lighten-1 white-text'>2</span></span>
+					</div>
+					<div class='exception-content hide'>
+						<div class='exception-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>StackTrace</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 05:23:36 pm</td>
+										<td class='linked' test-id='16'>And User Add Activities in Virtual Goal0</td>
+										<td>
+											<textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=132.0.6834.83)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0569e67769bf4cd9d3d025ecfdec8e9d, findElements {using=xpath, value=//mat-label[text()='Search here']/ancestor::span/ancestor::mat-form-field/following::div/descendant::span[1]/child::small}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51174}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51174/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0569e67769bf4cd9d3d025ecfdec8e9d
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:182)
+	at org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:103)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:369)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:363)
+	at com.LearningTree.pages.Activities_Creation_in_CDPage.select_Tags(Activities_Creation_in_CDPage.java:401)
+	at com.LearningTree.pages.Activities_Creation_in_CDPage.add_Assessment_Activity(Activities_Creation_in_CDPage.java:307)
+	at LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Virtual_Goal(Activities_creation_Stepdefination.java:114)
+	at ✽.User Add Activities in Virtual Goal0(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Activities_Creation.feature:16)
+</textarea>
+										</td>
+									</tr>
+									<tr>
+										<td>Jan 20, 2025 05:23:48 pm</td>
+										<td class='linked' test-id='23'>Hooks.AppHooks.tearDown(io.cucumber.java.Scenario)</td>
+										<td>
+											<textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=132.0.6834.83)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0569e67769bf4cd9d3d025ecfdec8e9d, findElements {using=xpath, value=//mat-label[text()='Search here']/ancestor::span/ancestor::mat-form-field/following::div/descendant::span[1]/child::small}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51174}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51174/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0569e67769bf4cd9d3d025ecfdec8e9d
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:182)
+	at org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:103)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:369)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:363)
+	at com.LearningTree.pages.Activities_Creation_in_CDPage.select_Tags(Activities_Creation_in_CDPage.java:401)
+	at com.LearningTree.pages.Activities_Creation_in_CDPage.add_Assessment_Activity(Activities_Creation_in_CDPage.java:307)
+	at LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Virtual_Goal(Activities_creation_Stepdefination.java:114)
+	at ✽.User Add Activities in Virtual Goal0(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Activities_Creation.feature:16)
+</textarea>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='exception-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- exception view --><div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
 		<h5>Dashboard</h5>
 
@@ -574,37 +480,37 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Features
-					<div class='panel-lead'>4</div>
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>4</div>
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>53</div>
+					<div class='panel-lead'>17</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jan 20, 2025 04:54:10 pm</div>
+					<div class='panel-lead'>Jan 20, 2025 05:22:39 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 20, 2025 05:06:25 pm</div>
+			 		<div class='panel-lead'>Jan 20, 2025 05:23:51 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>00 12 14.439</div>
+					<div class='panel-lead'>00 01 12.520</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -622,7 +528,7 @@
 							</tr>
 							<tr>
 								<td>user</td>
-								<td>Ravali Manthena</td>
+								<td>Suryakanta Sahoo </td>
 							</tr>
 							<tr>
 								<td>build</td>
@@ -643,35 +549,35 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 4,
-				passParent: 3,
+                parentCount: 1,
+				passParent: 0,
 				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				childCount: 4,
-				passChild: 3,
+				childCount: 1,
+				passChild: 0,
 				failChild: 1,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				grandChildCount: 53,
-				passGrandChild: 39,
-				failGrandChild: 1,
+				grandChildCount: 17,
+				passGrandChild: 9,
+				failGrandChild: 2,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 13,
+				skipGrandChild: 6,
 				infoGrandChild: 0,
 			};
 			</script>
 		
 		<script>
 			var timeline = {
-			        "Verify the Activities Creation Functionality":346.779,"Verify the import of Activities in LT":69.608,"Verify the Student Activities Submission":308.318,"Verify the Scoring in LT":0.015
+			        "Verify the Activities Creation Functionality":71.7
 			};
 		</script>
 		

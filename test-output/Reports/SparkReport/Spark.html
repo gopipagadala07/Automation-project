@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Automation Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jan 20, 2025 16:54:10</span></a>
+<a href="#"><span class="badge badge-primary">Jan 20, 2025 17:22:39</span></a>
 </li>
 </ul>
 </div>
@@ -52,6 +52,11 @@
 <span class="ico"><i class="fa fa-list"></i></span>
 </a>
 </li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -61,19 +66,19 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jan 20, 2025 16:54:10</h3>
+<h3>Jan 20, 2025 17:22:39</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jan 20, 2025 17:06:25</h3>
+<h3>Jan 20, 2025 17:23:51</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>3</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -95,12 +100,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='75%'>
-<b>3</b> features passed
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='25%'><b>1</b> features failed,
+<small data-tooltip='100%'><b>1</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -118,9 +123,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='75%'><b>3</b> scenarios passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='25%'><b>1</b> scenarios failed,
+<small data-tooltip='100%'><b>1</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -138,10 +143,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='73%'><b>39</b> steps passed</small></div>
+<div><small data-tooltip='52%'><b>9</b> steps passed</small></div>
 <div>
-<small data-tooltip='1%'><b>1</b> steps failed,
-<b>13</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='11%'><b>2</b> steps failed,
+<b>6</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -157,7 +162,7 @@
 </div></div>
 <script>
 var timeline = {
-"Verify the Activities Creation Functionality":346.779,"Verify the import of Activities in LT":69.608,"Verify the Student Activities Submission":308.318,"Verify the Scoring in LT":0.015
+"Verify the Activities Creation Functionality":71.7
 };
 </script>
 <div class="row">
@@ -173,7 +178,7 @@ var timeline = {
 </tr>
 <tr>
 <td>user</td>
-<td>Ravali Manthena</td>
+<td>Suryakanta Sahoo </td>
 </tr>
 <tr>
 <td>build</td>
@@ -192,21 +197,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 3,
+passParent: 0,
 failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 3,
+passChild: 0,
 failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 39,
-failGrandChild: 1,
+passGrandChild: 9,
+failGrandChild: 2,
 warningGrandChild: 0,
-skipGrandChild: 13,
+skipGrandChild: 6,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -220,7 +225,6 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
 <a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
@@ -229,25 +233,25 @@ eventsCount: 5,
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Verify the Activities Creation Functionality</p>
             <p class="text-sm">
-              <span>4:54:11 pm</span> / <span>00:05:46:779</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>5:22:40 pm</span> / <span>00:01:11:700</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Verify the Activities Creation Functionality</h5>
-<span class='badge badge-success'>01.20.2025 4:54:11 pm</span>
-<span class='badge badge-danger'>01.20.2025 4:59:58 pm</span>
-<span class='badge badge-default'>00:05:46:779</span>
+<h5 class="test-status text-fail">Verify the Activities Creation Functionality</h5>
+<span class='badge badge-success'>01.20.2025 5:22:40 pm</span>
+<span class='badge badge-danger'>01.20.2025 5:23:51 pm</span>
+<span class='badge badge-default'>00:01:11:700</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -260,17 +264,17 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Creating the Activities</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Creating the Activities</div>
       </div>
     </div>
-        <div class="scenario_outline collapse">
+        <div class="scenario_outline ">
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Creating the Activities</div>
+                  <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Creating the Activities</div>
                 </div>
               </div>
-              <div class="card-body mt-3 collapse">
+              <div class="card-body mt-3 ">
                   <div class="step pass-bg">
                     <span>Given User launch the application with Valid URL</span>
       <div>
@@ -316,371 +320,96 @@ eventsCount: 5,
       <div>
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step fail-bg">
                     <span>And User Add Activities in Virtual Goal0</span>
       <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=132.0.6834.83)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0569e67769bf4cd9d3d025ecfdec8e9d, findElements {using=xpath, value=//mat-label[text()='Search here']/ancestor::span/ancestor::mat-form-field/following::div/descendant::span[1]/child::small}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51174}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51174/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0569e67769bf4cd9d3d025ecfdec8e9d
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:182)
+	at org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:103)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:369)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:363)
+	at com.LearningTree.pages.Activities_Creation_in_CDPage.select_Tags(Activities_Creation_in_CDPage.java:401)
+	at com.LearningTree.pages.Activities_Creation_in_CDPage.add_Assessment_Activity(Activities_Creation_in_CDPage.java:307)
+	at LearningTreeStepdef.Activities_creation_Stepdefination.User_Add_Activities_in_Virtual_Goal(Activities_creation_Stepdefination.java:114)
+	at ✽.User Add Activities in Virtual Goal0(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Activities_Creation.feature:16)
+</textarea>
+      
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then User Add Discussion Activity</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then User Add Assignment Activity</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then User Add Assessment Activity0</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And User Add Activities in Topic Goal0</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then User Add Activities in Sub Topic Goal0</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And User click on Publish Toggle for All Activities in CD</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-              </div>
-            </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="26"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Verify the import of Activities in LT</p>
-            <p class="text-sm">
-              <span>5:00:03 pm</span> / <span>00:01:09:608</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Verify the import of Activities in LT</h5>
-<span class='badge badge-success'>01.20.2025 5:00:03 pm</span>
-<span class='badge badge-danger'>01.20.2025 5:01:12 pm</span>
-<span class='badge badge-default'>00:01:09:608</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="27"><span class="badge log pass-bg mr-2">Pass</span>Import of Activities in LT</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="28"><span class="badge log pass-bg mr-2">Pass</span>Import of Activities in LT</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User launch the application with Valid URL</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User able to see all Fields</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User enters the credentials from the excel sheet at 2</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User is on homepage</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User Click Courses in Left menu</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User Click on the Create New Course button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User Enter the Course Name and Description</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User Saved the Course and Search for the Created Course in Search here Field0</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User Click on that Course0</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User Search the Learning Objective and Assign it to the Course0</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User go to Learning Tab</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User Publish and Activate all the Activities</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User go to Member Tab</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User Search and added the Student in the Course3</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="49"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Verify the Student Activities Submission</p>
-            <p class="text-sm">
-              <span>5:01:15 pm</span> / <span>00:05:08:318</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Verify the Student Activities Submission</h5>
-<span class='badge badge-success'>01.20.2025 5:01:15 pm</span>
-<span class='badge badge-danger'>01.20.2025 5:06:23 pm</span>
-<span class='badge badge-default'>00:05:08:318</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=49</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="50"><span class="badge log pass-bg mr-2">Pass</span>Student Activities Submission</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="51"><span class="badge log pass-bg mr-2">Pass</span>Student Activities Submission</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User launch the application with Valid URL</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User able to see all Fields</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User enters the credentials from the excel sheet at 3</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User is on homepage</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User Click Learning Tree from Left menu</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User Search for the Course in Search here Field0</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User Click on that CourseName0</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User go to Learning Tab in community landing page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User Click on Launch button for the All Activities</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="67"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Verify the Scoring in LT</p>
-            <p class="text-sm">
-              <span>5:06:25 pm</span> / <span>00:00:00:015</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">Verify the Scoring in LT</h5>
-<span class='badge badge-success'>01.20.2025 5:06:25 pm</span>
-<span class='badge badge-danger'>01.20.2025 5:06:25 pm</span>
-<span class='badge badge-default'>00:00:00:015</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=67</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="68"><span class="badge log fail-bg mr-2">Fail</span>Provide the Score for all Activities at Speed Grder and Activities to Garde</div>
-      </div>
-    </div>
-        <div class="scenario_outline ">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="69"><span class="badge log fail-bg mr-2">Fail</span>Provide the Score for all Activities at Speed Grder and Activities to Garde</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
                   <div class="step fail-bg">
-                    <span>Given User launch the application with Valid URL</span>
-      <div>Step undefined
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User able to see all Fields</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then User enters the credentials from the excel sheet at 2</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User is on homepage</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User Click Courses in Left menu</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then User Click on Overal Speed Grader</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>When User select All lookups in Activities To Grade screen03</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then provide the score for all Activities</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>When User Close Activity to Grade Screen</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then User Saved the Course and Search for the Created Course in Search here Field0</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User Click on that Course0</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then User Provide the Score in Activity To Grade</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User go to Learning Tab</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then User Provide the Score in Activity Progress screen3</span>
-      <div>Step skipped
+                    <span>Hooks.AppHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0569e67769bf4cd9d3d025ecfdec8e9d, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51174}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51174/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0569e67769bf4cd9d3d025ecfdec8e9d
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:592)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:322)
+	at Hooks.AppHooks.tearDown(AppHooks.java:59)
+</textarea>
+      
       </div>
                   </div>
               </div>
@@ -699,7 +428,69 @@ eventsCount: 5,
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-        </div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchSessionException</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchSessionException</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:23:36 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>And User Add Activities in Virtual Goal0</a>
+<div class="">
+<span class="badge badge-default">Verify the Activities Creation Functionality.Creating the Activities.And User Add Activities in Virtual Goal0</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:23:48 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='23'>Hooks.AppHooks.tearDown(io.cucumber.java.Scenario)</a>
+<div class="">
+<span class="badge badge-default">Verify the Activities Creation Functionality.Creating the Activities.Hooks.AppHooks.tearDown(io.cucumber.java.Scenario)</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
       </div>
     </div>
   </div>
