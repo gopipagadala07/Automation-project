@@ -261,7 +261,6 @@ public class CommonPages extends ActionType{
 				wait.until(ExpectedConditions.elementToBeClickable(dayElement));
 				wait.until(ExpectedConditions.visibilityOf(dayElement));
 
-				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].click()", dayElement);
 				success = true;
 				break;
