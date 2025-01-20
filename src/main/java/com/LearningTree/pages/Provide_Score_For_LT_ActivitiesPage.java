@@ -46,8 +46,6 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Sub-Topic')]/parent::span/parent::div/parent::div/parent::div/following::div/descendant::span[@class='assessment_icon_wrapper']/parent::div/parent::div/following-sibling::div/descendant::mat-icon[text()='more_vert']")
 	private WebElement SubTopic_Activities_ellipses;
 	@FindBy(how = How.XPATH,using = "(//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div)[1]")private WebElement Activity_Title_Name;
-	//	@FindBy(how = How.XPATH,using = "//div[@class='learning__details__nested-tree-node']/descendant::span[text()='1']/ancestor::div[@class='learning__details__nested-tree-node']/following-sibling::div/descendant::mat-icon[text()='more_vert']")
-	//	private List<WebElement> Need_toProvide_Score_Activities;
 	@FindBy(how=How.XPATH,using="//div[text()=' All ']/parent::div")private WebElement All;
 	@FindBy(how=How.XPATH,using="(//mat-icon[text()=' chevron_right '])[1]")private WebElement Topic;
 	@FindBy(how=How.XPATH,using="//mat-icon[text()=' chevron_right ']")private WebElement SubTopic;
@@ -200,7 +198,8 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			{
 				break;
 			}
-		}	
+		}
+		driver.navigate().refresh();
 	}
 
 	public void Provide_the_Score_in_Activity_Progress_screen(String SLastname)
@@ -228,11 +227,9 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			{
 				try
 				{
-					System.out.println("Total Activities for Scoring in Activity Progress screen in try block: " + j);
 					WebElement ellipse = Need_toProvide_Score_Activities1.get(j-1);					
 					wait.elementToBeClickable(ellipse);
 					js.executeScript("arguments[0].click();", ellipse);
-					System.out.println("----------------Activity Progress screen in try block: " + i);
 					break;
 				} 
 				catch (StaleElementReferenceException e) 

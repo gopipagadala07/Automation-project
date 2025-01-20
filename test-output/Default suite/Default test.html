@@ -55,11 +55,23 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
+<<<<<<< HEAD
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+=======
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+>>>>>>> branch 'LT_Scripts_R' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 </tr><tr>
+<<<<<<< HEAD
 <td>Started on:</td><td>Thu Jan 09 10:08:55 IST 2025</td>
+=======
+<td>Started on:</td><td>Thu Jan 16 15:05:14 IST 2025</td>
+>>>>>>> branch 'LT_Scripts_R' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 </tr>
+<<<<<<< HEAD
 <tr><td>Total time:</td><td>226 seconds (226723 ms)</td>
+=======
+<tr><td>Total time:</td><td>252 seconds (252534 ms)</td>
+>>>>>>> branch 'LT_Scripts_R' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -69,6 +81,7 @@ function toggleAllBoxes() {
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<<<<<<< HEAD
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -206,6 +219,8 @@ function toggleAllBoxes() {
 </table><p>
 <table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+=======
+>>>>>>> branch 'LT_Scripts_R' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -213,6 +228,7 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<<<<<<< HEAD
 <td title='LearningTreeRunner.Activity_CreationRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Activity_CreationRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating the Activities", "Verify the Activities Creation Functionality"</td>
 <td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span _ngcontent-xvd-c520=&quot;&quot;&gt;...&lt;/span&gt; is not clickable at point (1375, 499). Other element would receive the click: &lt;div id=&quot;cdk-overlay-41&quot; class=&quot;cdk-overlay-pane&quot; style=&quot;position: static;&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=131.0.6778.205)
@@ -274,6 +290,153 @@ Session ID: aed5004c14bdec33e8b9aa5bbaadcee6
 </pre></div></td>
 <td>222</td>
 <td>LearningTreeRunner.Activity_CreationRunner@624ea235</td></tr>
+=======
+<td title='LearningTreeRunner.StudentActivitySubmission_Runner.tearDownClass()'><b>tearDownClass</b><br>Test class: LearningTreeRunner.StudentActivitySubmission_Runner</td>
+<td><div><pre>java.lang.AbstractMethodError: Receiver class org.apache.poi.xssf.usermodel.XSSFColor does not define or inherit an implementation of the resolved method &apos;abstract byte[] getStoredRGB()&apos; of abstract class org.apache.poi.ss.usermodel.ExtendedColor.
+	at org.apache.poi.ss.usermodel.ExtendedColor.getRGBOrARGB(ExtendedColor.java:100)
+	at org.apache.poi.xssf.usermodel.XSSFColor.getRGB(XSSFColor.java:189)
+	at org.apache.poi.xssf.usermodel.XSSFFont.setColor(XSSFFont.java:421)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$passTextBoldCellStyle$24(CellStyles.java:171)
+	at tech.grasshopper.excel.report.cell.CellStyles.setFont(CellStyles.java:212)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$passTextBoldCellStyle$25(CellStyles.java:170)
+	at java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1220)
+	at tech.grasshopper.excel.report.cell.CellStyles.passTextBoldCellStyle(CellStyles.java:170)
+	at tech.grasshopper.excel.report.cell.CellStyles.getCellStyle(CellStyles.java:87)
+	at tech.grasshopper.excel.report.cell.CellOperations.writeValue(CellOperations.java:65)
+	at tech.grasshopper.excel.report.table.SimpleTableOperations.writeTableCellValues(SimpleTableOperations.java:38)
+	at tech.grasshopper.excel.report.sheets.scenarios.ScenariosSheet.updateScenariosTableData(ScenariosSheet.java:100)
+	at tech.grasshopper.excel.report.sheets.scenarios.ScenariosSheet.updateSheet(ScenariosSheet.java:48)
+	at tech.grasshopper.excel.report.workbook.ReportWorkbook.updateSheets(ReportWorkbook.java:74)
+	at tech.grasshopper.excel.report.workbook.ExecutionDataReport.updateSheets(ExecutionDataReport.java:20)
+	at tech.grasshopper.excel.report.workbook.ReportWorkbook.createReport(ReportWorkbook.java:46)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.flush(ExtentExcelCucumberReporter.java:70)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.access$100(ExtentExcelCucumberReporter.java:18)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter$1.onNext(ExtentExcelCucumberReporter.java:45)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter$1.onNext(ExtentExcelCucumberReporter.java:37)
+	at io.reactivex.rxjava3.subjects.PublishSubject$PublishDisposable.onNext(PublishSubject.java:310)
+	at io.reactivex.rxjava3.subjects.PublishSubject.onNext(PublishSubject.java:226)
+	at com.aventstack.extentreports.ReactiveSubject.onFlush(ReactiveSubject.java:83)
+	at com.aventstack.extentreports.AbstractProcessor.onFlush(AbstractProcessor.java:96)
+	at com.aventstack.extentreports.ExtentReports.flush(ExtentReports.java:279)
+	at com.aventstack.extentreports.service.ExtentService.flush(ExtentService.java:47)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter.finishReport(ExtentCucumberAdapter.java:301)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:137)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:134)
+	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
+	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
+	at io.cucumber.core.runtime.SynchronizedEventBus.send(SynchronizedEventBus.java:47)
+	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:118)
+	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:105)
+	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+	at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:222)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:131)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1038320631", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1038320631'><pre>java.lang.AbstractMethodError: Receiver class org.apache.poi.xssf.usermodel.XSSFColor does not define or inherit an implementation of the resolved method &apos;abstract byte[] getStoredRGB()&apos; of abstract class org.apache.poi.ss.usermodel.ExtendedColor.
+	at org.apache.poi.ss.usermodel.ExtendedColor.getRGBOrARGB(ExtendedColor.java:100)
+	at org.apache.poi.xssf.usermodel.XSSFColor.getRGB(XSSFColor.java:189)
+	at org.apache.poi.xssf.usermodel.XSSFFont.setColor(XSSFFont.java:421)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$passTextBoldCellStyle$24(CellStyles.java:171)
+	at tech.grasshopper.excel.report.cell.CellStyles.setFont(CellStyles.java:212)
+	at tech.grasshopper.excel.report.cell.CellStyles.lambda$passTextBoldCellStyle$25(CellStyles.java:170)
+	at java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1220)
+	at tech.grasshopper.excel.report.cell.CellStyles.passTextBoldCellStyle(CellStyles.java:170)
+	at tech.grasshopper.excel.report.cell.CellStyles.getCellStyle(CellStyles.java:87)
+	at tech.grasshopper.excel.report.cell.CellOperations.writeValue(CellOperations.java:65)
+	at tech.grasshopper.excel.report.table.SimpleTableOperations.writeTableCellValues(SimpleTableOperations.java:38)
+	at tech.grasshopper.excel.report.sheets.scenarios.ScenariosSheet.updateScenariosTableData(ScenariosSheet.java:100)
+	at tech.grasshopper.excel.report.sheets.scenarios.ScenariosSheet.updateSheet(ScenariosSheet.java:48)
+	at tech.grasshopper.excel.report.workbook.ReportWorkbook.updateSheets(ReportWorkbook.java:74)
+	at tech.grasshopper.excel.report.workbook.ExecutionDataReport.updateSheets(ExecutionDataReport.java:20)
+	at tech.grasshopper.excel.report.workbook.ReportWorkbook.createReport(ReportWorkbook.java:46)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.flush(ExtentExcelCucumberReporter.java:70)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter.access$100(ExtentExcelCucumberReporter.java:18)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter$1.onNext(ExtentExcelCucumberReporter.java:45)
+	at tech.grasshopper.reporter.ExtentExcelCucumberReporter$1.onNext(ExtentExcelCucumberReporter.java:37)
+	at io.reactivex.rxjava3.subjects.PublishSubject$PublishDisposable.onNext(PublishSubject.java:310)
+	at io.reactivex.rxjava3.subjects.PublishSubject.onNext(PublishSubject.java:226)
+	at com.aventstack.extentreports.ReactiveSubject.onFlush(ReactiveSubject.java:83)
+	at com.aventstack.extentreports.AbstractProcessor.onFlush(AbstractProcessor.java:96)
+	at com.aventstack.extentreports.ExtentReports.flush(ExtentReports.java:279)
+	at com.aventstack.extentreports.service.ExtentService.flush(ExtentService.java:47)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter.finishReport(ExtentCucumberAdapter.java:301)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:137)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:134)
+	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
+	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
+	at io.cucumber.core.runtime.SynchronizedEventBus.send(SynchronizedEventBus.java:47)
+	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:118)
+	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:105)
+	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+	at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:222)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:131)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>2</td>
+<td>LearningTreeRunner.StudentActivitySubmission_Runner@3f4faf53</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='LearningTreeRunner.StudentActivitySubmission_Runner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.StudentActivitySubmission_Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Student Activities Submission", "Verify the Student Activities Submission"</td>
+<td></td>
+<td>248</td>
+<td>LearningTreeRunner.StudentActivitySubmission_Runner@3f4faf53</td></tr>
+>>>>>>> branch 'LT_Scripts_R' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
 </table><p>
 </body>
 </html>

@@ -9,7 +9,7 @@
 			<class name="LearningTreeRunner.Activity_CreationRunner"/>
 			<class name="LearningTreeRunner.Import_Activities_in_LTRunner"/>
 			<class name="LearningTreeRunner.Student_Activities_SubmissionRunner"/>
-			<class name="LearningTreeRunner.Provide_Score_in_LTRunner"/>
+			<class name="LearningTreeRunner.Provide_Score_in_LTRunner"/>			
 		</classes>
 	</test> <!--Test -->
 </suite> <!--

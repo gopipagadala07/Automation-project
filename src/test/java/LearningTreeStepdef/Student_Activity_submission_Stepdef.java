@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.openqa.selenium.WebElement;
 
 import com.LearningTree.pages.Student_Activity_Submit_pages;
 import com.Utils.ActionType;
@@ -72,7 +71,6 @@ public class Student_Activity_submission_Stepdef extends ActionType {
 
 	@Then("User Click on Launch button for the All Activities")
 	public void user_click_on_launch_button_for_the_all_activities() {
-	
 		SAS.performActivities();
 	
 	    

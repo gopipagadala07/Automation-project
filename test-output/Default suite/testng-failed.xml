@@ -3,15 +3,29 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="LearningTreeRunner.Activity_CreationRunner">
+=======
+      <class name="LearningTreeRunner.StudentActivitySubmission_Runner">
+>>>>>>> branch 'LT_Scripts_R' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
         <methods>
           <include name="setUpClass"/>
+<<<<<<< HEAD
           <include name="beforeClass"/>
           <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
+=======
+>>>>>>> branch 'LT_Scripts_R' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
           <include name="afterClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="beforeClass"/>
         </methods>
+<<<<<<< HEAD
       </class> <!-- LearningTreeRunner.Activity_CreationRunner -->
+=======
+      </class> <!-- LearningTreeRunner.StudentActivitySubmission_Runner -->
+>>>>>>> branch 'LT_Scripts_R' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

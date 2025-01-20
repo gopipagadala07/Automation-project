@@ -322,7 +322,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 		WebElement ResourceAddBtn = wait1.until(ExpectedConditions.elementToBeClickable(Add_btn));
 		js.executeScript("arguments[0].click();", ResourceAddBtn);
 		Save_and_Continue_Resources.click();
-		String Description_Txt="Description"+"          "+generateRandomString();
+		String Description_Txt="Description"+"   "+generateRandomString();
 		Description.sendKeys(Description_Txt);
 		select_Tags();
 		Badges();
@@ -336,7 +336,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 		wait.elementToBeClickable(URL_input);
 		URL_input.sendKeys("https://pointfuleducation.coursearc.com/index.php?cID=19934&courseKey=JvLYX0ZNG5PY");
 		wait.elementToBeClickable(Name_input);
-		Name_input.sendKeys("External_Tool"+randomNumberGenerator());
+		Name_input.sendKeys("ExternalTool"+randomNumberGenerator());
 		MaxScore.clear();   
 		MaxScore.sendKeys("80");
 		String Description_Txt="Description"+"          "+generateRandomString();

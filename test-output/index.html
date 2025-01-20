@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 2 failed,   2 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -104,11 +104,6 @@
                       <span>
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="LearningTreeRunner.Provide_Score_in_LTRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Provide the Score for all Activities at Speed Grder and Activities to Garde&quot;, &quot;Verify the Scoring i...)">runScenario("Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring i...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="LearningTreeRunner.Student_Activities_SubmissionRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Student Activities Submission&quot;, &quot;Verify the Student Activities Submission&quot;)">runScenario("Student Activities Submission", "Verify the Student Activities Submission")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -130,6 +125,11 @@
                         <a href="#" panel-name="suite-Suite" title="LearningTreeRunner.Import_Activities_in_LTRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Import of Activities in LT&quot;, &quot;Verify the import of Activities in LT&quot;)">runScenario("Import of Activities in LT", "Verify the import of Activities in LT")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="LearningTreeRunner.Student_Activities_SubmissionRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Student Activities Submission&quot;, &quot;Verify the Student Activities Submission&quot;)">runScenario("Student Activities Submission", "Verify the Student Activities Submission")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
@@ -145,24 +145,24 @@
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">LearningTreeRunner.Student_Activities_SubmissionRunner</span>
+              <span class="class-name">LearningTreeRunner.Provide_Score_in_LTRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Student Activities Submission&quot;, &quot;Verify the Student Activities Submission&quot;)">
-                  </a> <!-- runScenario("Student Activities Submission", "Verify the Student Activities Submission") -->
+                  <a name="runScenario(&quot;Provide the Score for all Activities at Speed Grder and Activities to Garde&quot;, &quot;Verify the Scoring i...)">
+                  </a> <!-- runScenario("Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring i...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Student Activities Submission","Verify the Student Activities Submission")</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//b[text()=&apos;LearningCourse44276&apos;]&quot;}
+                  <span class="parameters">("Provide the Score for all Activities at Speed Grder and Activities to Garde","Verify the Scoring in LT")</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[contains(text(), &apos;Candidate Response&apos;)]/following::div[3]/div/following::span/span/descendant::input&quot;}
   (Session info: chrome=132.0.6834.83)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [22b61738d8a677a1786096ae479cc6b7, findElement {value=//b[text()=&apos;LearningCourse44276&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63689}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63689/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 22b61738d8a677a1786096ae479cc6b7
+Command: [b0e69f31ac1a42ce4dc20512272c18e9, findElement {value=//*[contains(text(), &apos;Candidate Response&apos;)]/following::div[3]/div/following::span/span/descendant::input, using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54626}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54626/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b0e69f31ac1a42ce4dc20512272c18e9
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -174,9 +174,13 @@ Session ID: 22b61738d8a677a1786096ae479cc6b7
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.LearningTree.pages.Student_Activity_Submit_pages.click_on_Course(Student_Activity_Submit_pages.java:103)
-	at LearningTreeStepdef.Student_Activity_submission_Stepdef.user_click_on_that_course_name(Student_Activity_submission_Stepdef.java:60)
-	at ✽.User Click on that CourseName0(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Student_Activitys_Submission.feature:10)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.sendKeys(Unknown Source)
+	at com.LearningTree.pages.Provide_Score_For_LT_ActivitiesPage.Provide_the_Score_for_Assessment(Provide_Score_For_LT_ActivitiesPage.java:297)
+	at com.LearningTree.pages.Provide_Score_For_LT_ActivitiesPage.Provide_the_Score_in_Activity_Progress_screen(Provide_Score_For_LT_ActivitiesPage.java:256)
+	at LearningTreeStepdef.Provide_Score_in_LTStepdef.User_Provide_the_Score_in_Activity_Progress_screen(Provide_Score_in_LTStepdef.java:70)
+	at ✽.User Provide the Score in Activity Progress screen3(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Provide_Score_in_LT.feature:17)
 ... Removed 3 stack frames
 </div> <!-- stack-trace -->
                   <em>
@@ -185,39 +189,24 @@ Session ID: 22b61738d8a677a1786096ae479cc6b7
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-failed -->
-          <div class="suite-Suite-class-failed">
+          <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">LearningTreeRunner.Provide_Score_in_LTRunner</span>
+              <img src="passed.png"/>
+              <span class="class-name">LearningTreeRunner.Student_Activities_SubmissionRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Provide the Score for all Activities at Speed Grder and Activities to Garde&quot;, &quot;Verify the Scoring i...)">
-                  </a> <!-- runScenario("Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring i...) -->
+                  <a name="runScenario(&quot;Student Activities Submission&quot;, &quot;Verify the Student Activities Submission&quot;)">
+                  </a> <!-- runScenario("Student Activities Submission", "Verify the Student Activities Submission") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Provide the Score for all Activities at Speed Grder and Activities to Garde","Verify the Scoring in LT")</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //input[@id=&apos;Username&apos;]
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.LearningTree.pages.LoginPage.enterUsername(LoginPage.java:54)
-	at com.LearningTree.pages.LoginPage.User_login(LoginPage.java:79)
-	at LearningTreeStepdef.LoginStepdefinintions.user_enters_the_credentials_from_the_excel_sheet_at(LoginStepdefinintions.java:42)
-	at ✽.User enters the credentials from the excel sheet at 2(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Provide_Score_in_LT.feature:6)
-
-</div> <!-- stack-trace -->
+                  <span class="parameters">("Student Activities Submission","Verify the Student Activities Submission")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-passed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -321,25 +310,25 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
-data.setCell(0, 2, 'LearningTreeRunner.Activity_CreationRunner')
-data.setCell(0, 3, 232024);
+data.setCell(0, 2, 'LearningTreeRunner.Student_Activities_SubmissionRunner')
+data.setCell(0, 3, 292400);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
-data.setCell(1, 2, 'LearningTreeRunner.Import_Activities_in_LTRunner')
-data.setCell(1, 3, 51120);
+data.setCell(1, 2, 'LearningTreeRunner.Activity_CreationRunner')
+data.setCell(1, 3, 289277);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'runScenario')
-data.setCell(2, 2, 'LearningTreeRunner.Student_Activities_SubmissionRunner')
-data.setCell(2, 3, 47442);
+data.setCell(2, 2, 'LearningTreeRunner.Provide_Score_in_LTRunner')
+data.setCell(2, 3, 145544);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'runScenario')
-data.setCell(3, 2, 'LearningTreeRunner.Provide_Score_in_LTRunner')
-data.setCell(3, 3, 11154);
+data.setCell(3, 2, 'LearningTreeRunner.Import_Activities_in_LTRunner')
+data.setCell(3, 3, 50846);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 minutes</span>
+              <span class="suite-total-time">Total running time: 12 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -367,99 +356,97 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">LearningTreeRunner.Activity_CreationRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@294c1b45)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@56c763)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">874 ms</span>
+                <span class="method-start">991 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Creating the Activities", "Verify the Activities Creation Functionality")</span>
-                <span class="method-start">886 ms</span>
+                <span class="method-start">1001 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">290292 ms</span>
+              </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">232933 ms</span>
-              </div> <!-- configuration-class after -->
-              <div class="configuration-class after">
-                <span class="method-name">afterClass</span>
-                <span class="method-start">232933 ms</span>
+                <span class="method-start">290294 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">LearningTreeRunner.Import_Activities_in_LTRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@294c1b45)</span>
-                <span class="method-start">236917 ms</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@56c763)</span>
+                <span class="method-start">293608 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">236954 ms</span>
+                <span class="method-start">293732 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Import of Activities in LT", "Verify the import of Activities in LT")</span>
-                <span class="method-start">236958 ms</span>
+                <span class="method-start">293734 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">288082 ms</span>
+                <span class="method-start">344582 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">288084 ms</span>
+                <span class="method-start">344582 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">LearningTreeRunner.Student_Activities_SubmissionRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@294c1b45)</span>
-                <span class="method-start">290338 ms</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@56c763)</span>
+                <span class="method-start">346847 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">290376 ms</span>
+                <span class="method-start">346984 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">runScenario("Student Activities Submission", "Verify the Student Activities Submission")</span>
-                <span class="method-start">290377 ms</span>
+                <span class="method-start">346989 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
-                <span class="method-name">afterClass</span>
-                <span class="method-start">337823 ms</span>
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">639389 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
-                <span class="method-name">tearDownClass</span>
-                <span class="method-start">337825 ms</span>
+                <span class="method-name">afterClass</span>
+                <span class="method-start">639389 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">LearningTreeRunner.Provide_Score_in_LTRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@294c1b45)</span>
-                <span class="method-start">339774 ms</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@56c763)</span>
+                <span class="method-start">640766 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">339788 ms</span>
+                <span class="method-start">641107 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">runScenario("Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring i...)</span>
-                <span class="method-start">339788 ms</span>
+                <span class="method-start">641107 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">350942 ms</span>
+                <span class="method-start">786651 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">350942 ms</span>
+                <span class="method-start">786658 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -31,4 +31,3 @@ Feature: Verify the Activities Creation Functionality
     Examples: 
       | rownumber | rownumber1 |
       |         0 |          0 |
- 

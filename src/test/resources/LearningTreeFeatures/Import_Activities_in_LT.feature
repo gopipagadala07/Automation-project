@@ -19,4 +19,4 @@ Feature: Verify the import of Activities in LT
 
     Examples: 
       | rownumber | rownumber1 | rownumber2 |
-      |         2 |          0 |         3  |
+      |         2 |          0 |          3 |

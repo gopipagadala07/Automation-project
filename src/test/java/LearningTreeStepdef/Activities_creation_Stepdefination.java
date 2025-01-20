@@ -3,14 +3,11 @@ package LearningTreeStepdef;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-
 import com.LearningTree.pages.Activities_Creation_in_CDPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.ExcelReader;
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -118,8 +115,7 @@ public class Activities_creation_Stepdefination extends ActionType
 		AC.click_on_Add_Activity("Virtual");
 		AC.add_Assignment_Activity();
 		AC.click_on_Add_Activity("Virtual");
-		AC.add_Discussion_Activity();
-
+		AC.add_Discussion_Activity();    
 	}
 	@And("User Add Activities in Topic Goal{int}")
 	public void User_Add_Activities_in_Topic_Goal(int row) throws InvalidFormatException, IOException 

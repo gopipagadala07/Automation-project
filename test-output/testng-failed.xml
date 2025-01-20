@@ -4,15 +4,6 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="LearningTreeRunner.Student_Activities_SubmissionRunner">
-        <methods>
-          <include name="afterClass"/>
-          <include name="setUpClass"/>
-          <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- LearningTreeRunner.Student_Activities_SubmissionRunner -->
       <class name="LearningTreeRunner.Provide_Score_in_LTRunner">
         <methods>
           <include name="setUpClass"/>
