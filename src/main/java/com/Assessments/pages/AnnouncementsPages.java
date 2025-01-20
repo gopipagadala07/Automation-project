@@ -43,7 +43,7 @@ public class AnnouncementsPages extends ActionType {
 	@FindBy(how=How.XPATH,using="//mat-icon[text()='save']/parent::span")private WebElement SaveButton;
 	@FindBy(how=How.XPATH,using="//span[text()='search here']/ancestor::div[1]")private WebElement searchhereAnnouncements;//searchfield for announcements
 	@FindBy(how=How.XPATH,using="//mat-icon[text()='clear']")private WebElement ClearSearch;
-	@FindBy(how=How.XPATH,using="//button[@aria-label='Next page']")private WebElement nextpage;
+	@FindBy(how=How.XPATH,using="//button[@aria-label='Next page']/child::span/child::*[local-name()='svg']")private WebElement nextpage;
 	@FindBy(how=How.XPATH,using="//button[@aria-label='Last page']")private WebElement lastPage;
 	@FindBy(how=How.XPATH,using="//button[@aria-label='Previous page']")private WebElement PreviousPage;
 	@FindBy(how=How.XPATH,using="//button[@aria-label='First page']")private WebElement FirstPage;
@@ -91,7 +91,7 @@ public class AnnouncementsPages extends ActionType {
 
 	public void ClickOnAddNewAnnouncement() {
 
-		for (int i = 0; i < 15; i++) {
+		for (int i = 0; i < 18; i++) {
 			try {
 
 				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -168,7 +168,7 @@ public class AnnouncementsPages extends ActionType {
 		if(nextpage.isEnabled())
 		{
 			a.moveToElement(nextpage).build().perform();
-			js.executeScript("arguments[0].click();", nextpage);
+			a.click().build().perform();
 			StaticWait(1);
 		}
 		else
