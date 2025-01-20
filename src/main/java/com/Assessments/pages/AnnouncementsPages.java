@@ -165,9 +165,17 @@ public class AnnouncementsPages extends ActionType {
 		wait.elementToBeClickable(nextpage);
 		wait.visibilityOf(nextpage);
 		Actions a=new Actions(driver);
-		a.moveToElement(nextpage).build().perform();
-		js.executeScript("arguments[0].click();", nextpage);
-		StaticWait(1);
+		if(nextpage.isEnabled())
+		{
+			a.moveToElement(nextpage).build().perform();
+			js.executeScript("arguments[0].click();", nextpage);
+			StaticWait(1);
+		}
+		else
+		{
+			System.out.println("Next page is in Disabled Position..!!");
+		}
+		
 
 //		wait.elementToBeClickable(lastPage);
 //		wait.visibilityOf(lastPage);
