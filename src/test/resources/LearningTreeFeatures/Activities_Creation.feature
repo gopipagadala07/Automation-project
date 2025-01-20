@@ -10,6 +10,7 @@ Feature: Verify the Activities Creation Functionality
     When User Enter the Community Name and Description
     Then User Saved the Community and Search for the Created Community in Search here Field<rownumber1>
     And User Click on that Community<rownumber1>
+    #And User go to Learning Tab
     Then User Add Child Objective
     ###Activities Creation at Virtual Goal
     And User Add Activities in Virtual Goal<rownumber1>

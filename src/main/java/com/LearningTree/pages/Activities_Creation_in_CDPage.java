@@ -39,7 +39,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 	@FindBy(how = How.XPATH,using = "//input[@type='search']")private WebElement SearchHere;
 	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Virtual Course')]/parent::span/parent::div/parent::div/following::div/descendant::button[@mattooltip='More Actions']")
 	public WebElement Virtual_ellipse;
-	@FindBy(how = How.XPATH,using = "//div[@class='course-unit selectedUnit']")private WebElement Allbtn;
+//	@FindBy(how = How.XPATH,using = "//div[@class='course-unit selectedUnit']")private WebElement Allbtn;
 	@FindBy(how = How.XPATH,using = "//span[text()='Add Child Objective']")private WebElement Add_Child_Objective;
 	@FindBy(how = How.XPATH,using = "//div[normalize-space(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'))='tags']")private WebElement Tags_Tab;
 	@FindBy(how = How.XPATH,using = "//mat-expansion-panel-header[@role='button']")private WebElement Standards_Lookups;
@@ -161,7 +161,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 	public void click_on_Community(String CD_Name)
 	{
 		int attempts = 0;
-		while (attempts < 3) {
+		while (attempts < 5) {
 			try {
 				WebElement communt=driver.findElement(By.xpath("//b[text()='"+CD_Name+"']"));
 				communt.click();
@@ -173,10 +173,10 @@ public class Activities_Creation_in_CDPage extends ActionType
 		}
 	}
 	public void ChildObjectivesCreation() {
-		Allbtn.click();
+//		Allbtn.click();
 		StaticWait(1);
-		WebElement ele = driver.findElement(By.xpath("//h3[text()='Learning']"));
-		ele.click();
+//		WebElement ele = driver.findElement(By.xpath("//h3[text()='Learning']"));
+//		ele.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -207,7 +207,8 @@ public class Activities_Creation_in_CDPage extends ActionType
 				cp.Save();
 				StaticWait(1);
 			} catch (StaleElementReferenceException e) {
-				System.out.println("StaleElementReferenceException encountered, retrying iteration " + (i + 1) + ": " + e.getMessage());
+//				System.out.println("StaleElementReferenceException encountered, retrying iteration " + (i + 1) + ": " + e.getMessage());
+				System.out.println("StaleElementReferenceException encountered");
 				i--;
 			} catch (Exception e) {
 				System.out.println("Failed in iteration " + (i + 1) + ": " + e.getMessage());
