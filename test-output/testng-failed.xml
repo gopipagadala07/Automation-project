@@ -7,17 +7,4 @@
       <class name="AssessmentsRunner.AnnouncementsRunner"/>
     </classes>
   </test> <!-- Default test -->
-  <test parallel="none" name="Default test(failed)">
-    <classes>
-      <class name="AssessmentsRunner.AnnouncementsRunner">
-        <methods>
-          <include name="beforeClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-          <include name="afterClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- AssessmentsRunner.AnnouncementsRunner -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
