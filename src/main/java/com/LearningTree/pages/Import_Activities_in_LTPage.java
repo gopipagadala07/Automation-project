@@ -111,8 +111,18 @@ public class Import_Activities_in_LTPage extends ActionType {
 		search.sendKeys(Keys.BACK_SPACE);
 		StaticWait(1);
 		search.sendKeys(Keys.CONTROL + "z");
-		WebElement Assign_to_Community_btn = driver.findElement(By.xpath("//b[text()='"+CD_Name+"']/ancestor::mat-card-header/following-sibling::mat-card-content/following::mat-card-actions/child::div/child::div"));
-		Assign_to_Community_btn.click();
+		int attempts = 0;
+		while (attempts < 3) {
+			try {
+				
+				WebElement Assign_to_Community_btn = driver.findElement(By.xpath("//b[text()='"+CD_Name+"']/ancestor::mat-card-header/following-sibling::mat-card-content/following::mat-card-actions/child::div/child::div"));
+				Assign_to_Community_btn.click();
+				break;
+			} catch (StaleElementReferenceException e) {
+				attempts++;
+				StaticWait(1);	       
+			}
+		}
 		driver.navigate().refresh();
 		StaticWait(1);
 	}
