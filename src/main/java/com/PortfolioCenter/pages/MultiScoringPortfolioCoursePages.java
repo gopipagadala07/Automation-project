@@ -66,22 +66,9 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 	@FindBy(how = How.XPATH,using = "//button[contains(text(),'Import Badge')]")private WebElement importBadge;
 	@FindBy(how = How.XPATH,using = "//*[local-name()='svg' and @selection='true']")private WebElement alertBadge;
 
-
-	public WebElement Standard1(String Code1) {
-		String xpath = "//*[@class='fontchanges ng-star-inserted']/child::span[text()='"+Code1+"']";
-		return driver.findElement(By.xpath(xpath));
-	}
-
-	public WebElement Standard2(String Code2) {
-		String xpath = "//*[@class='fontchanges ng-star-inserted']/child::span[text()='"+Code2+"']";
-		return driver.findElement(By.xpath(xpath));
-	}
-	public WebElement Standard3(String Code3) {
-		String xpath = "//*[@class='fontchanges ng-star-inserted']/child::span[text()='"+Code3+"']";
-		return driver.findElement(By.xpath(xpath));
-	}
 	public WebElement MultiPortfolioName(String PortfolioCourseName) {
-		String xpath ="//*[@class='mat-card-header-text']/child::mat-card-title/child::span/child::b[text()='"+PortfolioCourseName+"']";
+//		String xpath ="//*[@class='mat-card-header-text']/child::mat-card-title/child::span/child::b[text()='"+MultiPortfolioCourseName+"']";
+		String xpath="//b['"+PortfolioCourseName+"']";
 		return driver.findElement(By.xpath(xpath));
 	}
 

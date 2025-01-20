@@ -93,7 +93,8 @@ public class PortfolioCenterCoursePages extends ActionType{
 	@FindBy(how = How.XPATH,using = "//img[@id='badgeImage']")private WebElement ConfirmBadge;
 
 	public WebElement PortfolioName(String PortfolioCourseName) {
-		String xpath ="//*[@class='mat-card-header-text']/child::mat-card-title/child::span/child::b[text()='"+PortfolioCourseName+"']";
+//		String xpath ="//*[@class='mat-card-header-text']/child::mat-card-title/child::span/child::b[text()='"+MultiPortfolioCourseName+"']";
+		String xpath="//b['"+PortfolioCourseName+"']";
 		return driver.findElement(By.xpath(xpath));
 	}
 

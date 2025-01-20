@@ -1,10 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <parameter name="browser" value="param-val-not-found"/>
-  <test name="Default test" verbose="2">
+<suite thread-count="3" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="chrome"/>
+  <test name="Test3">
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="AssessmentsRunner.AnnouncementsRunner"/>
+      <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner"/>
+      <class name="PortfolioCenterRunner.AssignmentsSubmissionRunner"/>
+      <class name="PortfolioCenterRunner.ScoreSubmissionRunner"/>
+      <class name="PortfolioCenterRunner.MultiScoringPortfolioCourseRuner"/>
+      <class name="PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner"/>
+      <class name="PortfolioCenterRunner.MultiScoringSubmissionRuner"/>
+      <class name="PortfolioCenterRunner.DeletePortfolioCourseRunner"/>
     </classes>
-  </test> <!-- Default test -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test3 -->
+  <test parallel="tests" name="Test3(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="PortfolioCenterRunner.AssignmentsSubmissionRunner">
+        <methods>
+          <include name="afterClass"/>
+          <include name="tearDownClass"/>
+          <include name="beforeClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- PortfolioCenterRunner.AssignmentsSubmissionRunner -->
+      <class name="PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner">
+        <methods>
+          <include name="afterClass"/>
+          <include name="tearDownClass"/>
+          <include name="beforeClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner -->
+      <class name="PortfolioCenterRunner.ScoreSubmissionRunner">
+        <methods>
+          <include name="afterClass"/>
+          <include name="tearDownClass"/>
+          <include name="beforeClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- PortfolioCenterRunner.ScoreSubmissionRunner -->
+      <class name="PortfolioCenterRunner.DeletePortfolioCourseRunner">
+        <methods>
+          <include name="afterClass"/>
+          <include name="tearDownClass"/>
+          <include name="beforeClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- PortfolioCenterRunner.DeletePortfolioCourseRunner -->
+      <class name="PortfolioCenterRunner.MultiScoringSubmissionRuner">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="tearDownClass"/>
+          <include name="afterClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- PortfolioCenterRunner.MultiScoringSubmissionRuner -->
+      <class name="PortfolioCenterRunner.MultiScoringPortfolioCourseRuner">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="afterClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- PortfolioCenterRunner.MultiScoringPortfolioCourseRuner -->
+      <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="tearDownClass"/>
+          <include name="afterClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- PortfolioCenterRunner.PortfolioCenterCourseRunner -->
+    </classes>
+  </test> <!-- Test3(failed) -->
+</suite> <!-- Failed suite [Suite] -->

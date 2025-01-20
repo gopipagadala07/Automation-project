@@ -91,7 +91,7 @@ public class AnnouncementsPages extends ActionType {
 
 	public void ClickOnAddNewAnnouncement() {
 
-		for (int i = 0; i < 11; i++) {
+		for (int i = 0; i < 15; i++) {
 			try {
 
 				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));

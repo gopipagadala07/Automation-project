@@ -64,7 +64,8 @@ public class MultiScoringSubmissionPages extends ActionType{
 
 
 	public WebElement MultiPortfolioCourseName(String MultiPortfolioCourseName) {
-		String xpath ="//*[@class='mat-card-header-text']/child::mat-card-title/child::span/child::b[text()='"+MultiPortfolioCourseName+"']";
+//		String xpath ="//*[@class='mat-card-header-text']/child::mat-card-title/child::span/child::b[text()='"+MultiPortfolioCourseName+"']";
+		String xpath="//b['"+MultiPortfolioCourseName+"']";
 		return driver.findElement(By.xpath(xpath));
 	}
 

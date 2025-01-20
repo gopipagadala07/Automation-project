@@ -36,8 +36,8 @@
  <test name="Test3">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="PortfolioCenterRunner.SISprovisioningRunner"></class>
-			<class name="PortfolioCenterRunner.PortfolioCenterCourseRunner"></class>
+		    <class name="PortfolioCenterRunner.SISprovisioningRunner"></class>
+ 		    <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner"></class>
 			<class name="PortfolioCenterRunner.AssignmentsSubmissionRunner"></class>
 			<class name="PortfolioCenterRunner.ScoreSubmissionRunner"></class>
 			<class name="PortfolioCenterRunner.MultiScoringPortfolioCourseRuner"></class>
