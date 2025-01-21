@@ -215,7 +215,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 		js.executeScript("arguments[0].scrollIntoView(true);", SubmitAssignment);
 		js.executeScript("arguments[0].click();", SubmitAssignment);
 		StaticWait(1);
-		Notes_tab.click();
+		js.executeScript("arguments[0].click();", Notes_tab);
 		TypehereText.sendKeys("StudentNotesforAssignment"+randomNumberGenerator());
 		cp.Save();
 		cp.CloseIcon();
@@ -239,7 +239,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 		StaticWait(1);		
 		js.executeScript("arguments[0].scrollIntoView(true);", SubmitDiscussion);
 		js.executeScript("arguments[0].click();", SubmitDiscussion);
-		Notes_tab.click();
+		js.executeScript("arguments[0].click();", Notes_tab);
 		TypehereText.sendKeys("StudentNotesforDiscussion"+randomNumberGenerator());
 		cp.Save();
 		cp.CloseIcon();

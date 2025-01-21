@@ -127,41 +127,24 @@ public class Documents_page extends ActionType {
 	}
 	
 	public void fileupload() throws IOException  {
-		try {
-	        WebElement fileInputRootFolder = driver.findElement(By.xpath("//input[@type='file']"));
-	        WebElement fileInputSubFolder = driver.findElement(By.xpath("(//mat-icon[@mattooltip='Upload File']/preceding-sibling::input)[2]"));
-	        
-	        String relativePath = "src/test/resources/ExcelFiles/LearningTree.xlsx";
-	        File file = new File(relativePath);
-	        String absolutePath = file.getCanonicalPath(); 
-	       
-	        if (!file.exists())
-	        {
-	            throw new RuntimeException("File not found at: " + absolutePath);
-	        }
-	       
-	        fileInputRootFolder.sendKeys(absolutePath);
-	        StaticWait(1);
-	        
-	        fileInputSubFolder.sendKeys(absolutePath);
-	        System.out.println("File uploaded successfully.");
-	    }
-		 
-		catch (StaleElementReferenceException e) 
+		int retries = 10;
+		while (retries > 0)
 		{
-		        System.out.println("Caught StaleElementReferenceException. Retrying...");
-		        
-		        WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
-		        fileInput.sendKeys(new File("src/test/resources/ExcelFiles/LearningTree.xlsx").getCanonicalPath());
-		       
-		        WebElement fileInputSubFolder = driver.findElement(By.xpath("(//mat-icon[@mattooltip='Upload File']/preceding-sibling::input)[2]"));
-		        fileInputSubFolder.sendKeys(new File("src/test/resources/ExcelFiles/LearningTree.xlsx").getCanonicalPath());
-		 }
-		
-		catch (Exception e)
-		{
-	        e.printStackTrace();
-	        System.out.println("File upload failed: " + e.getMessage());
-	    }
-	}	
+			 try {
+
+				 WebElement fileInputRootFolder = driver.findElement(By.xpath("(//mat-icon[@mattooltip='Upload File']/preceding-sibling::input)[1]"));
+		          fileInputRootFolder.sendKeys(new File("src/test/resources/ExcelFiles/LearningTree.xlsx").getCanonicalPath());		         
+		          WebElement fileInputSubFolder = driver.findElement(By.xpath("(//mat-icon[@mattooltip='Upload File']/preceding-sibling::input)[2]"));
+		          fileInputSubFolder.sendKeys(new File("src/test/resources/ExcelFiles/LT.txt").getCanonicalPath());
+		     break;
+			 }
+		   
+		  catch (StaleElementReferenceException e)
+		  {
+		          System.out.println("Caught StaleElementReferenceException. Retrying...");
+		          retries--;
+		   }  
+		}
+
+	}
 }
