@@ -229,8 +229,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 		js.executeScript("arguments[0].click();", Discussion_Tab);
 
 		StaticWait(1);
-		js.executeScript("arguments[0].click();", NewPost);
-//		NewPost.click();
+		NewPost.click();
 		TypehereText.sendKeys(generateRandomString());
 		js.executeScript("arguments[0].click();", Postbutton);
 		js.executeScript("arguments[0].click();", Replybutton);
