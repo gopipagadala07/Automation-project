@@ -227,9 +227,11 @@ public class Student_Activity_Submit_pages extends ActionType {
 		System.out.println("Performing Discussion activity...");
 		wait.elementToBeClickable(Discussion_Tab);
 		js.executeScript("arguments[0].click();", Discussion_Tab);
-
-		StaticWait(1);
-		NewPost.click();
+		WebElement launchButton = driver.findElement(By.xpath("//span[text()=' Post ']"));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(launchButton).click().perform();
+//		StaticWait(1);
+//		NewPost.click();
 		TypehereText.sendKeys(generateRandomString());
 		js.executeScript("arguments[0].click();", Postbutton);
 		js.executeScript("arguments[0].click();", Replybutton);
