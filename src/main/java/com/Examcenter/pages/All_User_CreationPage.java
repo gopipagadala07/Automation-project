@@ -75,37 +75,32 @@ public class All_User_CreationPage extends ActionType
 		PageFactory.initElements(driver, this);
 		this.wait = new Wait(driver);
 	}
-	public void Addnewbtn()
-	{
-		wait.elementToBeClickable(Addnewbtn);
-		boolean success=false;
-		for(int retry=0;retry<=5;retry++)
-		{
-			try {
-				WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-				WebElement e=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=' Add New ']")));
-				StaticWait(2);
-				JavascriptExecutor js=(JavascriptExecutor) driver;
-				js.executeScript("arguments[0].click();", e);
-				StaticWait(1);
-				success=true;
-				break;
-			} catch (StaleElementReferenceException e) {
-				retry++;
-				StaticWait(1);
-				System.out.println("StaleElementReferenceException. Retrying...");
-				break;
-			}catch (ElementClickInterceptedException e) {
-				retry++;
-				StaticWait(1);
-				System.out.println("StaleElementReferenceException. Retrying...");
-			}
-			if(!success)
-			{
-				System.out.println("StaleElementReferenceException. Exit...");
-			}
-		}
+	public void Addnewbtn() {
+	    boolean success = false;
+	    for (int retry = 0; retry <= 5; retry++) {
+	        try {
+	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()=' Add New ']")));
+	            StaticWait(2);
+	            JavascriptExecutor js = (JavascriptExecutor) driver;
+	            js.executeScript("arguments[0].click();", e);
+	            StaticWait(1);
+	            success = true;
+	            break;
+	        } catch (StaleElementReferenceException e) {
+	            System.out.println("StaleElementReferenceException. Retrying...");
+	            StaticWait(1);
+	        } catch (ElementClickInterceptedException e) {
+	            System.out.println("ElementClickInterceptedException. Retrying...");
+	            StaticWait(1);
+	        }
+	    }
+
+	    if (!success) {
+	        System.out.println("Failed to click the 'Add New' button after 5 retries.");
+	    }
 	}
+
 	public void Adminstarationbtn()
 	{
 		wait.elementToBeClickable(Adminstrationbtn);
