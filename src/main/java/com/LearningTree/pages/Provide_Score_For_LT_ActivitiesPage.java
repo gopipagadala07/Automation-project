@@ -159,15 +159,14 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			js.executeScript("arguments[0].click();", Score);
 			String Activity_Title = Activity_Title_Name.getText();
 			
-			 if (Activity_Title.toLowerCase().contains("assessment".toLowerCase()))
-			{
-				Provide_the_Score_for_Assessment();
-				System.out.println("Provide Score for Assessment Activity");
+			if (Activity_Title.toLowerCase().matches(".*\\bassessment\\b.*")) {
+			    Provide_the_Score_for_Assessment();
+			    System.out.println("Provide Score for Assessment Activity");
+			} else if (Activity_Title.toLowerCase().matches(".*\\b(assignment|discussion)\\b.*")) {
+			    Provide_the_Score_for_Assignment_and_Discussion();
+			    System.out.println("Provide Score for " + (Activity_Title.toLowerCase().contains("assignment") ? "Assignment" : "Discussion") + " Activity");
 			}
-			 else if (Activity_Title.toLowerCase().contains("assignment".toLowerCase()) || Activity_Title.toLowerCase().contains("discussion".toLowerCase())) {
-				Provide_the_Score_for_Assignment_and_Discussion();
-				System.out.println("Provide Score for " + (Activity_Title.toLowerCase().contains("assignment".toLowerCase()) ? "Assignment" : "Discussion") + " Activity");
-			}
+
 		}
 	}
 	public void close_the_Overal_Speed_Grader_Screen()
@@ -186,15 +185,14 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			js.executeScript("arguments[0].click();", A_Score.get(i));
 			StaticWait(1);
 			String Activity_Title = Activity_Title_Name.getText();
-			if (Activity_Title.toLowerCase().contains("assignment".toLowerCase()) || Activity_Title.toLowerCase().contains("discussion".toLowerCase())) {
-				Provide_the_Score_for_Assignment_and_Discussion();
-				System.out.println("Provide Score for " + (Activity_Title.toLowerCase().contains("assignment".toLowerCase()) ? "Assignment" : "Discussion") + " Activity");
+			if (Activity_Title.toLowerCase().matches(".*\\bassessment\\b.*")) {
+			    Provide_the_Score_for_Assessment();
+			    System.out.println("Provide Score for Assessment Activity");
+			} else if (Activity_Title.toLowerCase().matches(".*\\b(assignment|discussion)\\b.*")) {
+			    Provide_the_Score_for_Assignment_and_Discussion();
+			    System.out.println("Provide Score for " + (Activity_Title.toLowerCase().contains("assignment") ? "Assignment" : "Discussion") + " Activity");
 			}
-			else if (Activity_Title.toLowerCase().contains("assessment".toLowerCase()))
-			{
-				Provide_the_Score_for_Assessment();
-				System.out.println("Provide Score for Assessment Activity");
-			}
+
 			if(i==count)
 			{
 				break;
@@ -249,15 +247,14 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			Details.click();
 			StaticWait(1);
 			String Activity_Title = Activity_Title_Name.getText();
-			if (Activity_Title.toLowerCase().contains("assignment".toLowerCase()) || Activity_Title.toLowerCase().contains("discussion".toLowerCase())) {
-				Provide_the_Score_for_Assignment_and_Discussion();
-				System.out.println("Provide Score for " + (Activity_Title.toLowerCase().contains("assignment".toLowerCase()) ? "Assignment" : "Discussion") + " Activity");
+			if (Activity_Title.toLowerCase().matches(".*\\bassessment\\b.*")) {
+			    Provide_the_Score_for_Assessment();
+			    System.out.println("Provide Score for Assessment Activity");
+			} else if (Activity_Title.toLowerCase().matches(".*\\b(assignment|discussion)\\b.*")) {
+			    Provide_the_Score_for_Assignment_and_Discussion();
+			    System.out.println("Provide Score for " + (Activity_Title.toLowerCase().contains("assignment") ? "Assignment" : "Discussion") + " Activity");
 			}
-			else if (Activity_Title.toLowerCase().contains("assessment".toLowerCase()))
-			{
-				Provide_the_Score_for_Assessment();
-				System.out.println("Provide Score for Assessment Activity");
-			}
+
 			WebElement e= driver.findElement(By.xpath("//h3[text()='Activity Progress']/parent::div/child::button"));
 			js.executeScript("arguments[0].click();", e);
 			StaticWait(1);
@@ -274,17 +271,17 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		Provide_Score.sendKeys("70");
 		js.executeScript("arguments[0].click();", Save_Score);
-		int attempts = 0;
-		while (attempts < 3) {
-			try {
-				Award_Badge.click();
-				break;
-			} catch (StaleElementReferenceException e) {
-				attempts++;
-				StaticWait(1);	       
-			}
-		}
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//small[text()=' Credit Awarded']")));
+//		int attempts = 0;
+//		while (attempts < 3) {
+//			try {
+//				Award_Badge.click();
+//				break;
+//			} catch (StaleElementReferenceException e) {
+//				attempts++;
+//				StaticWait(1);	       
+//			}
+//		}
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//small[text()=' Credit Awarded']")));
 		StaticWait(1);
 		WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='keyboard_arrow_left']/ancestor::button/following-sibling::button[2]")));
 		js.executeScript("arguments[0].click();", e);
