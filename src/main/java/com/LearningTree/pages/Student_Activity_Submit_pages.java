@@ -203,12 +203,14 @@ public class Student_Activity_Submit_pages extends ActionType {
 			    }
 	}
 	public void performAssignmentActivity() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		System.out.println("Performing Assignment activity...");
 		wait.elementToBeClickable(Assignment_Tab);
-		Assignment_Tab.click();
+		js.executeScript("arguments[0].click();", Assignment_Tab);
+
 		wait.elementToBeClickable(TypehereText);
 		TypehereText.sendKeys(generateRandomString());
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+	
 		wait.elementToBeClickable(SubmitAssignment);
 		js.executeScript("arguments[0].scrollIntoView(true);", SubmitAssignment);
 		js.executeScript("arguments[0].click();", SubmitAssignment);
@@ -224,7 +226,8 @@ public class Student_Activity_Submit_pages extends ActionType {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		System.out.println("Performing Discussion activity...");
 		wait.elementToBeClickable(Discussion_Tab);
-		Discussion_Tab.click();
+		js.executeScript("arguments[0].click();", Discussion_Tab);
+
 		StaticWait(1);
 		js.executeScript("arguments[0].click();", NewPost);
 //		NewPost.click();
