@@ -1,0 +1,24 @@
+2025-01-21 17:23:24,629 INFO  [rootLogger] Enviornment is : STAGE
+2025-01-21 17:23:24,630 INFO  [rootLogger] Enviornment is : STAGE
+2025-01-21 17:23:24,630 INFO  [rootLogger] Enviornment is : STAGE
+2025-01-21 17:23:24,636 INFO  [rootLogger] Browser value is: CHROME
+2025-01-21 17:23:24,636 INFO  [rootLogger] Browser value is: CHROME
+2025-01-21 17:23:24,637 INFO  [rootLogger] Browser value is: CHROME
+2025-01-21 17:23:27,780 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-21 17:23:27,789 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-01-21 17:23:28,036 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-21 17:23:28,037 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-01-21 17:23:28,455 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-21 17:23:28,458 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-01-21 17:23:59,319 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-21 17:23:59,376 INFO  [rootLogger] Browser value is: CHROME
+2025-01-21 17:24:00,963 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-21 17:24:00,964 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-01-21 17:24:08,477 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-21 17:24:10,112 INFO  [rootLogger] Browser value is: CHROME
+2025-01-21 17:24:11,490 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-21 17:24:11,491 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-01-21 17:24:11,926 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-21 17:24:13,006 INFO  [rootLogger] Browser value is: CHROME
+2025-01-21 17:24:14,555 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-21 17:24:14,556 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
