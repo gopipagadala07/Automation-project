@@ -92,7 +92,7 @@ public class Import_Activities_in_LTPage extends ActionType {
 		int attempts = 0;
 		while (attempts < 3) {
 			try {
-				WebElement communt=driver.findElement(By.xpath("//b[text()='"+LT_Name+"']"));
+				WebElement communt=driver.findElement(By.xpath("//*[text()='"+LT_Name+"']"));
 				communt.click();
 				break;
 			} catch (StaleElementReferenceException e) {

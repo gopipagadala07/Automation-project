@@ -173,10 +173,8 @@ public class Activities_Creation_in_CDPage extends ActionType
 		}
 	}
 	public void ChildObjectivesCreation() {
-//		Allbtn.click();
+
 		StaticWait(1);
-//		WebElement ele = driver.findElement(By.xpath("//h3[text()='Learning']"));
-//		ele.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -218,24 +216,29 @@ public class Activities_Creation_in_CDPage extends ActionType
 	public void click_on_Add_Activity(String Goal)
 	{
 		int attempts = 0;
-		while (attempts < 3) {
+		while (attempts < 5) {
 			try {
 				driver.findElement(By.xpath("//h3[text()='Learning']")).click();
 				StaticWait(1);
 				Actions Ac=new Actions(driver);
 				WebElement Unit_ellipse = driver.findElement(By.xpath("//span[contains(text(),'"+Goal+"')]/parent::span/parent::div/parent::div/following::div/child::div[6]/child::button/child::span/child::mat-icon"));
 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", Unit_ellipse);
-				Ac.moveToElement(Unit_ellipse).click().build().perform();
+				Ac.moveToElement(Unit_ellipse).build().perform();
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", Unit_ellipse);
+
 				break;
 			} catch (StaleElementReferenceException e) {
+				System.out.println("StaleElementReferenceException encountered");
 				attempts++;
 				StaticWait(1);	       
 			}
 			catch (ElementClickInterceptedException e) {
+				System.out.println("ElementClickInterceptedException encountered");
 				attempts++;
 				StaticWait(1);	       
 			}
 			catch (TimeoutException e) {
+				System.out.println("TimeoutException encountered");
 				attempts++;
 				StaticWait(1);	       
 			}
