@@ -3,20 +3,7 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test" verbose="2">
     <classes>
-      <class name="AssessmentsRunner.SISprovisioningRunner"/>
+      <class name="ExamCenterRunners.Users_Creation_Runner"/>
     </classes>
   </test> <!-- Default test -->
-  <test parallel="none" name="Default test(failed)">
-    <classes>
-      <class name="AssessmentsRunner.SISprovisioningRunner">
-        <methods>
-          <include name="afterClass"/>
-          <include name="beforeClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- AssessmentsRunner.SISprovisioningRunner -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
