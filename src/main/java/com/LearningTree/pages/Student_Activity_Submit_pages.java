@@ -223,11 +223,11 @@ public class Student_Activity_Submit_pages extends ActionType {
 	public void performDiscussionActivity() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		System.out.println("Performing Discussion activity...");
-	
+		wait.elementToBeClickable(Discussion_Tab);
 		Discussion_Tab.click();
-		StaticWait(2);
-		//js.executeScript("arguments[0].click();", NewPost);
-		NewPost.click();
+		StaticWait(1);
+		js.executeScript("arguments[0].click();", NewPost);
+//		NewPost.click();
 		TypehereText.sendKeys(generateRandomString());
 		Postbutton.click();
 		Replybutton.click();
