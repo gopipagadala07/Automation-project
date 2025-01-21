@@ -272,7 +272,7 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		Provide_Score.sendKeys("70");
-		Save_Score.click();
+		js.executeScript("arguments[0].click();", Save_Score);
 		int attempts = 0;
 		while (attempts < 3) {
 			try {
