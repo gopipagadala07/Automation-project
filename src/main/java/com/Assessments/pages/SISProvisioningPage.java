@@ -7,7 +7,6 @@ import java.util.List;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -341,7 +340,6 @@ public class SISProvisioningPage extends ActionType{
 	        StaticWait(1);
 	    }
 	}
-
 	public void TUserSearch()
 	{
 		StaticWait(1);
