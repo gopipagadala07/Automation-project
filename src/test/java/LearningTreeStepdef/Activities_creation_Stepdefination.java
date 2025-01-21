@@ -113,9 +113,9 @@ public class Activities_creation_Stepdefination extends ActionType
 		AC.click_on_Add_Activity("Virtual");
 		AC.add_Assessment_Activity(Testname);
 		AC.click_on_Add_Activity("Virtual");
-		AC.add_Assignment_Activity();
+		AC.add_Discussion_Activity();  
 		AC.click_on_Add_Activity("Virtual");
-		AC.add_Discussion_Activity();    
+		AC.add_Assignment_Activity();
 	}
 	@And("User Add Activities in Topic Goal{int}")
 	public void User_Add_Activities_in_Topic_Goal(int row) throws InvalidFormatException, IOException 
