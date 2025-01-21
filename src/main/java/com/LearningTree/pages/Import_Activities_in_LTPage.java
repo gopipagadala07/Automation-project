@@ -93,7 +93,9 @@ public class Import_Activities_in_LTPage extends ActionType {
 		while (attempts < 3) {
 			try {
 				WebElement communt=driver.findElement(By.xpath("//*[text()='"+LT_Name+"']"));
-				communt.click();
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", communt);
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", communt);
+
 				break;
 			} catch (StaleElementReferenceException e) {
 				attempts++;
