@@ -164,30 +164,45 @@ public class PortfolioCenterCoursePages extends ActionType{
 
 	public void the_user_searches_for_the_specific_course_and_clicks_on_it() throws InvalidFormatException, IOException {	
 		StaticWait(1);
-		retrySearchForCourseName(PortfolioCourseName, 3);
+		retrySearchForCourseName(PortfolioCourseName, 5);
 	}
 
 	public void retrySearchForCourseName(String PortfolioCourseName, int retryCount) {
-		int attempts = 0;
-		boolean isSuccessful = false;
-		while (attempts < retryCount && !isSuccessful) {
-			try {
-				cp.searchField(PortfolioCourseName);
-				wait.visibilityOf(PortfolioName(PortfolioCourseName));
-				JavascriptExecutor jc = (JavascriptExecutor) driver;
-				jc.executeScript("arguments[0].click();", PortfolioName(PortfolioCourseName));
-				isSuccessful = true;
-				break;
-			} catch (Exception e) {
-				attempts++;
-				System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
-				if (attempts >= retryCount) {
-					throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
-				}
-			}
-		}
-	}
+	    int attempts = 0;
+	    boolean isSuccessful = false;
 
+	    while (attempts < retryCount && !isSuccessful) {
+	        try {
+	        	cp.searchField(PortfolioCourseName);
+				wait.visibilityOf(PortfolioName(PortfolioCourseName));;
+
+	            WebElement courseElement = PortfolioName(PortfolioCourseName);
+	            String courseText = courseElement.getText();
+	            //System.out.println("Found course: " + courseText);
+
+	            if (PortfolioCourseName.equals(courseText)) {
+	                JavascriptExecutor js = (JavascriptExecutor) driver;
+	                js.executeScript("arguments[0].click();", courseElement);
+//	                System.out.println("Course clicked successfully.");
+	                isSuccessful = true;
+	            } else {
+	                System.out.println("Course name mismatch. Retrying...");
+	            }
+	        } catch (Exception e) {
+	            System.out.println("Attempt " + (attempts + 1) + " failed: " + e.getMessage());
+	        }
+
+	        attempts++;
+
+	        if (!isSuccessful && attempts >= retryCount) {
+	            throw new RuntimeException(
+	                "Failed to search and click on course name after " + retryCount + " attempts."
+	            );
+	        }
+
+	        StaticWait(2);
+	    }
+	}
 
 	public void the_user_clicks_on_the_add_portfolio_assignment_button() {
 		StaticWait(1);

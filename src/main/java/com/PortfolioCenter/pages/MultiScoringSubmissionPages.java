@@ -87,7 +87,8 @@ public class MultiScoringSubmissionPages extends ActionType{
 
 
 	public WebElement MultiPortfolioName(String PortfolioCourseName) {
-		String xpath ="//*[@class='mat-card-header-text']/child::mat-card-title/child::span/child::b[text()='"+PortfolioCourseName+"']";
+//		String xpath ="//*[@class='mat-card-header-text']/child::mat-card-title/child::span/child::b[text()='"+PortfolioCourseName+"']";
+		String xpath="//b['"+PortfolioCourseName+"']";
 		return driver.findElement(By.xpath(xpath));
 	}
 
@@ -99,18 +100,35 @@ public class MultiScoringSubmissionPages extends ActionType{
 
 	public void the_user_searches_for_the_multi_scoring_portfolio_course(Integer MultiScoringCourseName)throws InvalidFormatException, IOException {
 		StaticWait(1);
-		JavascriptExecutor jc = (JavascriptExecutor) driver;
-		wait.elementToBeClickable(inputsearchhereElement);
-		jc.executeScript("arguments[0].click();", inputsearchhereElement); 
+		 
 		if (testdata == null) {
 			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 		}
 		String MultiPortfolioCourse = testdata.get(MultiScoringCourseName).get("MultiScoringCourseName");
-		System.out.println(MultiPortfolioCourse);
-		wait.elementToBeClickable(inputsearchhereElement);
-		cp.searchField(MultiPortfolioCourse);
-		wait.visibilityOf(MultiPortfolioName(MultiPortfolioCourse));
-		jc.executeScript("arguments[0].click();", MultiPortfolioName(MultiPortfolioCourse));
+		retrySearchForCourseName(MultiPortfolioCourse, 5);
+		
+	}
+	
+	public void retrySearchForCourseName(String MultiScoringCourseName, int retryCount) {
+		int attempts = 0;
+		boolean isSuccessful = false;
+		while (attempts < retryCount && !isSuccessful) {
+			
+			try {
+				JavascriptExecutor jc = (JavascriptExecutor) driver;
+				cp.searchField(MultiScoringCourseName);
+				wait.visibilityOf(MultiPortfolioName(MultiScoringCourseName));
+				jc.executeScript("arguments[0].click();", MultiPortfolioName(MultiScoringCourseName));
+				isSuccessful = true;
+				break;
+			} catch (Exception e) {
+				attempts++;
+				System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+				if (attempts >= retryCount) {
+					throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
+				}
+			}
+		}
 	}
 
 	public void the_user_clicks_on_the_multi_scoring_assignment_then_click_on_multi_scoring_button(Integer MultiAssignmentName) throws InvalidFormatException, IOException {

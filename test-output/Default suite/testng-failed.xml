@@ -3,7 +3,20 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test" verbose="2">
     <classes>
-      <class name="AssessmentsRunner.AnnouncementsRunner"/>
+      <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner"/>
     </classes>
   </test> <!-- Default test -->
+  <test parallel="none" name="Default test(failed)">
+    <classes>
+      <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="afterClass"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- PortfolioCenterRunner.PortfolioCenterCourseRunner -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

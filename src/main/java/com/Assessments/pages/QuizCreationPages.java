@@ -297,12 +297,14 @@ public class QuizCreationPages extends ActionType{
 					Instructionbox.sendKeys(generateRandomString());
 					StaticWait(1);
 					cp.getRandomDate(Datepickericon);
-					ShowAnswers.click();
+					js.executeScript("arguments[0].click();", ShowAnswers);
+					//ShowAnswers.click();
 					if (ShowTestResult.isEnabled()) {
 						ShowTestResult.click();
 					}
 					wait.until(ExpectedConditions.elementToBeClickable(ShowtestSummary));
-					OverrideInstructionstoggle.click();
+					js.executeScript("arguments[0].click();", OverrideInstructionstoggle);
+//					OverrideInstructionstoggle.click();
 					StaticWait(1);
 					js.executeScript("arguments[0].click();", Badgetab);
 					StaticWait(1);
