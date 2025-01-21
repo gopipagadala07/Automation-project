@@ -142,9 +142,9 @@ public class Documents_page extends ActionType {
 		  catch (StaleElementReferenceException e)
 		  {
 		          System.out.println("Caught StaleElementReferenceException. Retrying...");
+		          StaticWait(1);
 		          retries--;
 		   }  
 		}
-
 	}
 }
