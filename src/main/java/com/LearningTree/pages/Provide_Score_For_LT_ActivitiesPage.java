@@ -299,7 +299,8 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 		String randomString = generateRandomString();
 		Provide_Feedback.sendKeys(randomString);
 		StaticWait(1);
-		Submit_score.click();
+		js.executeScript("arguments[0].click();", Submit_score);
+		
 		driver.switchTo().defaultContent();
 		WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='keyboard_arrow_left']/ancestor::button/following-sibling::button[2]")));
 		js.executeScript("arguments[0].click();", e);
