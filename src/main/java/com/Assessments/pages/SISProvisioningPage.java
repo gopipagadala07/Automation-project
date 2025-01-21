@@ -7,6 +7,7 @@ import java.util.List;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -319,12 +320,28 @@ public class SISProvisioningPage extends ActionType{
 		}
 	}
 
-	public void DUserSearch()
-	{
-		cp.searchField(String.valueOf(DLastName));
-		ExtentCucumberAdapter.addTestStepLog(String.valueOf(DLastName));
-		StaticWait(1);
+	public void DUserSearch(String UserRole) {
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+	        WebElement toaster = wait.until(ExpectedConditions.presenceOfElementLocated(
+	            By.xpath("//div[@id='toast-container']/child::div/child::div[contains(@aria-label,'already exists')]")));
+
+	        if (toaster.isDisplayed()) {
+	            StaticWait(1);
+	            close();
+	            AddNewDistrictUser();
+	            DistrictUserDetails(UserRole);
+	            cp.searchField(String.valueOf(DLastName));
+	            ExtentCucumberAdapter.addTestStepLog("Re-attempting search with Last Name after adding user: " + DLastName);
+	            StaticWait(1);
+	        }
+	    } catch (TimeoutException e) {
+	        cp.searchField(String.valueOf(DLastName));
+	        ExtentCucumberAdapter.addTestStepLog("Searching with Last Name: " + DLastName);
+	        StaticWait(1);
+	    }
 	}
+
 	public void TUserSearch()
 	{
 		StaticWait(1);
@@ -395,6 +412,8 @@ public class SISProvisioningPage extends ActionType{
 		DLastName=randomNumberGenerator();
 		wait.visibilityOf(LastnameField);
 		LastnameField.sendKeys(String.valueOf(DLastName));
+		cp.Save();
+		
 	}
 	public void TeacherUserDetails(String UserRole)
 	{
@@ -440,7 +459,11 @@ public class SISProvisioningPage extends ActionType{
 	public void CreateNewLogin()
 	{
 		wait.elementToBeClickable(CreateNewLoginbtn);
-		js.executeScript("arguments[0].click();", CreateNewLoginbtn);
+		StaticWait(1);
+		Actions a=new Actions(driver);
+		a.moveToElement(CreateNewLoginbtn).build().perform();
+		a.click().build().perform();
+//		js.executeScript("arguments[0].click();", CreateNewLoginbtn);
 	}
 	public void ResetPwd()
 	{

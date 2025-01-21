@@ -129,8 +129,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	}
 	@When("User Saved the District User and Search for the User in search here Field")
 	public void user_saved_the_district_user_and_search_for_the_user_in_search_here_field() {
-		cp.Save();
-		provisioning.DUserSearch();
+		provisioning.DUserSearch("DistrictUser");
 	}
 	@And("user Click on Edit option for Logins Creations")
 	public void user_click_on_edit_option_for_logins_creations() {

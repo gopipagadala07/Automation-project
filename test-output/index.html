@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse--1243153508\testng-customsuite.xml</span>
+                    <span>C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse--1882070431\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="PortfolioCenterRunner.PortfolioCenterCourseRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Verifying the Portfolio Course Creation Functionality&quot;, &quot;Checking the Portfolio Center Course Funct...)">runScenario("Verifying the Portfolio Course Creation Functionality", "Checking the Portfolio Center Course Funct...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="AssessmentsRunner.SISprovisioningRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Verify the Users Creation Functionality with valid Data&quot;, &quot;Verify the SIS Provisioning Creation Fun...)">runScenario("Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Fun...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -120,20 +120,41 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">PortfolioCenterRunner.PortfolioCenterCourseRunner</span>
+              <span class="class-name">AssessmentsRunner.SISprovisioningRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Verifying the Portfolio Course Creation Functionality&quot;, &quot;Checking the Portfolio Center Course Funct...)">
-                  </a> <!-- runScenario("Verifying the Portfolio Course Creation Functionality", "Checking the Portfolio Center Course Funct...) -->
+                  <a name="runScenario(&quot;Verify the Users Creation Functionality with valid Data&quot;, &quot;Verify the SIS Provisioning Creation Fun...)">
+                  </a> <!-- runScenario("Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Fun...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Verifying the Portfolio Course Creation Functionality", "Checking the Portfolio Center Course Functionality")</span>
-                  <div class="stack-trace">java.lang.RuntimeException: Failed to search and click on course name after 3 attempts.
-	at com.PortfolioCenter.pages.PortfolioCenterCoursePages.retrySearchForCourseName(PortfolioCenterCoursePages.java:198)
-	at com.PortfolioCenter.pages.PortfolioCenterCoursePages.the_user_searches_for_the_specific_course_and_clicks_on_it(PortfolioCenterCoursePages.java:167)
-	at PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_searches_for_the_specific_course_and_clicks_on_it(PortfolioCenterCourseStepdef.java:35)
-	at ✽.the user searches for the specific course and clicks on it 0(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/PortfolioCenterFeatures/PortfolioCenterCourse.feature:11)
+                  <span class="parameters">("Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Functionality")</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;toast-container&apos;]/child::div/child::div[contains(@aria-label,&apos;already exists&apos;)]&quot;}
+  (Session info: chrome=131.0.6778.265)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d1c73c84e872fe2c8a477ef3d81b4eaa, findElement {using=xpath, value=//div[@id=&apos;toast-container&apos;]/child::div/child::div[contains(@aria-label,&apos;already exists&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49853}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49853/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d1c73c84e872fe2c8a477ef3d81b4eaa
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at com.Assessments.pages.SISProvisioningPage.DUserSearch(SISProvisioningPage.java:324)
+	at AssessmentsStepdef.SISProvisioningStepdefinitions.user_saved_the_district_user_and_search_for_the_user_in_search_here_field(SISProvisioningStepdefinitions.java:134)
+	at ✽.User Saved the District User and Search for the User in search here Field(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/AssessmentsFeatures/SIS%20Provisioning.feature:38)
 
 </div> <!-- stack-trace -->
                   <em>
@@ -145,7 +166,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse--1243153508\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\GopiPagadala\AppData\Local\Temp\testng-eclipse--1882070431\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -154,20 +175,20 @@
 &lt;suite parallel=&quot;none&quot; name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;PortfolioCenterRunner.PortfolioCenterCourseRunner&quot;/&gt;
+      &lt;class name=&quot;AssessmentsRunner.SISprovisioningRunner&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
   &lt;test parallel=&quot;none&quot; name=&quot;Default test(failed)&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;PortfolioCenterRunner.PortfolioCenterCourseRunner&quot;&gt;
+      &lt;class name=&quot;AssessmentsRunner.SISprovisioningRunner&quot;&gt;
         &lt;methods&gt;
+          &lt;include name=&quot;afterClass&quot;/&gt;
           &lt;include name=&quot;beforeClass&quot;/&gt;
           &lt;include name=&quot;runScenario&quot; invocation-numbers=&quot;0&quot;/&gt;
-          &lt;include name=&quot;afterClass&quot;/&gt;
           &lt;include name=&quot;tearDownClass&quot;/&gt;
           &lt;include name=&quot;setUpClass&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- PortfolioCenterRunner.PortfolioCenterCourseRunner --&gt;
+      &lt;/class&gt; &lt;!-- AssessmentsRunner.SISprovisioningRunner --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test(failed) --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -221,13 +242,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
-data.setCell(0, 2, 'PortfolioCenterRunner.PortfolioCenterCourseRunner')
-data.setCell(0, 3, 61462);
+data.setCell(0, 2, 'AssessmentsRunner.SISprovisioningRunner')
+data.setCell(0, 3, 52730);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 52 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -253,28 +274,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">PortfolioCenterRunner.PortfolioCenterCourseRunner</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">AssessmentsRunner.SISprovisioningRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@279e1422)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@5aac6f9f)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">1027 ms</span>
+                <span class="method-start">888 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">runScenario("Verifying the Portfolio Course Creation Functionality", "Checking the Portfolio Center Course Funct...)</span>
-                <span class="method-start">1040 ms</span>
+                <span class="method-name">runScenario("Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Fun...)</span>
+                <span class="method-start">895 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">62502 ms</span>
+                <span class="method-start">53629 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">62502 ms</span>
+                <span class="method-start">53630 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -186,64 +186,64 @@ public class SISProvisioningPage extends ActionType{
 		}
 	}
 	public void ClassroomDropDownSearch() {
-		boolean success = false;
-		for (int retry = 0; retry < 3; retry++) {
+		retryClassroomDropDownSearch(5);
+	}
+
+	public void retryClassroomDropDownSearch(int retryCount) {
+		int attempts = 0;
+		boolean isSuccessful = false;
+		while (attempts < retryCount && !isSuccessful) {
 			try {
-				StaticWait(1);
-				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-				WebElement ClassroomDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='classroom']/descendant::mat-form-field/child::div")));
-				StaticWait(1);
 				cp.FPdropdown(ClassroomDown, ClassroomName);
-				System.out.println(ClassroomName);
-				success = true;
+				isSuccessful = true;
 				break;
-			} catch (StaleElementReferenceException e) {
-				System.out.println("StaleElementReferenceException caught. Retrying... Attempt " + (retry + 1));
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException ie) {
-					Thread.currentThread().interrupt();
+			} catch (Exception e) {
+				attempts++;
+				System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+				if (attempts >= retryCount) {
+					throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
 				}
 			}
 		}
-		if (!success) {
-			System.out.println("Operation failed after 3 retries.");
+	}
+	public void retrySectionDropDownSearch(int retryCount) {
+		int attempts = 0;
+		boolean isSuccessful = false;
+		while (attempts < retryCount && !isSuccessful) {
+			try {
+				cp.FPdropdown(SectionDown, SectionName);
+				isSuccessful = true;
+				break;
+			} catch (Exception e) {
+				attempts++;
+				System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+				if (attempts >= retryCount) {
+					throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
+				}
+			}
 		}
 	}
 
 	public void SectionDropDownSearch()
 	{
-		for(int retry=0;retry<3;retry++)
-		{
-			try {
-				StaticWait(1);
-				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-				WebElement SectionDown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fp-dropdown[@controlname='section']/descendant::mat-form-field/child::div")));
-				wait.until(ExpectedConditions.elementToBeClickable(SectionDown));
-				StaticWait(1);
-				cp.FPdropdown(SectionDown, SectionName);
-				System.out.println(SectionName);
-				break;
-			} catch (StaleElementReferenceException e) {
-				retry++;
-			}
-		}
+		retrySectionDropDownSearch(5);
 	}
 	public void SchoolDetails() throws Exception
 	{
 		SchoolName="FPK12School"+randomNumberGenerator();
 		System.out.println(SchoolName);
 		ExtentCucumberAdapter.addTestStepLog(SchoolName);
-		cp.insertData("PortfolioCenter.xlsx", SchoolName, 0);
+		cp.insertData("AssessmentCenterDetails.xlsx", SchoolName, 0);
 		cp.Name(SchoolName);				
 		Description.sendKeys(generateRandomString());
 	}
 	public void ClassroomDetails() throws Exception
 	{
+		StaticWait(1);
 		ClassroomName="FPK12Classroom"+randomNumberGenerator();
 		cp.Name(ClassroomName);
 		ExtentCucumberAdapter.addTestStepLog(ClassroomName);
-		cp.insertData("PortfolioCenter.xlsx", ClassroomName, 1);
+		cp.insertData("AssessmentCenterDetails.xlsx", ClassroomName, 1);
 		Description.sendKeys(generateRandomString());
 	}
 	public void SectionDetails() throws Exception
@@ -252,7 +252,7 @@ public class SISProvisioningPage extends ActionType{
 			SectionName="FPK12Section"+randomNumberGenerator();
 			cp.Name(SectionName);
 			ExtentCucumberAdapter.addTestStepLog(SectionName);
-			cp.insertData("PortfolioCenter.xlsx", SectionName, 2);
+			cp.insertData("AssessmentCenterDetails.xlsx", SectionName, 2);
 			Description.sendKeys(generateRandomString());
 			StaticWait(2);
 			cp.Save();
@@ -319,12 +319,26 @@ public class SISProvisioningPage extends ActionType{
 		}
 	}
 
-	public void DUserSearch()
-	{
+	public void DUserSearch(String UserRole) {
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+	        WebElement toaster = wait.until(ExpectedConditions.presenceOfElementLocated(
+	            By.xpath("//div[@id='toast-container']/child::div/child::div[contains(@aria-label,'already exists')]")));
 
-		cp.searchField(String.valueOf(DLastName));
-		ExtentCucumberAdapter.addTestStepLog(String.valueOf(DLastName));
-		StaticWait(1);
+	        if (toaster.isDisplayed()) {
+	            StaticWait(1);
+	            close();
+	            AddNewDistrictUser();
+	            DistrictUserDetails(UserRole);
+	            cp.searchField(String.valueOf(DLastName));
+	            ExtentCucumberAdapter.addTestStepLog("Re-attempting search with Last Name after adding user: " + DLastName);
+	            StaticWait(1);
+	        }
+	    } catch (TimeoutException e) {
+	        cp.searchField(String.valueOf(DLastName));
+	        ExtentCucumberAdapter.addTestStepLog("Searching with Last Name: " + DLastName);
+	        StaticWait(1);
+	    }
 	}
 	public void TUserSearch()
 	{
@@ -396,6 +410,8 @@ public class SISProvisioningPage extends ActionType{
 		DLastName=randomNumberGenerator();
 		wait.visibilityOf(LastnameField);
 		LastnameField.sendKeys(String.valueOf(DLastName));
+		cp.Save();
+		
 	}
 	public void TeacherUserDetails(String UserRole)
 	{
@@ -441,7 +457,11 @@ public class SISProvisioningPage extends ActionType{
 	public void CreateNewLogin()
 	{
 		wait.elementToBeClickable(CreateNewLoginbtn);
-		js.executeScript("arguments[0].click();", CreateNewLoginbtn);
+		StaticWait(1);
+		Actions a=new Actions(driver);
+		a.moveToElement(CreateNewLoginbtn).build().perform();
+		a.click().build().perform();
+//		js.executeScript("arguments[0].click();", CreateNewLoginbtn);
 	}
 	public void ResetPwd()
 	{
@@ -548,7 +568,7 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void insertUsersData() throws Exception
 	{
-		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/PortfolioCenter.xlsx").toString();
+		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/AssessmentCenterDetails.xlsx").toString();
 		cp.InsertmultipledataIntoExcel(filePath, getSheetEnv(),DFirstName,DLastName,TFirstName,TLastName,SFirstName,SLastName);
 	}
 }
