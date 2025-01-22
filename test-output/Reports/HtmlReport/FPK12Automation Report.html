@@ -65,6 +65,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -120,12 +121,12 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='$100%'>
+                    <span class='tooltipped' data-position='top' data-tooltip='$76%'>
                     <span class='strong'>20</span> features passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
-                    0</span> features failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='23%'>
+                    6</span> features failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped
                 </div>
@@ -138,12 +139,12 @@
                     <canvas id='child-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
+                    <span class='tooltipped' data-position='top' data-tooltip='78%'>
                     <span class='strong'>25</span> scenarios passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
-                    0</span> scenarios failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='21%'>
+                    7</span> scenarios failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -158,14 +159,14 @@
                     <canvas id='grandchild-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
-                    <span class='strong'>381</span> steps passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='87%'>
+                    <span class='strong'>384</span> steps passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
-                    0</span> steps failed, 
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
-                    0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='1%'>
+                    7</span> steps failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='10%'>
+                    47</span> skipped, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> others
                 </div>
@@ -2359,7 +2360,7 @@
 
 <div class='scenario outline node' test-id='526' status='pass'>
 
-	<span class='duration right label'>00 00 44.449</span>
+	<span class='duration right label'>00 04 28.823</span>
 	<div class="bdd-test">
 		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Creating Announcements</div>
 	</div>
@@ -2406,6 +2407,18 @@
 				</li>
 				<li test-id='566' class='gc and Pass' status='Pass'>
 					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_add_new_announcement_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user clicks on Add New Announcement button</h6>
+
+				</li>
+				<li test-id='599' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_checks_the_pagenation()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user  checks the pagenation</h6>
+
+				</li>
+				<li test-id='600' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_checks_announcements_search_functionality()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user checks Announcements search Functionality</h6>
+
+				</li>
+				<li test-id='601' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="AssessmentsStepdef.AnnouncementsStepdefinitions.user_clicks_on_Addnew_button_and_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user clicks on Addnew button and save button</h6>
 
 				</li>
 			</ul>
@@ -2644,6 +2657,533 @@
 </div>
 					</div>
 				</li>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='605'>
+					<div class='test-heading'>
+						<span class='test-name'>Validating the Quiz Performing at student side</span>
+						<span class='test-time'>Jan 22, 2025 11:38:40 am</span>
+						<span class='test-status right fail'>Fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='606' status='fail'>
+
+	<span class='duration right label'>00 00 00.016</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario Outline: Checking the Quizzes Submission for Student</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>3</td><td>0</td><td>2</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='607' class='node scenario Fail' status='Fail'>
+			<div class="step-name" title="()"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Checking the Quizzes Submission for Student</div>
+
+				<div class='category-list'>
+						<span class='category label'>@AssessmentCenterGroup</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='608' class='gc given Fail' status='Fail'>
+					<h6 class="step-name" title=""><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Given User launch the application with Valid URL</h6>
+
+							<div class="node-step">Step undefined</div>
+				</li>
+				<li test-id='609' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User able to see all Fields</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='610' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User enters the credentials from the excel sheet at 3</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='611' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User is on homepage</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='612' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then user clicks on Learning and assessment center</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='613' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then user clicks on the classroom name 0 2</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='614' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And user clicks on the Assessment tab</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='615' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then user clicks on Launch icon and complete test</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='616'>
+					<div class='test-heading'>
+						<span class='test-name'>Performing Exam at student side</span>
+						<span class='test-time'>Jan 22, 2025 11:38:40 am</span>
+						<span class='test-status right fail'>Fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='617' status='fail'>
+
+	<span class='duration right label'>00 00 00.000</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario Outline: Submitting Exam</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>3</td><td>0</td><td>2</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='618' class='node scenario Fail' status='Fail'>
+			<div class="step-name" title="()"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Submitting Exam</div>
+
+				<div class='category-list'>
+						<span class='category label'>@AssessmentCenterGroup</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='619' class='gc given Fail' status='Fail'>
+					<h6 class="step-name" title=""><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Given User launch the application with Valid URL</h6>
+
+							<div class="node-step">Step undefined</div>
+				</li>
+				<li test-id='620' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User able to see all Fields</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='621' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User enters the credentials from the excel sheet at 3</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='622' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User is on homepage</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='623' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then user clicks on Learning and assessment center</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='624' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then user clicks on the classroom name 0 2</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='625' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then user clicks on benchmarks tab</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='626' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User will launch and submit all Exams</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='627'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify the Score Submission at Teacher side</span>
+						<span class='test-time'>Jan 22, 2025 11:38:40 am</span>
+						<span class='test-status right fail'>Fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='628' status='fail'>
+
+	<span class='duration right label'>00 00 00.000</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario Outline: Validate the Score from Overall SpeedGrader</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>2</td><td>0</td><td>3</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='629' class='node scenario Fail' status='Fail'>
+			<div class="step-name" title="()"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Validate the Score from Overall SpeedGrader</div>
+
+				<div class='category-list'>
+						<span class='category label'>@AssessmentCenterGroup</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='630' class='gc given Fail' status='Fail'>
+					<h6 class="step-name" title=""><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Given User launch the application with Valid URL</h6>
+
+							<div class="node-step">Step undefined</div>
+				</li>
+				<li test-id='631' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User able to see all Fields</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='632' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User enters the credentials from the excel sheet at 2</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='633' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User is on homepage</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='634' class='gc when Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>When Users Click on Assessment Centre tab in Left menu</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='635' class='gc when Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>When User Click on Overal Speed Grader</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='636' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then Select Dropdown in Speed Grader 03</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='637' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And clicks on Score button</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='638' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then Enter the Score and FeedBack and submit the Score</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario outline node' test-id='639' status='fail'>
+
+	<span class='duration right label'>00 00 00.000</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario Outline: Validate the Score In Assessment SpeedGrader screen</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td></tr><tr><td>1</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='640' class='node scenario Fail' status='Fail'>
+			<div class="step-name" title="()"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Validate the Score In Assessment SpeedGrader screen</div>
+
+				<div class='category-list'>
+						<span class='category label'>@AssessmentCenterGroup</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='641' class='gc given Fail' status='Fail'>
+					<h6 class="step-name" title=""><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Given User launch the application with Valid URL</h6>
+
+							<div class="node-step">Step undefined</div>
+				</li>
+				<li test-id='642' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User able to see all Fields</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='643' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User enters the credentials from the excel sheet at 1</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='644' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User is on homepage</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='645' class='gc when Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>When Users Click on Speed Grader tab in Left menu</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='646' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User Score the Exam</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='647'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify the Activity progress from ToDo List at teacher</span>
+						<span class='test-time'>Jan 22, 2025 11:38:40 am</span>
+						<span class='test-status right fail'>Fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='648' status='fail'>
+
+	<span class='duration right label'>00 00 00.000</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario Outline: Validating the Activity progress screen from AC Home tab</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>2</td><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='649' class='node scenario Fail' status='Fail'>
+			<div class="step-name" title="()"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Validating the Activity progress screen from AC Home tab</div>
+
+				<div class='category-list'>
+						<span class='category label'>@AssessmentCenterGroup</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='650' class='gc given Fail' status='Fail'>
+					<h6 class="step-name" title=""><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Given User launch the application with Valid URL</h6>
+
+							<div class="node-step">Step undefined</div>
+				</li>
+				<li test-id='651' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User able to see all Fields</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='652' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User enters the credentials from the excel sheet at 2</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='653' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User is on homepage</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='654' class='gc when Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>When Users Click on Assessment Centre tab under Learning in Left menu</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='655' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then Users clicks on the Assessment Centre Course 02</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='656' class='gc when Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>When User click on all Quizzes and navigate back</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='657' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User click on all benchmarks and navigate back</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='658'>
+					<div class='test-heading'>
+						<span class='test-name'>Validating the Quiz/Exams at student side</span>
+						<span class='test-time'>Jan 22, 2025 11:38:40 am</span>
+						<span class='test-status right fail'>Fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='659' status='fail'>
+
+	<span class='duration right label'>00 00 00.000</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario Outline: Validating Quiz/Exams Through Home Tab</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>3</td><td>0</td><td>2</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='660' class='node scenario Fail' status='Fail'>
+			<div class="step-name" title="()"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Validating Quiz/Exams Through Home Tab</div>
+
+				<div class='category-list'>
+						<span class='category label'>@AssessmentCenterGroup</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='661' class='gc given Fail' status='Fail'>
+					<h6 class="step-name" title=""><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Given User launch the application with Valid URL</h6>
+
+							<div class="node-step">Step undefined</div>
+				</li>
+				<li test-id='662' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User able to see all Fields</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='663' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User enters the credentials from the excel sheet at 3</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='664' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User is on homepage</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='665' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then user clicks on Learning and assessment center</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='666' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then user clicks on the classroom name 0 2</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='667' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then user clicks on Launch icon and validates</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='668'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify the Grades for Teacher</span>
+						<span class='test-time'>Jan 22, 2025 11:38:40 am</span>
+						<span class='test-status right fail'>Fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='669' status='fail'>
+
+	<span class='duration right label'>00 00 00.000</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario Outline: Checking the Student Reports by Grades</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>2</td><td>0</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='670' class='node scenario Fail' status='Fail'>
+			<div class="step-name" title="()"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Checking the Student Reports by Grades</div>
+
+				<div class='category-list'>
+						<span class='category label'>@AssessmentCenterGroup</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='671' class='gc given Fail' status='Fail'>
+					<h6 class="step-name" title=""><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Given User launch the application with Valid URL</h6>
+
+							<div class="node-step">Step undefined</div>
+				</li>
+				<li test-id='672' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User able to see all Fields</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='673' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User enters the credentials from the excel sheet at 2</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='674' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User is on homepage</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='675' class='gc and Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>And User Click on Assessment Centre tab under Learning in Left menu</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='676' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User click on the Assessment Centre Course 02</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='677' class='gc then Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then User navigates to Grade tab</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+				<li test-id='678' class='gc when Skip' status='Skip'>
+					<h6 class="step-name" title=""><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>When User navigates back to Assessment landing page</h6>
+
+							<div class="node-step">Step skipped</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -2689,12 +3229,13 @@
 						<span class='category-name'>@AssessmentCenterGroup</span>
 						<span class='category-status right'>
 						<span class='label pass'>6</span>
+						<span class='label fail'>7</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
 							<span status="pass" class='label green accent-4 white-text'>Passed: 6</span>
-							
+							<span status="fail" class='label red lighten-1 white-text'>Failed: 7</span>
 							
 						</div>
 						<div class='category-tests'>
@@ -2736,6 +3277,41 @@
 										<td>Jan 22, 2025 11:34:09 am</td>
 										<td class='linked' test-id='527'>Creating Announcements</td>
 										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 22, 2025 11:38:40 am</td>
+										<td class='linked' test-id='607'>Checking the Quizzes Submission for Student</td>
+										<td><span class='test-status Fail'>Fail</span></td>
+									</tr>
+									<tr>
+										<td>Jan 22, 2025 11:38:40 am</td>
+										<td class='linked' test-id='618'>Submitting Exam</td>
+										<td><span class='test-status Fail'>Fail</span></td>
+									</tr>
+									<tr>
+										<td>Jan 22, 2025 11:38:40 am</td>
+										<td class='linked' test-id='629'>Validate the Score from Overall SpeedGrader</td>
+										<td><span class='test-status Fail'>Fail</span></td>
+									</tr>
+									<tr>
+										<td>Jan 22, 2025 11:38:40 am</td>
+										<td class='linked' test-id='640'>Validate the Score In Assessment SpeedGrader screen</td>
+										<td><span class='test-status Fail'>Fail</span></td>
+									</tr>
+									<tr>
+										<td>Jan 22, 2025 11:38:40 am</td>
+										<td class='linked' test-id='649'>Validating the Activity progress screen from AC Home tab</td>
+										<td><span class='test-status Fail'>Fail</span></td>
+									</tr>
+									<tr>
+										<td>Jan 22, 2025 11:38:40 am</td>
+										<td class='linked' test-id='660'>Validating Quiz/Exams Through Home Tab</td>
+										<td><span class='test-status Fail'>Fail</span></td>
+									</tr>
+									<tr>
+										<td>Jan 22, 2025 11:38:40 am</td>
+										<td class='linked' test-id='670'>Checking the Student Reports by Grades</td>
+										<td><span class='test-status Fail'>Fail</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -2910,19 +3486,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Features
-					<div class='panel-lead'>20</div>
+					<div class='panel-lead'>26</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>25</div>
+					<div class='panel-lead'>32</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>381</div>
+					<div class='panel-lead'>438</div>
 				</div>
 			</div>
 			<div class='col s2'>
@@ -2934,13 +3510,13 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 22, 2025 11:36:00 am</div>
+			 		<div class='panel-lead'>Jan 22, 2025 11:38:40 am</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>00 12 21.545</div>
+					<div class='panel-lead'>00 15 01.194</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -2986,10 +3562,10 @@
 						<tr>
 							<td>@AssessmentCenterGroup</td>
 							<td>6</td>
-							<td>0</td>
+							<td>7</td>
 							<td>0</td>
 							<td>
-									100%
+									46.154%
 							</td>
 						</tr>
 						<tr>
@@ -3021,35 +3597,35 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 20,
+                parentCount: 26,
 				passParent: 20,
-				failParent: 0,
+				failParent: 6,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				childCount: 25,
+				childCount: 32,
 				passChild: 25,
-				failChild: 0,
+				failChild: 7,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				grandChildCount: 381,
-				passGrandChild: 381,
-				failGrandChild: 0,
+				grandChildCount: 438,
+				passGrandChild: 384,
+				failGrandChild: 7,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 0,
+				skipGrandChild: 47,
 				infoGrandChild: 0,
 			};
 			</script>
 		
 		<script>
 			var timeline = {
-			        "Exam_Center Location feature":46.464,"Verify the SIS Provisioning Creation Functionality":244.743,"Verify the SIS Provisioning Creation Functionality":236.344,"Checking the Create Users Functionality":113.187,"Examcenter Creation of Examinations Schedules and Examtaker Enrollments feature":175.338,"Verify the Benchmarks functionality":152.329,"Checking the Portfolio Center Course Functionality":109.222,"FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot":79.121,"Checking the Assignment Submission Functionality":49.772,"Validate the Quiz Creation for Teacher":236.038,"Verify the Score Submission Functionality at Admin side":61.457,"Checking the Examtaker Assessment Submission":81.446,"Checking the Multi Scoring Portfolio Center Course Functionality":120.15,"FocalPointk12 Exam_Center Procter Comment, Reset the Examination":60.849,"Checking the Examtaker Assessment Scoring Submission":77.806,"Checking the Multi Scoring Portfolio Center Assignment Submission Functionality":43.206,"Verify the Announcements functionality":44.449,"Checking the Multi Scoring Portfolio Center Score Submission at Admin side":53.752,"Checking the Test Analytics under Enroller tab at Proctor side":66.264,"Checking the Portfolio Center Course Functionality":46.938
+			        "Exam_Center Location feature":46.464,"Verify the SIS Provisioning Creation Functionality":244.743,"Verify the SIS Provisioning Creation Functionality":236.344,"Checking the Create Users Functionality":113.187,"Examcenter Creation of Examinations Schedules and Examtaker Enrollments feature":175.338,"Verify the Benchmarks functionality":152.329,"Checking the Portfolio Center Course Functionality":109.222,"FocalPointk12 Exam_Center Create a Time_Slot and Enrolled the Exam Taker to the Time slot":79.121,"Checking the Assignment Submission Functionality":49.772,"Validate the Quiz Creation for Teacher":236.038,"Verify the Score Submission Functionality at Admin side":61.457,"Checking the Examtaker Assessment Submission":81.446,"Checking the Multi Scoring Portfolio Center Course Functionality":120.15,"FocalPointk12 Exam_Center Procter Comment, Reset the Examination":60.849,"Checking the Examtaker Assessment Scoring Submission":77.806,"Checking the Multi Scoring Portfolio Center Assignment Submission Functionality":43.206,"Verify the Announcements functionality":268.823,"Checking the Multi Scoring Portfolio Center Score Submission at Admin side":53.752,"Checking the Test Analytics under Enroller tab at Proctor side":66.264,"Checking the Portfolio Center Course Functionality":46.938,"Validating the Quiz Performing at student side":0.016,"Performing Exam at student side":0,"Verify the Score Submission at Teacher side":0.01,"Verify the Activity progress from ToDo List at teacher":0,"Validating the Quiz/Exams at student side":0,"Verify the Grades for Teacher":0
 			};
 		</script>
 		
