@@ -263,11 +263,28 @@ public class Student_Activity_Submit_pages extends ActionType {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		StaticWait(2);
+		StaticWait(1);
 		driver.switchTo().frame(0);
+		StaticWait(1);
+		int retries = 10;
+		while (retries > 0) {
+			try {
+				WebElement beginTest = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Begin Test')]")));
+				js.executeScript("arguments[0].click();", beginTest);
+				break;
+			} catch (StaleElementReferenceException e) {
 
-		WebElement beginTest = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Begin Test')]")));
-		js.executeScript("arguments[0].click();", beginTest);
+				System.out.println("StaleElementReferenceException. Retrying...");
+				StaticWait(1);
+				retries--;
+			}
+			catch (ElementClickInterceptedException e) {
+
+				System.out.println("ElementClickInterceptedException. Retrying...");
+				StaticWait(1);
+				retries--;
+			}
+		}	
 
 		List<WebElement> questions = driver.findElements(By.xpath("//div[@id='navigationSideMenu']/ul/li/div/button"));
 		int numberOfQuestions = questions.size();
