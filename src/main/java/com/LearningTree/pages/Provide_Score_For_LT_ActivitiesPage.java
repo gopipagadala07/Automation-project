@@ -129,8 +129,9 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			return; 
 		}
 		int count = Activity_Type.size();
-		System.out.println("Found " + count + " activity types.");
-		driver.findElement(By.xpath("//span[text()='All Activity Types']")).click();
+		System.out.println("Found " + (count-1) + " activity types.");
+
+		js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//span[text()='All Activity Types']")));
 
 		for (int i = 1; i < count; i++) 
 		{ 
