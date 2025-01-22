@@ -1,10 +1,12 @@
-package PortfolioCenterStepdef;
+package AssessmentsStepdef;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+
+import com.Assessments.pages.SISProvisioningAssessmentCenterPage;
 import com.PortfolioCenter.pages.SISProvisioningPortfolioPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
@@ -14,9 +16,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class SISProvisioningStepdefinitions extends ActionType{
+public class SISProvisioningAssessmentCenterStepdefinitions extends ActionType{
 	 
-	SISProvisioningPortfolioPage provisioning=new SISProvisioningPortfolioPage(Base.getDriver());
+	SISProvisioningAssessmentCenterPage provisioning=new SISProvisioningAssessmentCenterPage(Base.getDriver());
 	ExcelReader reader=new ExcelReader();
 	CommonPages cp=new CommonPages(Base.getDriver());
 	static List<Map<String, String>> testdata=null;
@@ -45,7 +47,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	public void user_select_the_timezone_from_dropdown(int TimeZone) throws Exception {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 		}
 		String value=testdata.get(TimeZone).get("TimeZone");
 		provisioning.TimezoneValue(value);
@@ -93,7 +95,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	public void user_select_the_active_year_from_year_dropdown(int Year) throws Exception, IOException {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 		}
 		String value=testdata.get(Year).get("Year");
 		provisioning.YearDropDownSearch(value);
@@ -193,7 +195,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
 		}
 		String Yearvalue=testdata.get(Year).get("Year");
 	    provisioning.YearDropDownSearch(Yearvalue);

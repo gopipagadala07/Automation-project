@@ -8,7 +8,7 @@ import java.util.Map;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 import com.Assessments.pages.QuizCreationPages;
-import com.Assessments.pages.SISProvisioningPage;
+import com.Assessments.pages.SISProvisioningAssessmentCenterPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.CommonPages;
@@ -22,7 +22,7 @@ public class QuizCreationStepdefinitions extends ActionType{
 
 	QuizCreationPages QP=new QuizCreationPages(Base.getDriver());
 	CommonPages cp=new CommonPages(Base.getDriver());
-	SISProvisioningPage provisioning=new SISProvisioningPage(Base.getDriver());
+	SISProvisioningAssessmentCenterPage provisioning=new SISProvisioningAssessmentCenterPage(Base.getDriver());
 	ExcelReader reader=new ExcelReader();
 	static List<Map<String, String>> testdata=null;
 

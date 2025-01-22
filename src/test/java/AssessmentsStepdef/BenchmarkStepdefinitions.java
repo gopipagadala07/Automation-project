@@ -10,7 +10,7 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.Keys;
 
 import com.Assessments.pages.BenchmarksPage;
-import com.Assessments.pages.SISProvisioningPage;
+import com.Assessments.pages.SISProvisioningAssessmentCenterPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.ExcelReader;

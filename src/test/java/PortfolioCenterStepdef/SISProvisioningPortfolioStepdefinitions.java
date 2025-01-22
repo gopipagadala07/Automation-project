@@ -1,4 +1,4 @@
-package AssessmentsStepdef;
+package PortfolioCenterStepdef;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +14,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class SISProvisioningStepdefinitions extends ActionType{
+public class SISProvisioningPortfolioStepdefinitions extends ActionType{
 	 
 	SISProvisioningPortfolioPage provisioning=new SISProvisioningPortfolioPage(Base.getDriver());
 	ExcelReader reader=new ExcelReader();
@@ -45,7 +45,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	public void user_select_the_timezone_from_dropdown(int TimeZone) throws Exception {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/AssessmentCenter.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 		}
 		String value=testdata.get(TimeZone).get("TimeZone");
 		provisioning.TimezoneValue(value);
@@ -93,7 +93,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 	public void user_select_the_active_year_from_year_dropdown(int Year) throws Exception, IOException {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/AssessmentCenter.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 		}
 		String value=testdata.get(Year).get("Year");
 		provisioning.YearDropDownSearch(value);
@@ -193,7 +193,7 @@ public class SISProvisioningStepdefinitions extends ActionType{
 		testdata=null;
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/AssessmentCenter.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 		}
 		String Yearvalue=testdata.get(Year).get("Year");
 	    provisioning.YearDropDownSearch(Yearvalue);

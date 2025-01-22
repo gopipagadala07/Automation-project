@@ -20,7 +20,7 @@
 	<test name="Test2">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="AssessmentsRunner.SISprovisioningRunner" />
+			<class name="AssessmentsRunner.SISprovisioningAssessmentCenterRunner" />
 			<class name="AssessmentsRunner.BenchmarksRunner" />
 			<class name="AssessmentsRunner.QuizCreationRunner" />
 			<class name="AssessmentsRunner.AnnouncementsRunner" />
@@ -36,7 +36,7 @@
  <test name="Test3">
 		<parameter name="browser" value="chrome" />
 		<classes>
-		    <class name="PortfolioCenterRunner.SISprovisioningRunner"></class>
+		    <class name="PortfolioCenterRunner.SISprovisioningPortfolioRunner"></class>
  		    <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner"></class>
 			<class name="PortfolioCenterRunner.AssignmentsSubmissionRunner"></class>
 			<class name="PortfolioCenterRunner.ScoreSubmissionRunner"></class>

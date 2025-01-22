@@ -24,7 +24,7 @@ import com.Utils.CommonPages;
 import com.Utils.Wait;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
-public class SISProvisioningPage extends ActionType{
+public class SISProvisioningAssessmentCenterPage extends ActionType{
 
 	CommonPages cp=new CommonPages(Base.getDriver());
 	JavascriptExecutor js=(JavascriptExecutor) Base.getDriver();
@@ -100,7 +100,7 @@ public class SISProvisioningPage extends ActionType{
 	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[1]")private WebElement Studenttab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Student')]")private WebElement AddnewStudentbtn;
 
-	public SISProvisioningPage(WebDriver driver) {
+	public SISProvisioningAssessmentCenterPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new Wait(driver);
@@ -233,7 +233,7 @@ public class SISProvisioningPage extends ActionType{
 		SchoolName="FPK12School"+randomNumberGenerator();
 		System.out.println(SchoolName);
 		ExtentCucumberAdapter.addTestStepLog(SchoolName);
-		cp.insertData("AssessmentCenter.xlsx", SchoolName, 0);
+		cp.insertData("AssessmentCenterDetails.xlsx", SchoolName, 0);
 		cp.Name(SchoolName);				
 		Description.sendKeys(generateRandomString());
 	}
@@ -243,7 +243,7 @@ public class SISProvisioningPage extends ActionType{
 		ClassroomName="FPK12Classroom"+randomNumberGenerator();
 		cp.Name(ClassroomName);
 		ExtentCucumberAdapter.addTestStepLog(ClassroomName);
-		cp.insertData("AssessmentCenter.xlsx", ClassroomName, 1);
+		cp.insertData("AssessmentCenterDetails.xlsx", ClassroomName, 1);
 		Description.sendKeys(generateRandomString());
 	}
 	public void SectionDetails() throws Exception
@@ -252,7 +252,7 @@ public class SISProvisioningPage extends ActionType{
 			SectionName="FPK12Section"+randomNumberGenerator();
 			cp.Name(SectionName);
 			ExtentCucumberAdapter.addTestStepLog(SectionName);
-			cp.insertData("AssessmentCenter.xlsx", SectionName, 2);
+			cp.insertData("AssessmentCenterDetails.xlsx", SectionName, 2);
 			Description.sendKeys(generateRandomString());
 			StaticWait(2);
 			cp.Save();
@@ -568,7 +568,7 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void insertUsersData() throws Exception
 	{
-		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/AssessmentCenter.xlsx").toString();
+		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/AssessmentCenterDetails.xlsx").toString();
 		cp.InsertmultipledataIntoExcel(filePath, getSheetEnv(),DFirstName,DLastName,TFirstName,TLastName,SFirstName,SLastName);
 	}
 }

@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 glue = {"PortfolioCenterStepdef","Hooks"},
 plugin= {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 monochrome = true,
-tags = "@AssessmentCenterGroup",
+tags = "@PortfolioCenterGroup",
 dryRun = false)
 
 public class SISprovisioningPortfolioRunner extends AbstractTestNGCucumberTests {
