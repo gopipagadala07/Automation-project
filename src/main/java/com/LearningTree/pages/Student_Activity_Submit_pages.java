@@ -146,6 +146,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 				while (retries > 0) {
 					try {
 						s.executeScript("arguments[0].scrollIntoView(true);", currentIcon);
+						StaticWait(1);
 						s.executeScript("arguments[0].click();", currentIcon);	
 						break;
 					} catch (StaleElementReferenceException e) {
@@ -163,7 +164,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 				}
 				String Activity_Title = driver.findElement(By.xpath("//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div")).getText();
 				StaticWait(1);			                
-				System.out.println("Activity Title: "+Activity_Title);
+				System.out.println("Activity Title : "+targetIndex+Activity_Title);
 				StaticWait(1);			                
 
 				if(Activity_Title.toLowerCase().contains("assessment".toLowerCase()))
