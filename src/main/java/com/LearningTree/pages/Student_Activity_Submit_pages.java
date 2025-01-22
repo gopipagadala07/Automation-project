@@ -155,21 +155,23 @@ public class Student_Activity_Submit_pages extends ActionType {
 					}	
 				}
 				String Activity_Title = driver.findElement(By.xpath("//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div")).getText();
+				StaticWait(1);			                
+
 				System.out.println("Activity Title: "+Activity_Title);
 				StaticWait(1);			                
-				if(Activity_Title.toLowerCase().contains("assignment".toLowerCase()))
-				{
-					performAssignmentActivity();
-				}
 
+				if(Activity_Title.toLowerCase().contains("assessment".toLowerCase()))
+				{
+					performAssessmentActivity();
+				}
 				else if(Activity_Title.toLowerCase().contains("discussion".toLowerCase()))
 				{
 					performDiscussionActivity();
 				}
 
-				else if(Activity_Title.toLowerCase().contains("assessment".toLowerCase()))
+				else if(Activity_Title.toLowerCase().contains("assignment".toLowerCase()))
 				{
-					performAssessmentActivity();
+					performAssignmentActivity();
 				}
 				else if(Activity_Title.toLowerCase().contains("resources".toLowerCase()))
 				{

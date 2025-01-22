@@ -291,7 +291,7 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		StaticWait(1);
+		StaticWait(2);
 		driver.switchTo().frame(0);
 		Provide_Score1.sendKeys(Keys.chord(Keys.CONTROL,"a"));
 		Provide_Score1.sendKeys(Keys.chord(Keys.CONTROL,"x"));
@@ -299,8 +299,7 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 		String randomString = generateRandomString();
 		Provide_Feedback.sendKeys(randomString);
 		StaticWait(1);
-		js.executeScript("arguments[0].click();", Submit_score);
-		
+		js.executeScript("arguments[0].click();", Submit_score);		
 		driver.switchTo().defaultContent();
 		WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='keyboard_arrow_left']/ancestor::button/following-sibling::button[2]")));
 		js.executeScript("arguments[0].click();", e);
