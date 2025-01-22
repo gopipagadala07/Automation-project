@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jan 21 14:39:44 IST 2025</td>
+<td>Started on:</td><td>Wed Jan 22 10:42:41 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>89 seconds (89570 ms)</td>
+<tr><td>Total time:</td><td>97 seconds (97646 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,18 +67,63 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='ExamCenterRunners.Users_Creation_Runner.runScenario()'><b>runScenario</b><br>Test class: ExamCenterRunners.Users_Creation_Runner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Users Creation Functionality with valid Data", "Checking the Create Users Functionality"</td>
-<td></td>
-<td>86</td>
-<td>ExamCenterRunners.Users_Creation_Runner@63787180</td></tr>
+<td title='AssessmentsRunner.SISprovisioningRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.SISprovisioningRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking the School, Classroom, Section Creation Functionality With valid Data", "Verify the SIS Provisioning Creation Functionality"</td>
+<td><div><pre>java.io.FileNotFoundException: D:\Focalpoint Automation\FPK12AutomationProject\src\test\resources\ExcelFiles\PortfolioCenter.xlsx (The system cannot find the file specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
+	at com.Utils.CommonPages.InsertdataIntoExcel(CommonPages.java:163)
+	at com.Utils.CommonPages.insertData(CommonPages.java:194)
+	at com.PortfolioCenter.pages.SISProvisioningPage.SchoolDetails(SISProvisioningPage.java:236)
+	at AssessmentsStepdef.SISProvisioningStepdefinitions.user_enter_the_name_and_description(SISProvisioningStepdefinitions.java:41)
+	at ✽.User Enter the Name and Description(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/AssessmentsFeatures/SIS%20Provisioning.feature:12)
+</pre></div><a href='#' onClick='toggleBox("stack-trace706631622", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace706631622'><pre>java.io.FileNotFoundException: D:\Focalpoint Automation\FPK12AutomationProject\src\test\resources\ExcelFiles\PortfolioCenter.xlsx (The system cannot find the file specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
+	at com.Utils.CommonPages.InsertdataIntoExcel(CommonPages.java:163)
+	at com.Utils.CommonPages.insertData(CommonPages.java:194)
+	at com.PortfolioCenter.pages.SISProvisioningPage.SchoolDetails(SISProvisioningPage.java:236)
+	at AssessmentsStepdef.SISProvisioningStepdefinitions.user_enter_the_name_and_description(SISProvisioningStepdefinitions.java:41)
+	at ✽.User Enter the Name and Description(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/AssessmentsFeatures/SIS%20Provisioning.feature:12)
+</pre></div></td>
+<td>31</td>
+<td>AssessmentsRunner.SISprovisioningRunner@5443d039</td></tr>
+<tr>
+<td title='AssessmentsRunner.SISprovisioningRunner.runScenario()'><b>runScenario</b><br>Test class: AssessmentsRunner.SISprovisioningRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Users Creation Functionality with valid Data", "Verify the SIS Provisioning Creation Functionality"</td>
+<td><div><pre>java.io.FileNotFoundException: D:\Focalpoint Automation\FPK12AutomationProject\src\test\resources\ExcelFiles\PortfolioCenter.xlsx (The system cannot find the file specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
+	at com.Utils.CommonPages.InsertmultipledataIntoExcel(CommonPages.java:204)
+	at com.PortfolioCenter.pages.SISProvisioningPage.insertUsersData(SISProvisioningPage.java:573)
+	at AssessmentsStepdef.SISProvisioningStepdefinitions.store_the_users_data_in_excel(SISProvisioningStepdefinitions.java:240)
+	at ✽.Store the users data in Excel(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/AssessmentsFeatures/SIS%20Provisioning.feature:45)
+</pre></div><a href='#' onClick='toggleBox("stack-trace510441778", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace510441778'><pre>java.io.FileNotFoundException: D:\Focalpoint Automation\FPK12AutomationProject\src\test\resources\ExcelFiles\PortfolioCenter.xlsx (The system cannot find the file specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
+	at com.Utils.CommonPages.InsertmultipledataIntoExcel(CommonPages.java:204)
+	at com.PortfolioCenter.pages.SISProvisioningPage.insertUsersData(SISProvisioningPage.java:573)
+	at AssessmentsStepdef.SISProvisioningStepdefinitions.store_the_users_data_in_excel(SISProvisioningStepdefinitions.java:240)
+	at ✽.Store the users data in Excel(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/AssessmentsFeatures/SIS%20Provisioning.feature:45)
+</pre></div></td>
+<td>62</td>
+<td>AssessmentsRunner.SISprovisioningRunner@5443d039</td></tr>
 </table><p>
 </body>
 </html>

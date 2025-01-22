@@ -8,14 +8,14 @@ import org.testng.annotations.Test;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features = "src\\test\\resources\\PortfolioCenterFeatures\\SIS Provisioning.feature",
+@CucumberOptions(features = "src\\test\\resources\\PortfolioCenterFeatures\\SIS ProvisioningPortfolio.feature",
 glue = {"PortfolioCenterStepdef","Hooks"},
 plugin= {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 monochrome = true,
 tags = "@AssessmentCenterGroup",
 dryRun = false)
 
-public class SISprovisioningRunner extends AbstractTestNGCucumberTests {
+public class SISprovisioningPortfolioRunner extends AbstractTestNGCucumberTests {
 	
 	String TestcaseName;
 	//@Parameters("browser")

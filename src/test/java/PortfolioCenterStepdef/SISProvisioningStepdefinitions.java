@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import com.PortfolioCenter.pages.SISProvisioningPage;
+import com.PortfolioCenter.pages.SISProvisioningPortfolioPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.CommonPages;
@@ -16,7 +16,7 @@ import io.cucumber.java.en.When;
 
 public class SISProvisioningStepdefinitions extends ActionType{
 	 
-	SISProvisioningPage provisioning=new SISProvisioningPage(Base.getDriver());
+	SISProvisioningPortfolioPage provisioning=new SISProvisioningPortfolioPage(Base.getDriver());
 	ExcelReader reader=new ExcelReader();
 	CommonPages cp=new CommonPages(Base.getDriver());
 	static List<Map<String, String>> testdata=null;

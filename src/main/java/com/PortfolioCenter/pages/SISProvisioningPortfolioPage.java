@@ -24,7 +24,7 @@ import com.Utils.CommonPages;
 import com.Utils.Wait;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
-public class SISProvisioningPage extends ActionType{
+public class SISProvisioningPortfolioPage extends ActionType{
 
 	CommonPages cp=new CommonPages(Base.getDriver());
 	JavascriptExecutor js=(JavascriptExecutor) Base.getDriver();
@@ -100,7 +100,7 @@ public class SISProvisioningPage extends ActionType{
 	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[1]")private WebElement Studenttab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Student')]")private WebElement AddnewStudentbtn;
 
-	public SISProvisioningPage(WebDriver driver) {
+	public SISProvisioningPortfolioPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new Wait(driver);

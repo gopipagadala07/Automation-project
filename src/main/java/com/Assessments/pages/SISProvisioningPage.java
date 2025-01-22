@@ -233,7 +233,7 @@ public class SISProvisioningPage extends ActionType{
 		SchoolName="FPK12School"+randomNumberGenerator();
 		System.out.println(SchoolName);
 		ExtentCucumberAdapter.addTestStepLog(SchoolName);
-		cp.insertData("AssessmentCenterDetails.xlsx", SchoolName, 0);
+		cp.insertData("AssessmentCenter.xlsx", SchoolName, 0);
 		cp.Name(SchoolName);				
 		Description.sendKeys(generateRandomString());
 	}
@@ -243,7 +243,7 @@ public class SISProvisioningPage extends ActionType{
 		ClassroomName="FPK12Classroom"+randomNumberGenerator();
 		cp.Name(ClassroomName);
 		ExtentCucumberAdapter.addTestStepLog(ClassroomName);
-		cp.insertData("AssessmentCenterDetails.xlsx", ClassroomName, 1);
+		cp.insertData("AssessmentCenter.xlsx", ClassroomName, 1);
 		Description.sendKeys(generateRandomString());
 	}
 	public void SectionDetails() throws Exception
@@ -252,7 +252,7 @@ public class SISProvisioningPage extends ActionType{
 			SectionName="FPK12Section"+randomNumberGenerator();
 			cp.Name(SectionName);
 			ExtentCucumberAdapter.addTestStepLog(SectionName);
-			cp.insertData("AssessmentCenterDetails.xlsx", SectionName, 2);
+			cp.insertData("AssessmentCenter.xlsx", SectionName, 2);
 			Description.sendKeys(generateRandomString());
 			StaticWait(2);
 			cp.Save();
@@ -568,7 +568,7 @@ public class SISProvisioningPage extends ActionType{
 	}
 	public void insertUsersData() throws Exception
 	{
-		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/AssessmentCenterDetails.xlsx").toString();
+		String filePath = Paths.get(System.getProperty("user.dir") + "/src/test/resources/ExcelFiles/AssessmentCenter.xlsx").toString();
 		cp.InsertmultipledataIntoExcel(filePath, getSheetEnv(),DFirstName,DLastName,TFirstName,TLastName,SFirstName,SLastName);
 	}
 }
