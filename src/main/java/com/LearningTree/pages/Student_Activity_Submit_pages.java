@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -152,7 +153,13 @@ public class Student_Activity_Submit_pages extends ActionType {
 						System.out.println("StaleElementReferenceException. Retrying...");
 						StaticWait(1);
 						retries--;
-					}	
+					}
+					catch (ElementClickInterceptedException e) {
+
+						System.out.println("ElementClickInterceptedException. Retrying...");
+						StaticWait(1);
+						retries--;
+					}
 				}
 				String Activity_Title = driver.findElement(By.xpath("//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div")).getText();
 				StaticWait(1);			                
