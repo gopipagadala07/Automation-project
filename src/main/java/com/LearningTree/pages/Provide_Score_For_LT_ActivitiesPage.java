@@ -179,10 +179,10 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 	public void activities_to_Garde()
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		int count = A_Score.size()-4; 
+		int count = A_Score.size(); 
 		System.out.println("count: "+count);
 		System.out.println("Total Activities for Scoring: " + count);
-		for (int i = 0; i < count; i++) {
+		for (int i = 0; i <= 4; i++) {
 			StaticWait(1);
 			js.executeScript("arguments[0].click();", A_Score.get(i));
 			StaticWait(1);
@@ -195,7 +195,7 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			    System.out.println("Provide Score for " + (Activity_Title.toLowerCase().contains("assignment") ? "Assignment" : "Discussion") + " Activity");
 			}
 
-			if(i==count)
+			if(i==4)
 			{
 				break;
 			}
