@@ -132,7 +132,7 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 		System.out.println("Found " + (count-1) + " activity types.");
 
 		js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//span[text()='All Activity Types']")));
-
+		String Activity_Name = null;
 		for (int i = 1; i < count; i++) 
 		{ 
 			StaticWait(1);
@@ -146,7 +146,8 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 				{
 					StaticWait(1);
 					WebElement Acti = Activity_Type1.get(i);
-					System.out.println("Clicked on: " + Acti.getText());
+					 Activity_Name =  Acti.getText();
+					System.out.println("Clicked on: " + Activity_Name);
 					js.executeScript("arguments[0].click();", Acti);
 					break;
 				} 
@@ -159,8 +160,8 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			wait.until(ExpectedConditions.elementToBeClickable(Score));
 			js.executeScript("arguments[0].click();", Score);
 			String Activity_Title = Activity_Title_Name.getText();
-			
-			if (Activity_Title.toLowerCase().contains("assessment".toLowerCase())) {
+		
+			if (Activity_Name.toLowerCase().contains("Assessment".toLowerCase())) {
 				System.out.println("Providing Score for Assessment Activity");
 			    Provide_the_Score_for_Assessment();
 			    System.out.println("Provide Score for Assessment Activity");
@@ -168,7 +169,6 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			    Provide_the_Score_for_Assignment_and_Discussion();
 			    System.out.println("Provide Score for " + (Activity_Title.toLowerCase().contains("assignment") ? "Assignment" : "Discussion") + " Activity");
 			}
-
 		}
 	}
 	public void close_the_Overal_Speed_Grader_Screen()
