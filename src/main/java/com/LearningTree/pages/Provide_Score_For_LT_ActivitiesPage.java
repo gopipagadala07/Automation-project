@@ -160,7 +160,8 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			js.executeScript("arguments[0].click();", Score);
 			String Activity_Title = Activity_Title_Name.getText();
 			
-			if (Activity_Title.toLowerCase().matches(".*\\bassessment\\b.*")) {
+			if (Activity_Title.toLowerCase().contains("assessment".toLowerCase())) {
+				System.out.println("Providing Score for Assessment Activity");
 			    Provide_the_Score_for_Assessment();
 			    System.out.println("Provide Score for Assessment Activity");
 			} else if (Activity_Title.toLowerCase().matches(".*\\b(assignment|discussion)\\b.*")) {
