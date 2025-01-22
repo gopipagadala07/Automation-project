@@ -159,15 +159,15 @@ public class Student_Activity_Submit_pages extends ActionType {
 				System.out.println("Activity Title: "+Activity_Title);
 				StaticWait(1);			                
 
-				if(Activity_Title.toLowerCase().matches(".*\\bassessment\\b.*"))
+				if(Activity_Title.toLowerCase().contains("assessment".toLowerCase()))
 				{
 					performAssessmentActivity();
 				}
-				else if(Activity_Title.toLowerCase().matches(".*\\bdiscussion\\b.*"))
+				else if(Activity_Title.toLowerCase().contains("discussion".toLowerCase()))
 				{
 					performDiscussionActivity();
 				}
-				else if(Activity_Title.toLowerCase().matches(".*\\bassignment\\b.*"))
+				else if(Activity_Title.toLowerCase().contains("assignment".toLowerCase()))
 				{
 					performAssignmentActivity();
 				}
@@ -220,7 +220,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 		TypehereText.sendKeys("StudentNotesforAssignment"+randomNumberGenerator());
 		cp.Save();
 		cp.CloseIcon();
-		StaticWait(1);
+		StaticWait(2);
 		System.out.println("Assignment completed successfully.");
 	}
 	public void performDiscussionActivity() {
@@ -247,7 +247,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 		TypehereText.sendKeys("StudentNotesforDiscussion"+randomNumberGenerator());
 		cp.Save();
 		cp.CloseIcon();
-		StaticWait(1);
+		StaticWait(2);
 		System.out.println("Discussion completed successfully.");
 	}
 	public void performAssessmentActivity() {
