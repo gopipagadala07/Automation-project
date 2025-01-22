@@ -162,10 +162,10 @@ public class Student_Activity_Submit_pages extends ActionType {
 						retries--;
 					}
 				}
+				StaticWait(1);	
 				String Activity_Title = driver.findElement(By.xpath("//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div")).getText();
 				StaticWait(1);			                
-				System.out.println("Activity Title : "+targetIndex+Activity_Title);
-				StaticWait(1);			                
+				System.out.println("Activity Title : "+targetIndex+Activity_Title);		                
 
 				if(Activity_Title.toLowerCase().contains("assessment".toLowerCase()))
 				{
