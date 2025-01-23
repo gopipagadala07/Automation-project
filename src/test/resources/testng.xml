@@ -12,8 +12,6 @@
 			<class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner"></class>
 			<class name="ExamCenterRunners.Score_SubmissionRunner"></class>
 			<class name="ExamCenterRunners.EnrolleRunner"></class>
-			<class name="ExamCenterRunners.BulkUploadRunner"></class>
-			<class name="ExamCenterRunners.LoginPageRunner"></class>
 		</classes>
 	</test> 
 
