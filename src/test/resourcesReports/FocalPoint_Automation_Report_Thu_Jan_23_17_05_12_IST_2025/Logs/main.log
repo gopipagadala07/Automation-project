@@ -1,0 +1,16 @@
+2025-01-23 17:05:12,668 INFO  [rootLogger] Enviornment is : LMSPROD
+2025-01-23 17:05:12,669 INFO  [rootLogger] Enviornment is : LMSPROD
+2025-01-23 17:05:13,101 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:05:13,101 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:05:14,435 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:05:20,732 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:05:20,740 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:05:20,929 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:05:20,932 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:05:21,590 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:05:21,606 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:05:52,580 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:05:52,643 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:05:58,855 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:05:58,857 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:06:02,138 INFO  [rootLogger] Info: Email Id: automation21465@fpk12.com
