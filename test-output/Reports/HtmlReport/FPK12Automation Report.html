@@ -49,7 +49,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Jan 24, 2025 03:34:11 pm</span>
+			<span class='label blue darken-3 suite-start-time'>Jan 24, 2025 04:19:55 pm</span>
 			</a>
 		</ul>
 	</div>
@@ -157,7 +157,7 @@
                 </div>
                 <div class='block text-small'>
                     <span class='tooltipped' data-position='top' data-tooltip='100%'>
-                    <span class='strong'>11</span> steps passed</span>
+                    <span class='strong'>15</span> steps passed</span>
                 </div>
                 <div class='block text-small'>
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -186,8 +186,8 @@
 			<ul id='test-collection' class='test-collection'>
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Verify the Score Submission Functionality at Admin side</span>
-						<span class='test-time'>Jan 24, 2025 03:34:12 pm</span>
+						<span class='test-name'>Checking the Portfolio Center Course Functionality</span>
+						<span class='test-time'>Jan 24, 2025 04:19:56 pm</span>
 						<span class='test-status right pass'>Pass</span>
 					</div>
 					<div class='test-content hide'>
@@ -200,17 +200,17 @@
 
 <div class='scenario outline node' test-id='2' status='pass'>
 
-	<span class='duration right label'>00 01 09.784</span>
+	<span class='duration right label'>00 01 33.146</span>
 	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Verify the Score Submission Functionality at Admin side</div>
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Verifying the Portfolio Course Creation Functionality</div>
 	</div>
 	
-		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td></tr><tr><td>1</td><td>0</td></tr></table></div>
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>rownumber</td><td>rownumber1</td><td>rownumber2</td></tr><tr><td>1</td><td>0</td><td>3</td></tr></table></div>
 	
 	
 	<ul class='steps'>
 		<li test-id='3' class='node scenario Pass' status='Pass'>
-			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Verify the Score Submission Functionality at Admin side</div>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Verifying the Portfolio Course Creation Functionality</div>
 
 				<div class='category-list'>
 						<span class='category label'>@PortfolioCenterGroup</span>
@@ -237,28 +237,44 @@
 					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_clicks_on_learning_and_portfolio_center()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on Learning and Portfolio Center</h6>
 
 				</li>
-				<li test-id='12' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="PortfolioCenterStepdef.ScoreSubmissionStepdef.the_user_searches_for_the_course_and_clicks_on_it(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user searches for the course and clicks on it 0</h6>
+				<li test-id='12' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_creates_a_portfolio_course_by_entering_the_title_and_description()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user creates a Portfolio Course by entering the Title and Description</h6>
 
 				</li>
-				<li test-id='13' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="PortfolioCenterStepdef.ScoreSubmissionStepdef.the_user_clicks_on_the_assignment_then_click_on_score_student_portfolio_button_assignment_name(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the assignment then click on Score Student Portfolio button 0</h6>
+				<li test-id='13' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_searches_for_the_specific_course_and_clicks_on_it(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user searches for the specific course and clicks on it 0</h6>
 
 				</li>
-				<li test-id='14' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="PortfolioCenterStepdef.ScoreSubmissionStepdef.enter_the_score_and_comments_and_submit_the_score_score()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Enter the Score and Comments and submit the Score</h6>
+				<li test-id='14' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_clicks_on_the_add_portfolio_assignment_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Add Portfolio Assignment button</h6>
 
 				</li>
 				<li test-id='15' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="PortfolioCenterStepdef.ScoreSubmissionStepdef.the_user_is_awarded_the_badge()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user is awarded the Badge</h6>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_enters_the_assignment_name_description_and_selects_standards()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user enters the Assignment Name, Description, and selects Standards</h6>
 
 				</li>
 				<li test-id='16' class='gc and Pass' status='Pass'>
-					<h6 class="step-name" title="PortfolioCenterStepdef.ScoreSubmissionStepdef.the_user_clicks_on_the_assignment_and_validates_the_status_and_performance_report()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Assignment and validates the Status and Performance Report.</h6>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_added_the_badge()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user added the Badge</h6>
 
 				</li>
 				<li test-id='17' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="PortfolioCenterStepdef.ScoreSubmissionStepdef.the_user_clicks_on_the_report_card_tab_and_validates_the_score_in_the_report_card(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Report Card tab and validates the Score in the Report Card 0</h6>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_clicks_on_the_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user clicks on the Save button</h6>
+
+				</li>
+				<li test-id='18' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_navigates_to_the_members_tab_searches_for_the_username_in_the_search_here_field_using_row(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user navigates to the Members tab, searches for the username in the Search Here field using row 3</h6>
+
+				</li>
+				<li test-id='19' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.assign_the_user_to_the_assignment()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And assign the user to the assignment</h6>
+
+				</li>
+				<li test-id='20' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.the_user_navigates_to_the_portfolio_tab()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user navigates to the Portfolio tab,</h6>
+
+				</li>
+				<li test-id='21' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="PortfolioCenterStepdef.PortfolioCenterCourseStepdef.clicks_on_the_assignment_and_verifies_that_the_user_is_added_to_the_assignment(java.lang.Integer)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And clicks on the assignment, and verifies that the user is added to the assignment 3</h6>
 
 				</li>
 			</ul>
@@ -331,8 +347,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jan 24, 2025 03:34:12 pm</td>
-										<td class='linked' test-id='3'>Verify the Score Submission Functionality at Admin side</td>
+										<td>Jan 24, 2025 04:19:56 pm</td>
+										<td class='linked' test-id='3'>Verifying the Portfolio Course Creation Functionality</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 								</tbody>
@@ -369,25 +385,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>11</div>
+					<div class='panel-lead'>15</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jan 24, 2025 03:34:11 pm</div>
+					<div class='panel-lead'>Jan 24, 2025 04:19:55 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 24, 2025 03:35:22 pm</div>
+			 		<div class='panel-lead'>Jan 24, 2025 04:21:29 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>00 01 10.618</div>
+					<div class='panel-lead'>00 01 33.996</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -465,8 +481,8 @@
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				grandChildCount: 11,
-				passGrandChild: 11,
+				grandChildCount: 15,
+				passGrandChild: 15,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
@@ -478,7 +494,7 @@
 		
 		<script>
 			var timeline = {
-			        "Verify the Score Submission Functionality at Admin side":69.79
+			        "Checking the Portfolio Center Course Functionality":93.152
 			};
 		</script>
 		
