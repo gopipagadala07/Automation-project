@@ -300,7 +300,8 @@ public class QuizCreationPages extends ActionType{
 					js.executeScript("arguments[0].click();", ShowAnswers);
 					//ShowAnswers.click();
 					if (ShowTestResult.isEnabled()) {
-						ShowTestResult.click();
+						js.executeScript("arguments[0].click();", ShowTestResult);
+						//ShowTestResult.click();
 					}
 					wait.until(ExpectedConditions.elementToBeClickable(ShowtestSummary));
 					js.executeScript("arguments[0].click();", OverrideInstructionstoggle);

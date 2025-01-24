@@ -1,147 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="0" failed="1" skipped="0">
+<testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-22T07:09:42Z" name="Default suite" finished-at="2025-01-22T07:11:35Z" duration-ms="113215">
+  <suite started-at="2025-01-24T06:41:06Z" name="Default suite" finished-at="2025-01-24T06:42:57Z" duration-ms="110254">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningAssessmentCenterRunner@a87f8ec]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.MultiScoringPortfolioCourseRuner@a87f8ec]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-01-22T07:09:42Z" name="Default test" finished-at="2025-01-22T07:11:35Z" duration-ms="113215">
-      <class name="AssessmentsRunner.SISprovisioningAssessmentCenterRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.SISprovisioningAssessmentCenterRunner@a87f8ec]" started-at="2025-01-22T12:39:42Z" name="setUpClass" finished-at="2025-01-22T12:39:42Z" duration-ms="782" status="PASS">
+    <test started-at="2025-01-24T06:41:06Z" name="Default test" finished-at="2025-01-24T06:42:57Z" duration-ms="110254">
+      <class name="PortfolioCenterRunner.MultiScoringPortfolioCourseRuner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:PortfolioCenterRunner.MultiScoringPortfolioCourseRuner@a87f8ec]" started-at="2025-01-24T12:11:06Z" name="setUpClass" finished-at="2025-01-24T12:11:07Z" duration-ms="876" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@a7ae340]]>
+                <![CDATA[org.testng.TestRunner@67292fc7]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.SISprovisioningAssessmentCenterRunner@a87f8ec]" started-at="2025-01-22T12:39:42Z" name="beforeClass" finished-at="2025-01-22T12:39:42Z" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:PortfolioCenterRunner.MultiScoringPortfolioCourseRuner@a87f8ec]" started-at="2025-01-24T12:11:07Z" name="beforeClass" finished-at="2025-01-24T12:11:07Z" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.SISprovisioningAssessmentCenterRunner@a87f8ec]" started-at="2025-01-22T12:39:42Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-22T12:41:33Z" duration-ms="110338" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.MultiScoringPortfolioCourseRuner@a87f8ec]" started-at="2025-01-24T12:11:07Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-24T12:12:52Z" duration-ms="104959" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Verify the Users Creation Functionality with valid Data"]]>
+                <![CDATA["Verifying the Multi Scoring Portfolio Center Course Functionality"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Verify the SIS Provisioning Creation Functionality"]]>
+                <![CDATA["Checking the Multi Scoring Portfolio Center Course Functionality"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[text()=' Create New Login ']' (tried for 30 second(s) with 1000 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[text()=' Create New Login ']' (tried for 30 second(s) with 1000 milliseconds interval)
-	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.Utils.Wait.elementToBeClickable(Wait.java:29)
-	at com.Assessments.pages.SISProvisioningAssessmentCenterPage.CreateNewLogin(SISProvisioningAssessmentCenterPage.java:459)
-	at AssessmentsStepdef.SISProvisioningAssessmentCenterStepdefinitions.click_on_create_new_login_button(SISProvisioningAssessmentCenterStepdefinitions.java:143)
-	at ✽.Click on Create New login button(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/AssessmentsFeatures/SIS%20ProvisioningAssessmentCenter.feature:40)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()=' Create New Login ']"}
-  (Session info: chrome=131.0.6778.265)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9cc4ab9981be4d04e4142c21337f61c8, findElement {using=xpath, value=//span[text()=' Create New Login ']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56994}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56994/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9cc4ab9981be4d04e4142c21337f61c8
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy28.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	at com.Utils.Wait.elementToBeClickable(Wait.java:29)
-	at com.Assessments.pages.SISProvisioningAssessmentCenterPage.CreateNewLogin(SISProvisioningAssessmentCenterPage.java:459)
-	at AssessmentsStepdef.SISProvisioningAssessmentCenterStepdefinitions.click_on_create_new_login_button(SISProvisioningAssessmentCenterStepdefinitions.java:143)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
-	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
-	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
-	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
-	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
-	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
-	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
-	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
-	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
-	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
-	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
-	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.SISprovisioningAssessmentCenterRunner@a87f8ec]" started-at="2025-01-22T12:41:33Z" name="afterClass" finished-at="2025-01-22T12:41:33Z" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.SISprovisioningAssessmentCenterRunner@a87f8ec]" started-at="2025-01-22T12:41:33Z" name="tearDownClass" finished-at="2025-01-22T12:41:35Z" duration-ms="2073" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:PortfolioCenterRunner.MultiScoringPortfolioCourseRuner@a87f8ec]" started-at="2025-01-24T12:12:52Z" name="tearDownClass" finished-at="2025-01-24T12:12:57Z" duration-ms="4399" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- AssessmentsRunner.SISprovisioningAssessmentCenterRunner -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:PortfolioCenterRunner.MultiScoringPortfolioCourseRuner@a87f8ec]" started-at="2025-01-24T12:12:52Z" name="afterClass" finished-at="2025-01-24T12:12:52Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- PortfolioCenterRunner.MultiScoringPortfolioCourseRuner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

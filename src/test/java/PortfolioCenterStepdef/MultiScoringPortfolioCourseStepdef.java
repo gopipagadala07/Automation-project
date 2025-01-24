@@ -32,9 +32,9 @@ public class MultiScoringPortfolioCourseStepdef extends ActionType{
 		Multi.the_user_searches_for_the_multi_scoring_portfolio_course_and_clicks_on_it(MultiScoringCourseName);
 	}
 
-	@Then("the user enters the Assignment Name, Description, and Add Multi Standards {int} {int} {int}")
-	public void the_user_enters_the_assignment_name_description_and_add_multi_standards(Integer Standard1, Integer Standard2, Integer Standard3) throws Exception {
-		Multi.the_user_enters_the_assignment_name_description_and_add_multi_standards(Standard1, Standard2, Standard3);
+	@Then("the user enters the Assignment Name, Description, and Add Multi Standards")
+	public void the_user_enters_the_assignment_name_description_and_add_multi_standards() throws Exception {
+		Multi.the_user_enters_the_assignment_name_description_and_add_multi_standards();
 		
 	}
 

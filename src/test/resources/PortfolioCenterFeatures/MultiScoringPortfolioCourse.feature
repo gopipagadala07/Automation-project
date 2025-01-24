@@ -10,7 +10,7 @@ Feature: Checking the Multi Scoring Portfolio Center Course Functionality
     And the user creates a Multi Scoring Portfolio Course by entering the Title and Description
     Then the user searches for the Multi Scoring Portfolio Course and clicks on it <rownumber1>
     And the user clicks on the Add Portfolio Assignment button
-    Then the user enters the Assignment Name, Description, and Add Multi Standards <rownumber1> <rownumber1> <rownumber1>
+    Then the user enters the Assignment Name, Description, and Add Multi Standards
     And the user added the Badge
     Then the user clicks on the Save button
     And the user navigates to the Members tab, searches for the username in the Search Here field using row <rownumber2>

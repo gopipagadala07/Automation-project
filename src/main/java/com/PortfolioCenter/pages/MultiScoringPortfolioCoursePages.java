@@ -12,6 +12,7 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -109,44 +110,44 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 	}
 
 	public void retrySearchForCourseName(String portfoliocoursename, int retryCount) {
-	    int attempts = 0;
-	    boolean isSuccessful = false;
+		int attempts = 0;
+		boolean isSuccessful = false;
 
-	    while (attempts < retryCount && !isSuccessful) {
-	        try {
-	            cp.searchField(portfoliocoursename);
-	            wait.visibilityOf(MultiPortfolioName(portfoliocoursename));
+		while (attempts < retryCount && !isSuccessful) {
+			try {
+				cp.searchField(portfoliocoursename);
+				wait.visibilityOf(MultiPortfolioName(portfoliocoursename));
 
-	            WebElement courseElement = MultiPortfolioName(portfoliocoursename);
-	            String courseText = courseElement.getText();
-	           // System.out.println("Found course: " + courseText);
+				WebElement courseElement = MultiPortfolioName(portfoliocoursename);
+				String courseText = courseElement.getText();
+				// System.out.println("Found course: " + courseText);
 
-	            if (portfoliocoursename.equals(courseText)) {
-	                JavascriptExecutor js = (JavascriptExecutor) driver;
-	                js.executeScript("arguments[0].click();", courseElement);
-//	                System.out.println("Course clicked successfully.");
-	                isSuccessful = true;
-	            } else {
-	                System.out.println("Course name mismatch. Retrying...");
-	            }
-	        } catch (Exception e) {
-	            System.out.println("Attempt " + (attempts + 1) + " failed: " + e.getMessage());
-	        }
+				if (portfoliocoursename.equals(courseText)) {
+					JavascriptExecutor js = (JavascriptExecutor) driver;
+					js.executeScript("arguments[0].click();", courseElement);
+					//	                System.out.println("Course clicked successfully.");
+					isSuccessful = true;
+				} else {
+					System.out.println("Course name mismatch. Retrying...");
+				}
+			} catch (Exception e) {
+				System.out.println("Attempt " + (attempts + 1) + " failed: " + e.getMessage());
+			}
 
-	        attempts++;
+			attempts++;
 
-	        if (!isSuccessful && attempts >= retryCount) {
-	            throw new RuntimeException(
-	                "Failed to search and click on course name after " + retryCount + " attempts."
-	            );
-	        }
+			if (!isSuccessful && attempts >= retryCount) {
+				throw new RuntimeException(
+						"Failed to search and click on course name after " + retryCount + " attempts."
+						);
+			}
 
-	        StaticWait(2);
-	    }
+			StaticWait(2);
+		}
 	}
 
 
-	public void the_user_enters_the_assignment_name_description_and_add_multi_standards(Integer Standard1, Integer Standard2, Integer Standard3) throws Exception {
+	public void the_user_enters_the_assignment_name_description_and_add_multi_standards() throws Exception {
 		StaticWait(1);
 		wait.elementToBeClickable(inputAssignmentNameElement);
 		inputAssignmentNameElement.click();
@@ -165,24 +166,67 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 		wait.elementToBeClickable(StandardsTabElement);
 		StandardsTabElement.click();
 		StaticWait(2);
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//mat-label[text()='Search here']/ancestor::span/ancestor::mat-form-field/following::div/descendant::span[1]/child::small")));
-		List<WebElement> elements = driver.findElements(By.xpath("//mat-label[text()='Search here']/ancestor::span/ancestor::mat-form-field/following::div/descendant::span[1]/child::small"));
-		if (elements.size() >= 3) {
-			Random random = new Random();
-			Set<Integer> selectedIndices = new HashSet<>();
-			Actions action = new Actions(driver);
 
-			while (selectedIndices.size() < 4) {
-				int randomIndex = random.nextInt(elements.size());
-				if (!selectedIndices.contains(randomIndex)) {
-					WebElement elementToClick = elements.get(randomIndex);
-					action.moveToElement(elementToClick).click().build().perform();
-					selectedIndices.add(randomIndex);
-				}
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		List<WebElement> elements = getVisibleElements(wait);
+
+		while (elements.size() < 3) {
+
+			System.out.println("Not enough elements found. Clicking dropdown to select a random value.");
+			WebElement dropdown = driver.findElement(By.xpath("//div[@role='region']/child::div/child::mat-form-field[1]/child::div"));
+			JavascriptExecutor js=(JavascriptExecutor) driver;
+			StaticWait(1);
+			Actions a=new Actions(driver);
+			a.moveToElement(dropdown).build().perform();
+			StaticWait(1);
+			a.click().build().perform();
+
+			List<WebElement> dropdownValues = driver.findElements(By.xpath("//div[@role='listbox']/child::mat-option"));
+			if (!dropdownValues.isEmpty()) {
+				Random random = new Random();
+				int randomIndex = random.nextInt(dropdownValues.size());
+				dropdownValues.get(randomIndex).click();
+				StaticWait(1);
+			} else {
+				System.out.println("No values found in the dropdown.");
+				return;
 			}
+
+			elements = getVisibleElements(wait);
+		}
+
+		if (elements.size() > 3) {
+			try {
+				StaticWait(1);
+				selectRandomFourElements(elements);
+			}catch (StaleElementReferenceException e) {
+				System.out.println("stale element");
+
+			}
+
 		} else {
-			System.out.println("Not enough elements found. At least 3 are required.");
+			System.out.println("Not enough elements found. At least 2 are required.");
+		}
+	}
+
+
+	private List<WebElement> getVisibleElements(WebDriverWait wait) {
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//mat-label[text()='Search here']/ancestor::span/ancestor::mat-form-field/following::div/descendant::span[1]/child::small")));
+		return driver.findElements(By.xpath("//mat-label[text()='Search here']/ancestor::span/ancestor::mat-form-field/following::div/descendant::span[1]/child::small"));
+	}
+
+	private void selectRandomFourElements(List<WebElement> elements) {
+		Random random = new Random();
+		Set<Integer> selectedIndices = new HashSet<>();
+		Actions action = new Actions(driver);
+
+		while (selectedIndices.size() < 4) {
+			int randomIndex = random.nextInt(elements.size());
+			if (!selectedIndices.contains(randomIndex)) {
+				WebElement elementToClick = elements.get(randomIndex);
+				action.moveToElement(elementToClick).click().build().perform();
+				selectedIndices.add(randomIndex);
+			}
 		}
 	}
 
