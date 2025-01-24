@@ -93,7 +93,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 	@FindBy(how = How.XPATH,using = "//img[@id='badgeImage']")private WebElement ConfirmBadge;
 
 	public WebElement PortfolioName(String PortfolioCourseName) {
-//		String xpath ="//*[@class='mat-card-header-text']/child::mat-card-title/child::span/child::b[text()='"+MultiPortfolioCourseName+"']";
+		//		String xpath ="//*[@class='mat-card-header-text']/child::mat-card-title/child::span/child::b[text()='"+MultiPortfolioCourseName+"']";
 		String xpath="//b['"+PortfolioCourseName+"']";
 		return driver.findElement(By.xpath(xpath));
 	}
@@ -168,40 +168,40 @@ public class PortfolioCenterCoursePages extends ActionType{
 	}
 
 	public void retrySearchForCourseName(String PortfolioCourseName, int retryCount) {
-	    int attempts = 0;
-	    boolean isSuccessful = false;
+		int attempts = 0;
+		boolean isSuccessful = false;
 
-	    while (attempts < retryCount && !isSuccessful) {
-	        try {
-	        	cp.searchField(PortfolioCourseName);
+		while (attempts < retryCount && !isSuccessful) {
+			try {
+				cp.searchField(PortfolioCourseName);
 				wait.visibilityOf(PortfolioName(PortfolioCourseName));;
 
-	            WebElement courseElement = PortfolioName(PortfolioCourseName);
-	            String courseText = courseElement.getText();
-	            //System.out.println("Found course: " + courseText);
+				WebElement courseElement = PortfolioName(PortfolioCourseName);
+				String courseText = courseElement.getText();
+				//System.out.println("Found course: " + courseText);
 
-	            if (PortfolioCourseName.equals(courseText)) {
-	                JavascriptExecutor js = (JavascriptExecutor) driver;
-	                js.executeScript("arguments[0].click();", courseElement);
-//	                System.out.println("Course clicked successfully.");
-	                isSuccessful = true;
-	            } else {
-	                System.out.println("Course name mismatch. Retrying...");
-	            }
-	        } catch (Exception e) {
-	            System.out.println("Attempt " + (attempts + 1) + " failed: " + e.getMessage());
-	        }
+				if (PortfolioCourseName.equals(courseText)) {
+					JavascriptExecutor js = (JavascriptExecutor) driver;
+					js.executeScript("arguments[0].click();", courseElement);
+					//	                System.out.println("Course clicked successfully.");
+					isSuccessful = true;
+				} else {
+					System.out.println("Course name mismatch. Retrying...");
+				}
+			} catch (Exception e) {
+				System.out.println("Attempt " + (attempts + 1) + " failed: " + e.getMessage());
+			}
 
-	        attempts++;
+			attempts++;
 
-	        if (!isSuccessful && attempts >= retryCount) {
-	            throw new RuntimeException(
-	                "Failed to search and click on course name after " + retryCount + " attempts."
-	            );
-	        }
+			if (!isSuccessful && attempts >= retryCount) {
+				throw new RuntimeException(
+						"Failed to search and click on course name after " + retryCount + " attempts."
+						);
+			}
 
-	        StaticWait(2);
-	    }
+			StaticWait(2);
+		}
 	}
 
 	public void the_user_clicks_on_the_add_portfolio_assignment_button() {
@@ -248,93 +248,103 @@ public class PortfolioCenterCoursePages extends ActionType{
 	}
 
 	public void addBadge() {
-		try {
-			Actions actions = new Actions(driver);
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			List<WebElement> badgeSelection = driver.findElements(By.xpath("//*[local-name()='svg' and @class='ng-scope']"));
-			if (badgeSelection.isEmpty()) {
-				throw new NoSuchElementException("No badges found for selection.");
-			}
+	    try {
+	        Actions actions = new Actions(driver);
+	        JavascriptExecutor js = (JavascriptExecutor) driver;
+	        List<WebElement> badgeSelection = driver.findElements(By.xpath("//*[local-name()='svg' and @class='ng-scope']"));
+	        if (badgeSelection.isEmpty()) {
+	            throw new NoSuchElementException("No badges found for selection.");
+	        }
 
-			Random r = new Random();
-			int randomBadgeIndex = r.nextInt(Math.min(badgeSelection.size(), 75));
-			WebElement selectedBadge = badgeSelection.get(randomBadgeIndex);
+	        Random r = new Random();
+	        int randomBadgeIndex = r.nextInt(Math.min(badgeSelection.size(), 75));
+	        WebElement selectedBadge = badgeSelection.get(randomBadgeIndex);
 
-			List<WebElement> pathElements = selectedBadge.findElements(By.xpath(".//*[name()='path']"));
-			if (!pathElements.isEmpty()) {
-				int randomPathIndex = r.nextInt(pathElements.size());
-				WebElement targetElement = pathElements.get(randomPathIndex);
-				js.executeScript("arguments[0].scrollIntoView(true);", targetElement);
-				actions.moveToElement(targetElement).build().perform();
-				boolean badgeAdded = false;
-				int retryCount = 0;
-				while (!badgeAdded && retryCount < 3) {
-					try {
-						actions.click(targetElement).build().perform();
-						StaticWait(1);
-						WebElement closetab=driver.findElement(By.xpath("//a[@class='close-tab']"));
-						closetab.click();
-						WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
-						if (alertBadge.isDisplayed()) {
-							System.out.println("Badge successfully added..!!!");
-							badgeAdded = true;
-						} else {
-							System.out.println("Badge not displayed as added, retrying...");
-						}
-					} catch (MoveTargetOutOfBoundsException e) {
-						System.out.println("Target element out of bounds. Retrying...");
-					} catch (Exception e) {
-						System.out.println("Unexpected error: " + e.getMessage());
-					}
-					retryCount++;
-				}
-				if (!badgeAdded) {
-					throw new RuntimeException("Failed to add badge after " + retryCount + " retries.");
-				}
+	        List<WebElement> pathElements = selectedBadge.findElements(By.xpath(".//*[name()='path']"));
+	        if (!pathElements.isEmpty()) {
+	            int randomPathIndex = r.nextInt(pathElements.size());
+	            WebElement targetElement = pathElements.get(randomPathIndex);
+	            js.executeScript("arguments[0].scrollIntoView(true);", targetElement);
 
-				int maxRetry = 10;
-				boolean success = false;
-				for (int retry = 0; retry < maxRetry && !success; retry++) {
-					try {
-						StaticWait(2);
-						WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-						WebElement importBadgeBtn = driver.findElement(By.xpath("//div[@class='cling']/child::svg-editor-export/child::button"));
-						wait.until(ExpectedConditions.elementToBeClickable(importBadgeBtn));
-						js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
-						js.executeScript("arguments[0].click();", importBadgeBtn);
-						StaticWait(1);
-						driver.switchTo().defaultContent();
-						success = true;
-						break;
-					} catch (TimeoutException e) {
-						System.err.println("Retry due to TimeoutException.");
-						e.printStackTrace();
-					} catch (Exception e) {
-						System.err.println("Retry due to an exception: " + e.getMessage());
-						e.printStackTrace();
-					}
-				}
-				if (!success) {
-					throw new RuntimeException("Failed to click the import badge button after " + maxRetry + " retries.");
-				}
-			}
+	            boolean badgeAdded = false;
+	            int retryCount = 0;
+	            int maxRetries = 3;
 
-		} catch (Exception e) {
-			System.err.println("Error in addBadge: " + e.getMessage());
-			e.printStackTrace();
-		}
+	            while (!badgeAdded && retryCount < maxRetries) {
+	                try {
+	                    StaticWait(1); 
+	                    actions.moveToElement(targetElement).click().build().perform();
+	                    StaticWait(1); 
+
+	                    try {
+	                        WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
+	                        if (alertBadge.isDisplayed()) {
+	                            System.out.println("Badge successfully added!");
+	                            badgeAdded = true;
+	                        } else {
+	                            System.out.println("Badge not displayed after click, retrying...");
+	                        }
+	                    } catch (NoSuchElementException e) {
+	                        System.out.println("Alert badge not found, retrying...");
+	                    }
+	                } catch (Exception e) {
+	                    System.out.println("Error during click attempt: " + e.getMessage());
+	                }
+	                retryCount++;
+	            }
+
+	            if (!badgeAdded) {
+	                throw new RuntimeException("Failed to add badge after " + retryCount + " retries.");
+	            }
+	        } else {
+	            throw new NoSuchElementException("No path elements found within the badge.");
+	        }
+
+	        int maxRetry = 10;
+	        boolean success = false;
+	        for (int retry = 0; retry < maxRetry && !success; retry++) {
+	            try {
+	                StaticWait(2);
+	                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	                WebElement importBadgeBtn = driver.findElement(By.xpath("//div[@class='cling']/child::svg-editor-export/child::button"));
+	                wait.until(ExpectedConditions.elementToBeClickable(importBadgeBtn));
+	                js.executeScript("arguments[0].scrollIntoView(true);", importBadgeBtn);
+	                js.executeScript("arguments[0].click();", importBadgeBtn);
+	                StaticWait(1);
+	                driver.switchTo().defaultContent();
+	                success = true;
+	                System.out.println("Successfully clicked the import badge button.");
+	                break;
+	            } catch (TimeoutException e) {
+	                System.err.println("Retry due to TimeoutException.");
+	                e.printStackTrace();
+	            } catch (Exception e) {
+	                System.err.println("Retry due to an exception: " + e.getMessage());
+	                e.printStackTrace();
+	            }
+	        }
+	        if (!success) {
+	            throw new RuntimeException("Failed to click the import badge button after " + maxRetry + " retries.");
+	        }
+	    } catch (NoSuchElementException e) {
+	        System.out.println("No badges found for selection.");
+	    } catch (Exception e) {
+	        System.err.println("Error in addBadge: " + e.getMessage());
+	        e.printStackTrace();
+	    }
 	}
 
 
-	public void the_user_added_the_badge() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		Badgetab.click();
-		js.executeScript("arguments[0].click();", AddnewBadgebtn);
-		StaticWait(1);
-		driver.switchTo().frame(0);
-		StaticWait(1);
-		addBadge();
-	} 
+
+public void the_user_added_the_badge() {
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	Badgetab.click();
+	js.executeScript("arguments[0].click();", AddnewBadgebtn);
+	StaticWait(1);
+	driver.switchTo().frame(0);
+	StaticWait(1);
+	addBadge();
+} 
 //	public static void clearOrCreateFolder(File folder) {
 //		try {
 //			if (folder.exists()) {
@@ -363,106 +373,112 @@ public class PortfolioCenterCoursePages extends ActionType{
 //		}
 //	}
 
-	public void the_user_clicks_on_the_save_button() {
-		StaticWait(1);
+public void the_user_clicks_on_the_save_button() {
+	StaticWait(1);
+	try {
+		cp.Save();
+	} catch (TimeoutException e) {
+		addBadge();
 		cp.Save();
 	}
 
-	public void the_user_navigates_to_the_members_tab_searches_for_the_username_in_the_search_here_field_using_row(Integer LastName) throws InvalidFormatException, IOException{
-		StaticWait(1);
-		wait.elementToBeClickable(MembersTabElement);
-		MembersTabElement.click();
-		StaticWait(1);
-		wait.elementToBeClickable(ManageMembersbElement);
-		ManageMembersbElement.click();
+}
 
-		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
-		}
-		String Fname = testdata.get(LastName).get("FirstName");
-		String Lname = testdata.get(LastName).get("LastName");
-		//System.out.println(User);
-		StaticWait(1);
-		retrySearchUserName(Lname, 5, Fname);
+public void the_user_navigates_to_the_members_tab_searches_for_the_username_in_the_search_here_field_using_row(Integer LastName) throws InvalidFormatException, IOException{
+	StaticWait(1);
+	wait.elementToBeClickable(MembersTabElement);
+	MembersTabElement.click();
+	StaticWait(1);
+	wait.elementToBeClickable(ManageMembersbElement);
+	ManageMembersbElement.click();
 
+	if (testdata == null) {
+		testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 	}
+	String Fname = testdata.get(LastName).get("FirstName");
+	String Lname = testdata.get(LastName).get("LastName");
+	//System.out.println(User);
+	StaticWait(1);
+	retrySearchUserName(Lname, 5, Fname);
 
-	public void retrySearchUserName(String Lname, int retryCount, String Fname) {
-		int attempts = 0;
-		boolean isSuccessful = false;
-		while (attempts < retryCount && !isSuccessful) {
-			try {
-				cp.searchField1(Lname);
-				wait.visibilityOf(Addicon(Lname+" "+Fname));
-				JavascriptExecutor jc = (JavascriptExecutor) driver;
-				jc.executeScript("arguments[0].click();", Addicon(Lname+" "+Fname));
-				isSuccessful = true;
-				break;
-			} catch (Exception e) {
-				attempts++;
-				System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
-				if (attempts >= retryCount) {
-					throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
-				}
+}
+
+public void retrySearchUserName(String Lname, int retryCount, String Fname) {
+	int attempts = 0;
+	boolean isSuccessful = false;
+	while (attempts < retryCount && !isSuccessful) {
+		try {
+			cp.searchField1(Lname);
+			wait.visibilityOf(Addicon(Lname+" "+Fname));
+			JavascriptExecutor jc = (JavascriptExecutor) driver;
+			jc.executeScript("arguments[0].click();", Addicon(Lname+" "+Fname));
+			isSuccessful = true;
+			break;
+		} catch (Exception e) {
+			attempts++;
+			System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+			if (attempts >= retryCount) {
+				throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
 			}
 		}
 	}
+}
 
-	public void assign_the_user_to_the_assignment() {
-		wait.elementToBeClickable(closebtnElement);
-		for (int retry = 0; retry < 3; retry++) {
-			try {
-				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-				wait.until(ExpectedConditions.elementToBeClickable(closebtnElement));
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].click();", closebtnElement);
-				StaticWait(1);
-				break;
-			} catch (StaleElementReferenceException e) {
-				retry++;
-				if (retry == 3) {
-					System.err.println("Element became stale after multiple attempts: " + e.getMessage());
-				}
-			} catch (TimeoutException e) {
-				System.err.println("Element not clickable within the wait time: " + e.getMessage());
-				break;
-			} catch (Exception e) {
-				System.err.println("An error occurred: " + e.getMessage());
-				break;
+public void assign_the_user_to_the_assignment() {
+	wait.elementToBeClickable(closebtnElement);
+	for (int retry = 0; retry < 3; retry++) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(closebtnElement));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", closebtnElement);
+			StaticWait(1);
+			break;
+		} catch (StaleElementReferenceException e) {
+			retry++;
+			if (retry == 3) {
+				System.err.println("Element became stale after multiple attempts: " + e.getMessage());
 			}
+		} catch (TimeoutException e) {
+			System.err.println("Element not clickable within the wait time: " + e.getMessage());
+			break;
+		} catch (Exception e) {
+			System.err.println("An error occurred: " + e.getMessage());
+			break;
 		}
 	}
+}
 
-	public void the_user_navigates_to_the_portfolio_tab() {
-		StaticWait(1);
-		wait.elementToBeClickable(PortfolioElement);
-		PortfolioElement.click();
+public void the_user_navigates_to_the_portfolio_tab() {
+	StaticWait(1);
+	wait.elementToBeClickable(PortfolioElement);
+	PortfolioElement.click();
+}
+
+public void clicks_on_the_assignment_and_verifies_that_the_user_is_added_to_the_assignment(Integer verifyName) throws InvalidFormatException, IOException, AWTException {
+	StaticWait(1);
+	//System.out.println(assignmentname);
+	wait.visibilityOf(AssignmentName(assignmentname));
+	AssignmentName(assignmentname).click();
+	StaticWait(1);
+	if (testdata == null) {
+		testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
 	}
+	String Name = testdata.get(verifyName).get("LastName");
+	String verify = testdata.get(verifyName).get("LastName");
+	Actions a=new Actions(driver);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
+	a.moveToElement(verifiesStudent(verify)).build().perform();
+	StaticWait(1);
+	String StudentVerify = verifiesStudent(verify).getText();
 
-	public void clicks_on_the_assignment_and_verifies_that_the_user_is_added_to_the_assignment(Integer verifyName) throws InvalidFormatException, IOException, AWTException {
-		StaticWait(1);
-		//System.out.println(assignmentname);
-		wait.visibilityOf(AssignmentName(assignmentname));
-		AssignmentName(assignmentname).click();
-		StaticWait(1);
-		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
-		}
-		String Name = testdata.get(verifyName).get("LastName");
-		String verify = testdata.get(verifyName).get("LastName");
-		Actions a=new Actions(driver);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
-		a.moveToElement(verifiesStudent(verify)).build().perform();
-		StaticWait(1);
-		String StudentVerify = verifiesStudent(verify).getText();
-
-		if (Name != null && StudentVerify != null && StudentVerify.contains(Name)) {
-			System.out.println("User Added");
-		} else {
-			System.out.println("User Not Added");
-			System.out.println("Expected Name: " + Name);
-			System.out.println("Fetched Name: " + StudentVerify);
-		}
+	if (Name != null && StudentVerify != null && StudentVerify.contains(Name)) {
+		System.out.println("User Added");
+	} else {
+		System.out.println("User Not Added");
+		System.out.println("Expected Name: " + Name);
+		System.out.println("Fetched Name: " + StudentVerify);
 	}
+}
 }

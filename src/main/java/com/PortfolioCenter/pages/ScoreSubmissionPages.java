@@ -195,6 +195,7 @@ public class ScoreSubmissionPages extends ActionType{
 		try {
 			wait.elementToBeClickable(PerformanceReportelement);
 			j.executeScript("arguments[0].click();", PerformanceReportelement);
+			StaticWait(1);
 			wait.visibilityOf(StandardScore);
 			String Total = StandardScore.getText();
 			if (Total != null && String.valueOf(randomScore).toString().equals(Total)) {
