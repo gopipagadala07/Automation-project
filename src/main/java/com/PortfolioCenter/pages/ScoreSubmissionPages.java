@@ -192,9 +192,9 @@ public class ScoreSubmissionPages extends ActionType{
 	}
 	public void the_user_clicks_on_the_report_card_tab_and_validates_the_score_in_the_report_card(Integer Score) throws InvalidFormatException, IOException {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
-		wait.elementToBeClickable(PerformanceReportelement);
-		j.executeScript("arguments[0].click();", PerformanceReportelement);
 		try {
+			wait.elementToBeClickable(PerformanceReportelement);
+			j.executeScript("arguments[0].click();", PerformanceReportelement);
 			wait.visibilityOf(StandardScore);
 			String Total = StandardScore.getText();
 			if (Total != null && String.valueOf(randomScore).toString().equals(Total)) {

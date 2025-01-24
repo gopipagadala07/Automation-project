@@ -6,4 +6,17 @@
       <class name="PortfolioCenterRunner.MultiScoringPortfolioCourseRuner"/>
     </classes>
   </test> <!-- Default test -->
+  <test parallel="none" name="Default test(failed)">
+    <classes>
+      <class name="PortfolioCenterRunner.MultiScoringPortfolioCourseRuner">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="afterClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- PortfolioCenterRunner.MultiScoringPortfolioCourseRuner -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,0 +1,115 @@
+2025-01-23 17:39:04,262 INFO  [rootLogger] Enviornment is : LMSPROD
+2025-01-23 17:39:04,263 INFO  [rootLogger] Enviornment is : LMSPROD
+2025-01-23 17:39:04,263 INFO  [rootLogger] Enviornment is : LMSPROD
+2025-01-23 17:39:04,277 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:39:04,277 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:39:04,278 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:39:11,211 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:39:11,223 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:39:11,880 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:39:11,888 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:39:11,937 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:39:11,940 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:39:55,907 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:39:59,128 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:40:04,704 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:40:04,705 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:40:35,199 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:40:35,256 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:40:38,976 INFO  [rootLogger] Info: Email Id: automation77775@fpk12.com
+2025-01-23 17:40:41,084 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:40:41,085 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:41:00,412 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:41:00,577 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:41:02,540 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:41:02,541 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:41:05,418 INFO  [rootLogger] Info: Email Id: proctorautomation43188@fpk12.com
+2025-01-23 17:41:11,843 INFO  [rootLogger] Info: Email Id: DistrictUserautomation64853@fpk12.com
+2025-01-23 17:41:34,990 INFO  [rootLogger] Info: Email Id: DistrictUserautomation74252@fpk12.com
+2025-01-23 17:41:39,971 INFO  [rootLogger] Info: Email Id: examtakerautomation16302@fpk12.com
+2025-01-23 17:41:57,015 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:41:58,353 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:42:03,992 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:42:03,993 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:42:14,802 INFO  [rootLogger] Info: Email Id: Teacherautomation38708@fpk12.com
+2025-01-23 17:42:21,116 INFO  [rootLogger] Info: Email Id: Teacherautomation20679@fpk12.com
+2025-01-23 17:42:43,973 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:42:44,004 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:42:48,983 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:42:48,983 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:42:56,262 INFO  [rootLogger] Info: Email Id: Studentautomation85142@fpk12.com
+2025-01-23 17:43:08,570 INFO  [rootLogger] Info: Email Id: Studentautomation29033@fpk12.com
+2025-01-23 17:43:17,408 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:43:19,129 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:43:24,556 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:43:24,559 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:43:33,146 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:43:34,807 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:43:39,563 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:43:39,569 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:43:54,282 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:43:54,304 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:43:59,804 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:43:59,806 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:44:52,062 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:44:53,404 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:44:58,644 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:44:58,657 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:45:00,740 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:45:00,741 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:45:04,025 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:45:04,025 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:45:23,324 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:45:24,698 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:45:32,273 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:45:32,274 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:46:03,801 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:46:05,277 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:46:09,719 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:46:09,720 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:46:17,206 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:46:18,505 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:46:20,220 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:46:21,075 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:46:23,438 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:46:23,438 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:46:27,701 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:46:27,702 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:47:14,230 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:47:15,813 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:47:20,690 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:47:20,690 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:47:38,459 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:47:39,815 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:47:44,659 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:47:44,660 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:48:10,319 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:48:11,809 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:48:16,201 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:48:16,202 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:48:48,251 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:48:49,639 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:48:53,383 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:48:53,383 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:49:08,845 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:49:10,483 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:49:19,383 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:49:19,383 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:50:05,821 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:50:07,553 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:50:07,746 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:50:08,427 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:50:14,862 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:50:14,862 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:50:18,693 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:50:18,694 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:51:13,686 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:51:15,272 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:51:20,822 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:51:22,730 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:51:22,731 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
+2025-01-23 17:52:08,613 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:54:34,333 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-01-23 17:54:35,837 INFO  [rootLogger] Browser value is: CHROME
+2025-01-23 17:54:40,696 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-01-23 17:54:40,696 INFO  [rootLogger] Loading URL ... https://fp.backpack.education/
