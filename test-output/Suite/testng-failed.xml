@@ -13,6 +13,15 @@
           <include name="beforeClass"/>
         </methods>
       </class> <!-- LearningTreeRunner.Student_Activities_SubmissionRunner -->
+      <class name="LearningTreeRunner.Provide_Score_in_LTRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="beforeClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- LearningTreeRunner.Provide_Score_in_LTRunner -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -48,6 +48,10 @@ public class Activities_creation_Stepdefination extends ActionType
 		String CD_Name=testdata.get(row).get("CourseDesignerName");
 		AC.click_on_Community(CD_Name);
 	}
+	@When("User Add Tags and Attachemnt in Virtual Goal")
+	public void user_add_tags_and_attachemnt_in_virtual_goal() throws IOException {
+		AC.adding_Tags_And_Attachement_in_Virtual_Goal();
+	}
 
 	@Then("User Add Child Objective")
 	public void user_add_child_objective() 

@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="LearningTreeRunner.Student_Activities_SubmissionRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Student Activities Submission&quot;, &quot;Verify the Student Activities Submission&quot;)">runScenario("Student Activities Submission", "Verify the Student Activities Submission")</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -127,6 +113,11 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="LearningTreeRunner.Student_Activities_SubmissionRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Student Activities Submission&quot;, &quot;Verify the Student Activities Submission&quot;)">runScenario("Student Activities Submission", "Verify the Student Activities Submission")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="LearningTreeRunner.Provide_Score_in_LTRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Provide the Score for all Activities at Speed Grder and Activities to Garde&quot;, &quot;Verify the Scoring i...)">runScenario("Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring i...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -142,9 +133,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
+          <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">LearningTreeRunner.Student_Activities_SubmissionRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -154,37 +145,12 @@
                   </a> <!-- runScenario("Student Activities Submission", "Verify the Student Activities Submission") -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("Student Activities Submission","Verify the Student Activities Submission")</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-toolbar[@id=&apos;appHeader&apos;]/child::div[@fxlayoutalign=&apos;space-between&apos;]/child::div&quot;}
-  (Session info: chrome=132.0.6834.83)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2a7f2164b24e94362085d3567e1cda8e, findElement {using=xpath, value=//mat-toolbar[@id=&apos;appHeader&apos;]/child::div[@fxlayoutalign=&apos;space-between&apos;]/child::div}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56425}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56425/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2a7f2164b24e94362085d3567e1cda8e
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.LearningTree.pages.Student_Activity_Submit_pages.performActivities(Student_Activity_Submit_pages.java:157)
-	at LearningTreeStepdef.Student_Activity_submission_Stepdef.user_click_on_launch_button_for_the_all_activities(Student_Activity_submission_Stepdef.java:74)
-	at ✽.User Click on Launch button for the All Activities(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Student_Activitys_Submission.feature:12)
-... Removed 3 stack frames
-</div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-passed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -307,24 +273,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'LearningTreeRunner.Activity_CreationRunner')
-data.setCell(0, 3, 528392);
+data.setCell(0, 3, 292467);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
-data.setCell(1, 2, 'LearningTreeRunner.Provide_Score_in_LTRunner')
-data.setCell(1, 3, 135874);
+data.setCell(1, 2, 'LearningTreeRunner.Student_Activities_SubmissionRunner')
+data.setCell(1, 3, 292120);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'runScenario')
-data.setCell(2, 2, 'LearningTreeRunner.Import_Activities_in_LTRunner')
-data.setCell(2, 3, 100260);
+data.setCell(2, 2, 'LearningTreeRunner.Provide_Score_in_LTRunner')
+data.setCell(2, 3, 162479);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'runScenario')
-data.setCell(3, 2, 'LearningTreeRunner.Student_Activities_SubmissionRunner')
-data.setCell(3, 3, 92323);
+data.setCell(3, 2, 'LearningTreeRunner.Import_Activities_in_LTRunner')
+data.setCell(3, 3, 50649);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 minutes</span>
+              <span class="suite-total-time">Total running time: 13 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -352,97 +318,93 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">LearningTreeRunner.Activity_CreationRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@175957f9)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@4d5f1c98)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">1303 ms</span>
+                <span class="method-start">950 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Creating the Activities", "Verify the Activities Creation Functionality")</span>
-                <span class="method-start">1322 ms</span>
+                <span class="method-start">964 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">529752 ms</span>
+                <span class="method-start">293455 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">529756 ms</span>
+                <span class="method-start">293456 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">LearningTreeRunner.Import_Activities_in_LTRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@175957f9)</span>
-                <span class="method-start">532819 ms</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@4d5f1c98)</span>
+                <span class="method-start">295415 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">532905 ms</span>
+                <span class="method-start">295620 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Import of Activities in LT", "Verify the import of Activities in LT")</span>
-                <span class="method-start">532916 ms</span>
+                <span class="method-start">295623 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">633178 ms</span>
+                <span class="method-start">346272 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">633180 ms</span>
+                <span class="method-start">346279 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">LearningTreeRunner.Student_Activities_SubmissionRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@175957f9)</span>
-                <span class="method-start">635163 ms</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@4d5f1c98)</span>
+                <span class="method-start">347578 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">635214 ms</span>
+                <span class="method-start">347722 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">runScenario("Student Activities Submission", "Verify the Student Activities Submission")</span>
-                <span class="method-start">635214 ms</span>
+                <span class="method-start">347722 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">727539 ms</span>
+                <span class="method-start">639860 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">727547 ms</span>
+                <span class="method-start">639868 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">LearningTreeRunner.Provide_Score_in_LTRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@175957f9)</span>
-                <span class="method-start">729494 ms</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@4d5f1c98)</span>
+                <span class="method-start">641509 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">641703 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring i...)</span>
-                <span class="method-start">729522 ms</span>
+                <span class="method-start">641707 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class before">
-                <span class="method-name">beforeClass</span>
-                <span class="method-start">729522 ms</span>
-              </div> <!-- configuration-class before -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">865398 ms</span>
+                <span class="method-start">804190 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">865400 ms</span>
+                <span class="method-start">804193 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

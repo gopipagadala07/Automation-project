@@ -239,6 +239,7 @@ public void Provide_the_Score_in_Activity_Progress_screen(String SLastname)
 			{
 				WebElement ellipse = Need_toProvide_Score_Activities1.get(j-1);					
 				wait.elementToBeClickable(ellipse);
+				js.executeScript("arguments[0].scrollIntoView(true);", ellipse);
 				js.executeScript("arguments[0].click();", ellipse);
 				break;
 			} 
@@ -282,17 +283,17 @@ public void Provide_the_Score_for_Assignment_and_Discussion()
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	Provide_Score.sendKeys("70");
 	js.executeScript("arguments[0].click();", Save_Score);
-	//		int attempts = 0;
-	//		while (attempts < 3) {
-	//			try {
-	//				Award_Badge.click();
-	//				break;
-	//			} catch (StaleElementReferenceException e) {
-	//				attempts++;
-	//				StaticWait(1);	       
-	//			}
-	//		}
-	//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//small[text()=' Credit Awarded']")));
+			int attempts = 0;
+			while (attempts < 3) {
+				try {
+					Award_Badge.click();
+					break;
+				} catch (StaleElementReferenceException e) {
+					attempts++;
+					StaticWait(1);	       
+				}
+			}
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//small[text()=' Credit Awarded']")));
 	StaticWait(1);
 	WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='keyboard_arrow_left']/ancestor::button/following-sibling::button[2]")));
 	js.executeScript("arguments[0].click();", e);

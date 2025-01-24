@@ -1,5 +1,7 @@
 package com.LearningTree.pages;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.HashSet;
 import java.util.List;
@@ -9,11 +11,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -85,8 +89,13 @@ public class Activities_Creation_in_CDPage extends ActionType
 	@FindBy(how = How.XPATH,using = "//h3[text()='Learning']/parent::div/parent::div/descendant::label/child::span/child::span/child::span[1]")private WebElement Publish_Toggle;
 	@FindBy(how = How.XPATH,using = "//input[@type='search']")private WebElement search;
 	@FindBy(how = How.XPATH,using = "//div[text()=' 0 of 0 ']")private WebElement Pagination;
+	//Adding Tags in Virtual Goal
+	@FindBy(how = How.XPATH,using = "//div[@class='leaning__course__tree_item']/child::div/following-sibling::div/child::div/button[@mattooltip='More Actions']")private WebElement Virtual_goal_ellipse;
+	@FindBy(how = How.XPATH,using = "//mat-icon[text()='edit']")private WebElement Edit_button;
+	@FindBy(how = How.XPATH,using = "//div[normalize-space(text())='ATTACHMENTS']")private WebElement ATTACHMENTS_Tab;
+	@FindBy(how = How.XPATH,using = "//mat-icon[text()='close']")private WebElement Close_button;
 
-
+	
 
 	public Activities_Creation_in_CDPage(WebDriver driver)
 	{
@@ -171,6 +180,28 @@ public class Activities_Creation_in_CDPage extends ActionType
 				StaticWait(1);	       
 			}
 		}
+	}
+	public void adding_Tags_And_Attachement_in_Virtual_Goal() throws IOException
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		StaticWait(1);	
+		wait.elementToBeClickable(Virtual_goal_ellipse);
+		js.executeScript("arguments[0].click();", Virtual_goal_ellipse);
+		wait.elementToBeClickable(Edit_button);
+		int attempts = 0;
+		while (attempts < 5) {
+			try {
+				js.executeScript("arguments[0].click();", Edit_button);	
+				break;
+			} catch (StaleElementReferenceException e) {
+				attempts++;
+				StaticWait(1);	       
+			}
+		}
+			
+		select_Tags();
+		attachment();
+		cp.Save();
 	}
 	public void ChildObjectivesCreation() {
 
@@ -398,6 +429,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 	public void select_Tags()
 	{
 		Actions Ac=new Actions(driver);
+		wait.elementToBeClickable(Tags_Tab);
 		Ac.moveToElement(Tags_Tab).click().build().perform();
 		Standards_Lookups.click();
 		StaticWait(1);
@@ -419,7 +451,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 				clickedIndices.add(randomIndex); 
 			}
 		} 
-		else if(elements.size() >= 2)
+		else if(elements.size() >= 1)
 		{
 			Random random = new Random();
 			int numberOfElementsToClick = random.nextInt(3) + 2; 
@@ -441,6 +473,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 		}
 
 	}
+	
 	public void Badges()
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -472,5 +505,26 @@ public class Activities_Creation_in_CDPage extends ActionType
 	public WebElement TestAddbtn(String TestnameAdd) {
 		String xpath = "//span[text()='"+TestnameAdd+"']/parent::div/parent::div/preceding-sibling::div/child::div[2]/child::div[1]/child::button";
 		return driver.findElement(By.xpath(xpath));
+	}
+	public void attachment() throws IOException
+	{
+		ATTACHMENTS_Tab.click();
+		int retries = 10;
+		while (retries > 0)
+		{
+			 try {
+
+				 WebElement fileInputRootFolder = driver.findElement(By.xpath("(//mat-icon[@mattooltip='Upload File']/preceding-sibling::input)[1]"));
+		          fileInputRootFolder.sendKeys(new File("src/test/resources/ExcelFiles/LearningTree.xlsx").getCanonicalPath());		         
+		     break;
+			 }
+		   
+		  catch (StaleElementReferenceException e)
+		  {
+		          System.out.println("Caught StaleElementReferenceException. Retrying...");
+		          StaticWait(1);
+		          retries--;
+		   }  
+		}
 	}
 }
