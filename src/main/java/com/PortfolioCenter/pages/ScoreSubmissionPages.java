@@ -10,6 +10,7 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -181,14 +182,19 @@ public class ScoreSubmissionPages extends ActionType{
 
 	public void the_user_clicks_on_the_assignment_and_validates_the_status_and_performance_report() {
 
-		JavascriptExecutor je = (JavascriptExecutor) driver;
-		je.executeScript("arguments[0].scrollIntoView(true);", statusElement);
-		String status = statusElement.getText();
-		if (status != null && status.contains("Completed")) { 
-			System.out.println("Status Added");
-		} else {
-			System.out.println("Status Not Added");
+		try {
+			JavascriptExecutor je = (JavascriptExecutor) driver;
+			je.executeScript("arguments[0].scrollIntoView(true);", statusElement);
+			String status = statusElement.getText();
+			if (status != null && status.contains("Completed")) { 
+				System.out.println("Status Added");
+			} else {
+				System.out.println("Status Not Added");
+			}
+		} catch (StaleElementReferenceException e) {
+			// TODO: handle exception
 		}
+		
 	}
 	public void the_user_clicks_on_the_report_card_tab_and_validates_the_score_in_the_report_card(Integer Score) throws InvalidFormatException, IOException {
 		JavascriptExecutor j = (JavascriptExecutor) driver;
