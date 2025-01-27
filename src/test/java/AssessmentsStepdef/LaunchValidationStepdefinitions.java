@@ -33,7 +33,7 @@ public class LaunchValidationStepdefinitions extends ActionType{
 	CommonPages cp=new CommonPages(Base.getDriver());
 	static List<Map<String, String>> testdata=null;
 
-	@Then("user clicks on Launch icon and validates")
+	@Then("user clicks on Activity details icon and validates")
 	public void user_clicks_on_launch_icon_and_validates() {
 		Launch.clickEachQuizAndClose();
 		Launch.clickEachExamAndClose();

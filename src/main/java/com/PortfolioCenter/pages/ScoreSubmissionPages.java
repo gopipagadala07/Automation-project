@@ -192,7 +192,7 @@ public class ScoreSubmissionPages extends ActionType{
 				System.out.println("Status Not Added");
 			}
 		} catch (StaleElementReferenceException e) {
-			// TODO: handle exception
+			
 		}
 		
 	}
