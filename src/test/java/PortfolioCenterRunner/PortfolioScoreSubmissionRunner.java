@@ -12,7 +12,7 @@ glue = {"PortfolioCenterStepdef","Hooks"},
 plugin= {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 monochrome = true,
 dryRun = false)
-public class ScoreSubmissionRunner extends AbstractTestNGCucumberTests
+public class PortfolioScoreSubmissionRunner extends AbstractTestNGCucumberTests
 {
 	String TestcaseName;
 	@Parameters("browser")

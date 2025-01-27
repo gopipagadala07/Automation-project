@@ -48,9 +48,9 @@ public class ScoreSubmissionStepdef extends ActionType{
 		score.the_user_clicks_on_the_assignment_and_validates_the_status_and_performance_report();
 	}
 
-	@Then("the user clicks on the Report Card tab and validates the Score in the Report Card {int}")
-	public void the_user_clicks_on_the_report_card_tab_and_validates_the_score_in_the_report_card(Integer Score) throws InvalidFormatException, IOException {
-		score.the_user_clicks_on_the_report_card_tab_and_validates_the_score_in_the_report_card(Score);
+	@Then("the user clicks on the Report Card tab and validates the Score in the Report Card")
+	public void the_user_clicks_on_the_report_card_tab_and_validates_the_score_in_the_report_card(){
+		score.the_user_clicks_on_the_report_card_tab_and_validates_the_score_in_the_report_card();
 	}
 	
 	

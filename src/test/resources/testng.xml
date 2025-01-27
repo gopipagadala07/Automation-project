@@ -37,7 +37,7 @@
 		    <class name="PortfolioCenterRunner.SISprovisioningPortfolioRunner"></class>
  		    <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner"></class>
 			<class name="PortfolioCenterRunner.AssignmentsSubmissionRunner"></class>
-			<class name="PortfolioCenterRunner.ScoreSubmissionRunner"></class>
+			<class name="PortfolioCenterRunner.PortfolioScoreSubmissionRunner"></class>
 			<class name="PortfolioCenterRunner.MultiScoringPortfolioCourseRuner"></class>
 			<class name="PortfolioCenterRunner.MultiScoringAssignmentSubmissionRunner"></class>
 			<class name="PortfolioCenterRunner.MultiScoringSubmissionRuner"></class>

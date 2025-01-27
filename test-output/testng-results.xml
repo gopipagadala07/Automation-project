@@ -2,54 +2,54 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-27T10:27:15Z" name="Default suite" finished-at="2025-01-27T10:28:10Z" duration-ms="54438">
+  <suite started-at="2025-01-27T13:35:21Z" name="Default suite" finished-at="2025-01-27T13:36:06Z" duration-ms="45542">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.ScoreSubmissionRunner@7d1cfb8b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-01-27T10:27:15Z" name="Default test" finished-at="2025-01-27T10:28:10Z" duration-ms="54438">
-      <class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-27T15:57:15Z" name="setUpClass" finished-at="2025-01-27T15:57:16Z" duration-ms="855" status="PASS">
+    <test started-at="2025-01-27T13:35:21Z" name="Default test" finished-at="2025-01-27T13:36:06Z" duration-ms="45542">
+      <class name="PortfolioCenterRunner.ScoreSubmissionRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:PortfolioCenterRunner.ScoreSubmissionRunner@7d1cfb8b]" started-at="2025-01-27T19:05:21Z" name="setUpClass" finished-at="2025-01-27T19:05:22Z" duration-ms="733" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@2b974137]]>
+                <![CDATA[org.testng.TestRunner@7323dce7]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-27T15:57:16Z" name="beforeclass" finished-at="2025-01-27T15:57:16Z" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:PortfolioCenterRunner.ScoreSubmissionRunner@7d1cfb8b]" started-at="2025-01-27T19:05:22Z" name="beforeClass" finished-at="2025-01-27T19:05:22Z" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-27T15:57:16Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-27T15:58:08Z" duration-ms="51565" status="PASS">
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.ScoreSubmissionRunner@7d1cfb8b]" started-at="2025-01-27T19:05:22Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-27T19:06:04Z" duration-ms="42730" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Provide the Procter Comment to a ExamTaker"]]>
+                <![CDATA["Verify the Score Submission Functionality at Admin side"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["FocalPointk12 Exam_Center Procter Comment, Reset the Examination"]]>
+                <![CDATA["Verify the Score Submission Functionality at Admin side"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="testDownClass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-27T15:58:08Z" name="testDownClass" finished-at="2025-01-27T15:58:08Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:PortfolioCenterRunner.ScoreSubmissionRunner@7d1cfb8b]" started-at="2025-01-27T19:06:04Z" name="afterClass" finished-at="2025-01-27T19:06:04Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDownClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-27T15:58:08Z" name="tearDownClass" finished-at="2025-01-27T15:58:10Z" duration-ms="1998" status="PASS">
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:PortfolioCenterRunner.ScoreSubmissionRunner@7d1cfb8b]" started-at="2025-01-27T19:06:04Z" name="tearDownClass" finished-at="2025-01-27T19:06:06Z" duration-ms="2065" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner -->
+      </class> <!-- PortfolioCenterRunner.ScoreSubmissionRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -12,7 +12,7 @@ Feature: Verify the Score Submission Functionality at Admin side
     Then Enter the Score and Comments and submit the Score
     Then the user is awarded the Badge
     And the user clicks on the Assignment and validates the Status and Performance Report.
-    Then the user clicks on the Report Card tab and validates the Score in the Report Card <rownumber1>
+    Then the user clicks on the Report Card tab and validates the Score in the Report Card
 
     Examples: 
       | rownumber | rownumber1 |

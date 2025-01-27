@@ -192,39 +192,24 @@ public class ScoreSubmissionPages extends ActionType{
 				System.out.println("Status Not Added");
 			}
 		} catch (StaleElementReferenceException e) {
-			
+
 		}
-		
+
 	}
-	public void the_user_clicks_on_the_report_card_tab_and_validates_the_score_in_the_report_card(Integer Score) throws InvalidFormatException, IOException {
+	public void the_user_clicks_on_the_report_card_tab_and_validates_the_score_in_the_report_card(){
 		JavascriptExecutor j = (JavascriptExecutor) driver;
-		try {
-			wait.elementToBeClickable(PerformanceReportelement);
-			j.executeScript("arguments[0].click();", PerformanceReportelement);
-			StaticWait(1);
-			wait.visibilityOf(StandardScore);
-			String Total = StandardScore.getText();
-			if (Total != null && String.valueOf(randomScore).toString().equals(Total)) {
-				System.out.println("Score Added: " + Total);
-			} else {
-				System.out.println("Score Not Added: " + Total);
-			}
-		} catch (Exception e) {
-			try {
-				WebElement alternateElement = driver.findElement(By.xpath("//table/tbody/tr/td[2]/descendant::div[3]"));
-				wait.visibilityOf(alternateElement);
-				String Total = alternateElement.getText();
-				if (String.valueOf(randomScore) != null && String.valueOf(randomScore).toString().equals(Total)) {
-					System.out.println("Score Added using alternate element: " + Total);
-				} else {
-					System.out.println("Score Not Added using alternate element: " + Total);
-				}
-			} catch (Exception innerException) {
-				System.out.println("Failed to retrieve and validate the score: " + innerException.getMessage());
-				innerException.printStackTrace();
-			}
+		wait.elementToBeClickable(PerformanceReportelement);
+		Actions a=new Actions(driver);
+		a.moveToElement(PerformanceReportelement).build().perform();
+		StaticWait(1);
+		a.doubleClick().build().perform();
+		StaticWait(1);
+		String Total = StandardScore.getText();
+		if (Total != null && String.valueOf(randomScore).toString().equals(Total)) {
+			System.out.println("Score Added: " + Total);
+		} else {
+			System.out.println("Score Not Added: " + Total);
 		}
-		wait.elementToBeClickable(ReportCardTab);
 		j.executeScript("arguments[0].click();", ReportCardTab);
 		StaticWait(1);
 		String TotalScore = StandardScoreElement.getText();
