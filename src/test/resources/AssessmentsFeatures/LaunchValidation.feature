@@ -8,7 +8,7 @@ Feature: Validating the Quiz/Exams at student side
     And User is on homepage
     Then user clicks on Learning and assessment center
     Then user clicks on the classroom name <rownumber1> <rownumber2>
-    Then user clicks on Launch icon and validates
+    Then user clicks on Activity details icon and validates
 
     Examples: 
       | rownumber | rownumber1 | rownumber2 |

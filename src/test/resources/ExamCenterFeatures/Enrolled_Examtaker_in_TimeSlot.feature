@@ -11,7 +11,7 @@ Feature: FocalPointk12 Exam_Center Procter Comment, Reset the Examination
     Then User Select the Examination <rownumber1>
     Then User Select the Location <rownumber1>
     #Then User click Timeslot lookup and select particular Timeslot
-    #Then User search the added ExamTaker in the TimeSlot <rownumber2>
+    Then User search the added ExamTaker in the TimeSlot <rownumber2>
     Then User provide the comment to the Examtaker
     #When User reset the Examinataion for the ExamTaker
     Then User click on ExamTaker Entry Details

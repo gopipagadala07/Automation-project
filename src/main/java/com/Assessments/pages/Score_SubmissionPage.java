@@ -112,28 +112,30 @@ public class Score_SubmissionPage extends ActionType
 	    int retry = 0;
 	    int maxretry = 5;
 	    int count = Score.size();
-	    
+
 	    System.out.println("Total Quizzes for Scoring: " + count);
 	    ExtentCucumberAdapter.addTestStepLog("Total Quizzes for Scoring: " + count);
+
 	    if (count == 0) {
 	        System.out.println("No quizzes available for scoring.");
 	        ExtentCucumberAdapter.addTestStepLog("No quizzes available for scoring.");
 	        return;
 	    }
-	    
+
 	    while (retry < maxretry) {
 	        try {
-	            for (int i = 0; i < count; i++) {
+	            for (int i = 0; i <= count; i++) {
 	                StaticWait(1);
 	                Score.get(i).click();
 	                StaticWait(1);
 	                driver.switchTo().frame(0);
-	                Random r=new Random();
-	                int randomscore=r.nextInt(5);
-	                if(Provide_Score!=null)
-	        		{
-	                	Provide_Score.clear();
-	        		}
+	                Random r = new Random();
+	                int randomscore = r.nextInt(5);
+
+	                if (Provide_Score != null) {
+	                    Provide_Score.clear();
+	                }
+
 	                Provide_Score.sendKeys(String.valueOf(randomscore));
 	                String randomString = generateRandomString();
 	                Provide_Feedback.sendKeys(randomString);
@@ -141,60 +143,65 @@ public class Score_SubmissionPage extends ActionType
 	                Submit_score.click();
 	                driver.switchTo().defaultContent();
 	                StaticWait(1);
-	                JavascriptExecutor js=(JavascriptExecutor) driver;
+
+	                JavascriptExecutor js = (JavascriptExecutor) driver;
 	                js.executeScript("arguments[0].click();", Feedbacktab);
 	                Feedabackpost.sendKeys(generateRandomString());
 	                postbtn.click();
 	                StaticWait(1);
 	                Assessmenttab.click();
 	                wait.elementToBeClickable(AwardBadge);
-                    int retryCount = 0;
-                    boolean isClicked = false;
 
-                    while (retryCount < 5 && !isClicked) {
-                        try {
-                            if (AwardBadge.isDisplayed()) {
-                                Actions a=new Actions(driver);
-                                a.moveToElement(AwardBadge).build().perform();
-                                js.executeScript("arguments[0].click();", AwardBadge);
-                                StaticWait(2);
-                                isClicked = true;
-                            } else {
-                                System.out.println("Badge Button was not Found");
-                            }
-                        } catch (Exception e) {
-                            System.out.println("Attempt " + (retryCount + 1) + " failed: " + e.getMessage());
-                        }
-                        retryCount++;
-                        StaticWait(1); 
-                        if (!isClicked) {
-                            System.out.println("Failed to click Badge Button after 5 attempts.");
-                        }
-                    }
+	                int retryCount = 0;
+	                boolean isClicked = false;
+
+	                while (retryCount < 5 && !isClicked) {
+	                    try {
+	                        if (AwardBadge.isDisplayed()) {
+	                            Actions a = new Actions(driver);
+	                            a.moveToElement(AwardBadge).build().perform();
+	                            js.executeScript("arguments[0].click();", AwardBadge);
+	                            StaticWait(2);
+	                            isClicked = true;
+	                        } else {
+	                            System.out.println("Badge Button was not Found");
+	                        }
+	                    } catch (Exception e) {
+	                        System.out.println("Attempt " + (retryCount + 1) + " failed: " + e.getMessage());
+	                    }
+	                    retryCount++;
+	                    StaticWait(1);
+	                }
+
+	                if (!isClicked) {
+	                    System.out.println("Failed to click Badge Button after 5 attempts.");
+	                }
+
 	                wait.elementToBeClickable(Closeicon);
-	        		for (retry = 0; retry < 3; retry++) {
-	        			try {
-	        				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-	        				WebElement cls = driver.findElement(By.xpath("(//mat-icon[text()='close'])[2]"));
-	        		        wait.until(ExpectedConditions.elementToBeClickable(cls));
-	        		        js.executeScript("arguments[0].click();", cls);
-	        				StaticWait(1);
-	        				break;
-	        			} catch (StaleElementReferenceException e) {
-	        				retry++;
-	        				if (retry == 3) {
-	        					System.err.println("Element became stale after multiple attempts: " + e.getMessage());
-	        				}
-	        			} catch (TimeoutException e) {
-	        				System.err.println("Element not clickable within the wait time: " + e.getMessage());
-	        				break;
-	        			} catch (Exception e) {
-	        				System.err.println("An error occurred: " + e.getMessage());
-	        				break;
-	        			}
-	        		}
-	                if (i == count - 1) {
-	                    break;
+	                for (int closeRetry = 0; closeRetry < 3; closeRetry++) {
+	                    try {
+	                        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	                        WebElement cls = driver.findElement(By.xpath("(//mat-icon[text()='close'])[2]"));
+	                        wait.until(ExpectedConditions.elementToBeClickable(cls));
+	                        js.executeScript("arguments[0].click();", cls);
+	                        StaticWait(1);
+	                        break;
+	                    } catch (StaleElementReferenceException e) {
+	                        if (closeRetry == 2) {
+	                            System.err.println("Element became stale after multiple attempts: " + e.getMessage());
+	                        }
+	                    } catch (TimeoutException e) {
+	                        System.err.println("Element not clickable within the wait time: " + e.getMessage());
+	                        break;
+	                    } catch (Exception e) {
+	                        System.err.println("An error occurred: " + e.getMessage());
+	                        break;
+	                    }
+	                }
+
+	                if (i == count) {
+	                    System.out.println("All quizzes scored. Exiting loop immediately.");
+	                    return;
 	                }
 	            }
 	        } catch (Exception e) {
@@ -202,6 +209,7 @@ public class Score_SubmissionPage extends ActionType
 	        }
 	    }
 	}
+
 
 
 	public void click_On_Quiz_Tab_and_All()

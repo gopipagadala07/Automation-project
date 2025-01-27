@@ -66,7 +66,7 @@ public class ScoreSubmissionStepdefination extends ActionType
 	@And("Click on Quiz Tab and click on All")
 	public void click_on_quiz_tab_and_click_on_all() 
 	{
-		S_Submission.click_On_Quiz_Tab_and_All();
+		//S_Submission.click_On_Quiz_Tab_and_All();
 	}
 
 	@Then("Provide the Score at Activity Progress screen")

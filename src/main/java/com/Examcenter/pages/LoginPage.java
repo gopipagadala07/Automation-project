@@ -1,6 +1,7 @@
 package com.Examcenter.pages;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -52,21 +53,22 @@ public class LoginPage extends ActionType{
 	}
 
 	public void header() {
-		try {
-            WebElement idServerAllow = driver.findElement(By.xpath("//button[@value='yes']"));
-            if (idServerAllow.isDisplayed()) {
-            	JavascriptExecutor js = (JavascriptExecutor) driver;
-            	js.executeScript("arguments[0].scrollIntoView(true);", idServerAllow);  
-            	js.executeScript("arguments[0].click();", idServerAllow);
-                //idServerAllow.click();
-            }
-        } catch (NoSuchElementException e) {
-          
-        }
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement cls = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='button']")));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-    	js.executeScript("arguments[0].click();", cls);
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+	    
+	    try {
+	        List<WebElement> idServerAllowElements = driver.findElements(By.xpath("//button[@value='yes']"));
+	        if (!idServerAllowElements.isEmpty() && idServerAllowElements.get(0).isDisplayed()) {
+	            WebElement idServerAllow = idServerAllowElements.get(0);
+	            js.executeScript("arguments[0].scrollIntoView(true);", idServerAllow);
+	            js.executeScript("arguments[0].click();", idServerAllow);
+	        }
+	    } finally {
+	        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	    }
+	    WebElement cls = driver.findElement(By.xpath("//button[@type='button']"));
+	    js.executeScript("arguments[0].click();", cls);
+	    StaticWait(1);
 	}
 
 	public void loginbtn()
