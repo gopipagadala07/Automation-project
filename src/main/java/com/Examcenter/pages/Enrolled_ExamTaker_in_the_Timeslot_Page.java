@@ -73,21 +73,15 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	    for (int attempt = 0; attempt < retries; attempt++) {
 	        try {
 	            Actions act = new Actions(Base.getDriver());
-	            File screenshotsFolder = new File("screenshots");
-	            clearOrCreateFolder(screenshotsFolder);
 	            act.moveToElement(Commenticon).build().perform();
 	            StaticWait(1);
-	            takeScreenshot(driver, "Before_Click", screenshotsFolder);
 	            JavascriptExecutor js=(JavascriptExecutor) driver;
 	            js.executeScript("arguments[0].click();", Commenticon);
-	            System.out.println("Comment box clicked");
 	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//textarea[@id='descriptionField']/parent::div/child::div/child::div[2]/child::div[2]")));
 	            if (e.isDisplayed() && e.isEnabled()) {
 	                act.moveToElement(e).click().build().perform();
 	                e.sendKeys(generateRandomString());
-	                takeScreenshot(driver, "After_Click", screenshotsFolder);
-	                System.out.println("Value sent to the comment box");
 	                success = true;
 	                break;
 	            } else {
