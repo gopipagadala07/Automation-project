@@ -22,6 +22,24 @@
           <include name="afterClass"/>
         </methods>
       </class> <!-- LearningTreeRunner.Provide_Score_in_LTRunner -->
+      <class name="LearningTreeRunner.Import_Activities_in_LTRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="afterClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- LearningTreeRunner.Import_Activities_in_LTRunner -->
+      <class name="LearningTreeRunner.Activity_CreationRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="beforeClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- LearningTreeRunner.Activity_CreationRunner -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

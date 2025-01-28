@@ -2,6 +2,7 @@ package com.LearningTree.pages;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -41,14 +42,26 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 	@FindBy(how = How.XPATH,using = "//h3[text()='Activities To Grade ']/following-sibling::button")private  WebElement Activities_To_Grade_Close_btn;
 	@FindBy(how = How.XPATH,using = "//span[text()='Progress']")private WebElement Progress;
 	@FindBy(how = How.XPATH,using = "//span[text()='Details']")private WebElement Details;
-	@FindBy(how = How.XPATH,using = "//div[@role='textbox']")private WebElement Provide_Feedback;
 	@FindBy(how = How.XPATH,using = "//span[text()='Submit Scoring']")private WebElement Submit_score;
 	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Sub-Topic')]/parent::span/parent::div/parent::div/parent::div/following::div/descendant::span[@class='assessment_icon_wrapper']/parent::div/parent::div/following-sibling::div/descendant::mat-icon[text()='more_vert']")
 	private WebElement SubTopic_Activities_ellipses;
 	@FindBy(how = How.XPATH,using = "(//mat-toolbar[@id='appHeader']/child::div[@fxlayoutalign='space-between']/child::div)[1]")private WebElement Activity_Title_Name;
 	@FindBy(how=How.XPATH,using="//div[text()=' All ']/parent::div")private WebElement All;
+	@FindBy(how = How.XPATH,using = "//div[@role='textbox']")private WebElement Provide_Feedback;
 	@FindBy(how=How.XPATH,using="(//mat-icon[text()=' chevron_right '])[1]")private WebElement Topic;
 	@FindBy(how=How.XPATH,using="//mat-icon[text()=' chevron_right ']")private WebElement SubTopic;
+	@FindBy(how=How.XPATH,using="//div[text()='Assessment']")private WebElement Assessment_Tab;
+
+	//FeedBack
+	@FindBy(how=How.XPATH,using="//div[translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')='feedback']")private WebElement Feedback_Tab;
+	@FindBy(how=How.XPATH,using="//span[text()=' New Post ']")private WebElement NewPost;
+	@FindBy(how=How.XPATH,using="//div[@role='textbox']")private WebElement TypehereText;
+	@FindBy(how=How.XPATH,using="(//div[@role='textbox'])[2]")private WebElement TypehereText1;
+	@FindBy(how=How.XPATH,using="//span[text()=' Post ']")private WebElement Postbutton;
+	@FindBy(how=How.XPATH,using="(//span[text()=' Post '])[2]")private WebElement Postbutton1;
+	@FindBy(how=How.XPATH,using="//span[text()=' Reply ']")private WebElement Replybutton;
+
+
 
 	public Provide_Score_For_LT_ActivitiesPage(WebDriver driver)
 	{
@@ -159,162 +172,195 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			}
 			wait.until(ExpectedConditions.elementToBeClickable(Score));
 			js.executeScript("arguments[0].click();", Score);
-//			String Activity_Title = Activity_Title_Name.getText();
+			//			String Activity_Title = Activity_Title_Name.getText();
 
 			if (Activity_Name.toLowerCase().contains("Assessment".toLowerCase())) {
 				System.out.println("Providing Score for Assessment Activity");
 				Provide_the_Score_for_Assessment();
 				System.out.println("Provide Score for Assessment Activity");
 			}
-			
+
 			else if (Activity_Name.toLowerCase().contains("Assignment".toLowerCase())) {
 				Provide_the_Score_for_Assignment_and_Discussion();
 				System.out.println("Provide Score for Assignment Activity");
 			}
 			else if (Activity_Name.toLowerCase().contains("Discussion".toLowerCase())) {
-//				System.out.println("Providing Score for Discussion Activity");
+				//				System.out.println("Providing Score for Discussion Activity");
 				Provide_the_Score_for_Assignment_and_Discussion();
 				System.out.println("Provide Score for Discussion Activity");
 			}
-			
-		 
-	}
-}
-public void close_the_Overal_Speed_Grader_Screen()
-{
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	js.executeScript("arguments[0].click();", Activities_To_Grade_Close_btn);
-}
-public void activities_to_Garde()
-{
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	int count = A_Score.size(); 
-	System.out.println("count: "+count);
-	System.out.println("Total Activities for Scoring: " + count);
-	for (int i = 0; i <= 4; i++) {
-		StaticWait(1);
-		js.executeScript("arguments[0].click();", A_Score.get(i));
-		StaticWait(1);
-		String Activity_Title = Activity_Title_Name.getText();
-		if (Activity_Title.toLowerCase().matches(".*\\bassessment\\b.*")) {
-			Provide_the_Score_for_Assessment();
-			System.out.println("Provide Score for Assessment Activity");
-		} else if (Activity_Title.toLowerCase().matches(".*\\b(assignment|discussion)\\b.*")) {
-			Provide_the_Score_for_Assignment_and_Discussion();
-			System.out.println("Provide Score for " + (Activity_Title.toLowerCase().contains("assignment") ? "Assignment" : "Discussion") + " Activity");
-		}
 
-		if(i==4)
-		{
-			break;
+
 		}
 	}
-	driver.navigate().refresh();
-}
+	public void close_the_Overal_Speed_Grader_Screen()
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", Activities_To_Grade_Close_btn);
+	}
+	public void activities_to_Garde()
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		int count = A_Score.size(); 
+		System.out.println("count: "+count);
+		System.out.println("Total Activities for Scoring: " + count);
+		for (int i = 0; i <= 4; i++) {
+			StaticWait(1);
+			js.executeScript("arguments[0].click();", A_Score.get(i));
+			StaticWait(1);
+			String Activity_Title = Activity_Title_Name.getText();
+			if (Activity_Title.toLowerCase().matches(".*\\bassessment\\b.*")) {
+				Provide_the_Score_for_Assessment();
+				System.out.println("Provide Score for Assessment Activity");
+			} else if (Activity_Title.toLowerCase().matches(".*\\b(assignment|discussion)\\b.*")) {
+				Provide_the_Score_for_Assignment_and_Discussion();
+				System.out.println("Provide Score for " + (Activity_Title.toLowerCase().contains("assignment") ? "Assignment" : "Discussion") + " Activity");
+			}
 
-public void Provide_the_Score_in_Activity_Progress_screen(String SLastname)
-{
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	All.click();
-	StaticWait(1);
-	js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
-	js.executeScript("arguments[0].scrollIntoView(true);", Topic);
-	js.executeScript("arguments[0].click();", Topic);
-	StaticWait(1);
-	js.executeScript("arguments[0].scrollIntoView(true);", SubTopic);
-	js.executeScript("arguments[0].click();", SubTopic);
-	StaticWait(1);
-	List<WebElement> Need_toProvide_Score_Activities = driver.findElements(By.xpath("//div[@class='learning__details__nested-tree-node']/descendant::span[text()='1']/ancestor::div[@class='learning__details__nested-tree-node']/following-sibling::div/descendant::mat-icon[text()='more_vert']"));
-	int count1 = Need_toProvide_Score_Activities.size();    
-	System.out.println("Total Activities for Scoring in Activity Progress screen: " + count1);
-	for (int i = 0; i < count1; i++) 
-	{	
-		StaticWait(1);	
-		List<WebElement> Need_toProvide_Score_Activities1 = driver.findElements(By.xpath("//div[@class='learning__details__nested-tree-node']/descendant::span[text()='1']/ancestor::div[@class='learning__details__nested-tree-node']/following-sibling::div/descendant::mat-icon[text()='more_vert']"));
-		int j = Need_toProvide_Score_Activities1.size();
-		int attempts = 10;
-		while (attempts > 0) 
-		{
-			try
+			if(i==4)
 			{
-				WebElement ellipse = Need_toProvide_Score_Activities1.get(j-1);					
-				wait.elementToBeClickable(ellipse);
-				js.executeScript("arguments[0].scrollIntoView(true);", ellipse);
-				js.executeScript("arguments[0].click();", ellipse);
 				break;
-			} 
-			catch (StaleElementReferenceException e) 
-			{
-				System.out.println("------StaleElementReferenceException, retrying...");
-				StaticWait(1);
-				attempts--;		
 			}
 		}
-		wait.elementToBeClickable(Progress);
-		wait.visibilityOf(Progress);
-		Progress.click();
+		driver.navigate().refresh();
+	}
 
-		WebElement Student_ellipse = driver.findElement(By.xpath("//h5[contains(normalize-space(text()), '"+SLastname+"')]/parent::div/parent::div/parent::div/descendant::mat-icon")); 
-		Student_ellipse.click();
-		Details.click();
+	public void Provide_the_Score_in_Activity_Progress_screen(String SLastname)
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		All.click();
 		StaticWait(1);
-		String Activity_Title = Activity_Title_Name.getText();
-		if (Activity_Title.toLowerCase().matches(".*\\bassessment\\b.*")) {
-			Provide_the_Score_for_Assessment();
-			System.out.println("Provide Score for Assessment Activity");
-		} else if (Activity_Title.toLowerCase().matches(".*\\b(assignment|discussion)\\b.*")) {
-			Provide_the_Score_for_Assignment_and_Discussion();
-			System.out.println("Provide Score for " + (Activity_Title.toLowerCase().contains("assignment") ? "Assignment" : "Discussion") + " Activity");
-		}
-
-		WebElement e= driver.findElement(By.xpath("//h3[text()='Activity Progress']/parent::div/child::button"));
-		js.executeScript("arguments[0].click();", e);
+		js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
+		js.executeScript("arguments[0].scrollIntoView(true);", Topic);
+		js.executeScript("arguments[0].click();", Topic);
 		StaticWait(1);
-		if(j==1)
-		{
-			break;
-		}
-	}    
-
-}
-public void Provide_the_Score_for_Assignment_and_Discussion()
-{
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	Provide_Score.sendKeys("70");
-	js.executeScript("arguments[0].click();", Save_Score);
-			int attempts = 0;
-			while (attempts < 3) {
-				try {
-					Award_Badge.click();
+		js.executeScript("arguments[0].scrollIntoView(true);", SubTopic);
+		js.executeScript("arguments[0].click();", SubTopic);
+		StaticWait(1);
+		List<WebElement> Need_toProvide_Score_Activities = driver.findElements(By.xpath("//div[@class='learning__details__nested-tree-node']/descendant::span[text()='1']/ancestor::div[@class='learning__details__nested-tree-node']/following-sibling::div/descendant::mat-icon[text()='more_vert']"));
+		int count1 = Need_toProvide_Score_Activities.size();    
+		System.out.println("Total Activities for Scoring in Activity Progress screen: " + count1);
+		for (int i = 0; i < count1; i++) 
+		{	
+			StaticWait(1);	
+			List<WebElement> Need_toProvide_Score_Activities1 = driver.findElements(By.xpath("//div[@class='learning__details__nested-tree-node']/descendant::span[text()='1']/ancestor::div[@class='learning__details__nested-tree-node']/following-sibling::div/descendant::mat-icon[text()='more_vert']"));
+			int j = Need_toProvide_Score_Activities1.size();
+			int attempts = 10;
+			while (attempts > 0) 
+			{
+				try
+				{
+					WebElement ellipse = Need_toProvide_Score_Activities1.get(j-1);					
+					wait.elementToBeClickable(ellipse);
+					js.executeScript("arguments[0].scrollIntoView(true);", ellipse);
+					js.executeScript("arguments[0].click();", ellipse);
 					break;
-				} catch (StaleElementReferenceException e) {
-					attempts++;
-					StaticWait(1);	       
+				} 
+				catch (StaleElementReferenceException e) 
+				{
+					System.out.println("------StaleElementReferenceException, retrying...");
+					StaticWait(1);
+					attempts--;		
 				}
 			}
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//small[text()=' Credit Awarded']")));
-	StaticWait(1);
-	WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='keyboard_arrow_left']/ancestor::button/following-sibling::button[2]")));
-	js.executeScript("arguments[0].click();", e);
-	StaticWait(1);
-}
-public void Provide_the_Score_for_Assessment()
-{
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	StaticWait(2);
-	driver.switchTo().frame(0);
-	Provide_Score1.sendKeys(Keys.chord(Keys.CONTROL,"a"));
-	Provide_Score1.sendKeys(Keys.chord(Keys.CONTROL,"x"));
-	Provide_Score1.sendKeys("4");
-	String randomString = generateRandomString();
-	Provide_Feedback.sendKeys(randomString);
-	StaticWait(1);
-	js.executeScript("arguments[0].click();", Submit_score);		
-	driver.switchTo().defaultContent();
-	WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='keyboard_arrow_left']/ancestor::button/following-sibling::button[2]")));
-	js.executeScript("arguments[0].click();", e);
-	StaticWait(1);
-}
+			wait.elementToBeClickable(Progress);
+			wait.visibilityOf(Progress);
+			Progress.click();
+
+			WebElement Student_ellipse = driver.findElement(By.xpath("//h5[contains(normalize-space(text()), '"+SLastname+"')]/parent::div/parent::div/parent::div/descendant::mat-icon")); 
+			Student_ellipse.click();
+			Details.click();
+			StaticWait(1);
+			String Activity_Title = Activity_Title_Name.getText();
+			if (Activity_Title.toLowerCase().matches(".*\\bassessment\\b.*")) {
+				Provide_the_Score_for_Assessment();
+				System.out.println("Provide Score for Assessment Activity");
+			} else if (Activity_Title.toLowerCase().matches(".*\\b(assignment|discussion)\\b.*")) {
+				Provide_the_Score_for_Assignment_and_Discussion();
+				System.out.println("Provide Score for " + (Activity_Title.toLowerCase().contains("assignment") ? "Assignment" : "Discussion") + " Activity");
+			}
+
+			WebElement e= driver.findElement(By.xpath("//h3[text()='Activity Progress']/parent::div/child::button"));
+			js.executeScript("arguments[0].click();", e);
+			StaticWait(1);
+			if(j==1)
+			{
+				break;
+			}
+		}    
+
+	}
+	public void Provide_the_Score_for_Assignment_and_Discussion()
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		Random random = new Random();
+		int randomValue = random.nextInt(80 + 1);
+		String Score = String.valueOf(randomValue);
+		Provide_Score.sendKeys(Score);
+		js.executeScript("arguments[0].click();", Save_Score);
+		int attempts = 0;
+		while (attempts < 3) {
+			try {
+				Award_Badge.click();
+				break;
+			} catch (StaleElementReferenceException e) {
+				attempts++;
+				StaticWait(1);	       
+			}
+		}
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//small[text()=' Credit Awarded']")));
+		StaticWait(1);
+		provide_Feedback();
+		WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='keyboard_arrow_left']/ancestor::button/following-sibling::button[2]")));
+		js.executeScript("arguments[0].click();", e);
+		StaticWait(1);
+	}
+	public void Provide_the_Score_for_Assessment()
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		StaticWait(2);
+		driver.switchTo().frame(0);
+		Provide_Score1.sendKeys(Keys.chord(Keys.CONTROL,"a"));
+		Provide_Score1.sendKeys(Keys.chord(Keys.CONTROL,"x"));
+		Provide_Score1.sendKeys("4");
+		String randomString = generateRandomString();
+		Provide_Feedback.sendKeys(randomString);
+		StaticWait(1);
+		js.executeScript("arguments[0].click();", Submit_score);		
+		driver.switchTo().defaultContent();
+		provide_Feedback();
+		wait.until(ExpectedConditions.elementToBeClickable(Assessment_Tab));
+		Assessment_Tab.click();
+		int attempts = 0;
+		while (attempts < 3) {
+			try {
+				Award_Badge.click();
+				break;
+			} catch (StaleElementReferenceException e) {
+				attempts++;
+				StaticWait(1);	       
+			}
+		}
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//small[text()=' Credit Awarded']")));
+		StaticWait(1);
+		WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='keyboard_arrow_left']/ancestor::button/following-sibling::button[2]")));
+		js.executeScript("arguments[0].click();", e);
+		StaticWait(1);
+	}
+	public void provide_Feedback()
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		wait.elementToBeClickable(Feedback_Tab);
+		Feedback_Tab.click();
+		TypehereText.sendKeys(generateRandomString());
+		js.executeScript("arguments[0].scrollIntoView(true);", Postbutton);
+		js.executeScript("arguments[0].click();", Postbutton);
+		js.executeScript("arguments[0].scrollIntoView(true);", Replybutton);
+		js.executeScript("arguments[0].click();", Replybutton);
+		TypehereText1.sendKeys(generateRandomString());
+		js.executeScript("arguments[0].scrollIntoView(true);", Postbutton);
+		Postbutton1.click();
+	}
 }

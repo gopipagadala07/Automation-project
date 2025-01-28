@@ -92,9 +92,9 @@ public class Import_Activities_in_LTPage extends ActionType {
 		int attempts = 0;
 		while (attempts < 3) {
 			try {
-				WebElement communt=driver.findElement(By.xpath("//*[text()='"+LT_Name+"']"));
-				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", communt);
-				((JavascriptExecutor) driver).executeScript("arguments[0].click();", communt);
+				WebElement community=driver.findElement(By.xpath("//*[text()='"+LT_Name+"']"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", community);
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", community);
 
 				break;
 			} catch (StaleElementReferenceException e) {
