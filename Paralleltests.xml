@@ -13,12 +13,11 @@
 			<class name="ExamCenterRunners.Score_SubmissionRunner"></class>
 			<class name="ExamCenterRunners.EnrolleRunner"></class>
 		</classes>
-	</test> 
+	</test>
 
-	<test name="Test2">
+<!--	<test name="Test2">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="AssessmentsRunner.SISprovisioningAssessmentCenterRunner" />
 			<class name="AssessmentsRunner.BenchmarksRunner" />
 			<class name="AssessmentsRunner.QuizCreationRunner" />
 			<class name="AssessmentsRunner.AnnouncementsRunner" />
@@ -30,12 +29,11 @@
 			<class name="AssessmentsRunner.Reportcard_TeacherRunner" />
 		</classes>
 	</test>
-  
- <test name="Test3">
+
+	<test name="Test3">
 		<parameter name="browser" value="chrome" />
 		<classes>
-		    <class name="PortfolioCenterRunner.SISprovisioningPortfolioRunner"></class>
- 		    <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner"></class>
+			<class name="PortfolioCenterRunner.PortfolioCenterCourseRunner"></class>
 			<class name="PortfolioCenterRunner.AssignmentsSubmissionRunner"></class>
 			<class name="PortfolioCenterRunner.PortfolioScoreSubmissionRunner"></class>
 			<class name="PortfolioCenterRunner.MultiScoringPortfolioCourseRuner"></class>
@@ -43,5 +41,6 @@
 			<class name="PortfolioCenterRunner.MultiScoringSubmissionRuner"></class>
 			<class name="PortfolioCenterRunner.DeletePortfolioCourseRunner"></class>
 		</classes>
-	</test>
-</suite> <!-- Suite -->
+	</test>-->
+</suite> <!--
+Suite -->

@@ -74,7 +74,7 @@ public class AssignmentsSubmissionPages extends ActionType{
 
 	public void the_user_selects_the_course_and_clicks_on_the_continue_learning(Integer CourseName) throws AWTException, InvalidFormatException, IOException {
 		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 		}
 		String name = testdata.get(CourseName).get("CourseName");
 		System.out.println(name);
@@ -89,7 +89,7 @@ public class AssignmentsSubmissionPages extends ActionType{
 	}
 	public void the_user_launches_the_assignment_and_submit_the_assignment(Integer AssignmentName) throws AWTException, InvalidFormatException, IOException {
 		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 		}
 		String AssignmentNametab = testdata.get(AssignmentName).get("AssignmentName");
 		System.out.println(AssignmentNametab);

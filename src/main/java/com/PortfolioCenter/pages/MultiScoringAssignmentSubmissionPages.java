@@ -60,7 +60,7 @@ public class MultiScoringAssignmentSubmissionPages extends ActionType{
 
 	public void the_user_selects_the_multi_scoring_course_and_clicks_on_the_continue_learning(Integer MultiScoringCourseName) throws AWTException, InvalidFormatException, IOException {
 		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 		}
 		String Multiname = testdata.get(MultiScoringCourseName).get("MultiScoringCourseName");
 		System.out.println(Multiname);
@@ -74,7 +74,7 @@ public class MultiScoringAssignmentSubmissionPages extends ActionType{
 	}
 	public void the_user_launches_the_multi_scoring_course_assignment_and_submit_the_assignment(Integer MultiAssignmentName) throws AWTException, InvalidFormatException, IOException {
 		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 		}
 		String AssignmentNametab = testdata.get(MultiAssignmentName).get("MultiAssignmentName");
 		System.out.println(AssignmentNametab);

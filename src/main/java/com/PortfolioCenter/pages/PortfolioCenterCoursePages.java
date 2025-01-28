@@ -153,7 +153,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 		JavascriptExecutor jc = (JavascriptExecutor) driver;
 		jc.executeScript("arguments[0].click();", TitleElement);     
 		PortfolioCourseName = "PortfolioCourse"+number;
-		cp.insertData("PortfolioCenter.xlsx", PortfolioCourseName, 12);
+		cp.insertData("TestDataDetails.xlsx", PortfolioCourseName, 12);
 		StaticWait(1);
 		inputTitleElement.sendKeys(PortfolioCourseName);
 		wait.elementToBeClickable(DescriptionElement);
@@ -215,7 +215,7 @@ public class PortfolioCenterCoursePages extends ActionType{
 		wait.elementToBeClickable(inputAssignmentNameElement);
 		inputAssignmentNameElement.click();
 		assignmentname ="AssignmentName"+number;
-		cp.insertData("PortfolioCenter.xlsx", assignmentname, 13);
+		cp.insertData("TestDataDetails.xlsx", assignmentname, 13);
 		inputAssignmentNameElement.sendKeys(assignmentname);
 		wait.elementToBeClickable(DecInstElement);
 		DecInstElement.click();
@@ -396,7 +396,7 @@ public void the_user_navigates_to_the_members_tab_searches_for_the_username_in_t
 	ManageMembersbElement.click();
 
 	if (testdata == null) {
-		testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+		testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 	}
 	String Fname = testdata.get(LastName).get("FirstName");
 	String Lname = testdata.get(LastName).get("LastName");
@@ -465,7 +465,7 @@ public void clicks_on_the_assignment_and_verifies_that_the_user_is_added_to_the_
 	AssignmentName(assignmentname).click();
 	StaticWait(1);
 	if (testdata == null) {
-		testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+		testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 	}
 	String Name = testdata.get(verifyName).get("LastName");
 	String verify = testdata.get(verifyName).get("LastName");

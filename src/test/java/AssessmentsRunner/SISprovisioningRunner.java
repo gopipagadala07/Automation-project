@@ -1,4 +1,4 @@
-package PortfolioCenterRunner;
+package AssessmentsRunner;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -8,14 +8,14 @@ import org.testng.annotations.Test;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features = "src\\test\\resources\\PortfolioCenterFeatures\\SIS ProvisioningPortfolio.feature",
-glue = {"PortfolioCenterStepdef","Hooks"},
+@CucumberOptions(features = "src\\test\\resources\\AssessmentsFeatures\\SIS ProvisioningAssessmentCenter.feature",
+glue = {"AssessmentsStepdef","Hooks"},
 plugin= {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 monochrome = true,
-tags = "@PortfolioCenterGroup",
+tags = "@AssessmentCenterGroup",
 dryRun = false)
 
-public class SISprovisioningPortfolioRunner extends AbstractTestNGCucumberTests {
+public class SISprovisioningRunner extends AbstractTestNGCucumberTests {
 	
 	String TestcaseName;
 	//@Parameters("browser")
@@ -23,12 +23,12 @@ public class SISprovisioningPortfolioRunner extends AbstractTestNGCucumberTests 
 	public void beforeClass(/*String browser*/)
 	{
 		TestcaseName=this.getClass().getSimpleName();
-		System.out.println("<---------------" + TestcaseName + " Test Start--------------->");
+		System.out.println("<---------------" + TestcaseName + "Test Start--------------->");
 	}
 	@AfterClass
 	public void afterClass()
 	{
-		System.out.println("<---------------" + TestcaseName + " Test End--------------->");
+		System.out.println("<---------------" + TestcaseName + "Test End--------------->");
 	}
 
 }

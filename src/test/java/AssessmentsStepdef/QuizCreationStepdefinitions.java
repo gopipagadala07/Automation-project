@@ -8,7 +8,7 @@ import java.util.Map;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 import com.Assessments.pages.QuizCreationPages;
-import com.Assessments.pages.SISProvisioningAssessmentCenterPage;
+import com.Assessments.pages.SISProvisioningPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.CommonPages;
@@ -22,7 +22,7 @@ public class QuizCreationStepdefinitions extends ActionType{
 
 	QuizCreationPages QP=new QuizCreationPages(Base.getDriver());
 	CommonPages cp=new CommonPages(Base.getDriver());
-	SISProvisioningAssessmentCenterPage provisioning=new SISProvisioningAssessmentCenterPage(Base.getDriver());
+	SISProvisioningPage provisioning=new SISProvisioningPage(Base.getDriver());
 	ExcelReader reader=new ExcelReader();
 	static List<Map<String, String>> testdata=null;
 
@@ -35,7 +35,7 @@ public class QuizCreationStepdefinitions extends ActionType{
 	public void search_for_the_particular_course_and_click_on_it(int row,int row1) throws Exception, IOException {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx",getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/TestDataDetails.xlsx",getSheetEnv());
 		}
 		String ClassroomName=testdata.get(row).get("Classroom Name");
 		String SectionName=testdata.get(row).get("Section Name");
@@ -58,7 +58,7 @@ public class QuizCreationStepdefinitions extends ActionType{
 	public void add_any_test_to_the_quiz(int row) throws Exception, IOException {
 		if(testdata==null)
 		{
-			testdata=reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx",getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/TestDataDetails.xlsx",getSheetEnv());
 		}
 		String Testname=testdata.get(row).get("TestName");
 		QP.QuizzesCreation(Testname);

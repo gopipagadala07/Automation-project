@@ -76,7 +76,7 @@ public class ScoreSubmissionPages extends ActionType{
 	public void the_user_searches_for_the_course_and_clicks_on_it(Integer CourseName) throws InvalidFormatException, IOException {	
 		StaticWait(1);
 		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 		}
 		String PortfolioName = testdata.get(CourseName).get("CourseName");
 		retrySearchForCourseName(PortfolioName, 5);
@@ -108,7 +108,7 @@ public class ScoreSubmissionPages extends ActionType{
 
 	public void the_user_clicks_on_the_assignment_then_click_on_score_student_portfolio_button_assignment_name(Integer AssignmentName) throws InvalidFormatException, IOException {
 		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 		}
 		String ScoreAssignment = testdata.get(AssignmentName).get("AssignmentName");
 		Actions act = new Actions(driver);

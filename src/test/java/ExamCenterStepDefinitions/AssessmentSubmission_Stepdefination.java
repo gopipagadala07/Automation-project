@@ -3,11 +3,8 @@ package ExamCenterStepDefinitions;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-
 import com.Examcenter.pages.ExamtakerSubmissionPage;
-import com.Examcenter.pages.LoginPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.ExcelReader;
@@ -19,7 +16,6 @@ public class AssessmentSubmission_Stepdefination extends ActionType{
 
 	static ExcelReader reader=new ExcelReader();
 	static List<Map<String, String>> testdata=null;
-	private LoginPage login=new LoginPage(Base.getDriver());
 	private ExamtakerSubmissionPage Sub=new ExamtakerSubmissionPage(Base.getDriver());
 
 	@And("Clicks on Launch button")

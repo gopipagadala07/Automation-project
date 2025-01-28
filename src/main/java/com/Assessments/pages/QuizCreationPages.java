@@ -260,7 +260,7 @@ public class QuizCreationPages extends ActionType{
 					js.executeScript("arguments[0].click();", QuizEllipses(QuizName));
 					StaticWait(1);
 					progressbtn.click();
-					StaticWait(1);
+					StaticWait(2);
 					wait.until(ExpectedConditions.elementToBeClickable(Activatetoggle));
 					js.executeScript("arguments[0].click();", Activatetoggle);
 					StaticWait(1);
@@ -268,7 +268,7 @@ public class QuizCreationPages extends ActionType{
 					StaticWait(1);
 
 					targetIndex += 2;
-					StaticWait(1);
+					StaticWait(2);
 					break;
 				} catch (StaleElementReferenceException e) {
 					System.out.println("StaleElementReferenceException encountered. Retrying... Attempt " + (retry + 1));

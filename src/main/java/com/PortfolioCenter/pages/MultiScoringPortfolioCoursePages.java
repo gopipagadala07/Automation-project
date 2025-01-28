@@ -89,7 +89,7 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 		JavascriptExecutor jc = (JavascriptExecutor) driver;
 		jc.executeScript("arguments[0].click();", TitleElement);     
 		MultiPortfolioCourseName = "PortfolioCourse"+Number;
-		cp.insertData("PortfolioCenter.xlsx", MultiPortfolioCourseName, 14);
+		cp.insertData("TestDataDetails.xlsx", MultiPortfolioCourseName, 14);
 		System.out.println(MultiPortfolioCourseName);
 		StaticWait(1);
 		inputTitleElement.sendKeys(MultiPortfolioCourseName);
@@ -104,7 +104,7 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 	public void the_user_searches_for_the_multi_scoring_portfolio_course_and_clicks_on_it(Integer MultiScoringCourseName) throws InvalidFormatException, IOException {
 		StaticWait(1);
 		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 		}
 		String MultiPortfolioCourse = testdata.get(MultiScoringCourseName).get("MultiScoringCourseName");
 		retrySearchForCourseName(MultiPortfolioCourse,5);
@@ -153,7 +153,7 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 		wait.elementToBeClickable(inputAssignmentNameElement);
 		inputAssignmentNameElement.click();
 		Multiassignmentname ="AssignmentName"+Number;
-		cp.insertData("PortfolioCenter.xlsx", Multiassignmentname, 15);
+		cp.insertData("TestDataDetails.xlsx", Multiassignmentname, 15);
 		System.out.println(Multiassignmentname);
 		inputAssignmentNameElement.sendKeys(Multiassignmentname);
 		wait.elementToBeClickable(DecInstElement);

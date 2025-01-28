@@ -14,7 +14,7 @@ import org.openqa.selenium.WebElement;
 import com.Assessments.pages.AnnouncementsPages;
 import com.Assessments.pages.BenchmarksPage;
 import com.Assessments.pages.LaunchValidationPages;
-import com.Assessments.pages.SISProvisioningAssessmentCenterPage;
+import com.Assessments.pages.SISProvisioningPage;
 import com.Assessments.pages.QuizSubmissionPages;
 import com.Utils.ActionType;
 import com.Utils.Base;

@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import com.PortfolioCenter.pages.LoginPage;
+import com.Assessments.pages.LoginPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.ExcelReader;
@@ -33,7 +33,7 @@ public class LoginStepdefinintions extends ActionType{
 		testdata=null;
 		if(testdata == null)
 		{
-			testdata=reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+			testdata=reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 		}
 		String FtName=testdata.get(rownumber).get("FirstName");
 		String LtName=testdata.get(rownumber).get("LastName");

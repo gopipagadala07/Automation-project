@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CommonSetupSuite" verbose="1">
+    <test name="CommonSetup">
+        <classes>
+            <class name="AssessmentsRunner.SISprovisioningRunner" />
+        </classes>
+    </test>
+</suite>

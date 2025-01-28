@@ -102,7 +102,7 @@ public class MultiScoringSubmissionPages extends ActionType{
 		StaticWait(1);
 		 
 		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 		}
 		String MultiPortfolioCourse = testdata.get(MultiScoringCourseName).get("MultiScoringCourseName");
 		retrySearchForCourseName(MultiPortfolioCourse, 5);
@@ -134,7 +134,7 @@ public class MultiScoringSubmissionPages extends ActionType{
 	public void the_user_clicks_on_the_multi_scoring_assignment_then_click_on_multi_scoring_button(Integer MultiAssignmentName) throws InvalidFormatException, IOException {
 		StaticWait(2);
 		if (testdata == null) {
-			testdata = reader.getData("/ExcelFiles/PortfolioCenter.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 		}
 		String MultiPortfolioName = testdata.get(MultiAssignmentName).get("MultiAssignmentName");
 		wait.elementToBeClickable(Multiassignmentname(MultiPortfolioName));

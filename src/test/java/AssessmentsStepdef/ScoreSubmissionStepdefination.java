@@ -32,7 +32,7 @@ public class ScoreSubmissionStepdefination extends ActionType
 	{
 		if (testdata == null) 
 		{
-			testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
+			testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 		}
 		String ClaroomName = testdata.get(row).get("Classroom Name");	
 		String SectionName = testdata.get(row).get("Section Name");

@@ -10,7 +10,7 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.Keys;
 
 import com.Assessments.pages.BenchmarksPage;
-import com.Assessments.pages.SISProvisioningAssessmentCenterPage;
+import com.Assessments.pages.SISProvisioningPage;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.ExcelReader;
@@ -42,7 +42,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	@And("the user selects the Year from the dropdown at row {int}")
 	public void the_user_selects_the_year_from_the_dropdown_at_row(Integer int1) throws Exception, IOException {
 	    if (testdata == null) {
-	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
+	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 	    }  
 		String Year = testdata.get(int1).get("Year");	   
 	    bpages.yeardropdowns(Year) ;   
@@ -53,7 +53,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	public void the_user_selects_the_grade_from_the_dropdown_at_row(Integer int1) throws Exception, IOException {
 	    
 	    if (testdata == null) {
-	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
+	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 	    }
 	    String grade = testdata.get(int1).get("Grade");	   
 	    bpages.gradedropdowns(grade); 
@@ -64,7 +64,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	public void the_user_selects_the_subject_from_the_dropdown_at_row(Integer int1) throws Exception, IOException {
 		
 		if (testdata == null) {
-	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
+	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 	    }
 	    String subject = testdata.get(int1).get("Subject");	   
 	    bpages.subdropdowns(subject);
@@ -98,7 +98,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	@Then("the user clicks on the Search Here field and enters the test name from row {int}")
 	public void the_user_clicks_on_the_search_here_field_and_enters_the_test_name_from_row(int Testname) throws InvalidFormatException, IOException {
 		if (testdata == null) {
-	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
+	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 	    }
 	    String Tname = testdata.get(Testname).get("TestName");	   
 		bpages.testSearch(Tname);
@@ -130,7 +130,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	@Then("the user clicks on the Search Here field and enters the section name from row and clicks on the Add {int}")
 	public void the_user_clicks_on_the_search_here_field_and_enters_the_section_name_from_row(int SectionName) throws Exception, IOException {
 		if (testdata == null) {
-	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
+	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 	    }
 	    String secname = testdata.get(SectionName).get("Section Name");	
 	    bpages.SectionSearch(secname);
@@ -149,7 +149,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	@And("the user selects the course benchmark from the dropdown at row {int}")
 	public void the_user_selects_the_course_benchmark_from_the_dropdown_at_row_rownumber(int SectionName1) throws Exception, IOException {
 		if (testdata == null) {
-	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
+	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 	    }
 	    String CourseBmark = testdata.get(SectionName1).get("Section Name");	   	   
 		    bpages.CourseBenchmarkDdown(CourseBmark);
@@ -158,7 +158,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	@And("the user selects the school from the dropdown at row {int}")
 	public void the_user_selects_the_school_from_the_dropdown_at_row_rownumber(int int1) throws InvalidFormatException, IOException {
 //		if (testdata == null) {
-//	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
+//	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 //	    }
 //	    String schoolDdown = testdata.get(int1).get("SchoolName");	   
 //	    bpages.schoolDdown(schoolDdown); 
@@ -168,7 +168,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	@And("the user selects the teacher from the dropdown at row {int}")
 	public void the_user_selects_the_teacher_from_the_dropdown_at_row_rownumber(Integer int1) throws InvalidFormatException, IOException {
 //		if (testdata == null) {
-//	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
+//	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 //	    }
 //	    String Lastname = testdata.get(int1).get("LastName");	
 //	    String firstname = testdata.get(int1).get("FirstName");	
@@ -179,7 +179,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	@And("the user selects the classroom from the dropdown at row {int}")
 	public void the_user_selects_the_classroom_from_the_dropdown_at_row_rownumber(Integer int1) throws InvalidFormatException, IOException {
 //		if (testdata == null) {
-//	        testdata = reader.getData("/ExcelFiles/AssessmentCenterDetails.xlsx", getSheetEnv());
+//	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 //	    }
 //	    String classroomDdown = testdata.get(int1).get("Classroom Name");	   
 //	    bpages.classroomDdown(classroomDdown); 
