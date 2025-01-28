@@ -1,11 +1,16 @@
 package com.Examcenter.pages;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -68,14 +73,20 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	    for (int attempt = 0; attempt < retries; attempt++) {
 	        try {
 	            Actions act = new Actions(Base.getDriver());
-	            act.moveToElement(Commenticon).click().build().perform();
+	            File screenshotsFolder = new File("screenshots");
+	            clearOrCreateFolder(screenshotsFolder);
+	            act.moveToElement(Commenticon).build().perform();
+	            StaticWait(1);
+	            takeScreenshot(driver, "Before_Click", screenshotsFolder);
+	            JavascriptExecutor js=(JavascriptExecutor) driver;
+	            js.executeScript("arguments[0].click();", Commenticon);
 	            System.out.println("Comment box clicked");
-	            StaticWait(5);
 	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	            WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//textarea[@id='descriptionField']/parent::div/child::div/child::div[2]/child::div[2]")));
 	            if (e.isDisplayed() && e.isEnabled()) {
 	                act.moveToElement(e).click().build().perform();
 	                e.sendKeys(generateRandomString());
+	                takeScreenshot(driver, "After_Click", screenshotsFolder);
 	                System.out.println("Value sent to the comment box");
 	                success = true;
 	                break;
@@ -89,7 +100,6 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	        } catch (Exception ex) {
 	            ex.printStackTrace();
 	        }
-	        StaticWait(5);
 	    }
 
 	    if (!success) {
@@ -97,4 +107,32 @@ public class Enrolled_ExamTaker_in_the_Timeslot_Page extends ActionType
 	    }
 	}
 
+	public static void clearOrCreateFolder(File folder) {
+	try {
+		if (folder.exists()) {
+			FileUtils.cleanDirectory(folder);
+		} else {
+			folder.mkdirs();
+		}
+		//System.out.println("Screenshots folder is ready: " + folder.getAbsolutePath());
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+}
+
+public static void takeScreenshot(WebDriver driver, String fileName, File folder) {
+	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+    jsExecutor.executeScript("window.scrollBy(arguments[0], 0);", 1000);
+    
+	File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+	File destFile = new File(folder, fileName + ".png");
+
+	try {
+		FileUtils.copyFile(srcFile, destFile);
+		System.out.println("Screenshot saved as: " + destFile.getAbsolutePath());
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+}
+	
 }

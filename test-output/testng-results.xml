@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="0" failed="1" skipped="0">
+<testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-28T05:16:16Z" name="Default suite" finished-at="2025-01-28T05:17:27Z" duration-ms="70721">
+  <suite started-at="2025-01-28T05:45:51Z" name="Default suite" finished-at="2025-01-28T05:46:57Z" duration-ms="66024">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-01-28T05:16:16Z" name="Default test" finished-at="2025-01-28T05:17:27Z" duration-ms="70721">
+    <test started-at="2025-01-28T05:45:51Z" name="Default test" finished-at="2025-01-28T05:46:57Z" duration-ms="66024">
       <class name="ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-28T10:46:16Z" name="setUpClass" finished-at="2025-01-28T10:46:17Z" duration-ms="970" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-28T11:15:51Z" name="setUpClass" finished-at="2025-01-28T11:15:52Z" duration-ms="1087" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@7d17906]]>
+                <![CDATA[org.testng.TestRunner@141dfcf9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-28T10:46:17Z" name="beforeclass" finished-at="2025-01-28T10:46:17Z" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-28T11:15:52Z" name="beforeclass" finished-at="2025-01-28T11:15:52Z" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeclass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-28T10:46:17Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-28T10:47:24Z" duration-ms="67069" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-28T11:15:52Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-28T11:16:53Z" duration-ms="60480" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -38,66 +38,14 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchWindowException">
-            <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=132.0.6834.111)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a6a4dfd66d09d5fdd1fa6547689c9f9c, findElement {value=//span[normalize-space(text())='Save'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.111, chrome: {chromedriverVersion: 132.0.6834.110 (df453a35f09..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63701}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63701/devtoo..., se:cdpVersion: 132.0.6834.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a6a4dfd66d09d5fdd1fa6547689c9f9c]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=132.0.6834.111)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a6a4dfd66d09d5fdd1fa6547689c9f9c, findElement {value=//span[normalize-space(text())='Save'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.111, chrome: {chromedriverVersion: 132.0.6834.110 (df453a35f09..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63701}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63701/devtoo..., se:cdpVersion: 132.0.6834.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a6a4dfd66d09d5fdd1fa6547689c9f9c
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy29.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	at com.Utils.Wait.elementToBeClickable(Wait.java:29)
-	at com.Utils.CommonPages.Save(CommonPages.java:91)
-	at ExamCenterStepDefinitions.Enroled_ExamTaker_in_a_Timeslot_Stepdefination.user_provide_the_comment_to_the_examtaker(Enroled_ExamTaker_in_a_Timeslot_Stepdefination.java:37)
-	at ✽.User provide the comment to the Examtaker(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/ExamCenterFeatures/Enrolled_Examtaker_in_TimeSlot.feature:15)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="testDownClass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-28T10:47:24Z" name="testDownClass" finished-at="2025-01-28T10:47:24Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="testDownClass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-28T11:16:53Z" name="testDownClass" finished-at="2025-01-28T11:16:53Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDownClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-28T10:47:24Z" name="tearDownClass" finished-at="2025-01-28T10:47:27Z" duration-ms="2650" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:ExamCenterRunners.Enrolled_ExamTaker_in_a_TimeSlotRunner@7d1cfb8b]" started-at="2025-01-28T11:16:53Z" name="tearDownClass" finished-at="2025-01-28T11:16:57Z" duration-ms="4434" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
