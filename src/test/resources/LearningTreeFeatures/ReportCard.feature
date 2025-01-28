@@ -11,7 +11,7 @@ Feature: Verify the Report Card
     Then User Click on Report Card Tab
     And User Provide the Comments in Report Card for the Student
     Then User validate the preview of the Activities in the Report card
-    #And Export the report card and print the Report Table
+    And Export the report card and print the Report Table
     
  
     

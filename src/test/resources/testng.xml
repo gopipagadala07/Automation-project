@@ -5,7 +5,6 @@
 	<test name="Test">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<!--class name="LearningTreeRunner.SISprovisioningRunner"/-->
 			<class name="LearningTreeRunner.Activity_CreationRunner"/>
 			<class name="LearningTreeRunner.Import_Activities_in_LTRunner"/>
 			<class name="LearningTreeRunner.Student_Activities_SubmissionRunner"/>

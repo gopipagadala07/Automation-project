@@ -54,19 +54,22 @@ public class LoginPage extends ActionType{
 	}
 
 	public void header() {
-		try {
-            WebElement idServerAllow = driver.findElement(By.xpath("//button[@value='yes']"));
-            if (idServerAllow.isDisplayed()) {
-            	JavascriptExecutor js = (JavascriptExecutor) driver;
-            	js.executeScript("arguments[0].scrollIntoView(true);", idServerAllow);  
-            	js.executeScript("arguments[0].click();", idServerAllow);
-                //idServerAllow.click();
-            }
-        } catch (NoSuchElementException e) {
-          
-        }
-        WebElement cls = driver.findElement(By.xpath("//button[@type='button']"));
-        cls.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+	    
+	    try {
+	        List<WebElement> idServerAllowElements = driver.findElements(By.xpath("//button[@value='yes']"));
+	        if (!idServerAllowElements.isEmpty() && idServerAllowElements.get(0).isDisplayed()) {
+	            WebElement idServerAllow = idServerAllowElements.get(0);
+	            js.executeScript("arguments[0].scrollIntoView(true);", idServerAllow);
+	            js.executeScript("arguments[0].click();", idServerAllow);
+	        }
+	    } finally {
+	        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	    }
+	    WebElement cls = driver.findElement(By.xpath("//button[@type='button']"));
+	    js.executeScript("arguments[0].click();", cls);
+	    StaticWait(1);
 	}
 
 	public void loginbtn()

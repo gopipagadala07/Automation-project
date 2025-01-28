@@ -4,42 +4,15 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="LearningTreeRunner.Student_Activities_SubmissionRunner">
-        <methods>
-          <include name="afterClass"/>
-          <include name="setUpClass"/>
-          <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- LearningTreeRunner.Student_Activities_SubmissionRunner -->
       <class name="LearningTreeRunner.Provide_Score_in_LTRunner">
         <methods>
           <include name="setUpClass"/>
           <include name="beforeClass"/>
-          <include name="tearDownClass"/>
           <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
           <include name="afterClass"/>
         </methods>
       </class> <!-- LearningTreeRunner.Provide_Score_in_LTRunner -->
-      <class name="LearningTreeRunner.Import_Activities_in_LTRunner">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="afterClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- LearningTreeRunner.Import_Activities_in_LTRunner -->
-      <class name="LearningTreeRunner.Activity_CreationRunner">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="beforeClass"/>
-          <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="afterClass"/>
-        </methods>
-      </class> <!-- LearningTreeRunner.Activity_CreationRunner -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

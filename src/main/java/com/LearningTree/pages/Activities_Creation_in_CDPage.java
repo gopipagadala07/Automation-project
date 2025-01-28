@@ -292,7 +292,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 		select_Tags();
 		Badges();
 		cp.Save();
-		System.out.println("Discussion_Activity Created Succefully");
+		System.out.println("Discussion_Activity Created Successfully");
 	}
 	public void add_Assignment_Activity()
 	{
@@ -309,7 +309,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 		select_Tags();
 		Badges();
 		cp.Save();
-		System.out.println("Assignment_Activity Created Succefully");
+		System.out.println("Assignment_Activity Created Successfully");
 	}
 	public void add_Assessment_Activity(String TestName)
 	{
@@ -341,7 +341,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 		select_Tags();
 		Badges();
 		cp.Save();
-		System.out.println("Assessment_Activity Created Succefully");
+		System.out.println("Assessment_Activity Created Successfully");
 	}
 	public void add_Resources_Activity()
 	{

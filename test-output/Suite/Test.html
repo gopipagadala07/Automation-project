@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>7/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jan 28 10:29:03 IST 2025</td>
+<td>Started on:</td><td>Tue Jan 28 12:53:21 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>996 seconds (996642 ms)</td>
+<tr><td>Total time:</td><td>957 seconds (957052 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,66 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='LearningTreeRunner.Provide_Score_in_LTRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Provide_Score_in_LTRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring in LT"</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=132.0.6834.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [50a29d02683da4ae27a2ca3356c4239b, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.16143AD4B423F7409CCDE0D1B9FFF075.d.63B0B0A2266887B967E42280E2ACA861.e.715}], script=arguments[0].scrollIntoView({block: &apos;nearest&apos;, inline: &apos;center&apos;});}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.110, chrome: {chromedriverVersion: 132.0.6834.110 (df453a35f09..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58440}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58440/devtoo..., se:cdpVersion: 132.0.6834.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 50a29d02683da4ae27a2ca3356c4239b
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:464)
+	at com.LearningTree.pages.Provide_Score_For_LT_ActivitiesPage.Provide_the_Score_for_Assignment_and_Discussion(Provide_Score_For_LT_ActivitiesPage.java:302)
+	at com.LearningTree.pages.Provide_Score_For_LT_ActivitiesPage.activities_to_Garde(Provide_Score_For_LT_ActivitiesPage.java:216)
+	at LearningTreeStepdef.Provide_Score_in_LTStepdef.User_Provide_the_Score_in_Activity_To_Grade(Provide_Score_in_LTStepdef.java:60)
+	at ✽.User Provide the Score in Activity To Grade(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Provide_Score_in_LT.feature:15)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1778740499", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1778740499'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=132.0.6834.110)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [50a29d02683da4ae27a2ca3356c4239b, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.16143AD4B423F7409CCDE0D1B9FFF075.d.63B0B0A2266887B967E42280E2ACA861.e.715}], script=arguments[0].scrollIntoView({block: &apos;nearest&apos;, inline: &apos;center&apos;});}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.110, chrome: {chromedriverVersion: 132.0.6834.110 (df453a35f09..., userDataDir: C:\Users\SAHOOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58440}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58440/devtoo..., se:cdpVersion: 132.0.6834.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 50a29d02683da4ae27a2ca3356c4239b
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:464)
+	at com.LearningTree.pages.Provide_Score_For_LT_ActivitiesPage.Provide_the_Score_for_Assignment_and_Discussion(Provide_Score_For_LT_ActivitiesPage.java:302)
+	at com.LearningTree.pages.Provide_Score_For_LT_ActivitiesPage.activities_to_Garde(Provide_Score_For_LT_ActivitiesPage.java:216)
+	at LearningTreeStepdef.Provide_Score_in_LTStepdef.User_Provide_the_Score_in_Activity_To_Grade(Provide_Score_in_LTStepdef.java:60)
+	at ✽.User Provide the Score in Activity To Grade(file:///D:/FPK_Automation_Scripts/LT_Automation/src/test/resources/LearningTreeFeatures/Provide_Score_in_LT.feature:15)
+</pre></div></td>
+<td>105</td>
+<td>LearningTreeRunner.Provide_Score_in_LTRunner@29d80d2b</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,40 +136,35 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='LearningTreeRunner.DocumentsRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.DocumentsRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verifying Documents At Student side", "Verify the Documents functionality"</td>
+<td title='LearningTreeRunner.Import_Activities_in_LTRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Import_Activities_in_LTRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Import of Activities in LT", "Verify the import of Activities in LT"</td>
 <td></td>
-<td>46</td>
-<td>LearningTreeRunner.DocumentsRunner@58e1d9d</td></tr>
-<tr>
-<td title='LearningTreeRunner.Activity_CreationRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Activity_CreationRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating the Activities", "Verify the Activities Creation Functionality"</td>
-<td></td>
-<td>283</td>
-<td>LearningTreeRunner.Activity_CreationRunner@3932c79a</td></tr>
-<tr>
-<td title='LearningTreeRunner.Provide_Score_in_LTRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Provide_Score_in_LTRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Provide the Score for all Activities at Speed Grder and Activities to Garde", "Verify the Scoring in LT"</td>
-<td></td>
-<td>229</td>
-<td>LearningTreeRunner.Provide_Score_in_LTRunner@29d80d2b</td></tr>
-<tr>
-<td title='LearningTreeRunner.ReportcardRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.ReportcardRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Report Card", "Verify the Report Card"</td>
-<td></td>
-<td>42</td>
-<td>LearningTreeRunner.ReportcardRunner@446a1e84</td></tr>
+<td>49</td>
+<td>LearningTreeRunner.Import_Activities_in_LTRunner@6f15d60e</td></tr>
 <tr>
 <td title='LearningTreeRunner.Student_Activities_SubmissionRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Student_Activities_SubmissionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Student Activities Submission", "Verify the Student Activities Submission"</td>
 <td></td>
-<td>284</td>
+<td>318</td>
 <td>LearningTreeRunner.Student_Activities_SubmissionRunner@1be2019a</td></tr>
+<tr>
+<td title='LearningTreeRunner.Activity_CreationRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Activity_CreationRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating the Activities", "Verify the Activities Creation Functionality"</td>
+<td></td>
+<td>338</td>
+<td>LearningTreeRunner.Activity_CreationRunner@782859e</td></tr>
+<tr>
+<td title='LearningTreeRunner.ReportcardRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.ReportcardRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Report Card", "Verify the Report Card"</td>
+<td></td>
+<td>40</td>
+<td>LearningTreeRunner.ReportcardRunner@446a1e84</td></tr>
 <tr>
 <td title='LearningTreeRunner.DocumentsRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.DocumentsRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating folders and uploading Documents", "Verify the Documents functionality"</td>
 <td></td>
-<td>44</td>
+<td>48</td>
 <td>LearningTreeRunner.DocumentsRunner@58e1d9d</td></tr>
 <tr>
-<td title='LearningTreeRunner.Import_Activities_in_LTRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.Import_Activities_in_LTRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Import of Activities in LT", "Verify the import of Activities in LT"</td>
+<td title='LearningTreeRunner.DocumentsRunner.runScenario()'><b>runScenario</b><br>Test class: LearningTreeRunner.DocumentsRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verifying Documents At Student side", "Verify the Documents functionality"</td>
 <td></td>
-<td>51</td>
-<td>LearningTreeRunner.Import_Activities_in_LTRunner@6f15d60e</td></tr>
+<td>40</td>
+<td>LearningTreeRunner.DocumentsRunner@58e1d9d</td></tr>
 </table><p>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.LearningTree.pages;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
@@ -206,7 +207,21 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 		System.out.println("Total Activities for Scoring: " + count);
 		for (int i = 0; i <= 4; i++) {
 			StaticWait(1);
-			js.executeScript("arguments[0].click();", A_Score.get(i));
+			int retries = 10;
+			while (retries > 0)
+			{
+				try {					
+					js.executeScript("arguments[0].scrollIntoView(true);", A_Score.get(i));
+					js.executeScript("arguments[0].click();", A_Score.get(i));
+					break;
+				}
+
+				catch (StaleElementReferenceException e)
+				{
+					System.out.println("Caught StaleElementReferenceException. Retrying...");
+					retries--;
+				}  
+			}					
 			StaticWait(1);
 			String Activity_Title = Activity_Title_Name.getText();
 			if (Activity_Title.toLowerCase().matches(".*\\bassessment\\b.*")) {
@@ -299,6 +314,7 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 		String Score = String.valueOf(randomValue);
 		Provide_Score.sendKeys(Score);
 		js.executeScript("arguments[0].click();", Save_Score);
+		js.executeScript("arguments[0].scrollIntoView({block: 'nearest', inline: 'center'});", Award_Badge);
 		int attempts = 0;
 		while (attempts < 3) {
 			try {
@@ -333,6 +349,7 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 		provide_Feedback();
 		wait.until(ExpectedConditions.elementToBeClickable(Assessment_Tab));
 		Assessment_Tab.click();
+		js.executeScript("arguments[0].scrollIntoView({block: 'nearest', inline: 'center'});", Award_Badge);
 		int attempts = 0;
 		while (attempts < 3) {
 			try {

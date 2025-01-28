@@ -1,6 +1,12 @@
 package com.LearningTree.pages;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -15,6 +21,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.Wait;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 
 public class Report_CardPage extends ActionType{
 
@@ -28,9 +35,11 @@ public class Report_CardPage extends ActionType{
 	@FindBy(how=How.XPATH,using = "//mat-icon[text()='close']")private WebElement close_btn;
 	@FindBy(how=How.XPATH,using = "(//b[contains(text(),'CourseDesigner')])[1]")private WebElement FirstActivity_in_ReportCard;
 	@FindBy(how=How.XPATH,using = "//div[text()='Activity Preview']")private WebElement Activity_Preview;
+	@FindBy(how=How.XPATH,using = "//fp-search/parent::div/following-sibling::div/child::button")private WebElement Report_card_ellipse;
+	@FindBy(how=How.XPATH,using = "//span[text()='Export Report Card']")private WebElement Export_Report_Card;
 
-
-
+	
+	
 	public Report_CardPage(WebDriver driver)
 	{
 		this.driver=driver;	
@@ -89,26 +98,33 @@ public class Report_CardPage extends ActionType{
 	}
 	public void export_And_Print_the_Report_Table()
 	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", Report_card_ellipse);
+		js.executeScript("arguments[0].click();", Report_card_ellipse);
+		
+		js.executeScript("arguments[0].click();", Export_Report_Card);
+		StaticWait(2);
+		
+		
+		try {
+			Path downloadDir = Paths.get(System.getProperty("user.home"), "Downloads");
+			Optional<Path> latestFile = Files.list(downloadDir)
+					.filter(Files::isRegularFile)
+					.max(Comparator.comparingLong(p -> p.toFile().lastModified()));
 
-
-		// Locate all rows in the table
-		List<WebElement> Headers = driver.findElements(By.xpath(".//thead/tr/th")); // Adjust XPath to target your table
-
-		// Print the headers and their corresponding values side by side
-		System.out.println("Column 1 || Column 2");
-		System.out.println("---------------------");
-		for (WebElement row : Headers) {
-			// Locate the header and value in the current row
-			WebElement header = row.findElement(By.xpath(".//thead/tr/th[1]")); // Adjust column index as needed
-			WebElement value = row.findElement(By.xpath(".//thead/tr/th[2]")); // Adjust column index as needed
-
-			// Print the data
-			System.out.println(header.getText() + " || " + value.getText());
+			if (latestFile.isPresent()) {
+				Path source = latestFile.get();
+				System.out.println("Latest file found: " + source.toString());
+				String filePath = source.toAbsolutePath().toString();
+				String fileLink = "<a href='file:///" + filePath + "' target='_blank'>Download Report Card File</a>";
+				ExtentCucumberAdapter.addTestStepLog("Latest file found: " + source.toString() + " - " + fileLink);
+			} else {
+				System.out.println("No files found in the Downloads directory.");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-
-
-
-
+	
 
 	}
 }
