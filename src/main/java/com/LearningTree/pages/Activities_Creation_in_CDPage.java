@@ -157,7 +157,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 		wait.elementToBeClickable(TitleName);
 		CourseDesigner_Name="CourseDesigner"+randomNumberGenerator();
 		TitleName.sendKeys(CourseDesigner_Name);
-		cp.insertData("TestDataDetails.xlsx", CourseDesigner_Name, 16);
+		cp.insertData("LearningTree.xlsx", CourseDesigner_Name, 10);
 		Description.sendKeys("Description"+generateRandomString());
 		cp.Save();
 	}
@@ -237,6 +237,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 				cp.Save();
 				StaticWait(1);
 			} catch (StaleElementReferenceException e) {
+//				System.out.println("StaleElementReferenceException encountered, retrying iteration " + (i + 1) + ": " + e.getMessage());
 				System.out.println("StaleElementReferenceException encountered");
 				i--;
 			} catch (Exception e) {
@@ -274,8 +275,22 @@ public class Activities_Creation_in_CDPage extends ActionType
 				StaticWait(1);	       
 			}
 		}
-		wait.elementToBeClickable(Add_Activity);
-		Add_Activity.click();
+		int attempts1 = 0;
+		while (attempts1 < 5) {
+			try {
+				wait.elementToBeClickable(Add_Activity);
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", Add_Activity);
+				break;
+			} catch (ElementClickInterceptedException e) {
+				attempts++;
+				StaticWait(1);	       
+			}
+			catch (StaleElementReferenceException e) {
+				attempts++;
+				StaticWait(1);	 
+			}
+		}
+		
 	}
 	public void add_Discussion_Activity()
 	{
@@ -328,9 +343,9 @@ public class Activities_Creation_in_CDPage extends ActionType
 		js.executeScript("arguments[0].click();", gobtn);
 		WebElement testAddBtn = wait1.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
 		js.executeScript("arguments[0].click();", testAddBtn);
-		String AName = " Assessment "+randomNumberGenerator();
+		String AName = "Assessment"+randomNumberGenerator();
 		cp.Name(AName);
-		String Description_Txt="Description"+" "+generateRandomString();
+		String Description_Txt="Description"+"       "+generateRandomString();
 		Description.sendKeys(Description_Txt);
 		Instructionbox.sendKeys(generateRandomString());
 		ShowAnswers.click();
@@ -593,7 +608,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 			 try {
 
 				 WebElement fileInputRootFolder = driver.findElement(By.xpath("(//mat-icon[@mattooltip='Upload File']/preceding-sibling::input)[1]"));
-		          fileInputRootFolder.sendKeys(new File("src/test/resources/ExcelFiles/TestDataDetails.xlsx").getCanonicalPath());		         
+		          fileInputRootFolder.sendKeys(new File("src/test/resources/ExcelFiles/LearningTree.xlsx").getCanonicalPath());		         
 		     break;
 			 }
 		   
@@ -608,4 +623,3 @@ public class Activities_Creation_in_CDPage extends ActionType
 		
 	}
 }
-
