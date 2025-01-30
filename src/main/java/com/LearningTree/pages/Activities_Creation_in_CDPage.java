@@ -44,7 +44,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 	@FindBy(how = How.XPATH,using = "//input[@type='search']")private WebElement SearchHere;
 	@FindBy(how = How.XPATH,using = "//span[contains(text(),'Virtual Course')]/parent::span/parent::div/parent::div/following::div/descendant::button[@mattooltip='More Actions']")
 	public WebElement Virtual_ellipse;
-//	@FindBy(how = How.XPATH,using = "//div[@class='course-unit selectedUnit']")private WebElement Allbtn;
+	//	@FindBy(how = How.XPATH,using = "//div[@class='course-unit selectedUnit']")private WebElement Allbtn;
 	@FindBy(how = How.XPATH,using = "//span[text()='Add Child Objective']")private WebElement Add_Child_Objective;
 	@FindBy(how = How.XPATH,using = "//div[normalize-space(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'))='tags']")private WebElement Tags_Tab;
 	@FindBy(how = How.XPATH,using = "//mat-expansion-panel-header[@role='button']")private WebElement Standards_Lookups;
@@ -96,7 +96,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 	@FindBy(how = How.XPATH,using = "//div[normalize-space(text())='ATTACHMENTS']")private WebElement ATTACHMENTS_Tab;
 	@FindBy(how = How.XPATH,using = "//mat-icon[text()='close']")private WebElement Close_button;
 
-	
+
 
 	public Activities_Creation_in_CDPage(WebDriver driver)
 	{
@@ -199,7 +199,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 				StaticWait(1);	       
 			}
 		}
-			
+
 		select_Tags();
 		attachment();
 		cp.Save();
@@ -237,7 +237,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 				cp.Save();
 				StaticWait(1);
 			} catch (StaleElementReferenceException e) {
-//				System.out.println("StaleElementReferenceException encountered, retrying iteration " + (i + 1) + ": " + e.getMessage());
+				//				System.out.println("StaleElementReferenceException encountered, retrying iteration " + (i + 1) + ": " + e.getMessage());
 				System.out.println("StaleElementReferenceException encountered");
 				i--;
 			} catch (Exception e) {
@@ -290,7 +290,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 				StaticWait(1);	 
 			}
 		}
-		
+
 	}
 	public void add_Discussion_Activity()
 	{
@@ -342,7 +342,17 @@ public class Activities_Creation_in_CDPage extends ActionType
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", gobtn);
 		WebElement testAddBtn = wait1.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
-		js.executeScript("arguments[0].click();", testAddBtn);
+		int attempts=0;
+		while(attempts<3)
+		{
+			try {
+				js.executeScript("arguments[0].click();", testAddBtn);
+				break;
+			} catch (StaleElementReferenceException e) {
+				attempts++;
+			}
+		}
+
 		String AName = "Assessment"+randomNumberGenerator();
 		cp.Name(AName);
 		String Description_Txt="Description"+"       "+generateRandomString();
@@ -456,7 +466,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 		Standards_Lookups.click();
 		StaticWait(1);
 		List<WebElement> elements = driver.findElements(By.xpath("//mat-label[text()='Search here']/ancestor::span/ancestor::mat-form-field/following::div/descendant::span[1]/child::small"));
-	
+
 
 		if (elements.size() >= 3) {
 			Random random = new Random();
@@ -495,7 +505,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 		}
 
 	}
-	
+
 	public void addBadge() {
 		try {
 			Actions actions = new Actions(driver);
@@ -520,7 +530,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 				while (!badgeAdded && retryCount < 3) {
 					try {
 						StaticWait(1);
-					    actions.click(targetElement).build().perform();
+						actions.click(targetElement).build().perform();
 						StaticWait(1);
 						WebElement closetab=driver.findElement(By.xpath("//a[@class='close-tab']"));
 						closetab.click();
@@ -550,13 +560,13 @@ public class Activities_Creation_in_CDPage extends ActionType
 				if (!badgeAdded) {
 					throw new RuntimeException("Failed to add badge after " + retryCount + " retries.");
 				}
-	        } else {
-	            throw new NoSuchElementException("No path elements found within the badge.");
-	        }
+			} else {
+				throw new NoSuchElementException("No path elements found within the badge.");
+			}
 
-	        int maxRetry = 10;
-	        boolean success = false;
-	        for (int badgeRetry = 0; badgeRetry < 5; badgeRetry++) {
+			int maxRetry = 10;
+			boolean success = false;
+			for (int badgeRetry = 0; badgeRetry < 5; badgeRetry++) {
 				try {
 					WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 					WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='button info']")));
@@ -571,21 +581,21 @@ public class Activities_Creation_in_CDPage extends ActionType
 					success=true;
 					break;
 				} catch (TimeoutException e) {
-	                System.err.println("Retry due to TimeoutException.");
-	                e.printStackTrace();
-	            } catch (Exception e) {
-	                System.err.println("Retry due to an exception: " + e.getMessage());
-	                e.printStackTrace();
-	            }
-	        }
-	    } catch (NoSuchElementException e) {
-	        System.out.println("No badges found for selection.");
-	    } catch (Exception e) {
-	        System.err.println("Error in addBadge: " + e.getMessage());
-	        e.printStackTrace();
-	    }
+					System.err.println("Retry due to TimeoutException.");
+					e.printStackTrace();
+				} catch (Exception e) {
+					System.err.println("Retry due to an exception: " + e.getMessage());
+					e.printStackTrace();
+				}
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("No badges found for selection.");
+		} catch (Exception e) {
+			System.err.println("Error in addBadge: " + e.getMessage());
+			e.printStackTrace();
+		}
 	}
-	
+
 	public void Badges()
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -605,21 +615,21 @@ public class Activities_Creation_in_CDPage extends ActionType
 		int retries = 10;
 		while (retries > 0)
 		{
-			 try {
+			try {
 
-				 WebElement fileInputRootFolder = driver.findElement(By.xpath("(//mat-icon[@mattooltip='Upload File']/preceding-sibling::input)[1]"));
-		          fileInputRootFolder.sendKeys(new File("src/test/resources/ExcelFiles/TestDataDetails.xlsx").getCanonicalPath());		         
-		     break;
-			 }
-		   
-		  catch (StaleElementReferenceException e)
-		  {
-		          System.out.println("Caught StaleElementReferenceException. Retrying...");
-		          StaticWait(1);
-		          retries--;
-		   }  
+				WebElement fileInputRootFolder = driver.findElement(By.xpath("(//mat-icon[@mattooltip='Upload File']/preceding-sibling::input)[1]"));
+				fileInputRootFolder.sendKeys(new File("src/test/resources/ExcelFiles/TestDataDetails.xlsx").getCanonicalPath());		         
+				break;
+			}
+
+			catch (StaleElementReferenceException e)
+			{
+				System.out.println("Caught StaleElementReferenceException. Retrying...");
+				StaticWait(1);
+				retries--;
+			}  
 		}
-	
-		
+
+
 	}
 }
