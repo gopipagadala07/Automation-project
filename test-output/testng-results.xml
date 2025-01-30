@@ -1,140 +1,403 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="0" failed="1" skipped="0">
+<testng-results total="7" passed="4" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-28T09:42:15Z" name="Default suite" finished-at="2025-01-28T09:42:22Z" duration-ms="6959">
+  <suite started-at="2025-01-29T06:09:41Z" name="Suite" finished-at="2025-01-29T06:23:32Z" duration-ms="830385">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@63787180]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.Activity_CreationRunner@34f22f9d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.DocumentsRunner@4b6e2263]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.Import_Activities_in_LTRunner@3d1848cc]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.Provide_Score_in_LTRunner@6e4566f1]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.ReportcardRunner@344f4dea]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.Student_Activities_SubmissionRunner@7dda48d9]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-01-28T09:42:15Z" name="Default test" finished-at="2025-01-28T09:42:22Z" duration-ms="6959">
-      <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@63787180]" started-at="2025-01-28T15:12:15Z" name="setUpClass" finished-at="2025-01-28T15:12:16Z" duration-ms="704" status="PASS">
+    <test started-at="2025-01-29T06:09:41Z" name="Learning Tree" finished-at="2025-01-29T06:23:32Z" duration-ms="830385">
+      <class name="LearningTreeRunner.Provide_Score_in_LTRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:LearningTreeRunner.Provide_Score_in_LTRunner@6e4566f1]" started-at="2025-01-29T11:50:12Z" name="setUpClass" finished-at="2025-01-29T11:50:12Z" duration-ms="27" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@221ca495]]>
+                <![CDATA[org.testng.TestRunner@7502291e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@63787180]" started-at="2025-01-28T15:12:16Z" name="beforeClass" finished-at="2025-01-28T15:12:16Z" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@63787180]" started-at="2025-01-28T15:12:16Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-28T15:12:21Z" duration-ms="4560" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.Provide_Score_in_LTRunner@6e4566f1]" started-at="2025-01-29T11:50:12Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-29T11:50:53Z" duration-ms="40498" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Verifying the Portfolio Course Creation Functionality"]]>
+                <![CDATA["Provide the Score for all Activities at Speed Grder and Activities to Garde"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Checking the Portfolio Center Course Functionality"]]>
+                <![CDATA["Verify the Scoring in LT"]]>
               </value>
             </param>
           </params>
-          <exception class="io.cucumber.testng.UndefinedStepException">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[The step 'User launch the application with Valid URL' and 3 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given("User launch the application with Valid URL")
-public void user_launch_the_application_with_valid_url() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Given("User able to see all Fields")
-public void user_able_to_see_all_fields() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("User enters the credentials from the excel sheet at {int}")
-public void user_enters_the_credentials_from_the_excel_sheet_at(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("User is on homepage")
-public void user_is_on_homepage() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-]]>
+              <![CDATA[stale element reference: stale element not found in the current frame
+  (Session info: chrome=132.0.6834.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [73315fa53bfff368793e56b7bb144b29, executeScript {script=arguments[0].scrollIntoView({block: 'nearest', inline: 'center'});, args=[{element-6066-11e4-a52e-4f735466cecf=f.35937C954CA075C9EE7A271465096298.d.477D433324C9A8CC49480E5E1B26C667.e.172}]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.111, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61050}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61050/devtoo..., se:cdpVersion: 132.0.6834.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 73315fa53bfff368793e56b7bb144b29]]>
             </message>
             <full-stacktrace>
-              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'User launch the application with Valid URL' and 3 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given("User launch the application with Valid URL")
-public void user_launch_the_application_with_valid_url() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Given("User able to see all Fields")
-public void user_able_to_see_all_fields() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("User enters the credentials from the excel sheet at {int}")
-public void user_enters_the_credentials_from_the_excel_sheet_at(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("User is on homepage")
-public void user_is_on_homepage() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
-	at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
-	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
-	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=132.0.6834.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [73315fa53bfff368793e56b7bb144b29, executeScript {script=arguments[0].scrollIntoView({block: 'nearest', inline: 'center'});, args=[{element-6066-11e4-a52e-4f735466cecf=f.35937C954CA075C9EE7A271465096298.d.477D433324C9A8CC49480E5E1B26C667.e.172}]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.111, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61050}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61050/devtoo..., se:cdpVersion: 132.0.6834.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 73315fa53bfff368793e56b7bb144b29
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:464)
+	at com.LearningTree.pages.Provide_Score_For_LT_ActivitiesPage.Provide_the_Score_for_Assignment_and_Discussion(Provide_Score_For_LT_ActivitiesPage.java:318)
+	at com.LearningTree.pages.Provide_Score_For_LT_ActivitiesPage.activities_to_Garde(Provide_Score_For_LT_ActivitiesPage.java:232)
+	at LearningTreeStepdef.Provide_Score_in_LTStepdef.User_Provide_the_Score_in_Activity_To_Grade(Provide_Score_in_LTStepdef.java:60)
+	at ✽.User Provide the Score in Activity To Grade(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/LearningTreeFeatures/Provide_Score_in_LT.feature:15)
 ]]>
             </full-stacktrace>
-          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@63787180]" started-at="2025-01-28T15:12:21Z" name="tearDownClass" finished-at="2025-01-28T15:12:22Z" duration-ms="1678" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:LearningTreeRunner.Provide_Score_in_LTRunner@6e4566f1]" started-at="2025-01-29T11:50:12Z" name="beforeClass" finished-at="2025-01-29T11:50:12Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownClass -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:PortfolioCenterRunner.PortfolioCenterCourseRunner@63787180]" started-at="2025-01-28T15:12:21Z" name="afterClass" finished-at="2025-01-28T15:12:21Z" duration-ms="0" status="PASS">
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:LearningTreeRunner.Provide_Score_in_LTRunner@6e4566f1]" started-at="2025-01-29T11:50:53Z" name="afterClass" finished-at="2025-01-29T11:50:53Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- PortfolioCenterRunner.PortfolioCenterCourseRunner -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:LearningTreeRunner.Provide_Score_in_LTRunner@6e4566f1]" started-at="2025-01-29T11:50:53Z" name="tearDownClass" finished-at="2025-01-29T11:50:54Z" duration-ms="1510" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- LearningTreeRunner.Provide_Score_in_LTRunner -->
+      <class name="LearningTreeRunner.Activity_CreationRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:LearningTreeRunner.Activity_CreationRunner@34f22f9d]" started-at="2025-01-29T11:39:41Z" name="setUpClass" finished-at="2025-01-29T11:39:42Z" duration-ms="987" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7502291e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:LearningTreeRunner.Activity_CreationRunner@34f22f9d]" started-at="2025-01-29T11:39:42Z" name="beforeClass" finished-at="2025-01-29T11:39:42Z" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.Activity_CreationRunner@34f22f9d]" started-at="2025-01-29T11:39:42Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-29T11:44:51Z" duration-ms="309099" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Creating the Activities"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify the Activities Creation Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:LearningTreeRunner.Activity_CreationRunner@34f22f9d]" started-at="2025-01-29T11:44:51Z" name="tearDownClass" finished-at="2025-01-29T11:44:54Z" duration-ms="2466" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:LearningTreeRunner.Activity_CreationRunner@34f22f9d]" started-at="2025-01-29T11:44:51Z" name="afterClass" finished-at="2025-01-29T11:44:51Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- LearningTreeRunner.Activity_CreationRunner -->
+      <class name="LearningTreeRunner.ReportcardRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:LearningTreeRunner.ReportcardRunner@344f4dea]" started-at="2025-01-29T11:52:40Z" name="setUpClass" finished-at="2025-01-29T11:52:40Z" duration-ms="14" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7502291e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:LearningTreeRunner.ReportcardRunner@344f4dea]" started-at="2025-01-29T11:52:40Z" name="beforeClass" finished-at="2025-01-29T11:52:40Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.ReportcardRunner@344f4dea]" started-at="2025-01-29T11:52:40Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-29T11:53:29Z" duration-ms="48319" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify the Report Card"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify the Report Card"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:LearningTreeRunner.ReportcardRunner@344f4dea]" started-at="2025-01-29T11:53:29Z" name="afterClass" finished-at="2025-01-29T11:53:29Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:LearningTreeRunner.ReportcardRunner@344f4dea]" started-at="2025-01-29T11:53:29Z" name="tearDownClass" finished-at="2025-01-29T11:53:32Z" duration-ms="2864" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- LearningTreeRunner.ReportcardRunner -->
+      <class name="LearningTreeRunner.DocumentsRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:LearningTreeRunner.DocumentsRunner@4b6e2263]" started-at="2025-01-29T11:50:54Z" name="setUpClass" finished-at="2025-01-29T11:50:54Z" duration-ms="33" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7502291e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:LearningTreeRunner.DocumentsRunner@4b6e2263]" started-at="2025-01-29T11:50:54Z" name="beforeClass" finished-at="2025-01-29T11:50:54Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.DocumentsRunner@4b6e2263]" started-at="2025-01-29T11:50:54Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-29T11:51:49Z" duration-ms="54197" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Creating folders and uploading Documents"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify the Documents functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.InvalidArgumentException">
+            <message>
+              <![CDATA[invalid argument: File not found : D:\Focalpoint Automation\FPK12AutomationProject\src\test\resources\ExcelFiles\LearningTree.xlsx
+  (Session info: chrome=132.0.6834.111)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b18c98e50eee582f6680b09cf585e486, sendKeysToElement {id=f.BD5E7E7AE8A4387FC264C3D1541420F9.d.7E9BD6CB7060CF134AEA38167C63B141.e.155, value=[Ljava.lang.CharSequence;@6841e826}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.111, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61088}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61088/devtoo..., se:cdpVersion: 132.0.6834.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (b18c98e50eee582f6680b09cf585e486)] -> xpath: (//mat-icon[@mattooltip='Upload File']/preceding-sibling::input)[1]]
+Session ID: b18c98e50eee582f6680b09cf585e486]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidArgumentException: invalid argument: File not found : D:\Focalpoint Automation\FPK12AutomationProject\src\test\resources\ExcelFiles\LearningTree.xlsx
+  (Session info: chrome=132.0.6834.111)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b18c98e50eee582f6680b09cf585e486, sendKeysToElement {id=f.BD5E7E7AE8A4387FC264C3D1541420F9.d.7E9BD6CB7060CF134AEA38167C63B141.e.155, value=[Ljava.lang.CharSequence;@6841e826}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.111, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61088}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61088/devtoo..., se:cdpVersion: 132.0.6834.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (b18c98e50eee582f6680b09cf585e486)] -> xpath: (//mat-icon[@mattooltip='Upload File']/preceding-sibling::input)[1]]
+Session ID: b18c98e50eee582f6680b09cf585e486
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at com.LearningTree.pages.Documents_tab_page.fileupload(Documents_tab_page.java:141)
+	at LearningTreeStepdef.Documents_tab_Stepdefination.User_click_Upload_file_button(Documents_tab_Stepdefination.java:42)
+	at ✽.User click Upload file button(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/LearningTreeFeatures/Documents.feature:13)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.DocumentsRunner@4b6e2263]" started-at="2025-01-29T11:51:49Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-29T11:52:37Z" duration-ms="48299" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verifying Documents At Student side"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify the Documents functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//mat-icon[@mattooltip='Download File'])[1]"}
+  (Session info: chrome=132.0.6834.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8f94c9bfa26b95f51fd1353f8abbeb14, findElement {using=xpath, value=(//mat-icon[@mattooltip='Download File'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.111, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61131}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61131/devtoo..., se:cdpVersion: 132.0.6834.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8f94c9bfa26b95f51fd1353f8abbeb14]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//mat-icon[@mattooltip='Download File'])[1]"}
+  (Session info: chrome=132.0.6834.111)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8f94c9bfa26b95f51fd1353f8abbeb14, findElement {using=xpath, value=(//mat-icon[@mattooltip='Download File'])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.111, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445..., userDataDir: C:\Users\GOPIPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61131}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61131/devtoo..., se:cdpVersion: 132.0.6834.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8f94c9bfa26b95f51fd1353f8abbeb14
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at com.LearningTree.pages.Documents_tab_page.downloadfile(Documents_tab_page.java:175)
+	at LearningTreeStepdef.Documents_tab_Stepdefination.user_downloaded_the_file(Documents_tab_Stepdefination.java:60)
+	at ✽.User downloaded the file(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/LearningTreeFeatures/Documents.feature:30)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:LearningTreeRunner.DocumentsRunner@4b6e2263]" started-at="2025-01-29T11:52:37Z" name="afterClass" finished-at="2025-01-29T11:52:37Z" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:LearningTreeRunner.DocumentsRunner@4b6e2263]" started-at="2025-01-29T11:52:37Z" name="tearDownClass" finished-at="2025-01-29T11:52:40Z" duration-ms="3375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- LearningTreeRunner.DocumentsRunner -->
+      <class name="LearningTreeRunner.Student_Activities_SubmissionRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:LearningTreeRunner.Student_Activities_SubmissionRunner@7dda48d9]" started-at="2025-01-29T11:45:48Z" name="setUpClass" finished-at="2025-01-29T11:45:48Z" duration-ms="32" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7502291e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:LearningTreeRunner.Student_Activities_SubmissionRunner@7dda48d9]" started-at="2025-01-29T11:45:48Z" name="beforeClass" finished-at="2025-01-29T11:45:48Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.Student_Activities_SubmissionRunner@7dda48d9]" started-at="2025-01-29T11:45:48Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-29T11:50:11Z" duration-ms="262969" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Student Activities Submission"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify the Student Activities Submission"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:LearningTreeRunner.Student_Activities_SubmissionRunner@7dda48d9]" started-at="2025-01-29T11:50:11Z" name="afterClass" finished-at="2025-01-29T11:50:11Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:LearningTreeRunner.Student_Activities_SubmissionRunner@7dda48d9]" started-at="2025-01-29T11:50:11Z" name="tearDownClass" finished-at="2025-01-29T11:50:12Z" duration-ms="1444" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- LearningTreeRunner.Student_Activities_SubmissionRunner -->
+      <class name="LearningTreeRunner.Import_Activities_in_LTRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:LearningTreeRunner.Import_Activities_in_LTRunner@3d1848cc]" started-at="2025-01-29T11:44:54Z" name="setUpClass" finished-at="2025-01-29T11:44:54Z" duration-ms="44" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7502291e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:LearningTreeRunner.Import_Activities_in_LTRunner@3d1848cc]" started-at="2025-01-29T11:44:54Z" name="beforeClass" finished-at="2025-01-29T11:44:54Z" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.Import_Activities_in_LTRunner@3d1848cc]" started-at="2025-01-29T11:44:54Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-29T11:45:47Z" duration-ms="52893" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Import of Activities in LT"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Verify the import of Activities in LT"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:LearningTreeRunner.Import_Activities_in_LTRunner@3d1848cc]" started-at="2025-01-29T11:45:47Z" name="afterClass" finished-at="2025-01-29T11:45:47Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:LearningTreeRunner.Import_Activities_in_LTRunner@3d1848cc]" started-at="2025-01-29T11:45:47Z" name="tearDownClass" finished-at="2025-01-29T11:45:48Z" duration-ms="1252" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- LearningTreeRunner.Import_Activities_in_LTRunner -->
+    </test> <!-- Learning Tree -->
+  </suite> <!-- Suite -->
 </testng-results>

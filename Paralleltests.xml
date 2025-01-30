@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests" thread-count="3">
-	<test name="Test1">
+<suite name="Suite" parallel="tests" thread-count="4">
+	<test name="Exam center">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="ExamCenterRunners.Location_Runner"></class>
@@ -15,7 +15,7 @@
 		</classes>
 	</test>
 
-	<test name="Test2">
+	<test name="Assessment center">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="AssessmentsRunner.BenchmarksRunner" />
@@ -30,7 +30,7 @@
 		</classes>
 	</test>
 
-	<test name="Test3">
+	<test name="Portfolio center">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="PortfolioCenterRunner.PortfolioCenterCourseRunner"></class>
@@ -42,5 +42,17 @@
 			<class name="PortfolioCenterRunner.DeletePortfolioCourseRunner"></class>
 		</classes>
 	</test>
+	
+	<test name="Learning Tree">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="LearningTreeRunner.Activity_CreationRunner"/>
+			<class name="LearningTreeRunner.Import_Activities_in_LTRunner"/>
+			<class name="LearningTreeRunner.Student_Activities_SubmissionRunner"/>
+			<class name="LearningTreeRunner.Provide_Score_in_LTRunner"/>	
+			<class name="LearningTreeRunner.DocumentsRunner"/>			
+			<class name="LearningTreeRunner.ReportcardRunner"/>	
+		</classes>
+	</test> <!--Test -->
 </suite> <!--
 Suite -->

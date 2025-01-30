@@ -280,8 +280,18 @@ public class TimeSlotCreation_and_enrollExamataker_Page extends ActionType
 		cp.searchField(ELastName + " " + EFirstName);
 	}
 	public void addExamtaker()
-	{	
-		AddExamtaker.click();
+	{
+		int attempts=0;
+		try {
+			while(attempts<3)
+			{
+				AddExamtaker.click();
+				break;
+			}
+		} catch (StaleElementReferenceException e) {
+			attempts++;
+		}
+		
 	}
 
 	public void search_Examtaker_in_a_Timeslot(String EFName, String ELName)
