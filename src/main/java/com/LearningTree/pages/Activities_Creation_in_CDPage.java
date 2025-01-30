@@ -157,7 +157,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 		wait.elementToBeClickable(TitleName);
 		CourseDesigner_Name="CourseDesigner"+randomNumberGenerator();
 		TitleName.sendKeys(CourseDesigner_Name);
-		cp.insertData("LearningTree.xlsx", CourseDesigner_Name, 10);
+		cp.insertData("TestDataDetails.xlsx", CourseDesigner_Name, 10);
 		Description.sendKeys("Description"+generateRandomString());
 		cp.Save();
 	}
@@ -608,7 +608,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 			 try {
 
 				 WebElement fileInputRootFolder = driver.findElement(By.xpath("(//mat-icon[@mattooltip='Upload File']/preceding-sibling::input)[1]"));
-		          fileInputRootFolder.sendKeys(new File("src/test/resources/ExcelFiles/LearningTree.xlsx").getCanonicalPath());		         
+		          fileInputRootFolder.sendKeys(new File("src/test/resources/ExcelFiles/TestDataDetails.xlsx").getCanonicalPath());		         
 		     break;
 			 }
 		   
