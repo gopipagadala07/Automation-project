@@ -341,13 +341,15 @@ public class Activities_Creation_in_CDPage extends ActionType
 		wait1.until(ExpectedConditions.elementToBeClickable(gobtn));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", gobtn);
-		WebElement testAddBtn = wait1.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
+		
 		int attempts=0;
 		while(attempts<3)
 		{
 			try {
+				WebElement testAddBtn = wait1.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
 				Actions a=new Actions(driver);
 				a.moveToElement(testAddBtn).build().perform();
+				StaticWait(1);
 				js.executeScript("arguments[0].click();", testAddBtn);
 				break;
 			} catch (StaleElementReferenceException e) {
