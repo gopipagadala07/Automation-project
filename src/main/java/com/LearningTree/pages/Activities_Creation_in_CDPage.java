@@ -157,7 +157,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 		wait.elementToBeClickable(TitleName);
 		CourseDesigner_Name="CourseDesigner"+randomNumberGenerator();
 		TitleName.sendKeys(CourseDesigner_Name);
-		cp.insertData("TestDataDetails.xlsx", CourseDesigner_Name, 10);
+		cp.insertData("TestDataDetails.xlsx", CourseDesigner_Name, 16);
 		Description.sendKeys("Description"+generateRandomString());
 		cp.Save();
 	}
@@ -346,10 +346,13 @@ public class Activities_Creation_in_CDPage extends ActionType
 		while(attempts<3)
 		{
 			try {
+				Actions a=new Actions(driver);
+				a.moveToElement(testAddBtn).build().perform();
 				js.executeScript("arguments[0].click();", testAddBtn);
 				break;
 			} catch (StaleElementReferenceException e) {
 				attempts++;
+				StaticWait(1);
 			}
 		}
 
