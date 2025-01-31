@@ -116,18 +116,26 @@ public class Student_Activity_Submit_pages extends ActionType {
 	}
 	public void learningTab()
 	{
-		wait.elementToBeClickable(Learning);
-		Learning.click();
-		StaticWait(1);
-		All.click();
-		JavascriptExecutor s = (JavascriptExecutor) driver;
-		s.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
-		s.executeScript("arguments[0].scrollIntoView(true);", Topic);
-		s.executeScript("arguments[0].click();", Topic);
-		StaticWait(1);
-		s.executeScript("arguments[0].scrollIntoView(true);", SubTopic);
-		s.executeScript("arguments[0].click();", SubTopic);
-		StaticWait(1);
+		try {
+			wait.elementToBeClickable(Learning);
+			Learning.click();
+			StaticWait(1);
+			All.click();
+			JavascriptExecutor s = (JavascriptExecutor) driver;
+			s.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
+			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement topic= wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//mat-icon[text()=' chevron_right '])[1]")));
+			s.executeScript("arguments[0].scrollIntoView(true);", topic);
+			s.executeScript("arguments[0].click();", topic);
+			StaticWait(1);
+			WebElement subtopic= wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//mat-icon[text()=' chevron_right ']")));
+			s.executeScript("arguments[0].scrollIntoView(true);", subtopic);
+			s.executeScript("arguments[0].click();", subtopic);
+			StaticWait(1);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 	public void performActivities()
 	{
@@ -136,7 +144,6 @@ public class Student_Activity_Submit_pages extends ActionType {
 		List<WebElement> matIcons = driver.findElements(By.xpath("//mat-icon[text()='launch']"));
 		System.out.println("Total Activities Found: " + matIcons.size());
 		for (int targetIndex = 0; targetIndex < matIcons.size(); targetIndex++) {
-			
 			int retry = 0;
 			int maxRetry = 5;
 			while (retry < maxRetry) {

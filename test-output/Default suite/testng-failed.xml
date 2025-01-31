@@ -3,50 +3,7 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test" verbose="2">
     <classes>
-<<<<<<< HEAD
-      <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner"/>
+      <class name="LearningTreeRunner.ReportcardRunner"/>
     </classes>
   </test> <!-- Default test -->
-  <test parallel="none" name="Default test(failed)">
-    <classes>
-      <class name="PortfolioCenterRunner.PortfolioCenterCourseRunner">
-=======
-<<<<<<< HEAD
-      <class name="LearningTreeRunner.Activity_CreationRunner">
-=======
-      <class name="LearningTreeRunner.StudentActivitySubmission_Runner">
->>>>>>> branch 'LT_Scripts_R' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
->>>>>>> branch 'LT_Automation' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-        <methods>
-<<<<<<< HEAD
-=======
-          <include name="setUpClass"/>
-<<<<<<< HEAD
->>>>>>> branch 'LT_Automation' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-          <include name="beforeClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="afterClass"/>
-          <include name="tearDownClass"/>
-<<<<<<< HEAD
-          <include name="setUpClass"/>
-=======
-=======
->>>>>>> branch 'LT_Scripts_R' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-          <include name="afterClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-          <include name="beforeClass"/>
->>>>>>> branch 'LT_Automation' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-        </methods>
-<<<<<<< HEAD
-      </class> <!-- PortfolioCenterRunner.PortfolioCenterCourseRunner -->
-=======
-<<<<<<< HEAD
-      </class> <!-- LearningTreeRunner.Activity_CreationRunner -->
-=======
-      </class> <!-- LearningTreeRunner.StudentActivitySubmission_Runner -->
->>>>>>> branch 'LT_Scripts_R' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
->>>>>>> branch 'LT_Automation' of https://focalpointk12.visualstudio.com/FPK12%202.0/_git/FPK12-AUTOMATION-TEST-2.0
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

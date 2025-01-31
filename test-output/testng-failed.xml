@@ -1,71 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="4" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="browser" value="chrome"/>
-  <test name="Learning Tree">
-    <parameter name="browser" value="chrome"/>
+<suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test" verbose="2">
     <classes>
-      <class name="LearningTreeRunner.Activity_CreationRunner"/>
-      <class name="LearningTreeRunner.Import_Activities_in_LTRunner"/>
-      <class name="LearningTreeRunner.Student_Activities_SubmissionRunner"/>
-      <class name="LearningTreeRunner.Provide_Score_in_LTRunner"/>
-      <class name="LearningTreeRunner.DocumentsRunner"/>
       <class name="LearningTreeRunner.ReportcardRunner"/>
     </classes>
-  </test> <!-- Learning Tree -->
-  <test parallel="tests" name="Learning Tree(failed)">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="LearningTreeRunner.ReportcardRunner">
-        <methods>
-          <include name="afterClass"/>
-          <include name="tearDownClass"/>
-          <include name="beforeClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- LearningTreeRunner.ReportcardRunner -->
-      <class name="LearningTreeRunner.DocumentsRunner">
-        <methods>
-          <include name="runScenario" invocation-numbers="0 1"/>
-          <include name="tearDownClass"/>
-          <include name="afterClass"/>
-          <include name="beforeClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- LearningTreeRunner.DocumentsRunner -->
-      <class name="LearningTreeRunner.Activity_CreationRunner">
-        <methods>
-          <include name="beforeClass"/>
-          <include name="tearDownClass"/>
-          <include name="afterClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- LearningTreeRunner.Activity_CreationRunner -->
-      <class name="LearningTreeRunner.Import_Activities_in_LTRunner">
-        <methods>
-          <include name="afterClass"/>
-          <include name="beforeClass"/>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- LearningTreeRunner.Import_Activities_in_LTRunner -->
-      <class name="LearningTreeRunner.Provide_Score_in_LTRunner">
-        <methods>
-          <include name="beforeClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-          <include name="afterClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- LearningTreeRunner.Provide_Score_in_LTRunner -->
-      <class name="LearningTreeRunner.Student_Activities_SubmissionRunner">
-        <methods>
-          <include name="afterClass"/>
-          <include name="tearDownClass"/>
-          <include name="beforeClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- LearningTreeRunner.Student_Activities_SubmissionRunner -->
-    </classes>
-  </test> <!-- Learning Tree(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test -->
+</suite> <!-- Failed suite [Default suite] -->
