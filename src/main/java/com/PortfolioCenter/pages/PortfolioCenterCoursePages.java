@@ -271,20 +271,14 @@ public class PortfolioCenterCoursePages extends ActionType{
 				while (!badgeAdded && retryCount < 3) {
 					try {
 						StaticWait(1);
-					    actions.click(targetElement).build().perform();
+						actions.click(targetElement).build().perform();
 						StaticWait(1);
 						WebElement closetab=driver.findElement(By.xpath("//a[@class='close-tab']"));
 						closetab.click();
 						WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
 						if (alertBadge.isDisplayed()) {
-							System.out.println("Badge successfully added..!!!");
+							//System.out.println("Badge successfully added..!!!");
 							badgeAdded = true;
-						}else if (!alertBadge.isDisplayed()) {
-							StaticWait(1);
-							closetab.click();
-							actions.click(targetElement).build().perform();
-							StaticWait(1);
-							closetab.click();
 						} 
 						else {
 							System.out.println("Badge not displayed as added, retrying...");
@@ -301,13 +295,12 @@ public class PortfolioCenterCoursePages extends ActionType{
 				if (!badgeAdded) {
 					throw new RuntimeException("Failed to add badge after " + retryCount + " retries.");
 				}
-	        } else {
-	            throw new NoSuchElementException("No path elements found within the badge.");
-	        }
+			} else {
+				throw new NoSuchElementException("No path elements found within the badge.");
+			}
 
-	        int maxRetry = 10;
-	        boolean success = false;
-	        for (int badgeRetry = 0; badgeRetry < 5; badgeRetry++) {
+			boolean success = false;
+			for (int badgeRetry = 0; badgeRetry < 5; badgeRetry++) {
 				try {
 					WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 					WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='button info']")));
@@ -322,166 +315,165 @@ public class PortfolioCenterCoursePages extends ActionType{
 					success=true;
 					break;
 				} catch (TimeoutException e) {
-	                System.err.println("Retry due to TimeoutException.");
-	                e.printStackTrace();
-	            } catch (Exception e) {
-	                System.err.println("Retry due to an exception: " + e.getMessage());
-	                e.printStackTrace();
-	            }
-	        }
-	    } catch (NoSuchElementException e) {
-	        System.out.println("No badges found for selection.");
-	    } catch (Exception e) {
-	        System.err.println("Error in addBadge: " + e.getMessage());
-	        e.printStackTrace();
-	    }
+					System.err.println("Retry due to TimeoutException.");
+					e.printStackTrace();
+				} catch (Exception e) {
+					System.err.println("Retry due to an exception: " + e.getMessage());
+					e.printStackTrace();
+				}
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("No badges found for selection.");
+		} catch (Exception e) {
+			System.err.println("Error in addBadge: " + e.getMessage());
+			e.printStackTrace();
+		}
 	}
 
-
-
-public void the_user_added_the_badge() {
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	Badgetab.click();
-	js.executeScript("arguments[0].click();", AddnewBadgebtn);
-	StaticWait(1);
-	driver.switchTo().frame(0);
-	StaticWait(1);
-	addBadge();
-} 
-//	public static void clearOrCreateFolder(File folder) {
-//		try {
-//			if (folder.exists()) {
-//				FileUtils.cleanDirectory(folder);
-//			} else {
-//				folder.mkdirs();
-//			}
-//			//System.out.println("Screenshots folder is ready: " + folder.getAbsolutePath());
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
-//
-//	public static void takeScreenshot(WebDriver driver, String fileName, File folder) {
-//		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-//	    jsExecutor.executeScript("window.scrollBy(arguments[0], 0);", 1000);
-//	    
-//		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-//		File destFile = new File(folder, fileName + ".png");
-//
-//		try {
-//			FileUtils.copyFile(srcFile, destFile);
-//			System.out.println("Screenshot saved as: " + destFile.getAbsolutePath());
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
-
-public void the_user_clicks_on_the_save_button() {
-	StaticWait(1);
-	try {
-		cp.Save();
-	} catch (TimeoutException e) {
+	public void the_user_added_the_badge() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Badgetab.click();
+		js.executeScript("arguments[0].click();", AddnewBadgebtn);
+		StaticWait(1);
+		driver.switchTo().frame(0);
+		StaticWait(1);
 		addBadge();
-		cp.Save();
-	}
+	} 
+	//	public static void clearOrCreateFolder(File folder) {
+	//		try {
+	//			if (folder.exists()) {
+	//				FileUtils.cleanDirectory(folder);
+	//			} else {
+	//				folder.mkdirs();
+	//			}
+	//			//System.out.println("Screenshots folder is ready: " + folder.getAbsolutePath());
+	//		} catch (IOException e) {
+	//			e.printStackTrace();
+	//		}
+	//	}
+	//
+	//	public static void takeScreenshot(WebDriver driver, String fileName, File folder) {
+	//		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+	//	    jsExecutor.executeScript("window.scrollBy(arguments[0], 0);", 1000);
+	//	    
+	//		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+	//		File destFile = new File(folder, fileName + ".png");
+	//
+	//		try {
+	//			FileUtils.copyFile(srcFile, destFile);
+	//			System.out.println("Screenshot saved as: " + destFile.getAbsolutePath());
+	//		} catch (IOException e) {
+	//			e.printStackTrace();
+	//		}
+	//	}
 
-}
-
-public void the_user_navigates_to_the_members_tab_searches_for_the_username_in_the_search_here_field_using_row(Integer LastName) throws InvalidFormatException, IOException{
-	StaticWait(1);
-	wait.elementToBeClickable(MembersTabElement);
-	MembersTabElement.click();
-	StaticWait(1);
-	wait.elementToBeClickable(ManageMembersbElement);
-	ManageMembersbElement.click();
-
-	if (testdata == null) {
-		testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
-	}
-	String Fname = testdata.get(LastName).get("FirstName");
-	String Lname = testdata.get(LastName).get("LastName");
-	//System.out.println(User);
-	StaticWait(1);
-	retrySearchUserName(Lname, 5, Fname);
-
-}
-
-public void retrySearchUserName(String Lname, int retryCount, String Fname) {
-	int attempts = 0;
-	boolean isSuccessful = false;
-	while (attempts < retryCount && !isSuccessful) {
+	public void the_user_clicks_on_the_save_button() {
+		StaticWait(1);
 		try {
-			cp.searchField1(Lname);
-			wait.visibilityOf(Addicon(Lname+" "+Fname));
-			JavascriptExecutor jc = (JavascriptExecutor) driver;
-			jc.executeScript("arguments[0].click();", Addicon(Lname+" "+Fname));
-			isSuccessful = true;
-			break;
-		} catch (Exception e) {
-			attempts++;
-			System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
-			if (attempts >= retryCount) {
-				throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
-			}
-		}
-	}
-}
-
-public void assign_the_user_to_the_assignment() {
-	wait.elementToBeClickable(closebtnElement);
-	for (int retry = 0; retry < 3; retry++) {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.elementToBeClickable(closebtnElement));
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click();", closebtnElement);
-			StaticWait(1);
-			break;
-		} catch (StaleElementReferenceException e) {
-			retry++;
-			if (retry == 3) {
-				System.err.println("Element became stale after multiple attempts: " + e.getMessage());
-			}
+			cp.Save();
 		} catch (TimeoutException e) {
-			System.err.println("Element not clickable within the wait time: " + e.getMessage());
-			break;
-		} catch (Exception e) {
-			System.err.println("An error occurred: " + e.getMessage());
-			break;
+			addBadge();
+			cp.Save();
+			System.out.println("Badge Create in timeout Sceanrio");
+		}
+
+	}
+
+	public void the_user_navigates_to_the_members_tab_searches_for_the_username_in_the_search_here_field_using_row(Integer LastName) throws InvalidFormatException, IOException{
+		StaticWait(1);
+		wait.elementToBeClickable(MembersTabElement);
+		MembersTabElement.click();
+		StaticWait(1);
+		wait.elementToBeClickable(ManageMembersbElement);
+		ManageMembersbElement.click();
+
+		if (testdata == null) {
+			testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
+		}
+		String Fname = testdata.get(LastName).get("FirstName");
+		String Lname = testdata.get(LastName).get("LastName");
+		//System.out.println(User);
+		StaticWait(1);
+		retrySearchUserName(Lname, 5, Fname);
+
+	}
+
+	public void retrySearchUserName(String Lname, int retryCount, String Fname) {
+		int attempts = 0;
+		boolean isSuccessful = false;
+		while (attempts < retryCount && !isSuccessful) {
+			try {
+				cp.searchField1(Lname);
+				wait.visibilityOf(Addicon(Lname+" "+Fname));
+				JavascriptExecutor jc = (JavascriptExecutor) driver;
+				jc.executeScript("arguments[0].click();", Addicon(Lname+" "+Fname));
+				isSuccessful = true;
+				break;
+			} catch (Exception e) {
+				attempts++;
+				System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+				if (attempts >= retryCount) {
+					throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
+				}
+			}
 		}
 	}
-}
 
-public void the_user_navigates_to_the_portfolio_tab() {
-	StaticWait(1);
-	wait.elementToBeClickable(PortfolioElement);
-	PortfolioElement.click();
-}
-
-public void clicks_on_the_assignment_and_verifies_that_the_user_is_added_to_the_assignment(Integer verifyName) throws InvalidFormatException, IOException, AWTException {
-	StaticWait(1);
-	//System.out.println(assignmentname);
-	wait.visibilityOf(AssignmentName(assignmentname));
-	AssignmentName(assignmentname).click();
-	StaticWait(1);
-	if (testdata == null) {
-		testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
+	public void assign_the_user_to_the_assignment() {
+		wait.elementToBeClickable(closebtnElement);
+		for (int retry = 0; retry < 3; retry++) {
+			try {
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+				wait.until(ExpectedConditions.elementToBeClickable(closebtnElement));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", closebtnElement);
+				StaticWait(1);
+				break;
+			} catch (StaleElementReferenceException e) {
+				retry++;
+				if (retry == 3) {
+					System.err.println("Element became stale after multiple attempts: " + e.getMessage());
+				}
+			} catch (TimeoutException e) {
+				System.err.println("Element not clickable within the wait time: " + e.getMessage());
+				break;
+			} catch (Exception e) {
+				System.err.println("An error occurred: " + e.getMessage());
+				break;
+			}
+		}
 	}
-	String Name = testdata.get(verifyName).get("LastName");
-	String verify = testdata.get(verifyName).get("LastName");
-	Actions a=new Actions(driver);
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
-	a.moveToElement(verifiesStudent(verify)).build().perform();
-	StaticWait(1);
-	String StudentVerify = verifiesStudent(verify).getText();
 
-	if (Name != null && StudentVerify != null && StudentVerify.contains(Name)) {
-		System.out.println("User Added");
-	} else {
-		System.out.println("User Not Added");
-		System.out.println("Expected Name: " + Name);
-		System.out.println("Fetched Name: " + StudentVerify);
+	public void the_user_navigates_to_the_portfolio_tab() {
+		StaticWait(1);
+		wait.elementToBeClickable(PortfolioElement);
+		PortfolioElement.click();
 	}
-}
+
+	public void clicks_on_the_assignment_and_verifies_that_the_user_is_added_to_the_assignment(Integer verifyName) throws InvalidFormatException, IOException, AWTException {
+		StaticWait(1);
+		//System.out.println(assignmentname);
+		wait.visibilityOf(AssignmentName(assignmentname));
+		AssignmentName(assignmentname).click();
+		StaticWait(1);
+		if (testdata == null) {
+			testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
+		}
+		String Name = testdata.get(verifyName).get("LastName");
+		String verify = testdata.get(verifyName).get("LastName");
+		Actions a=new Actions(driver);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
+		a.moveToElement(verifiesStudent(verify)).build().perform();
+		StaticWait(1);
+		String StudentVerify = verifiesStudent(verify).getText();
+
+		if (Name != null && StudentVerify != null && StudentVerify.contains(Name)) {
+			System.out.println("User Added");
+		} else {
+			System.out.println("User Not Added");
+			System.out.println("Expected Name: " + Name);
+			System.out.println("Fetched Name: " + StudentVerify);
+		}
+	}
 }

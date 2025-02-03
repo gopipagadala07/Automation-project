@@ -1,8 +1,11 @@
 package com.LearningTree.pages;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -19,12 +22,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.Utils.ActionType;
 import com.Utils.Base;
 import com.Utils.CommonPages;
+import com.Utils.ExcelReader;
 import com.Utils.Wait;
 
 public class Import_Activities_in_LTPage extends ActionType {
 	private WebDriver driver;
 	private Wait wait;
-	
+	static List<Map<String, String>> testdata=null;
+	ExcelReader reader = new ExcelReader();
 	public String LearningTree_Name;
 
 	CommonPages cp=new CommonPages(Base.getDriver());
@@ -47,6 +52,11 @@ public class Import_Activities_in_LTPage extends ActionType {
 	@FindBy(how = How.XPATH,using = "(//input[@data-placeholder='search here'])[1]")public WebElement Search_Users;
 	@FindBy(how = How.XPATH,using = "//input[@type='search']")private WebElement search;	
 	@FindBy(how = How.XPATH,using = "//mat-icon[text()='close']")public WebElement Close;
+	
+	public WebElement Addicon(String name) {
+		String xpath = "//*[text()='"+name+"']/parent::span/parent::div/parent::div/following-sibling::div/child::a/child::mat-icon";
+		return driver.findElement(By.xpath(xpath));
+	}
 	public Import_Activities_in_LTPage(WebDriver driver)
 	{
 		this.driver=driver;	
@@ -146,25 +156,39 @@ public class Import_Activities_in_LTPage extends ActionType {
 		wait.elementToBeClickable(Members_Tab);
 		Members_Tab.click();
 	}
-	public void add_Student_in_Member(String Student_Lastname)
+	
+	public void retrySearchUserName(String Lname, int retryCount, String Fname) {
+		int attempts = 0;
+		boolean isSuccessful = false;
+		while (attempts < retryCount && !isSuccessful) {
+			try {
+				cp.searchField1(Lname);
+				wait.visibilityOf(Addicon(Lname+" "+Fname));
+				JavascriptExecutor jc = (JavascriptExecutor) driver;
+				jc.executeScript("arguments[0].click();", Addicon(Lname+" "+Fname));
+				isSuccessful = true;
+				break;
+			} catch (Exception e) {
+				attempts++;
+				System.out.println("Attempt " + attempts + " failed: " + e.getMessage());
+				if (attempts >= retryCount) {
+					throw new RuntimeException("Failed to search and click on course name after " + retryCount + " attempts.", e);
+				}
+			}
+		}
+	}
+	public void add_Student_in_Member(int Name) throws InvalidFormatException, IOException
 	{
 		wait.elementToBeClickable(Manage_Members_btn);
 		Manage_Members_btn.click();
-		Search_Users.sendKeys(Student_Lastname);
-		WebElement Add_Student =  driver.findElement(By.xpath("//mat-icon[@mattooltip='Add User']"));
-		int retries = 10;
-		while (retries > 0) {
-			try {
-				wait.elementToBeClickable(Add_Student);
-				((JavascriptExecutor) driver).executeScript("arguments[0].click();", Add_Student);
-				break;
-			} catch (StaleElementReferenceException e) {
-				
-				System.out.println("StaleElementReferenceException. Retrying...");
-				StaticWait(1);
-				retries--;
-			}	
+		if (testdata == null) {
+			testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
 		}
+		String Fname = testdata.get(Name).get("FirstName");
+		String Lname = testdata.get(Name).get("LastName");
+		//System.out.println(User);
+		StaticWait(1);
+		retrySearchUserName(Lname, 5, Fname);
 	        try {
 	            WebElement Close = driver.findElement(By.xpath("//mat-icon[text()='close']"));
 	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", Close);

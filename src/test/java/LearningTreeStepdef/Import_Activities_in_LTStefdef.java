@@ -85,12 +85,7 @@ public class Import_Activities_in_LTStefdef extends ActionType
 	}
 	@Then("User Search and added the Student in the Course{int}")
 	public void User_Search_and_added_the_Student_in_the_Course(int row) throws InvalidFormatException, IOException {
-		if(testdata==null)
-		{
-			testdata=reader.getData("/ExcelFiles/TestDataDetails.xlsx",getSheetEnv());
-		}
-		String LastName=testdata.get(row).get("LastName");
-		ILT.add_Student_in_Member(LastName);
+		ILT.add_Student_in_Member(row);
 
 	}
 }

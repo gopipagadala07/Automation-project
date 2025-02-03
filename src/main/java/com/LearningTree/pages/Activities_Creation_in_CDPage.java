@@ -294,87 +294,105 @@ public class Activities_Creation_in_CDPage extends ActionType
 	}
 	public void add_Discussion_Activity()
 	{
-		wait.elementToBeClickable(Discussion_Activity);
-		Discussion_Activity.click();;
-		wait.elementToBeClickable(TitleName);
-		MaxScore.clear();   
-		MaxScore.sendKeys("80");
-		TitleName.sendKeys("Discussion"+randomNumberGenerator());
-		String Description_Txt="Description"+"          "+generateRandomString();
-		Description.sendKeys(Description_Txt);
-		String Rubric_txt="Rubric"+"     "+generateRandomString();
-		Rubric.sendKeys(Rubric_txt);
-		select_Tags();
-		Badges();
-		addBadge();
-		cp.Save();
-		System.out.println("Discussion_Activity Created Successfully");
+		try {
+			wait.elementToBeClickable(Discussion_Activity);
+			Discussion_Activity.click();;
+			wait.elementToBeClickable(TitleName);
+			MaxScore.clear();   
+			MaxScore.sendKeys("80");
+			TitleName.sendKeys("Discussion"+randomNumberGenerator());
+			String Description_Txt="Description"+"          "+generateRandomString();
+			Description.sendKeys(Description_Txt);
+			String Rubric_txt="Rubric"+"     "+generateRandomString();
+			Rubric.sendKeys(Rubric_txt);
+			select_Tags();
+			Badges();
+			addBadge();
+			cp.Save();
+			System.out.println("Discussion_Activity Created Successfully");
+		} catch (TimeoutException e) {
+			addBadge();
+			cp.Save();
+			System.out.println("Badge Create in timeout Sceanrio");
+		}
 	}
 	public void add_Assignment_Activity()
 	{
-		wait.elementToBeClickable(Assignment_Activity);
-		Assignment_Activity.click();;
-		wait.elementToBeClickable(TitleName);
-		TitleName.sendKeys("Assignment"+randomNumberGenerator());
-		MaxScore.clear();   
-		MaxScore.sendKeys("80");
-		String Description_Txt="Description"+"          "+generateRandomString();
-		Description.sendKeys(Description_Txt);
-		String Rubric_txt="Rubric"+"     "+generateRandomString();
-		Rubric.sendKeys(Rubric_txt);
-		select_Tags();
-		Badges();
-		addBadge();
-		cp.Save();
-		System.out.println("Assignment_Activity Created Successfully");
+		try {
+			wait.elementToBeClickable(Assignment_Activity);
+			Assignment_Activity.click();;
+			wait.elementToBeClickable(TitleName);
+			TitleName.sendKeys("Assignment"+randomNumberGenerator());
+			MaxScore.clear();   
+			MaxScore.sendKeys("80");
+			String Description_Txt="Description"+"          "+generateRandomString();
+			Description.sendKeys(Description_Txt);
+			String Rubric_txt="Rubric"+"     "+generateRandomString();
+			Rubric.sendKeys(Rubric_txt);
+			select_Tags();
+			Badges();
+			addBadge();
+			cp.Save();
+			System.out.println("Assignment_Activity Created Successfully");
+		} catch (TimeoutException e) {
+			addBadge();
+			cp.Save();
+			System.out.println("Badge Create in timeout Sceanrio");
+		}
 	}
 	public void add_Assessment_Activity(String TestName)
 	{
-		wait.elementToBeClickable(Assessment_Activity);
-		Assessment_Activity.click();
-		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.elementToBeClickable(TitleName);
-		wait1.until(ExpectedConditions.elementToBeClickable(Searchtestbtn));
-		Searchtestbtn.click();
-		String testname = "\"" + TestName + "\"";
-		cp.SearchTestname(testname);
-		wait1.until(ExpectedConditions.elementToBeClickable(gobtn));
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", gobtn);
-		
-		int attempts=0;
-		while(attempts<3)
-		{
-			try {
-				WebElement testAddBtn = wait1.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
-				Actions a=new Actions(driver);
-				a.moveToElement(testAddBtn).build().perform();
-				StaticWait(1);
-				js.executeScript("arguments[0].click();", testAddBtn);
-				break;
-			} catch (StaleElementReferenceException e) {
-				attempts++;
-				StaticWait(1);
-			}
-		}
+		try {
+			wait.elementToBeClickable(Assessment_Activity);
+			Assessment_Activity.click();
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.elementToBeClickable(TitleName);
+			wait1.until(ExpectedConditions.elementToBeClickable(Searchtestbtn));
+			Searchtestbtn.click();
+			String testname = "\"" + TestName + "\"";
+			cp.SearchTestname(testname);
+			wait1.until(ExpectedConditions.elementToBeClickable(gobtn));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", gobtn);
 
-		String AName = "Assessment"+randomNumberGenerator();
-		cp.Name(AName);
-		String Description_Txt="Description"+"       "+generateRandomString();
-		Description.sendKeys(Description_Txt);
-		Instructionbox.sendKeys(generateRandomString());
-		ShowAnswers.click();
-		if (ShowTestResult.isEnabled()) {
-			ShowTestResult.click();
+			int attempts=0;
+			while(attempts<3)
+			{
+				try {
+					WebElement testAddBtn = wait1.until(ExpectedConditions.elementToBeClickable(TestAddbtn(TestName)));
+					Actions a=new Actions(driver);
+					a.moveToElement(testAddBtn).build().perform();
+					StaticWait(1);
+					js.executeScript("arguments[0].click();", testAddBtn);
+					break;
+				} catch (StaleElementReferenceException e) {
+					attempts++;
+					StaticWait(1);
+				}
+			}
+
+			String AName = "Assessment"+randomNumberGenerator();
+			cp.Name(AName);
+			String Description_Txt="Description"+"       "+generateRandomString();
+			Description.sendKeys(Description_Txt);
+			Instructionbox.sendKeys(generateRandomString());
+			ShowAnswers.click();
+			if (ShowTestResult.isEnabled()) {
+				ShowTestResult.click();
+			}
+			wait1.until(ExpectedConditions.elementToBeClickable(ShowtestSummary));
+			OverrideInstructionstoggle.click();
+			StaticWait(1);
+			select_Tags();
+			Badges();
+			addBadge();
+			cp.Save();
+			System.out.println("Assessment_Activity Created Successfully");
+		} catch (TimeoutException e) {
+			addBadge();
+			cp.Save();
+			System.out.println("Badge Create in timeout Sceanrio");
 		}
-		wait1.until(ExpectedConditions.elementToBeClickable(ShowtestSummary));
-		OverrideInstructionstoggle.click();
-		StaticWait(1);
-		select_Tags();
-		Badges();
-		addBadge();
-		cp.Save();
-		System.out.println("Assessment_Activity Created Successfully");
 	}
 	public void add_Resources_Activity()
 	{
@@ -541,14 +559,8 @@ public class Activities_Creation_in_CDPage extends ActionType
 						closetab.click();
 						WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
 						if (alertBadge.isDisplayed()) {
-							System.out.println("Badge successfully added..!!!");
+							//System.out.println("Badge successfully added..!!!");
 							badgeAdded = true;
-						}else if (!alertBadge.isDisplayed()) {
-							StaticWait(1);
-							closetab.click();
-							actions.click(targetElement).build().perform();
-							StaticWait(1);
-							closetab.click();
 						} 
 						else {
 							System.out.println("Badge not displayed as added, retrying...");
@@ -569,7 +581,6 @@ public class Activities_Creation_in_CDPage extends ActionType
 				throw new NoSuchElementException("No path elements found within the badge.");
 			}
 
-			int maxRetry = 10;
 			boolean success = false;
 			for (int badgeRetry = 0; badgeRetry < 5; badgeRetry++) {
 				try {

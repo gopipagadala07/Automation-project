@@ -61,8 +61,8 @@ public class PortfolioCenterCourseStepdef extends ActionType{
 	}
 
 	@Then("the user navigates to the Members tab, searches for the username in the Search Here field using row {int}")
-	public void the_user_navigates_to_the_members_tab_searches_for_the_username_in_the_search_here_field_using_row(Integer FirstName) throws InvalidFormatException, IOException {
-		PortfolioCenterCourse.the_user_navigates_to_the_members_tab_searches_for_the_username_in_the_search_here_field_using_row(FirstName);    
+	public void the_user_navigates_to_the_members_tab_searches_for_the_username_in_the_search_here_field_using_row(Integer Name) throws InvalidFormatException, IOException {
+		PortfolioCenterCourse.the_user_navigates_to_the_members_tab_searches_for_the_username_in_the_search_here_field_using_row(Name);    
 	}
 
 	@Then("assign the user to the assignment")

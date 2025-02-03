@@ -2,54 +2,54 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-31T10:07:43Z" name="Default suite" finished-at="2025-01-31T10:08:26Z" duration-ms="42493">
+  <suite started-at="2025-02-03T10:19:07Z" name="Default suite" finished-at="2025-02-03T10:19:58Z" duration-ms="50293">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.ReportcardRunner@42039326]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.Import_Activities_in_LTRunner@42039326]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-01-31T10:07:43Z" name="Default test" finished-at="2025-01-31T10:08:26Z" duration-ms="42493">
-      <class name="LearningTreeRunner.ReportcardRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:LearningTreeRunner.ReportcardRunner@42039326]" started-at="2025-01-31T15:37:43Z" name="setUpClass" finished-at="2025-01-31T15:37:44Z" duration-ms="784" status="PASS">
+    <test started-at="2025-02-03T10:19:07Z" name="Default test" finished-at="2025-02-03T10:19:58Z" duration-ms="50293">
+      <class name="LearningTreeRunner.Import_Activities_in_LTRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:LearningTreeRunner.Import_Activities_in_LTRunner@42039326]" started-at="2025-02-03T15:49:07Z" name="setUpClass" finished-at="2025-02-03T15:49:08Z" duration-ms="763" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@ca10069]]>
+                <![CDATA[org.testng.TestRunner@5b55c3d6]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:LearningTreeRunner.ReportcardRunner@42039326]" started-at="2025-01-31T15:37:44Z" name="beforeClass" finished-at="2025-01-31T15:37:44Z" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:LearningTreeRunner.Import_Activities_in_LTRunner@42039326]" started-at="2025-02-03T15:49:08Z" name="beforeClass" finished-at="2025-02-03T15:49:08Z" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.ReportcardRunner@42039326]" started-at="2025-01-31T15:37:44Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-31T15:38:24Z" duration-ms="39651" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.Import_Activities_in_LTRunner@42039326]" started-at="2025-02-03T15:49:08Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-02-03T15:49:56Z" duration-ms="47487" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Verify the Report Card"]]>
+                <![CDATA["Import of Activities in LT"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Verify the Report Card"]]>
+                <![CDATA["Verify the import of Activities in LT"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:LearningTreeRunner.ReportcardRunner@42039326]" started-at="2025-01-31T15:38:24Z" name="afterClass" finished-at="2025-01-31T15:38:24Z" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:LearningTreeRunner.ReportcardRunner@42039326]" started-at="2025-01-31T15:38:24Z" name="tearDownClass" finished-at="2025-01-31T15:38:26Z" duration-ms="2034" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:LearningTreeRunner.Import_Activities_in_LTRunner@42039326]" started-at="2025-02-03T15:49:56Z" name="tearDownClass" finished-at="2025-02-03T15:49:58Z" duration-ms="2030" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- LearningTreeRunner.ReportcardRunner -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:LearningTreeRunner.Import_Activities_in_LTRunner@42039326]" started-at="2025-02-03T15:49:56Z" name="afterClass" finished-at="2025-02-03T15:49:56Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- LearningTreeRunner.Import_Activities_in_LTRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

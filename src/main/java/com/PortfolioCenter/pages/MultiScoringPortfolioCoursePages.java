@@ -255,20 +255,14 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 				while (!badgeAdded && retryCount < 3) {
 					try {
 						StaticWait(1);
-					    actions.click(targetElement).build().perform();
+						actions.click(targetElement).build().perform();
 						StaticWait(1);
 						WebElement closetab=driver.findElement(By.xpath("//a[@class='close-tab']"));
 						closetab.click();
 						WebElement alertBadge = driver.findElement(By.xpath("//*[local-name()='svg' and @selection='true']"));
 						if (alertBadge.isDisplayed()) {
-							System.out.println("Badge successfully added..!!!");
+							//System.out.println("Badge successfully added..!!!");
 							badgeAdded = true;
-						}else if (!alertBadge.isDisplayed()) {
-							StaticWait(1);
-							closetab.click();
-							actions.click(targetElement).build().perform();
-							StaticWait(1);
-							closetab.click();
 						} 
 						else {
 							System.out.println("Badge not displayed as added, retrying...");
@@ -285,13 +279,12 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 				if (!badgeAdded) {
 					throw new RuntimeException("Failed to add badge after " + retryCount + " retries.");
 				}
-	        } else {
-	            throw new NoSuchElementException("No path elements found within the badge.");
-	        }
+			} else {
+				throw new NoSuchElementException("No path elements found within the badge.");
+			}
 
-	        int maxRetry = 10;
-	        boolean success = false;
-	        for (int badgeRetry = 0; badgeRetry < 5; badgeRetry++) {
+			boolean success = false;
+			for (int badgeRetry = 0; badgeRetry < 5; badgeRetry++) {
 				try {
 					WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 					WebElement importBadgeBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='button info']")));
@@ -306,19 +299,19 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 					success=true;
 					break;
 				} catch (TimeoutException e) {
-	                System.err.println("Retry due to TimeoutException.");
-	                e.printStackTrace();
-	            } catch (Exception e) {
-	                System.err.println("Retry due to an exception: " + e.getMessage());
-	                e.printStackTrace();
-	            }
-	        }
-	    } catch (NoSuchElementException e) {
-	        System.out.println("No badges found for selection.");
-	    } catch (Exception e) {
-	        System.err.println("Error in addBadge: " + e.getMessage());
-	        e.printStackTrace();
-	    }
+					System.err.println("Retry due to TimeoutException.");
+					e.printStackTrace();
+				} catch (Exception e) {
+					System.err.println("Retry due to an exception: " + e.getMessage());
+					e.printStackTrace();
+				}
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("No badges found for selection.");
+		} catch (Exception e) {
+			System.err.println("Error in addBadge: " + e.getMessage());
+			e.printStackTrace();
+		}
 	}
 
 
