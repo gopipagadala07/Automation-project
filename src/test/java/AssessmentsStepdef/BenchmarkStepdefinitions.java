@@ -172,7 +172,7 @@ public class BenchmarkStepdefinitions extends ActionType{
 	    }
 	    String Lastname = testdata.get(int1).get("LastName");	
 	    String firstname = testdata.get(int1).get("FirstName");	
-	    //bpages.teacherDdown(firstname,Lastname); 
+	    bpages.teacherDdown(firstname,Lastname); 
 		StaticWait(1);
 	}
 
