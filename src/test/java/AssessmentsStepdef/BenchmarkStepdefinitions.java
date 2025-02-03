@@ -157,32 +157,32 @@ public class BenchmarkStepdefinitions extends ActionType{
 
 	@And("the user selects the school from the dropdown at row {int}")
 	public void the_user_selects_the_school_from_the_dropdown_at_row_rownumber(int int1) throws InvalidFormatException, IOException {
-//		if (testdata == null) {
-//	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
-//	    }
-//	    String schoolDdown = testdata.get(int1).get("SchoolName");	   
-//	    bpages.schoolDdown(schoolDdown); 
+		if (testdata == null) {
+	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
+	    }
+	    String schoolDdown = testdata.get(int1).get("SchoolName");	   
+	    bpages.schoolDdown(schoolDdown); 
 		StaticWait(1);
 	}
 
 	@And("the user selects the teacher from the dropdown at row {int}")
 	public void the_user_selects_the_teacher_from_the_dropdown_at_row_rownumber(Integer int1) throws InvalidFormatException, IOException {
-//		if (testdata == null) {
-//	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
-//	    }
-//	    String Lastname = testdata.get(int1).get("LastName");	
-//	    String firstname = testdata.get(int1).get("FirstName");	
-//	    bpages.teacherDdown(Lastname,firstname); 
+		if (testdata == null) {
+	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
+	    }
+	    String Lastname = testdata.get(int1).get("LastName");	
+	    String firstname = testdata.get(int1).get("FirstName");	
+	    bpages.teacherDdown(firstname,Lastname); 
 		StaticWait(1);
 	}
 
 	@And("the user selects the classroom from the dropdown at row {int}")
 	public void the_user_selects_the_classroom_from_the_dropdown_at_row_rownumber(Integer int1) throws InvalidFormatException, IOException {
-//		if (testdata == null) {
-//	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
-//	    }
-//	    String classroomDdown = testdata.get(int1).get("Classroom Name");	   
-//	    bpages.classroomDdown(classroomDdown); 
+		if (testdata == null) {
+	        testdata = reader.getData("/ExcelFiles/TestDataDetails.xlsx", getSheetEnv());
+	    }
+	    String classroomDdown = testdata.get(int1).get("Classroom Name");	   
+	    bpages.classroomDdown(classroomDdown); 
 		StaticWait(1);
 	}
 	

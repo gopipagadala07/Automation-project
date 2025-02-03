@@ -85,6 +85,11 @@ public class BenchmarksPage extends ActionType {
 		String xpath = "//span[text()='"+SectionName+"']/parent::div/parent::div/following-sibling::div/a";
 		return driver.findElement(By.xpath(xpath));
 	}
+	public WebElement TeacherName(String teachername) {
+		String xpath = "//div[@role='listbox']/child::mat-option[text()='"+teachername+"']";
+		return driver.findElement(By.xpath(xpath));
+	}
+	
 	public void clickOnNewBencmark() {
 		for(int retry=0;retry<=3;retry++)
 		{
@@ -292,16 +297,16 @@ public class BenchmarksPage extends ActionType {
 
 	public void teacherDdown(String FirstName, String LastName) {
 		wait.elementToBeClickable(TeacherDropdown);
-		cp.FPdropdown(TeacherDropdown, LastName +" "+FirstName);
-		String s=LastName +" "+FirstName;
-		ExtentCucumberAdapter.addTestStepLog(s);
+		Actions a=new Actions(driver);
+		a.moveToElement(TeacherDropdown).click().build().perform();
+		StaticWait(1);
+		a.moveToElement(TeacherName(LastName+" "+FirstName)).click().build().perform();
 	}
 
 	public void classroomDdown(String classroomdown) {
 		wait.elementToBeClickable(ClassroomdropDown);
 		wait.visibilityOf(ClassroomdropDown);
 		cp.FPdropdown(ClassroomdropDown, classroomdown);
-		StaticWait(3);
 	}
 
 
