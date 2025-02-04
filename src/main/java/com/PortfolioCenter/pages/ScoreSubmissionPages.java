@@ -4,6 +4,7 @@ import java.awt.AWTException;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -198,25 +199,47 @@ public class ScoreSubmissionPages extends ActionType{
 	}
 	public void the_user_clicks_on_the_report_card_tab_and_validates_the_score_in_the_report_card(){
 		JavascriptExecutor j = (JavascriptExecutor) driver;
-		wait.elementToBeClickable(PerformanceReportelement);
-		Actions a=new Actions(driver);
-		a.moveToElement(PerformanceReportelement).build().perform();
-		StaticWait(1);
-		a.doubleClick().build().perform();
-		StaticWait(1);
-		String Total = StandardScore.getText();
-		if (Total != null && String.valueOf(randomScore).toString().equals(Total)) {
-			System.out.println("Score Added: " + Total);
-		} else {
-			System.out.println("Score Not Added: " + Total);
-		}
-		j.executeScript("arguments[0].click();", ReportCardTab);
-		StaticWait(1);
-		String TotalScore = StandardScoreElement.getText();
-		if (TotalScore != null && TotalScore.contains(String.valueOf(randomScore))) {
-			System.out.println("Score Added in Report Card : " + TotalScore);
-		} else {
-			System.out.println("Score Not Added in Report Card : " + TotalScore);
+		try {
+			wait.elementToBeClickable(PerformanceReportelement);
+			Actions a=new Actions(driver);
+			a.moveToElement(PerformanceReportelement).build().perform();
+			StaticWait(1);
+			a.doubleClick().build().perform();
+			StaticWait(1);
+			String Total = StandardScore.getText();
+			if (Total != null && String.valueOf(randomScore).toString().equals(Total)) {
+				System.out.println("Score Added: " + Total);
+			} else {
+				System.out.println("Score Not Added: " + Total);
+			}
+			j.executeScript("arguments[0].click();", ReportCardTab);
+			StaticWait(1);
+			String TotalScore = StandardScoreElement.getText();
+			if (TotalScore != null && TotalScore.contains(String.valueOf(randomScore))) {
+				System.out.println("Score Added in Report Card : " + TotalScore);
+			} else {
+				System.out.println("Score Not Added in Report Card : " + TotalScore);
+			}
+		} catch (NoSuchElementException e) {
+			Actions a=new Actions(driver);
+			a.moveToElement(PerformanceReportelement).build().perform();
+			StaticWait(1);
+			a.doubleClick().build().perform();
+			String Total = StandardScore.getText();
+			if (Total != null && String.valueOf(randomScore).toString().equals(Total)) {
+				System.out.println("Score Added: " + Total);
+			} else {
+				System.out.println("Score Not Added: " + Total);
+			}
+			j.executeScript("arguments[0].click();", ReportCardTab);
+			StaticWait(1);
+			String TotalScore = StandardScoreElement.getText();
+			if (TotalScore != null && TotalScore.contains(String.valueOf(randomScore))) {
+				System.out.println("Score Added in Report Card : " + TotalScore);
+			} else {
+				System.out.println("Score Not Added in Report Card : " + TotalScore);
+			}
+			
 		}
 	}
 }

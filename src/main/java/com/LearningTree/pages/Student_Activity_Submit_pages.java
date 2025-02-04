@@ -122,6 +122,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 			StaticWait(1);
 			All.click();
 			JavascriptExecutor s = (JavascriptExecutor) driver;
+			StaticWait(1);
 			s.executeScript("window.scrollTo(0, document.documentElement.scrollHeight);");
 			WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 			WebElement topic= wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//mat-icon[text()=' chevron_right '])[1]")));

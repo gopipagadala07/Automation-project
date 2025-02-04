@@ -177,9 +177,7 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			//			String Activity_Title = Activity_Title_Name.getText();
 
 			if (Activity_Name.toLowerCase().contains("Assessment".toLowerCase())) {
-				System.out.println("Providing Score for Assessment Activity");
 				Provide_the_Score_for_Assessment();
-				System.out.println("Provide Score for Assessment Activity");
 			}
 
 			else if (Activity_Name.toLowerCase().contains("Assignment".toLowerCase())) {
@@ -187,7 +185,6 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 				System.out.println("Provide Score for Assignment Activity");
 			}
 			else if (Activity_Name.toLowerCase().contains("Discussion".toLowerCase())) {
-				//				System.out.println("Providing Score for Discussion Activity");
 				Provide_the_Score_for_Assignment_and_Discussion();
 				System.out.println("Provide Score for Discussion Activity");
 			}
@@ -343,8 +340,8 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		StaticWait(2);
 		driver.switchTo().frame(0);
-		Provide_Score1.sendKeys(Keys.chord(Keys.CONTROL,"a"));
-		Provide_Score1.sendKeys(Keys.chord(Keys.CONTROL,"x"));
+		wait.until(ExpectedConditions.visibilityOf(Provide_Score1));
+		Provide_Score1.clear();
 		Provide_Score1.sendKeys("4");
 		String randomString = generateRandomString();
 		Provide_Feedback.sendKeys(randomString);
