@@ -53,6 +53,6 @@
 			<class name="LearningTreeRunner.DocumentsRunner"/>			
 			<class name="LearningTreeRunner.ReportcardRunner"/>	
 		</classes>
-	</test> <!--Test -->
+	</test> 
 </suite> <!--
 Suite -->

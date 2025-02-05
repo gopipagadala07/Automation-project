@@ -111,11 +111,12 @@ public class QuizCreationPages extends ActionType{
 				cp.searchField(ClassroomName + "(" + SectionName + ")-"+ TLastName + " " + TFirstName);
 				//System.out.println(ClassroomName);
 				StaticWait(1);
-				wait.visibilityOf(getCommunityNameElement(ClassroomName));
-				wait.elementToBeClickable(getCommunityNameElement(ClassroomName));
+				WebElement communityElement = getCommunityNameElement(ClassroomName);
+				wait.visibilityOf(communityElement);
+				wait.elementToBeClickable(communityElement);
 				Actions a=new Actions(driver);
-				a.moveToElement(getCommunityNameElement(ClassroomName)).click().build().perform();
-				break;
+				a.moveToElement(communityElement).click().build().perform();
+				return;
 			}catch (StaleElementReferenceException e) {
 				retry++;
 			}

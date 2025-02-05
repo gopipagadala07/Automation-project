@@ -4,6 +4,7 @@
     <test name="CommonSetup">
         <classes>
             <class name="AssessmentsRunner.SISprovisioningRunner" />
+            <class name="AssessmentsRunner.LoginPageRunner"></class>
         </classes>
     </test>
 </suite>

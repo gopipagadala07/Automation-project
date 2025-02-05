@@ -65,16 +65,16 @@ public class LaunchValidationPages extends ActionType {
 		}
 	}
 	public void clickEachExamAndClose() {
-		StaticWait(2);
+		StaticWait(1);
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement e1=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[text()='Assessments']/parent::mat-card-content/descendant::mat-tab-header/descendant::div[@role='tab'][2]")));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(e1).perform();
 		actions.click().build().perform();
 		try {
-			WebElement e2=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//small[@class='announce__list--icon']/child::span[2]/child::mat-icon")));
-			actions.moveToElement(e2).click().perform();
-			StaticWait(2);
+			WebElement e2=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[normalize-space()='info']")));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click()", e2);
 			String s=StatusBand.getText();
 			ExtentCucumberAdapter.addTestStepLog("Exam Status band : "+s);
 			System.out.println("Exam Status band : "+s);

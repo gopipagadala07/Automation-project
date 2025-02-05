@@ -46,8 +46,10 @@ public class Base {
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options=new ChromeOptions();
-     		options.addArguments("--headless");
+//     		options.addArguments("--headless");
+//			options.addArguments("--start-maximized");
 			options.addArguments("--remote-allow-origins=*");
+//			options.setCapability("goog:loggingPrefs", Map.of("browser", "ALL"));
 			tlDriver.set(new ChromeDriver());
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();

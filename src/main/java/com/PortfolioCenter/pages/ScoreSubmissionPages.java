@@ -56,6 +56,7 @@ public class ScoreSubmissionPages extends ActionType{
 	@FindBy(how = How.XPATH,using = "//*[text()='Award Badge']/parent::button")private WebElement AwardBadge;
 	@FindBy(how = How.XPATH,using = "//table/tbody/tr/td[6]/span")private WebElement TotalScore;
 	@FindBy(how = How.XPATH,using = "//table/tbody/tr/td[2]/descendant::div[3]")private WebElement StandardScore;
+	@FindBy(how = How.XPATH,using = "//h4[text()='Mastery by Standard']")private WebElement Standardmastery;
 
 	public WebElement PortfolioName(String PortfolioCourseName) {
 		//		String xpath ="//*[@class='mat-card-header-text']/child::mat-card-title/child::span/child::b[text()='"+PortfolioCourseName+"']";
@@ -192,6 +193,7 @@ public class ScoreSubmissionPages extends ActionType{
 			} else {
 				System.out.println("Status Not Added");
 			}
+			StaticWait(1);
 		} catch (StaleElementReferenceException e) {
 
 		}
@@ -199,47 +201,47 @@ public class ScoreSubmissionPages extends ActionType{
 	}
 	public void the_user_clicks_on_the_report_card_tab_and_validates_the_score_in_the_report_card(){
 		JavascriptExecutor j = (JavascriptExecutor) driver;
-		try {
-			wait.elementToBeClickable(PerformanceReportelement);
-			Actions a=new Actions(driver);
-			a.moveToElement(PerformanceReportelement).build().perform();
-			StaticWait(1);
-			a.doubleClick().build().perform();
-			StaticWait(1);
-			String Total = StandardScore.getText();
-			if (Total != null && String.valueOf(randomScore).toString().equals(Total)) {
-				System.out.println("Score Added: " + Total);
-			} else {
-				System.out.println("Score Not Added: " + Total);
-			}
-			j.executeScript("arguments[0].click();", ReportCardTab);
-			StaticWait(1);
-			String TotalScore = StandardScoreElement.getText();
-			if (TotalScore != null && TotalScore.contains(String.valueOf(randomScore))) {
-				System.out.println("Score Added in Report Card : " + TotalScore);
-			} else {
-				System.out.println("Score Not Added in Report Card : " + TotalScore);
-			}
-		} catch (NoSuchElementException e) {
-			Actions a=new Actions(driver);
-			a.moveToElement(PerformanceReportelement).build().perform();
-			StaticWait(1);
-			a.doubleClick().build().perform();
-			String Total = StandardScore.getText();
-			if (Total != null && String.valueOf(randomScore).toString().equals(Total)) {
-				System.out.println("Score Added: " + Total);
-			} else {
-				System.out.println("Score Not Added: " + Total);
-			}
-			j.executeScript("arguments[0].click();", ReportCardTab);
-			StaticWait(1);
-			String TotalScore = StandardScoreElement.getText();
-			if (TotalScore != null && TotalScore.contains(String.valueOf(randomScore))) {
-				System.out.println("Score Added in Report Card : " + TotalScore);
-			} else {
-				System.out.println("Score Not Added in Report Card : " + TotalScore);
-			}
-			
+		Actions a = new Actions(driver);
+
+		boolean isClicked = false;
+		int retryCount = 3;
+
+		for (int i = 0; i < retryCount; i++) {
+		    try {
+		        a.moveToElement(PerformanceReportelement).build().perform();
+		        StaticWait(1);
+		        a.click().build().perform();
+		        if (Standardmastery.isDisplayed()) {
+		            isClicked = true;
+		            break;
+		        }
+		    } catch (Exception e) {
+		        System.out.println("Attempt " + (i + 1) + " failed: " + e.getMessage());
+		    }
+		}
+
+		if (!isClicked) {
+		    try {
+		        j.executeScript("arguments[0].click();", PerformanceReportelement);
+		        System.out.println("Clicked using JavaScriptExecutor..!!");
+		    } catch (Exception e) {
+		        System.out.println("JavaScript click failed: " + e.getMessage());
+		    }
+		}
+
+		String Total = StandardScore.getText();
+		if (Total != null && String.valueOf(randomScore).toString().equals(Total)) {
+			System.out.println("Score Added: " + Total);
+		} else {
+			System.out.println("Score Not Added: " + Total);
+		}
+		j.executeScript("arguments[0].click();", ReportCardTab);
+		StaticWait(1);
+		String TotalScore = StandardScoreElement.getText();
+		if (TotalScore != null && TotalScore.contains(String.valueOf(randomScore))) {
+			System.out.println("Score Added in Report Card : " + TotalScore);
+		} else {
+			System.out.println("Score Not Added in Report Card : " + TotalScore);
 		}
 	}
 }
