@@ -136,7 +136,7 @@ public class Student_Activity_Submit_pages extends ActionType {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+
 	}
 	public void performActivities()
 	{
@@ -284,60 +284,68 @@ public class Student_Activity_Submit_pages extends ActionType {
 	}
 	public void performAssessmentActivity() {
 		System.out.println("Performing Assessment activity...");
-	
-			driver.switchTo().frame(0);
-			StaticWait(2);
-			
-		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		    JavascriptExecutor js = (JavascriptExecutor) driver;
-		    WebElement beginTest = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Begin Test')]")));
-            js.executeScript("arguments[0].click();", beginTest);	
-            StaticWait(2);
- 
-		    
-		            List<WebElement> questions = driver.findElements(By.xpath("//div[@id='navigationSideMenu']/ul/li/div/button"));
-		            int numberOfQuestions = questions.size();
- 
-		            for (int i = 0; i < numberOfQuestions; i++) {
-		                WebElement question = driver.findElement(By.xpath("//*[contains(@responseidentifier, 'RESPONSE')]"));
-		                String tagName = question.getTagName();
-		                StaticWait(1);
- 
-		          
-		                if (tagName.equalsIgnoreCase("choiceinteraction")) {
-		                    WebElement choiceValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='mdc-radio'])[2]")));
-		                    new Actions(driver).moveToElement(choiceValue).click().perform();
-		                } else if (tagName.equalsIgnoreCase("extendedtextinteraction")) {
-		                    WebElement extendedValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='ck-placeholder']")));
-		                    extendedValue.sendKeys(generateRandomString());
-		                } else if (tagName.equalsIgnoreCase("textentryinteraction")) {
-		                    WebElement fillInTheBlankValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtEditorInteraction")));
-		                    fillInTheBlankValue.sendKeys(generateRandomString());
-		                }
- 
-		       
-		                WebElement nextBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@mattooltip='Next']")));
-		                js.executeScript("arguments[0].click();", nextBtn);
-		                StaticWait(2);
-		            }
- 
-		            WebElement finish = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Finish']")));
-		            js.executeScript("arguments[0].click();", finish);
-		            StaticWait(1);
- 
-		            WebElement submit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Submit']")));
-		            js.executeScript("arguments[0].click();", submit);
-		            StaticWait(2);
- 
-		            // Close the quiz
-		            driver.switchTo().defaultContent();
-		            WebElement closeAfterSubmit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-icon[@mattooltip='Close']")));
-		            js.executeScript("arguments[0].click();", closeAfterSubmit);
-		            StaticWait(1);
- 
-		            System.out.println("Assessment completed successfully.");
-		        
-		        }
+
+		driver.switchTo().frame(0);
+		StaticWait(2);
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement beginTest = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Begin Test')]")));
+		js.executeScript("arguments[0].click();", beginTest);	
+		StaticWait(2);
+
+		List<WebElement> questions = driver.findElements(By.xpath("//div[@id='navigationSideMenu']/ul/li/div/button"));
+		int numberOfQuestions = questions.size();
+
+		for (int i = 0; i < numberOfQuestions; i++) {
+			int questionAttempts = 0;
+			int questionMaxAttempts = 5;
+
+			while (questionAttempts < questionMaxAttempts) {
+				try {
+					WebElement question = driver.findElement(By.xpath("//*[contains(@responseidentifier, 'RESPONSE')]"));
+					String tagName = question.getTagName();
+					StaticWait(1);
+
+					if (tagName.equalsIgnoreCase("choiceinteraction")) {
+						WebElement choiceValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='mdc-radio'])[2]")));
+						new Actions(driver).moveToElement(choiceValue).click().perform();
+						StaticWait(1);
+					} else if (tagName.equalsIgnoreCase("extendedtextinteraction")) {
+						WebElement extendedValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='ck-placeholder']")));
+						StaticWait(1);
+						extendedValue.sendKeys(generateRandomString());
+						StaticWait(1);
+					} else if (tagName.equalsIgnoreCase("textentryinteraction")) {
+						WebElement fillInTheBlankValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtEditorInteraction")));
+						fillInTheBlankValue.click();
+						fillInTheBlankValue.sendKeys(generateRandomString());
+					}
+					WebElement nextBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@mattooltip='Next']")));
+					js.executeScript("arguments[0].click();", nextBtn);
+					StaticWait(2);
+					break;
+				} catch (StaleElementReferenceException e) {
+					System.out.println("Attempt " + (questionAttempts + 1) + " - StaleElementReferenceException encountered. Retrying...");
+					questionAttempts++;
+				}
+			}
+		}
+
+		WebElement finish = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Finish']")));
+		js.executeScript("arguments[0].click();", finish);
+		StaticWait(1);
+
+		WebElement submit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Submit']")));
+		js.executeScript("arguments[0].click();", submit);
+		StaticWait(2);
+		driver.switchTo().defaultContent();
+		WebElement closeAfterSubmit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-icon[@mattooltip='Close']")));
+		js.executeScript("arguments[0].click();", closeAfterSubmit);
+		StaticWait(1);
+		System.out.println("Assessment completed successfully.");
+
+	}
 	public void performResourcesActivity() {
 		System.out.println("Performing Resources activity...");
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -357,11 +365,11 @@ public class Student_Activity_Submit_pages extends ActionType {
 		driver.switchTo().window(originalWindow);	
 		StaticWait(1);
 
-    
+
 		StaticWait(2);
 		Notes_tab.click();
 		TypehereText.sendKeys("StudentNotesresources"+randomNumberGenerator());
-	cp.Save();
+		cp.Save();
 		CloseIcon();	
 		System.out.println("Resources completed successfully.");
 	}	
@@ -396,13 +404,13 @@ public class Student_Activity_Submit_pages extends ActionType {
 		//		    }
 		//		    driver.close();
 		//		    driver.switchTo().window(originalWindow);	    
-//		StaticWait(1);
-//		Notes_tab.click();
-//		TypehereText.sendKeys("StudentNotesExternalTool"+randomNumberGenerator());
-//		cp.Save();
+		//		StaticWait(1);
+		//		Notes_tab.click();
+		//		TypehereText.sendKeys("StudentNotesExternalTool"+randomNumberGenerator());
+		//		cp.Save();
 		CloseIcon();
 
-	System.out.println("Externaltool completed successfully.");
+		System.out.println("Externaltool completed successfully.");
 	}
 
 	public void performLTI_Content_Provider_Activity() {

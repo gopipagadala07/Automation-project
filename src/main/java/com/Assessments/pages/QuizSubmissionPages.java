@@ -117,8 +117,6 @@ public class QuizSubmissionPages extends ActionType {
 	                            } else if (tagName.equalsIgnoreCase("textentryinteraction")) {
 	                                WebElement fillInTheBlankValue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtEditorInteraction")));
 	                                fillInTheBlankValue.click();
-//	                                fillInTheBlankValue.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-//	                                fillInTheBlankValue.sendKeys(Keys.BACK_SPACE);
 	                                fillInTheBlankValue.sendKeys(generateRandomString());
 	                            }
 	                            WebElement nextBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@mattooltip='Next']")));

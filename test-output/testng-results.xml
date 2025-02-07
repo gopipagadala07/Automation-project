@@ -1,55 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="1" failed="0" skipped="0">
+<testng-results total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-05T09:23:33Z" name="Default suite" finished-at="2025-02-05T09:24:22Z" duration-ms="49253">
+  <suite started-at="2025-02-06T08:02:28Z" name="Default suite" finished-at="2025-02-06T08:04:40Z" duration-ms="132061">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.LaunchValidationRunner@42039326]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.Provide_Score_in_LTRunner@42039326]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-02-05T09:23:33Z" name="Default test" finished-at="2025-02-05T09:24:22Z" duration-ms="49253">
-      <class name="AssessmentsRunner.LaunchValidationRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:AssessmentsRunner.LaunchValidationRunner@42039326]" started-at="2025-02-05T14:53:33Z" name="setUpClass" finished-at="2025-02-05T14:53:34Z" duration-ms="699" status="PASS">
+    <test started-at="2025-02-06T08:02:28Z" name="Default test" finished-at="2025-02-06T08:04:40Z" duration-ms="132061">
+      <class name="LearningTreeRunner.Provide_Score_in_LTRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:LearningTreeRunner.Provide_Score_in_LTRunner@42039326]" started-at="2025-02-06T13:32:28Z" name="setUpClass" finished-at="2025-02-06T13:32:28Z" duration-ms="724" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@d978ab9]]>
+                <![CDATA[org.testng.TestRunner@26c2f767]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:AssessmentsRunner.LaunchValidationRunner@42039326]" started-at="2025-02-05T14:53:34Z" name="beforeClass" finished-at="2025-02-05T14:53:34Z" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:LearningTreeRunner.Provide_Score_in_LTRunner@42039326]" started-at="2025-02-06T13:32:28Z" name="beforeClass" finished-at="2025-02-06T13:32:28Z" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:AssessmentsRunner.LaunchValidationRunner@42039326]" started-at="2025-02-05T14:53:34Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-02-05T14:54:20Z" duration-ms="46600" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:LearningTreeRunner.Provide_Score_in_LTRunner@42039326]" started-at="2025-02-06T13:32:28Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-02-06T13:34:37Z" duration-ms="128953" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validating Quiz/Exams Through Home Tab"]]>
+                <![CDATA["Provide the Score for all Activities at Speed Grder and Activities to Garde"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validating the Quiz/Exams at student side"]]>
+                <![CDATA["Verify the Scoring in LT"]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.IndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 4 out of bounds for length 4]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:365)
+	at java.base/java.util.ArrayList.get(ArrayList.java:428)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy29.get(Unknown Source)
+	at com.LearningTree.pages.Provide_Score_For_LT_ActivitiesPage.activities_to_Garde(Provide_Score_For_LT_ActivitiesPage.java:212)
+	at LearningTreeStepdef.Provide_Score_in_LTStepdef.User_Provide_the_Score_in_Activity_To_Grade(Provide_Score_in_LTStepdef.java:60)
+	at ✽.User Provide the Score in Activity To Grade(file:///D:/Focalpoint%20Automation/FPK12AutomationProject/src/test/resources/LearningTreeFeatures/Provide_Score_in_LT.feature:16)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IndexOutOfBoundsException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:AssessmentsRunner.LaunchValidationRunner@42039326]" started-at="2025-02-05T14:54:20Z" name="tearDownClass" finished-at="2025-02-05T14:54:22Z" duration-ms="1930" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:AssessmentsRunner.LaunchValidationRunner@42039326]" started-at="2025-02-05T14:54:20Z" name="afterClass" finished-at="2025-02-05T14:54:20Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:LearningTreeRunner.Provide_Score_in_LTRunner@42039326]" started-at="2025-02-06T13:34:37Z" name="afterClass" finished-at="2025-02-06T13:34:37Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- AssessmentsRunner.LaunchValidationRunner -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:LearningTreeRunner.Provide_Score_in_LTRunner@42039326]" started-at="2025-02-06T13:34:37Z" name="tearDownClass" finished-at="2025-02-06T13:34:40Z" duration-ms="2364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- LearningTreeRunner.Provide_Score_in_LTRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

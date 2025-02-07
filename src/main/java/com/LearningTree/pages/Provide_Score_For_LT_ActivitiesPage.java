@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -311,7 +312,18 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			Random random = new Random();
 			int randomValue = random.nextInt(80 + 1);
 			String Score = String.valueOf(randomValue);
-			Provide_Score.sendKeys(Score);
+			StaticWait(1);
+			int retry=0;
+			while (retry < 3) {
+				try {
+					Provide_Score.sendKeys(Score);
+					break;
+				} catch (ElementClickInterceptedException e) {
+					retry++;
+					StaticWait(1);	       
+				}
+			}
+			
 			js.executeScript("arguments[0].click();", Save_Score);
 			js.executeScript("arguments[0].scrollIntoView({block: 'nearest', inline: 'center'});", Award_Badge);
 			int attempts = 0;
