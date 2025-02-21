@@ -158,7 +158,6 @@ public class PortfolioCenterCoursePages extends ActionType{
 		inputTitleElement.sendKeys(PortfolioCourseName);
 		wait.elementToBeClickable(DescriptionElement);
 		DescriptionElement.sendKeys(generateRandomString());
-		wait.elementToBeClickable(savebtn);
 		cp.Save();
 	}
 

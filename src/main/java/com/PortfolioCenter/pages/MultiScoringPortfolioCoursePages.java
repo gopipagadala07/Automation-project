@@ -95,7 +95,6 @@ public class MultiScoringPortfolioCoursePages extends ActionType{
 		inputTitleElement.sendKeys(MultiPortfolioCourseName);
 		wait.elementToBeClickable(DescriptionElement);
 		DescriptionElement.sendKeys(generateRandomString());
-		wait.elementToBeClickable(savebtn);
 		cp.Save(); 
 		StaticWait(2);
 	}
