@@ -43,7 +43,7 @@ public class ScoreSubmissionPages extends ActionType{
 	@FindBy(how=How.XPATH,using = "//*[text()='done']/parent::div/parent::span/parent::button")private WebElement ScoreBtn;
 	@FindBy(how=How.XPATH,using = "//*[@name='scoreField']")private WebElement Scorefield;
 	@FindBy(how=How.XPATH,using = "//*[text()='Comments']/parent::label/parent::span/parent::div/child::textarea")private WebElement CommentsElement;
-	@FindBy(how=How.XPATH,using = "//*[text()=' Save Score ']/parent::button")private WebElement  SavScoreBtn ;
+	@FindBy(how=How.XPATH,using = "//button[@aria-label='savePortfolio']")private WebElement  SavScoreBtn ;
 	@FindBy(how=How.XPATH,using = "//*[text()='search here']/parent::label/parent::span/preceding-sibling::input")private WebElement inputsearchhereElement;
 	@FindBy(how=How.XPATH,using = "//*[@role='rowgroup']/child::tr/child::td/child::span[text()='Completed']")private WebElement statusElement;
 	@FindBy(how=How.XPATH,using = "//*[text()='PERFORMANCE REPORT']/parent::div")private WebElement PerformanceReportelement;

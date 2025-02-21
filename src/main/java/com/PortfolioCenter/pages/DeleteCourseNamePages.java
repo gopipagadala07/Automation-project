@@ -76,7 +76,6 @@ public class DeleteCourseNamePages extends ActionType{
 		inputTitleElement.sendKeys(DeleteCourseName);
 		wait.elementToBeClickable(DescriptionElement);
 		DescriptionElement.sendKeys(generateRandomString());
-		wait.elementToBeClickable(savebtn);
 		cp.Save();
 
 	}
