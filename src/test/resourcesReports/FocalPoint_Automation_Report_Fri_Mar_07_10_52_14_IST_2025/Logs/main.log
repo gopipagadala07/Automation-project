@@ -1,0 +1,10 @@
+2025-03-07 10:52:14,982 INFO  [rootLogger] Enviornment is : DEMO
+2025-03-07 10:52:14,996 INFO  [rootLogger] Browser value is: CHROME
+2025-03-07 10:52:17,595 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-03-07 10:52:17,606 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/
+2025-03-07 10:54:21,890 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-03-07 10:54:27,190 INFO  [rootLogger] Browser value is: CHROME
+2025-03-07 10:54:28,903 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-03-07 10:54:28,903 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/
+2025-03-07 10:55:33,222 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-03-07 10:55:36,664 INFO  [rootLogger] Browser value is: CHROME

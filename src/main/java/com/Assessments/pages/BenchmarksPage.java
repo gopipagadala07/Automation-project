@@ -215,8 +215,8 @@ public class BenchmarksPage extends ActionType {
 
 		while (retries < maxRetries && !success) {
 			try {
-				WebElement sectionTab = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'SECTIONS')]")));
-				js.executeScript("arguments[0].click()", sectionTab);
+				WebElement CourseTab = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'Courses')]")));
+				js.executeScript("arguments[0].click()", CourseTab);
 				success = true;
 			} catch (StaleElementReferenceException e) {
 				retries++;

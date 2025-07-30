@@ -50,7 +50,7 @@ public class Base {
 //			options.addArguments("--start-maximized");
 			options.addArguments("--remote-allow-origins=*");
 //			options.setCapability("goog:loggingPrefs", Map.of("browser", "ALL"));
-			tlDriver.set(new ChromeDriver());
+			tlDriver.set(new ChromeDriver(options));
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());

@@ -3,7 +3,20 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test" verbose="2">
     <classes>
-      <class name="AssessmentsRunner.PerformingExamRunner"/>
+      <class name="LearningTreeRunner.Import_Activities_in_LTRunner"/>
     </classes>
   </test> <!-- Default test -->
+  <test parallel="none" name="Default test(failed)">
+    <classes>
+      <class name="LearningTreeRunner.Import_Activities_in_LTRunner">
+        <methods>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- LearningTreeRunner.Import_Activities_in_LTRunner -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

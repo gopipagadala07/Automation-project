@@ -1,0 +1,4 @@
+2025-03-07 11:05:40,207 INFO  [rootLogger] Enviornment is : DEMO
+2025-03-07 11:05:40,223 INFO  [rootLogger] Browser value is: CHROME
+2025-03-07 11:05:43,404 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-03-07 11:05:43,415 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/

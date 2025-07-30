@@ -45,7 +45,7 @@ public class SISProvisioningPage extends ActionType{
 	 */
 	@FindBy(how=How.XPATH,using = "//span[text()='Administration']") private WebElement Administrationbtn;
 	@FindBy(how=How.XPATH,using = "//a[contains(text(),'SIS Provisioning')]")private WebElement Provisioningtab;
-	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[6]")private WebElement Schooltab;
+	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[2]")private WebElement Schooltab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(),'Add New School')]")private WebElement AddnewSchoolbtn;
 	@FindBy(how=How.XPATH,using = "//div[@role='textbox']")private WebElement Description;
 	@FindBy(how = How.XPATH,using = "//fp-dropdown[@placeholder='TimeZone']/descendant::mat-form-field/child::div")private WebElement TimeZoneDropdown;
@@ -53,22 +53,22 @@ public class SISProvisioningPage extends ActionType{
 	/*
 	 * Classroom Creation
 	 */
-	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[5]")private WebElement Classroomtab;
+	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[4]")private WebElement Classroomtab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Classroom')]")private WebElement AddnewClassroombtn;
 	@FindBy(how = How.XPATH,using = "//fp-dropdown[@controlname='school']/descendant::mat-form-field/child::div")private WebElement SchoolDropDown;
 	/*
 	 * Section Creation
 	 */
 	//private WebElement listofTabs=By.xpath("//div[@role='tablist']/div/div");
-	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[4]")private WebElement Sectiontab;
-	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Section')]")private WebElement AddnewSectionbtn;
+	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[3]")private WebElement Sectiontab;
+	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Course')]")private WebElement AddnewSectionbtn;
 	@FindBy(how = How.XPATH,using = "//fp-dropdown[@controlname='year']/descendant::mat-form-field/child::div")private WebElement YearDropDown;
 	@FindBy(how = How.XPATH,using = "//div[@role='alert']")private WebElement Alertsection;
 
 	/*
 	 * Districtuser Creation
 	 */
-	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[3]")private WebElement Districtusertab;
+	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[1]")private WebElement Districtusertab;
 	@FindBy(how=How.XPATH,using = "//span[text()= ' Add New User ']")private WebElement AddnewDistrictUserbtn;
 	@FindBy(how=How.XPATH,using = "(//input[@type='text'])[1]")private WebElement Emailfield;
 	@FindBy(how=How.XPATH,using = "(//input[@type='text'])[2]")private WebElement FirstnameField;
@@ -83,7 +83,7 @@ public class SISProvisioningPage extends ActionType{
 	/*
 	 * Teacher Creation
 	 */
-	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[2]")private WebElement Teachertab;
+	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[5]")private WebElement Teachertab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Teacher')]")private WebElement AddnewTeacherbtn;
 	@FindBy(how=How.XPATH,using = "//span[text()='Settings']")private WebElement Settingsoptions;
 	@FindBy(how=How.XPATH,using = "//div[contains(text(),'Is District Admin ')]/mat-checkbox")private WebElement IsDistrcitAdminchkbox;
@@ -97,7 +97,7 @@ public class SISProvisioningPage extends ActionType{
 	/*
 	 * Student Creation
 	 */
-	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[1]")private WebElement Studenttab;
+	@FindBy(how=How.XPATH,using = "(//div[@role='tab']/child::div)[6]")private WebElement Studenttab;
 	@FindBy(how=How.XPATH,using = "//span[contains(text(), 'Add New Student')]")private WebElement AddnewStudentbtn;
 
 	public SISProvisioningPage(WebDriver driver) {

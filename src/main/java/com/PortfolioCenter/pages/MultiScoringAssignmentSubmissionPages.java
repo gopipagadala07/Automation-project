@@ -32,7 +32,7 @@ public class MultiScoringAssignmentSubmissionPages extends ActionType{
 	static int number = randomNumberGeneratorstatic();
 
 	@FindBy(how = How.XPATH,using = "//*[(text()='Learning')]")private WebElement Learningtab;
-	@FindBy(how=How.XPATH,using = "//*[text()='Portfolio Courses']")private WebElement PortfolioCourseTab;
+	@FindBy(how=How.XPATH,using = "//*[contains(text(),'Portfolio Courses')]")private WebElement PortfolioCourseTab;
 	@FindBy(how = How.XPATH,using = "//*[text()='Launch']/parent::button")private WebElement  LaunchBtn ;
 	@FindBy(how=How.XPATH,using = "//*[@data-placeholder='Type here']/parent::div")private WebElement TextEntryElement;
 	@FindBy(how=How.XPATH,using = "//*[text()=' Submit Assignment ']/parent::button")private WebElement SubmitAssignmentbtn;

@@ -40,7 +40,7 @@ public class AnnouncementsPages extends ActionType {
 	@FindBy(how=How.XPATH,using="//h3[text()='Create New Announcement']/following::p[@class='ck-placeholder']")private WebElement DescriptionField;
 	@FindBy(how=How.XPATH,using="(//button[@aria-label='Open calendar'])[1]")private WebElement EventDate;
 	@FindBy(how=How.XPATH,using="(//button[@aria-label='Open calendar'])[2]")private WebElement PublishDate;
-	@FindBy(how=How.XPATH,using="//span[text()='save']/parent::mat-icon")private WebElement SaveButton;
+	@FindBy(how=How.XPATH,using="//mat-icon[text()='save']/parent::span")private WebElement SaveButton;
 	@FindBy(how=How.XPATH,using="//span[text()='search here']/ancestor::div[1]")private WebElement searchhereAnnouncements;//searchfield for announcements
 	@FindBy(how=How.XPATH,using="//mat-icon[text()='clear']")private WebElement ClearSearch;
 	@FindBy(how=How.XPATH,using="//button[@aria-label='Next page']/child::span/child::*[local-name()='svg']")private WebElement nextpage;
@@ -48,7 +48,7 @@ public class AnnouncementsPages extends ActionType {
 	@FindBy(how=How.XPATH,using="//button[@aria-label='Previous page']")private WebElement PreviousPage;
 	@FindBy(how=How.XPATH,using="//button[@aria-label='First page']")private WebElement FirstPage;
 	@FindBy(how=How.XPATH,using="(//div[@role='tab'])[1]")private WebElement Hometab;
-	@FindBy(how=How.XPATH,using="//a[text()='Assessment Center']/following::li[2]")private WebElement course;//to scroll page upto course 
+	@FindBy(how=How.XPATH,using="//a[text()='Assessment Center']/parent::li/following-sibling::li")private WebElement course;//to scroll page upto course 
 
 
 

@@ -16,8 +16,7 @@ Feature: Verify the Scoring in LT
     Then User Provide the Score in Activity To Grade
     And User go to Learning Tab
     Then User Provide the Score in Activity Progress screen<rownumber2>
-    
-    
+
     Examples: 
       | rownumber | rownumber1 | rownumber2 |
       |         2 |          0 |          3 |

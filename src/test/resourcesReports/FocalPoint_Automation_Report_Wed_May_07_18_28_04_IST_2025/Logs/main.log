@@ -1,0 +1,25 @@
+2025-05-07 18:28:04,377 INFO  [rootLogger] Enviornment is : STAGE
+2025-05-07 18:28:04,386 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 18:28:06,219 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 18:28:06,231 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 18:28:25,180 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 18:28:25,206 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 18:28:25,976 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 18:28:25,977 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 18:28:48,689 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 18:28:48,833 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 18:28:49,676 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 18:28:49,676 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 18:29:12,935 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 18:29:16,598 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 18:29:16,614 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 18:29:16,648 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 18:29:16,661 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 18:29:17,952 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 18:29:17,956 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 18:29:18,218 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 18:29:18,224 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 18:29:18,358 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 18:29:18,360 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 18:29:18,365 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 18:29:18,366 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/

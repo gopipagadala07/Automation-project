@@ -1,0 +1,126 @@
+2025-05-07 19:44:48,392 INFO  [rootLogger] Enviornment is : STAGE
+2025-05-07 19:44:48,406 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:44:49,757 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:44:49,763 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:46:18,329 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:46:18,440 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:46:19,288 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:46:19,291 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:46:56,756 INFO  [rootLogger] Info: Email Id: DistrictUserautomation14944@fpk12.com
+2025-05-07 19:47:35,204 INFO  [rootLogger] Info: Email Id: Teacherautomation6092@fpk12.com
+2025-05-07 19:48:11,303 INFO  [rootLogger] Info: Email Id: Studentautomation32808@fpk12.com
+2025-05-07 19:49:30,691 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:49:37,869 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:49:38,693 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:49:38,694 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:50:11,883 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:50:12,235 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:50:13,125 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:50:13,134 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:50:56,909 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:50:56,976 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:50:58,066 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:50:58,066 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:51:27,535 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:51:34,301 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:51:34,512 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:51:34,530 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:51:34,602 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:51:36,002 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:51:36,005 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:51:36,642 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:51:36,645 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:51:36,658 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:51:36,660 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:51:36,662 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:51:36,668 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:52:13,897 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:52:16,789 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:52:16,879 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:52:17,976 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:52:17,976 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:52:18,612 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:52:19,698 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:52:19,701 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:52:48,116 INFO  [rootLogger] Info: Email Id: automation5037@fpk12.com
+2025-05-07 19:53:11,491 INFO  [rootLogger] Info: Email Id: proctorautomation25124@fpk12.com
+2025-05-07 19:53:11,801 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:53:18,716 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:53:19,817 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:53:19,817 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:53:22,719 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:53:24,736 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:53:25,860 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:53:25,860 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:53:49,167 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:53:52,620 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:53:53,702 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:53:53,704 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:54:02,945 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:54:02,975 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:54:04,051 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:54:04,051 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:54:09,594 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:54:09,625 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:54:10,754 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:54:10,754 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:54:17,433 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:54:19,959 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:54:21,120 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:54:21,120 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:54:49,896 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:54:52,056 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:54:52,087 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:54:53,013 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:54:53,013 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:54:53,777 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:54:54,776 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:54:54,776 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:55:23,635 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:55:27,334 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:55:27,601 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:55:28,722 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:55:28,722 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:55:29,174 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:55:30,248 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:55:30,248 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:55:42,457 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:55:44,333 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:55:45,265 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:55:46,310 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:55:46,311 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:55:46,549 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:55:47,654 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:55:47,654 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:56:27,312 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:56:27,328 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:56:28,431 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:56:28,431 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:56:54,740 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:56:57,460 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:56:59,834 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:56:59,990 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:57:01,719 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:57:01,721 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:57:01,999 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:57:02,001 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:57:53,683 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:58:08,162 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:58:42,464 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:58:45,436 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 19:58:46,318 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 19:58:46,320 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 19:59:15,493 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 19:59:50,805 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 20:00:03,955 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 20:00:04,961 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 20:00:04,962 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 20:00:08,582 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 20:00:09,442 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 20:00:09,443 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 20:05:18,937 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 20:05:36,617 INFO  [rootLogger] Browser value is: CHROME
+2025-05-07 20:05:37,717 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-05-07 20:05:37,717 INFO  [rootLogger] Loading URL ... https://stage.backpack.education/
+2025-05-07 20:06:23,134 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-05-07 20:10:51,458 INFO  [rootLogger] -----------------End of Scenario-----------------

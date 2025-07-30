@@ -199,9 +199,11 @@ public class Activities_Creation_in_CDPage extends ActionType
 				StaticWait(1);	       
 			}
 		}
-
+		StaticWait(1);
 		select_Tags();
-		attachment();
+		StaticWait(1);
+//		attachment();
+//		StaticWait(2);
 		cp.Save();
 	}
 	public void ChildObjectivesCreation() {
@@ -234,6 +236,7 @@ public class Activities_Creation_in_CDPage extends ActionType
 				String Description_Txt="Description"+generateRandomString();
 				driver.findElement(By.xpath("//b[contains(text(),'Description')]/parent::div/descendant::p")).sendKeys(Description_Txt);	
 				select_Tags();
+				StaticWait(1);
 				cp.Save();
 				StaticWait(1);
 			} catch (StaleElementReferenceException e) {

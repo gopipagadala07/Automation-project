@@ -103,28 +103,42 @@ public class QuizCreationPages extends ActionType{
 			AC.click();
 		}
 	}
-	public void Communityname(String ClassroomName, String SectionName ,String TLastName, String TFirstName)
-	{
-		for(int retry=0;retry<=3;retry++)
-		{
-			try {
-				cp.searchField(ClassroomName + "(" + SectionName + ")-"+ TLastName + " " + TFirstName);
-				//System.out.println(ClassroomName);
-				StaticWait(1);
-				WebElement communityElement = getCommunityNameElement(ClassroomName);
-				wait.visibilityOf(communityElement);
-				wait.elementToBeClickable(communityElement);
-				Actions a=new Actions(driver);
-				a.moveToElement(communityElement).click().build().perform();
-				return;
-			}catch (StaleElementReferenceException e) {
-				retry++;
-			}
-		}
+	public void Communityname(String ClassroomName, String SectionName ,String TLastName, String TFirstName) {
+		int retry=0;
+		boolean success=false;
+	    while(retry < 10) {
+	        try {
+	            cp.searchField(ClassroomName + "(" + SectionName + ")-" + TLastName + " " + TFirstName);
+	            StaticWait(1);
+	            WebElement communityElement = getCommunityNameElement(ClassroomName);
+	            WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+	            wait.until(ExpectedConditions.visibilityOf(communityElement));
+	            wait.until(ExpectedConditions.elementToBeClickable(communityElement));
+	            Actions a = new Actions(driver);
+	            a.moveToElement(communityElement).click(communityElement).build().perform();
+	            success=true;
+	            break;
+	        } catch (StaleElementReferenceException e) {
+	        	retry++;
+	            //System.out.println("Stale Element Reference Exception occurred. Retrying...");
+	            if (retry == 9) {
+	                throw e;
+	            }
+	        } catch (Exception e) {
+	            System.out.println("An error occurred: " + e.getMessage());
+	            break;
+	        }
+	    }
+	    if(!success)
+	    {
+	    	System.out.println("Unable to Click..!!!");
+	    }
 	}
 	public void Assessmentstab()
 	{
 		wait.elementToBeClickable(AssessmentsTab);
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(AssessmentsTab));
 		Actions a=new Actions(driver);
 		StaticWait(1);
 		a.moveToElement(AssessmentsTab).click().build().perform();

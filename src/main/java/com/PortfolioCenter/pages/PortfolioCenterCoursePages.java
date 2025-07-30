@@ -50,9 +50,9 @@ public class PortfolioCenterCoursePages extends ActionType{
 	static int number = randomNumberGeneratorstatic();
 
 	private By Learningtab = By.xpath("//span[contains(text(),'Learning')]");
-	private By PortfolioCenterTab = By.xpath("//*[text()='Portfolio Center']");
+	private By PortfolioCenterTab = By.xpath("//*[contains(text(),'Portfolio Center')]");
 	//@FindBy(how = How.XPATH,using = "//*[(text()='Learning')]")private WebElement Learningtab;
-	//@FindBy(how=How.XPATH,using = "//*[text()='Portfolio Center']")private WebElement PortfolioCenterTab;
+	//@FindBy(how=How.XPATH,using = "//*[contains(text(),'Portfolio Center')]")private WebElement PortfolioCenterTab;
 	@FindBy(how=How.XPATH,using = "//*[text()='more_vert']/ancestor::button")private WebElement EllipseBtn;
 	@FindBy(how=How.XPATH,using = "//*[text()='Add New Course']/parent::button")private WebElement AddNewCourseBtn;
 	@FindBy(how=How.XPATH,using = "//*[text()='Title ']/parent::label")private WebElement TitleElement;

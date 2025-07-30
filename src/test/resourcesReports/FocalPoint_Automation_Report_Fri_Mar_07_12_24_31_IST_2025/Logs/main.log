@@ -1,0 +1,29 @@
+2025-03-07 12:24:31,913 INFO  [rootLogger] Enviornment is : DEMO
+2025-03-07 12:24:31,925 INFO  [rootLogger] Browser value is: CHROME
+2025-03-07 12:24:34,144 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-03-07 12:24:34,152 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/
+2025-03-07 12:29:35,298 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-03-07 12:29:37,640 INFO  [rootLogger] Browser value is: CHROME
+2025-03-07 12:29:40,451 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-03-07 12:29:40,452 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/
+2025-03-07 12:30:25,467 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-03-07 12:30:26,710 INFO  [rootLogger] Browser value is: CHROME
+2025-03-07 12:30:28,262 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-03-07 12:30:28,262 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/
+2025-03-07 12:35:02,633 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-03-07 12:35:03,893 INFO  [rootLogger] Browser value is: CHROME
+2025-03-07 12:35:05,806 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-03-07 12:35:05,807 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/
+2025-03-07 12:36:09,574 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-03-07 12:36:11,291 INFO  [rootLogger] Browser value is: CHROME
+2025-03-07 12:36:14,479 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-03-07 12:36:14,479 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/
+2025-03-07 12:36:50,256 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-03-07 12:36:50,272 INFO  [rootLogger] Browser value is: CHROME
+2025-03-07 12:36:51,934 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-03-07 12:36:51,934 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/
+2025-03-07 12:37:21,853 INFO  [rootLogger] -----------------End of Scenario-----------------
+2025-03-07 12:37:23,267 INFO  [rootLogger] Browser value is: CHROME
+2025-03-07 12:37:24,941 INFO  [rootLogger] -----------------Start of Scenario-----------------
+2025-03-07 12:37:24,943 INFO  [rootLogger] Loading URL ... https://me3.backpack.education/
+2025-03-07 12:38:04,430 INFO  [rootLogger] -----------------End of Scenario-----------------

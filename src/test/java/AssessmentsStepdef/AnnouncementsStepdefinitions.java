@@ -30,7 +30,6 @@ public class AnnouncementsStepdefinitions extends ActionType{
 	    announce.ClickOnLearningaAndAssessmentCenter();
 	}
 
-	
 	@Then("user clicks on the classroom name {int} {int}")
 	public void user_clicks_on_the_classroom_name(int row,int row1) throws InvalidFormatException, IOException {
 		if (testdata == null) {

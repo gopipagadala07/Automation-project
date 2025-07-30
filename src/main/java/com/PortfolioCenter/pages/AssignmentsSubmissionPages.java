@@ -34,9 +34,9 @@ public class AssignmentsSubmissionPages extends ActionType{
 
 	static int number = randomNumberGeneratorstatic();
 	private By Learningtab = By.xpath("//span[contains(text(),'Learning')]");
-	private By PortfolioCourseTab = By.xpath("//*[text()='Portfolio Courses']");
+	private By PortfolioCourseTab = By.xpath("//*[contains(text(),'Portfolio Courses')]");
 	//@FindBy(how = How.XPATH,using = "//*[(text()='Learning')]")private WebElement Learningtab;
-	//@FindBy(how=How.XPATH,using = "//*[text()='Portfolio Courses']")private WebElement PortfolioCourseTab;
+	//@FindBy(how=How.XPATH,using = "//*[contains(text(),'Portfolio Courses')]")private WebElement PortfolioCourseTab;
 	@FindBy(how = How.XPATH,using = "//*[text()='Launch']/parent::button")private WebElement  LaunchBtn ;
 	@FindBy(how=How.XPATH,using = "//*[@data-placeholder='Type here']/parent::div")private WebElement TextEntryElement;
 	@FindBy(how=How.XPATH,using = "//*[text()=' Submit Assignment ']/parent::button")private WebElement SubmitAssignmentbtn;

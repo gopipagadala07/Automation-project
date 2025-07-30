@@ -316,6 +316,10 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			int retry=0;
 			while (retry < 3) {
 				try {
+					if(Provide_Score!=null)
+					{
+						Provide_Score.clear();
+					}
 					Provide_Score.sendKeys(Score);
 					break;
 				} catch (ElementClickInterceptedException e) {
@@ -323,8 +327,12 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 					StaticWait(1);	       
 				}
 			}
-			
+
 			js.executeScript("arguments[0].click();", Save_Score);
+			provide_Feedback();
+			StaticWait(1);
+			Actions a=new Actions(driver);
+			a.moveToElement(Award_Badge).build().perform();
 			js.executeScript("arguments[0].scrollIntoView({block: 'nearest', inline: 'center'});", Award_Badge);
 			int attempts = 0;
 			while (attempts < 3) {
@@ -338,7 +346,7 @@ public class Provide_Score_For_LT_ActivitiesPage extends ActionType
 			}
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//small[text()=' Credit Awarded']")));
 			StaticWait(1);
-			provide_Feedback();
+
 			WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//mat-icon[text()='keyboard_arrow_left']/ancestor::button/following-sibling::button[2]")));
 			js.executeScript("arguments[0].click();", e);
 			StaticWait(1);
